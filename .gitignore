@@ -7,7 +7,6 @@ modes/
 /config.log
 /config.status
 /configure
-/Makefile
 /Makefile.in
 /install-sh
 /missing
