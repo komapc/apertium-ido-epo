@@ -70,6 +70,28 @@
   </section-def-vars>
 
   <section-rules>
+    <!-- Adjective + Noun rule: propagate number and case from noun to adjective -->
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_adj"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="cas"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Noun rule: pass through (Esperanto nouns don't always have gender) -->
     <rule>
       <pattern>
@@ -84,7 +106,7 @@
       </action>
     </rule>
 
-    <!-- Adjective rule: add sg/nom for Esperanto (default form) -->
+    <!-- Adjective rule: add sg/nom for Esperanto (default form when alone) -->
     <rule>
       <pattern>
         <pattern-item n="adj"/>
