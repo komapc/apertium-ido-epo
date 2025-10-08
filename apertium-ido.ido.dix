@@ -148,6 +148,12 @@
         <r>e<s n="cnjcoo"/></r>
       </p>
     </e>
+    <e lm="ed">
+      <p>
+        <l>ed</l>
+        <r>ed<s n="cnjcoo"/></r>
+      </p>
+    </e>
     <e lm="el">
       <p>
         <l>el</l>
@@ -166,10 +172,22 @@
         <r>il<s n="prn"/></r>
       </p>
     </e>
+    <e lm="inter">
+      <p>
+        <l>inter</l>
+        <r>inter<s n="pr"/></r>
+      </p>
+    </e>
     <e lm="ke">
       <p>
         <l>ke</l>
         <r>ke<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e lm="la">
+      <p>
+        <l>la</l>
+        <r>la<s n="det"/></r>
       </p>
     </e>
     <e lm="li">
@@ -188,6 +206,12 @@
       <p>
         <l>ma</l>
         <r>ma<s n="cnjcoo"/></r>
+      </p>
+    </e>
+    <e lm="malgre">
+      <p>
+        <l>malgre</l>
+        <r>malgre<s n="pr"/></r>
       </p>
     </e>
     <e lm="me">
@@ -224,6 +248,18 @@
       <p>
         <l>por</l>
         <r>por<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="pro">
+      <p>
+        <l>pro</l>
+        <r>pro<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="qua">
+      <p>
+        <l>qua</l>
+        <r>qua<s n="prn"/></r>
       </p>
     </e>
     <e lm="tu">

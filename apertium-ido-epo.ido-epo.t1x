@@ -31,6 +31,10 @@
       <cat-item tags="cnjsub"/>
       <cat-item tags="cnjsub.*"/>
     </def-cat>
+    <def-cat n="det">
+      <cat-item tags="det"/>
+      <cat-item tags="det.*"/>
+    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
@@ -197,6 +201,20 @@
     <rule>
       <pattern>
         <pattern-item n="cnjsub"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Determiner rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
       </pattern>
       <action>
         <out>
