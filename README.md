@@ -1,6 +1,6 @@
 # Ido-Esperanto Language Pair for Apertium
 
-This is an Apertium language pair for translating between **Ido** and **Esperanto** with **6,467 bilingual dictionary entries**.
+This is an Apertium language pair for translating between **Ido** and **Esperanto**.
 
 ## Data Source
 
@@ -11,24 +11,6 @@ This language pair was automatically generated from **Ido Wiktionary** ([io.wikt
 - **Extraction & conversion scripts:** [ido-esperanto-extractor](https://github.com/komapc/ido-esperanto-extractor)
 - **Ido monolingual package:** [apertium-ido](https://github.com/komapc/apertium-ido)
 - **Esperanto monolingual package:** [apertium-epo](https://github.com/apertium/apertium-epo) (existing)
-
-## Dictionary Statistics
-
-### Ido Monolingual
-- **Total entries:** 6,748
-  - Nouns: 3,961
-  - Adjectives: 2,515
-  - Adverbs: 272
-
-### Bilingual Dictionary
-- **Total entries:** 6,467
-  - Nouns: 3,821
-  - Adjectives: 2,373
-  - Adverbs: 200
-  - Verbs: 73
-
-### Esperanto Monolingual
-- Uses existing [apertium-epo](https://github.com/apertium/apertium-epo) package (~93,000 entries)
 
 ## Requirements
 
