@@ -118,10 +118,226 @@
     </pardef>
   </pardefs>
   <section id="main" type="standard">
+    <e lm="Abdias">
+      <p>
+        <l>Abdias</l>
+        <r>Abdias<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Daniel">
+      <p>
+        <l>Daniel</l>
+        <r>Daniel<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Denaskulo">
+      <p>
+        <l>Denaskulo</l>
+        <r>Denaskulo<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Edipus">
+      <p>
+        <l>Edipus</l>
+        <r>Edipus<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Esdras">
+      <p>
+        <l>Esdras</l>
+        <r>Esdras<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Fidji">
+      <p>
+        <l>Fidji</l>
+        <r>Fidji<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Habakuk">
+      <p>
+        <l>Habakuk</l>
+        <r>Habakuk<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Ido">
+      <p>
+        <l>Ido</l>
+        <r>Ido<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Iesu">
+      <p>
+        <l>Iesu</l>
+        <r>Iesu<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Interlingua">
+      <p>
+        <l>Interlingua</l>
+        <r>Interlingua<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Ioannes">
+      <p>
+        <l>Ioannes</l>
+        <r>Ioannes<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Iob">
+      <p>
+        <l>Iob</l>
+        <r>Iob<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Iosue">
+      <p>
+        <l>Iosue</l>
+        <r>Iosue<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Isaias">
+      <p>
+        <l>Isaias</l>
+        <r>Isaias<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Israel">
+      <p>
+        <l>Israel</l>
+        <r>Israel<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Klingona linguo">
+      <p>
+        <l>Klingona linguo</l>
+        <r>Klingona linguo<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Kotava">
+      <p>
+        <l>Kotava</l>
+        <r>Kotava<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Kuba">
+      <p>
+        <l>Kuba</l>
+        <r>Kuba<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Lukas">
+      <p>
+        <l>Lukas</l>
+        <r>Lukas<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Markus">
+      <p>
+        <l>Markus</l>
+        <r>Markus<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Mateus">
+      <p>
+        <l>Mateus</l>
+        <r>Mateus<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Mikaeas">
+      <p>
+        <l>Mikaeas</l>
+        <r>Mikaeas<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Nepal">
+      <p>
+        <l>Nepal</l>
+        <r>Nepal<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Pensilvania">
+      <p>
+        <l>Pensilvania</l>
+        <r>Pensilvania<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Ruto">
+      <p>
+        <l>Ruto</l>
+        <r>Ruto<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Samuel">
+      <p>
+        <l>Samuel</l>
+        <r>Samuel<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Sierra Leone">
+      <p>
+        <l>Sierra Leone</l>
+        <r>Sierra Leone<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Toki Pona">
+      <p>
+        <l>Toki Pona</l>
+        <r>Toki Pona<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Volapük">
+      <p>
+        <l>Volapük</l>
+        <r>Volapük<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Wikivortaro">
+      <p>
+        <l>Wikivortaro</l>
+        <r>Wikivortaro<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Zakarias">
+      <p>
+        <l>Zakarias</l>
+        <r>Zakarias<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="a">
       <p>
         <l>a</l>
         <r>a<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="amen">
+      <p>
+        <l>amen</l>
+        <r>amen<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="angelus">
+      <p>
+        <l>angelus</l>
+        <r>angelus<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="ba">
+      <p>
+        <l>ba</l>
+        <r>ba<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="che">
+      <p>
+        <l>che</l>
+        <r>che<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="corpus juris">
+      <p>
+        <l>corpus juris</l>
+        <r>corpus juris<s n="adv"/></r>
       </p>
     </e>
     <e lm="da">
@@ -142,6 +358,12 @@
         <r>di<s n="pr"/></r>
       </p>
     </e>
+    <e lm="dil">
+      <p>
+        <l>dil</l>
+        <r>dil<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="e">
       <p>
         <l>e</l>
@@ -152,6 +374,24 @@
       <p>
         <l>ed</l>
         <r>ed<s n="cnjcoo"/></r>
+      </p>
+    </e>
+    <e lm="edc.">
+      <p>
+        <l>edc.</l>
+        <r>edc.<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="edelweiss">
+      <p>
+        <l>edelweiss</l>
+        <r>edelweiss<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="ego">
+      <p>
+        <l>ego</l>
+        <r>ego<s n="adv"/></r>
       </p>
     </e>
     <e lm="el">
@@ -166,6 +406,60 @@
         <r>en<s n="pr"/></r>
       </p>
     </e>
+    <e lm="epsilon">
+      <p>
+        <l>epsilon</l>
+        <r>epsilon<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="erste">
+      <p>
+        <l>erste</l>
+        <r>erste<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="forsan">
+      <p>
+        <l>forsan</l>
+        <r>forsan<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="geisha">
+      <p>
+        <l>geisha</l>
+        <r>geisha<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="ghetto">
+      <p>
+        <l>ghetto</l>
+        <r>ghetto<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="hamburger">
+      <p>
+        <l>hamburger</l>
+        <r>hamburger<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="ho.">
+      <p>
+        <l>ho.</l>
+        <r>ho.<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="hola">
+      <p>
+        <l>hola</l>
+        <r>hola<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="hundyuno">
+      <p>
+        <l>hundyuno</l>
+        <r>hundyuno<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="il">
       <p>
         <l>il</l>
@@ -178,10 +472,34 @@
         <r>inter<s n="pr"/></r>
       </p>
     </e>
+    <e lm="ja">
+      <p>
+        <l>ja</l>
+        <r>ja<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="kande">
+      <p>
+        <l>kande</l>
+        <r>kande<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="ke">
       <p>
         <l>ke</l>
         <r>ke<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e lm="kin">
+      <p>
+        <l>kin</l>
+        <r>kin<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="koram">
+      <p>
+        <l>koram</l>
+        <r>koram<s n="adv"/></r>
       </p>
     </e>
     <e lm="la">
@@ -190,10 +508,28 @@
         <r>la<s n="det"/></r>
       </p>
     </e>
+    <e lm="lavomashino">
+      <p>
+        <l>lavomashino</l>
+        <r>lavomashino<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="li">
       <p>
         <l>li</l>
         <r>li<s n="prn"/></r>
+      </p>
+    </e>
+    <e lm="linguo">
+      <p>
+        <l>linguo</l>
+        <r>linguo<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="lo">
+      <p>
+        <l>lo</l>
+        <r>lo<s n="pr"/></r>
       </p>
     </e>
     <e lm="lu">
@@ -214,10 +550,40 @@
         <r>malgre<s n="pr"/></r>
       </p>
     </e>
+    <e lm="manjajo">
+      <p>
+        <l>manjajo</l>
+        <r>manjajo<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="me">
       <p>
         <l>me</l>
         <r>me<s n="prn"/></r>
+      </p>
+    </e>
+    <e lm="muelilo">
+      <p>
+        <l>muelilo</l>
+        <r>muelilo<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="muelodisko">
+      <p>
+        <l>muelodisko</l>
+        <r>muelodisko<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="musketiero">
+      <p>
+        <l>musketiero</l>
+        <r>musketiero<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="nam">
+      <p>
+        <l>nam</l>
+        <r>nam<s n="adv"/></r>
       </p>
     </e>
     <e lm="ne">
@@ -226,10 +592,34 @@
         <r>ne<s n="adv"/></r>
       </p>
     </e>
+    <e lm="nek">
+      <p>
+        <l>nek</l>
+        <r>nek<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="ni">
       <p>
         <l>ni</l>
         <r>ni<s n="prn"/></r>
+      </p>
+    </e>
+    <e lm="nigra truo">
+      <p>
+        <l>nigra truo</l>
+        <r>nigra truo<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="no">
+      <p>
+        <l>no</l>
+        <r>no<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="nultempe">
+      <p>
+        <l>nultempe</l>
+        <r>nultempe<s n="adv"/></r>
       </p>
     </e>
     <e lm="o">
@@ -244,10 +634,52 @@
         <r>ol<s n="prn"/></r>
       </p>
     </e>
+    <e lm="patria">
+      <p>
+        <l>patria</l>
+        <r>patria<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="pizza">
+      <p>
+        <l>pizza</l>
+        <r>pizza<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="plu">
+      <p>
+        <l>plu</l>
+        <r>plu<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="po">
+      <p>
+        <l>po</l>
+        <r>po<s n="pr"/></r>
+      </p>
+    </e>
     <e lm="por">
       <p>
         <l>por</l>
         <r>por<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="preske">
+      <p>
+        <l>preske</l>
+        <r>preske<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="preter">
+      <p>
+        <l>preter</l>
+        <r>preter<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="pri">
+      <p>
+        <l>pri</l>
+        <r>pri<s n="adv"/></r>
       </p>
     </e>
     <e lm="pro">
@@ -262,16 +694,142 @@
         <r>qua<s n="prn"/></r>
       </p>
     </e>
+    <e lm="quak">
+      <p>
+        <l>quak</l>
+        <r>quak<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="quale tu standas">
+      <p>
+        <l>quale tu standas</l>
+        <r>quale tu standas<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="quale vu standas">
+      <p>
+        <l>quale vu standas</l>
+        <r>quale vu standas<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="quankam">
+      <p>
+        <l>quankam</l>
+        <r>quankam<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="quoniam">
+      <p>
+        <l>quoniam</l>
+        <r>quoniam<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="se">
+      <p>
+        <l>se</l>
+        <r>se<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e lm="segun">
+      <p>
+        <l>segun</l>
+        <r>segun<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="sempre">
+      <p>
+        <l>sempre</l>
+        <r>sempre<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="sen">
+      <p>
+        <l>sen</l>
+        <r>sen<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="submersonavo">
+      <p>
+        <l>submersonavo</l>
+        <r>submersonavo<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="sushi">
+      <p>
+        <l>sushi</l>
+        <r>sushi<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="tamen">
+      <p>
+        <l>tamen</l>
+        <r>tamen<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="tre">
+      <p>
+        <l>tre</l>
+        <r>tre<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="triesma">
+      <p>
+        <l>triesma</l>
+        <r>triesma<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="tu">
       <p>
         <l>tu</l>
         <r>tu<s n="prn"/></r>
       </p>
     </e>
+    <e lm="ube">
+      <p>
+        <l>ube</l>
+        <r>ube<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="ube esas la latrino">
+      <p>
+        <l>ube esas la latrino</l>
+        <r>ube esas la latrino<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="uf">
+      <p>
+        <l>uf</l>
+        <r>uf<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="ve">
+      <p>
+        <l>ve</l>
+        <r>ve<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="vi">
       <p>
         <l>vi</l>
         <r>vi<s n="prn"/></r>
+      </p>
+    </e>
+    <e lm="watt">
+      <p>
+        <l>watt</l>
+        <r>watt<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="ya">
+      <p>
+        <l>ya</l>
+        <r>ya<s n="pr"/></r>
+      </p>
+    </e>
+    <e lm="ye">
+      <p>
+        <l>ye</l>
+        <r>ye<s n="adv"/></r>
       </p>
     </e>
     <e lm="yes">
