@@ -118,10 +118,220 @@
     </pardef>
   </pardefs>
   <section id="main" type="standard">
+    <e lm="1000ma">
+      <p>
+        <l>1000ma</l>
+        <r>1000ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="100ma">
+      <p>
+        <l>100ma</l>
+        <r>100ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="10ma">
+      <p>
+        <l>10ma</l>
+        <r>10ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="11ma">
+      <p>
+        <l>11ma</l>
+        <r>11ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="12ma">
+      <p>
+        <l>12ma</l>
+        <r>12ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="13ma">
+      <p>
+        <l>13ma</l>
+        <r>13ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="14ma">
+      <p>
+        <l>14ma</l>
+        <r>14ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="15ma">
+      <p>
+        <l>15ma</l>
+        <r>15ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="16ma">
+      <p>
+        <l>16ma</l>
+        <r>16ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="17ma">
+      <p>
+        <l>17ma</l>
+        <r>17ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="18ma">
+      <p>
+        <l>18ma</l>
+        <r>18ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="19ma">
+      <p>
+        <l>19ma</l>
+        <r>19ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="1ma">
+      <p>
+        <l>1ma</l>
+        <r>1ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="20ma">
+      <p>
+        <l>20ma</l>
+        <r>20ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="21ma">
+      <p>
+        <l>21ma</l>
+        <r>21ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="22ma">
+      <p>
+        <l>22ma</l>
+        <r>22ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="23ma">
+      <p>
+        <l>23ma</l>
+        <r>23ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="24ma">
+      <p>
+        <l>24ma</l>
+        <r>24ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="25ma">
+      <p>
+        <l>25ma</l>
+        <r>25ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="26ma">
+      <p>
+        <l>26ma</l>
+        <r>26ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="27ma">
+      <p>
+        <l>27ma</l>
+        <r>27ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="28ma">
+      <p>
+        <l>28ma</l>
+        <r>28ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="29ma">
+      <p>
+        <l>29ma</l>
+        <r>29ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="2ma">
+      <p>
+        <l>2ma</l>
+        <r>2ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="30ma">
+      <p>
+        <l>30ma</l>
+        <r>30ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="31ma">
+      <p>
+        <l>31ma</l>
+        <r>31ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="3ma">
+      <p>
+        <l>3ma</l>
+        <r>3ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="4ma">
+      <p>
+        <l>4ma</l>
+        <r>4ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="5ma">
+      <p>
+        <l>5ma</l>
+        <r>5ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="6ma">
+      <p>
+        <l>6ma</l>
+        <r>6ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="7ma">
+      <p>
+        <l>7ma</l>
+        <r>7ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="8ma">
+      <p>
+        <l>8ma</l>
+        <r>8ma<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="9ma">
+      <p>
+        <l>9ma</l>
+        <r>9ma<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="Abdias">
       <p>
         <l>Abdias</l>
         <r>Abdias<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Alfred">
+      <p>
+        <l>Alfred</l>
+        <r>Alfred<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Berlin">
+      <p>
+        <l>Berlin</l>
+        <r>Berlin<s n="adv"/></r>
       </p>
     </e>
     <e lm="Daniel">
@@ -226,6 +436,12 @@
         <r>Kuba<s n="adv"/></r>
       </p>
     </e>
+    <e lm="London">
+      <p>
+        <l>London</l>
+        <r>London<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="Lukas">
       <p>
         <l>Lukas</l>
@@ -256,6 +472,30 @@
         <r>Nepal<s n="adv"/></r>
       </p>
     </e>
+    <e lm="New York">
+      <p>
+        <l>New York</l>
+        <r>New York<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Nobel">
+      <p>
+        <l>Nobel</l>
+        <r>Nobel<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Oslo">
+      <p>
+        <l>Oslo</l>
+        <r>Oslo<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Paris">
+      <p>
+        <l>Paris</l>
+        <r>Paris<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="Pensilvania">
       <p>
         <l>Pensilvania</l>
@@ -278,6 +518,12 @@
       <p>
         <l>Sierra Leone</l>
         <r>Sierra Leone<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Stockholm">
+      <p>
+        <l>Stockholm</l>
+        <r>Stockholm<s n="adv"/></r>
       </p>
     </e>
     <e lm="Toki Pona">
@@ -5922,6 +6168,10 @@
       <i>folklor</i>
       <par n="o__n"/>
     </e>
+    <e lm="fonduro">
+      <i>fondur</i>
+      <par n="o__n"/>
+    </e>
     <e lm="fonetiko">
       <i>fonetik</i>
       <par n="o__n"/>
@@ -11024,6 +11274,10 @@
     </e>
     <e lm="mortero">
       <i>morter</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="mortodio">
+      <i>mortodi</i>
       <par n="o__n"/>
     </e>
     <e lm="moruo">
