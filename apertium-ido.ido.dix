@@ -322,16 +322,10 @@
         <r>Abdias<s n="adv"/></r>
       </p>
     </e>
-    <e lm="Alfred">
+    <e lm="Amerikana">
       <p>
-        <l>Alfred</l>
-        <r>Alfred<s n="adv"/></r>
-      </p>
-    </e>
-    <e lm="Berlin">
-      <p>
-        <l>Berlin</l>
-        <r>Berlin<s n="adv"/></r>
+        <l>Amerikana</l>
+        <r>Amerikana<s n="adv"/></r>
       </p>
     </e>
     <e lm="Daniel">
@@ -356,6 +350,12 @@
       <p>
         <l>Esdras</l>
         <r>Esdras<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Europana">
+      <p>
+        <l>Europana</l>
+        <r>Europana<s n="adv"/></r>
       </p>
     </e>
     <e lm="Fidji">
@@ -418,6 +418,12 @@
         <r>Israel<s n="adv"/></r>
       </p>
     </e>
+    <e lm="Italiana">
+      <p>
+        <l>Italiana</l>
+        <r>Italiana<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="Klingona linguo">
       <p>
         <l>Klingona linguo</l>
@@ -434,12 +440,6 @@
       <p>
         <l>Kuba</l>
         <r>Kuba<s n="adv"/></r>
-      </p>
-    </e>
-    <e lm="London">
-      <p>
-        <l>London</l>
-        <r>London<s n="adv"/></r>
       </p>
     </e>
     <e lm="Lukas">
@@ -478,24 +478,6 @@
         <r>New York<s n="adv"/></r>
       </p>
     </e>
-    <e lm="Nobel">
-      <p>
-        <l>Nobel</l>
-        <r>Nobel<s n="adv"/></r>
-      </p>
-    </e>
-    <e lm="Oslo">
-      <p>
-        <l>Oslo</l>
-        <r>Oslo<s n="adv"/></r>
-      </p>
-    </e>
-    <e lm="Paris">
-      <p>
-        <l>Paris</l>
-        <r>Paris<s n="adv"/></r>
-      </p>
-    </e>
     <e lm="Pensilvania">
       <p>
         <l>Pensilvania</l>
@@ -520,10 +502,10 @@
         <r>Sierra Leone<s n="adv"/></r>
       </p>
     </e>
-    <e lm="Stockholm">
+    <e lm="Svediana">
       <p>
-        <l>Stockholm</l>
-        <r>Stockholm<s n="adv"/></r>
+        <l>Svediana</l>
+        <r>Svediana<s n="adv"/></r>
       </p>
     </e>
     <e lm="Toki Pona">
@@ -580,6 +562,12 @@
         <r>che<s n="adv"/></r>
       </p>
     </e>
+    <e lm="cirke">
+      <p>
+        <l>cirke</l>
+        <r>cirke<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="corpus juris">
       <p>
         <l>corpus juris</l>
@@ -608,6 +596,12 @@
       <p>
         <l>dil</l>
         <r>dil<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="du">
+      <p>
+        <l>du</l>
+        <r>du<s n="pr"/></r>
       </p>
     </e>
     <e lm="e">
@@ -664,6 +658,12 @@
         <r>erste<s n="adv"/></r>
       </p>
     </e>
+    <e lm="esis">
+      <p>
+        <l>esis</l>
+        <r>esis<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="forsan">
       <p>
         <l>forsan</l>
@@ -682,10 +682,22 @@
         <r>ghetto<s n="adv"/></r>
       </p>
     </e>
+    <e lm="habitanti">
+      <p>
+        <l>habitanti</l>
+        <r>habitanti<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="hamburger">
       <p>
         <l>hamburger</l>
         <r>hamburger<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="havis">
+      <p>
+        <l>havis</l>
+        <r>havis<s n="adv"/></r>
       </p>
     </e>
     <e lm="ho.">
@@ -746,6 +758,18 @@
       <p>
         <l>koram</l>
         <r>koram<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="kreiesis">
+      <p>
+        <l>kreiesis</l>
+        <r>kreiesis<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="kun">
+      <p>
+        <l>kun</l>
+        <r>kun<s n="pr"/></r>
       </p>
     </e>
     <e lm="la">
@@ -994,6 +1018,12 @@
         <r>sen<s n="pr"/></r>
       </p>
     </e>
+    <e lm="situita">
+      <p>
+        <l>situita</l>
+        <r>situita<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="submersonavo">
       <p>
         <l>submersonavo</l>
@@ -1058,6 +1088,12 @@
       <p>
         <l>vi</l>
         <r>vi<s n="prn"/></r>
+      </p>
+    </e>
+    <e lm="vizitis">
+      <p>
+        <l>vizitis</l>
+        <r>vizitis<s n="adv"/></r>
       </p>
     </e>
     <e lm="watt">
@@ -1266,6 +1302,10 @@
     </e>
     <e lm="Sporadi">
       <i>Sporad</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Suediano">
+      <i>Suedian</i>
       <par n="o__n"/>
     </e>
     <e lm="Swazilando">
@@ -3962,6 +4002,10 @@
     </e>
     <e lm="chefino">
       <i>chef</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="cheflando">
+      <i>chefland</i>
       <par n="o__n"/>
     </e>
     <e lm="chefo">
@@ -7118,6 +7162,10 @@
     </e>
     <e lm="guyavo">
       <i>guyav</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="habitanto">
+      <i>habitant</i>
       <par n="o__n"/>
     </e>
     <e lm="halo">
@@ -16780,6 +16828,10 @@
       <i>volupt</i>
       <par n="o__n"/>
     </e>
+    <e lm="vorti">
+      <i>vort</i>
+      <par n="o__n"/>
+    </e>
     <e lm="vorto">
       <i>vort</i>
       <par n="o__n"/>
@@ -16850,6 +16902,10 @@
     </e>
     <e lm="yakto">
       <i>yakt</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="yarcento">
+      <i>yarcent</i>
       <par n="o__n"/>
     </e>
     <e lm="yardo">
@@ -17516,16 +17572,8 @@
       <i>Stiri</i>
       <par n="a__adj"/>
     </e>
-    <e lm="Suedia">
-      <i>Suedi</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="Suediana">
-      <i>Suedi</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="Suediano">
-      <i>Suedi</i>
+      <i>Suedian</i>
       <par n="a__adj"/>
     </e>
     <e lm="Suisia">
@@ -17762,6 +17810,10 @@
     </e>
     <e lm="aquafortajo">
       <i>aquafort</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="aquoza">
+      <i>aquoz</i>
       <par n="a__adj"/>
     </e>
     <e lm="arida">
@@ -18338,6 +18390,10 @@
     </e>
     <e lm="ekleziala">
       <i>eklezi</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="ekonomiala">
+      <i>ekonomial</i>
       <par n="a__adj"/>
     </e>
     <e lm="elastika">
@@ -18964,6 +19020,10 @@
       <i>intern</i>
       <par n="a__adj"/>
     </e>
+    <e lm="internasionala">
+      <i>internasional</i>
+      <par n="a__adj"/>
+    </e>
     <e lm="interogativa">
       <i>interogativ</i>
       <par n="a__adj"/>
@@ -19252,6 +19312,10 @@
       <i>kruel</i>
       <par n="a__adj"/>
     </e>
+    <e lm="kulturala">
+      <i>kultural</i>
+      <par n="a__adj"/>
+    </e>
     <e lm="kuracala">
       <i>kurac</i>
       <par n="a__adj"/>
@@ -19364,6 +19428,10 @@
       <i>livid</i>
       <par n="a__adj"/>
     </e>
+    <e lm="lokala">
+      <i>lokal</i>
+      <par n="a__adj"/>
+    </e>
     <e lm="longa">
       <i>long</i>
       <par n="a__adj"/>
@@ -19414,6 +19482,10 @@
     </e>
     <e lm="manuagar">
       <i>manu</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="maritima">
+      <i>maritim</i>
       <par n="a__adj"/>
     </e>
     <e lm="masiva">
@@ -19538,6 +19610,10 @@
     </e>
     <e lm="naiva">
       <i>naiv</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="nasionala">
+      <i>nasional</i>
       <par n="a__adj"/>
     </e>
     <e lm="naturala">
@@ -19690,6 +19766,10 @@
     </e>
     <e lm="organika">
       <i>organik</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="orienta">
+      <i>orient</i>
       <par n="a__adj"/>
     </e>
     <e lm="originala">
@@ -19894,6 +19974,10 @@
     </e>
     <e lm="polita">
       <i>polit</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="politikala">
+      <i>politikal</i>
       <par n="a__adj"/>
     </e>
     <e lm="polutado">
@@ -20440,6 +20524,10 @@
       <i>sobr</i>
       <par n="a__adj"/>
     </e>
+    <e lm="sociala">
+      <i>social</i>
+      <par n="a__adj"/>
+    </e>
     <e lm="socialismo">
       <i>soci</i>
       <par n="a__adj"/>
@@ -20718,6 +20806,10 @@
     </e>
     <e lm="trotado">
       <i>trot</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="turista">
+      <i>turist</i>
       <par n="a__adj"/>
     </e>
     <e lm="ubiqua">
@@ -22566,6 +22658,10 @@
     </e>
     <e lm="decensar">
       <i>decens</i>
+      <par n="ar__vblex"/>
+    </e>
+    <e lm="decentar">
+      <i>decent</i>
       <par n="ar__vblex"/>
     </e>
     <e lm="deceptar">
@@ -25218,6 +25314,10 @@
     </e>
     <e lm="kreditar">
       <i>kredit</i>
+      <par n="ar__vblex"/>
+    </e>
+    <e lm="kreiar">
+      <i>krei</i>
       <par n="ar__vblex"/>
     </e>
     <e lm="kremacar">
@@ -28083,6 +28183,54 @@
     <e lm="zumar">
       <i>zum</i>
       <par n="ar__vblex"/>
+    </e>
+    <e lm="Alfred">
+      <p>
+        <l>Alfred</l>
+        <r>Alfred<s n="np"/></r>
+      </p>
+    </e>
+    <e lm="Berlin">
+      <p>
+        <l>Berlin</l>
+        <r>Berlin<s n="np"/></r>
+      </p>
+    </e>
+    <e lm="London">
+      <p>
+        <l>London</l>
+        <r>London<s n="np"/></r>
+      </p>
+    </e>
+    <e lm="Nobel">
+      <p>
+        <l>Nobel</l>
+        <r>Nobel<s n="np"/></r>
+      </p>
+    </e>
+    <e lm="Oslo">
+      <p>
+        <l>Oslo</l>
+        <r>Oslo<s n="np"/></r>
+      </p>
+    </e>
+    <e lm="Paris">
+      <p>
+        <l>Paris</l>
+        <r>Paris<s n="np"/></r>
+      </p>
+    </e>
+    <e lm="Stockholm">
+      <p>
+        <l>Stockholm</l>
+        <r>Stockholm<s n="np"/></r>
+      </p>
+    </e>
+    <e lm="Suedia">
+      <p>
+        <l>Suedia</l>
+        <r>Suedia<s n="np"/></r>
+      </p>
     </e>
   </section>
 </dictionary>

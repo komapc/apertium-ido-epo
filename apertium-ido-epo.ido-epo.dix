@@ -9,12 +9,61 @@
     <sdef n="pr" c="Preposition"/>
     <sdef n="prn" c="Pronoun"/>
     <sdef n="det" c="Determiner"/>
+    <sdef n="np" c="Proper noun"/>
     <sdef n="num" c="Numeral"/>
     <sdef n="cnjcoo" c="Coordinating conjunction"/>
     <sdef n="cnjsub" c="Subordinating conjunction"/>
     <sdef n="ij" c="Interjection"/>
   </sdefs>
   <section id="main" type="standard">
+    <e>
+      <p>
+        <l>Alfred<s n="np"/></l>
+        <r>Alfredo<s n="np"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Berlin<s n="np"/></l>
+        <r>Berlino<s n="np"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>London<s n="np"/></l>
+        <r>Londono<s n="np"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Nobel<s n="np"/></l>
+        <r>Nobel<s n="np"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Oslo<s n="np"/></l>
+        <r>Oslo<s n="np"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Paris<s n="np"/></l>
+        <r>Parizo<s n="np"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Stockholm<s n="np"/></l>
+        <r>Stokholmo<s n="np"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Suedia<s n="np"/></l>
+        <r>Svedio<s n="np"/></r>
+      </p>
+    </e>
     <e>
       <p>
         <l>ne<s n="adv"/></l>
@@ -433,6 +482,12 @@
       <p>
         <l>Sporad<s n="n"/></l>
         <r>Sporadoj<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Suedian<s n="n"/></l>
+        <r>svedo<s n="n"/></r>
       </p>
     </e>
     <e>
@@ -4063,6 +4118,12 @@
       <p>
         <l>chef<s n="n"/></l>
         <r>ĉefo<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>chefland<s n="n"/></l>
+        <r>ĉefurbo<s n="n"/></r>
       </p>
     </e>
     <e>
@@ -8713,6 +8774,12 @@
       <p>
         <l>guyav<s n="n"/></l>
         <r>gujavo<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>habitant<s n="n"/></l>
+        <r>loĝanto<s n="n"/></r>
       </p>
     </e>
     <e>
@@ -22877,6 +22944,12 @@
     </e>
     <e>
       <p>
+        <l>vort<s n="n"/></l>
+        <r>vortoj<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>voy<s n="n"/></l>
         <r>trako<s n="n"/></r>
       </p>
@@ -22981,6 +23054,12 @@
       <p>
         <l>yar<s n="n"/></l>
         <r>jaro<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>yarcent<s n="n"/></l>
+        <r>jarcento<s n="n"/></r>
       </p>
     </e>
     <e>
@@ -23795,20 +23874,8 @@
     </e>
     <e>
       <p>
-        <l>Suedi<s n="adj"/></l>
-        <r>Svedio<s n="adj"/></r>
-      </p>
-    </e>
-    <e>
-      <p>
-        <l>Suedi<s n="adj"/></l>
+        <l>Suedian<s n="adj"/></l>
         <r>sveda<s n="adj"/></r>
-      </p>
-    </e>
-    <e>
-      <p>
-        <l>Suedi<s n="adj"/></l>
-        <r>svedo<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -24145,6 +24212,12 @@
       <p>
         <l>aquafort<s n="adj"/></l>
         <r>akvaforto<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>aquoz<s n="adj"/></l>
+        <r>akva<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -24769,6 +24842,12 @@
       <p>
         <l>eklezi<s n="adj"/></l>
         <r>eklezia<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ekonomial<s n="adj"/></l>
+        <r>ekonomia<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -25613,6 +25692,12 @@
     </e>
     <e>
       <p>
+        <l>internasional<s n="adj"/></l>
+        <r>internacia<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>interogativ<s n="adj"/></l>
         <r>demanda<s n="adj"/></r>
       </p>
@@ -26039,6 +26124,12 @@
     </e>
     <e>
       <p>
+        <l>kultural<s n="adj"/></l>
+        <r>kultura<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>kurac<s n="adj"/></l>
         <r>kuracaj<s n="adj"/></r>
       </p>
@@ -26177,6 +26268,12 @@
     </e>
     <e>
       <p>
+        <l>lokal<s n="adj"/></l>
+        <r>loka<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>long<s n="adj"/></l>
         <r>longa<s n="adj"/></r>
       </p>
@@ -26239,6 +26336,12 @@
       <p>
         <l>malign<s n="adj"/></l>
         <r>malica<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>maritim<s n="adj"/></l>
+        <r>maristrana<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -26407,6 +26510,12 @@
       <p>
         <l>naiv<s n="adj"/></l>
         <r>naiva<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>nasional<s n="adj"/></l>
+        <r>nacia<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -26611,6 +26720,12 @@
       <p>
         <l>organik<s n="adj"/></l>
         <r>organika<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>orient<s n="adj"/></l>
+        <r>orienta<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -26905,6 +27020,12 @@
       <p>
         <l>polit<s n="adj"/></l>
         <r>ĝentila<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>politikal<s n="adj"/></l>
+        <r>politika<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -27689,6 +27810,12 @@
     </e>
     <e>
       <p>
+        <l>social<s n="adj"/></l>
+        <r>sociala<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>sokurs<s n="adj"/></l>
         <r>asistado<s n="adj"/></r>
       </p>
@@ -28021,6 +28148,12 @@
       <p>
         <l>trot<s n="adj"/></l>
         <r>trotado<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>turist<s n="adj"/></l>
+        <r>turista<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -28463,6 +28596,12 @@
     </e>
     <e>
       <p>
+        <l>Amerikana<s n="adv"/></l>
+        <r>Amer ika<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>Berlin<s n="adv"/></l>
         <r>Berlino<s n="adv"/></r>
       </p>
@@ -28489,6 +28628,12 @@
       <p>
         <l>Esdras<s n="adv"/></l>
         <r>Ezra<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Europana<s n="adv"/></l>
+        <r>Eŭropa<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -28543,6 +28688,12 @@
       <p>
         <l>Israel<s n="adv"/></l>
         <r>Israelo<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Italiana<s n="adv"/></l>
+        <r>Itala<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -28651,6 +28802,18 @@
       <p>
         <l>Stockholm<s n="adv"/></l>
         <r>Stokholmo<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Suedia<s n="adv"/></l>
+        <r>Svedio<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>Svediana<s n="adv"/></l>
+        <r>Svedia<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -28877,6 +29040,12 @@
     </e>
     <e>
       <p>
+        <l>cirke<s n="adv"/></l>
+        <r>ĉirkaŭ<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>cirkul<s n="adv"/></l>
         <r>cirkulero<s n="adv"/></r>
       </p>
@@ -29021,6 +29190,12 @@
     </e>
     <e>
       <p>
+        <l>esis<s n="adv"/></l>
+        <r>estis<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>eskrok<s n="adv"/></l>
         <r>krimulo<s n="adv"/></r>
       </p>
@@ -29135,8 +29310,20 @@
     </e>
     <e>
       <p>
+        <l>habitanti<s n="adv"/></l>
+        <r>loĝantoj<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>hamburger<s n="adv"/></l>
         <r>burgero<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>havis<s n="adv"/></l>
+        <r>havis<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -29377,6 +29564,12 @@
       <p>
         <l>koram<s n="adv"/></l>
         <r>antaŭ<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>kreiesis<s n="adv"/></l>
+        <r>kreiĝis<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -29933,6 +30126,12 @@
     </e>
     <e>
       <p>
+        <l>situita<s n="adv"/></l>
+        <r>situata<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>skrib<s n="adv"/></l>
         <r>verkisto<s n="adv"/></r>
       </p>
@@ -30139,6 +30338,12 @@
       <p>
         <l>vizit<s n="adv"/></l>
         <r>vizitanto<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>vizitis<s n="adv"/></l>
+        <r>vizitis<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -31087,6 +31292,12 @@
       <p>
         <l>decens<s n="vblex"/></l>
         <r>decensi<s n="vblex"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>decent<s n="vblex"/></l>
+        <r>deveni<s n="vblex"/></r>
       </p>
     </e>
     <e>
@@ -35209,6 +35420,12 @@
       <p>
         <l>kredit<s n="vblex"/></l>
         <r>krediti<s n="vblex"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>krei<s n="vblex"/></l>
+        <r>krei<s n="vblex"/></r>
       </p>
     </e>
     <e>

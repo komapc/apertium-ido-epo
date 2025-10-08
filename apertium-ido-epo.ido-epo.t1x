@@ -35,6 +35,10 @@
       <cat-item tags="det"/>
       <cat-item tags="det.*"/>
     </def-cat>
+    <def-cat n="np">
+      <cat-item tags="np"/>
+      <cat-item tags="np.*"/>
+    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
@@ -74,6 +78,110 @@
   </section-def-vars>
 
   <section-rules>
+    <!-- Verb + Adjective + Noun: apply accusative to direct object -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="acc"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_nom"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="acc"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Verb + Noun: apply accusative to direct object -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_nom"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <lit-tag v="acc"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Conjunction + Noun (after verb): also needs accusative -->
+    <rule>
+      <pattern>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_nom"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <lit-tag v="acc"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Conjunction + Adjective + Noun (after verb): accusative for both -->
+    <rule>
+      <pattern>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="acc"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_nom"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="acc"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Adjective + Noun rule: propagate number and case from noun to adjective -->
     <rule>
       <pattern>
@@ -220,6 +328,42 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Proper noun rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Verb + Proper noun: apply accusative to object -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <lit-tag v="n"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="acc"/>
           </lu>
         </out>
       </action>
