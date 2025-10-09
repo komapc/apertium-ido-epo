@@ -6,7 +6,7 @@
         Generated: 2025-10-09T00:27:11.969341
         Entries: 7555
         -->
-  <alphabet>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</alphabet>
+  <alphabet>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789²</alphabet>
   <sdefs>
     <sdef n="n" c="Noun"/>
     <sdef n="adj" c="Adjective"/>
@@ -15,6 +15,8 @@
     <sdef n="pr" c="Preposition"/>
     <sdef n="prn" c="Pronoun"/>
     <sdef n="det" c="Determiner"/>
+    <sdef n="def" c="Definite"/>
+    <sdef n="ind" c="Indefinite"/>
     <sdef n="num" c="Numeral"/>
     <sdef n="cnjcoo" c="Coordinating conjunction"/>
     <sdef n="cnjsub" c="Subordinating conjunction"/>
@@ -96,12 +98,42 @@
         </p>
       </e>
     </pardef>
+    <pardef n="ala__adj">
+      <e>
+        <p>
+          <l>ala</l>
+          <r>
+            <s n="adj"/>
+          </r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ale</l>
+          <r>
+            <s n="adv"/>
+          </r>
+        </p>
+      </e>
+    </pardef>
     <pardef n="e__adv">
       <e>
         <p>
           <l>e</l>
           <r>
             <s n="adv"/>
+          </r>
+        </p>
+      </e>
+    </pardef>
+    <pardef n="__inv_n">
+      <e>
+        <p>
+          <l></l>
+          <r>
+            <s n="n"/>
+            <s n="sp"/>
+            <s n="nom"/>
           </r>
         </p>
       </e>
@@ -162,8 +194,235 @@
         </p>
       </e>
     </pardef>
+    <!-- Paradigms for function words -->
+    <pardef n="__cnjcoo">
+      <e>
+        <p>
+          <l></l>
+          <r><s n="cnjcoo"/></r>
+        </p>
+      </e>
+    </pardef>
+    <pardef n="__cnjsub">
+      <e>
+        <p>
+          <l></l>
+          <r><s n="cnjsub"/></r>
+        </p>
+      </e>
+    </pardef>
+    <pardef n="__pr">
+      <e>
+        <p>
+          <l></l>
+          <r><s n="pr"/></r>
+        </p>
+      </e>
+    </pardef>
+    <pardef n="__prn">
+      <e>
+        <p>
+          <l></l>
+          <r><s n="prn"/></r>
+        </p>
+      </e>
+    </pardef>
+    <pardef n="__det">
+      <e>
+        <p>
+          <l></l>
+          <r><s n="det"/><s n="def"/><s n="sp"/></r>
+        </p>
+      </e>
+    </pardef>
+    <pardef n="__ij">
+      <e>
+        <p>
+          <l></l>
+          <r><s n="ij"/></r>
+        </p>
+      </e>
+    </pardef>
   </pardefs>
   <section id="main" type="standard">
+    <!-- Function Words (added manually for Ido grammar) -->
+    
+    <!-- Coordinating Conjunctions -->
+    <e lm="e">
+      <i>e</i>
+      <par n="__cnjcoo"/>
+    </e>
+    <e lm="od">
+      <i>od</i>
+      <par n="__cnjcoo"/>
+    </e>
+    <e lm="ma">
+      <i>ma</i>
+      <par n="__cnjcoo"/>
+    </e>
+    
+    <!-- Subordinating Conjunctions -->
+    <e lm="dum">
+      <i>dum</i>
+      <par n="__cnjsub"/>
+    </e>
+    <e lm="kad">
+      <i>kad</i>
+      <par n="__cnjsub"/>
+    </e>
+    <e lm="kam">
+      <i>kam</i>
+      <par n="__cnjsub"/>
+    </e>
+    <e lm="se">
+      <i>se</i>
+      <par n="__cnjsub"/>
+    </e>
+    <e lm="pro">
+      <i>pro</i>
+      <par n="__cnjsub"/>
+    </e>
+    <e lm="nam">
+      <i>nam</i>
+      <par n="__cnjsub"/>
+    </e>
+    <e lm="pos">
+      <i>pos</i>
+      <par n="__cnjsub"/>
+    </e>
+    <e lm="ko">
+      <i>ko</i>
+      <par n="__cnjsub"/>
+    </e>
+    
+    <!-- Prepositions -->
+    <e lm="a">
+      <i>a</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="ad">
+      <i>ad</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="al">
+      <i>al</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="ante">
+      <i>ante</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="da">
+      <i>da</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="de">
+      <i>de</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="di">
+      <i>di</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="en">
+      <i>en</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="inter">
+      <i>inter</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="kontre">
+      <i>kontre</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="kun">
+      <i>kun</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="per">
+      <i>per</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="por">
+      <i>por</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="pos">
+      <i>pos</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="pri">
+      <i>pri</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="pro">
+      <i>pro</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="sen">
+      <i>sen</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="sur">
+      <i>sur</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="tra">
+      <i>tra</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="trans">
+      <i>trans</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="ultra">
+      <i>ultra</i>
+      <par n="__pr"/>
+    </e>
+    
+    <!-- Pronouns -->
+    <e lm="qua">
+      <i>qua</i>
+      <par n="__prn"/>
+    </e>
+    <e lm="qui">
+      <i>qui</i>
+      <par n="__prn"/>
+    </e>
+    <e lm="quo">
+      <i>quo</i>
+      <par n="__prn"/>
+    </e>
+    <e lm="qual">
+      <i>qual</i>
+      <par n="__prn"/>
+    </e>
+    <e lm="ka">
+      <i>ka</i>
+      <par n="__prn"/>
+    </e>
+    <e lm="yen">
+      <i>yen</i>
+      <par n="__prn"/>
+    </e>
+    
+    <!-- Determiner -->
+    <e lm="la">
+      <i>la</i>
+      <par n="__det"/>
+    </e>
+    
+    <!-- Common interjections -->
+    <e lm="yes">
+      <i>yes</i>
+      <par n="__ij"/>
+    </e>
+    <e lm="no">
+      <i>no</i>
+      <par n="__ij"/>
+    </e>
+    
     <!-- Nouns (3961 entries) -->
     <e lm="Biblo">
       <i>Bibl</i>
@@ -253,9 +512,170 @@
       <i>Jupiter</i>
       <par n="o__n"/>
     </e>
+    <e lm="Afrika">
+      <i>Afrik</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Amerika">
+      <i>Amerik</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Anglia">
+      <i>Angli</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Antartika">
+      <i>Antartik</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Argentina">
+      <i>Argentin</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Atlantiko">
+      <i>Atlantik</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Austria">
+      <i>Austri</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Azia">
+      <i>Azi</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Belgia">
+      <i>Belgi</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Brazilia">
+      <i>Brazili</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Chekia">
+      <i>Cheki</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Chinia">
+      <i>Chini</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Danubo">
+      <i>Danub</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Egiptia">
+      <i>Egipti</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Europa">
+      <i>Europ</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Francia">
+      <i>Franci</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Franco">
+      <i>Franc</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Gaulo">
+      <i>Gaul</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Germania">
+      <i>Germani</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Grekia">
+      <i>Greki</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Hispania">
+      <i>Hispani</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Holanda">
+      <i>Holand</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="India">
+      <i>Indi</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Irlando">
+      <i>Irland</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Israel">
+      <i>Israel</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Israelo">
+      <i>Israel</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Italia">
+      <i>Itali</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Japonia">
+      <i>Japoni</i>
+      <par n="a__adj"/>
+    </e>
     <e lm="Kongo">
       <i>Kong</i>
       <par n="o__n"/>
+    </e>
+    <!-- Measurement units -->
+    <e lm="km">
+      <i>km</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="km²">
+      <i>km²</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="m">
+      <i>m</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="m²">
+      <i>m²</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="cm">
+      <i>cm</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="mm">
+      <i>mm</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="kg">
+      <i>kg</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="g">
+      <i>g</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="mg">
+      <i>mg</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="l">
+      <i>l</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="ml">
+      <i>ml</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="ha">
+      <i>ha</i>
+      <par n="__inv_n"/>
     </e>
     <e lm="Korano">
       <i>Koran</i>
@@ -264,6 +684,78 @@
     <e lm="Kristo">
       <i>Krist</i>
       <par n="o__n"/>
+    </e>
+    <e lm="Lyon">
+      <i>Lyon</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="Marseil">
+      <i>Marseil</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="Mediteraneo">
+      <i>Mediterane</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Mexikia">
+      <i>Mexiki</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Napoleon">
+      <i>Napoleon</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="Nilo">
+      <i>Nil</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Oceania">
+      <i>Oceani</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Pacifiko">
+      <i>Pacifik</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Paris">
+      <i>Paris</i>
+      <par n="__inv_n"/>
+    </e>
+    <e lm="Polonia">
+      <i>Poloni</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Portugal">
+      <i>Portugal</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Rejno">
+      <i>Rejn</i>
+      <par n="o__n"/>
+    </e>
+    <e lm="Roma">
+      <i>Rom</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Rusia">
+      <i>Rusi</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Skotia">
+      <i>Skoti</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Suisia">
+      <i>Suisi</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Turka">
+      <i>Turk</i>
+      <par n="a__adj"/>
+    </e>
+    <e lm="Ukraina">
+      <i>Ukrain</i>
+      <par n="a__adj"/>
     </e>
     <e lm="Kroniki">
       <i>kronik|Kronik</i>
@@ -16018,6 +16510,525 @@
       <par n="o__n"/>
     </e>
     <!-- Adjectives (2515 entries) -->
+    
+    <!-- -ala adjectives (productive morphology) - 108 entries -->
+    <e lm="abdominala">
+      <i>abdomin</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="acefala">
+      <i>acef</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="acidentala">
+      <i>acident</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="administrala">
+      <i>administr</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="astronomiala">
+      <i>astronomi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="atomala">
+      <i>atom</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="celestala">
+      <i>celest</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="centripetala">
+      <i>centripet</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="demokratiala">
+      <i>demokrati</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="desracionala">
+      <i>desracion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="diagonala">
+      <i>diagon</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="dijitala">
+      <i>dijit</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="duala">
+      <i>du</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="egala">
+      <i>eg</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="ekleziala">
+      <i>eklezi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="ekonomiala">
+      <i>ekonomi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="elektala">
+      <i>elekt</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="endetala">
+      <i>endet</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="eventuala">
+      <i>eventu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="expiacala">
+      <i>expiac</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="formala">
+      <i>form</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="fracionala">
+      <i>fracion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="fundamentala">
+      <i>fundament</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="galvanala">
+      <i>galvan</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="genealogiala">
+      <i>genealogi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="generala">
+      <i>gener</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="genitala">
+      <i>genit</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="geyala">
+      <i>gey</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="globala">
+      <i>glob</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="guvernala">
+      <i>guvern</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="hazardala">
+      <i>hazard</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="heredala">
+      <i>hered</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="heterosexuala">
+      <i>heterosexu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="historiala">
+      <i>histori</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="homala">
+      <i>hom</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="homeosexuala">
+      <i>homeosexu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="ideologiala">
+      <i>ideologi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="industriala">
+      <i>industri</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="infantala">
+      <i>infant</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="inflacionala">
+      <i>inflacion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="iniciala">
+      <i>inici</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="internasionala">
+      <i>internasion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="judiciala">
+      <i>judici</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="kanibala">
+      <i>kanibal</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="kazuala">
+      <i>kazu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="kolaterala">
+      <i>kolater</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="komencala">
+      <i>komenc</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="kulturala">
+      <i>kultur</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="kuracala">
+      <i>kurac</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="laterala">
+      <i>later</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="legala">
+      <i>leg</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="leterala">
+      <i>leter</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="liberala">
+      <i>liber</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="literala">
+      <i>liter</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="lokala">
+      <i>lok</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="loyala">
+      <i>loy</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="magnaala">
+      <i>magna</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="mamala">
+      <i>mam</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="manuala">
+      <i>manu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="marginala">
+      <i>margin</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="martiala">
+      <i>marti</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="materiala">
+      <i>materi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="mentala">
+      <i>ment</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="merkantala">
+      <i>merkant</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="minerala">
+      <i>miner</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="molekulala">
+      <i>molekul</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="morala">
+      <i>mor</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="mortala">
+      <i>mort</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="municipala">
+      <i>municip</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="muskulala">
+      <i>muskul</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="muzikala">
+      <i>muzik</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="nasionala">
+      <i>nasion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="naturala">
+      <i>natur</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="navala">
+      <i>nav</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="nerviala">
+      <i>nervi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="normala">
+      <i>norm</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="objektala">
+      <i>objekt</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="okcidentala">
+      <i>okcident</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="orala">
+      <i>or</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="orientala">
+      <i>orient</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="originala">
+      <i>origin</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="ornamentala">
+      <i>ornament</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="ovala">
+      <i>ov</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="patriarkala">
+      <i>patriark</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="patrominala">
+      <i>patromin</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="patronala">
+      <i>patron</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="penala">
+      <i>pen</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="periferiala">
+      <i>periferi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="personala">
+      <i>person</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="polarala">
+      <i>polar</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="potenciala">
+      <i>potenci</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="prezidenciala">
+      <i>prezidenci</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="primordiala">
+      <i>primord</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="principala">
+      <i>princip</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="profesionala">
+      <i>profesion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="provinciala">
+      <i>provinci</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="radiala">
+      <i>radi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="racionala">
+      <i>racion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="reala">
+      <i>re</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="regionala">
+      <i>region</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="religiala">
+      <i>religi</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="residuala">
+      <i>residu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="rituala">
+      <i>ritu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="rurala">
+      <i>rur</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="sakramentala">
+      <i>sakrament</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="seksuala">
+      <i>seksu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="sensacionala">
+      <i>sensacion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="sensuala">
+      <i>sensu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="sentimentala">
+      <i>sentiment</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="sociala">
+      <i>soci</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="spektrala">
+      <i>spektr</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="spirituala">
+      <i>spiritu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="strukturala">
+      <i>struktur</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="sunala">
+      <i>sun</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="temporala">
+      <i>tempor</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="teritoriala">
+      <i>teritori</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="tekstuala">
+      <i>tekstu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="totala">
+      <i>tot</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="tradicionala">
+      <i>tradicion</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="tribala">
+      <i>trib</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="triumfala">
+      <i>triumf</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="universala">
+      <i>univers</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="vegetala">
+      <i>veget</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="verbala">
+      <i>verb</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="vertiginala">
+      <i>vertigin</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="virginala">
+      <i>virgin</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="virtuala">
+      <i>virtu</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="vitala">
+      <i>vit</i>
+      <par n="ala__adj"/>
+    </e>
+    <e lm="vokala">
+      <i>vok</i>
+      <par n="ala__adj"/>
+    </e>
+    
     <e lm="Afrika">
       <i>Afrik</i>
       <par n="a__adj"/>

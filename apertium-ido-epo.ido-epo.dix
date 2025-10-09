@@ -83,6 +83,268 @@
     
     <e><i><s n="num"/><s n="ciph"/></i></e>
     <e><i><s n="num"/><s n="ciph"/><s n="sp"/></i></e>
+    
+    <!-- Function Words - Ido to Esperanto mappings -->
+    
+    <!-- Coordinating Conjunctions -->
+    <e>
+      <p>
+        <l>e<s n="cnjcoo"/></l>
+        <r>kaj<s n="cnjcoo"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>od<s n="cnjcoo"/></l>
+        <r>aŭ<s n="cnjcoo"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ma<s n="cnjcoo"/></l>
+        <r>sed<s n="cnjcoo"/></r>
+      </p>
+    </e>
+    
+    <!-- Subordinating Conjunctions -->
+    <e>
+      <p>
+        <l>dum<s n="cnjsub"/></l>
+        <r>dum<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>kad<s n="cnjsub"/></l>
+        <r>ke<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>kam<s n="cnjsub"/></l>
+        <r>ol<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>se<s n="cnjsub"/></l>
+        <r>se<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>pro<s n="cnjsub"/></l>
+        <r>ĉar<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>nam<s n="cnjsub"/></l>
+        <r>ĉar<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>pos<s n="cnjsub"/></l>
+        <r>post<s n="cnjsub"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ko<s n="cnjsub"/></l>
+        <r>kiam<s n="cnjsub"/></r>
+      </p>
+    </e>
+    
+    <!-- Prepositions -->
+    <e>
+      <p>
+        <l>a<s n="pr"/></l>
+        <r>al<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ad<s n="pr"/></l>
+        <r>al<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>al<s n="pr"/></l>
+        <r>al<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ante<s n="pr"/></l>
+        <r>antaŭ<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>da<s n="pr"/></l>
+        <r>de<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>de<s n="pr"/></l>
+        <r>de<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>di<s n="pr"/></l>
+        <r>de<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>en<s n="pr"/></l>
+        <r>en<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>inter<s n="pr"/></l>
+        <r>inter<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>kontre<s n="pr"/></l>
+        <r>kontraŭ<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>kun<s n="pr"/></l>
+        <r>kun<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>per<s n="pr"/></l>
+        <r>per<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>por<s n="pr"/></l>
+        <r>por<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>pos<s n="pr"/></l>
+        <r>post<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>pri<s n="pr"/></l>
+        <r>pri<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>pro<s n="pr"/></l>
+        <r>pro<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>sen<s n="pr"/></l>
+        <r>sen<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>sur<s n="pr"/></l>
+        <r>sur<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>tra<s n="pr"/></l>
+        <r>tra<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>trans<s n="pr"/></l>
+        <r>trans<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ultra<s n="pr"/></l>
+        <r>preter<s n="pr"/></r>
+      </p>
+    </e>
+    
+    <!-- Pronouns -->
+    <e>
+      <p>
+        <l>qua<s n="prn"/></l>
+        <r>kiu<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>qui<s n="prn"/></l>
+        <r>kiu<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>quo<s n="prn"/></l>
+        <r>kio<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>qual<s n="prn"/></l>
+        <r>kia<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ka<s n="prn"/></l>
+        <r>ĉu<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>yen<s n="prn"/></l>
+        <r>jen<s n="prn"/></r>
+      </p>
+    </e>
+    
+    <!-- Determiner -->
+    <e>
+      <p>
+        <l>la<s n="det"/></l>
+        <r>la<s n="det"/></r>
+      </p>
+    </e>
+    
+    <!-- Interjections -->
+    <e>
+      <p>
+        <l>yes<s n="ij"/></l>
+        <r>jes<s n="ij"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>no<s n="ij"/></l>
+        <r>ne<s n="ij"/></r>
+      </p>
+    </e>
+    
+    <!-- Content words start here -->
     <e>
       <p>
         <l>abadeyo<s n="n"/></l>
@@ -106158,6 +106420,115 @@
     <e><p><l>facar<s n="vblex"/></l><r>ekfari<s n="vblex"/></r></p></e>    <!-- start doing → do -->
     <e><p><l>pensar<s n="vblex"/></l><r>ekpensi<s n="vblex"/></r></p></e>  <!-- start thinking → think -->
     <e><p><l>agar<s n="vblex"/></l><r>ekagi<s n="vblex"/></r></p></e>      <!-- start acting → act -->
+
+    <!-- Proper nouns: Geographic places -->
+    <!-- Cities -->
+    <e><p><l>Paris<s n="np"/></l><r>Parizo<s n="np"/></r></p></e>
+    <e><p><l>Lyon<s n="np"/></l><r>Liono<s n="np"/></r></p></e>
+    <e><p><l>Marseil<s n="np"/></l><r>Marsejlo<s n="np"/></r></p></e>
+    <e><p><l>Parizo<s n="np"/></l><r>Parizo<s n="np"/></r></p></e>
+    <e><p><l>Liono<s n="np"/></l><r>Liono<s n="np"/></r></p></e>
+    <e><p><l>Marsejlo<s n="np"/></l><r>Marsejlo<s n="np"/></r></p></e>
+    
+    <!-- Countries and regions -->
+    <e><p><l>Francia<s n="np"/></l><r>Francio<s n="np"/></r></p></e>
+    <e><p><l>Franco<s n="np"/></l><r>Francio<s n="np"/></r></p></e>
+    <e><p><l>Francujo<s n="np"/></l><r>Francio<s n="np"/></r></p></e>
+    <e><p><l>Germania<s n="np"/></l><r>Germanio<s n="np"/></r></p></e>
+    <e><p><l>Germanio<s n="np"/></l><r>Germanio<s n="np"/></r></p></e>
+    <e><p><l>Italia<s n="np"/></l><r>Italio<s n="np"/></r></p></e>
+    <e><p><l>Italio<s n="np"/></l><r>Italio<s n="np"/></r></p></e>
+    <e><p><l>Hispania<s n="np"/></l><r>Hispanio<s n="np"/></r></p></e>
+    <e><p><l>Hispanio<s n="np"/></l><r>Hispanio<s n="np"/></r></p></e>
+    <e><p><l>Portugal<s n="np"/></l><r>Portugalio<s n="np"/></r></p></e>
+    <e><p><l>Portugalio<s n="np"/></l><r>Portugalio<s n="np"/></r></p></e>
+    <e><p><l>Belgia<s n="np"/></l><r>Belgio<s n="np"/></r></p></e>
+    <e><p><l>Belgio<s n="np"/></l><r>Belgio<s n="np"/></r></p></e>
+    <e><p><l>Holanda<s n="np"/></l><r>Nederlando<s n="np"/></r></p></e>
+    <e><p><l>Nederlando<s n="np"/></l><r>Nederlando<s n="np"/></r></p></e>
+    <e><p><l>Polonia<s n="np"/></l><r>Pollando<s n="np"/></r></p></e>
+    <e><p><l>Pollando<s n="np"/></l><r>Pollando<s n="np"/></r></p></e>
+    <e><p><l>Rusia<s n="np"/></l><r>Rusio<s n="np"/></r></p></e>
+    <e><p><l>Rusio<s n="np"/></l><r>Rusio<s n="np"/></r></p></e>
+    <e><p><l>Ukraina<s n="np"/></l><r>Ukrainio<s n="np"/></r></p></e>
+    <e><p><l>Ukrainio<s n="np"/></l><r>Ukrainio<s n="np"/></r></p></e>
+    <e><p><l>Anglia<s n="np"/></l><r>Anglio<s n="np"/></r></p></e>
+    <e><p><l>Anglio<s n="np"/></l><r>Anglio<s n="np"/></r></p></e>
+    <e><p><l>Skotia<s n="np"/></l><r>Skotlando<s n="np"/></r></p></e>
+    <e><p><l>Skotlando<s n="np"/></l><r>Skotlando<s n="np"/></r></p></e>
+    <e><p><l>Irlando<s n="np"/></l><r>Irlando<s n="np"/></r></p></e>
+    <e><p><l>Suisia<s n="np"/></l><r>Svislando<s n="np"/></r></p></e>
+    <e><p><l>Svislando<s n="np"/></l><r>Svislando<s n="np"/></r></p></e>
+    <e><p><l>Austria<s n="np"/></l><r>Aŭstrio<s n="np"/></r></p></e>
+    <e><p><l>Aŭstrio<s n="np"/></l><r>Aŭstrio<s n="np"/></r></p></e>
+    <e><p><l>Chekia<s n="np"/></l><r>Ĉeĥio<s n="np"/></r></p></e>
+    <e><p><l>Ĉeĥio<s n="np"/></l><r>Ĉeĥio<s n="np"/></r></p></e>
+    <e><p><l>Grekia<s n="np"/></l><r>Grekio<s n="np"/></r></p></e>
+    <e><p><l>Grekio<s n="np"/></l><r>Grekio<s n="np"/></r></p></e>
+    <e><p><l>Turka<s n="np"/></l><r>Turkio<s n="np"/></r></p></e>
+    <e><p><l>Turkio<s n="np"/></l><r>Turkio<s n="np"/></r></p></e>
+    <e><p><l>Israelo<s n="np"/></l><r>Israelo<s n="np"/></r></p></e>
+    <e><p><l>Israel<s n="np"/></l><r>Israelo<s n="np"/></r></p></e>
+    <e><p><l>Egiptia<s n="np"/></l><r>Egipto<s n="np"/></r></p></e>
+    <e><p><l>Egipto<s n="np"/></l><r>Egipto<s n="np"/></r></p></e>
+    <e><p><l>Brazilia<s n="np"/></l><r>Brazilo<s n="np"/></r></p></e>
+    <e><p><l>Brazilo<s n="np"/></l><r>Brazilo<s n="np"/></r></p></e>
+    <e><p><l>Argentina<s n="np"/></l><r>Argentino<s n="np"/></r></p></e>
+    <e><p><l>Argentino<s n="np"/></l><r>Argentino<s n="np"/></r></p></e>
+    <e><p><l>Mexikia<s n="np"/></l><r>Meksiko<s n="np"/></r></p></e>
+    <e><p><l>Meksiko<s n="np"/></l><r>Meksiko<s n="np"/></r></p></e>
+    <e><p><l>Japonia<s n="np"/></l><r>Japanio<s n="np"/></r></p></e>
+    <e><p><l>Japanio<s n="np"/></l><r>Japanio<s n="np"/></r></p></e>
+    <e><p><l>Chinia<s n="np"/></l><r>Ĉinio<s n="np"/></r></p></e>
+    <e><p><l>Ĉinio<s n="np"/></l><r>Ĉinio<s n="np"/></r></p></e>
+    <e><p><l>India<s n="np"/></l><r>Hindio<s n="np"/></r></p></e>
+    <e><p><l>Hindio<s n="np"/></l><r>Hindio<s n="np"/></r></p></e>
+    
+    <!-- Continents and large regions -->
+    <e><p><l>Europa<s n="np"/></l><r>Eŭropo<s n="np"/></r></p></e>
+    <e><p><l>Eŭropo<s n="np"/></l><r>Eŭropo<s n="np"/></r></p></e>
+    <e><p><l>Afrika<s n="np"/></l><r>Afriko<s n="np"/></r></p></e>
+    <e><p><l>Afriko<s n="np"/></l><r>Afriko<s n="np"/></r></p></e>
+    <e><p><l>Amerika<s n="np"/></l><r>Ameriko<s n="np"/></r></p></e>
+    <e><p><l>Ameriko<s n="np"/></l><r>Ameriko<s n="np"/></r></p></e>
+    <e><p><l>Azia<s n="np"/></l><r>Azio<s n="np"/></r></p></e>
+    <e><p><l>Azio<s n="np"/></l><r>Azio<s n="np"/></r></p></e>
+    <e><p><l>Oceania<s n="np"/></l><r>Oceanio<s n="np"/></r></p></e>
+    <e><p><l>Oceanio<s n="np"/></l><r>Oceanio<s n="np"/></r></p></e>
+    <e><p><l>Antartika<s n="np"/></l><r>Antarktiko<s n="np"/></r></p></e>
+    <e><p><l>Antarktiko<s n="np"/></l><r>Antarktiko<s n="np"/></r></p></e>
+    
+    <!-- Seas, oceans, and bodies of water -->
+    <e><p><l>Mediteraneo<s n="np"/></l><r>Mediteraneo<s n="np"/></r></p></e>
+    <e><p><l>Atlantiko<s n="np"/></l><r>Atlantiko<s n="np"/></r></p></e>
+    <e><p><l>Pacifiko<s n="np"/></l><r>Pacifiko<s n="np"/></r></p></e>
+    <e><p><l>Rejno<s n="np"/></l><r>Rejno<s n="np"/></r></p></e>
+    <e><p><l>Danubo<s n="np"/></l><r>Danubo<s n="np"/></r></p></e>
+    <e><p><l>Nilo<s n="np"/></l><r>Nilo<s n="np"/></r></p></e>
+    
+    <!-- Historical names and peoples -->
+    <e><p><l>Gaulo<s n="np"/></l><r>Gaŭlo<s n="np"/></r></p></e>
+    <e><p><l>Gaŭlo<s n="np"/></l><r>Gaŭlo<s n="np"/></r></p></e>
+    <e><p><l>Roma<s n="np"/></l><r>Romio<s n="np"/></r></p></e>
+    <e><p><l>Romio<s n="np"/></l><r>Romio<s n="np"/></r></p></e>
+    <e><p><l>Napoleon<s n="np"/></l><r>Napoleono<s n="np"/></r></p></e>
+    <e><p><l>Napoleono<s n="np"/></l><r>Napoleono<s n="np"/></r></p></e>
+    
+    <!-- Measurement units (pass through unchanged) -->
+    <e><p><l>km<s n="n"/></l><r>km<s n="n"/></r></p></e>
+    <e><p><l>km²<s n="n"/></l><r>km²<s n="n"/></r></p></e>
+    <e><p><l>km2<s n="n"/></l><r>km²<s n="n"/></r></p></e>
+    <e><p><l>m<s n="n"/></l><r>m<s n="n"/></r></p></e>
+    <e><p><l>m²<s n="n"/></l><r>m²<s n="n"/></r></p></e>
+    <e><p><l>m2<s n="n"/></l><r>m²<s n="n"/></r></p></e>
+    <e><p><l>cm<s n="n"/></l><r>cm<s n="n"/></r></p></e>
+    <e><p><l>mm<s n="n"/></l><r>mm<s n="n"/></r></p></e>
+    <e><p><l>kg<s n="n"/></l><r>kg<s n="n"/></r></p></e>
+    <e><p><l>g<s n="n"/></l><r>g<s n="n"/></r></p></e>
+    <e><p><l>mg<s n="n"/></l><r>mg<s n="n"/></r></p></e>
+    <e><p><l>l<s n="n"/></l><r>l<s n="n"/></r></p></e>
+    <e><p><l>ml<s n="n"/></l><r>ml<s n="n"/></r></p></e>
+    <e><p><l>ha<s n="n"/></l><r>ha<s n="n"/></r></p></e>
 
   </section>
 </dictionary>
