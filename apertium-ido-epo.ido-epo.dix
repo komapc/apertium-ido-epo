@@ -44273,12 +44273,7 @@
         <r>Ulm<s n="adv"/></r>
       </p>
     </e>
-    <e>
-      <p>
-        <l>e<s n="adv"/></l>
-        <r>kaj<s n="adv"/></r>
-      </p>
-    </e>
+    
     <e>
       <p>
         <l>amar<s n="vblex"/></l>
@@ -106084,5 +106079,46 @@
     <e><p><l>returnar<s n="vblex"/></l><r>reveni<s n="vblex"/></r></p></e>
     <e><p><l>skribar<s n="vblex"/></l><r>verki<s n="vblex"/></r></p></e>
     <e><p><l>trovar<s n="vblex"/></l><r>trovi<s n="vblex"/></r></p></e>
+  
+    <!-- Function words -->
+    <e><p><l>qua<s n="prn"/></l><r>kiu<s n="prn"/></r></p></e>
+    <e><p><l>qui<s n="prn"/></l><r>kiu<s n="prn"/></r></p></e>
+    <e><p><l>quo<s n="prn"/></l><r>kio<s n="prn"/></r></p></e>
+    <e><p><l>tiu<s n="prn"/></l><r>tiu<s n="prn"/></r></p></e>
+    <e><p><l>sia<s n="adj"/></l><r>sia<s n="adj"/></r></p></e>
+    <e><p><l>dum<s n="cnjsub"/></l><r>dum<s n="cnjsub"/></r></p></e>
+    <e><p><l>se<s n="cnjsub"/></l><r>se<s n="cnjsub"/></r></p></e>
+      
+  
+    <!-- Critical missing nouns and verbs -->
+    <e><p><l>esar<s n="vblex"/></l><r>esti<s n="vblex"/></r></p></e>
+    <e><p><l>esar<s n="vbser"/></l><r>esti<s n="vbser"/></r></p></e>
+
+    <!-- Family nouns -->
+    <e><p><l>patro<s n="n"/></l><r>patro<s n="n"/></r></p></e>
+    <e><p><l>matro<s n="n"/></l><r>patrino<s n="n"/></r></p></e>
+    <e><p><l>genitori<s n="n"/></l><r>gepatroj<s n="n"/></r></p></e>
+    <e><p><l>filiulo<s n="n"/></l><r>filo<s n="n"/></r></p></e>
+    <e><p><l>filiino<s n="n"/></l><r>filino<s n="n"/></r></p></e>
+    <e><p><l>infanto<s n="n"/></l><r>infano<s n="n"/></r></p></e>
+    <e><p><l>fratulo<s n="n"/></l><r>frato<s n="n"/></r></p></e>
+    <e><p><l>fratino<s n="n"/></l><r>fratino<s n="n"/></r></p></e>
+    <e><p><l>spozulo<s n="n"/></l><r>edzo<s n="n"/></r></p></e>
+    <e><p><l>spozino<s n="n"/></l><r>edzino<s n="n"/></r></p></e>
+    <e><p><l>puerulo<s n="n"/></l><r>knabo<s n="n"/></r></p></e>
+    <e><p><l>puerino<s n="n"/></l><r>knabino<s n="n"/></r></p></e>
+
+    <!-- Common nouns -->
+    <e><p><l>linguo<s n="n"/></l><r>lingvo<s n="n"/></r></p></e>
+    <e><p><l>mondo<s n="n"/></l><r>mondo<s n="n"/></r></p></e>
+    <e><p><l>tempo<s n="n"/></l><r>tempo<s n="n"/></r></p></e>
+    <e><p><l>yaro<s n="n"/></l><r>jaro<s n="n"/></r></p></e>
+    <e><p><l>vivo<s n="n"/></l><r>vivo<s n="n"/></r></p></e>
+    <e><p><l>morto<s n="n"/></l><r>morto<s n="n"/></r></p></e>
+    <e><p><l>tero<s n="n"/></l><r>tero<s n="n"/></r></p></e>
+    <e><p><l>homo<s n="n"/></l><r>homo<s n="n"/></r></p></e>
+    <e><p><l>populo<s n="n"/></l><r>popolo<s n="n"/></r></p></e>
+    <e><p><l>urbo<s n="n"/></l><r>urbo<s n="n"/></r></p></e>
+    <e><p><l>lando<s n="n"/></l><r>lando<s n="n"/></r></p></e>
   </section>
 </dictionary>
