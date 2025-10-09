@@ -76,6 +76,8 @@
       <attr-item tags="fti"/>
       <attr-item tags="cni"/>
       <attr-item tags="imp"/>
+      <attr-item tags="pres"/>
+      <attr-item tags="past"/>
     </def-attr>
   </section-def-attrs>
 
@@ -506,10 +508,23 @@
               </lu>
             </out>
           </when>
-          <otherwise>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
             <out>
               <lu>
-                <clip pos="1" side="tl" part="whole"/>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="fti"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Default: if no tense tag, assume present tense -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="pres"/>
               </lu>
             </out>
           </otherwise>
