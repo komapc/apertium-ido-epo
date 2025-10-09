@@ -146,3 +146,4 @@ This is a different bug in the Esperanto generator - to be fixed separately.
 
 Numbers now work correctly in the Ido-Esperanto translator!
 
+

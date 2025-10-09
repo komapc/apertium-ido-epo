@@ -112,3 +112,4 @@ However, our current dictionary (7,764 entries) already has good coverage, and t
 - **Our Source:** Ido Wiktionary (Oct 2025 dump, 7,549 extracted words)
 - **Final Count:** 7,764 entries (Wiktionary + manual additions + Idolinguo supplement)
 
+

@@ -275,3 +275,4 @@ apertium -d . ido-epo < test_kazakstan.txt
 
 **Priority:** Add geographic vocabulary supplement.
 
+

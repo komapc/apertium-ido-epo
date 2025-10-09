@@ -98,3 +98,4 @@ Status: ✅ Grammar correct, only # markers remain (minor issue)
 
 **Current status:** Ready for testing with real users. The copula fix was the last major blocker.
 
+
