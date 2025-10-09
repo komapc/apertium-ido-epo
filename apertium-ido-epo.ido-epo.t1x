@@ -15,6 +15,9 @@
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
     </def-cat>
+    <def-cat n="vbser">
+      <cat-item lemma="est"/>
+    </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn"/>
       <cat-item tags="prn.*"/>
@@ -78,10 +81,10 @@
   </section-def-vars>
 
   <section-rules>
-    <!-- Verb + Adjective + Noun: apply accusative to direct object -->
+    <!-- Copula (esar/esti) + Adjective + Noun: keep nominative (predicate) -->
     <rule>
       <pattern>
-        <pattern-item n="vblex"/>
+        <pattern-item n="vbser"/>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
       </pattern>
@@ -95,23 +98,20 @@
             <clip pos="2" side="tl" part="lem"/>
             <clip pos="2" side="tl" part="a_adj"/>
             <clip pos="3" side="tl" part="nbr"/>
-            <lit-tag v="acc"/>
+            <lit-tag v="nom"/>
           </lu>
           <b/>
           <lu>
-            <clip pos="3" side="tl" part="lem"/>
-            <clip pos="3" side="tl" part="a_nom"/>
-            <clip pos="3" side="tl" part="nbr"/>
-            <lit-tag v="acc"/>
+            <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
     </rule>
 
-    <!-- Verb + Noun: apply accusative to direct object -->
+    <!-- Copula + Noun: keep nominative (predicate nominative) -->
     <rule>
       <pattern>
-        <pattern-item n="vblex"/>
+        <pattern-item n="vbser"/>
         <pattern-item n="nom"/>
       </pattern>
       <action>
@@ -121,12 +121,126 @@
           </lu>
           <b/>
           <lu>
-            <clip pos="2" side="tl" part="lem"/>
-            <clip pos="2" side="tl" part="a_nom"/>
-            <clip pos="2" side="tl" part="nbr"/>
-            <lit-tag v="acc"/>
+            <clip pos="2" side="tl" part="whole"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <!-- Copula + Adjective: keep nominative, add sg/nom -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Verb + Adjective + Noun: check if copula or transitive -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "es" (to be), keep nominative (predicate) -->
+            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Verb + Noun: check if copula or transitive -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "es" (to be), keep nominative (predicate) -->
+            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_nom"/>
+                <clip pos="2" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
