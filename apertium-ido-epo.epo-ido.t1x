@@ -165,7 +165,7 @@
       </action>
     </rule>
 
-    <!-- Pronoun rule: pass through -->
+    <!-- Pronoun rule: output just lemma and pronoun tag (strip extra tags) -->
     <rule>
       <pattern>
         <pattern-item n="prn"/>
@@ -173,7 +173,8 @@
       <action>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="prn"/>
           </lu>
         </out>
       </action>
