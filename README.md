@@ -73,7 +73,7 @@ Test suites include:
 - **Ido monolingual:** ~6,770 entries (+22 recent additions)
 - **Transfer rules:** Enhanced with CG disambiguation, superlatives, partitives, tense handling
 - **Test coverage:** 200+ sentences across multiple test suites
-- **-ala paradigm:** 20 common adjectives with morphological inflection
+- **Productive morphology:** 108 -ala adjectives using paradigm system (see [PRODUCTIVE_MORPHOLOGY.md](PRODUCTIVE_MORPHOLOGY.md))
 
 ## Language Features
 
@@ -87,7 +87,7 @@ Test suites include:
 ✅ Personal pronouns  
 ✅ Basic word order (SVO)  
 ✅ Common verb stems (50+ added)  
-✅ -ala adjective paradigm (20 adjectives)
+✅ Productive -ala paradigm (108 relational adjectives)
 
 ### Esperanto→Ido (Functional)
 
@@ -110,12 +110,27 @@ The system handles the main differences between Ido and Esperanto:
 | Verb infinitive | -ar | -i |
 | Plurals | -i | -j |
 
+## Productive Morphology
+
+The system uses **paradigm-based morphology** for efficient handling of derived forms:
+
+### Implemented
+- **-ala adjectives** (relational/denominative): 108 entries
+  - Examples: `sunala` (solar), `naturala` (natural), `legala` (legal)
+  - Generates both adjective and adverb forms automatically
+  - See [PRODUCTIVE_MORPHOLOGY.md](PRODUCTIVE_MORPHOLOGY.md) for details
+
+### Future Candidates
+- **-oza** (full of): 29 adjectives ready
+- **-iva** (having quality of): 31 adjectives ready  
+- **-ebla** (-able): 25 adjectives ready
+- **-ema** (tendency to): 9 adjectives ready
+
 ## Known Limitations & Ongoing Work
 
 ### Ido→Esperanto
 - Some verb forms show `@` (invariable form conflicts) - ~10-15 cases
 - Missing specialized vocabulary (~100-200 terms)
-- Some -ala adjectives not yet analyzed (debugging in progress)
 
 ### Esperanto→Ido  
 - Object-first word order (OVS) not fully supported
@@ -124,7 +139,7 @@ The system handles the main differences between Ido and Esperanto:
 
 ### Active Development Areas
 - Expanding test coverage with real Wikipedia articles
-- Adding more -ala adjective roots
+- Implementing additional productive morphology paradigms
 - Improving generator for edge cases
 - Multiword expression handling
 
