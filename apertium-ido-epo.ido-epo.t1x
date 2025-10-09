@@ -82,7 +82,6 @@
   </section-def-attrs>
 
   <section-def-vars>
-    <def-var n="number"/>
   </section-def-vars>
 
   <section-rules>
@@ -362,6 +361,11 @@
       </action>
     </rule>
 
+    <!-- WARNING: The following conjunction rules apply accusative case without checking 
+         if there's actually a verb before them. They assume coordinated direct objects
+         but are context-insensitive and may incorrectly mark nouns as accusative when
+         they appear after conjunctions in other grammatical contexts (e.g., subjects). -->
+    
     <!-- Conjunction + Noun (after verb): also needs accusative -->
     <rule>
       <pattern>
@@ -676,7 +680,7 @@
           <b/>
           <lu>
             <clip pos="2" side="tl" part="lem"/>
-            <lit-tag v="n"/>
+            <lit-tag v="np"/>
             <lit-tag v="sg"/>
             <lit-tag v="acc"/>
           </lu>
