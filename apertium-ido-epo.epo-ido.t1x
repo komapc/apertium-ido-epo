@@ -14,6 +14,26 @@
     </def-cat>
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
+      <cat-item tags="vbtr.*"/>
+    </def-cat>
+    <def-cat n="prn">
+      <cat-item tags="prn.*"/>
+    </def-cat>
+    <def-cat n="pr">
+      <cat-item tags="pr"/>
+      <cat-item tags="pr.*"/>
+    </def-cat>
+    <def-cat n="cnjcoo">
+      <cat-item tags="cnjcoo"/>
+    </def-cat>
+    <def-cat n="cnjsub">
+      <cat-item tags="cnjsub"/>
+    </def-cat>
+    <def-cat n="det">
+      <cat-item tags="det"/>
+    </def-cat>
+    <def-cat n="np">
+      <cat-item tags="np"/>
     </def-cat>
   </section-def-cats>
 
@@ -29,6 +49,7 @@
     </def-attr>
     <def-attr n="a_vblex">
       <attr-item tags="vblex"/>
+      <attr-item tags="vbtr"/>
     </def-attr>
     <def-attr n="nbr">
       <attr-item tags="sg"/>
@@ -44,6 +65,14 @@
       <attr-item tags="f"/>
       <attr-item tags="mf"/>
       <attr-item tags="nt"/>
+    </def-attr>
+    <def-attr n="temps">
+      <attr-item tags="pres"/>
+      <attr-item tags="past"/>
+      <attr-item tags="inf"/>
+      <attr-item tags="pri"/>
+      <attr-item tags="pii"/>
+      <attr-item tags="fti"/>
     </def-attr>
   </section-def-attrs>
 
@@ -98,10 +127,118 @@
       </action>
     </rule>
 
-    <!-- Verb rule: pass through -->
+    <!-- Verb rule: convert Esperanto tense tags to Ido tags -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="temps"/><lit-tag v="pres"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="pri"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="temps"/><lit-tag v="past"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="pii"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Pronoun rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Preposition rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="pr"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Coordinating conjunction rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="cnjcoo"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Subordinating conjunction rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="cnjsub"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Determiner rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Proper noun rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="np"/>
       </pattern>
       <action>
         <out>
