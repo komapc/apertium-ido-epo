@@ -1,22 +1,20 @@
-# Ido-Esperanto Language Pair for Apertium
+# Apertium Ido-Esperanto
 
-An Apertium language pair for translating between **Ido** and **Esperanto**.
+Machine translation system for **Ido ↔ Esperanto** using the Apertium platform.
 
-## Data Source
+## Status
 
-Dictionary entries were extracted from **Ido Wiktionary** ([io.wiktionary.org](https://io.wiktionary.org/)) and supplemented with manually added entries for function words, proper nouns, ordinals, and common compounds.
-
-- **Extraction scripts:** [ido-esperanto-extractor](https://github.com/komapc/ido-esperanto-extractor)
-- **Esperanto package:** [apertium-epo](https://github.com/apertium/apertium-epo)
-
-## Requirements
-
-* `lttoolbox` >= 3.5.1
-* `apertium` >= 3.6.1
-* `apertium-ido` >= 0.1.0
-* `apertium-epo` >= 0.1.0
+**Ido→Esperanto:** Functional (65-70% quality)  
+**Esperanto→Ido:** Experimental (not recommended for production use)
 
 ## Installation
+
+### Requirements
+
+- `lttoolbox` >= 3.5.1
+- `apertium` >= 3.6.1  
+- `apertium-ido` >= 0.1.0
+- `apertium-epo` >= 0.1.0
 
 ### From Source
 
@@ -25,16 +23,6 @@ Dictionary entries were extracted from **Ido Wiktionary** ([io.wiktionary.org](h
 ./configure
 make
 sudo make install
-```
-
-### Development Build
-
-For testing without installation:
-
-```bash
-./autogen.sh
-./configure
-make
 ```
 
 ## Usage
@@ -46,70 +34,83 @@ After installation:
 echo "me havas granda kato" | apertium ido-epo
 # Output: mi havas grandan katon
 
-# Esperanto → Ido
+# Esperanto → Ido  
 echo "mi havas grandan katon" | apertium epo-ido
 # Output: me havas granda kato
 ```
 
-For development (without installation):
+Development mode (without installation):
 
 ```bash
-# Ido → Esperanto
+# Build first
+make
+
+# Translate
 echo "me havas granda kato" | apertium -d . ido-epo
-
-# Esperanto → Ido
-echo "mi havas grandan katon" | apertium -d . epo-ido
 ```
-
-## Files
-
-* `apertium-ido.ido.dix` - Ido morphological dictionary
-* `apertium-ido-epo.ido-epo.dix` - Bilingual dictionary
-* `apertium-ido-epo.ido-epo.t1x` - Ido→Esperanto transfer rules
-* `apertium-ido-epo.epo-ido.t1x` - Esperanto→Ido transfer rules
-
-## Key Differences
-
-Transfer rules handle the main grammatical differences between Ido and Esperanto:
-- Adjective agreement (Ido: invariable → Esperanto: agrees in number and case)
-- Accusative case on direct objects
-- Verb infinitives (Ido: -ar → Esperanto: -i)
 
 ## Testing
 
-Run the regression tests:
+Run the test suite:
 
 ```bash
 make test
 ```
 
-This will run all test cases defined in `test/tests.json` using `apertium-regtest`.
+Test suites include:
+- Basic translations (20 sentences)
+- Grammar features (20 sentences)
+- Wikipedia content (30 sentences)
+- Accusative case testing (60 sentences)
+
+**Total:** 130 test sentences
 
 ## Statistics
 
-* **Bilingual dictionary entries:** 7,335
-* **Transfer rules:** Complete coverage for both directions
-* **Test cases:** 40+ sentences covering basic and grammar features
+- **Bilingual dictionary:** 7,795 entries
+- **Ido monolingual:** 6,748 entries  
+- **Transfer rules:** Complete for both directions
+- **Test coverage:** 130 sentences
 
-## Coverage
+## Language Features
 
-The language pair handles:
-- Basic vocabulary (nouns, verbs, adjectives, adverbs)
-- Adjective agreement (Ido invariable → Esperanto number/case agreement)
-- Accusative case marking on direct objects
-- Verb infinitives (Ido `-ar` → Esperanto `-i`)
-- Personal pronouns and demonstratives
-- Prepositions and conjunctions
-- Numerals and ordinals
+### Ido→Esperanto (Working)
+
+✅ Accusative case on direct objects  
+✅ Adjective agreement (number and case)  
+✅ Copula distinction (nominative predicates)  
+✅ Plural forms (-j, -jn)  
+✅ Past/present tenses  
+✅ Personal pronouns  
+✅ Basic word order (SVO)
+
+### Grammar Transformations
+
+The system handles the main differences between Ido and Esperanto:
+
+| Feature | Ido | Esperanto |
+|---------|-----|-----------|
+| Adjective agreement | Invariable | Agrees in number/case |
+| Accusative case | None | -n on objects |
+| Verb infinitive | -ar | -i |
+| Plurals | -i | -j |
+
+## Known Limitations
+
+- Specialized vocabulary gaps (~200-300 terms)
+- Object-first word order (OVS) not fully supported
+- Esperanto→Ido direction has limited coverage
+
+## Data Sources
+
+Dictionary entries extracted from:
+- [Ido Wiktionary](https://io.wiktionary.org/)
+- Manual additions for function words and proper nouns
+- Extraction tools: [ido-esperanto-extractor](https://github.com/komapc/ido-esperanto-extractor)
 
 ## Contributing
 
-Contributions are welcome! This language pair is part of the Apertium project.
-
-To contribute:
-1. Test the language pair and identify errors
-2. Add new dictionary entries or improve transfer rules
-3. Submit issues or pull requests to the repository
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 For questions or discussion:
 - Mailing list: [apertium-stuff@lists.sourceforge.net](mailto:apertium-stuff@lists.sourceforge.net)
@@ -118,5 +119,10 @@ For questions or discussion:
 
 ## License
 
-GPL v2.0. Dictionary data extracted from Ido Wiktionary (CC-BY-SA 3.0 / GFDL).
+GPL v2.0
 
+Dictionary data from Ido Wiktionary (CC-BY-SA 3.0 / GFDL).
+
+## Authors
+
+- Mark (komapc) - Initial development and data extraction
