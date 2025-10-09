@@ -15,6 +15,7 @@
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
       <cat-item tags="vbtr.*"/>
+      <cat-item tags="vbser.*"/>
     </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.*"/>
@@ -35,6 +36,12 @@
     <def-cat n="np">
       <cat-item tags="np"/>
     </def-cat>
+    <def-cat n="plej">
+      <cat-item lemma="plej" tags="adv"/>
+    </def-cat>
+    <def-cat n="da">
+      <cat-item lemma="da" tags="pr"/>
+    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
@@ -50,6 +57,7 @@
     <def-attr n="a_vblex">
       <attr-item tags="vblex"/>
       <attr-item tags="vbtr"/>
+      <attr-item tags="vbser"/>
     </def-attr>
     <def-attr n="nbr">
       <attr-item tags="sg"/>
@@ -245,6 +253,51 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Superlative rule: plej ADJ → maxim ADJ -->
+    <rule>
+      <pattern>
+        <pattern-item n="plej"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v="maxim"/>
+            <lit-tag v="adv"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Partitive rule: NOUN da NOUN → NOUN di NOUN -->
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="da"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="di"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
       </action>
