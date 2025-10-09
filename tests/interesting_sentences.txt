@@ -38,3 +38,51 @@ EPO: ĝi estis enkondukita
 EPO: Kristanismo estas tutmonda religio bazita sur la instruoj de Jesuo Kristo.
 EPO: Ĝi estas la plej granda religio en la mondo.
 EPO: Oni kalkulas, ke ekzistas ĉirkaŭ 2,4 miliardoj da kristanoj.
+
+## PROBLEMATIC CASES (Needs Work ⚠️)
+
+### Verb Forms
+EPO: ekzistas homoj
+IDO: existar homi
+(Currently: @ekzisti homi - vbser vs vblex mismatch)
+
+EPO: religio bazita sur instruoj
+IDO: religio bazita sur instruadi
+(Currently: #bazar - passive participle issue)
+
+### Multiword Expressions
+EPO: la plej granda religio
+IDO: la maxim granda religio
+(Currently: #la maxim granda - analyzed as single compound)
+
+EPO: Miloj da homoj
+IDO: Mili di homi
+(Currently: @Miloj da homi - multiword unit issue)
+
+### Proper Noun Generation
+EPO: Jesuo Kristo
+IDO: Iesu Kristo
+(Currently: #Iesu #Kristo - np paradigm generation issue)
+
+EPO: Kristanismo
+IDO: Kristanismo
+(Currently: #Kristanismo - np paradigm issue)
+
+### Pronoun Generation
+EPO: Oni kalkulas
+IDO: On kontas
+(Currently: #On kontas - pronoun generation has tag issues)
+
+### Missing Adverbs/Prepositions
+EPO: tie (there)
+IDO: ibe
+(Currently: @tia - wrong mapping or analysis)
+
+EPO: tre (very)
+IDO: tre
+(Currently: @tra - wrong analysis selected)
+
+### Conjunction Context
+EPO: alta kaj bela
+IDO: alta e bela
+(Currently: alta @kaj bela - kaj not converting to e)
