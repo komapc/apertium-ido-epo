@@ -805,6 +805,12 @@
     </e>
     <e>
       <p>
+        <l>agi<s n="vblex"/></l>
+        <r>agar<s n="vblex"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>agato<s n="n"/></l>
         <r>agato<s n="n"/></r>
       </p>
@@ -35067,6 +35073,12 @@
       <p>
         <l>rolo<s n="n"/></l>
         <r>rolo<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>roli<s n="vblex"/></l>
+        <r>rolar<s n="vblex"/></r>
       </p>
     </e>
     <e>
@@ -106120,5 +106132,32 @@
     <e><p><l>populo<s n="n"/></l><r>popolo<s n="n"/></r></p></e>
     <e><p><l>urbo<s n="n"/></l><r>urbo<s n="n"/></r></p></e>
     <e><p><l>lando<s n="n"/></l><r>lando<s n="n"/></r></p></e>
+
+    <!-- ek- prefix verbs (Esperanto → Ido) -->
+    <!-- Ido doesn't have ek- prefix; mapping to simple verbs (losing "sudden start" nuance) -->
+    <!-- Alternative: could add "kom" prefix or "subitee" adverb, but keeping simple for now -->
+    
+    <!-- Common ek- verbs from Wikipedia - map to base verb -->
+    <e><p><l>lernar<s n="vblex"/></l><r>eklerni<s n="vblex"/></r></p></e>  <!-- start learning → learn -->
+    <e><p><l>regar<s n="vblex"/></l><r>ekregi<s n="vblex"/></r></p></e>    <!-- start ruling → rule -->
+    <e><p><l>skribar<s n="vblex"/></l><r>ekskribi<s n="vblex"/></r></p></e> <!-- start writing → write -->
+    <e><p><l>dormar<s n="vblex"/></l><r>ekdormi<s n="vblex"/></r></p></e>  <!-- fall asleep → sleep -->
+    <e><p><l>kriar<s n="vblex"/></l><r>ekkrii<s n="vblex"/></r></p></e>    <!-- cry out → cry -->
+    <e><p><l>ridar<s n="vblex"/></l><r>ekridi<s n="vblex"/></r></p></e>    <!-- burst laughing → laugh -->
+    <e><p><l>stacar<s n="vblex"/></l><r>ekstari<s n="vblex"/></r></p></e>  <!-- stand up → stand -->
+    <e><p><l>saltar<s n="vblex"/></l><r>eksalti<s n="vblex"/></r></p></e>  <!-- jump up → jump -->
+    <e><p><l>brilar<s n="vblex"/></l><r>ekbrili<s n="vblex"/></r></p></e>  <!-- start shining → shine -->
+    <e><p><l>pluvar<s n="vblex"/></l><r>ekpluvi<s n="vblex"/></r></p></e>  <!-- start raining → rain -->
+    <e><p><l>vidar<s n="vblex"/></l><r>ekvidi<s n="vblex"/></r></p></e>    <!-- catch sight → see -->
+    <e><p><l>timar<s n="vblex"/></l><r>ektimi<s n="vblex"/></r></p></e>    <!-- become afraid → fear -->
+    <e><p><l>flami<s n="vblex"/></l><r>ekflami<s n="vblex"/></r></p></e>   <!-- catch fire → flame -->
+    <e><p><l>falar<s n="vblex"/></l><r>ekfali<s n="vblex"/></r></p></e>    <!-- fall -->
+    <e><p><l>venir<s n="vblex"/></l><r>ekveni<s n="vblex"/></r></p></e>    <!-- arrive → come -->
+    <e><p><l>parolar<s n="vblex"/></l><r>ekparoli<s n="vblex"/></r></p></e> <!-- start speaking → speak -->
+    <e><p><l>laborar<s n="vblex"/></l><r>eklabori<s n="vblex"/></r></p></e> <!-- start working → work -->
+    <e><p><l>facar<s n="vblex"/></l><r>ekfari<s n="vblex"/></r></p></e>    <!-- start doing → do -->
+    <e><p><l>pensar<s n="vblex"/></l><r>ekpensi<s n="vblex"/></r></p></e>  <!-- start thinking → think -->
+    <e><p><l>agar<s n="vblex"/></l><r>ekagi<s n="vblex"/></r></p></e>      <!-- start acting → act -->
+
   </section>
 </dictionary>
