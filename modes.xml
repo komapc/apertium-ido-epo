@@ -18,6 +18,9 @@
       <program name="lt-proc -g">
         <file name="ido-epo.autogen.bin"/>
       </program>
+      <program name="lt-proc -p">
+        <file name="ido-epo.autopgen.bin"/>
+      </program>
     </pipeline>
   </mode>
 
@@ -40,6 +43,9 @@
       </program>
       <program name="lt-proc -g">
         <file name="epo-ido.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="epo-ido.autopgen.bin"/>
       </program>
     </pipeline>
   </mode>

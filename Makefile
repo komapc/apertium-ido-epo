@@ -10,8 +10,8 @@ PREFIX2=$(LANG2)-$(LANG1)
 BASENAME=apertium-$(PREFIX1)
 
 ## Dictionaries
-DICS=$(PREFIX1).autobil.bin $(PREFIX1).automorf.bin $(PREFIX1).autogen.bin \
-     $(PREFIX2).autobil.bin $(PREFIX2).automorf.bin $(PREFIX2).autogen.bin
+DICS=$(PREFIX1).autobil.bin $(PREFIX1).automorf.bin $(PREFIX1).autogen.bin $(PREFIX1).autopgen.bin \
+     $(PREFIX2).autobil.bin $(PREFIX2).automorf.bin $(PREFIX2).autogen.bin $(PREFIX2).autopgen.bin
 
 ## Transfer rules
 TRANSFER=$(PREFIX1).t1x.bin $(PREFIX2).t1x.bin
@@ -32,6 +32,13 @@ $(PREFIX1).autogen.bin: apertium-$(LANG2).$(LANG2).dix
 
 $(PREFIX2).autogen.bin: apertium-$(LANG1).$(LANG1).dix
 	lt-comp rl $< $@
+## Post-generation dictionaries
+$(PREFIX1).autopgen.bin: $(BASENAME).post-$(LANG2).dix
+	lt-comp lr $< $@
+
+$(PREFIX2).autopgen.bin: $(BASENAME).post-$(LANG1).dix
+	lt-comp lr $< $@
+
 
 ## Bilingual dictionaries (using lt-comp)
 $(PREFIX1).autobil.bin: $(BASENAME).$(PREFIX1).dix

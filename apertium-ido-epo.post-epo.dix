@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+  <alphabet/>
+  <pardefs>
+    <pardef n="vowel">
+      <e><i>a</i></e>
+      <e><i>e</i></e>
+      <e><i>i</i></e>
+      <e><i>o</i></e>
+      <e><i>u</i></e>
+      <e><i>A</i></e>
+      <e><i>E</i></e>
+      <e><i>I</i></e>
+      <e><i>O</i></e>
+      <e><i>U</i></e>
+    </pardef>
+  </pardefs>
+
+  <section id="main" type="standard">
+    <!-- la + space + vowel → l' + vowel -->
+    <e><p><l>la<b/></l><r>l'</r></p><par n="vowel"/></e>
+  </section>
+
+</dictionary>
