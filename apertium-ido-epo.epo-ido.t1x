@@ -107,7 +107,7 @@
       </action>
     </rule>
 
-    <!-- Adjective rule: remove number/case tags (Ido adjectives are invariable) -->
+    <!-- Adjective rule: remove number/case tags, add sg (Ido adjectives need sg tag) -->
     <rule>
       <pattern>
         <pattern-item n="adj"/>
@@ -117,6 +117,7 @@
           <lu>
             <clip pos="1" side="tl" part="lem"/>
             <clip pos="1" side="tl" part="a_adj"/>
+            <lit-tag v="sg"/>
           </lu>
         </out>
       </action>

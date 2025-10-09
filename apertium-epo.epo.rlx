@@ -71,4 +71,9 @@ SELECT ("oni" prn tn sg nom) IF
     (1 Vblex OR Vbser) # Followed by a verb (subject position)
 ;
 
+# Rule 8: "Li" is usually the pronoun "he", not a proper noun
+REMOVE ("Li" np) IF
+    (0 ("Li"))
+    (1 Vblex OR Vbser) # Followed by verb (subject position)
+;
 
