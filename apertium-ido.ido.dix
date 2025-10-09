@@ -99,22 +99,8 @@
       </e>
     </pardef>
     <pardef n="ala__adj">
-      <e>
-        <p>
-          <l>ala</l>
-          <r>
-            <s n="adj"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ale</l>
-          <r>
-            <s n="adv"/>
-          </r>
-        </p>
-      </e>
+      <e><p><l>ala</l><r><s n="adj"/></r></p></e>
+      <e><p><l>ale</l><r><s n="adv"/></r></p></e>
     </pardef>
     <pardef n="e__adv">
       <e>
@@ -17705,10 +17691,6 @@
       <i>abdik</i>
       <par n="a__adj"/>
     </e>
-    <e lm="abdominala">
-      <i>abdomin</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="abolisar">
       <i>abolis</i>
       <par n="a__adj"/>
@@ -17761,10 +17743,6 @@
       <i>abund</i>
       <par n="a__adj"/>
     </e>
-    <e lm="acefala">
-      <i>acefal</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="acelerar">
       <i>aceler</i>
       <par n="a__adj"/>
@@ -17781,10 +17759,6 @@
       <i>acid</i>
       <par n="a__adj"/>
     </e>
-    <e lm="acidentala">
-      <i>acident</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="adequata">
       <i>adequat</i>
       <par n="a__adj"/>
@@ -17795,10 +17769,6 @@
     </e>
     <e lm="adicionar">
       <i>adicion</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="administrala">
-      <i>administr</i>
       <par n="a__adj"/>
     </e>
     <e lm="administranto">
@@ -18161,10 +18131,6 @@
       <i>aston</i>
       <par n="a__adj"/>
     </e>
-    <e lm="astronomiala">
-      <i>astronomi</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="atachar">
       <i>atach</i>
       <par n="a__adj"/>
@@ -18187,10 +18153,6 @@
     </e>
     <e lm="atingar">
       <i>ating</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="atomala">
-      <i>atom</i>
       <par n="a__adj"/>
     </e>
     <e lm="atraktar">
@@ -18619,10 +18581,6 @@
     </e>
     <e lm="centrifugar">
       <i>centrifug</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="centripetala">
-      <i>centripet</i>
       <par n="a__adj"/>
     </e>
     <e lm="centripetar">
@@ -19113,10 +19071,6 @@
       <i>diagnoz</i>
       <par n="a__adj"/>
     </e>
-    <e lm="diagonala">
-      <i>diagonal</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="diakritika">
       <i>diakritik</i>
       <par n="a__adj"/>
@@ -19167,10 +19121,6 @@
     </e>
     <e lm="digresar">
       <i>digres</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="dijitala">
-      <i>dijital</i>
       <par n="a__adj"/>
     </e>
     <e lm="dika">
@@ -19437,10 +19387,6 @@
       <i>dron</i>
       <par n="a__adj"/>
     </e>
-    <e lm="duala">
-      <i>du</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="dualismo">
       <i>du</i>
       <par n="a__adj"/>
@@ -19537,10 +19483,6 @@
       <i>efik</i>
       <par n="a__adj"/>
     </e>
-    <e lm="egala">
-      <i>egal</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="egarar">
       <i>egar</i>
       <par n="a__adj"/>
@@ -19555,10 +19497,6 @@
     </e>
     <e lm="ejektar">
       <i>ejekt</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="ekleziala">
-      <i>eklezi</i>
       <par n="a__adj"/>
     </e>
     <e lm="eklipsar">
@@ -19578,10 +19516,6 @@
       <par n="a__adj"/>
     </e>
     <e lm="elektado">
-      <i>elekt</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="elektala">
       <i>elekt</i>
       <par n="a__adj"/>
     </e>
@@ -19687,10 +19621,6 @@
     </e>
     <e lm="emundar">
       <i>emund</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="endetala">
-      <i>endetal</i>
       <par n="a__adj"/>
     </e>
     <e lm="engajar">
@@ -19815,7 +19745,7 @@
     </e>
     <e lm="esar">
       <i>es</i>
-      <par n="a__adj"/>
+      <par n="ar__vblex"/>
     </e>
     <e lm="esbosar">
       <i>esbos</i>
@@ -19911,10 +19841,6 @@
     </e>
     <e lm="eventar">
       <i>event</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="eventuala">
-      <i>eventual</i>
       <par n="a__adj"/>
     </e>
     <e lm="evidenta">
@@ -20035,10 +19961,6 @@
     </e>
     <e lm="experta">
       <i>expert</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="expiacala">
-      <i>expiac</i>
       <par n="a__adj"/>
     </e>
     <e lm="expiacanta">
@@ -20461,10 +20383,6 @@
       <i>formac</i>
       <par n="a__adj"/>
     </e>
-    <e lm="formala">
-      <i>form</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="forta">
       <i>fort</i>
       <par n="a__adj"/>
@@ -20479,10 +20397,6 @@
     </e>
     <e lm="fotokopiar">
       <i>fotokopi</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="fracionala">
-      <i>fracion</i>
       <par n="a__adj"/>
     </e>
     <e lm="fragmenta">
@@ -20637,10 +20551,6 @@
       <i>galop</i>
       <par n="a__adj"/>
     </e>
-    <e lm="galvanala">
-      <i>galvan</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="gambitar">
       <i>gambit</i>
       <par n="a__adj"/>
@@ -20689,18 +20599,6 @@
       <i>gay</i>
       <par n="a__adj"/>
     </e>
-    <e lm="genealogiala">
-      <i>genealogi</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="generala">
-      <i>gener</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="genitala">
-      <i>genit</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="genitar">
       <i>genit</i>
       <par n="a__adj"/>
@@ -20714,10 +20612,6 @@
       <par n="a__adj"/>
     </e>
     <e lm="geya">
-      <i>gey</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="geyala">
       <i>gey</i>
       <par n="a__adj"/>
     </e>
@@ -20945,24 +20839,12 @@
       <i>hazard</i>
       <par n="a__adj"/>
     </e>
-    <e lm="hazardala">
-      <i>hazard</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="hela">
       <i>hel</i>
       <par n="a__adj"/>
     </e>
     <e lm="helpar">
       <i>help</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="heredala">
-      <i>hered</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="heterosexuala">
-      <i>heterosexual</i>
       <par n="a__adj"/>
     </e>
     <e lm="homa">
@@ -20973,16 +20855,8 @@
       <i>homaj</i>
       <par n="a__adj"/>
     </e>
-    <e lm="homala">
-      <i>hom</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="homaro">
       <i>hom</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="homeosexuala">
-      <i>homeosexual</i>
       <par n="a__adj"/>
     </e>
     <e lm="honesta">
@@ -21015,10 +20889,6 @@
     </e>
     <e lm="identifikar">
       <i>identifik</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="ideologiala">
-      <i>ideologi</i>
       <par n="a__adj"/>
     </e>
     <e lm="idiota">
@@ -21233,10 +21103,6 @@
       <i>infalibl</i>
       <par n="a__adj"/>
     </e>
-    <e lm="infantala">
-      <i>infant</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="infektar">
       <i>infekt</i>
       <par n="a__adj"/>
@@ -21247,10 +21113,6 @@
     </e>
     <e lm="inferiora">
       <i>inferior</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="inflacionala">
-      <i>inflacion</i>
       <par n="a__adj"/>
     </e>
     <e lm="inflamar">
@@ -21295,10 +21157,6 @@
     </e>
     <e lm="inhibar">
       <i>inhib</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="iniciala">
-      <i>inici</i>
       <par n="a__adj"/>
     </e>
     <e lm="iniciar">
@@ -21629,10 +21487,6 @@
       <i>jubile</i>
       <par n="a__adj"/>
     </e>
-    <e lm="judiciala">
-      <i>judici</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="judiciar">
       <i>judici</i>
       <par n="a__adj"/>
@@ -21715,10 +21569,6 @@
     </e>
     <e lm="kandida">
       <i>kandid</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="kanibala">
-      <i>kanibal</i>
       <par n="a__adj"/>
     </e>
     <e lm="kantar">
@@ -21821,10 +21671,6 @@
       <i>kavalk</i>
       <par n="a__adj"/>
     </e>
-    <e lm="kazuala">
-      <i>kazual</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="kelka">
       <i>kelk</i>
       <par n="a__adj"/>
@@ -21925,10 +21771,6 @@
       <i>koket</i>
       <par n="a__adj"/>
     </e>
-    <e lm="kolaterala">
-      <i>kolateral</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="kolda">
       <i>kold</i>
       <par n="a__adj"/>
@@ -21975,10 +21817,6 @@
     </e>
     <e lm="kombustar">
       <i>kombust</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="komencala">
-      <i>komenc</i>
       <par n="a__adj"/>
     </e>
     <e lm="komencar">
@@ -22697,10 +22535,6 @@
       <i>kupl</i>
       <par n="a__adj"/>
     </e>
-    <e lm="kuracala">
-      <i>kurac</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="kuracar">
       <i>kurac</i>
       <par n="a__adj"/>
@@ -22807,10 +22641,6 @@
     </e>
     <e lm="latenta">
       <i>latent</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="laterala">
-      <i>later</i>
       <par n="a__adj"/>
     </e>
     <e lm="laudar">
@@ -22959,10 +22789,6 @@
     </e>
     <e lm="lotriar">
       <i>lotri</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="loyala">
-      <i>loyal</i>
       <par n="a__adj"/>
     </e>
     <e lm="lua">
@@ -23453,10 +23279,6 @@
       <i>nat</i>
       <par n="a__adj"/>
     </e>
-    <e lm="naturala">
-      <i>natur</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="naufrajar">
       <i>naufraj</i>
       <par n="a__adj"/>
@@ -23771,10 +23593,6 @@
     </e>
     <e lm="organika">
       <i>organik</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="originala">
-      <i>origin</i>
       <par n="a__adj"/>
     </e>
     <e lm="orlar">
@@ -24361,10 +24179,6 @@
       <i>postur</i>
       <par n="a__adj"/>
     </e>
-    <e lm="potenciala">
-      <i>potencial</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="potenta">
       <i>potent</i>
       <par n="a__adj"/>
@@ -24567,10 +24381,6 @@
     </e>
     <e lm="profesar">
       <i>profes</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="profesionala">
-      <i>profesion</i>
       <par n="a__adj"/>
     </e>
     <e lm="profitar">
@@ -24919,10 +24729,6 @@
     </e>
     <e lm="reaktar">
       <i>reakt</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="reala">
-      <i>real</i>
       <par n="a__adj"/>
     </e>
     <e lm="rebela">
@@ -25675,10 +25481,6 @@
     </e>
     <e lm="seniora">
       <i>senior</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="sensuala">
-      <i>sensual</i>
       <par n="a__adj"/>
     </e>
     <e lm="sentar">
@@ -26485,10 +26287,6 @@
       <i>sumn</i>
       <par n="a__adj"/>
     </e>
-    <e lm="sunala">
-      <i>sun</i>
-      <par n="a__adj"/>
-    </e>
     <e lm="supear">
       <i>supe</i>
       <par n="a__adj"/>
@@ -26627,10 +26425,6 @@
     </e>
     <e lm="toxika">
       <i>toxik</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="tradicionala">
-      <i>tradicion</i>
       <par n="a__adj"/>
     </e>
     <e lm="tradukanto">
@@ -26955,10 +26749,6 @@
     </e>
     <e lm="virga">
       <i>virg</i>
-      <par n="a__adj"/>
-    </e>
-    <e lm="virtuala">
-      <i>virtual</i>
       <par n="a__adj"/>
     </e>
     <e lm="virulenta">

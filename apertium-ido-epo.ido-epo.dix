@@ -9,6 +9,7 @@
     <sdef n="pr"/>
     <sdef n="prn"/>
     <sdef n="det"/>
+    <sdef n="def"/>
     <sdef n="num"/>
     <sdef n="ciph"/>
     <sdef n="cnjcoo"/>
@@ -325,7 +326,7 @@
     <!-- Determiner -->
     <e>
       <p>
-        <l>la<s n="det"/></l>
+        <l>la<s n="det"/><s n="def"/><s n="sp"/></l>
         <r>la<s n="det"/></r>
       </p>
     </e>
@@ -44057,7 +44058,7 @@
     </e>
     <e>
       <p>
-        <l>la<s n="det"/></l>
+        <l>la<s n="det"/><s n="def"/><s n="sp"/></l>
         <r>la<s n="det"/></r>
       </p>
     </e>
