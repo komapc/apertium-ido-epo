@@ -328,6 +328,12 @@
         <r>Amerikana<s n="adv"/></r>
       </p>
     </e>
+    <e lm="Atlantiko">
+      <p>
+        <l>Atlantiko</l>
+        <r>Atlantiko<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="Daniel">
       <p>
         <l>Daniel</l>
@@ -412,6 +418,12 @@
         <r>Isaias<s n="adv"/></r>
       </p>
     </e>
+    <e lm="Islandana">
+      <p>
+        <l>Islandana</l>
+        <r>Islandana<s n="adv"/></r>
+      </p>
+    </e>
     <e lm="Israel">
       <p>
         <l>Israel</l>
@@ -482,6 +494,18 @@
       <p>
         <l>Pensilvania</l>
         <r>Pensilvania<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Polare">
+      <p>
+        <l>Polare</l>
+        <r>Polare<s n="adv"/></r>
+      </p>
+    </e>
+    <e lm="Reykjavik">
+      <p>
+        <l>Reykjavik</l>
+        <r>Reykjavik<s n="adv"/></r>
       </p>
     </e>
     <e lm="Ruto">
@@ -12748,6 +12772,10 @@
       <i>pesari</i>
       <par n="o__n"/>
     </e>
+    <e lm="peshado">
+      <i>peshad</i>
+      <par n="o__n"/>
+    </e>
     <e lm="pesimismo">
       <i>pesimism</i>
       <par n="o__n"/>
@@ -18200,6 +18228,10 @@
       <i>demokrat</i>
       <par n="a__adj"/>
     </e>
+    <e lm="demokratiala">
+      <i>demokratial</i>
+      <par n="a__adj"/>
+    </e>
     <e lm="densa">
       <i>dens</i>
       <par n="a__adj"/>
@@ -22430,6 +22462,10 @@
     </e>
     <e lm="bavar">
       <i>bav</i>
+      <par n="ar__vblex"/>
+    </e>
+    <e lm="bazar">
+      <i>baz</i>
       <par n="ar__vblex"/>
     </e>
     <e lm="benedikar">
