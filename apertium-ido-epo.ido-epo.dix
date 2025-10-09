@@ -106074,5 +106074,15 @@
         <r>dekan<s n="adj"/></r>
       </p>
     </e>
+  
+    <!-- Critical missing verbs -->
+    <e><p><l>movizar<s n="vblex"/></l><r>transloki<s n="vblex"/></r></p></e>
+    <e><p><l>murdar<s n="vblex"/></l><r>murdi<s n="vblex"/></r></p></e>
+    <e><p><l>naskar<s n="vblex"/></l><r>naski<s n="vblex"/></r></p></e>
+    <e><p><l>ofrar<s n="vblex"/></l><r>oferti<s n="vblex"/></r></p></e>
+    <e><p><l>regar<s n="vblex"/></l><r>regi<s n="vblex"/></r></p></e>
+    <e><p><l>returnar<s n="vblex"/></l><r>reveni<s n="vblex"/></r></p></e>
+    <e><p><l>skribar<s n="vblex"/></l><r>verki<s n="vblex"/></r></p></e>
+    <e><p><l>trovar<s n="vblex"/></l><r>trovi<s n="vblex"/></r></p></e>
   </section>
 </dictionary>
