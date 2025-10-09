@@ -16,3 +16,34 @@ modes/
 test-minimal*.dix
 apertium-epo.epo.dix
 
+
+# Autotools build files
+/autom4te.cache
+/aclocal.m4
+/configure
+/config.log
+/config.status
+/Makefile.in
+/install-sh
+/missing
+/INSTALL
+
+# Development/analysis files
+*_ANALYSIS.md
+*_SUMMARY.md
+*_FIX*.md
+*_IMPROVEMENTS.md
+*_REPORT.md
+QUICK_SUMMARY.md
+RECOMMENDED_NEXT_STEPS.md
+test_*.txt
+
+# Python scripts (development only)
+add_essential_words.py
+add_pronoun_entries.py
+generate_reverse_entries.py
+convert_esperanto_chars.sh
+
+# Symlinks
+apertium-epo.epo.dix
+apertium-ido.ido.dix

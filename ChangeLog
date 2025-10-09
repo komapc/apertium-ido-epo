@@ -1,0 +1,9 @@
+2025-10-09  Mark (komapc) <komapc@users.noreply.github.com>
+
+	* Initial release
+	* Created bilingual dictionary with 7,335 entries
+	* Implemented transfer rules for Ido→Esperanto and Esperanto→Ido
+	* Added comprehensive test cases
+	* Set up Autotools build system
+
+

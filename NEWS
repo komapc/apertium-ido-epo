@@ -1,0 +1,10 @@
+0.1.0 (2025-10-09)
+==================
+
+* Initial release of Ido-Esperanto language pair
+* 7,335 bilingual dictionary entries extracted from Ido Wiktionary
+* Complete transfer rules for both directions
+* Handles adjective agreement, accusative case, and verb infinitive differences
+* Comprehensive test suite
+
+
