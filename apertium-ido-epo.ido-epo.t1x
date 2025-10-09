@@ -16,7 +16,7 @@
       <cat-item tags="vblex.*"/>
     </def-cat>
     <def-cat n="vbser">
-      <cat-item lemma="est"/>
+      <cat-item lemma="esar"/>
     </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn"/>
@@ -159,8 +159,8 @@
       <action>
         <choose>
           <when>
-            <!-- If verb is "es" (to be), keep nominative (predicate) -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></test>
+            <!-- If verb is "esar" (to be), keep nominative (predicate) -->
+            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -213,8 +213,8 @@
       <action>
         <choose>
           <when>
-            <!-- If verb is "es" (to be), keep nominative (predicate) -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></test>
+            <!-- If verb is "esar" (to be), keep nominative (predicate) -->
+            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>

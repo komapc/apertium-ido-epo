@@ -1,0 +1,91 @@
+=== COMPREHENSIVE TEST REPORT ===
+Generated: Thu Oct  9 06:39:32 AM IDT 2025
+
+## Test 1: Basic copula sentence
+Input:  Republiko esas guvernala sistemo.
+Output: Respubliko estas registaran sistemon.
+Expected: Respubliko estas registara sistemo.
+
+## Test 2: Full test file
+
+### Input (test_republiko.txt):
+Republiko esas guvernala sistemo ube la chefo di stato elektesas dal populo o dal parlamento, e ne povas transmisar la povo heredale a lua familio.
+
+Se la chefo di stato anke esas chefo di guvernerio, la lando esas prezidantala republiko.
+
+La prezidanti guvernas por periodi de 4 til 6 yari.
+
+Segun Aristoteles, la tri principi fundamentala di ula republiko esas: la separo di povi e lua mutuala kontrolo.
+
+Moderna konceptajo pri republiko aparis en Francia dum Iluminismo.
+
+Usa adoptis republiko kande ol divenis nedependanta, ye la 4ma di julio 1776.
+
+
+### Output:
+Respubliko estas registaran sistemon kie #la ĉefo de ŝtato elektiĝas #de la popolon #default #de la parlamento, #unknown ne povas transdoni #la povon #heredale #al sia familio.
+
+#Se #la ĉefo de ŝtato ankaŭ estas ĉefon de registaro, #la lando estas prezidantan respublikon.
+
+#La prezidantoj direktas *por @perioda #unknown #default ĝis #default @yara.
+
+Laŭ #default, #la #default principoj fundamenta de iu respubliko estas: #la apartigon de povoj *e sia reciproka kontrolo.
+
+Moderna #unknown pri respubliko #unknown en #Francio #dum #default.
+
+#Usono #adopti respublikon kiam #ĝi #fariĝi sendependa, je #la kvara de julio #default.
+
+
+
+## Coverage Statistics
+
+### Words with # (recognized but not generated properly):
+      7 #la
+      7 #default
+      4 #unknown
+      2 #de
+      1 #Usono
+      1 #Se
+      1 #La
+      1 #heredale
+      1 #ĝi
+      1 #Francio
+      1 #fariĝi
+      1 #dum
+      1 #al
+      1 #adopti
+
+### Words with * (partially translated):
+      1 *por
+      1 *e
+
+### Words with @ (not found in dictionary):
+      1 @yara
+      1 @perioda
+
+## Key Issues Identified
+
+### 1. CRITICAL: Case Agreement with Copula "esas"
+**Problem:** Predicate nouns/adjectives after "esas" (to be) incorrectly receive accusative case
+**Example:** 
+- Input:  "Republiko esas guvernala sistemo." (nom + copula + nom)
+- Output: "Respubliko estas registaran sistemon." (nom + copula + ACC) ❌
+- Should: "Respubliko estas registara sistemo." (nom + copula + nom) ✓
+
+**Root cause:** Transfer rules likely applying accusative to all objects, not distinguishing copula from transitive verbs
+
+### 2. HIGH: Definite Article "#la" markers
+**Problem:** Articles marked with # indicating generation issues
+**Count:** 7 occurrences of "#la"
+**Impact:** Makes output look unprofessional
+
+### 3. MEDIUM: Unknown words "#unknown" and "#default"
+**Counts:** 
+- #unknown: 4 occurrences
+- #default: 7 occurrences
+**Impact:** Missing vocabulary
+
+### 4. LOW: Minor translation issues
+- @perioda, @yara (wrong forms)
+- *e, *por (partially translated)
+
