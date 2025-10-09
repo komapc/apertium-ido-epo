@@ -1,0 +1,18 @@
+{
+    "ido-epo-basic": {
+        "input": "ido-epo-basic-input.txt",
+        "mode": "ido-epo"
+    },
+    "epo-ido-basic": {
+        "input": "epo-ido-basic-input.txt",
+        "mode": "epo-ido"
+    },
+    "ido-epo-grammar": {
+        "input": "ido-epo-grammar-input.txt",
+        "mode": "ido-epo"
+    },
+    "epo-ido-grammar": {
+        "input": "epo-ido-grammar-input.txt",
+        "mode": "epo-ido"
+    }
+}

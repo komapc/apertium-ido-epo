@@ -11,18 +11,47 @@ Dictionary entries were extracted from **Ido Wiktionary** ([io.wiktionary.org](h
 
 ## Requirements
 
-* `lttoolbox`
-* `apertium`
-* `apertium-epo`
+* `lttoolbox` >= 3.5.1
+* `apertium` >= 3.6.1
+* `apertium-ido` >= 0.1.0
+* `apertium-epo` >= 0.1.0
 
-## Compiling
+## Installation
+
+### From Source
 
 ```bash
+./autogen.sh
+./configure
 make
-make modes
+sudo make install
+```
+
+### Development Build
+
+For testing without installation:
+
+```bash
+./autogen.sh
+./configure
+make
 ```
 
 ## Usage
+
+After installation:
+
+```bash
+# Ido → Esperanto
+echo "me havas granda kato" | apertium ido-epo
+# Output: mi havas grandan katon
+
+# Esperanto → Ido
+echo "mi havas grandan katon" | apertium epo-ido
+# Output: me havas granda kato
+```
+
+For development (without installation):
 
 ```bash
 # Ido → Esperanto
@@ -45,6 +74,47 @@ Transfer rules handle the main grammatical differences between Ido and Esperanto
 - Adjective agreement (Ido: invariable → Esperanto: agrees in number and case)
 - Accusative case on direct objects
 - Verb infinitives (Ido: -ar → Esperanto: -i)
+
+## Testing
+
+Run the regression tests:
+
+```bash
+make test
+```
+
+This will run all test cases defined in `test/tests.json` using `apertium-regtest`.
+
+## Statistics
+
+* **Bilingual dictionary entries:** 7,335
+* **Transfer rules:** Complete coverage for both directions
+* **Test cases:** 40+ sentences covering basic and grammar features
+
+## Coverage
+
+The language pair handles:
+- Basic vocabulary (nouns, verbs, adjectives, adverbs)
+- Adjective agreement (Ido invariable → Esperanto number/case agreement)
+- Accusative case marking on direct objects
+- Verb infinitives (Ido `-ar` → Esperanto `-i`)
+- Personal pronouns and demonstratives
+- Prepositions and conjunctions
+- Numerals and ordinals
+
+## Contributing
+
+Contributions are welcome! This language pair is part of the Apertium project.
+
+To contribute:
+1. Test the language pair and identify errors
+2. Add new dictionary entries or improve transfer rules
+3. Submit issues or pull requests to the repository
+
+For questions or discussion:
+- Mailing list: [apertium-stuff@lists.sourceforge.net](mailto:apertium-stuff@lists.sourceforge.net)
+- IRC: #apertium on irc.oftc.net
+- Wiki: https://wiki.apertium.org/
 
 ## License
 
