@@ -1,0 +1,113 @@
+# Diverse Pattern Tests from Wikipedia Content
+# Testing different grammatical constructions
+# Date: 2025-10-09
+
+## PASSIVE VOICE PATTERNS
+
+# From Tibet: passive participles
+IDO: influita da vicina landi e kulturi
+EPO: influita de najbaraj landoj kaj kulturoj
+
+IDO: ol endukto en la 7ma yarcento
+EPO: ĝi estis enkondukita en la 7-a jarcento
+
+## POSSESSION / POSSESSIVE PRONOUNS
+
+IDO: sua geografial e klimatal standi
+EPO: siaj geografiaj kaj klimataj kondiĉoj
+
+IDO: sua fonto
+EPO: sian fonton
+
+IDO: sua nedependo
+EPO: sian sendependecon
+
+## COMPLEX NUMBERS
+
+IDO: 4900 metri
+EPO: 4900 metroj
+
+IDO: c. 150.000 exilita parolanti
+EPO: ĉ. 150.000 ekzilitaj parolantoj
+
+IDO: en 1913
+EPO: en 1913
+
+IDO: en 1951
+EPO: en 1951
+
+## COMPOUND ADJECTIVES
+
+IDO: la maxim alta regiono
+EPO: la plej alta regiono
+
+IDO: granda parto
+EPO: grandan parton
+
+IDO: plura granda riveri
+EPO: pluraj grandaj riveroj
+
+## PREPOSITIONAL PHRASES
+
+IDO: en Centrala Azio
+EPO: en Centrala Azio
+
+IDO: sur Tero
+EPO: sur Tero
+
+IDO: de la Tibetana Platajo
+EPO: de la Tibeta Altebenaĵo
+
+## RELATIVE CLAUSES
+
+IDO: regiono qua kovras granda parto
+EPO: regiono kiu kovras grandan parton
+
+IDO: parolanti qui fugis
+EPO: parolantoj kiuj fuĝis
+
+## VERB TENSES
+
+# Present
+IDO: Tibet esas la maxim alta regiono
+EPO: Tibeto estas la plej alta regiono
+
+# Past
+IDO: La Imperio emersis
+EPO: La Imperio aperis
+
+IDO: La regiono deklaris
+EPO: La regiono deklaris
+
+# Compound past
+IDO: Tibet inkluzesis
+EPO: Tibeto estis inkluzivita
+
+## CONJUNCTIONS
+
+IDO: geografial e klimatal
+EPO: geografiaj kaj klimataj
+
+IDO: landi e kulturi
+EPO: landoj kaj kulturoj
+
+## PARTITIVE CONSTRUCTIONS
+
+IDO: granda parto de la Platajo
+EPO: grandan parton de la Altebenaĵo
+
+IDO: ula ek la monti
+EPO: kelkaj el la montoj
+
+## ADVERBS
+
+IDO: generale ne interkomprenebla
+EPO: ĝenerale ne interkompreneblaj
+
+IDO: aparte forte influis
+EPO: aparte forte influis
+
+## COMPARISON STRUCTURES
+
+IDO: klasifikas kom Tibeto-Burmana linguo
+EPO: klasifikas kiel Tibeto-Burmana lingvo

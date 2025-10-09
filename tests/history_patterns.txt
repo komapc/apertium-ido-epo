@@ -1,0 +1,44 @@
+# History/Timeline Patterns from Tibet Article
+# Testing temporal expressions, historical events
+
+## TEMPORAL EXPRESSIONS
+
+IDO: dum la 7ma yarcento
+EPO: dum la 7-a jarcento
+
+IDO: en 1913
+EPO: en 1913
+
+IDO: en 1951
+EPO: en 1951
+
+IDO: pos la Xinhai-Revoluciono
+EPO: post la Ŝinhaja Revolucio
+
+IDO: til 1951
+EPO: ĝis 1951
+
+## HISTORICAL EVENTS
+
+IDO: La Tibetana Imperio emersis dum la 7ma yarcento.
+EPO: La Tibeta Imperio aperis dum la 7-a jarcento.
+
+IDO: La regiono deklaris sua nedependo en 1913.
+EPO: La regiono deklaris sian sendependecon en 1913.
+
+IDO: Tibet inkluzesis aden la Popul-Republiko di Chinia.
+EPO: Tibeto estis inkluzivita en la Popolrespublikon de Ĉinio.
+
+IDO: La antea Tibetana guvernerio abolisesis en 1959.
+EPO: La antaŭa Tibeta registaro estis aboliciita en 1959.
+
+## COMPOUND PAST / PASSIVE
+
+IDO: Tibet inkluzesis
+EPO: Tibeto estis inkluzivita
+
+IDO: guvernerio abolisesis
+EPO: registaro estis aboliciita
+
+IDO: soldati senarmigesis ed ekpulsesis
+EPO: soldatoj estis senarmigitaj kaj elpelitaj
