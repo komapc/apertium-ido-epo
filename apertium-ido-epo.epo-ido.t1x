@@ -32,6 +32,7 @@
     </def-cat>
     <def-cat n="det">
       <cat-item tags="det"/>
+      <cat-item tags="det.*"/>
     </def-cat>
     <def-cat n="np">
       <cat-item tags="np"/>
@@ -230,7 +231,7 @@
       </action>
     </rule>
 
-    <!-- Determiner rule: pass through -->
+    <!-- Determiner rule: strip def/number tags (Ido determiners are simpler) -->
     <rule>
       <pattern>
         <pattern-item n="det"/>
@@ -238,7 +239,8 @@
       <action>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="det"/>
           </lu>
         </out>
       </action>

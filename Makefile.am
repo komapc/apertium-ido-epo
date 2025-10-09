@@ -17,6 +17,7 @@ TARGETS_COMMON =		\
 	$(PREFIX2).automorf.bin	\
 	$(PREFIX2).autobil.bin	\
 	$(PREFIX2).autogen.bin	\
+	$(PREFIX2).rlx.bin	\
 	$(PREFIX2).t1x.bin
 
 
@@ -62,6 +63,13 @@ $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 	cp $< $@
 
 ###############################################################################
+## Disambiguation rules  
+###############################################################################
+
+$(PREFIX2).rlx.bin: $(BASENAME).$(LANG2).$(LANG2).rlx
+	cg-comp $< $@
+
+###############################################################################
 ## Bilingual dictionaries
 ###############################################################################
 
@@ -93,6 +101,7 @@ EXTRA_DIST=					\
 		$(BASENAME).$(PREFIX1).dix	\
 		$(BASENAME).$(PREFIX1).t1x	\
 		$(BASENAME).$(PREFIX2).t1x	\
+		$(BASENAME).$(LANG2).$(LANG2).rlx	\
 		modes.xml
 
 ###############################################################################
