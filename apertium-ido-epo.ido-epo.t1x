@@ -479,17 +479,41 @@
       </action>
     </rule>
 
-    <!-- Verb rule: pass through -->
+    <!-- Verb rule: convert Ido tense tags to Esperanto tense tags -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="pres"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="past"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
