@@ -5,6 +5,7 @@
     <sdef n="n"/>
     <sdef n="adj"/>
     <sdef n="adv"/>
+    <sdef n="preadv"/>
     <sdef n="vblex"/>
     <sdef n="pr"/>
     <sdef n="prn"/>
@@ -14,6 +15,7 @@
     <sdef n="ciph"/>
     <sdef n="cnjcoo"/>
     <sdef n="cnjsub"/>
+    <sdef n="cnjadv"/>
     <sdef n="ij"/>
     <sdef n="sg"/>
     <sdef n="pl"/>
@@ -5420,6 +5422,12 @@
       <p>
         <l>brul<s n="vblex"/></l>
         <r>bruli.<s n="vblex"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>brul<s n="n"/></l>
+        <r>brulaĵo<s n="n"/></r>
       </p>
     </e>
     <e>
@@ -21996,6 +22004,12 @@
     </e>
     <e>
       <p>
+        <l>kosmetik<s n="n"/></l>
+        <r>kosmetikaĵo<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>kosm<s n="n"/></l>
         <r>kosmo<s n="n"/></r>
       </p>
@@ -31386,8 +31400,32 @@
     </e>
     <e>
       <p>
-        <l>pluse<s n="adv"/></l>
+        <l>plus<s n="adv"/></l>
         <r>pli<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>plus<s n="preadv"/></l>
+        <r>pli<s n="preadv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>plus<s n="pr"/></l>
+        <r>pli<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>plus<b/>kam<s n="pr"/></l>
+        <r>pli<b/>ol<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>plus<b/>kam<s n="cnjadv"/></l>
+        <r>pli<b/>ol<s n="cnjadv"/></r>
       </p>
     </e>
     <e>

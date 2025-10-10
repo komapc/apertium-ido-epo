@@ -11,6 +11,7 @@
     <sdef n="n" c="Noun"/>
     <sdef n="adj" c="Adjective"/>
     <sdef n="adv" c="Adverb"/>
+    <sdef n="preadv" c="Pre-adverb"/>
     <sdef n="vblex" c="Verb"/>
     <sdef n="pr" c="Preposition"/>
     <sdef n="prn" c="Pronoun"/>
@@ -20,6 +21,7 @@
     <sdef n="num" c="Numeral"/>
     <sdef n="cnjcoo" c="Coordinating conjunction"/>
     <sdef n="cnjsub" c="Subordinating conjunction"/>
+    <sdef n="cnjadv" c="Conjunctive adverb"/>
     <sdef n="ij" c="Interjection"/>
     <sdef n="sg" c="Singular"/>
     <sdef n="pl" c="Plural"/>
@@ -98,6 +100,12 @@
     </pardef>
     <pardef n="__ij">
       <e><p><l></l><r><s n="ij"/></r></p></e>
+    </pardef>
+    <pardef n="__preadv">
+      <e><p><l></l><r><s n="preadv"/></r></p></e>
+    </pardef>
+    <pardef n="__cnjadv">
+      <e><p><l></l><r><s n="cnjadv"/></r></p></e>
     </pardef>
   </pardefs>
   <section id="main" type="standard">
@@ -8844,6 +8852,10 @@
     <e lm="kosmetiko">
       <i>kosmetik</i>
       <par n="o__n"/>
+    </e>
+    <e lm="kosmetikajo">
+      <i>kosmetik</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="kosmo">
       <i>kosm</i>
@@ -18327,7 +18339,7 @@
     </e>
     <e lm="brulajo">
       <i>brul</i>
-      <par n="a__adj"/>
+      <par n="ajo__n"/>
     </e>
     <e lm="brular">
       <i>brul</i>
@@ -27473,6 +27485,22 @@
     <e lm="pluse">
       <i>plus</i>
       <par n="e__adv"/>
+    </e>
+    <e lm="pluse">
+      <i>pluse</i>
+      <par n="__preadv"/>
+    </e>
+    <e lm="pluse">
+      <i>pluse</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="plus kam">
+      <i>plus<b/>kam</i>
+      <par n="__pr"/>
+    </e>
+    <e lm="plus kam">
+      <i>plus<b/>kam</i>
+      <par n="__cnjadv"/>
     </e>
     <e lm="politeso">
       <i>polit</i>
