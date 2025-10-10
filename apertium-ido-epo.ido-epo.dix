@@ -98,6 +98,12 @@
     </e>
     <e>
       <p>
+        <l>ed<s n="cnjcoo"/></l>
+        <r>kaj<s n="cnjcoo"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>od<s n="cnjcoo"/></l>
         <r>aŭ<s n="cnjcoo"/></r>
       </p>
@@ -278,6 +284,12 @@
     </e>
     <e>
       <p>
+        <l>dil<s n="pr"/></l>
+        <r>de<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>en<s n="pr"/></l>
         <r>en<s n="pr"/></r>
       </p>
@@ -286,6 +298,12 @@
       <p>
         <l>inter<s n="pr"/></l>
         <r>inter<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>kom<s n="pr"/></l>
+        <r>kiel<s n="pr"/></r>
       </p>
     </e>
     <e>
@@ -338,8 +356,20 @@
     </e>
     <e>
       <p>
+        <l>su<s n="pr"/></l>
+        <r>sub<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>sur<s n="pr"/></l>
         <r>sur<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>til<s n="pr"/></l>
+        <r>ĝis<s n="pr"/></r>
       </p>
     </e>
     <e>
@@ -358,6 +388,12 @@
       <p>
         <l>ultra<s n="pr"/></l>
         <r>preter<s n="pr"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ye<s n="pr"/></l>
+        <r>je<s n="pr"/></r>
       </p>
     </e>
     
@@ -399,11 +435,57 @@
       </p>
     </e>
     
+    <!-- Demonstrative Pronouns -->
+    <e>
+      <p>
+        <l>ca<s n="prn"/></l>
+        <r>ĉi tiu<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ta<s n="prn"/></l>
+        <r>tiu<s n="prn"/></r>
+      </p>
+    </e>
+    
     <!-- Determiner -->
     <e>
       <p>
         <l>la<s n="det"/><s n="def"/><s n="sp"/></l>
         <r>la<s n="det"/></r>
+      </p>
+    </e>
+    
+    <!-- Possessive Determiners -->
+    <e>
+      <p>
+        <l>olua<s n="det"/></l>
+        <r>ĝia<s n="det"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>lua<s n="det"/></l>
+        <r>lia<s n="det"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>sua<s n="det"/></l>
+        <r>sia<s n="det"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>lia<s n="det"/></l>
+        <r>ilia<s n="det"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>lora<s n="det"/></l>
+        <r>ilia<s n="det"/></r>
       </p>
     </e>
     
@@ -2362,7 +2444,7 @@
     </e>
     <e>
       <p>
-        <l>anke<s n="adv"/></l>
+        <l>ank<s n="adv"/></l>
         <r>ankaŭ<s n="adv"/></r>
       </p>
     </e>
@@ -4392,6 +4474,12 @@
       <p>
         <l>bas<s n="adj"/></l>
         <r>basa<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>baz<s n="adj"/></l>
+        <r>baza<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -10606,8 +10694,14 @@
     </e>
     <e>
       <p>
-        <l>erste<s n="adv"/></l>
+        <l>erst<s n="adv"/></l>
         <r>ne pli frue ol<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>est<s n="adv"/></l>
+        <r>oriente<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -12064,6 +12158,12 @@
     </e>
     <e>
       <p>
+        <l>feder<s n="adj"/></l>
+        <r>federacia<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>fek<s n="n"/></l>
         <r>feko<s n="n"/></r>
       </p>
@@ -12678,6 +12778,12 @@
       <p>
         <l>fizik<s n="n"/></l>
         <r>fiziko<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>fizik<s n="adj"/></l>
+        <r>fizika<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -20344,6 +20450,12 @@
     </e>
     <e>
       <p>
+        <l>kolonial<s n="adj"/></l>
+        <r>kolonia<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>kolon<s n="n"/></l>
         <r>kojlo<s n="n"/></r>
       </p>
@@ -20490,6 +20602,12 @@
       <p>
         <l>komerc<s n="n"/></l>
         <r>komerco<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>komerc<s n="adj"/></l>
+        <r>komerca<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -21456,6 +21574,12 @@
       <p>
         <l>konstituc<s n="vblex"/></l>
         <r>konstitui<s n="vblex"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>konstituc<s n="adj"/></l>
+        <r>konstitucia<s n="adj"/></r>
       </p>
     </e>
     <e>
@@ -28090,6 +28214,12 @@
     </e>
     <e>
       <p>
+        <l>nord<s n="adv"/></l>
+        <r>norde<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>norm<s n="n"/></l>
         <r>normo<s n="n"/></r>
       </p>
@@ -31932,6 +32062,12 @@
       <p>
         <l>posibl<s n="adj"/></l>
         <r>ebla<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>pos<s n="adv"/></l>
+        <r>poste<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -39340,6 +39476,12 @@
     </e>
     <e>
       <p>
+        <l>strategi<s n="adj"/></l>
+        <r>strategia<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>strat<s n="n"/></l>
         <r>stratumo<s n="n"/></r>
       </p>
@@ -39738,6 +39880,12 @@
       <p>
         <l>sud<s n="n"/></l>
         <r>sudo<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>sud<s n="adv"/></l>
+        <r>sude<s n="adv"/></r>
       </p>
     </e>
     <e>
@@ -42958,6 +43106,12 @@
     </e>
     <e>
       <p>
+        <l>west<s n="adv"/></l>
+        <r>okcidente<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>Wikivortar<s n="n"/></l>
         <r>Vikivortaro<s n="n"/></r>
       </p>
@@ -43900,6 +44054,12 @@
     </e>
     <e>
       <p>
+        <l>ofic<s n="adj"/></l>
+        <r>oficiala<s n="adj"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>parlament<s n="adj"/></l>
         <r>parlamenta<s n="adj"/></r>
       </p>
@@ -44592,6 +44752,12 @@
       <p>
         <l>maxim<s n="adv"/></l>
         <r>plej<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>mem<s n="adv"/></l>
+        <r>eĉ<s n="adv"/></r>
       </p>
     </e>
     <e>
