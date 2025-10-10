@@ -87,8 +87,15 @@
 
   <section-rules>
     <!-- ============================================================================
-         COPULA RULES (vbser category - specifically matches "esar")
-         These rules handle predicate nominatives and predicate adjectives
+         COPULA RULES (vbser category - matches lemma "esar" or "es")
+         
+         These rules have PRIORITY over vblex rules due to lemma-based matching.
+         They handle simple copula patterns (copula + predicate).
+         
+         Complex patterns (e.g., copula + det + noun, coordinations) are handled
+         by vblex rules below with explicit copula checking.
+         
+         Copula predicates remain in NOMINATIVE case (unlike transitive objects).
          ============================================================================ -->
     
     <!-- Copula (esar/esti) + Adjective + Noun: keep nominative (predicate) -->
@@ -160,9 +167,15 @@
     </rule>
 
     <!-- ============================================================================
-         VERB RULES (vblex category - generic verbs)
-         These rules distinguish between copula "esar" and transitive verbs
-         NOTE: This overlaps with vbser rules above. Consider consolidation.
+         VERB + COMPLEMENT RULES (vblex category - all verbs)
+         
+         These rules handle complex verb patterns including:
+         - Transitive verbs + objects (apply ACCUSATIVE case)
+         - Copula + determiners/coordinations (keep NOMINATIVE)
+         
+         Simple copula patterns are already handled by vbser rules above.
+         These rules check for copula (esar/es) explicitly for patterns not
+         covered by vbser (e.g., verb + determiner + noun).
          ============================================================================ -->
     
     <!-- Verb + Adjective + Noun: check if copula or transitive -->
