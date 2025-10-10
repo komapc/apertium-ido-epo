@@ -103,7 +103,8 @@
       <e><p><l /><r><s n="cnjadv" /></r></p></e>
     </pardef>
   </pardefs>
-  <section><e lm="e">
+  <section id="main" type="standard">
+    <e lm="e">
       <i>e</i>
       <par n="__cnjcoo" />
     </e>
