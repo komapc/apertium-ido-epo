@@ -108,6 +108,10 @@
       <i>e</i>
       <par n="__cnjcoo" />
     </e>
+    <e lm="ed">
+      <i>ed</i>
+      <par n="__cnjcoo" />
+    </e>
     <e lm="kaj">
       <i>kaj</i>
       <par n="__cnjcoo" />
@@ -184,12 +188,20 @@
       <i>di</i>
       <par n="__pr" />
     </e>
+    <e lm="dil">
+      <i>dil</i>
+      <par n="__pr" />
+    </e>
     <e lm="en">
       <i>en</i>
       <par n="__pr" />
     </e>
     <e lm="inter">
       <i>inter</i>
+      <par n="__pr" />
+    </e>
+    <e lm="kom">
+      <i>kom</i>
       <par n="__pr" />
     </e>
     <e lm="kontre">
@@ -224,8 +236,16 @@
       <i>sen</i>
       <par n="__pr" />
     </e>
+    <e lm="su">
+      <i>su</i>
+      <par n="__pr" />
+    </e>
     <e lm="sur">
       <i>sur</i>
+      <par n="__pr" />
+    </e>
+    <e lm="til">
+      <i>til</i>
       <par n="__pr" />
     </e>
     <e lm="tra">
@@ -238,6 +258,10 @@
     </e>
     <e lm="ultra">
       <i>ultra</i>
+      <par n="__pr" />
+    </e>
+    <e lm="ye">
+      <i>ye</i>
       <par n="__pr" />
     </e>
     
@@ -264,6 +288,16 @@
     </e>
     <e lm="yen">
       <i>yen</i>
+      <par n="__prn" />
+    </e>
+    
+    <!-- Demonstrative pronouns/determiners -->
+    <e lm="ca">
+      <i>ca</i>
+      <par n="__prn" />
+    </e>
+    <e lm="ta">
+      <i>ta</i>
       <par n="__prn" />
     </e>
     
@@ -320,6 +354,28 @@
     </e>
     <e lm="la">
       <i>l'</i>
+      <par n="__det" />
+    </e>
+    
+    <!-- Possessive determiners (verified from Wikipedia) -->
+    <e lm="olua">
+      <i>olua</i>
+      <par n="__det" />
+    </e>
+    <e lm="lua">
+      <i>lua</i>
+      <par n="__det" />
+    </e>
+    <e lm="sua">
+      <i>sua</i>
+      <par n="__det" />
+    </e>
+    <e lm="lia">
+      <i>lia</i>
+      <par n="__det" />
+    </e>
+    <e lm="lora">
+      <i>lora</i>
       <par n="__det" />
     </e>
     
@@ -16318,6 +16374,10 @@
       <i>atom</i>
       <par n="ala__adj" />
     </e>
+    <e lm="bazala">
+      <i>baz</i>
+      <par n="ala__adj" />
+    </e>
     <e lm="celestala">
       <i>celest</i>
       <par n="ala__adj" />
@@ -16372,6 +16432,14 @@
     </e>
     <e lm="expiacala">
       <i>expiac</i>
+      <par n="ala__adj" />
+    </e>
+    <e lm="federala">
+      <i>feder</i>
+      <par n="ala__adj" />
+    </e>
+    <e lm="fizikala">
+      <i>fizik</i>
       <par n="ala__adj" />
     </e>
     <e lm="formala">
@@ -16478,8 +16546,20 @@
       <i>kolater</i>
       <par n="ala__adj" />
     </e>
+    <e lm="koloniala">
+      <i>kolonial</i>
+      <par n="ala__adj" />
+    </e>
     <e lm="komencala">
       <i>komenc</i>
+      <par n="ala__adj" />
+    </e>
+    <e lm="komercala">
+      <i>komerc</i>
+      <par n="ala__adj" />
+    </e>
+    <e lm="konstitucala">
+      <i>konstituc</i>
       <par n="ala__adj" />
     </e>
     <e lm="kulturala">
@@ -16602,6 +16682,10 @@
       <i>objekt</i>
       <par n="ala__adj" />
     </e>
+    <e lm="oficala">
+      <i>ofic</i>
+      <par n="ala__adj" />
+    </e>
     <e lm="okcidentala">
       <i>okcident</i>
       <par n="ala__adj" />
@@ -16624,6 +16708,10 @@
     </e>
     <e lm="ovala">
       <i>ov</i>
+      <par n="ala__adj" />
+    </e>
+    <e lm="parlamentala">
+      <i>parlament</i>
       <par n="ala__adj" />
     </e>
     <e lm="patriarkala">
@@ -16740,6 +16828,10 @@
     </e>
     <e lm="spirituala">
       <i>spiritu</i>
+      <par n="ala__adj" />
+    </e>
+    <e lm="strategiala">
+      <i>strategi</i>
       <par n="ala__adj" />
     </e>
     <e lm="strukturala">
@@ -25888,6 +25980,10 @@
       <i>anestezies</i>
       <par n="e__adv" />
     </e>
+    <e lm="anke">
+      <i>ank</i>
+      <par n="e__adv" />
+    </e>
     <e lm="antee">
       <i>ante</i>
       <par n="e__adv" />
@@ -26118,6 +26214,14 @@
     </e>
     <e lm="eskrokere">
       <i>eskroker</i>
+      <par n="e__adv" />
+    </e>
+    <e lm="erste">
+      <i>erst</i>
+      <par n="e__adv" />
+    </e>
+    <e lm="este">
+      <i>est</i>
       <par n="e__adv" />
     </e>
     <e lm="eventuale">
@@ -26400,6 +26504,10 @@
       <i>maxim</i>
       <par n="e__adv" />
     </e>
+    <e lm="mem">
+      <i>mem</i>
+      <par n="e__adv" />
+    </e>
     <e lm="mine">
       <i>min</i>
       <par n="e__adv" />
@@ -26422,6 +26530,10 @@
     </e>
     <e lm="mutaceble">
       <i>mutacebl</i>
+      <par n="e__adv" />
+    </e>
+    <e lm="norde">
+      <i>nord</i>
       <par n="e__adv" />
     </e>
     <e lm="nule">
@@ -26530,6 +26642,10 @@
     </e>
     <e lm="polutese">
       <i>polutes</i>
+      <par n="e__adv" />
+    </e>
+    <e lm="pose">
+      <i>pos</i>
       <par n="e__adv" />
     </e>
     <e lm="precipue">
@@ -26748,6 +26864,10 @@
       <i>submises</i>
       <par n="e__adv" />
     </e>
+    <e lm="sude">
+      <i>sud</i>
+      <par n="e__adv" />
+    </e>
     <e lm="sulkete">
       <i>sulket</i>
       <par n="e__adv" />
@@ -26850,6 +26970,10 @@
     </e>
     <e lm="voluptese">
       <i>voluptes</i>
+      <par n="e__adv" />
+    </e>
+    <e lm="weste">
+      <i>west</i>
       <par n="e__adv" />
     </e>
     <e lm="yunese">

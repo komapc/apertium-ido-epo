@@ -89,6 +89,16 @@
     <!-- ============================================================================
          COPULA RULES (vbser category - matches lemma "esar" or "es")
          
+         LINGUISTIC CONTEXT:
+         The copula verb (esar → esti, "to be") is fundamental to the difference
+         between Ido and Esperanto's case systems. Both languages use nominative
+         case for copula predicates (predicate nominatives and predicate adjectives).
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido
+         - Esperanto: "Li estas instruisto" (nominative predicate)
+         - Ido: "Il esas docanto" (no case marking on nouns)
+         
+         TECHNICAL NOTES:
          These rules have PRIORITY over vblex rules due to lemma-based matching.
          They handle simple copula patterns (copula + predicate).
          
@@ -98,7 +108,12 @@
          Copula predicates remain in NOMINATIVE case (unlike transitive objects).
          ============================================================================ -->
     
-    <!-- Copula (esar/esti) + Adjective + Noun: keep nominative (predicate) -->
+    <!-- Copula (esar/esti) + Adjective + Noun: keep nominative (predicate)
+         
+         Handles: "Il esas bela kato" → "Li estas bela kato"
+         
+         LINGUISTIC: In both languages, predicate adjectives with copula don't take
+         accusative. Esperanto adjectives agree with the noun in number. -->
     <rule>
       <pattern>
         <pattern-item n="vbser"/>
@@ -125,7 +140,13 @@
       </action>
     </rule>
 
-    <!-- Copula + Noun: keep nominative (predicate nominative) -->
+    <!-- Copula + Noun: keep nominative (predicate nominative)
+         
+         Handles: "Il esas docanto" → "Li estas instruisto"
+         
+         LINGUISTIC: Predicate nominatives identify or rename the subject.
+         Both Ido and Esperanto keep predicates after copula in nominative case.
+         This contrasts with transitive verbs which govern accusative objects. -->
     <rule>
       <pattern>
         <pattern-item n="vbser"/>
@@ -144,7 +165,16 @@
       </action>
     </rule>
 
-    <!-- Copula + Adjective: keep nominative, add sg/nom -->
+    <!-- Copula + Adjective: keep nominative, add sg/nom
+         
+         Handles: "La kato esas bela" → "La kato estas bela"
+         
+         LINGUISTIC: Predicate adjectives after copula describe the subject.
+         KEY DIFFERENCE: Ido adjectives are invariable; Esperanto adjectives
+         must agree in number and case with what they modify.
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Morphology
+         - Ido: "bela" (always invariable)
+         - Esperanto: "bela" (sg), "belaj" (pl), "belan" (sg+acc), "belajn" (pl+acc) -->
     <rule>
       <pattern>
         <pattern-item n="vbser"/>
@@ -169,6 +199,25 @@
     <!-- ============================================================================
          VERB + COMPLEMENT RULES (vblex category - all verbs)
          
+         LINGUISTIC CONTEXT - THE ACCUSATIVE CASE:
+         This is THE fundamental difference between Ido and Esperanto grammar.
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Syntax
+         
+         IDO: No accusative case on nouns/adjectives (word order indicates function)
+         - "Me vidas la kato" (I see the cat) - no case marking
+         - Direct objects identified by position after transitive verb
+         
+         ESPERANTO: Mandatory accusative -n on direct objects AND modifying adjectives
+         - "Mi vidas la katon" (I see the cat) - accusative -n required
+         - "Mi vidas la belan katon" - both adjective and noun take -n
+         - Allows flexible word order: "La katon mi vidas" still clear
+         
+         PRONOUNS: Exception! Both languages mark case on personal pronouns:
+         - Ido: me/mi (nom/acc), nos/ni, vu/vu, li/li
+         - Esperanto: mi/min, ni/nin, vi/vin, ili/ilin
+         
+         TECHNICAL NOTES:
          These rules handle complex verb patterns including:
          - Transitive verbs + objects (apply ACCUSATIVE case)
          - Copula + determiners/coordinations (keep NOMINATIVE)
@@ -176,9 +225,18 @@
          Simple copula patterns are already handled by vbser rules above.
          These rules check for copula (esar/es) explicitly for patterns not
          covered by vbser (e.g., verb + determiner + noun).
+         
+         These rules apply accusative to nouns, adjectives, AND pronouns when they
+         are direct objects of transitive verbs, but keep nominative after copula.
          ============================================================================ -->
     
-    <!-- Verb + Adjective + Noun: check if copula or transitive -->
+    <!-- Verb + Adjective + Noun: check if copula or transitive
+         
+         Handles: "Me vidas bela kato" → "Mi vidas belan katon" (transitive)
+                  "Il esas bela kato" → "Li estas bela kato" (copula)
+         
+         LINGUISTIC: Demonstrates the core accusative transformation.
+         Adjective AND noun both receive -n in Esperanto when accusative. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -387,17 +445,32 @@
     </rule>
 
     <!-- ============================================================================
-         CONJUNCTION RULES - FIXED with verb context
+         CONJUNCTION RULES - Coordinated Phrases
          
-         These rules now include the preceding verb/noun to determine proper case:
-         - After transitive verbs (non-esar): apply accusative to coordinated objects
+         LINGUISTIC CONTEXT:
+         Coordination (kaj/e = "and") presents a challenge because BOTH coordinated
+         elements must receive the same case marking in Esperanto.
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Syntax
+         
+         ESPERANTO: All coordinated objects take accusative together:
+         - "Mi vidas la katon kaj la hundon" (I see the cat and the dog)
+         - Both "katon" and "hundon" receive -n
+         
+         IDO: No case marking on nouns:
+         - "Me vidas la kato kaj la hundo"
+         
+         TECHNICAL: These rules include the preceding verb to determine case:
+         - After transitive verbs (non-esar): apply accusative to ALL coordinated objects
+         - After copula: keep nominative for ALL coordinated predicates
          - After subjects or standalone: keep nominative
-         
-         Note: Short conjunction patterns removed to prevent context-free case marking.
-         Only longer patterns with full context are used.
          ============================================================================ -->
     
-    <!-- Verb + Noun + Conjunction + Noun: coordinated objects after transitive verb -->
+    <!-- Verb + Noun + Conjunction + Noun: coordinated objects after transitive verb
+         
+         Handles: "Me vidas la kato kaj la hundo" → "Mi vidas la katon kaj la hundon"
+         
+         LINGUISTIC: Critical test case for accusative - BOTH nouns must receive -n. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -655,10 +728,31 @@
 
     <!-- ============================================================================
          ADJECTIVE-NOUN AGREEMENT RULES
-         Esperanto requires adjectives to agree with nouns in number and case
+         
+         LINGUISTIC CONTEXT - Adjective Agreement:
+         This is another KEY difference between Ido and Esperanto.
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Morphology
+         
+         IDO: Adjectives are completely INVARIABLE
+         - "bela kato" (beautiful cat, sg)
+         - "bela kati" (beautiful cats, pl) - adjective stays "bela"
+         
+         ESPERANTO: Adjectives AGREE in number and case
+         - "bela kato" (sg, nom)
+         - "belaj katoj" (pl, nom) - both take -j
+         - "belan katon" (sg, acc) - both take -n
+         - "belajn katojn" (pl, acc) - both take -jn
+         
+         These rules propagate the noun's number and case to modifying adjectives.
          ============================================================================ -->
     
-    <!-- Adjective + Noun: propagate number and case from noun to adjective -->
+    <!-- Adjective + Noun: propagate number and case from noun to adjective
+         
+         Handles: "bela kato" → "bela kato" (sg nom)
+                  "bela kato" → "belan katon" (when in accusative context)
+         
+         LINGUISTIC: Implements Esperanto's adjective agreement requirement. -->
     <rule>
       <pattern>
         <pattern-item n="adj"/>
@@ -786,7 +880,27 @@
       </action>
     </rule>
 
-    <!-- Verb + Pronoun: apply accusative to pronoun after transitive verb -->
+    <!-- Verb + Pronoun: apply accusative to pronoun after transitive verb
+         
+         LINGUISTIC CONTEXT - Personal Pronouns:
+         Pronouns are THE EXCEPTION to the Ido "no accusative" rule!
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Pronouns
+         
+         BOTH languages distinguish case in personal pronouns:
+         
+         IDO pronoun cases:
+         - me/mi (I/me), tu/tu (you), il/il (he/him), el/el (she/her)
+         - nos/ni (we/us), vi/vi (you-pl), li/li (they/them)
+         
+         ESPERANTO pronoun cases:
+         - mi/min (I/me), vi/vin (you), li/lin (he/him), ŝi/ŝin (she/her)
+         - ni/nin (we/us), vi/vin (you-pl), ili/ilin (they/them)
+         
+         Handles: "Me amas vu" → "Mi amas vin" (I love you - acc)
+                  "Il esas me" → "Li estas mi" (He is me - nom after copula)
+         
+         CRITICAL: Pronouns take different forms for nominative/accusative in BOTH languages. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
