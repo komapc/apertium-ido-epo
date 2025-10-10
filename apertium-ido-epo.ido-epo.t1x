@@ -773,7 +773,48 @@
       </action>
     </rule>
 
-    <!-- Pronoun rule: pass through -->
+    <!-- Verb + Pronoun: apply accusative to pronoun after transitive verb -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is copula, keep pronoun in nominative (predicate nominative) -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_prn"/>
+                <lit-tag v="nom"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: add accusative to pronoun -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_prn"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Pronoun rule: add nominative case (when not after verb, i.e., subjects) -->
     <rule>
       <pattern>
         <pattern-item n="prn"/>
@@ -781,7 +822,9 @@
       <action>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_prn"/>
+            <lit-tag v="nom"/>
           </lu>
         </out>
       </action>
