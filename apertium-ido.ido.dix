@@ -102,6 +102,9 @@
     <pardef n="__cnjadv">
       <e><p><l /><r><s n="cnjadv" /></r></p></e>
     </pardef>
+    <pardef n="__adv">
+      <e><p><l /><r><s n="adv" /></r></p></e>
+    </pardef>
   </pardefs>
   <section id="main" type="standard">
     <e lm="e">
@@ -26506,7 +26509,7 @@
     </e>
     <e lm="mem">
       <i>mem</i>
-      <par n="e__adv" />
+      <par n="__adv" />
     </e>
     <e lm="mine">
       <i>min</i>
