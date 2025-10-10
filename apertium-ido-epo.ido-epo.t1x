@@ -85,6 +85,11 @@
   </section-def-vars>
 
   <section-rules>
+    <!-- ============================================================================
+         COPULA RULES (vbser category - specifically matches "esar")
+         These rules handle predicate nominatives and predicate adjectives
+         ============================================================================ -->
+    
     <!-- Copula (esar/esti) + Adjective + Noun: keep nominative (predicate) -->
     <rule>
       <pattern>
@@ -153,6 +158,12 @@
       </action>
     </rule>
 
+    <!-- ============================================================================
+         VERB RULES (vblex category - generic verbs)
+         These rules distinguish between copula "esar" and transitive verbs
+         NOTE: This overlaps with vbser rules above. Consider consolidation.
+         ============================================================================ -->
+    
     <!-- Verb + Adjective + Noun: check if copula or transitive -->
     <rule>
       <pattern>
@@ -361,12 +372,31 @@
       </action>
     </rule>
 
-    <!-- WARNING: The following conjunction rules apply accusative case without checking 
-         if there's actually a verb before them. They assume coordinated direct objects
-         but are context-insensitive and may incorrectly mark nouns as accusative when
-         they appear after conjunctions in other grammatical contexts (e.g., subjects). -->
+    <!-- ============================================================================
+         CONJUNCTION RULES - CRITICAL ISSUES
+         
+         WARNING: These rules are BROKEN and should be redesigned!
+         
+         Problem: They blindly apply accusative to ALL nouns after conjunctions,
+         regardless of grammatical context. This causes incorrect translations:
+         
+         ✗ WRONG: "La kato kaj la hundo kuras" → "La kato kaj la hundo**n** kuras"
+                  (Coordinated subjects incorrectly marked as objects)
+         
+         ✓ RIGHT: Should only apply accusative when coordinating actual objects:
+                  "Mi vidas la kato**n** kaj la hundo**n**"
+         
+         Solution needed: Track whether we're in an object context (after transitive
+         verb) before applying accusative. This requires either:
+         1. Variables to track verb transitivity
+         2. Longer patterns that include the verb
+         3. Chunking/two-stage transfer
+         
+         Current implementation is a quick hack that works only for simple sentences
+         where conjunctions appear in object position.
+         ============================================================================ -->
     
-    <!-- Conjunction + Noun (after verb): also needs accusative -->
+    <!-- Conjunction + Noun: blindly applies accusative (assumes object context) -->
     <rule>
       <pattern>
         <pattern-item n="cnjcoo"/>

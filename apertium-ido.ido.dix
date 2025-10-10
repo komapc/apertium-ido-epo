@@ -39,195 +39,65 @@
   </sdefs>
   <pardefs>
     <pardef n="o__n">
-      <e>
-        <p>
-          <l>o</l>
-          <r>
-            <s n="n"/>
-            <s n="sg"/>
-            <s n="nom"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>i</l>
-          <r>
-            <s n="n"/>
-            <s n="pl"/>
-            <s n="nom"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>on</l>
-          <r>
-            <s n="n"/>
-            <s n="sg"/>
-            <s n="acc"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>in</l>
-          <r>
-            <s n="n"/>
-            <s n="pl"/>
-            <s n="acc"/>
-          </r>
-        </p>
-      </e>
+      <e><p><l>o</l><r><s n="n"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e><p><l>i</l><r><s n="n"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e><p><l>on</l><r><s n="n"/><s n="sg"/><s n="acc"/></r></p></e>
+      <e><p><l>in</l><r><s n="n"/><s n="pl"/><s n="acc"/></r></p></e>
     </pardef>
     <pardef n="a__adj">
-      <e>
-        <p>
-          <l>a</l>
-          <r>
-            <s n="adj"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>e</l>
-          <r>
-            <s n="adv"/>
-          </r>
-        </p>
-      </e>
+      <e><p><l>a</l><r><s n="adj"/></r></p></e>
+      <e><p><l>e</l><r><s n="adv"/></r></p></e>
     </pardef>
     <pardef n="ala__adj">
       <e><p><l>ala</l><r><s n="adj"/></r></p></e>
       <e><p><l>ale</l><r><s n="adv"/></r></p></e>
     </pardef>
+    <pardef n="oza__adj">
+      <e><p><l>oza</l><r><s n="adj"/></r></p></e>
+      <e><p><l>oze</l><r><s n="adv"/></r></p></e>
+    </pardef>
+    <pardef n="iva__adj">
+      <e><p><l>iva</l><r><s n="adj"/></r></p></e>
+      <e><p><l>ive</l><r><s n="adv"/></r></p></e>
+    </pardef>
     <pardef n="e__adv">
-      <e>
-        <p>
-          <l>e</l>
-          <r>
-            <s n="adv"/>
-          </r>
-        </p>
-      </e>
+      <e><p><l>e</l><r><s n="adv"/></r></p></e>
+    </pardef>
+    <pardef n="ajo__n">
+      <e><p><l>ajo</l><r><s n="n"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e><p><l>aji</l><r><s n="n"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e><p><l>ajon</l><r><s n="n"/><s n="sg"/><s n="acc"/></r></p></e>
+      <e><p><l>ajin</l><r><s n="n"/><s n="pl"/><s n="acc"/></r></p></e>
     </pardef>
     <pardef n="__inv_n">
-      <e>
-        <p>
-          <l></l>
-          <r>
-            <s n="n"/>
-            <s n="sp"/>
-            <s n="nom"/>
-          </r>
-        </p>
-      </e>
+      <e><p><l></l><r><s n="n"/><s n="sp"/><s n="nom"/></r></p></e>
     </pardef>
     <pardef n="ar__vblex">
-      <e>
-        <p>
-          <l>ar</l>
-          <r>
-            <s n="vblex"/>
-            <s n="inf"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>as</l>
-          <r>
-            <s n="vblex"/>
-            <s n="pri"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>is</l>
-          <r>
-            <s n="vblex"/>
-            <s n="pii"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>os</l>
-          <r>
-            <s n="vblex"/>
-            <s n="fti"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ez</l>
-          <r>
-            <s n="vblex"/>
-            <s n="imp"/>
-          </r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>us</l>
-          <r>
-            <s n="vblex"/>
-            <s n="cni"/>
-          </r>
-        </p>
-      </e>
+      <e><p><l>ar</l><r><s n="vblex"/><s n="inf"/></r></p></e>
+      <e><p><l>as</l><r><s n="vblex"/><s n="pri"/></r></p></e>
+      <e><p><l>is</l><r><s n="vblex"/><s n="pii"/></r></p></e>
+      <e><p><l>os</l><r><s n="vblex"/><s n="fti"/></r></p></e>
+      <e><p><l>ez</l><r><s n="vblex"/><s n="imp"/></r></p></e>
+      <e><p><l>us</l><r><s n="vblex"/><s n="cni"/></r></p></e>
     </pardef>
     <!-- Paradigms for function words -->
     <pardef n="__cnjcoo">
-      <e>
-        <p>
-          <l></l>
-          <r><s n="cnjcoo"/></r>
-        </p>
-      </e>
+      <e><p><l></l><r><s n="cnjcoo"/></r></p></e>
     </pardef>
     <pardef n="__cnjsub">
-      <e>
-        <p>
-          <l></l>
-          <r><s n="cnjsub"/></r>
-        </p>
-      </e>
+      <e><p><l></l><r><s n="cnjsub"/></r></p></e>
     </pardef>
     <pardef n="__pr">
-      <e>
-        <p>
-          <l></l>
-          <r><s n="pr"/></r>
-        </p>
-      </e>
+      <e><p><l></l><r><s n="pr"/></r></p></e>
     </pardef>
     <pardef n="__prn">
-      <e>
-        <p>
-          <l></l>
-          <r><s n="prn"/></r>
-        </p>
-      </e>
+      <e><p><l></l><r><s n="prn"/></r></p></e>
     </pardef>
     <pardef n="__det">
-      <e>
-        <p>
-          <l></l>
-          <r><s n="det"/><s n="def"/><s n="sp"/></r>
-        </p>
-      </e>
+      <e><p><l></l><r><s n="det"/><s n="def"/><s n="sp"/></r></p></e>
     </pardef>
     <pardef n="__ij">
-      <e>
-        <p>
-          <l></l>
-          <r><s n="ij"/></r>
-        </p>
-      </e>
+      <e><p><l></l><r><s n="ij"/></r></p></e>
     </pardef>
   </pardefs>
   <section id="main" type="standard">
@@ -396,6 +266,10 @@
     <!-- Determiner -->
     <e lm="la">
       <i>la</i>
+      <par n="__det"/>
+    </e>
+    <e lm="la">
+      <i>l'</i>
       <par n="__det"/>
     </e>
     
@@ -2304,8 +2178,8 @@
       <par n="o__n"/>
     </e>
     <e lm="avantajo">
-      <i>avantaj</i>
-      <par n="o__n"/>
+      <i>avant</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="avelano">
       <i>avelan</i>
@@ -2324,8 +2198,8 @@
       <par n="o__n"/>
     </e>
     <e lm="averajo">
-      <i>averaj</i>
-      <par n="o__n"/>
+      <i>aver</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="aviaco">
       <i>aviac</i>
@@ -2384,8 +2258,8 @@
       <par n="o__n"/>
     </e>
     <e lm="bagajo">
-      <i>bagaj</i>
-      <par n="o__n"/>
+      <i>bag</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="bagatelo">
       <i>bagatel</i>
@@ -2456,8 +2330,8 @@
       <par n="o__n"/>
     </e>
     <e lm="bandajo">
-      <i>bandaj</i>
-      <par n="o__n"/>
+      <i>band</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="banderolo">
       <i>banderol</i>
@@ -2792,8 +2666,8 @@
       <par n="o__n"/>
     </e>
     <e lm="bitumoza">
-      <i>bitum</i>
-      <par n="o__n"/>
+      <i>bitumoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="bizono">
       <i>bizon</i>
@@ -3016,8 +2890,8 @@
       <par n="o__n"/>
     </e>
     <e lm="brizoza">
-      <i>briz</i>
-      <par n="o__n"/>
+      <i>brizoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="brocho">
       <i>broch</i>
@@ -3716,8 +3590,8 @@
       <par n="o__n"/>
     </e>
     <e lm="cirajo">
-      <i>ciraj</i>
-      <par n="o__n"/>
+      <i>cir</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="cirklo">
       <i>cirkl</i>
@@ -3916,8 +3790,8 @@
       <par n="o__n"/>
     </e>
     <e lm="delicioza">
-      <i>delici</i>
-      <par n="o__n"/>
+      <i>delicioz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="delikto">
       <i>delikt</i>
@@ -4044,8 +3918,8 @@
       <par n="o__n"/>
     </e>
     <e lm="detaloza">
-      <i>detal</i>
-      <par n="o__n"/>
+      <i>detaloz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="detektivo">
       <i>detektiv</i>
@@ -4812,8 +4686,8 @@
       <par n="o__n"/>
     </e>
     <e lm="energioza">
-      <i>energi</i>
-      <par n="o__n"/>
+      <i>energioz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="enigmato">
       <i>enigmat</i>
@@ -5044,8 +4918,8 @@
       <par n="o__n"/>
     </e>
     <e lm="etajo">
-      <i>etaj</i>
-      <par n="o__n"/>
+      <i>et</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="etapo">
       <i>etap</i>
@@ -5200,8 +5074,8 @@
       <par n="o__n"/>
     </e>
     <e lm="fabloza">
-      <i>fabl</i>
-      <par n="o__n"/>
+      <i>fabloz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="fabo">
       <i>fab</i>
@@ -5292,8 +5166,8 @@
       <par n="o__n"/>
     </e>
     <e lm="famoza">
-      <i>fam</i>
-      <par n="o__n"/>
+      <i>famoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="fanfaro">
       <i>fanfar</i>
@@ -5660,8 +5534,8 @@
       <par n="o__n"/>
     </e>
     <e lm="flegmoza">
-      <i>flegm</i>
-      <par n="o__n"/>
+      <i>flegmoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="flexiono">
       <i>flexion</i>
@@ -5916,8 +5790,8 @@
       <par n="o__n"/>
     </e>
     <e lm="frenezioza">
-      <i>frenezi</i>
-      <par n="o__n"/>
+      <i>frenezioz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="freno">
       <i>fren</i>
@@ -5952,8 +5826,8 @@
       <par n="o__n"/>
     </e>
     <e lm="fromajo">
-      <i>fromaj</i>
-      <par n="o__n"/>
+      <i>from</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="frontiero">
       <i>frontier</i>
@@ -6092,8 +5966,8 @@
       <par n="o__n"/>
     </e>
     <e lm="gajo">
-      <i>gaj</i>
-      <par n="o__n"/>
+      <i>g</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="galanteno">
       <i>galanten</i>
@@ -6872,8 +6746,8 @@
       <par n="o__n"/>
     </e>
     <e lm="homajo">
-      <i>homaj</i>
-      <par n="o__n"/>
+      <i>hom</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="homeosexualino">
       <i>homeosexual</i>
@@ -6996,8 +6870,8 @@
       <par n="o__n"/>
     </e>
     <e lm="imajo">
-      <i>imaj</i>
-      <par n="o__n"/>
+      <i>im</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="imoblo">
       <i>imobl</i>
@@ -7236,8 +7110,8 @@
       <par n="o__n"/>
     </e>
     <e lm="iracoza">
-      <i>irac</i>
-      <par n="o__n"/>
+      <i>iracoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="irgo">
       <i>irg</i>
@@ -7376,8 +7250,8 @@
       <par n="o__n"/>
     </e>
     <e lm="joyoza">
-      <i>joy</i>
-      <par n="o__n"/>
+      <i>joyoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="judicio">
       <i>judici</i>
@@ -7476,8 +7350,8 @@
       <par n="o__n"/>
     </e>
     <e lm="kajo">
-      <i>kaj</i>
-      <par n="o__n"/>
+      <i>k</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="kakao">
       <i>kaka</i>
@@ -7900,8 +7774,8 @@
       <par n="o__n"/>
     </e>
     <e lm="kartilagoza">
-      <i>kartilag</i>
-      <par n="o__n"/>
+      <i>kartilagoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="karto">
       <i>kart</i>
@@ -9912,8 +9786,8 @@
       <par n="o__n"/>
     </e>
     <e lm="luxoza">
-      <i>lux</i>
-      <par n="o__n"/>
+      <i>luxoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="luxurio">
       <i>luxuri</i>
@@ -10152,8 +10026,8 @@
       <par n="o__n"/>
     </e>
     <e lm="mariajo">
-      <i>mariaj</i>
-      <par n="o__n"/>
+      <i>mari</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="marioneto">
       <i>marionet</i>
@@ -10408,8 +10282,8 @@
       <par n="o__n"/>
     </e>
     <e lm="menajo">
-      <i>menaj</i>
-      <par n="o__n"/>
+      <i>men</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="meningo">
       <i>mening</i>
@@ -10472,8 +10346,8 @@
       <par n="o__n"/>
     </e>
     <e lm="mesajo">
-      <i>mesaj</i>
-      <par n="o__n"/>
+      <i>mes</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="mesio">
       <i>mesi</i>
@@ -10648,8 +10522,8 @@
       <par n="o__n"/>
     </e>
     <e lm="mirajo">
-      <i>miraj</i>
-      <par n="o__n"/>
+      <i>mir</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="miraklo">
       <i>mirakl</i>
@@ -11120,8 +10994,8 @@
       <par n="o__n"/>
     </e>
     <e lm="nervoza">
-      <i>nerv</i>
-      <par n="o__n"/>
+      <i>nervoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="nesto">
       <i>nest</i>
@@ -11692,8 +11566,8 @@
       <par n="o__n"/>
     </e>
     <e lm="pajo">
-      <i>paj</i>
-      <par n="o__n"/>
+      <i>p</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="paketboto">
       <i>paketbot</i>
@@ -12084,8 +11958,8 @@
       <par n="o__n"/>
     </e>
     <e lm="peizajo">
-      <i>peizaj</i>
-      <par n="o__n"/>
+      <i>peiz</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="pejorativo">
       <i>pejorativ</i>
@@ -12240,8 +12114,8 @@
       <par n="o__n"/>
     </e>
     <e lm="personoza">
-      <i>person</i>
-      <par n="o__n"/>
+      <i>personoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="perspektivo">
       <i>perspektiv</i>
@@ -12452,8 +12326,8 @@
       <par n="o__n"/>
     </e>
     <e lm="plajo">
-      <i>plaj</i>
-      <par n="o__n"/>
+      <i>pl</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="plako">
       <i>plak</i>
@@ -12640,8 +12514,8 @@
       <par n="o__n"/>
     </e>
     <e lm="polvoza">
-      <i>polv</i>
-      <par n="o__n"/>
+      <i>polvoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="pomado">
       <i>pomad</i>
@@ -12776,8 +12650,8 @@
       <par n="o__n"/>
     </e>
     <e lm="precoza">
-      <i>prec</i>
-      <par n="o__n"/>
+      <i>precoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="predikato">
       <i>predikat</i>
@@ -13824,8 +13698,8 @@
       <par n="o__n"/>
     </e>
     <e lm="rustoza">
-      <i>rust</i>
-      <par n="o__n"/>
+      <i>rustoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="rutino">
       <i>rutin</i>
@@ -13924,8 +13798,8 @@
       <par n="o__n"/>
     </e>
     <e lm="saloza">
-      <i>sal</i>
-      <par n="o__n"/>
+      <i>saloz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="salpetro">
       <i>salpetr</i>
@@ -13968,8 +13842,8 @@
       <par n="o__n"/>
     </e>
     <e lm="saporoza">
-      <i>sapor</i>
-      <par n="o__n"/>
+      <i>saporoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="sapto">
       <i>sapt</i>
@@ -15244,8 +15118,8 @@
       <par n="o__n"/>
     </e>
     <e lm="sukoza">
-      <i>suk</i>
-      <par n="o__n"/>
+      <i>sukoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="sukro">
       <i>sukr</i>
@@ -15648,8 +15522,8 @@
       <par n="o__n"/>
     </e>
     <e lm="truoza">
-      <i>tru</i>
-      <par n="o__n"/>
+      <i>truoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="truto">
       <i>trut</i>
@@ -15916,8 +15790,8 @@
       <par n="o__n"/>
     </e>
     <e lm="vaporoza">
-      <i>vapor</i>
-      <par n="o__n"/>
+      <i>vaporoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="varano">
       <i>varan</i>
@@ -16160,16 +16034,16 @@
       <par n="o__n"/>
     </e>
     <e lm="vigoroza">
-      <i>vigor</i>
-      <par n="o__n"/>
+      <i>vigoroz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="viktimo">
       <i>viktim</i>
       <par n="o__n"/>
     </e>
     <e lm="vilajo">
-      <i>vilaj</i>
-      <par n="o__n"/>
+      <i>vil</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="vilao">
       <i>vila</i>
@@ -16188,8 +16062,8 @@
       <par n="o__n"/>
     </e>
     <e lm="vinkoza">
-      <i>vink</i>
-      <par n="o__n"/>
+      <i>vinkoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="vino">
       <i>vin</i>
@@ -16208,8 +16082,8 @@
       <par n="o__n"/>
     </e>
     <e lm="violentoza">
-      <i>violent</i>
-      <par n="o__n"/>
+      <i>violentoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="violino">
       <i>violin</i>
@@ -16272,8 +16146,8 @@
       <par n="o__n"/>
     </e>
     <e lm="vizajo">
-      <i>vizaj</i>
-      <par n="o__n"/>
+      <i>viz</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="vizelo">
       <i>vizel</i>
@@ -16344,8 +16218,8 @@
       <par n="o__n"/>
     </e>
     <e lm="voyajo">
-      <i>voyaj</i>
-      <par n="o__n"/>
+      <i>voy</i>
+      <par n="ajo__n"/>
     </e>
     <e lm="voyo">
       <i>voy</i>
@@ -20693,7 +20567,7 @@
     </e>
     <e lm="grandioza">
       <i>grandioz</i>
-      <par n="a__adj"/>
+      <par n="oza__adj"/>
     </e>
     <e lm="grantar">
       <i>grant</i>
@@ -22549,7 +22423,7 @@
     </e>
     <e lm="kurioza">
       <i>kurioz</i>
-      <par n="a__adj"/>
+      <par n="oza__adj"/>
     </e>
     <e lm="kursiva">
       <i>kursiv</i>
@@ -26765,7 +26639,7 @@
     </e>
     <e lm="viskoza">
       <i>viskoz</i>
-      <par n="a__adj"/>
+      <par n="oza__adj"/>
     </e>
     <e lm="vistar">
       <i>vist</i>
@@ -27845,8 +27719,8 @@
       <par n="e__adv"/>
     </e>
     <e lm="stonetoza">
-      <i>ston</i>
-      <par n="e__adv"/>
+      <i>stonetoz</i>
+      <par n="oza__adj"/>
     </e>
     <e lm="stupideso">
       <i>stupid</i>
