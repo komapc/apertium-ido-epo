@@ -424,6 +424,12 @@
     </e>
     <e>
       <p>
+        <l>qual<s n="adv"/></l>
+        <r>kiel<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>ka<s n="prn"/></l>
         <r>ĉu<s n="prn"/></r>
       </p>
@@ -6608,7 +6614,7 @@
     </e>
     <e>
       <p>
-        <l>cirkume<s n="adv"/></l>
+        <l>cirkum<s n="adv"/></l>
         <r>ĉirkaŭ<s n="adv"/></r>
       </p>
     </e>
@@ -13280,6 +13286,12 @@
     </e>
     <e>
       <p>
+        <l>fort<s n="adv"/></l>
+        <r>forte<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>fortres<s n="n"/></l>
         <r>fortreso<s n="n"/></r>
       </p>
@@ -17738,6 +17750,12 @@
     </e>
     <e>
       <p>
+        <l>iter<s n="adv"/></l>
+        <r>denove<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>Ivora Riv<s n="n"/></l>
         <r>Eburbordo<s n="n"/></r>
       </p>
@@ -21548,7 +21566,7 @@
     </e>
     <e>
       <p>
-        <l>konstante<s n="adv"/></l>
+        <l>konstant<s n="adv"/></l>
         <r>konstante<s n="adv"/></r>
       </p>
     </e>
@@ -26234,6 +26252,12 @@
     </e>
     <e>
       <p>
+        <l>milit<s n="n"/></l>
+        <r>milito<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>militarism<s n="n"/></l>
         <r>militarismo<s n="n"/></r>
       </p>
@@ -29114,6 +29138,12 @@
     </e>
     <e>
       <p>
+        <l>ordinar<s n="adv"/></l>
+        <r>ordinare<s n="adv"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>orel<s n="n"/></l>
         <r>orelo<s n="n"/></r>
       </p>
@@ -30920,8 +30950,14 @@
     </e>
     <e>
       <p>
+        <l>petr<s n="np"/></l>
+        <r>Petro<s n="np"/><s n="sg"/><s n="nom"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>petr<s n="n"/></l>
-        <r>ŝtono<s n="n"/></r>
+        <r>Petro<s n="np"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e>
@@ -43870,6 +43906,12 @@
       <p>
         <l>baz<s n="vblex"/></l>
         <r>bazi<s n="vblex"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>nur<s n="adj"/></l>
+        <r>nura<s n="adj"/></r>
       </p>
     </e>
     <e>
