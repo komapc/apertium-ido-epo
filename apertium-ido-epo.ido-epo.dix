@@ -158,6 +158,80 @@
         <r>kiam<s n="cnjsub"/></r>
       </p>
     </e>
+    <e>
+      <p>
+        <l>kaj<s n="cnjcoo"/></l>
+        <r>kaj<s n="cnjcoo"/></r>
+      </p>
+    </e>
+    
+    <!-- Personal Pronouns -->
+    <e>
+      <p>
+        <l>me<s n="prn"/></l>
+        <r>mi<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>tu<s n="prn"/></l>
+        <r>ci<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>il<s n="prn"/></l>
+        <r>li<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>el<s n="prn"/></l>
+        <r>ŝi<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ol<s n="prn"/></l>
+        <r>ĝi<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>lu<s n="prn"/></l>
+        <r>li<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>vu<s n="prn"/></l>
+        <r>vi<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>ni<s n="prn"/></l>
+        <r>ni<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>vi<s n="prn"/></l>
+        <r>vi<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>li<s n="prn"/></l>
+        <r>ili<s n="prn"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>eli<s n="prn"/></l>
+        <r>ili<s n="prn"/></r>
+      </p>
+    </e>
     
     <!-- Prepositions -->
     <e>
@@ -1714,6 +1788,12 @@
       <p>
         <l>amalgam<s n="n"/></l>
         <r>amalgamo<s n="n"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>am<s n="vblex"/></l>
+        <r>ami<s n="vblex"/></r>
       </p>
     </e>
     <e>
@@ -8632,6 +8712,12 @@
       <p>
         <l>doc<s n="vblex"/></l>
         <r>instrui (temon)<s n="vblex"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>docant<s n="n"/></l>
+        <r>instruisto<s n="n"/></r>
       </p>
     </e>
     <e>

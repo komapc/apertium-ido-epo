@@ -17,6 +17,7 @@
     </def-cat>
     <def-cat n="vbser">
       <cat-item lemma="esar"/>
+      <cat-item lemma="es"/>
     </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn"/>
@@ -175,7 +176,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -229,7 +230,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -270,7 +271,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -320,7 +321,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -395,7 +396,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative for both -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -443,6 +444,85 @@
         </choose>
       </action>
     </rule>
+    
+    <!-- Verb + Det + Noun + Conjunction + Det + Noun: coordinated objects with determiners -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (copula), keep nominative for both -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative to both coordinated objects -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="lem"/>
+                <clip pos="6" side="tl" part="a_nom"/>
+                <clip pos="6" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
 
     <!-- Verb + Adjective + Noun + Conjunction + Adjective + Noun: coordinated modified objects -->
     <rule>
@@ -458,7 +538,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -837,7 +917,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative (predicate nominative) -->
-            <test><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal></test>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>

@@ -108,6 +108,10 @@
       <i>e</i>
       <par n="__cnjcoo" />
     </e>
+    <e lm="kaj">
+      <i>kaj</i>
+      <par n="__cnjcoo" />
+    </e>
     <e lm="od">
       <i>od</i>
       <par n="__cnjcoo" />
@@ -260,6 +264,52 @@
     </e>
     <e lm="yen">
       <i>yen</i>
+      <par n="__prn" />
+    </e>
+    
+    <!-- Personal pronouns -->
+    <e lm="me">
+      <i>me</i>
+      <par n="__prn" />
+    </e>
+    <e lm="tu">
+      <i>tu</i>
+      <par n="__prn" />
+    </e>
+    <e lm="il">
+      <i>il</i>
+      <par n="__prn" />
+    </e>
+    <e lm="el">
+      <i>el</i>
+      <par n="__prn" />
+    </e>
+    <e lm="ol">
+      <i>ol</i>
+      <par n="__prn" />
+    </e>
+    <e lm="lu">
+      <i>lu</i>
+      <par n="__prn" />
+    </e>
+    <e lm="vu">
+      <i>vu</i>
+      <par n="__prn" />
+    </e>
+    <e lm="ni">
+      <i>ni</i>
+      <par n="__prn" />
+    </e>
+    <e lm="vi">
+      <i>vi</i>
+      <par n="__prn" />
+    </e>
+    <e lm="li">
+      <i>li</i>
+      <par n="__prn" />
+    </e>
+    <e lm="eli">
+      <i>eli</i>
       <par n="__prn" />
     </e>
     
@@ -1276,6 +1326,10 @@
     <e lm="amalgamo">
       <i>amalgam</i>
       <par n="o__n" />
+    </e>
+    <e lm="amar">
+      <i>am</i>
+      <par n="ar__vblex" />
     </e>
     <e lm="amariliso">
       <i>amarilis</i>
@@ -4185,6 +4239,10 @@
       <i>dizastr</i>
       <par n="o__n" />
     </e>
+    <e lm="docanto">
+      <i>docant</i>
+      <par n="o__n" />
+    </e>
     <e lm="docento">
       <i>docent</i>
       <par n="o__n" />
@@ -6721,6 +6779,10 @@
       <i>humur</i>
       <par n="o__n" />
     </e>
+    <e lm="hundo">
+      <i>hund</i>
+      <par n="o__n" />
+    </e>
     <e lm="hundino">
       <i>hundin</i>
       <par n="o__n" />
@@ -9084,6 +9146,10 @@
     <e lm="kurajozigo">
       <i>kurajozig</i>
       <par n="o__n" />
+    </e>
+    <e lm="kurar">
+      <i>kur</i>
+      <par n="ar__vblex" />
     </e>
     <e lm="kuraso">
       <i>kuras</i>
