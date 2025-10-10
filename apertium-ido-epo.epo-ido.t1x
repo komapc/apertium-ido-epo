@@ -93,7 +93,14 @@
   </section-def-vars>
 
   <section-rules>
-    <!-- Noun rule: remove gender tag (Ido doesn't have grammatical gender) -->
+    <!-- ============================================================================
+         BASIC WORD CLASS TRANSFORMATIONS
+         These rules strip Esperanto-specific features that don't exist in Ido
+         ============================================================================ -->
+    
+    <!-- Noun: preserve number and case, but remove gender
+         Ido doesn't have grammatical gender for common nouns
+         NOTE: Both languages keep case (nominative/accusative) for nouns -->
     <rule>
       <pattern>
         <pattern-item n="nom"/>
@@ -110,7 +117,13 @@
       </action>
     </rule>
 
-    <!-- Adjective rule: remove number/case tags, add sg (Ido adjectives need sg tag) -->
+    <!-- Adjective: remove number/case agreement tags
+         
+         Esperanto: Adjectives agree with nouns (bela kato, bela**j** kato**j**)
+         Ido: Adjectives are invariable (bela kato, bela kati)
+         
+         The sg tag is added for consistency with Ido morphology representation,
+         but semantically Ido adjectives don't inflect for number. -->
     <rule>
       <pattern>
         <pattern-item n="adj"/>
@@ -140,7 +153,17 @@
       </action>
     </rule>
 
-    <!-- Verb rule: convert Esperanto tense tags to Ido tags -->
+    <!-- Verb: convert Esperanto tense tags to Ido tags
+         
+         Tense mapping:
+         - Esperanto "pres" → Ido "pri" (present)
+         - Esperanto "past" → Ido "pii" (past)
+         - Other tenses (inf, fti, cni, imp) → pass through
+         
+         NOTE: Otherwise branch passes whole tag sequence through, which works
+         for tenses that are the same in both languages (like fti = future).
+         This is cleaner than the Ido→Esperanto direction which has a potentially
+         problematic default assumption. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -178,7 +201,14 @@
       </action>
     </rule>
 
-    <!-- Pronoun rule: output just lemma and pronoun tag (strip extra tags) -->
+    <!-- Pronoun: preserve lemma, pronoun tag, and case - FIXED
+         
+         Both Esperanto and Ido distinguish pronoun cases:
+         - Esperanto: mi/min (nom/acc), ni/nin (nom/acc)
+         - Ido: me/mi (nom/acc), nos/ni (nom/acc)
+         
+         We now preserve case information to ensure correct pronoun forms.
+         Number and gender are stripped as they may not apply uniformly. -->
     <rule>
       <pattern>
         <pattern-item n="prn"/>
@@ -188,6 +218,7 @@
           <lu>
             <clip pos="1" side="tl" part="lem"/>
             <lit-tag v="prn"/>
+            <clip pos="1" side="tl" part="cas"/>
           </lu>
         </out>
       </action>
@@ -235,7 +266,13 @@
       </action>
     </rule>
 
-    <!-- Determiner rule: strip def/number tags (Ido determiners are simpler) -->
+    <!-- Determiner: strip definiteness/number tags
+         
+         Esperanto: "la" (the) doesn't inflect
+         Ido: "la" (the) also doesn't inflect
+         
+         Both languages have simple, invariable definite articles, so this
+         stripping makes sense. Other determiners may vary. -->
     <rule>
       <pattern>
         <pattern-item n="det"/>
@@ -278,7 +315,22 @@
       </action>
     </rule>
 
-    <!-- Superlative rule: plej ADJ → maxim ADJ -->
+    <!-- ============================================================================
+         MULTI-WORD EXPRESSION RULES
+         These handle phrasal patterns that translate differently
+         ============================================================================ -->
+    
+    <!-- Superlative construction: plej ADJ → maxim ADJ
+         
+         Esperanto: "plej bela" (most beautiful)
+         Ido: "maxim bela" (most beautiful)
+         
+         OPTIMIZATION: This only handles "plej + adjective" patterns.
+         Missing patterns:
+         - "plej" + adverb ("plej rapide" → "maxim rapide")
+         - Comparative "pli" ("pli bela" → "plu bela")
+         
+         Consider adding rules for other degree constructions. -->
     <rule>
       <pattern>
         <pattern-item n="plej"/>
@@ -298,7 +350,17 @@
       </action>
     </rule>
 
-    <!-- Partitive rule: NOUN da NOUN → NOUN di NOUN -->
+    <!-- Partitive construction: NOUN da NOUN → NOUN di NOUN
+         
+         Esperanto partitive: "glaso da akvo" (glass of water)
+         Ido genitive: "glaso di aquo" (glass of water)
+         
+         This handles the partitive preposition difference:
+         - Esperanto: "da" (used for quantity expressions)
+         - Ido: "di" (genitive, more general possessive/partitive)
+         
+         NOTE: This is a direct lexical mapping. Both constructions are
+         semantically equivalent in their respective languages. -->
     <rule>
       <pattern>
         <pattern-item n="nom"/>
