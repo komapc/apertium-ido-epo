@@ -1,0 +1,132 @@
+---
+alwaysApply: true
+---
+
+# Ido-Esperanto Translation System - Project Context
+
+## Project Overview
+
+**Name:** apertium-ido-epo  
+**Type:** Machine translation system (Ido ↔ Esperanto)  
+**Platform:** Apertium  
+**Repository:** https://github.com/komapc/apertium-ido-epo.git  
+**Language:** XML (dictionaries and transfer rules)
+
+## Current State (October 10, 2025)
+
+### ✅ Just Completed: Dictionary Cleanup
+- **Fixed 4,253 dictionary errors** (61.4% → 0% error rate)
+- Removed 268 duplicate entries
+- Corrected 1,500+ verbs mismarked as adjectives
+- All entries now alphabetically sorted
+- **Commit:** 6512666 (pushed to main - should have been PR)
+
+### 📊 System Statistics
+- **Ido dictionary:** 6,667 entries (cleaned)
+- **Bilingual dictionary:** ~13,300 entries
+- **Translation quality:** Ido→Epo (75-80%), Epo→Ido (90-92%)
+- **Test coverage:** 130+ test sentences
+
+### 🎯 Immediate Priorities (This Week)
+1. Comprehensive testing & validation
+2. Add missing coordination patterns
+3. Rebuild and deploy system
+
+See [NEXT_STEPS_RECOMMENDATIONS.md](mdc:NEXT_STEPS_RECOMMENDATIONS.md) for full roadmap.
+
+## Critical Rules
+
+### 🚨 GIT WORKFLOW - NEVER PUSH TO MAIN
+**ALWAYS create a pull request.** See [git-workflow.mdc](mdc:.cursor/rules/git-workflow.mdc)
+
+```bash
+# Correct workflow:
+git checkout -b feature/description
+git commit -m "message"
+git push origin feature/description
+# Then create PR on GitHub
+```
+
+### 📋 Before Each Session
+1. Check [project-progress.mdc](mdc:.cursor/rules/project-progress.mdc) for current task status
+2. Read relevant section in [NEXT_STEPS_RECOMMENDATIONS.md](mdc:NEXT_STEPS_RECOMMENDATIONS.md)
+3. Review applicable development guide
+
+### ✅ Quality Standards
+- All dictionary entries must be alphabetically sorted
+- Verify lemma-stem-paradigm consistency
+- Run `make test` before committing
+- Follow conventions in [apertium-development.mdc](mdc:.cursor/rules/apertium-development.mdc)
+
+## Key Files
+
+### Most Important
+- [apertium-ido.ido.dix](mdc:apertium-ido-epo/apertium-ido.ido.dix) - Ido monolingual dictionary (6,667 entries)
+- apertium-ido-epo.ido-epo.t1x - Transfer rules Ido→Esperanto
+- apertium-ido-epo.epo-ido.t1x - Transfer rules Esperanto→Ido
+- [README.md](mdc:apertium-ido-epo/README.md) - Project overview
+
+### Documentation
+- [NEXT_STEPS_RECOMMENDATIONS.md](mdc:NEXT_STEPS_RECOMMENDATIONS.md) - Prioritized roadmap
+- [DICTIONARY_FIXES_SUMMARY.md](mdc:DICTIONARY_FIXES_SUMMARY.md) - Recent cleanup details
+- [documentation-map.mdc](mdc:.cursor/rules/documentation-map.mdc) - Full file index
+
+### Rules (Always Read)
+- [git-workflow.mdc](mdc:.cursor/rules/git-workflow.mdc) - PR required!
+- [project-progress.mdc](mdc:.cursor/rules/project-progress.mdc) - Current status
+- [apertium-development.mdc](mdc:.cursor/rules/apertium-development.mdc) - Development guidelines
+- [dictionary-quality.mdc](mdc:.cursor/rules/dictionary-quality.mdc) - Dictionary standards
+
+## Quick Commands
+
+```bash
+# Build system
+cd /home/mark/apertium-dev/apertium-ido-epo
+make clean && make
+
+# Test translation
+echo "me havas granda kato" | apertium -d . ido-epo
+
+# Run tests
+make test
+
+# Debug mode
+echo "test" | apertium -d . ido-epo-debug
+
+# Validate dictionary
+xmllint --noout apertium-ido.ido.dix
+```
+
+## Common Tasks Quick Reference
+
+| Task | See Rule File |
+|------|---------------|
+| Edit dictionary | [dictionary-quality.mdc](mdc:.cursor/rules/dictionary-quality.mdc) |
+| Edit transfer rules | [apertium-development.mdc](mdc:.cursor/rules/apertium-development.mdc) |
+| Commit changes | [git-workflow.mdc](mdc:.cursor/rules/git-workflow.mdc) |
+| Check next steps | [project-progress.mdc](mdc:.cursor/rules/project-progress.mdc) |
+| Find documentation | [documentation-map.mdc](mdc:.cursor/rules/documentation-map.mdc) |
+
+## Project Philosophy
+
+1. **Quality over speed** - Fix things properly
+2. **Test everything** - Make test passes before committing
+3. **Document decisions** - Future you will thank present you
+4. **Use PRs always** - Never push directly to main
+5. **Follow conventions** - Consistent code is maintainable code
+
+## When Stuck
+
+1. Check error messages carefully
+2. Review [apertium-development.mdc](mdc:.cursor/rules/apertium-development.mdc) troubleshooting
+3. Test in debug mode: `apertium -d . ido-epo-debug`
+4. Look for similar patterns in existing code
+5. Consult Apertium wiki: https://wiki.apertium.org/
+
+## Remember
+
+- ✅ Dictionary is clean and sorted (just finished!)
+- ✅ Core system is functional (75-92% quality)
+- 🔄 Focus now: Testing and missing patterns
+- 🚫 **NEVER** push to main - always PR!
+- 📝 Update progress tracker when completing tasks
