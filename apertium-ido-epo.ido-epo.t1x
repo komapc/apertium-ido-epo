@@ -700,6 +700,77 @@
         </choose>
       </action>
     </rule>
+
+    <!-- Verb + Det + Adj + Noun + Conjunction + Det + Adj + Noun: coordinated objects with determiners and adjectives -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is copula, keep nominative -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <b pos="2"/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+              <b pos="3"/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+              <b pos="4"/>
+              <lu><clip pos="5" side="tl" part="whole"/></lu>
+              <b pos="5"/>
+              <lu><clip pos="6" side="tl" part="whole"/></lu>
+              <b pos="6"/>
+              <lu><clip pos="7" side="tl" part="whole"/></lu>
+              <b pos="7"/>
+              <lu><clip pos="8" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive: accusative on both nouns -->
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="lem"/>
+                <clip pos="4" side="tl" part="a_nom"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b pos="4"/>
+              <lu><clip pos="5" side="tl" part="whole"/></lu>
+              <b pos="5"/>
+              <lu><clip pos="6" side="tl" part="whole"/></lu>
+              <b pos="6"/>
+              <lu><clip pos="7" side="tl" part="whole"/></lu>
+              <b pos="7"/>
+              <lu>
+                <clip pos="8" side="tl" part="lem"/>
+                <clip pos="8" side="tl" part="a_nom"/>
+                <clip pos="8" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
     
     <!-- Noun + Conjunction + Noun: coordinated subjects or standalone nouns
          Without verb context, we must assume nominative (default case) -->

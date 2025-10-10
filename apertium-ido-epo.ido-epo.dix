@@ -30950,8 +30950,14 @@
     </e>
     <e>
       <p>
+        <l>petr<s n="np"/></l>
+        <r>Petro<s n="np"/><s n="sg"/><s n="nom"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
         <l>petr<s n="n"/></l>
-        <r>ŝtono<s n="n"/></r>
+        <r>Petro<s n="np"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e>
