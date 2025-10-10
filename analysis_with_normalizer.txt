@@ -1,0 +1,706 @@
+================================================================================
+IDO WIKIPEDIA ARTICLES - TRANSLATION ANALYSIS
+================================================================================
+
+Articles to analyze:
+  - Nederlando
+  - Belgia
+  - Homo
+  - Mamo
+  - Komputero
+
+================================================================================
+ANALYZING: Nederlando
+URL: https://io.wikipedia.org/wiki/Nederlando
+================================================================================
+
+Fetching article...
+Article length: 12359 characters
+Word count: 1937 words
+Analyzing 34 sentences...
+
+  Sentence 1: 7 error(s)
+    Ido: Nederlando esas un de la landi di la Rejio di la Nederlandi en westal Europa....
+    Epo: #Nederlando estas *un de la landoj de la *Rejio de la #Nederlando en *westal #Eŭ...
+    Generation errors: ['*un', '*Rejio', '*westal']
+    Function word issues: 1
+
+  Sentence 2: 3 error(s)
+    Ido: Ol havas kom vicini Germania este e Belgia sude....
+    Epo: Ĝi havas kiel *vicini #Germanio oriente kaj @Belgi sude....
+    Untranslated: ['@Belgi']
+    Generation errors: ['*vicini']
+
+  Sentence 3: 1 error(s)
+    Ido: Norde e weste jacas Norda Maro....
+    Epo: Norde kaj okcidente kuŝas *Norda Maro....
+    Generation errors: ['*Norda']
+
+  Sentence 4: 1 error(s)
+    Ido: Olua oficala linguo esas la Nederlandana....
+    Epo: Ĝia oficiala *linguo estas la nederlanda....
+    Generation errors: ['*linguo']
+
+  Sentence 5: 1 error(s)
+    Ido: Ol esas konstitucala monarkio e parlamentala demokratio....
+    Epo: Ĝi estas konstitucia #monarĥio kaj parlamenta demokratio....
+
+  Sentence 6: 6 error(s)
+    Ido: Lua duchambra parlamento esas la Staten-Generaal, havanta remarkinda egala repre...
+    Epo: Lia *duchambra parlamento estas la *Staten-*Generaal, *havanta *remarkinda egala...
+    Generation errors: ['*duchambra', '*Staten-', '*Generaal', '*havanta', '*remarkinda']
+
+  Sentence 7: 4 error(s)
+    Ido: La nunala rejo esas Willem-Alexander....
+    Epo: La *nunala *rejo estas *Willem-*Alexander....
+    Generation errors: ['*nunala', '*rejo', '*Willem-', '*Alexander']
+
+  Sentence 8: 9 error(s)
+    Ido: Nederlando esas membrostato dil Europana Uniono, NATO, OKED, MOK, e signatis la ...
+    Epo: #Nederlando estas *membrostato de *Europana *Uniono, *NATO, *OKED, *MOK, kaj #si...
+    Generation errors: ['*membrostato', '*Europana', '*Uniono', '*NATO', '*OKED']
+
+  Sentence 9: 3 error(s)
+    Ido: Kun Belgia e Luxemburgia ol apartenas al ekonomiala regiono Benelux....
+    Epo: Kun @Belgi kaj #Luksemburgo ĝi apartenas al ekonomia regiono *Benelux....
+    Untranslated: ['@Belgi']
+    Generation errors: ['*Benelux']
+
+  Sentence 10: 10 error(s)
+    Ido: Historio
+
+Dum la regno di Karolus la 5ma di Germania la regiono di nunala Nederl...
+    Epo: Historio #Dum la *regno de *Karolus la 5-al de #Germanio la regiono de *nunala #...
+    Untranslated: ['@Belgi']
+    Generation errors: ['*regno', '*Karolus', '*nunala', '*nuntempa']
+
+  Sentence 11: 7 error(s)
+    Ido: En 1579, la nordo di la regiono unionis e formacis l'Uniono di Utrecht, kontrato...
+    Epo: En 1579, la nordo de la regiono unuigis kaj formis #l'*Uniono de *Utrecht, *kont...
+    Generation errors: ['*Uniono', '*Utrecht', '*kontrato', '*defenso', '*Hispanian']
+    Function word issues: 1
+
+  Sentence 12: 10 error(s)
+    Ido: Ye la 26ma di julio 1581 la provinci qui formacis la nunal Nederlando nedependan...
+    Epo: Je la 26-al de julio 1581 la provincoj #kiu formis la *nunal #Nederlando *nedepe...
+    Untranslated: ['@ofic']
+    Generation errors: ['*nunal', '*nedependanteskis', '*rejulo', '*Felipe', '*duris']
+
+  Sentence 13: 7 error(s)
+    Ido: Felipe, filiulo di Karolus la 5ma, ne aceptis la nedependo, e komencis milito qu...
+    Epo: *Felipe, *filiulo de *Karolus la 5-al, *ne akceptis la *nedependo, kaj komencis ...
+    Generation errors: ['*Felipe', '*filiulo', '*Karolus', '*ne', '*nedependo']
+
+  Sentence 14: 3 error(s)
+    Ido: La Nederlandana kolonial imperio komencis kreskar dum la 17ma yarcento....
+    Epo: La nederlanda *kolonial imperio komencis grandiĝas #dum la 17-al *jarcento....
+    Generation errors: ['*kolonial', '*jarcento']
+
+  Sentence 15: 8 error(s)
+    Ido: En 1614, Nederlandani fondis Nieuw Amsterdam, en la sudo dil insulo Manhattan - ...
+    Epo: En 1614, *Nederlandani fondis *Nieuw *Amsterdam, en la sudo de insulo *Manhattan...
+    Generation errors: ['*Nederlandani', '*Nieuw', '*Amsterdam', '*Manhattan', '*nun']
+    Function word issues: 1
+
+  Sentence 16: 3 error(s)
+    Ido: En Sudafrika, Nederlandani establisis kolonio en 1652....
+    Epo: En *Sudafrika, *Nederlandani establis kolonion en 1652....
+    Generation errors: ['*Sudafrika', '*Nederlandani']
+    Function word issues: 1
+
+  Sentence 17: 4 error(s)
+    Ido: Cirkum 1650 Nederlandani posedis aproxime 16 000 komercala navi, e lua habitanta...
+    Epo: *Cirkum 1650 *Nederlandani havis *aproxime 16 000 komercaj navoj, kaj lia loĝant...
+    Generation errors: ['*Cirkum', '*Nederlandani', '*aproxime', '*habitanti']
+
+  Sentence 18: 5 error(s)
+    Ido: Multa ekonomiala historiisti judikas Nederlando kom la bersilo di la moderna kap...
+    Epo: #Multaj ekonomia *historiisti juĝas #Nederlando kiel la *bersilo de la moderna *...
+    Generation errors: ['*historiisti', '*bersilo', '*kapitalismo']
+
+  Sentence 19: 5 error(s)
+    Ido: En Amsterdam fondesis l'unesma borso dil mondo....
+    Epo: En *Amsterdam *fondesis #l'*unesma borso de mondo....
+    Generation errors: ['*Amsterdam', '*fondesis', '*unesma']
+    Function word issues: 1
+
+  Sentence 20: 14 error(s)
+    Ido: Ye la 19ma di januaro 1795, un dio pos ke lora princo Willem la 5ma di Orange fu...
+    Epo: Je la 19-al de januaro 1795, *un diurno #post *ke #ilia *princo *Willem la 5-al ...
+    Untranslated: ['@simil']
+    Generation errors: ['*un', '*ke', '*princo', '*Willem', '*Orange']
+
+  Sentence 21: 10 error(s)
+    Ido: De 1806 til 1810 la Franca imperiestro Napoléon la 1ma establisis la Rejio Holan...
+    Epo: De 1806 ĝis 1810 la *Franca *imperiestro *Napoléon la 1-al establis la *Rejio *H...
+    Generation errors: ['*Franca', '*imperiestro', '*Napoléon', '*Rejio', '*Holando']
+
+  Sentence 22: 5 error(s)
+    Ido: En 1810 Napoléon enkorpigis Holando a la Franca imperio....
+    Epo: En 1810 *Napoléon *enkorpigis *Holando al la *Franca imperio....
+    Generation errors: ['*Napoléon', '*enkorpigis', '*Holando', '*Franca']
+    Function word issues: 1
+
+  Sentence 23: 3 error(s)
+    Ido: L'enkorpigo duris til 1813....
+    Epo: #L'*enkorpigo *duris ĝis 1813....
+    Generation errors: ['*enkorpigo', '*duris']
+
+  Sentence 24: 9 error(s)
+    Ido: En 1815, Kongreso di Wien establisis Rejio Nederlando, expansita sude por kontro...
+    Epo: En 1815, Kongreso de *Wien establis *Rejio #Nederlando, *expansita sude por kont...
+    Untranslated: ['@Belgi']
+    Generation errors: ['*Wien', '*Rejio', '*expansita', '*nunala']
+    Function word issues: 2
+
+  Sentence 25: 4 error(s)
+    Ido: En 1830 la Belgi revoltis e deklaris sua nedependanteso....
+    Epo: En 1830 la *Belgi ribelis kaj deklaris #sia *nedependanteso....
+    Generation errors: ['*Belgi', '*nedependanteso']
+    Function word issues: 1
+
+  Sentence 26: 5 error(s)
+    Ido: En 1890 l'uniono kun Luxemburgia cesis....
+    Epo: En 1890 #l'*uniono kun #Luksemburgo *cesis....
+    Generation errors: ['*uniono', '*cesis']
+    Function word issues: 1
+
+  Sentence 27: 9 error(s)
+    Ido: Malgre ke Nederlando deklaris su neutra dum l'unesma mondomilito, la lando esis ...
+    Epo: *Malgre *ke #Nederlando deklaris sub neŭtra #dum #l'*unesma *mondomilito, la lan...
+    Generation errors: ['*Malgre', '*ke', '*unesma', '*mondomilito', '*implikata']
+    Function word issues: 1
+
+  Sentence 28: 9 error(s)
+    Ido: Germani projetis invadar la lando, ma generalo Helmuth Johann Ludwig von Moltke ...
+    Epo: *Germani projektis invadi la landon, sed *generalo *Helmuth *Johann *Ludwig *von...
+    Generation errors: ['*Germani', '*generalo', '*Helmuth', '*Johann', '*Ludwig']
+
+  Sentence 29: 4 error(s)
+    Ido: Nederlando furnisis vari a Germania til la Britaniana blokuso en 1916....
+    Epo: #Nederlando provizis varojn al #Germanio ĝis la *Britaniana blokado en 1916....
+    Generation errors: ['*Britaniana']
+    Function word issues: 1
+
+  Sentence 30: 10 error(s)
+    Ido: Ye la 10ma di mayo 1940 dum la duesma mondomilito, la Nacional-socialista German...
+    Epo: Je la 10-al de *majo 1940 #dum la *duesma *mondomilito, la *Nacional-*socialista...
+    Generation errors: ['*majo', '*duesma', '*mondomilito', '*Nacional-', '*socialista']
+    Function word issues: 1
+
+================================================================================
+ANALYZING: Belgia
+URL: https://io.wikipedia.org/wiki/Belgia
+================================================================================
+
+Fetching article...
+Article length: 8951 characters
+Word count: 1415 words
+Analyzing 34 sentences...
+
+  Sentence 1: 8 error(s)
+    Ido: Belgia, oficale Rejio Belgia, esas federala stato jacanta an westal Europa....
+    Epo: @Belgi, @ofic *Rejio @Belgi, estas federacia ŝtato *jacanta *an *westal #Eŭropo....
+    Untranslated: ['@Belgi', '@ofic', '@Belgi']
+    Generation errors: ['*Rejio', '*jacanta', '*an', '*westal']
+
+  Sentence 2: 8 error(s)
+    Ido: Ol havas kom vicini Nederlando norde e nord-weste, Germania este, Luxemburgia su...
+    Epo: Ĝi havas kiel *vicini #Nederlando norde kaj *nord-okcidente, #Germanio oriente, ...
+    Generation errors: ['*vicini', '*nord-okcidente', '*sud-okcidente', '*sud-okcidente']
+
+  Sentence 3: 1 error(s)
+    Ido: Weste di la lando jacas Norda Maro....
+    Epo: Okcidente de la lando kuŝas *Norda Maro....
+    Generation errors: ['*Norda']
+
+  Sentence 4: 11 error(s)
+    Ido: Belgia havas tri oficala lingui: Nederlandana (parolata da cirkume 60% del habit...
+    Epo: @Belgi havas *tri oficiala *lingui: nederlanda (*parolata de ĉirkaŭ 60% *del loĝ...
+    Untranslated: ['@Belgi']
+    Generation errors: ['*tri', '*lingui', '*parolata', '*del', '*Franca']
+
+  Sentence 5: 3 error(s)
+    Ido: Bruxel, la chef-urbo di la lando, esas bilingua....
+    Epo: *Bruxel, la *chef-urbo de la lando, estas *bilingua....
+    Generation errors: ['*Bruxel', '*chef-urbo', '*bilingua']
+
+  Sentence 6: 7 error(s)
+    Ido: Belgia esas parto dil ekonomiala regiono Benelux ed esas un ek la fondinti di Eu...
+    Epo: @Belgi estas parto de ekonomia regiono *Benelux kaj estas *un *ek la *fondinti d...
+    Untranslated: ['@Belgi']
+    Generation errors: ['*Benelux', '*un', '*ek', '*fondinti', '*Europana']
+
+  Sentence 7: 1 error(s)
+    Ido: Bazala fakti pri Belgia....
+    Epo: Bazaj faktoj pri @Belgi....
+    Untranslated: ['@Belgi']
+
+  Sentence 8: 5 error(s)
+    Ido: Historio
+
+Romani okupis la regiono di la nuna Belgia dum 1ma yarcento aK....
+    Epo: Historio Romanoj okupis la regionon de la *nuna @Belgi #dum 1-al *jarcento *aK....
+    Untranslated: ['@Belgi']
+    Generation errors: ['*nuna', '*jarcento', '*aK']
+
+  Sentence 9: 6 error(s)
+    Ido: La vorto "Belgia" devenas de Gallia Belgica, Romana provinco en la regiono....
+    Epo: La vorto "@Belgi" *devenas de *Gallia *Belgica, *Romana provinco en la regiono....
+    Untranslated: ['@Belgi']
+    Generation errors: ['*devenas', '*Gallia', '*Belgica', '*Romana']
+    Function word issues: 1
+
+  Sentence 10: 9 error(s)
+    Ido: Gradope l'enmigro di Germana tribui dum la 5ma yarcento pozis la regiono sub Mer...
+    Epo: *Gradope #l'*enmigro de *Germana triboj #dum la 5-al *jarcento metis la regionon...
+    Generation errors: ['*Gradope', '*enmigro', '*Germana', '*jarcento', '*sub']
+
+  Sentence 11: 4 error(s)
+    Ido: Dum Mezepoko, mikra feudala stati aparis....
+    Epo: #Dum *Mezepoko, eta *feudala ŝtatoj *aparis....
+    Generation errors: ['*Mezepoko', '*feudala', '*aparis']
+
+  Sentence 12: 12 error(s)
+    Ido: Kom rezulto di la Milito dil okadek yari (1568 til 1648) la regiono dividesis en...
+    Epo: Kiel *rezulto de la Milito de *okadek jaroj (1568 ĝis 1648) la regiono *dividesi...
+    Generation errors: ['*rezulto', '*okadek', '*dividesis', '*Unionita', '*Belgica']
+    Function word issues: 1
+
+  Sentence 13: 5 error(s)
+    Ido: La regiono di nuna Belgia divenis parto dil Hispana imperio e pose dil Habsburga...
+    Epo: La regiono de *nuna @Belgi fariĝis parton de *Hispana imperio kaj poste de *Habs...
+    Untranslated: ['@Belgi', '@Austri']
+    Generation errors: ['*nuna', '*Hispana', '*Habsburga']
+
+  Sentence 14: 6 error(s)
+    Ido: Konseque sucedo-milito en Austria, en 1744 Francia invadis Belgia....
+    Epo: @Konsequ *sucedo-milito en @Austri, en 1744 #Francio invadis @Belgi....
+    Untranslated: ['@Konsequ', '@Austri', '@Belgi']
+    Generation errors: ['*sucedo-milito']
+    Function word issues: 1
+
+  Sentence 15: 5 error(s)
+    Ido: Pos pakti signatita inter 1756 e 1757 Belgia juis 35-yara paco....
+    Epo: #Post *pakti *signatita inter 1756 kaj 1757 @Belgi ĝuis 35-*jara paco....
+    Untranslated: ['@Belgi']
+    Generation errors: ['*pakti', '*signatita', '*jara']
+
+  Sentence 16: 15 error(s)
+    Ido: Kande la Franca Revoluciono komencis, la Belgi esperis obtenor nedependo, ma en ...
+    Epo: *Kande la *Franca Revolucio komencis, la *Belgi esperis *obtenor *nedependo, sed...
+    Generation errors: ['*Kande', '*Franca', '*Belgi', '*obtenor', '*nedependo']
+    Function word issues: 1
+
+  Sentence 17: 5 error(s)
+    Ido: La kongreso di Wien en 1815 establisis Nederlandana dominaco super Belgia....
+    Epo: La kongreso de *Wien en 1815 establis nederlanda *dominaco *super @Belgi....
+    Untranslated: ['@Belgi']
+    Generation errors: ['*Wien', '*dominaco', '*super']
+    Function word issues: 1
+
+  Sentence 18: 3 error(s)
+    Ido: En 1830, en Francia, komencis nova revoluciono kontre absoluta monarkio....
+    Epo: En 1830, en #Francio, komencis novan revolucion kontraŭ absoluta #monarĥio....
+    Function word issues: 1
+
+  Sentence 19: 10 error(s)
+    Ido: Inspirita da ta revoluciono, en agosto dil sam yaro komencis revolto en Bruxel k...
+    Epo: *Inspirita de #tiu revolucio, en *aŭgusto de *sam jaro komencis ribelon en *Brux...
+    Generation errors: ['*Inspirita', '*aŭgusto', '*sam', '*Bruxel', '*Unionita']
+    Function word issues: 1
+
+  Sentence 20: 8 error(s)
+    Ido: Pos batalii en multa urbi, Belgia deklaris su nedependanta de Nederlando ye la 4...
+    Epo: #Post bataloj en #multaj urboj, @Belgi deklaris sub *nedependanta de #Nederlando...
+    Untranslated: ['@Belgi']
+    Generation errors: ['*nedependanta', '*quankam', '*duris']
+    Function word issues: 1
+
+  Sentence 21: 6 error(s)
+    Ido: Ye la 21ma di julio 1831 Léopold la 1ma asumis la povo kom unesma Belga monarko....
+    Epo: Je la 21-al de julio 1831 *Léopold la 1-al *asumis la *povo kiel *unesma *Belga ...
+    Generation errors: ['*Léopold', '*asumis', '*povo', '*unesma', '*Belga']
+
+  Sentence 22: 5 error(s)
+    Ido: Nederlando agnoskis la nedependo di Belgia erste en 1839....
+    Epo: #Nederlando agnoskis la *nedependo de @Belgi #ne pli frue ol en 1839....
+    Untranslated: ['@Belgi']
+    Generation errors: ['*nedependo']
+    Function word issues: 1
+
+  Sentence 23: 12 error(s)
+    Ido: Quik pos la nedependo, Belgia adoptis la Franca linguo kom oficala, e Franca inf...
+    Epo: *Quik #post la *nedependo, @Belgi adoptis la *Franca *linguo kiel oficiala, kaj ...
+    Untranslated: ['@Belgi']
+    Generation errors: ['*Quik', '*nedependo', '*Franca', '*linguo', '*Franca']
+
+  Sentence 24: 7 error(s)
+    Ido: Kom respondo, aparis nacionalista idei inter la Flandriani, qui komencis demanda...
+    Epo: Kiel respondo, *aparis *nacionalista ideoj inter la *Flandriani, #kiu komencis *...
+    Generation errors: ['*aparis', '*nacionalista', '*Flandriani', '*demandar', '*linguo']
+    Function word issues: 1
+
+  Sentence 25: 6 error(s)
+    Ido: Anke pos la nedependo, Belgia komencis stimular sua industrio ed expansar sua fe...
+    Epo: Ankaŭ #post la *nedependo, @Belgi komencis stimuli #sia industrion kaj ekspansia...
+    Untranslated: ['@Belgi']
+    Generation errors: ['*nedependo', '*ferovoyi']
+
+  Sentence 26: 8 error(s)
+    Ido: En 1885 la konfero di Berlin donis la kontrolo di Belga Kongo al rejulo Léopold ...
+    Epo: En 1885 la *konfero de *Berlin donis la *kontrolo de *Belga #Kongo al *rejulo *L...
+    Generation errors: ['*konfero', '*Berlin', '*kontrolo', '*Belga', '*rejulo']
+    Function word issues: 1
+
+  Sentence 27: 11 error(s)
+    Ido: En 1914 dum l'Unesma mondomilito la Germana imperio invadis Belgia, por lua stra...
+    Epo: En 1914 #dum #l'*Unesma *mondomilito la *Germana imperio invadis @Belgi, por lia...
+    Untranslated: ['@Belgi', '@Paris']
+    Generation errors: ['*Unesma', '*mondomilito', '*Germana', '*situeso', '*Berlin']
+    Function word issues: 2
+
+  Sentence 28: 8 error(s)
+    Ido: La lando itere okupesis dal Germani en 1940, dum la Duesma mondomilito, e liberi...
+    Epo: La lando denove *okupesis *dal *Germani en 1940, #dum la *Duesma *mondomilito, k...
+    Generation errors: ['*okupesis', '*dal', '*Germani', '*Duesma', '*mondomilito']
+    Function word issues: 1
+
+  Sentence 29: 10 error(s)
+    Ido: Pos la milito, generala striko en 1951 koaktis la rejulo Léopold la 3ma, judikat...
+    Epo: #Post la milito, ĝenerala *striko en 1951 devigis la *rejulo *Léopold la 3-al, *...
+    Generation errors: ['*striko', '*rejulo', '*Léopold', '*judikata', '*dal']
+    Function word issues: 1
+
+  Sentence 30: 8 error(s)
+    Ido: Belgia esis un ek la sis fondinti di la Komunitato Europana pri Karbono e Stalo ...
+    Epo: @Belgi estis *un *ek la *sis *fondinti de la Komunumo *Europana pri Karbo kaj Ŝt...
+    Untranslated: ['@Belgi']
+    Generation errors: ['*un', '*ek', '*sis', '*fondinti', '*Europana']
+    Function word issues: 1
+
+================================================================================
+ANALYZING: Homo
+URL: https://io.wikipedia.org/wiki/Homo
+================================================================================
+
+Fetching article...
+Article length: 814 characters
+Word count: 125 words
+Analyzing 8 sentences...
+
+  Sentence 1: 4 error(s)
+    Ido: Homi (Homo sapiens) esas primato de la familio Hominidae e la nura existanta spe...
+    Epo: Homoj (Homo *sapiens) estas *primato de la familio *Hominidae kaj la nura *exist...
+    Generation errors: ['*sapiens', '*primato', '*Hominidae', '*existanta']
+
+  Sentence 2: 3 error(s)
+    Ido: La mezavalora alteso esas 1.75 m....
+    Epo: La *mezavalora *alteso estas 1.75 #m....
+    Generation errors: ['*mezavalora', '*alteso']
+
+  Sentence 3: 11 error(s)
+    Ido: Fizikala karaktero
+L' evoluciono vers Homo sapiens karakterizesas per la sequant...
+    Epo: Fizika karaktero
+@L' *evoluciono *vers Homo *sapiens *karakterizesas per la sekv...
+    Untranslated: ['@L']
+    Generation errors: ['*evoluciono', '*vers', '*sapiens', '*karakterizesas', '*expanso']
+
+  Sentence 4: 15 error(s)
+    Ido: Per certa antropologi, la strukturo-modifikeso di cerebro esas mem plu important...
+    Epo: Per certa *antropologi, la strukturo-*modifikeso de cerbo estas eĉ *plu *importa...
+    Untranslated: ['@mov']
+    Generation errors: ['*antropologi', '*modifikeso', '*plu', '*importanta', '*expanso']
+
+  Sentence 5: 2 error(s)
+    Ido: Sexuala maturesko eventas inter 12 e 15 evo-yari....
+    Epo: *Sexuala *maturesko okazas inter 12 kaj 15 aĝo-jaroj....
+    Generation errors: ['*Sexuala', '*maturesko']
+
+  Sentence 6: 8 error(s)
+    Ido: Pos non-monata gravideso elu naskas proxim 3 kg e 50-60 cm staturo....
+    Epo: #Post *non-*monata *gravideso *elu naskas *proxim 3 #kg kaj 50-60 #cm staturo....
+    Generation errors: ['*non-', '*monata', '*gravideso', '*elu', '*proxim']
+
+  Sentence 7: 5 error(s)
+    Ido: En alta latitudo per absorbar plua vitamino D lua pelo esas plu klara....
+    Epo: En alta latitudo per *absorbar *plua vitamino *D lia haŭto estas *plu klara....
+    Generation errors: ['*absorbar', '*plua', '*D', '*plu']
+    Function word issues: 1
+
+  Sentence 8: 7 error(s)
+    Ido: Pro dum evo homaro vivar quale gibono developas opozebla polexo, okuli avan e bi...
+    Epo: #Ĉar #dum aĝo *homaro vivas kiel *gibono disvolvas *opozebla polekso, okuloj *av...
+    Generation errors: ['*homaro', '*gibono', '*opozebla', '*avan', '*bipedi']
+
+================================================================================
+ANALYZING: Mamo
+URL: https://io.wikipedia.org/wiki/Mamo
+================================================================================
+
+Fetching article...
+Article length: 265 characters
+Word count: 41 words
+Analyzing 2 sentences...
+
+  Sentence 1: 16 error(s)
+    Ido: Mamo (anatomio) esas saliajo migloba, dextre (o sinistre) di pektoro di muliero,...
+    Epo: Mamo (anatomio) estas *saliajo *migloba, @dextr (*o @sinistr) de brusto de #plen...
+    Untranslated: ['@dextr', '@sinistr']
+    Generation errors: ['*saliajo', '*migloba', '*o', '*glandatra', '*nutresas']
+
+  Sentence 2: 4 error(s)
+    Ido: Che homi la volumino di la mami permanas, mem exter la periodo di lakto-produkto...
+    Epo: *Che homoj la volumeno de la mamoj *permanas, eĉ *exter la periodo de lakto-*pro...
+    Generation errors: ['*Che', '*permanas', '*exter', '*produkto']
+
+================================================================================
+ANALYZING: Komputero
+URL: https://io.wikipedia.org/wiki/Komputero
+================================================================================
+
+Fetching article...
+Article length: 3754 characters
+Word count: 537 words
+Analyzing 21 sentences...
+
+  Sentence 1: 9 error(s)
+    Ido: Komputero (anke: komputilo, komputoro, komputatoro) esas informatikala aparato q...
+    Epo: *Komputero (ankaŭ: *komputilo, *komputoro, *komputatoro) estas *informatikal'apa...
+    Generation errors: ['*Komputero', '*komputilo', '*komputoro', '*komputatoro', '*informatikal']
+
+  Sentence 2: 19 error(s)
+    Ido: Ordinare komputero esas aparato projetita por exekutar diversa informatiko-taski...
+    Epo: Ordinare *komputero estas aparato *projetita por #ekzekucii diversan #komputosci...
+    Generation errors: ['*komputero', '*projetita', '*taski', '*exemple', '*matematikala']
+    Function word issues: 1
+
+  Sentence 3: 6 error(s)
+    Ido: Komputeri konstante uzesas por laboro, docado, skolal agadi e hobii....
+    Epo: *Komputeri konstante *uzesas por laboro, *docado, *skolal *agadi kaj hobioj....
+    Generation errors: ['*Komputeri', '*uzesas', '*docado', '*skolal', '*agadi']
+    Function word issues: 1
+
+  Sentence 4: 6 error(s)
+    Ido: Vasta-sence anke ludokonsoli, posh-telefonili e kalkulili esas komputeri....
+    Epo: Vasta-*sence ankaŭ *ludokonsoli, *posh-*telefonili kaj *kalkulili estas *kompute...
+    Generation errors: ['*sence', '*ludokonsoli', '*posh-', '*telefonili', '*kalkulili']
+
+  Sentence 5: 11 error(s)
+    Ido: Quale komputeri funcionas
+Maxim multa komputeri uzas cirkuiti elektrala, di qui ...
+    Epo: Kiel *komputeri funkcias
+*Maxim #multaj *komputeri *uzas cirkvitoj *elektrala, d...
+    Generation errors: ['*komputeri', '*Maxim', '*komputeri', '*uzas', '*elektrala']
+    Function word issues: 1
+
+  Sentence 6: 5 error(s)
+    Ido: La Booleana algebro fondesas sur du vereso-valori: vera (1) e falsa (0)....
+    Epo: La *Booleana algebro *fondesas sur *du *vereso-*valori: vera (1) kaj falsa (0)....
+    Generation errors: ['*Booleana', '*fondesas', '*du', '*vereso-', '*valori']
+
+  Sentence 7: 6 error(s)
+    Ido: Pro to esas naturala ke on prizentas ca valori per la binara sistemo....
+    Epo: #Ĉar *to estas natura *ke *on donacas #ĉi tiu *valori per la binara sistemo....
+    Generation errors: ['*to', '*ke', '*on', '*valori']
+
+  Sentence 8: 5 error(s)
+    Ido: Un vereso-valoro esas konocata kom bito....
+    Epo: *Un *vereso-*valoro estas *konocata kiel *bito....
+    Generation errors: ['*Un', '*vereso-', '*valoro', '*konocata', '*bito']
+
+  Sentence 9: 11 error(s)
+    Ido: Komputeri ordinare uzas la modelo da John von Neumann, en qua la programo e la i...
+    Epo: *Komputeri ordinare *uzas la modelo de *John *von *Neumann, en #kia la *programo...
+    Generation errors: ['*Komputeri', '*uzas', '*John', '*von', '*Neumann']
+    Function word issues: 1
+
+  Sentence 10: 7 error(s)
+    Ido: La komputero exekutas programi per lektar la [[datumo|datumi}} del memoro ed int...
+    Epo: La *komputero #ekzekucii *programi per legi la [[datenon|datenoj}} *del memoro k...
+    Generation errors: ['*komputero', '*programi', '*del', '*segun', '*linguo']
+    Function word issues: 1
+
+  Sentence 11: 8 error(s)
+    Ido: Singla instruciono exekutas simpla operaco, exemple per lektar bit-serio de memo...
+    Epo: #Ĉiu instrukcio #ekzekucii simplan operacion, *exemple per legas *bit-serio de m...
+    Generation errors: ['*exemple', '*bit-serio', '*du', '*bit-serioj', '*o']
+
+  Sentence 12: 10 error(s)
+    Ido: La parto dil komputero qua exekutas l'instrucioni esas la procedilo, o central-p...
+    Epo: La parto de *komputero #kia #ekzekucii #l'instrukcioj estas la *procedilo, *o *c...
+    Generation errors: ['*komputero', '*procedilo', '*o', '*central-', '*procedanta']
+
+  Sentence 13: 1 error(s)
+    Ido: La procedilo esas mikra cirkuito integra....
+    Epo: La *procedilo estas eta cirkvito integra....
+    Generation errors: ['*procedilo']
+
+  Sentence 14: 14 error(s)
+    Ido: Persona komputeri ordinare havas un CPU, kontre ke serv-komputeri havas du, quar...
+    Epo: *Persona *komputeri ordinare havas *un *CPU, kontraŭ *ke *serv-*komputeri havas ...
+    Generation errors: ['*Persona', '*komputeri', '*un', '*CPU', '*ke']
+    Function word issues: 1
+
+  Sentence 15: 21 error(s)
+    Ido: Arkitekturo di komputero
+Komputeral sistemo konsistas ek yena parti:
+
+aparati
+pr...
+    Epo: Arkitekturo de *komputero
+*Komputeral sistemo #en) *ek *yena partoj: aparatoj
+*p...
+    Untranslated: ['@periferi']
+    Generation errors: ['*komputero', '*Komputeral', '*ek', '*yena', '*procedilo']
+    Function word issues: 1
+
+  Sentence 16: 10 error(s)
+    Ido: dominaco-programo esas programaro qua direktas e koordinas omna agi, repartisas ...
+    Epo: *dominaco-*programo estas *programaro #kia direktas kaj #koordini #ĉiuj *agi, po...
+    Generation errors: ['*dominaco-', '*programo', '*programaro', '*agi', '*utiligas']
+
+  Sentence 17: 7 error(s)
+    Ido: Ol agas anke kom hosto por la diversa programi qui laboras en la komputero....
+    Epo: Ĝi ekagas ankaŭ kiel *hosto por la diversa *programi #kiu *laboras en la *komput...
+    Generation errors: ['*hosto', '*programi', '*laboras', '*komputero']
+    Function word issues: 2
+
+  Sentence 18: 6 error(s)
+    Ido: Kom hosto, un de la skopi dil dominaco-programo esas traktar omna detali pri la ...
+    Epo: Kiel *hosto, *un de la celoj de *dominaco-*programo estas *traktar #ĉiuj detaloj...
+    Generation errors: ['*hosto', '*un', '*dominaco-', '*programo', '*traktar']
+
+  Sentence 19: 69 error(s)
+    Ido: Parti di tablo-komputero
+Moderna tablo-komputero konsistas ek multa parti aparta...
+    Epo: Partoj de tablo-*komputero
+Moderna tablo-*komputero #en) *ek #multaj partoj apar...
+    Untranslated: ['@gener', '@im-']
+    Generation errors: ['*komputero', '*komputero', '*ek', '*un', '*o']
+    Function word issues: 2
+
+  Sentence 20: 2 error(s)
+    Ido: komputilo esas la maxim oficala vorto....
+    Epo: *komputilo estas la *maxim oficiala vorto....
+    Generation errors: ['*komputilo', '*maxim']
+
+  Sentence 21: 3 error(s)
+    Ido: La suba vorti esas posibla sinonimi di komputil...
+    Epo: La *suba vortoj estas ebla *sinonimi de *komputil...
+    Generation errors: ['*suba', '*sinonimi', '*komputil']
+
+
+================================================================================
+SUMMARY OF TRANSLATION PROBLEMS
+================================================================================
+
+Articles analyzed: 5
+Total sentences analyzed: 91
+
+
+## ERROR BREAKDOWN BY ARTICLE
+
+
+### Nederlando
+  Sentences analyzed: 30
+  Error summary:
+    - Untranslated Words: 6
+    - Generation Errors: 118
+    - Analysis Errors: 42
+    - Function Word Issues: 13
+
+### Belgia
+  Sentences analyzed: 30
+  Error summary:
+    - Untranslated Words: 22
+    - Generation Errors: 138
+    - Analysis Errors: 37
+    - Function Word Issues: 16
+
+### Homo
+  Sentences analyzed: 8
+  Error summary:
+    - Untranslated Words: 2
+    - Generation Errors: 44
+    - Analysis Errors: 8
+    - Function Word Issues: 1
+
+### Mamo
+  Sentences analyzed: 2
+  Error summary:
+    - Untranslated Words: 2
+    - Generation Errors: 14
+    - Analysis Errors: 4
+
+### Komputero
+  Sentences analyzed: 21
+  Error summary:
+    - Untranslated Words: 3
+    - Generation Errors: 185
+    - Analysis Errors: 37
+    - Function Word Issues: 11
+
+
+## CORE VOCABULARY ISSUES
+
+
+Unique untranslated words: 13
+
+Most common untranslated words:
+  - @Austri
+  - @Belgi
+  - @Konsequ
+  - @L
+  - @Paris
+  - @dextr
+  - @gener
+  - @im-
+  - @mov
+  - @ofic
+  - @periferi
+  - @simil
+  - @sinistr
+
+
+Unique generation errors: 344
+
+Most common generation errors:
+  - *Alexander
+  - *Amsterdam
+  - *Angle
+  - *Austriani
+  - *Batavia
+  - *Belga
+  - *Belgi
+  - *Belgica
+  - *Benelux
+  - *Berlin
+  - *Bonaparte
+  - *Booleana
+  - *Britaniana
+  - *Bruxel
+  - *CD-aparato
+  - *CPU
+  - *Che
+  - *Cirkum
+  - *D
+  - *DVD
+
+
+## GRAMMATICAL ISSUES
+
+
+Function word translation problems: 41
+
+Most problematic function words:
+  - 'en' (should be 'en'): 31 occurrences
+  - 'por' (should be 'por'): 10 occurrences
+
+
+Detailed results saved to: ido_five_articles_analysis.json
+Text report saved to: ido_five_articles_report.txt
+
+
+✓ Analysis complete!

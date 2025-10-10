@@ -248,3 +248,4 @@ echo "test" | apertium -d . ido-epo-debug
 
 Next: Test, validate, and proceed with medium-priority improvements!
 
+

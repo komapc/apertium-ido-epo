@@ -1,0 +1,113 @@
+WIKIPEDIA TRANSLATION ANALYSIS SUMMARY
+================================================================================
+
+Article: Tero
+Direction: ido → esperanto
+Original excerpt length: 2000 chars
+Translated length: 2187 chars
+Problems found: 3
+
+Problems:
+  1. Found 24 untranslated/unknown words marked with '@'
+  2. Found 94 generation errors marked with '*'
+  3. Found 45 analysis errors marked with '#'
+
+--------------------------------------------------------------------------------
+ORIGINAL EXCERPT:
+--------------------------------------------------------------------------------
+Tero (simbolo astronomiala: ) esas la triesma planeto di la sunala sistemo e la sola objekto astronomiala konocata qua havas vivo. To esas posibla pro ke Tero esas oceana mondo, la sola en la sunala sistemo havanta liquida surfaca aquo. Preske omna aquo di Tero trovesas en lua oceano globala, qua kovras 70.8% di la krusto di Tero. La restanta 29.2% di la krusto di Tero esas sika tero, maxim multa en formo di kontinental tereni en la tera mi-sfero. Maxim multa de la sika tero di Tero esas adminim...
+
+--------------------------------------------------------------------------------
+TRANSLATION:
+--------------------------------------------------------------------------------
+Tero (simbolo *astronomiala: ) estas la tria planedo de la *sunala sistemo #kaj la sola objekto *astronomiala *konocata @qua @havas vivo. *To #esti ebla #pro ke Tero #esti *oceana mondo, la sola en la *sunala sistemo *havanta likva @surfaca akvo. Preskaŭ #ĉiuj akvo de Tero *trovesas en sia oceano *globala, @qua kovras *70.@8% de la krusto de Tero. La *restanta *29.@2% de la krusto de Tero estas seka @tero, plej #multaj en formo de *kontinental *tereni en la *tera *mi-sfero. Plej #multaj *de la s...
+
+================================================================================
+
+Article: Europa
+Direction: ido → esperanto
+Original excerpt length: 2000 chars
+Translated length: 2241 chars
+Problems found: 3
+
+Problems:
+  1. Found 10 untranslated/unknown words marked with '@'
+  2. Found 111 generation errors marked with '*'
+  3. Found 82 analysis errors marked with '#'
+
+--------------------------------------------------------------------------------
+ORIGINAL EXCERPT:
+--------------------------------------------------------------------------------
+Por la satelito di Jupitero, videz Europa.
+
+Europa esas kontinento jacanta an la norda misfero. Lua tota surfaco esas 10 523 000 km². Segun statistiki de 2016, ol havis 741 447 158 habitanti.
+La bordi di Europa esas Atlantiko weste, Arktika oceano norde, la montaro Ural, la fluvio Ural e la Kaspia maro este, e la montaro Kaukazo, la Nigra maro e Mediteraneo sude. Europa ed Azia kune formacas la superkontinento Eurazia.
+
+
+Etimologio
+Europa (en Greka Εὐρώπη / Eurṓpē) segun Greka mitologio, havis k...
+
+--------------------------------------------------------------------------------
+TRANSLATION:
+--------------------------------------------------------------------------------
+*Por la satelito de #Jupitero, vidas #Eŭropo.
+
+#Eŭropo estas kontinento *jacanta *an la *norda *misfero. Sia tuta surfaco #esti @10 *523 *000 *km². Laŭ statistikoj *de *2016, #ĝi #havis *741 *447 *158 #loĝantoj.
+La bordoj de #Eŭropo #esti #Atlantiko *weste, Arkta oceano *norde, la *montaro *Ural, la riverego *Ural #kaj la *Kaspia maro *este, #kaj la *montaro *Kaukazo, la Nigra maro #kaj #Mediteraneo *sude. #Eŭropo #kaj #Azio @kune formas la *superkontinento *Eurazia.
+
+
+Etimologio
+#Eŭropo (en *Gr...
+
+================================================================================
+
+Article: Tero
+Direction: esperanto → ido
+Original excerpt length: 2000 chars
+Translated length: 2122 chars
+Problems found: 3
+
+Problems:
+  1. Found 153 untranslated/unknown words marked with '@'
+  2. Found 17 generation errors marked with '*'
+  3. Found 22 analysis errors marked with '#'
+
+--------------------------------------------------------------------------------
+ORIGINAL EXCERPT:
+--------------------------------------------------------------------------------
+La Tero estas nia planedo, la tria planedo ekde la Suno (post Venuso kaj Merkuro, kaj antaŭ Marso). Rilate al diametro kaj maso ĝi estas la kvina plej granda el la ok planedoj de la Sunsistemo kaj la plej granda el la terecaj planedoj (negasaj planedoj). Ĝi havas la plej grandan densecon de la planedoj de la Sunsistemo.
+Hejmo por milionoj da specioj, inkluzive homoj, la Tero estas la sola loko en la universo, pri kiu oni scias, ke tie ekzistas vivo. La planedo formiĝis antaŭ 4,54 miliardoj da ja...
+
+--------------------------------------------------------------------------------
+TRANSLATION:
+--------------------------------------------------------------------------------
+La Tero esas #nia planeto@, la #3ma planeto @ekde la Suno @(@post @Venuso @kaj @Merkuro@, @kaj antaŭ @Marso@)@. @Rilate al diametro @kaj maso ol esas la #5ma @plej granda @el la @ok planeti di la @Sunsistemo @kaj #la maxim granda @el la *terecaj planeti @(*negasaj planeti@)@. Ol havas #la maxim granda @denseco di la planeti di la @Sunsistemo@.
+Hemo @por milioni di @specio@, @inkluziva homi@, la Tero esas la sola loko en la universo@, @pri kiu #on savas@, ke @tia @ekzisti vivo@. La planeto @formi...
+
+================================================================================
+
+Article: Eŭropo
+Direction: esperanto → ido
+Original excerpt length: 2000 chars
+Translated length: 2205 chars
+Problems found: 3
+
+Problems:
+  1. Found 190 untranslated/unknown words marked with '@'
+  2. Found 32 generation errors marked with '*'
+  3. Found 23 analysis errors marked with '#'
+
+--------------------------------------------------------------------------------
+ORIGINAL EXCERPT:
+--------------------------------------------------------------------------------
+Eŭropo estas foje rigardita kiel kontinento, foje kiel duoninsulo de kontinento Eŭrazio, aŭ eĉ kiel parto de kontinento Afrik-Eŭrazio.
+Eŭropo estas kun 10 532 000 km² la dua malplej granda mondparto (pli malgranda estas jam sole Oceanio), sed tre dense loĝata - en la jaro 2016 ĝi havis 742 452 000 loĝantojn. Oni parolas ĉi tie per 209 diversaj lingvoj el 6 lingvaj familioj; sed absoluta plimulto de parolantoj uzas la hindoeŭropajn lingvojn. Historie kaj kulture Eŭropo havis principan influon al ...
+
+--------------------------------------------------------------------------------
+TRANSLATION:
+--------------------------------------------------------------------------------
+@Eŭropo esas @foja #regardar kom kontinento@, @foja kom peninsulo di kontinento @Eŭrazio@, od @eĉ kom parto di kontinento *Afrik@-@Eŭrazio@.
+@Eŭropo esas kun @10 @532 @000 @km² la #2ma minime granda *mondparto @(@pli malgranda esas @jam @sola @Oceanio@)@, sed @tra @densa @loĝi @- en la yaro @2016 ol havis @742 @452 @000 #loĝanto@. #On parolas @ĉi tie per @209 diversa #linguo @el 6 @lingva familii@; sed absoluta @plimulto di #parolanto uzas la *hindoeŭropajn #linguo@. @Historia @kaj @kultura @Eŭr...
+
+================================================================================
+

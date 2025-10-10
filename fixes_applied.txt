@@ -1,0 +1,1866 @@
+Total fixes: 432
+
+Lemma: Falklandi
+Type: noun lemma ending correction
+
+Lemma: Filipini
+Type: noun lemma ending correction
+
+Lemma: Kroniki
+Type: noun lemma ending correction
+
+Lemma: Nombri
+Type: noun lemma ending correction
+
+Lemma: Pirenei
+Type: noun lemma ending correction
+
+Lemma: Reji
+Type: noun lemma ending correction
+
+Lemma: Sporadi
+Type: noun lemma ending correction
+
+Lemma: adultino
+Type: noun stem correction
+Old stem: adult
+New stem: adultin
+
+Lemma: amikino
+Type: noun stem correction
+Old stem: amik
+New stem: amikin
+
+Lemma: apokalipso
+Type: noun stem correction
+Old stem: Apokalips
+New stem: apokalips
+
+Lemma: avino
+Type: noun stem correction
+Old stem: av
+New stem: avin
+
+Lemma: bovino
+Type: noun stem correction
+Old stem: bov
+New stem: bovin
+
+Lemma: centoplo
+Type: noun stem correction
+Old stem: cent
+New stem: centopl
+
+Lemma: cervino
+Type: noun stem correction
+Old stem: cerv
+New stem: cervin
+
+Lemma: cezaro
+Type: noun stem correction
+Old stem: Cezar
+New stem: cezar
+
+Lemma: chefino
+Type: noun stem correction
+Old stem: chef
+New stem: chefin
+
+Lemma: dami
+Type: noun lemma ending correction
+
+Lemma: emirio
+Type: noun stem correction
+Old stem: emir
+New stem: emiri
+
+Lemma: filiino
+Type: noun stem correction
+Old stem: fili
+New stem: filiin
+
+Lemma: fratino
+Type: noun stem correction
+Old stem: frat
+New stem: fratin
+
+Lemma: genitori
+Type: noun lemma ending correction
+
+Lemma: glutei
+Type: noun lemma ending correction
+
+Lemma: goto
+Type: noun stem correction
+Old stem: Got
+New stem: got
+
+Lemma: hanino
+Type: noun stem correction
+Old stem: han
+New stem: hanin
+
+Lemma: heterosexualino
+Type: noun stem correction
+Old stem: heterosexual
+New stem: heterosexualin
+
+Lemma: homeosexualino
+Type: noun stem correction
+Old stem: homeosexual
+New stem: homeosexualin
+
+Lemma: hundino
+Type: noun stem correction
+Old stem: hund
+New stem: hundin
+
+Lemma: ili
+Type: noun lemma ending correction
+
+Lemma: intelektozo
+Type: noun stem correction
+Old stem: intelekt
+New stem: intelektoz
+
+Lemma: kavalino
+Type: noun stem correction
+Old stem: kaval
+New stem: kavalin
+
+Lemma: konkubino
+Type: noun stem correction
+Old stem: konkub
+New stem: konkubin
+
+Lemma: kriminozeso
+Type: noun stem correction
+Old stem: krimin
+New stem: kriminozes
+
+Lemma: kurajozigo
+Type: noun stem correction
+Old stem: kuraj
+New stem: kurajozig
+
+Lemma: kuzino
+Type: noun stem correction
+Old stem: kuz
+New stem: kuzin
+
+Lemma: monakino
+Type: noun stem correction
+Old stem: monak
+New stem: monakin
+
+Lemma: monako
+Type: noun stem correction
+Old stem: Monak
+New stem: monak
+
+Lemma: monarkio
+Type: noun stem correction
+Old stem: monark
+New stem: monarki
+
+Lemma: mori
+Type: noun lemma ending correction
+
+Lemma: mukozo
+Type: noun stem correction
+Old stem: muk
+New stem: mukoz
+
+Lemma: nepotino
+Type: noun stem correction
+Old stem: nepot
+New stem: nepotin
+
+Lemma: nevino
+Type: noun stem correction
+Old stem: nev
+New stem: nevin
+
+Lemma: oli
+Type: noun lemma ending correction
+
+Lemma: onklino
+Type: noun stem correction
+Old stem: onkl
+New stem: onklin
+
+Lemma: parokio
+Type: noun stem correction
+Old stem: parok
+New stem: paroki
+
+Lemma: pluvozeso
+Type: noun stem correction
+Old stem: pluv
+New stem: pluvozes
+
+Lemma: princino
+Type: noun stem correction
+Old stem: princ
+New stem: princin
+
+Lemma: puerino
+Type: noun stem correction
+Old stem: puer
+New stem: puerin
+
+Lemma: qui
+Type: noun lemma ending correction
+
+Lemma: rejino
+Type: noun stem correction
+Old stem: rej
+New stem: rejin
+
+Lemma: siorino
+Type: noun stem correction
+Old stem: sior
+New stem: siorin
+
+Lemma: spozino
+Type: noun stem correction
+Old stem: spoz
+New stem: spozin
+
+Lemma: trioplo
+Type: noun stem correction
+Old stem: tri
+New stem: triopl
+
+Lemma: ucelino
+Type: noun stem correction
+Old stem: ucel
+New stem: ucelin
+
+Lemma: vertebrozo
+Type: noun stem correction
+Old stem: vertebr
+New stem: vertebroz
+
+Lemma: virgineso
+Type: noun stem correction
+Old stem: virg
+New stem: virgines
+
+Lemma: volfino
+Type: noun stem correction
+Old stem: volf
+New stem: volfin
+
+Lemma: Angliana
+Type: adjective stem correction
+Old stem: Angli
+New stem: Anglian
+
+Lemma: Arabiana
+Type: adjective stem correction
+Old stem: Arabi
+New stem: Arabian
+
+Lemma: Braziliana
+Type: adjective stem correction
+Old stem: Brazili
+New stem: Brazilian
+
+Lemma: Bretoniana
+Type: adjective stem correction
+Old stem: Bretoni
+New stem: Bretonian
+
+Lemma: Britaniana
+Type: adjective stem correction
+Old stem: Britani
+New stem: Britanian
+
+Lemma: Bulgariana
+Type: adjective stem correction
+Old stem: Bulgari
+New stem: Bulgarian
+
+Lemma: Burmana
+Type: adjective stem correction
+Old stem: Burm
+New stem: Burman
+
+Lemma: Ceylonana
+Type: adjective stem correction
+Old stem: Ceylon
+New stem: Ceylonan
+
+Lemma: Chekiana
+Type: adjective stem correction
+Old stem: Cheki
+New stem: Chekian
+
+Lemma: Chiliana
+Type: adjective stem correction
+Old stem: Chili
+New stem: Chilian
+
+Lemma: Chiniana
+Type: adjective stem correction
+Old stem: Chini
+New stem: Chinian
+
+Lemma: Chuvashiana
+Type: adjective stem correction
+Old stem: Chuvashi
+New stem: Chuvashian
+
+Lemma: Estoniana
+Type: adjective stem correction
+Old stem: Estoni
+New stem: Estonian
+
+Lemma: Finlandana
+Type: adjective stem correction
+Old stem: Finland
+New stem: Finlandan
+
+Lemma: Flandriana
+Type: adjective stem correction
+Old stem: Flandri
+New stem: Flandrian
+
+Lemma: Franciana
+Type: adjective stem correction
+Old stem: Franci
+New stem: Francian
+
+Lemma: Georgiana
+Type: adjective stem correction
+Old stem: Georgi
+New stem: Georgian
+
+Lemma: Germaniana
+Type: adjective stem correction
+Old stem: Germani
+New stem: Germanian
+
+Lemma: Grekiana
+Type: adjective stem correction
+Old stem: Greki
+New stem: Grekian
+
+Lemma: Hispaniana
+Type: adjective stem correction
+Old stem: Hispani
+New stem: Hispanian
+
+Lemma: Kroatiana
+Type: adjective stem correction
+Old stem: Kroati
+New stem: Kroatian
+
+Lemma: Lituaniana
+Type: adjective stem correction
+Old stem: Lituani
+New stem: Lituanian
+
+Lemma: Lojbanala
+Type: adjective stem correction
+Old stem: Lojban
+New stem: Lojbanal
+
+Lemma: Lojbanatra
+Type: adjective stem correction
+Old stem: Lojban
+New stem: Lojbanatr
+
+Lemma: Nederlandana
+Type: adjective stem correction
+Old stem: Nederland
+New stem: Nederlandan
+
+Lemma: Norvegiana
+Type: adjective stem correction
+Old stem: Norvegi
+New stem: Norvegian
+
+Lemma: Portugalana
+Type: adjective stem correction
+Old stem: Portugal
+New stem: Portugalan
+
+Lemma: Rusiana
+Type: adjective stem correction
+Old stem: Rusi
+New stem: Rusian
+
+Lemma: Slovakiana
+Type: adjective stem correction
+Old stem: Slovaki
+New stem: Slovakian
+
+Lemma: Suediana
+Type: adjective stem correction
+Old stem: Suedi
+New stem: Suedian
+
+Lemma: Ukrainana
+Type: adjective stem correction
+Old stem: Ukrain
+New stem: Ukrainan
+
+Lemma: Walsana
+Type: adjective stem correction
+Old stem: Wals
+New stem: Walsan
+
+Lemma: abadala
+Type: adjective stem correction
+Old stem: abad
+New stem: abadal
+
+Lemma: aroganta
+Type: adjective stem correction
+Old stem: arog
+New stem: arogant
+
+Lemma: artala
+Type: adjective stem correction
+Old stem: art
+New stem: artal
+
+Lemma: avaracha
+Type: adjective stem correction
+Old stem: avar
+New stem: avarach
+
+Lemma: blazonala
+Type: adjective stem correction
+Old stem: blazon
+New stem: blazonal
+
+Lemma: brakiala
+Type: adjective stem correction
+Old stem: braki
+New stem: brakial
+
+Lemma: brilanta
+Type: adjective stem correction
+Old stem: bril
+New stem: brilant
+
+Lemma: brunatra
+Type: adjective stem correction
+Old stem: brun
+New stem: brunatr
+
+Lemma: brutala
+Type: adjective stem correction
+Old stem: brut
+New stem: brutal
+
+Lemma: burokratala
+Type: adjective stem correction
+Old stem: burokrat
+New stem: burokratal
+
+Lemma: cenala
+Type: adjective stem correction
+Old stem: cen
+New stem: cenal
+
+Lemma: centrala
+Type: adjective stem correction
+Old stem: centr
+New stem: central
+
+Lemma: centrifugala
+Type: adjective stem correction
+Old stem: centrifug
+New stem: centrifugal
+
+Lemma: cerebrala
+Type: adjective stem correction
+Old stem: cerebr
+New stem: cerebral
+
+Lemma: chagrenanta
+Type: adjective stem correction
+Old stem: chagren
+New stem: chagrenant
+
+Lemma: charmanta
+Type: adjective stem correction
+Old stem: charm
+New stem: charmant
+
+Lemma: cielala
+Type: adjective stem correction
+Old stem: ciel
+New stem: cielal
+
+Lemma: dicionariala
+Type: adjective stem correction
+Old stem: dicionari
+New stem: dicionarial
+
+Lemma: distanta
+Type: adjective stem correction
+Old stem: dist
+New stem: distant
+
+Lemma: dolcacha
+Type: adjective stem correction
+Old stem: dolc
+New stem: dolcach
+
+Lemma: ecelanta
+Type: adjective stem correction
+Old stem: ecel
+New stem: ecelant
+
+Lemma: equivalanta
+Type: adjective stem correction
+Old stem: equival
+New stem: equivalant
+
+Lemma: expiacanta
+Type: adjective stem correction
+Old stem: expiac
+New stem: expiacant
+
+Lemma: febrala
+Type: adjective stem correction
+Old stem: febr
+New stem: febral
+
+Lemma: finala
+Type: adjective stem correction
+Old stem: fin
+New stem: final
+
+Lemma: fizikala
+Type: adjective stem correction
+Old stem: fizik
+New stem: fizikal
+
+Lemma: fluanta
+Type: adjective stem correction
+Old stem: flu
+New stem: fluant
+
+Lemma: imananta
+Type: adjective stem correction
+Old stem: iman
+New stem: imanant
+
+Lemma: impresanta
+Type: adjective stem correction
+Old stem: impres
+New stem: impresant
+
+Lemma: insistanta
+Type: adjective stem correction
+Old stem: insist
+New stem: insistant
+
+Lemma: kartilagatra
+Type: adjective stem correction
+Old stem: kartilag
+New stem: kartilagatr
+
+Lemma: konvenanta
+Type: adjective stem correction
+Old stem: konven
+New stem: konvenant
+
+Lemma: lunala
+Type: adjective stem correction
+Old stem: lun
+New stem: lunal
+
+Lemma: matrala
+Type: adjective stem correction
+Old stem: matr
+New stem: matral
+
+Lemma: mediacanta
+Type: adjective stem correction
+Old stem: mediac
+New stem: mediacant
+
+Lemma: medicinala
+Type: adjective stem correction
+Old stem: medicin
+New stem: medicinal
+
+Lemma: monumentala
+Type: adjective stem correction
+Old stem: monument
+New stem: monumental
+
+Lemma: obstinanta
+Type: adjective stem correction
+Old stem: obstin
+New stem: obstinant
+
+Lemma: ostala
+Type: adjective stem correction
+Old stem: ost
+New stem: ostal
+
+Lemma: partala
+Type: adjective stem correction
+Old stem: part
+New stem: partal
+
+Lemma: penetranta
+Type: adjective stem correction
+Old stem: penetr
+New stem: penetrant
+
+Lemma: periodala
+Type: adjective stem correction
+Old stem: period
+New stem: periodal
+
+Lemma: permananta
+Type: adjective stem correction
+Old stem: perman
+New stem: permanant
+
+Lemma: pikanta
+Type: adjective stem correction
+Old stem: pik
+New stem: pikant
+
+Lemma: plezanta
+Type: adjective stem correction
+Old stem: plez
+New stem: plezant
+
+Lemma: prepucala
+Type: adjective stem correction
+Old stem: prepuc
+New stem: prepucal
+
+Lemma: renala
+Type: adjective stem correction
+Old stem: ren
+New stem: renal
+
+Lemma: repetala
+Type: adjective stem correction
+Old stem: repet
+New stem: repetal
+
+Lemma: responsanta
+Type: adjective stem correction
+Old stem: respons
+New stem: responsant
+
+Lemma: rezidala
+Type: adjective stem correction
+Old stem: rezid
+New stem: rezidal
+
+Lemma: sedicianta
+Type: adjective stem correction
+Old stem: sedici
+New stem: sediciant
+
+Lemma: semantikala
+Type: adjective stem correction
+Old stem: semantik
+New stem: semantikal
+
+Lemma: sequanta
+Type: adjective stem correction
+Old stem: sequ
+New stem: sequant
+
+Lemma: signifikala
+Type: adjective stem correction
+Old stem: signifik
+New stem: signifikal
+
+Lemma: signifikanta
+Type: adjective stem correction
+Old stem: signifik
+New stem: signifikant
+
+Lemma: simbolatra
+Type: adjective stem correction
+Old stem: simbol
+New stem: simbolatr
+
+Lemma: sintezala
+Type: adjective stem correction
+Old stem: sintez
+New stem: sintezal
+
+Lemma: skolala
+Type: adjective stem correction
+Old stem: skol
+New stem: skolal
+
+Lemma: skorbutala
+Type: adjective stem correction
+Old stem: skorbut
+New stem: skorbutal
+
+Lemma: spacala
+Type: adjective stem correction
+Old stem: spac
+New stem: spacal
+
+Lemma: spektaklala
+Type: adjective stem correction
+Old stem: spektakl
+New stem: spektaklal
+
+Lemma: sponjatra
+Type: adjective stem correction
+Old stem: sponj
+New stem: sponjatr
+
+Lemma: statala
+Type: adjective stem correction
+Old stem: stat
+New stem: statal
+
+Lemma: stilistikala
+Type: adjective stem correction
+Old stem: stilistik
+New stem: stilistikal
+
+Lemma: stridanta
+Type: adjective stem correction
+Old stem: strid
+New stem: stridant
+
+Lemma: sudala
+Type: adjective stem correction
+Old stem: sud
+New stem: sudal
+
+Lemma: surfacala
+Type: adjective stem correction
+Old stem: surfac
+New stem: surfacal
+
+Lemma: teologiala
+Type: adjective stem correction
+Old stem: teologi
+New stem: teologial
+
+Lemma: triumfanta
+Type: adjective stem correction
+Old stem: triumf
+New stem: triumfant
+
+Lemma: velkanta
+Type: adjective stem correction
+Old stem: velk
+New stem: velkant
+
+Lemma: venerala
+Type: adjective stem correction
+Old stem: vener
+New stem: veneral
+
+Lemma: volkanala
+Type: adjective stem correction
+Old stem: volkan
+New stem: volkanal
+
+Lemma: xenofobiala
+Type: adjective stem correction
+Old stem: xenofobi
+New stem: xenofobial
+
+Lemma: celeme
+Type: adverb stem correction
+Old stem: cel
+New stem: celem
+
+Lemma: kelkete
+Type: adverb stem correction
+Old stem: kelk
+New stem: kelket
+
+Lemma: komprenende
+Type: adverb stem correction
+Old stem: kompren
+New stem: komprenend
+
+Lemma: sparema
+Type: deleted entry
+Reason: Duplicate of sparebla (same stem+paradigm)
+
+Lemma: sparegema
+Type: deleted entry
+Reason: Duplicate of sparebla (same stem+paradigm)
+
+Lemma: sordideskar
+Type: deleted entry
+Reason: Duplicate of sordidega (same stem+paradigm)
+
+Lemma: sordidegulo
+Type: deleted entry
+Reason: Duplicate of sordidega (same stem+paradigm)
+
+Lemma: sordidegeso
+Type: deleted entry
+Reason: Duplicate of sordidega (same stem+paradigm)
+
+Lemma: somnoleso
+Type: deleted entry
+Reason: Duplicate of somnolegar (same stem+paradigm)
+
+Lemma: situeso
+Type: deleted entry
+Reason: Duplicate of situesar (same stem+paradigm)
+
+Lemma: rafineyo
+Type: deleted entry
+Reason: Duplicate of rafinerio (same stem+paradigm)
+
+Lemma: qualeso
+Type: deleted entry
+Reason: Duplicate of quale (same stem+paradigm)
+
+Lemma: ociera
+Type: deleted entry
+Reason: Duplicate of ociema (same stem+paradigm)
+
+Lemma: kunesar
+Type: deleted entry
+Reason: Duplicate of kune (same stem+paradigm)
+
+Lemma: kombusteblo
+Type: deleted entry
+Reason: Duplicate of kombusteblajo (same stem+paradigm)
+
+Lemma: grandeso
+Type: deleted entry
+Reason: Duplicate of grandega (same stem+paradigm)
+
+Lemma: chareto
+Type: deleted entry
+Reason: Duplicate of charedo (same stem+paradigm)
+
+Lemma: chanjema
+Type: deleted entry
+Reason: Duplicate of chanjebla (same stem+paradigm)
+
+Lemma: celeyo
+Type: deleted entry
+Reason: Duplicate of celema (same stem+paradigm)
+
+Lemma: celeme
+Type: deleted entry
+Reason: Duplicate of celema (same stem+paradigm)
+
+Lemma: cedema
+Type: deleted entry
+Reason: Duplicate of cedebla (same stem+paradigm)
+
+Lemma: bruleyo
+Type: deleted entry
+Reason: Duplicate of brulebla (same stem+paradigm)
+
+Lemma: bruletar
+Type: deleted entry
+Reason: Duplicate of brulebla (same stem+paradigm)
+
+Lemma: boneso
+Type: deleted entry
+Reason: Duplicate of bonega (same stem+paradigm)
+
+Lemma: bakeyo
+Type: deleted entry
+Reason: Duplicate of bakerio (same stem+paradigm)
+
+Lemma: bakero
+Type: deleted entry
+Reason: Duplicate of bakerio (same stem+paradigm)
+
+Lemma: vizitar
+Type: deleted entry
+Reason: Duplicate of vizitanto (same stem+paradigm)
+
+Lemma: vicinajo
+Type: deleted entry
+Reason: Duplicate of vicina (same stem+paradigm)
+
+Lemma: velkar
+Type: deleted entry
+Reason: Duplicate of velkanta (same stem+paradigm)
+
+Lemma: vehar
+Type: deleted entry
+Reason: Duplicate of vehanto (same stem+paradigm)
+
+Lemma: uzar
+Type: deleted entry
+Reason: Duplicate of uzanto (same stem+paradigm)
+
+Lemma: urjar
+Type: deleted entry
+Reason: Duplicate of urjanteso (same stem+paradigm)
+
+Lemma: surveyar
+Type: deleted entry
+Reason: Duplicate of surveyanto (same stem+paradigm)
+
+Lemma: sufrar
+Type: deleted entry
+Reason: Duplicate of sufrado (same stem+paradigm)
+
+Lemma: subsidiar
+Type: deleted entry
+Reason: Duplicate of subsidiajo (same stem+paradigm)
+
+Lemma: sublimar
+Type: deleted entry
+Reason: Duplicate of sublima (same stem+paradigm)
+
+Lemma: stridar
+Type: deleted entry
+Reason: Duplicate of stridanta (same stem+paradigm)
+
+Lemma: sponjatra
+Type: deleted entry
+Reason: Duplicate of sponjagar (same stem+paradigm)
+
+Lemma: spoliar
+Type: deleted entry
+Reason: Duplicate of spoliadar (same stem+paradigm)
+
+Lemma: spolianto
+Type: deleted entry
+Reason: Duplicate of spoliadar (same stem+paradigm)
+
+Lemma: spoliado
+Type: deleted entry
+Reason: Duplicate of spoliadar (same stem+paradigm)
+
+Lemma: sordidacho
+Type: deleted entry
+Reason: Duplicate of sordida (same stem+paradigm)
+
+Lemma: sorcar
+Type: deleted entry
+Reason: Duplicate of sorcadar (same stem+paradigm)
+
+Lemma: sorcado
+Type: deleted entry
+Reason: Duplicate of sorcadar (same stem+paradigm)
+
+Lemma: sokursar
+Type: deleted entry
+Reason: Duplicate of sokursado (same stem+paradigm)
+
+Lemma: socialisto
+Type: deleted entry
+Reason: Duplicate of socialismo (same stem+paradigm)
+
+Lemma: skribar
+Type: deleted entry
+Reason: Duplicate of skribajo (same stem+paradigm)
+
+Lemma: skolano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: sinistrano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: sindikatano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: simular
+Type: deleted entry
+Reason: Duplicate of simulado (same stem+paradigm)
+
+Lemma: signifikar
+Type: deleted entry
+Reason: Duplicate of signifikala (same stem+paradigm)
+
+Lemma: signifikanta
+Type: deleted entry
+Reason: Duplicate of signifikala (same stem+paradigm)
+
+Lemma: shamar
+Type: deleted entry
+Reason: Duplicate of shama (same stem+paradigm)
+
+Lemma: servar
+Type: deleted entry
+Reason: Duplicate of servado (same stem+paradigm)
+
+Lemma: sediciar
+Type: deleted entry
+Reason: Duplicate of sedicianta (same stem+paradigm)
+
+Lemma: savaro
+Type: deleted entry
+Reason: Duplicate of savar (same stem+paradigm)
+
+Lemma: rurano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: rotacar
+Type: deleted entry
+Reason: Duplicate of rotacado (same stem+paradigm)
+
+Lemma: rezidar
+Type: deleted entry
+Reason: Duplicate of rezidala (same stem+paradigm)
+
+Lemma: restar
+Type: deleted entry
+Reason: Duplicate of restajo (same stem+paradigm)
+
+Lemma: responsar
+Type: deleted entry
+Reason: Duplicate of responsanta (same stem+paradigm)
+
+Lemma: requizitar
+Type: deleted entry
+Reason: Duplicate of requizitajo (same stem+paradigm)
+
+Lemma: repetar
+Type: deleted entry
+Reason: Duplicate of repetala (same stem+paradigm)
+
+Lemma: rekoltar
+Type: deleted entry
+Reason: Duplicate of rekoltado (same stem+paradigm)
+
+Lemma: registraguro
+Type: deleted entry
+Reason: Duplicate of registragar (same stem+paradigm)
+
+Lemma: prostitucar
+Type: deleted entry
+Reason: Duplicate of prostitucado (same stem+paradigm)
+
+Lemma: proprietar
+Type: deleted entry
+Reason: Duplicate of proprietajo (same stem+paradigm)
+
+Lemma: projektar
+Type: deleted entry
+Reason: Duplicate of projektajo (same stem+paradigm)
+
+Lemma: preferar
+Type: deleted entry
+Reason: Duplicate of preferajo (same stem+paradigm)
+
+Lemma: polutar
+Type: deleted entry
+Reason: Duplicate of polutado (same stem+paradigm)
+
+Lemma: pluralo
+Type: deleted entry
+Reason: Duplicate of plura (same stem+paradigm)
+
+Lemma: plezar
+Type: deleted entry
+Reason: Duplicate of plezanta (same stem+paradigm)
+
+Lemma: pilotar
+Type: deleted entry
+Reason: Duplicate of pilotado (same stem+paradigm)
+
+Lemma: pikar
+Type: deleted entry
+Reason: Duplicate of pikanta (same stem+paradigm)
+
+Lemma: peticionar
+Type: deleted entry
+Reason: Duplicate of peticionanto (same stem+paradigm)
+
+Lemma: permanar
+Type: deleted entry
+Reason: Duplicate of permananta (same stem+paradigm)
+
+Lemma: permanante
+Type: deleted entry
+Reason: Duplicate of permananta (same stem+paradigm)
+
+Lemma: pensar
+Type: deleted entry
+Reason: Duplicate of pensado (same stem+paradigm)
+
+Lemma: penetrar
+Type: deleted entry
+Reason: Duplicate of penetranta (same stem+paradigm)
+
+Lemma: pasturar
+Type: deleted entry
+Reason: Duplicate of pasturajo (same stem+paradigm)
+
+Lemma: parazitar
+Type: deleted entry
+Reason: Duplicate of parazita (same stem+paradigm)
+
+Lemma: odiar
+Type: deleted entry
+Reason: Duplicate of odianto (same stem+paradigm)
+
+Lemma: obstinar
+Type: deleted entry
+Reason: Duplicate of obstinanta (same stem+paradigm)
+
+Lemma: nutrar
+Type: deleted entry
+Reason: Duplicate of nutrajo (same stem+paradigm)
+
+Lemma: minar
+Type: deleted entry
+Reason: Duplicate of minado (same stem+paradigm)
+
+Lemma: mediacar
+Type: deleted entry
+Reason: Duplicate of mediacanta (same stem+paradigm)
+
+Lemma: ludar
+Type: deleted entry
+Reason: Duplicate of ludanto (same stem+paradigm)
+
+Lemma: laborar
+Type: deleted entry
+Reason: Duplicate of laborado (same stem+paradigm)
+
+Lemma: kuracato
+Type: deleted entry
+Reason: Duplicate of kuracar (same stem+paradigm)
+
+Lemma: kriminaro
+Type: deleted entry
+Reason: Duplicate of kriminaligar (same stem+paradigm)
+
+Lemma: kriminar
+Type: deleted entry
+Reason: Duplicate of kriminaligar (same stem+paradigm)
+
+Lemma: koruptar
+Type: deleted entry
+Reason: Duplicate of koruptajo (same stem+paradigm)
+
+Lemma: konvenar
+Type: deleted entry
+Reason: Duplicate of konvenanta (same stem+paradigm)
+
+Lemma: konsumar
+Type: deleted entry
+Reason: Duplicate of konsumanto (same stem+paradigm)
+
+Lemma: konfitar
+Type: deleted entry
+Reason: Duplicate of konfitajo (same stem+paradigm)
+
+Lemma: kondicionar
+Type: deleted entry
+Reason: Duplicate of kondicionalo (same stem+paradigm)
+
+Lemma: kolektar
+Type: deleted entry
+Reason: Duplicate of kolektajo (same stem+paradigm)
+
+Lemma: koagular
+Type: deleted entry
+Reason: Duplicate of koagulajo (same stem+paradigm)
+
+Lemma: kavajo
+Type: deleted entry
+Reason: Duplicate of kava (same stem+paradigm)
+
+Lemma: jerar
+Type: deleted entry
+Reason: Duplicate of jeranto (same stem+paradigm)
+
+Lemma: inundar
+Type: deleted entry
+Reason: Duplicate of inundado (same stem+paradigm)
+
+Lemma: instruktar
+Type: deleted entry
+Reason: Duplicate of instruktanto (same stem+paradigm)
+
+Lemma: insistar
+Type: deleted entry
+Reason: Duplicate of insistanta (same stem+paradigm)
+
+Lemma: impresar
+Type: deleted entry
+Reason: Duplicate of impresanta (same stem+paradigm)
+
+Lemma: impostar
+Type: deleted entry
+Reason: Duplicate of impostado (same stem+paradigm)
+
+Lemma: imanar
+Type: deleted entry
+Reason: Duplicate of imananta (same stem+paradigm)
+
+Lemma: homaro
+Type: deleted entry
+Reason: Duplicate of homa (same stem+paradigm)
+
+Lemma: grizafoxo
+Type: deleted entry
+Reason: Duplicate of griza (same stem+paradigm)
+
+Lemma: furtar
+Type: deleted entry
+Reason: Duplicate of furtanto (same stem+paradigm)
+
+Lemma: fritar
+Type: deleted entry
+Reason: Duplicate of fritado (same stem+paradigm)
+
+Lemma: fluar
+Type: deleted entry
+Reason: Duplicate of fluanta (same stem+paradigm)
+
+Lemma: finar
+Type: deleted entry
+Reason: Duplicate of finala (same stem+paradigm)
+
+Lemma: finale
+Type: deleted entry
+Reason: Duplicate of finala (same stem+paradigm)
+
+Lemma: fiktivajo
+Type: deleted entry
+Reason: Duplicate of fiktiva (same stem+paradigm)
+
+Lemma: festar
+Type: deleted entry
+Reason: Duplicate of festado (same stem+paradigm)
+
+Lemma: fermentacar
+Type: deleted entry
+Reason: Duplicate of fermentacado (same stem+paradigm)
+
+Lemma: febrar
+Type: deleted entry
+Reason: Duplicate of febrala (same stem+paradigm)
+
+Lemma: fasonar
+Type: deleted entry
+Reason: Duplicate of fasonado (same stem+paradigm)
+
+Lemma: extorsar
+Type: deleted entry
+Reason: Duplicate of extorsado (same stem+paradigm)
+
+Lemma: expiacar
+Type: deleted entry
+Reason: Duplicate of expiacanta (same stem+paradigm)
+
+Lemma: evaluar
+Type: deleted entry
+Reason: Duplicate of evaluado (same stem+paradigm)
+
+Lemma: eskrokar
+Type: deleted entry
+Reason: Duplicate of eskrokanto (same stem+paradigm)
+
+Lemma: equivalar
+Type: deleted entry
+Reason: Duplicate of equivalanta (same stem+paradigm)
+
+Lemma: equipar
+Type: deleted entry
+Reason: Duplicate of equipado (same stem+paradigm)
+
+Lemma: equipajo
+Type: deleted entry
+Reason: Duplicate of equipado (same stem+paradigm)
+
+Lemma: enrejistrar
+Type: deleted entry
+Reason: Duplicate of enregistrago (same stem+paradigm)
+
+Lemma: emocar
+Type: deleted entry
+Reason: Duplicate of emocale (same stem+paradigm)
+
+Lemma: elektar
+Type: deleted entry
+Reason: Duplicate of elektado (same stem+paradigm)
+
+Lemma: edukar
+Type: deleted entry
+Reason: Duplicate of edukado (same stem+paradigm)
+
+Lemma: ecelar
+Type: deleted entry
+Reason: Duplicate of ecelanta (same stem+paradigm)
+
+Lemma: durar
+Type: deleted entry
+Reason: Duplicate of durado (same stem+paradigm)
+
+Lemma: drinkar
+Type: deleted entry
+Reason: Duplicate of drinkajo (same stem+paradigm)
+
+Lemma: domaro
+Type: deleted entry
+Reason: Duplicate of domacho (same stem+paradigm)
+
+Lemma: dolcacha
+Type: deleted entry
+Reason: Duplicate of dolca (same stem+paradigm)
+
+Lemma: distar
+Type: deleted entry
+Reason: Duplicate of distanta (same stem+paradigm)
+
+Lemma: difamar
+Type: deleted entry
+Reason: Duplicate of difamado (same stem+paradigm)
+
+Lemma: dextrano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: deskriptar
+Type: deleted entry
+Reason: Duplicate of deskriptado (same stem+paradigm)
+
+Lemma: derivar
+Type: deleted entry
+Reason: Duplicate of derivajo (same stem+paradigm)
+
+Lemma: demandar
+Type: deleted entry
+Reason: Duplicate of demandanto (same stem+paradigm)
+
+Lemma: deklinar
+Type: deleted entry
+Reason: Duplicate of deklinado (same stem+paradigm)
+
+Lemma: debar
+Type: deleted entry
+Reason: Duplicate of debajo (same stem+paradigm)
+
+Lemma: civitano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: cielatre
+Type: deleted entry
+Reason: Duplicate of cielala (same stem+paradigm)
+
+Lemma: chasar
+Type: deleted entry
+Reason: Duplicate of chasajo (same stem+paradigm)
+
+Lemma: chagrenar
+Type: deleted entry
+Reason: Duplicate of chagrenanta (same stem+paradigm)
+
+Lemma: certajo
+Type: deleted entry
+Reason: Duplicate of certa (same stem+paradigm)
+
+Lemma: centrifugar
+Type: deleted entry
+Reason: Duplicate of centrifugala (same stem+paradigm)
+
+Lemma: centralo
+Type: deleted entry
+Reason: Duplicate of centrala (same stem+paradigm)
+
+Lemma: centraligar
+Type: deleted entry
+Reason: Duplicate of centrala (same stem+paradigm)
+
+Lemma: celebrario
+Type: deleted entry
+Reason: Duplicate of celebrar (same stem+paradigm)
+
+Lemma: cedario
+Type: deleted entry
+Reason: Duplicate of cedar (same stem+paradigm)
+
+Lemma: burokrataro
+Type: deleted entry
+Reason: Duplicate of burokratala (same stem+paradigm)
+
+Lemma: brutaro
+Type: deleted entry
+Reason: Duplicate of brutala (same stem+paradigm)
+
+Lemma: brunatra
+Type: deleted entry
+Reason: Duplicate of bruna (same stem+paradigm)
+
+Lemma: bruisar
+Type: deleted entry
+Reason: Duplicate of bruisado (same stem+paradigm)
+
+Lemma: brokantar
+Type: deleted entry
+Reason: Duplicate of brokanta (same stem+paradigm)
+
+Lemma: brilar
+Type: deleted entry
+Reason: Duplicate of brilanta (same stem+paradigm)
+
+Lemma: aviacar
+Type: deleted entry
+Reason: Duplicate of aviacado (same stem+paradigm)
+
+Lemma: audar
+Type: deleted entry
+Reason: Duplicate of audado (same stem+paradigm)
+
+Lemma: astonar
+Type: deleted entry
+Reason: Duplicate of astonante (same stem+paradigm)
+
+Lemma: arogar
+Type: deleted entry
+Reason: Duplicate of aroganta (same stem+paradigm)
+
+Lemma: almonar
+Type: deleted entry
+Reason: Duplicate of almonajo (same stem+paradigm)
+
+Lemma: Usano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Ukrainano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Ukrainana
+Type: deleted entry
+Reason: Duplicate of Ukraina (same stem+paradigm)
+
+Lemma: Ukraina
+Type: deleted entry
+Reason: Duplicate of Ukraina (same stem+paradigm)
+
+Lemma: Suisia
+Type: deleted entry
+Reason: Duplicate of Suisia (same stem+paradigm)
+
+Lemma: Suediano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Suediana
+Type: deleted entry
+Reason: Duplicate of Suedia (same stem+paradigm)
+
+Lemma: Stiriano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Skotia
+Type: deleted entry
+Reason: Duplicate of Skotia (same stem+paradigm)
+
+Lemma: Skandinaviano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Siamano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Rusiano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Rusiana
+Type: deleted entry
+Reason: Duplicate of Rusia (same stem+paradigm)
+
+Lemma: Rusia
+Type: deleted entry
+Reason: Duplicate of Rusia (same stem+paradigm)
+
+Lemma: Poloniano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Polonia
+Type: deleted entry
+Reason: Duplicate of Polonia (same stem+paradigm)
+
+Lemma: Oceania
+Type: deleted entry
+Reason: Duplicate of Oceania (same stem+paradigm)
+
+Lemma: Nubiano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Norvegiana
+Type: deleted entry
+Reason: Duplicate of Norvegia (same stem+paradigm)
+
+Lemma: Mexikia
+Type: deleted entry
+Reason: Duplicate of Mexikia (same stem+paradigm)
+
+Lemma: Lojbanatra
+Type: deleted entry
+Reason: Duplicate of Lojbanala (same stem+paradigm)
+
+Lemma: Lituaniano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Lituaniana
+Type: deleted entry
+Reason: Duplicate of Lituania (same stem+paradigm)
+
+Lemma: Kroatiana
+Type: deleted entry
+Reason: Duplicate of Kroatia (same stem+paradigm)
+
+Lemma: Kristano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Japonia
+Type: deleted entry
+Reason: Duplicate of Japonia (same stem+paradigm)
+
+Lemma: Italia
+Type: deleted entry
+Reason: Duplicate of Italia (same stem+paradigm)
+
+Lemma: India
+Type: deleted entry
+Reason: Duplicate of India (same stem+paradigm)
+
+Lemma: Hispaniana
+Type: deleted entry
+Reason: Duplicate of Hispania (same stem+paradigm)
+
+Lemma: Hispania
+Type: deleted entry
+Reason: Duplicate of Hispania (same stem+paradigm)
+
+Lemma: Grekiano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Grekiana
+Type: deleted entry
+Reason: Duplicate of Grekia (same stem+paradigm)
+
+Lemma: Grekia
+Type: deleted entry
+Reason: Duplicate of Grekia (same stem+paradigm)
+
+Lemma: Germaniano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Germaniana
+Type: deleted entry
+Reason: Duplicate of Germania (same stem+paradigm)
+
+Lemma: Germania
+Type: deleted entry
+Reason: Duplicate of Germania (same stem+paradigm)
+
+Lemma: Franciano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Franciana
+Type: deleted entry
+Reason: Duplicate of Francia (same stem+paradigm)
+
+Lemma: Francia
+Type: deleted entry
+Reason: Duplicate of Francia (same stem+paradigm)
+
+Lemma: Flandriana
+Type: deleted entry
+Reason: Duplicate of Flandria (same stem+paradigm)
+
+Lemma: Finlandano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Europa
+Type: deleted entry
+Reason: Duplicate of Europa (same stem+paradigm)
+
+Lemma: Estoniana
+Type: deleted entry
+Reason: Duplicate of Estonia (same stem+paradigm)
+
+Lemma: Egiptia
+Type: deleted entry
+Reason: Duplicate of Egiptia (same stem+paradigm)
+
+Lemma: Daniano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Dalmatiano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Chiniana
+Type: deleted entry
+Reason: Duplicate of Chinia (same stem+paradigm)
+
+Lemma: Chiliano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Chekiano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Chekiana
+Type: deleted entry
+Reason: Duplicate of Chekia (same stem+paradigm)
+
+Lemma: Chekia
+Type: deleted entry
+Reason: Duplicate of Chekia (same stem+paradigm)
+
+Lemma: Champaniano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Ceylonano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Burmano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Burgundiano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Bulgariano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Bulgariana
+Type: deleted entry
+Reason: Duplicate of Bulgaria (same stem+paradigm)
+
+Lemma: Britaniano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Britaniana
+Type: deleted entry
+Reason: Duplicate of Britania (same stem+paradigm)
+
+Lemma: Bretoniano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Bretoniana
+Type: deleted entry
+Reason: Duplicate of Bretonia (same stem+paradigm)
+
+Lemma: Braziliano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Braziliana
+Type: deleted entry
+Reason: Duplicate of Brazilia (same stem+paradigm)
+
+Lemma: Azia
+Type: deleted entry
+Reason: Duplicate of Azia (same stem+paradigm)
+
+Lemma: Arabiano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Angliano
+Type: deleted entry
+Reason: Adjective ending in 'ano' instead of 'ana'
+
+Lemma: Angliana
+Type: deleted entry
+Reason: Duplicate of Anglia (same stem+paradigm)
+
+Lemma: Anglia
+Type: deleted entry
+Reason: Duplicate of Anglia (same stem+paradigm)
+
+Lemma: Amerika
+Type: deleted entry
+Reason: Duplicate of Amerika (same stem+paradigm)
+
+Lemma: Afrika
+Type: deleted entry
+Reason: Duplicate of Afrika (same stem+paradigm)
+
+Lemma: volfo
+Type: deleted entry
+Reason: Duplicate of volfino (same stem+paradigm)
+
+Lemma: vertebrozo
+Type: deleted entry
+Reason: Duplicate of vertebro (same stem+paradigm)
+
+Lemma: ucelo
+Type: deleted entry
+Reason: Duplicate of ucelino (same stem+paradigm)
+
+Lemma: trioplo
+Type: deleted entry
+Reason: Duplicate of triopla (same stem+paradigm)
+
+Lemma: spozo
+Type: deleted entry
+Reason: Duplicate of spozino (same stem+paradigm)
+
+Lemma: rejo
+Type: deleted entry
+Reason: Duplicate of rejino (same stem+paradigm)
+
+Lemma: quo
+Type: deleted entry
+Reason: Duplicate of qui (same stem+paradigm)
+
+Lemma: puero
+Type: deleted entry
+Reason: Duplicate of puerino (same stem+paradigm)
+
+Lemma: princo
+Type: deleted entry
+Reason: Duplicate of princino (same stem+paradigm)
+
+Lemma: pluvozeso
+Type: deleted entry
+Reason: Duplicate of pluvo (same stem+paradigm)
+
+Lemma: nevo
+Type: deleted entry
+Reason: Duplicate of nevino (same stem+paradigm)
+
+Lemma: nepoto
+Type: deleted entry
+Reason: Duplicate of nepotino (same stem+paradigm)
+
+Lemma: mukozo
+Type: deleted entry
+Reason: Duplicate of muko (same stem+paradigm)
+
+Lemma: kavalo
+Type: deleted entry
+Reason: Duplicate of kavalino (same stem+paradigm)
+
+Lemma: intelektozo
+Type: deleted entry
+Reason: Duplicate of intelekto (same stem+paradigm)
+
+Lemma: hundo
+Type: deleted entry
+Reason: Duplicate of hundino (same stem+paradigm)
+
+Lemma: homeosexualo
+Type: deleted entry
+Reason: Duplicate of homeosexualino (same stem+paradigm)
+
+Lemma: heterosexualo
+Type: deleted entry
+Reason: Duplicate of heterosexualino (same stem+paradigm)
+
+Lemma: hano
+Type: deleted entry
+Reason: Duplicate of hanino (same stem+paradigm)
+
+Lemma: gluteo
+Type: deleted entry
+Reason: Duplicate of glutei (same stem+paradigm)
+
+Lemma: genitoro
+Type: deleted entry
+Reason: Duplicate of genitori (same stem+paradigm)
+
+Lemma: filio
+Type: deleted entry
+Reason: Duplicate of filiino (same stem+paradigm)
+
+Lemma: eroroze
+Type: deleted entry
+Reason: Duplicate of eroro (same stem+paradigm)
+
+Lemma: duopla
+Type: deleted entry
+Reason: Duplicate of duo (same stem+paradigm)
+
+Lemma: damo
+Type: deleted entry
+Reason: Duplicate of dami (same stem+paradigm)
+
+Lemma: chefo
+Type: deleted entry
+Reason: Duplicate of chefino (same stem+paradigm)
+
+Lemma: cervo
+Type: deleted entry
+Reason: Duplicate of cervino (same stem+paradigm)
+
+Lemma: centoplo
+Type: deleted entry
+Reason: Duplicate of cento (same stem+paradigm)
+
+Lemma: centopla
+Type: deleted entry
+Reason: Duplicate of cento (same stem+paradigm)
+
+Lemma: bovo
+Type: deleted entry
+Reason: Duplicate of bovino (same stem+paradigm)
+
+Lemma: avo
+Type: deleted entry
+Reason: Duplicate of avino (same stem+paradigm)
+
+Lemma: amiko
+Type: deleted entry
+Reason: Duplicate of amikino (same stem+paradigm)
+
+Lemma: adulto
+Type: deleted entry
+Reason: Duplicate of adultino (same stem+paradigm)
+
+Lemma: Pacifiko
+Type: deleted entry
+Reason: Duplicate of Pacifiko (same stem+paradigm)
+
+Lemma: Mediteraneo
+Type: deleted entry
+Reason: Duplicate of Mediteraneo (same stem+paradigm)
+
+Lemma: Israelo
+Type: deleted entry
+Reason: Duplicate of Israel (same stem+paradigm)
+
+Lemma: Irlando
+Type: deleted entry
+Reason: Duplicate of Irlando (same stem+paradigm)
+
