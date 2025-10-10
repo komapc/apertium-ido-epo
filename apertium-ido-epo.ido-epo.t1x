@@ -104,6 +104,8 @@
          
          Complex patterns (e.g., copula + det + noun, coordinations) are handled
          by vblex rules below with explicit copula checking.
+         
+         Copula predicates remain in NOMINATIVE case (unlike transitive objects).
          ============================================================================ -->
     
     <!-- Copula (esar/esti) + Adjective + Noun: keep nominative (predicate)
@@ -214,6 +216,15 @@
          PRONOUNS: Exception! Both languages mark case on personal pronouns:
          - Ido: me/mi (nom/acc), nos/ni, vu/vu, li/li
          - Esperanto: mi/min, ni/nin, vi/vin, ili/ilin
+         
+         TECHNICAL NOTES:
+         These rules handle complex verb patterns including:
+         - Transitive verbs + objects (apply ACCUSATIVE case)
+         - Copula + determiners/coordinations (keep NOMINATIVE)
+         
+         Simple copula patterns are already handled by vbser rules above.
+         These rules check for copula (esar/es) explicitly for patterns not
+         covered by vbser (e.g., verb + determiner + noun).
          
          These rules apply accusative to nouns, adjectives, AND pronouns when they
          are direct objects of transitive verbs, but keep nominative after copula.
