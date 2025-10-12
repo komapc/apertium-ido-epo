@@ -1,0 +1,19 @@
+name = "ido-epo-translator-web"
+compatibility_date = "2024-09-23"
+
+# Environment variables for local development
+# For production, set these in Cloudflare Pages dashboard:
+# Settings → Environment variables
+[vars]
+# EC2 IP address: 52.211.137.158
+# For local development, use localhost
+APY_SERVER_URL = "http://localhost:2737"
+# For production on Cloudflare Pages, set: http://52.211.137.158:2737
+
+# Optional: Admin password (set as secret in production)
+# ADMIN_PASSWORD = "change-me-in-production"
+
+# For production secrets (don't commit real passwords):
+# wrangler secret put ADMIN_PASSWORD
+
+
