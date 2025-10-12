@@ -17,26 +17,52 @@ export const onRequest = async (context: any) => {
   }
 
   if (request.method === 'POST' && subpath === '/translate') {
-    const body = await request.json().catch(() => ({})) as any
-    const text = body?.text
-    const direction = body?.direction
-    if (!text || !direction) return sendJson(400, { error: 'Missing text or direction' })
-    const langPair = direction === 'ido-epo' ? 'ido|epo' : 'epo|ido'
     try {
+      // Handle both JSON and form data formats
+      const contentType = request.headers.get('content-type') || ''
+      let text, langpair
+      
+      if (contentType.includes('application/x-www-form-urlencoded')) {
+        // Handle form data (direct APy format)
+        const formData = await request.formData()
+        text = formData.get('q')
+        langpair = formData.get('langpair')
+      } else {
+        // Handle JSON format (legacy)
+        const body = await request.json().catch(() => ({})) as any
+        text = body?.text
+        const direction = body?.direction
+        langpair = direction === 'ido-epo' ? 'ido|epo' : 'epo|ido'
+      }
+
+      if (!text || !langpair) {
+        return sendJson(400, { error: 'Missing text or langpair' })
+      }
+
       const res = await fetch(`${APY_SERVER_URL}/translate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ q: text, langpair: langPair }) as any,
+        body: new URLSearchParams({ q: text, langpair: langpair }) as any,
       })
-      if (!res.ok) return sendJson(502, { error: 'Translation service error' })
+
+      if (!res.ok) {
+        return sendJson(502, {
+          error: 'Translation service error',
+          details: `APY server returned ${res.status}`
+        })
+      }
+
       const data: any = await res.json()
       return sendJson(200, {
         translation: data.responseData?.translatedText || text,
-        sourceLanguage: direction.split('-')[0],
-        targetLanguage: direction.split('-')[1],
+        sourceLanguage: langpair.split('|')[0],
+        targetLanguage: langpair.split('|')[1],
       })
     } catch (e: any) {
-      return sendJson(500, { error: 'Translation service unavailable', details: e?.message })
+      return sendJson(500, {
+        error: 'Translation service unavailable',
+        details: e?.message
+      })
     }
   }
 
