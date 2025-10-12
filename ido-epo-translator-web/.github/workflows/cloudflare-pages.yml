@@ -1,0 +1,50 @@
+name: Deploy to Cloudflare Pages
+
+# This workflow is actually optional since Cloudflare Pages
+# auto-deploys from GitHub. This is here for custom build steps
+# or manual deployment triggers if needed.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'cf-functions/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'vite.config.ts'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+    
+    - name: 📦 Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: 📥 Install dependencies
+      run: npm ci
+    
+    - name: 🏗️ Build
+      run: npm run build
+    
+    - name: 🚀 Deploy to Cloudflare Pages
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: ido-epo-translator-web
+        directory: dist
+        # Optional: Git commit info for deployment
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
+

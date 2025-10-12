@@ -1,0 +1,245 @@
+---
+globs: *.dix
+description: Quality standards and patterns for Apertium dictionary files
+---
+
+# Dictionary Quality Standards
+
+## Recently Completed: Comprehensive Dictionary Cleanup
+
+**Date:** October 10, 2025  
+**File:** [apertium-ido.ido.dix](mdc:apertium-ido-epo/apertium-ido.ido.dix)  
+**Details:** [DICTIONARY_FIXES_SUMMARY.md](mdc:DICTIONARY_FIXES_SUMMARY.md)
+
+All major issues have been fixed. Use this as reference for quality standards.
+
+## Quality Checklist for Dictionary Entries
+
+### 1. Lemma-Stem-Paradigm Consistency
+
+✅ **Correct Examples:**
+```xml
+<!-- Noun -->
+<e lm="kato">
+  <i>kat</i>
+  <par n="o__n"/>
+</e>
+
+<!-- Adjective -->
+<e lm="bela">
+  <i>bel</i>
+  <par n="a__adj"/>
+</e>
+
+<!-- Verb -->
+<e lm="vidar">
+  <i>vid</i>
+  <par n="ar__vblex"/>
+</e>
+```
+
+❌ **Wrong Examples (All Fixed):**
+```xml
+<!-- Wrong: stem should be "kat" not "kato" -->
+<e lm="kato">
+  <i>kato</i>  <!-- WRONG -->
+  <par n="o__n"/>
+</e>
+
+<!-- Wrong: verb marked as adjective -->
+<e lm="abatar">
+  <i>abat</i>
+  <par n="a__adj"/>  <!-- WRONG - should be ar__vblex -->
+</e>
+```
+
+### 2. Paradigm Assignment Rules
+
+| Word Type | Ending | Paradigm | Stem Rule |
+|-----------|--------|----------|-----------|
+| Regular noun | -o | `o__n` | Remove -o |
+| Regular adjective | -a | `a__adj` | Remove -a |
+| Regular verb | -ar | `ar__vblex` | Remove -ar |
+| Relational adjective | -ala | `ala__adj` | Remove -ala |
+| Adverb | -e | `e__adv` | Remove -e |
+| Agent noun | -anto | `o__n` | Remove -o (includes -ant) |
+| Concrete noun | -ajo | `ajo__n` | Remove -ajo |
+| Pejorative noun | -acho | `o__n` | Remove -o (includes -ach) |
+| Collective noun | -aro | `o__n` | Remove -o (includes -ar) |
+| Quality noun | -eso | `o__n` | Remove -o (includes -es) |
+| Ideology noun | -ismo | `o__n` | Remove -o (includes -ism) |
+| Specialist noun | -isto | `o__n` | Remove -o (includes -ist) |
+| Proper noun | varies | `__inv_n` | Keep as-is |
+| Function word | varies | `__pr`, `__cnjcoo`, etc. | Keep as-is |
+
+### 3. Common Errors to Avoid (All Fixed in Recent Cleanup)
+
+#### Error Type 1: Wrong Paradigm for Word Ending
+```xml
+<!-- WRONG: -anto nouns marked as adjectives -->
+<e lm="administranto">
+  <i>administr</i>
+  <par n="a__adj"/>  <!-- WRONG -->
+</e>
+
+<!-- CORRECT -->
+<e lm="administranto">
+  <i>administrant</i>
+  <par n="o__n"/>  <!-- RIGHT -->
+</e>
+```
+
+#### Error Type 2: Verbs Marked as Adjectives
+```xml
+<!-- WRONG: verb marked as adjective -->
+<e lm="abatar">
+  <i>abat</i>
+  <par n="a__adj"/>  <!-- WRONG -->
+</e>
+
+<!-- CORRECT -->
+<e lm="abatar">
+  <i>abat</i>
+  <par n="ar__vblex"/>  <!-- RIGHT -->
+</e>
+```
+
+#### Error Type 3: Stem-Lemma Mismatch
+```xml
+<!-- WRONG: stem doesn't match lemma -->
+<e lm="Angliana">
+  <i>Angli</i>  <!-- WRONG: should be "Anglian" -->
+  <par n="a__adj"/>
+</e>
+
+<!-- CORRECT -->
+<e lm="Angliana">
+  <i>Anglian</i>  <!-- RIGHT -->
+  <par n="a__adj"/>
+</e>
+```
+
+#### Error Type 4: Duplicate Entries
+```xml
+<!-- WRONG: same stem+paradigm appears twice -->
+<e lm="Anglia">
+  <i>Angli</i>
+  <par n="a__adj"/>
+</e>
+<e lm="Angliana">
+  <i>Angli</i>  <!-- DUPLICATE - same stem+paradigm -->
+  <par n="a__adj"/>
+</e>
+
+<!-- CORRECT: Keep only the correct form -->
+<e lm="Angliana">
+  <i>Anglian</i>
+  <par n="a__adj"/>
+</e>
+```
+
+#### Error Type 5: Pipe Characters in Stems
+```xml
+<!-- WRONG: pipe character for case variants -->
+<e lm="Exodo">
+  <i>exod|Exod</i>  <!-- WRONG -->
+  <par n="o__n"/>
+</e>
+
+<!-- CORRECT: Choose appropriate case -->
+<e lm="Exodo">
+  <i>Exod</i>  <!-- RIGHT: proper noun, use capital -->
+  <par n="o__n"/>
+</e>
+```
+
+### 4. Sorting Requirements
+
+**CRITICAL:** All entries MUST be alphabetically sorted by lemma (case-insensitive).
+
+```xml
+<!-- CORRECT ORDER -->
+<e lm="abato">...</e>
+<e lm="abdiko">...</e>
+<e lm="abelo">...</e>
+<e lm="Afganio">...</e>  <!-- Capitals sorted with lowercase -->
+<e lm="Afrika">...</e>
+```
+
+**Why:** Easier to find entries, prevents duplicates, better version control.
+
+### 5. Special Cases
+
+#### Invariable Proper Nouns
+Foreign proper nouns that don't inflect:
+```xml
+<e lm="Israel">
+  <i>Israel</i>
+  <par n="__inv_n"/>  <!-- Invariable -->
+</e>
+```
+
+#### Multi-word Expressions
+```xml
+<e lm="plus kam">
+  <i>plus</i>
+  <par n="__cnjadv"/>
+</e>
+```
+
+#### Units with Special Characters
+```xml
+<e lm="km²">
+  <i>km²</i>
+  <par n="__inv_n"/>
+</e>
+<!-- Note: ² is acceptable for scientific units -->
+```
+
+## Validation Tools
+
+### Manual Validation Script
+See [SUSPICIOUS_PATTERNS_FIXED.md](mdc:SUSPICIOUS_PATTERNS_FIXED.md) for patterns to check.
+
+### Quick Checks
+```bash
+# Check for obvious stem mismatches
+grep -E '<e lm="[^"]+o">' file.dix | grep '<i>[^<]+</i>' | \
+  awk -F'"' '{print $2}' | \
+  awk '{if (substr($1,length($1),1) == "o") print $1}'
+
+# Check for unsorted entries (should be empty if sorted)
+grep '<e lm=' file.dix | \
+  sed 's/.*lm="\([^"]*\)".*/\1/' | \
+  LC_ALL=C sort -c 2>&1
+
+# Check for duplicate lemmas
+grep '<e lm=' file.dix | \
+  sed 's/.*lm="\([^"]*\)".*/\1/' | \
+  sort | uniq -d
+```
+
+## Statistics (Current State)
+
+**File:** apertium-ido.ido.dix  
+**Entries:** 6,667  
+**Error Rate:** 0% (down from 61.4%)  
+**Recent Changes:**
+- 4,253 errors fixed
+- 268 duplicates removed
+- All entries alphabetically sorted
+
+## When Adding New Entries
+
+1. **Determine correct paradigm** based on word ending and meaning
+2. **Calculate correct stem** by removing ending according to paradigm rules
+3. **Check for duplicates** - search for same lemma or same stem+paradigm
+4. **Insert in alphabetical order** (case-insensitive)
+5. **Validate** - ensure lemma-stem-paradigm consistency
+6. **Test** - rebuild and verify word generates correctly
+
+## References
+
+- [DICTIONARY_FIXES_SUMMARY.md](mdc:DICTIONARY_FIXES_SUMMARY.md) - Detailed fix report
+- [SUSPICIOUS_PATTERNS_FIXED.md](mdc:SUSPICIOUS_PATTERNS_FIXED.md) - Error patterns reference
+- [INTERESTING_FIXES.txt](mdc:INTERESTING_FIXES.txt) - Notable examples

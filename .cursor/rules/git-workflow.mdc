@@ -1,0 +1,43 @@
+---
+alwaysApply: true
+---
+
+# Git Workflow - CRITICAL RULE
+
+## NEVER Push Directly to Main/Master
+
+**ALWAYS create a pull request for ANY changes.**
+
+### Correct Workflow
+
+```bash
+# 1. Create feature branch
+git checkout -b feature/descriptive-name
+
+# 2. Make changes and commit
+git add .
+git commit -m "Description of changes"
+
+# 3. Push to feature branch
+git push origin feature/descriptive-name
+
+# 4. Create pull request on GitHub
+# DO NOT use: git push origin main
+# DO NOT use: git push origin master
+```
+
+### Branch Naming Conventions
+
+- `feature/` - New features (e.g., `feature/add-coordination-rules`)
+- `fix/` - Bug fixes (e.g., `fix/dictionary-cleanup`)
+- `refactor/` - Code refactoring (e.g., `refactor/consolidate-copula`)
+- `docs/` - Documentation updates (e.g., `docs/update-readme`)
+- `test/` - Test additions (e.g., `test/add-pronoun-cases`)
+
+### Exception
+
+Only push to main if explicitly told "this is an emergency hotfix that must go directly to main" - and even then, prefer a PR.
+
+## Current Repository
+
+Main project: `apertium-ido-epo` at https://github.com/komapc/apertium-ido-epo.git

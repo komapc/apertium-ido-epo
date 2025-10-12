@@ -1,0 +1,95 @@
+---
+alwaysApply: true
+---
+
+# Ido-Esperanto Translation System - Progress Tracker
+
+## Current Status: Dictionary Cleanup Phase COMPLETED ✅
+
+**Last Updated:** October 10, 2025
+
+## Recently Completed (Past Session)
+
+### 1. ✅ Ido Monolingual Dictionary Comprehensive Cleanup
+- **Date:** October 10, 2025
+- **Files Modified:** [apertium-ido.ido.dix](mdc:apertium-ido-epo/apertium-ido.ido.dix)
+- **Changes:**
+  - Fixed 4,253 errors (reduced from 61.4% error rate to 0%)
+  - Removed 268 duplicate entries
+  - Corrected ~1,500 verbs mismarked as adjectives
+  - Fixed ~200 paradigm mismatches
+  - Corrected ~150 stem-lemma mismatches
+  - Sorted all entries alphabetically
+- **Documentation:** [DICTIONARY_FIXES_SUMMARY.md](mdc:DICTIONARY_FIXES_SUMMARY.md)
+- **Commit:** 6512666 - Pushed to main (NOTE: Should have been PR - see git-workflow rule)
+
+## Priority Tasks (From Next Steps)
+
+### 🔴 HIGH PRIORITY - Week 1-2
+
+1. **[ ] Comprehensive Testing & Validation**
+   - Test coordinated noun phrases
+   - Test copula with proper nouns
+   - Test pronoun cases
+   - Regression testing
+   - **Location:** `apertium-ido-epo/test/`
+   - **Reference:** [NEXT_STEPS_RECOMMENDATIONS.md](mdc:NEXT_STEPS_RECOMMENDATIONS.md) Section 1
+
+2. **[ ] Add Missing Coordination Patterns**
+   - Det + Noun + Conj + Det + Noun
+   - NP + Conj + NP (proper nouns)
+   - Mixed coordination patterns
+   - **Estimated:** 4-6 hours
+   - **Reference:** [NEXT_STEPS_RECOMMENDATIONS.md](mdc:NEXT_STEPS_RECOMMENDATIONS.md) Section 2
+
+3. **[ ] Rebuild and Deploy**
+   - Run `./autogen.sh && make clean && make`
+   - Test basic translations
+   - **Reference:** [NEXT_STEPS_RECOMMENDATIONS.md](mdc:NEXT_STEPS_RECOMMENDATIONS.md) Section 3
+
+### 🟡 MEDIUM PRIORITY - Weeks 3-4
+
+4. **[ ] Consolidate Copula Handling**
+   - Reduce redundancy between vbser and vblex categories
+   - **Estimated:** 3-4 hours
+
+5. **[ ] Add Degree Constructions**
+   - Superlative with adverbs
+   - Comparative constructions (pli → plu)
+   - **Estimated:** 2-3 hours
+
+6. **[ ] Enhance Pronoun Handling**
+   - Verify case mapping correctness
+   - Consider number preservation for demonstratives
+   - **Estimated:** 2-4 hours
+
+### 🟢 LOW PRIORITY - Future
+
+7. **[ ] Two-Stage Transfer Architecture** (2-3 weeks)
+8. **[ ] Variable-Based Context Tracking** (1 week)
+9. **[ ] Lexical Selection Rules (LRX)** (Ongoing)
+10. **[ ] Constraint Grammar Enhancement** (2-4 weeks)
+
+## When Starting New Work
+
+**ALWAYS:**
+1. Check this file for current priority tasks
+2. Read relevant sections in [NEXT_STEPS_RECOMMENDATIONS.md](mdc:NEXT_STEPS_RECOMMENDATIONS.md)
+3. Review [README.md](mdc:apertium-ido-epo/README.md) for project status
+4. Follow the git workflow in git-workflow.mdc (create PR, never push to main)
+
+## Progress Tracking
+
+To update progress:
+1. Mark completed tasks with ✅
+2. Update "Last Updated" date
+3. Move completed items to "Recently Completed" section
+4. Document any new findings or issues discovered
+
+## Key Documentation Files
+
+- [DICTIONARY_FIXES_SUMMARY.md](mdc:DICTIONARY_FIXES_SUMMARY.md) - Recent dictionary cleanup
+- [NEXT_STEPS_RECOMMENDATIONS.md](mdc:NEXT_STEPS_RECOMMENDATIONS.md) - Prioritized roadmap
+- [SUSPICIOUS_PATTERNS_FIXED.md](mdc:SUSPICIOUS_PATTERNS_FIXED.md) - Dictionary error patterns
+- [IMPLEMENTATION_SUCCESS_SUMMARY.md](mdc:apertium-ido-epo/IMPLEMENTATION_SUCCESS_SUMMARY.md) - Previous work summary
+- [README.md](mdc:apertium-ido-epo/README.md) - Project overview and statistics
