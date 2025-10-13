@@ -23,10 +23,11 @@ export const onRequest = async (context: any) => {
       let text, langpair
       
       if (contentType.includes('application/x-www-form-urlencoded')) {
-        // Handle form data (direct APy format)
-        const formData = await request.formData()
-        text = formData.get('q')
-        langpair = formData.get('langpair')
+        // Handle URL-encoded form data (direct APy format)
+        const formText = await request.text()
+        const params = new URLSearchParams(formText)
+        text = params.get('q')
+        langpair = params.get('langpair')
       } else {
         // Handle JSON format (legacy)
         const body = await request.json().catch(() => ({})) as any
