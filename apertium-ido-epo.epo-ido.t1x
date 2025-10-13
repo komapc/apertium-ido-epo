@@ -90,6 +90,7 @@
   </section-def-attrs>
 
   <section-def-vars>
+    <def-var n="dummy"/>
   </section-def-vars>
 
   <section-rules>

@@ -13,10 +13,12 @@ TARGETS_COMMON =		\
 	$(PREFIX1).automorf.bin	\
 	$(PREFIX1).autobil.bin	\
 	$(PREFIX1).autogen.bin	\
+	$(PREFIX1).autopgen.bin	\
 	$(PREFIX1).t1x.bin	\
 	$(PREFIX2).automorf.bin	\
 	$(PREFIX2).autobil.bin	\
 	$(PREFIX2).autogen.bin	\
+	$(PREFIX2).autopgen.bin	\
 	$(PREFIX2).rlx.bin	\
 	$(PREFIX2).t1x.bin
 
@@ -63,6 +65,18 @@ $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 	cp $< $@
 
 ###############################################################################
+## Post-generation
+###############################################################################
+
+$(PREFIX1).autopgen.bin: $(BASENAME).post-$(LANG2).dix
+	apertium-validate-dictionary $<
+	lt-comp lr $< $@
+
+$(PREFIX2).autopgen.bin: $(BASENAME).post-$(LANG1).dix
+	apertium-validate-dictionary $<
+	lt-comp lr $< $@
+
+###############################################################################
 ## Disambiguation rules  
 ###############################################################################
 
@@ -101,6 +115,8 @@ EXTRA_DIST=					\
 		$(BASENAME).$(PREFIX1).dix	\
 		$(BASENAME).$(PREFIX1).t1x	\
 		$(BASENAME).$(PREFIX2).t1x	\
+		$(BASENAME).post-$(LANG1).dix	\
+		$(BASENAME).post-$(LANG2).dix	\
 		$(BASENAME).$(LANG2).$(LANG2).rlx	\
 		modes.xml
 
