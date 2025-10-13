@@ -37,7 +37,11 @@ export const onRequest = async (context) => {
       }
 
       if (!text || !langpair) {
-        return sendJson(400, { error: 'Missing text or langpair' })
+        return sendJson(400, { 
+          error: 'Missing text or langpair', 
+          debug: { text, langpair, contentType },
+          version: 'v3-new-code'
+        })
       }
 
       const res = await fetch(`${APY_SERVER_URL}/translate`, {
