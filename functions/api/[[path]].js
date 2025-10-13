@@ -13,7 +13,7 @@ export const onRequest = async (context) => {
     })
 
   if (request.method === 'GET' && subpath === '/health') {
-    return sendJson(200, { status: 'ok', timestamp: new Date().toISOString() })
+    return sendJson(200, { status: 'ok', timestamp: new Date().toISOString(), version: 'v2-root-test' })
   }
 
   if (request.method === 'POST' && subpath === '/translate') {
