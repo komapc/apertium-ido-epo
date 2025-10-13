@@ -142,13 +142,23 @@ def strip_block_tags(text: str, tag: str) -> str:
 
 
 def clean_wikitext(text: str) -> str:
-    """Remove templates, tables, blockquotes, then strip remaining markup to plain text."""
-    # Remove HTML blockquote and table tags entirely
+    """Remove templates, tables, blockquotes, italics, bracketed content, then strip markup to plain text."""
+    # Remove HTML blockquote/table/italics tags entirely
     text = strip_block_tags(text, "blockquote")
     text = strip_block_tags(text, "table")
+    text = strip_block_tags(text, "i")
+    text = strip_block_tags(text, "em")
     # Remove wikitext tables and templates (with nesting): {| ... |}, {{ ... }}
     text = remove_nested_sections(text, "{|", "|}")
     text = remove_nested_sections(text, "{{", "}}")
+    # Remove wikitext italics (and bold-italics) segments entirely before stripping markup
+    # First, bold-italic '''''...'''''
+    text = re.sub(r"'''''[\s\S]*?'''''", "", text)
+    # Then plain italic ''...'' (avoid overlapping with bold '''...''')
+    text = re.sub(r"''[\s\S]*?''", "", text)
+    # Remove bracketed content aggressively: (...) and [...] including nested pairs
+    text = remove_nested_sections(text, "(", ")")
+    text = remove_nested_sections(text, "[", "]")
     # Strip remaining markup using mwparserfromhell
     code = mwparserfromhell.parse(text)
     plain = code.strip_code(normalize=True, collapse=True)
@@ -267,6 +277,10 @@ def tokenize(text: str) -> Iterator[str]:
 
 
 def is_excluded_token(token: str) -> bool:
+    # Exclude tokens with characters outside ASCII a-z and internal apostrophes/hyphens
+    # Accept pattern: one or more a-z groups possibly separated by ' or - (e.g., semi-scienco, l'amo)
+    if not re.fullmatch(r"[a-z]+(?:['-][a-z]+)*", token):
+        return True
     # Exclude tokens containing digits
     if any(c.isdigit() for c in token):
         return True
@@ -332,6 +346,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--dump-url", type=str, default=IOWIKI_LATEST_URL, help="Dump URL; default latest iowiki pages-articles")
     parser.add_argument("--processes", type=int, default=4, help="Parallel processes for WikiExtractor")
     parser.add_argument("--min-count", type=int, default=1, help="Minimum frequency to include in TSV")
+    parser.add_argument("--force-extract", action="store_true", help="Force re-extraction even if extract dir not empty")
     args = parser.parse_args(argv)
 
     base_dir = Path(args.base_dir)
@@ -340,6 +355,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     dump_path = paths.dumps_dir / Path(args.dump_url).name
     download_dump(args.dump_url, dump_path)
     try:
+        if args.force_extract:
+            for p in paths.extract_dir.glob("*"):
+                if p.is_file():
+                    p.unlink()
         run_wikiextractor(dump_path, paths.extract_dir, processes=args.processes)
     except Exception:
         print("WikiExtractor failed, falling back to mwxml-based extractor...", file=sys.stderr)
