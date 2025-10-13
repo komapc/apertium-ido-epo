@@ -16,8 +16,8 @@
       <cat-item tags="vblex.*"/>
     </def-cat>
     <def-cat n="vbser">
-      <cat-item lemma="esar"/>
-      <cat-item lemma="es"/>
+      <cat-item lemma="esar" tags="vblex.*"/>
+      <cat-item lemma="es" tags="vblex.*"/>
     </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn"/>
@@ -83,6 +83,7 @@
   </section-def-attrs>
 
   <section-def-vars>
+    <def-var n="dummy"/>
   </section-def-vars>
 
   <section-rules>
