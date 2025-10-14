@@ -7,8 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
+node_modules/
+dist/
 dist-ssr
 *.local
 
@@ -34,6 +34,9 @@ __pycache__/
 *$py.class
 venv/
 .env
+.env.*
+functions/.env
+.wrangler/
 
 # Apertium
 *.bin

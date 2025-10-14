@@ -22,7 +22,8 @@ Use this checklist to ensure successful deployment.
 - [ ] 20GB+ storage available
 - [ ] Security group allows:
   - [ ] Port 22 (SSH) from your IP
-  - [ ] Port 2737 (APy) from anywhere (0.0.0.0/0)
+  - [ ] Port 80 (Nginx proxy) from anywhere (0.0.0.0/0)
+  - [ ] Port 2737 (APy) can remain open or be restricted; Worker uses 80
 
 ### Cloudflare Account
 - [ ] Cloudflare account created (free tier OK)
@@ -47,6 +48,7 @@ Use this checklist to ensure successful deployment.
 - [ ] Test APy externally from your machine:
   ```bash
   curl http://YOUR_EC2_IP:2737/listPairs
+  curl http://ec2-<EC2_DASH_IP>.<region>.compute.amazonaws.com/listPairs
   ```
   Should return JSON with language pairs
 
@@ -80,7 +82,7 @@ This project now deploys as a single Worker that serves static assets via the AS
 ### Configure production variables
 - [ ] Go to Cloudflare Dashboard → Workers & Pages → Select your Worker
 - [ ] Settings → Variables and Secrets:
-  - [ ] Plaintext `APY_SERVER_URL` = `http://YOUR_EC2_IP:2737`
+  - [ ] Plaintext `APY_SERVER_URL` = `http://ec2-<EC2_DASH_IP>.<region>.compute.amazonaws.com`
   - [ ] Secret `ADMIN_PASSWORD` = `your-secure-password`
 
 ### Deploy

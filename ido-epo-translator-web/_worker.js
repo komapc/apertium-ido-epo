@@ -4,7 +4,7 @@
 export default {
   async fetch(request, env) {
     const url = new URL(request.url)
-    const APY_SERVER_URL = (env.APY_SERVER_URL || 'http://52.211.137.158:2737').replace(/\/$/, '')
+    const APY_SERVER_URL = (env.APY_SERVER_URL || 'http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com').replace(/\/$/, '')
     const ADMIN_PASSWORD = env.ADMIN_PASSWORD || 'change-me-in-production'
 
     const corsHeaders = {
@@ -85,23 +85,38 @@ export default {
           const direction = body?.direction
           if (!pageUrl || !direction) return sendJson(400, { error: 'Missing URL or direction' })
 
-          const pageRes = await fetch(pageUrl)
-          if (!pageRes.ok) return sendJson(400, { error: 'Could not fetch URL' })
+          // Be a good citizen: many sites require a UA; Wikipedia may 403 on missing UA
+          const pageRes = await fetch(pageUrl, {
+            headers: {
+              'User-Agent': 'IdoEpoTranslator/1.0 (+workers.cloudflare.com)'
+            }
+          })
+          if (!pageRes.ok) return sendJson(400, { error: 'Could not fetch URL', status: pageRes.status })
           const html = await pageRes.text()
           const textContent = extractTextFromHtml(html)
           if (!textContent.trim()) return sendJson(400, { error: 'No text content found in URL' })
+
           const langPair = direction === 'ido-epo' ? 'ido|epo' : 'epo|ido'
-          const translationRes = await fetch(`${APY_SERVER_URL}/translate`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams({ q: textContent, langpair: langPair }),
-          })
-          if (!translationRes.ok) return sendJson(502, { error: 'Translation service error' })
-          const translationData = await translationRes.json()
+
+          // Chunk long texts to avoid APy limits and timeouts
+          const chunks = chunkText(textContent, 1800) // safe margin under 2k
+          const translatedParts = []
+          for (const chunk of chunks) {
+            const res = await fetch(`${APY_SERVER_URL}/translate`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams({ q: chunk, langpair: langPair }),
+            })
+            if (!res.ok) return sendJson(502, { error: 'Translation service error (chunk)', status: res.status })
+            const data = await res.json().catch(() => ({}))
+            translatedParts.push(data.responseData?.translatedText ?? chunk)
+          }
+
           return sendJson(200, {
-            original: textContent,
-            translation: translationData.responseData?.translatedText || textContent,
+            original: textContent.substring(0, 50000),
+            translation: translatedParts.join(' '),
             url: pageUrl,
+            chunks: chunks.length,
           })
         } catch (e) {
           return sendJson(500, { error: 'URL translation failed', details: e?.message })
@@ -110,11 +125,32 @@ export default {
 
       if (request.method === 'POST' && subpath === '/admin/rebuild') {
         try {
-          const body = await request.json().catch(() => ({}))
-          if (body?.password !== ADMIN_PASSWORD) return sendJson(401, { error: 'Invalid admin password' })
-          return sendJson(200, { status: 'initiated', message: 'Rebuild requested (placeholder).' })
+          if (!env.REBUILD_WEBHOOK_URL) {
+            return sendJson(500, { error: 'Rebuild webhook URL not configured' })
+          }
+          const webhookRes = await fetch(env.REBUILD_WEBHOOK_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Rebuild-Token': env.REBUILD_SHARED_SECRET || '',
+            },
+            body: JSON.stringify({ trigger: 'web-ui' }),
+          })
+          const text = await webhookRes.text().catch(() => '')
+          if (!webhookRes.ok) {
+            return sendJson(502, {
+              error: 'Failed to trigger EC2 rebuild',
+              details: `Webhook returned ${webhookRes.status}`,
+              webhookUrl: env.REBUILD_WEBHOOK_URL,
+              body: text?.slice(0, 2000),
+            })
+          }
+          // Try parse JSON, else wrap as text
+          let body
+          try { body = JSON.parse(text) } catch { body = { status: 'ok', log: text?.slice(0, 5000) } }
+          return sendJson(202, { status: 'accepted', ...body })
         } catch (e) {
-          return sendJson(500, { error: 'Rebuild failed', details: e?.message })
+          return sendJson(500, { error: 'Rebuild trigger failed', details: e?.message })
         }
       }
 
@@ -144,6 +180,12 @@ function extractTextFromHtml(html) {
     .replace(/\s+/g, ' ')
     .trim()
     .substring(0, 5000)
+}
+
+function chunkText(text, size) {
+  const out = []
+  for (let i = 0; i < text.length; i += size) out.push(text.slice(i, i + size))
+  return out
 }
 
 

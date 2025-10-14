@@ -172,8 +172,8 @@ Add these secrets:
 | `EC2_SSH_KEY` | Your private SSH key | `cat ~/.ssh/your-key.pem` |
 | `EC2_HOST` | Your EC2 public IP | From Part 1, Step 4 |
 | `EC2_USER` | SSH username | Usually `ubuntu` |
-| `CLOUDFLARE_API_TOKEN` | Cloudflare API token | Dashboard → My Profile → API Tokens → Create Token |
-| `CLOUDFLARE_ACCOUNT_ID` | Your account ID | Dashboard → Overview (right sidebar) |
+| `CLOUDFLARE_API_TOKEN` | Not required for Cloudflare Pages | — |
+| `CLOUDFLARE_ACCOUNT_ID` | Not required for Cloudflare Pages | — |
 
 ### Step 2: Create API Token in Cloudflare
 
@@ -183,7 +183,7 @@ Add these secrets:
 4. Or create custom token with:
    - Permissions: Account → Cloudflare Pages → Edit
    - Account Resources: Include → Your Account
-5. Copy the token and add to GitHub Secrets as `CLOUDFLARE_API_TOKEN`
+5. Skip token setup; Pages deploys artifacts directly from the build output.
 
 ### Step 3: Verify Workflows
 

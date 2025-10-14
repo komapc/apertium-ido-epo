@@ -2,44 +2,41 @@
 
 A modern web application for translating between Ido and Esperanto, powered by Apertium machine translation. Features text translation and full webpage translation with side-by-side comparison.
 
+> Current deployment: Cloudflare Worker (static assets + API) + EC2 APy server
+>
+> - Set `APY_SERVER_URL` in the Worker to your APy base URL (e.g., `http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com`)
+> - Set `REBUILD_WEBHOOK_URL` to `http://<ec2-hostname>/rebuild` to enable the Rebuild button
+
 ## 🌟 Features
 
 - **Text Translation**: Translate phrases and sentences between Ido and Esperanto
 - **URL Translation**: Translate entire webpages (e.g., Wikipedia articles) with side-by-side comparison
 - **Bidirectional**: Switch translation direction with one click
-- **Admin Panel**: Manual rebuild and deployment of updated translation dictionaries
+- **Rebuild Button**: Trigger idempotent dictionary updates on EC2 (no password)
 - **Modern UI**: Beautiful, responsive interface built with React and TailwindCSS
 
 ## 🏗️ Architecture
 
 ```
 ┌──────────────────────────────────────────────┐
-│     Firebase Hosting (Static Frontend)      │
-│     - React + TypeScript + TailwindCSS       │
+│        Cloudflare Worker (Frontend + API)    │
+│  - React + TypeScript + TailwindCSS          │
+│  - Worker handles /api/* and serves assets   │
 └──────────────────┬───────────────────────────┘
                    │
                    ▼
 ┌──────────────────────────────────────────────┐
-│     Firebase Cloud Functions (API)          │
-│     - Translation endpoints                  │
-│     - URL fetching and processing            │
-└──────────────────┬───────────────────────────┘
-                   │
-                   ▼
-┌──────────────────────────────────────────────┐
-│     Cloud Run (APy Server)                   │
-│     - Docker container with Apertium         │
-│     - apertium-ido + apertium-ido-epo        │
+│        EC2 (APy Server + Apertium)          │
+│  - Dockerized APy HTTP server                │
+│  - apertium-ido + apertium-ido-epo           │
+│  - Exposes port 2737                         │
 └──────────────────────────────────────────────┘
 ```
 
 ## 📋 Prerequisites
 
 - Node.js 18+ and npm
-- Docker and Docker Compose
-- Firebase CLI: `npm install -g firebase-tools`
-- Google Cloud Platform account
-- Firebase project created
+- Docker and Docker Compose (for EC2 build)
 
 ## 🚀 Quick Start (Local Development)
 
@@ -78,91 +75,66 @@ Open http://localhost:5173 in your browser.
 
 ## 🔧 Configuration
 
-### Firebase Setup
+### Cloudflare Worker Setup
 
-1. Create a Firebase project at https://console.firebase.google.com
-2. Enable Cloud Functions and Hosting
-3. Update `.firebaserc` with your project ID:
-
-```json
-{
-  "projects": {
-    "default": "your-project-id"
-  }
-}
-```
+1. Build locally: `npm run build`
+2. Deploy: `npm run cf:deploy`
+3. Set Worker variables (Dashboard → Settings → Variables):
+   - `APY_SERVER_URL = http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com`
+   - `REBUILD_WEBHOOK_URL = http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com/rebuild`
+4. GitHub Actions deploys on push to `main` (`.github/workflows/deploy-worker.yml`).
 
 ### Environment Variables
 
-Create `functions/.env` for local development:
+Local development (wrangler / Pages dev): set in `wrangler.toml`
 
-```env
-APY_SERVER_URL=http://localhost:2737
-ADMIN_PASSWORD=your-secure-password
+```toml
+[vars]
+APY_SERVER_URL = "http://localhost:2737"
+REBUILD_WEBHOOK_URL = "http://localhost/rebuild"
 ```
 
-For production, set these in Firebase Functions config:
+Production (Worker → Settings → Variables):
 
-```bash
-firebase functions:config:set apy.server_url="YOUR_CLOUD_RUN_URL"
-firebase functions:config:set admin.password="YOUR_SECURE_PASSWORD"
+```text
+APY_SERVER_URL = http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com
+REBUILD_WEBHOOK_URL = http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com/rebuild
 ```
 
 ## 📦 Deployment
 
-### Step 1: Deploy APy Server to Cloud Run
+### Option A (Recommended): Cloudflare Worker + EC2
+
+1) Deploy APy to EC2
 
 ```bash
-cd apy-server
-
-# Build and push to Google Container Registry
-PROJECT_ID="your-firebase-project-id"
-docker build -t gcr.io/$PROJECT_ID/ido-epo-apy .
-docker push gcr.io/$PROJECT_ID/ido-epo-apy
-
-# Deploy to Cloud Run
-gcloud run deploy ido-epo-apy \
-  --image gcr.io/$PROJECT_ID/ido-epo-apy \
-  --platform managed \
-  --region us-central1 \
-  --allow-unauthenticated \
-  --port 2737 \
-  --memory 2Gi \
-  --cpu 2 \
-  --timeout 300
-
-# Get the service URL
-gcloud run services describe ido-epo-apy --region us-central1 --format="value(status.url)"
+ssh ubuntu@<YOUR_EC2_IP>
+curl -o setup-ec2.sh https://raw.githubusercontent.com/komapc/ido-epo-translator-web/main/setup-ec2.sh
+chmod +x setup-ec2.sh
+./setup-ec2.sh
+# After build (10–15 min)
+curl http://localhost:2737/listPairs
 ```
 
-### Step 2: Configure Firebase Functions
+2) Configure Cloudflare Worker env
 
-Update the APy server URL in Firebase Functions:
-
-```bash
-firebase functions:config:set apy.server_url="YOUR_CLOUD_RUN_URL"
-firebase functions:config:set admin.password="YOUR_SECURE_PASSWORD"
+```text
+APY_SERVER_URL = http://ec2-<YOUR_EC2_IP with dashes>.<your-aws-region>.compute.amazonaws.com
+ADMIN_PASSWORD = <your-strong-secret>
 ```
 
-### Step 3: Deploy Frontend and Functions
+3) Deploy Worker with `wrangler deploy` or merge PR to `main`.
 
-```bash
-# Build and deploy everything
-npm run deploy
-
-# Or deploy separately
-firebase deploy --only hosting
-firebase deploy --only functions
-```
+### Option B: Firebase + Cloud Run (Legacy)
+If you prefer this path, see the older instructions in git history or `PROJECT_SUMMARY.md`. Current stack favors Cloudflare Pages + EC2.
 
 ## 🔄 Updating Translation Dictionaries
 
-### Option 1: Via Admin Panel (Manual Trigger)
+### Option 1: Via Rebuild Button (Manual Trigger)
 
-1. Navigate to the Admin tab in the web app
-2. Enter the admin password
-3. Click "Rebuild & Deploy"
-4. Wait for the rebuild to complete
+1. Open the web app
+2. Click "Rebuild"
+3. The EC2 webhook will run `update-dictionaries.sh` and rebuild only if changes are detected
 
 ### Option 2: Via Docker (Local Development)
 
@@ -210,18 +182,16 @@ curl -X POST http://localhost:2737/translate \
   -d "langpair=epo|ido"
 ```
 
-### Test Firebase Functions Locally
+### Test Worker locally
+
+Use Wrangler dev:
 
 ```bash
-cd functions
-npm run serve
-```
+# Health
+curl http://127.0.0.1:8787/api/health
 
-Then test the endpoints:
-
-```bash
-# Test translation
-curl -X POST http://localhost:5001/your-project-id/us-central1/api/translate \
+# Translate
+curl -X POST http://127.0.0.1:8787/api/translate \
   -H "Content-Type: application/json" \
   -d '{"text":"Me amas vu","direction":"ido-epo"}'
 ```
@@ -234,7 +204,7 @@ ido-epo-translator-web/
 │   ├── components/           # React components
 │   │   ├── TextTranslator.tsx
 │   │   ├── UrlTranslator.tsx
-│   │   └── AdminPanel.tsx
+│   │   └── AdminPanel.tsx  # shows a single Rebuild button
 │   ├── App.tsx              # Main app component
 │   ├── main.tsx             # Entry point
 │   └── index.css            # Tailwind styles
@@ -325,3 +295,4 @@ Contributions to the translation dictionaries should be made to:
 
 For web app improvements, please open issues or pull requests in this repository.
 
+# Trigger redeploy
