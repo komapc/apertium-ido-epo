@@ -8,8 +8,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "cf:dev": "wrangler dev --assets dist",
+    "cf:deploy": "wrangler deploy",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "react": "^18.2.0",

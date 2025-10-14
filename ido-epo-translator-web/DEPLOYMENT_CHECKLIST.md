@@ -57,41 +57,46 @@ Use this checklist to ensure successful deployment.
 
 ---
 
-## ☁️ Step 2: Cloudflare Pages Deployment
+## ☁️ Step 2: Cloudflare Workers Deployment (recommended)
 
-### Connect GitHub
-- [ ] Go to https://dash.cloudflare.com
-- [ ] Navigate: Workers & Pages → Create application → Pages
-- [ ] Click "Connect to Git"
-- [ ] Authorize Cloudflare to access your GitHub
-- [ ] Select repository: `ido-epo-translator-web`
-- [ ] Click "Begin setup"
+This project now deploys as a single Worker that serves static assets via the ASSETS binding and handles `/api/*` requests in `_worker.js`.
 
-### Configure Build
-- [ ] Set production branch: `main`
-- [ ] Framework preset: `Vite`
-- [ ] Build command: `npm run build`
-- [ ] Build output directory: `dist`
-- [ ] Root directory: `/` (leave empty or default)
+### One-time setup
+- [ ] Install Wrangler locally:
+  ```bash
+  npm i -D wrangler
+  npx wrangler login
+  ```
+- [ ] Build the app:
+  ```bash
+  npm run build
+  ```
+- [ ] Verify locally:
+  ```bash
+  npm run cf:dev
+  # open printed localhost URL → test /api/health
+  ```
 
-### Add Environment Variables
-- [ ] Click "Environment variables"
-- [ ] Add: `APY_SERVER_URL` = `http://YOUR_EC2_IP:2737`
-  - **Important:** Use the IP from Step 1!
-- [ ] (Optional) Add: `ADMIN_PASSWORD` = `your-secure-password`
-- [ ] Click "Save and Deploy"
+### Configure production variables
+- [ ] Go to Cloudflare Dashboard → Workers & Pages → Select your Worker
+- [ ] Settings → Variables and Secrets:
+  - [ ] Plaintext `APY_SERVER_URL` = `http://YOUR_EC2_IP:2737`
+  - [ ] Secret `ADMIN_PASSWORD` = `your-secure-password`
 
-### Wait for First Deploy
-- [ ] Wait 2-5 minutes for initial build
-- [ ] Build should succeed (green checkmark)
-- [ ] Note your Pages URL (e.g., `https://ido-epo-translator.pages.dev`)
+### Deploy
+- [ ] Deploy via Wrangler:
+  ```bash
+  npm run build && npm run cf:deploy
+  ```
+- [ ] Note your Workers.dev URL (e.g., `https://ido-epo-translator.komapc.workers.dev`)
 
-### If Build Fails
-- [ ] Check build logs in Cloudflare dashboard
-- [ ] Common issues:
-  - Wrong build command → Should be `npm run build`
-  - Wrong output directory → Should be `dist`
-  - Node version → Add env var `NODE_VERSION=18`
+### Optional: Custom domain or route
+- [ ] Dashboard → Workers & Pages → Your Worker → Triggers → Routes
+- [ ] Add `yourdomain.com/*` (point DNS to Cloudflare)
+
+### If Deploy Fails
+- [ ] Check `wrangler` output for errors
+- [ ] Ensure `dist/` exists, and `wrangler.toml` has `[assets] directory = "dist"`
 
 ---
 
@@ -102,8 +107,7 @@ This enables automatic deployment when you push code changes.
 ### Get Cloudflare Credentials
 - [ ] Go to https://dash.cloudflare.com/profile/api-tokens
 - [ ] Click "Create Token"
-- [ ] Template: "Edit Cloudflare Workers" or custom with:
-  - Account → Cloudflare Pages → Edit
+- [ ] Template: "Edit Cloudflare Workers"
 - [ ] Copy API token → **Save securely!**
 - [ ] Get Account ID from Dashboard → Overview (right sidebar) → **Save!**
 
@@ -114,7 +118,7 @@ This enables automatic deployment when you push code changes.
   ```
 - [ ] Copy entire key including `-----BEGIN...-----` and `-----END...-----`
 
-### Add GitHub Secrets
+### Add GitHub Secrets (for CI)
 Go to your GitHub repository:
 - [ ] Navigate: Settings → Secrets and variables → Actions
 - [ ] Click "New repository secret" for each:
@@ -124,8 +128,8 @@ Go to your GitHub repository:
 | `EC2_SSH_KEY` | Your private key | Full key with BEGIN/END lines |
 | `EC2_HOST` | Your EC2 IP | Just the IP, no http:// |
 | `EC2_USER` | `ubuntu` | Default for Ubuntu AMI |
-| `CLOUDFLARE_API_TOKEN` | Token from above | From Cloudflare dashboard |
-| `CLOUDFLARE_ACCOUNT_ID` | Account ID | From Cloudflare dashboard |
+| `CLOUDFLARE_API_TOKEN` | Required for Worker deploys | scope: Workers Edit |
+| `CLOUDFLARE_ACCOUNT_ID` | Required for Worker deploys | dashboard → overview |
 
 ### Verify Workflows Exist
 - [ ] Check `.github/workflows/deploy-ec2.yml` exists
@@ -140,15 +144,15 @@ Go to your GitHub repository:
 # Test EC2 APy
 curl http://YOUR_EC2_IP:2737/listPairs
 
-# Test Cloudflare health endpoint
-curl https://YOUR_PAGES_URL.pages.dev/api/health
+# Test Cloudflare Worker health endpoint
+curl https://YOUR_WORKER_SUBDOMAIN.workers.dev/api/health
 ```
 
 - [ ] Both return valid JSON responses
 
 ### Test 2: Translation API
 ```bash
-curl -X POST https://YOUR_PAGES_URL.pages.dev/api/translate \
+curl -X POST https://YOUR_WORKER_SUBDOMAIN.workers.dev/api/translate \
   -H "Content-Type: application/json" \
   -d '{"text":"Me amas vu","direction":"ido-epo"}'
 ```
@@ -156,7 +160,7 @@ curl -X POST https://YOUR_PAGES_URL.pages.dev/api/translate \
 - [ ] Returns: `{"translation":"Mi amas vin",...}`
 
 ### Test 3: Web Interface
-- [ ] Open in browser: `https://YOUR_PAGES_URL.pages.dev`
+- [ ] Open in browser: `https://YOUR_WORKER_SUBDOMAIN.workers.dev`
 - [ ] See translator interface (purple gradient background)
 - [ ] Can enter text in input box
 - [ ] Can click "Translate" button
@@ -265,7 +269,7 @@ curl -X POST https://YOUR_PAGES_URL.pages.dev/api/translate \
 - [ ] APy container is running: `docker-compose ps`
 - [ ] APy responds: `curl http://localhost:2737/listPairs`
 - [ ] EC2 security group allows port 2737
-- [ ] `APY_SERVER_URL` in Cloudflare Pages is correct
+- [ ] `APY_SERVER_URL` variable set on your Worker is correct
 
 **Fix:**
 ```bash
@@ -320,7 +324,7 @@ When you've checked all boxes above, you have:
 ✅ Easy update workflow
 
 **Your URLs:**
-- **Live Site:** `https://YOUR_PAGES_URL.pages.dev`
+- **Live Site:** `https://YOUR_WORKER_SUBDOMAIN.workers.dev` (or your custom domain)
 - **APy Server:** `http://YOUR_EC2_IP:2737`
 - **GitHub Repo:** `https://github.com/YOUR_USERNAME/ido-epo-translator-web`
 
