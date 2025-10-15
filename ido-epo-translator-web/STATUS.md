@@ -254,8 +254,7 @@ APY_SERVER_URL = http://localhost:2737
 EC2_HOST = 52.211.137.158
 EC2_USER = ubuntu
 EC2_SSH_KEY = <your-private-key>
-CLOUDFLARE_API_TOKEN = <get-from-dashboard>
-CLOUDFLARE_ACCOUNT_ID = <get-from-dashboard>
+Cloudflare Pages deploy: no API token required (uses build artifact)
 ```
 
 ---

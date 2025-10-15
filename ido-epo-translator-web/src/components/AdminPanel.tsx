@@ -5,15 +5,9 @@ const AdminPanel = () => {
   const [isRebuilding, setIsRebuilding] = useState(false)
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [logs, setLogs] = useState<string[]>([])
-  const [password, setPassword] = useState('')
+  // no password; webhook is open but idempotent on EC2
 
   const handleRebuild = async () => {
-    if (!password) {
-      setStatus('error')
-      setLogs(['Error: Admin password required'])
-      return
-    }
-
     setIsRebuilding(true)
     setStatus('idle')
     setLogs(['Starting rebuild process...'])
@@ -24,7 +18,7 @@ const AdminPanel = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({}),
       })
 
       const data = await response.json()
@@ -34,7 +28,11 @@ const AdminPanel = () => {
         setLogs((prev) => [...prev, `Error: ${data.error}`])
       } else {
         setStatus('success')
-        setLogs((prev) => [...prev, ...data.logs])
+        const arr: string[] = []
+        if (data.message) arr.push(String(data.message))
+        if (data.status) arr.push(`Status: ${String(data.status)}`)
+        if (data.log) arr.push(String(data.log))
+        setLogs((prev) => [...prev, ...arr])
       }
     } catch (error) {
       setStatus('error')
@@ -46,16 +44,12 @@ const AdminPanel = () => {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      {/* Warning Banner */}
-      <div className="bg-red-500/20 border border-red-500/50 rounded-xl p-4 flex items-start gap-3">
-        <AlertCircle className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
-        <div className="text-red-200">
-          <h3 className="font-semibold mb-1">Admin Panel - Restricted Access</h3>
-          <p className="text-sm">
-            This panel allows you to rebuild and redeploy the Apertium translation engine. 
-            This operation will pull the latest code from the repositories and recompile 
-            all dictionaries.
-          </p>
+      {/* Maintenance Banner */}
+      <div className="bg-amber-500/20 border border-amber-500/50 rounded-xl p-4 flex items-start gap-3">
+        <AlertCircle className="w-6 h-6 text-amber-300 flex-shrink-0 mt-1" />
+        <div className="text-amber-100">
+          <h3 className="font-semibold mb-1">Maintenance</h3>
+          <p className="text-sm">Trigger a rebuild of the translation engine. The server checks for updates and only rebuilds if changes are detected.</p>
         </div>
       </div>
 
@@ -67,24 +61,10 @@ const AdminPanel = () => {
         </h2>
 
         <div className="space-y-4">
-          <div>
-            <label htmlFor="password" className="block text-white font-medium mb-2">
-              Admin Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter admin password"
-              className="w-full p-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-purple-300/50 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              aria-label="Admin password"
-            />
-          </div>
 
           <button
             onClick={handleRebuild}
-            disabled={isRebuilding || !password}
+            disabled={isRebuilding}
             className="w-full py-3 bg-red-600 hover:bg-red-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-all flex items-center justify-center gap-2"
             aria-label="Start rebuild process"
           >
@@ -96,7 +76,7 @@ const AdminPanel = () => {
             ) : (
               <>
                 <RefreshCw className="w-5 h-5" />
-                Rebuild & Deploy
+                Rebuild
               </>
             )}
           </button>
@@ -149,14 +129,12 @@ const AdminPanel = () => {
       <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-xl">
         <h3 className="text-xl font-semibold text-white mb-3">Instructions</h3>
         <div className="text-purple-200 space-y-2 text-sm">
-          <p>1. Enter the admin password (set in environment variables)</p>
-          <p>2. Click "Rebuild & Deploy" to start the process</p>
-          <p>3. The system will:</p>
+          <p>1. Click "Rebuild" to start the process</p>
+          <p>2. The system will:</p>
           <ul className="list-disc list-inside ml-4 space-y-1">
-            <li>Pull latest code from apertium-ido repository</li>
-            <li>Pull latest code from apertium-ido-epo repository</li>
-            <li>Recompile all dictionaries and transfer rules</li>
-            <li>Restart the translation service</li>
+            <li>Check dictionary repositories for updates</li>
+            <li>Rebuild only if changes are detected</li>
+            <li>Restart the translation service when finished</li>
           </ul>
           <p className="pt-2 text-yellow-300">
             ⚠️ The translation service will be briefly unavailable during rebuild (~2-5 minutes)

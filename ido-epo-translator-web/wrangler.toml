@@ -8,11 +8,12 @@ directory = "dist"
 binding = "ASSETS"
 run_worker_first = true
 
-# Environment variables (override in Dashboard for production)
-[vars]
-# EC2 IP address: 52.211.137.158
-# For local development, use localhost
+# Set production variables in the Dashboard (APY_SERVER_URL, ADMIN_PASSWORD, REBUILD_WEBHOOK_URL, REBUILD_SHARED_SECRET).
+# Optional at runtime: APP_VERSION to surface version in /api/health
+
+[env.dev]
+[env.dev.vars]
+# Local development only
 APY_SERVER_URL = "http://localhost:2737"
-# Optional: Admin password (set as secret in production)
-# ADMIN_PASSWORD = "change-me-in-production"
-# Set production secrets via: wrangler secret put ADMIN_PASSWORD
+# For local testing only; set production values as Worker secrets/vars in Dashboard
+REBUILD_WEBHOOK_URL = "http://localhost/rebuild"

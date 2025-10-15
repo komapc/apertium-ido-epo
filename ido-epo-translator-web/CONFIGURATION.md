@@ -16,7 +16,8 @@ For local development, create `functions/.env`:
 
 ```env
 APY_SERVER_URL=http://localhost:2737
-ADMIN_PASSWORD=your-local-password
+# Set via local secret manager or export before running; placeholder only
+ADMIN_PASSWORD=<your-local-password>
 ```
 
 For production, use Firebase Functions config:
@@ -80,8 +81,8 @@ When deploying, you can adjust these parameters in `scripts/deploy-apy.sh`:
 # Generate a secure password
 openssl rand -base64 32
 
-# Set in Firebase Functions
-firebase functions:config:set admin.password="YOUR_SECURE_PASSWORD"
+# Set in your runtime secret store (example placeholder)
+firebase functions:config:set admin.password="<YOUR_SECURE_PASSWORD>"
 ```
 
 ### API Keys
@@ -226,8 +227,8 @@ Automatically scales, no configuration needed.
 # Use local APy server
 APY_SERVER_URL=http://localhost:2737
 
-# Relaxed security
-ADMIN_PASSWORD=dev
+# Example only; do not hardcode secrets in files
+ADMIN_PASSWORD=<dev-only-example>
 ```
 
 ### Production
