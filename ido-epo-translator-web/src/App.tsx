@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { ArrowLeftRight } from 'lucide-react'
 import TextTranslator from './components/TextTranslator'
 import UrlTranslator from './components/UrlTranslator'
-import AdminPanel from './components/AdminPanel'
+import RebuildButton from './components/RebuildButton'
+import RepoVersions from './components/RepoVersions'
 
-type TranslationMode = 'text' | 'url' | 'admin'
+type TranslationMode = 'text' | 'url'
 type LanguageDirection = 'ido-epo' | 'epo-ido'
 
 const App = () => {
@@ -52,21 +53,11 @@ const App = () => {
           >
             URL Translation
           </button>
-          <button
-            onClick={() => setMode('admin')}
-            className={`px-6 py-2 rounded-lg font-medium transition-all ${
-              mode === 'admin'
-                ? 'bg-red-600 text-white shadow-lg scale-105'
-                : 'bg-white/10 text-white hover:bg-white/20'
-            }`}
-            aria-label="Switch to admin panel"
-          >
-            Admin
-          </button>
+          <RebuildButton />
         </div>
 
         {/* Language Direction Selector */}
-        {mode !== 'admin' && (
+        {(
           <div className="flex justify-center items-center gap-4 mb-8">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3 flex items-center gap-4">
               <span className="text-white font-medium">
@@ -90,13 +81,12 @@ const App = () => {
         <main className="max-w-7xl mx-auto">
           {mode === 'text' && <TextTranslator direction={direction} />}
           {mode === 'url' && <UrlTranslator direction={direction} />}
-          {mode === 'admin' && <AdminPanel />}
         </main>
 
         {/* Footer */}
         <footer className="text-center mt-12 text-purple-200 text-sm">
           <p>
-            Open source translation using Apertium |{' '}
+            Open source translation using Apertium ·{' '}
             <a
               href="https://github.com/apertium"
               target="_blank"
@@ -106,6 +96,12 @@ const App = () => {
               Learn more
             </a>
           </p>
+          {/* Versions */}
+          <div className="flex justify-center">
+            <div className="max-w-4xl">
+              <RepoVersions />
+            </div>
+          </div>
         </footer>
       </div>
     </div>

@@ -5,6 +5,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url)
     const APY_SERVER_URL = (env.APY_SERVER_URL || 'http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com').replace(/\/$/, '')
+    const VERSION = env.APP_VERSION || 'dev'
     const ADMIN_PASSWORD = env.ADMIN_PASSWORD || 'change-me-in-production'
 
     const corsHeaders = {
@@ -28,7 +29,50 @@ export default {
       const subpath = url.pathname.replace(/^\/api/, '') || '/'
 
       if (request.method === 'GET' && subpath === '/health') {
-        return sendJson(200, { status: 'ok', timestamp: new Date().toISOString() })
+        return sendJson(200, { status: 'ok', version: VERSION, timestamp: new Date().toISOString() })
+      }
+
+      if (request.method === 'GET' && subpath === '/versions') {
+        try {
+          const repos = [
+            { owner: 'apertium', repo: 'apertium-ido', label: 'ido' },
+            { owner: 'apertium', repo: 'apertium-epo', label: 'epo' },
+            { owner: 'komapc', repo: 'apertium-ido-epo', label: 'bilingual' },
+          ]
+          const ghHeaders = { 'User-Agent': 'IdoEpoTranslator/1.0', 'Accept': 'application/vnd.github+json' }
+          const results = await Promise.all(repos.map(async ({ owner, repo, label }) => {
+            const base = `https://api.github.com/repos/${owner}/${repo}`
+            // Try latest release first
+            let version = null, date = null, commit = null
+            let ok = false
+            try {
+              const rel = await fetch(`${base}/releases/latest`, { headers: ghHeaders })
+              if (rel.ok) {
+                const r = await rel.json()
+                version = r.tag_name || r.name || null
+                date = r.published_at || r.created_at || null
+                ok = true
+              }
+            } catch {}
+            if (!ok) {
+              try {
+                const commits = await fetch(`${base}/commits?per_page=1`, { headers: ghHeaders })
+                if (commits.ok) {
+                  const arr = await commits.json()
+                  if (Array.isArray(arr) && arr.length) {
+                    const c = arr[0]
+                    commit = c.sha
+                    date = c.commit?.committer?.date || c.commit?.author?.date || null
+                  }
+                }
+              } catch {}
+            }
+            return { label, owner, repo, version, date, commit }
+          }))
+          return sendJson(200, { appVersion: VERSION, repos: results })
+        } catch (e) {
+          return sendJson(500, { error: 'Failed to fetch versions', details: e?.message })
+        }
       }
 
       if (request.method === 'POST' && subpath === '/translate') {

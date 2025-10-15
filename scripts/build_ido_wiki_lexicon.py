@@ -101,8 +101,8 @@ def run_wikiextractor(dump_path: Path, extract_dir: Path, processes: int = 4) ->
     print("WikiExtractor finished.")
 
 
-def remove_nested_sections(text: str, open_seq: str, close_seq: str) -> str:
-    """Remove nested sections delimited by open_seq/close_seq from text."""
+def remove_nested_sections(text: str, open_seq: str, close_seq: str, replacement: str = " ") -> str:
+    """Remove nested sections delimited by open_seq/close_seq from text, replacing with a space."""
     out: List[str] = []
     i = 0
     depth = 0
@@ -112,6 +112,9 @@ def remove_nested_sections(text: str, open_seq: str, close_seq: str) -> str:
     while i < n:
         if depth == 0 and text.startswith(open_seq, i):
             depth = 1
+            # insert a space for removed block
+            if out and out[-1] != replacement:
+                out.append(replacement)
             i += ol
             continue
         if depth > 0:
@@ -122,6 +125,10 @@ def remove_nested_sections(text: str, open_seq: str, close_seq: str) -> str:
             if text.startswith(close_seq, i):
                 depth -= 1
                 i += cl
+                if depth == 0:
+                    # ensure trailing space separator
+                    if out and out[-1] != replacement:
+                        out.append(replacement)
                 continue
             i += 1
             continue
@@ -132,12 +139,14 @@ def remove_nested_sections(text: str, open_seq: str, close_seq: str) -> str:
 
 
 def strip_block_tags(text: str, tag: str) -> str:
-    """Remove <tag>...</tag> blocks entirely (DOTALL, nested tags removed greedily)."""
+    """Remove <tag>...</tag> blocks entirely (DOTALL), replacing with a space to prevent token fusion."""
+    def _sub(m: re.Match) -> str:
+        return " "
     pattern = re.compile(rf"<\s*{tag}[^>]*>.*?<\s*/\s*{tag}\s*>", re.IGNORECASE | re.DOTALL)
     prev = None
     while prev != text:
         prev = text
-        text = pattern.sub("", text)
+        text = pattern.sub(_sub, text)
     return text
 
 
@@ -153,9 +162,9 @@ def clean_wikitext(text: str) -> str:
     text = remove_nested_sections(text, "{{", "}}")
     # Remove wikitext italics (and bold-italics) segments entirely before stripping markup
     # First, bold-italic '''''...'''''
-    text = re.sub(r"'''''[\s\S]*?'''''", "", text)
+    text = re.sub(r"'''''[\s\S]*?'''''", " ", text)
     # Then plain italic ''...'' (avoid overlapping with bold '''...''')
-    text = re.sub(r"''[\s\S]*?''", "", text)
+    text = re.sub(r"''[\s\S]*?''", " ", text)
     # Remove bracketed content aggressively: (...) and [...] including nested pairs
     text = remove_nested_sections(text, "(", ")")
     text = remove_nested_sections(text, "[", "]")
@@ -233,8 +242,12 @@ def remove_quoted_spans(text: str) -> str:
                     # No closing quote: keep remainder
                     result_fragments.append(line_out[start:])
                     break
-                # Keep text before the quote, skip the quoted part
-                result_fragments.append(line_out[start:i])
+                # Keep text before the quote, skip the quoted part (replace with a space)
+                before = line_out[start:i]
+                if before and not before.endswith(" "):
+                    result_fragments.append(before + " ")
+                else:
+                    result_fragments.append(before)
                 start = j + len(right)
             line_out = "".join(result_fragments)
         cleaned_lines.append(line_out)
@@ -286,6 +299,9 @@ def is_excluded_token(token: str) -> bool:
         return True
     # Exclude URL-like tokens
     if "http" in token or "www" in token or "/" in token or "." in token:
+        return True
+    # Exclude tokens containing an immediate repeated substring of length >= 3 (e.g., deaddead)
+    if re.search(r"([a-z]{3,})\1", token):
         return True
     return False
 
@@ -359,6 +375,8 @@ def main(argv: Optional[List[str]] = None) -> int:
             for p in paths.extract_dir.glob("*"):
                 if p.is_file():
                     p.unlink()
+                elif p.is_dir():
+                    shutil.rmtree(p, ignore_errors=True)
         run_wikiextractor(dump_path, paths.extract_dir, processes=args.processes)
     except Exception:
         print("WikiExtractor failed, falling back to mwxml-based extractor...", file=sys.stderr)
@@ -366,6 +384,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         for p in paths.extract_dir.glob("*"):
             if p.is_file():
                 p.unlink()
+            elif p.is_dir():
+                shutil.rmtree(p, ignore_errors=True)
         fallback_extract_dump_to_json(dump_path, paths.extract_dir)
 
     tsv_path = build_frequency(paths, min_count=args.min_count)

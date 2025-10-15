@@ -4,8 +4,8 @@ A modern web application for translating between Ido and Esperanto, powered by A
 
 > Current deployment: Cloudflare Worker (static assets + API) + EC2 APy server
 >
-> - Set `APY_SERVER_URL` in the Worker to your APy base URL (e.g., `http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com`)
-> - Set `REBUILD_WEBHOOK_URL` to `http://<ec2-hostname>/rebuild` to enable the Rebuild button
+- Set `APY_SERVER_URL` in the Worker to your APy base URL (e.g., `http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com`)
+- Set `REBUILD_WEBHOOK_URL` to `http://<ec2-hostname>/rebuild` to enable the Rebuild button
 
 ## 🌟 Features
 

@@ -9,6 +9,7 @@ binding = "ASSETS"
 run_worker_first = true
 
 # Set production variables in the Dashboard (APY_SERVER_URL, ADMIN_PASSWORD).
+## Optional at runtime: APP_VERSION to surface version in /api/health
 
 [env.dev]
 [env.dev.vars]
