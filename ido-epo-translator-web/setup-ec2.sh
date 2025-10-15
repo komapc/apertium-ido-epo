@@ -156,71 +156,6 @@ EOF
 
 chmod +x update-dictionaries.sh
 
-# Create minimal Flask webhook server to trigger updates
-echo "🌐 Creating rebuild webhook server..."
-cat > rebuild_webhook.py << 'EOF'
-#!/usr/bin/env python3
-import os
-import subprocess
-from flask import Flask, request, jsonify
-
-app = Flask(__name__)
-
-REBUILD_TOKEN = os.environ.get('REBUILD_SHARED_SECRET', '')
-SCRIPT_PATH = '/opt/ido-epo-translator/update-dictionaries.sh'
-
-@app.route('/rebuild', methods=['POST'])
-def rebuild():
-    token = request.headers.get('X-Rebuild-Token', '')
-    if not REBUILD_TOKEN or token != REBUILD_TOKEN:
-        return jsonify({ 'error': 'unauthorized' }), 401
-    try:
-        subprocess.Popen(['bash', SCRIPT_PATH], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        return jsonify({ 'status': 'accepted' }), 202
-    except Exception as e:
-        return jsonify({ 'error': 'failed', 'details': str(e) }), 500
-
-@app.route('/health', methods=['GET'])
-def health():
-    return jsonify({ 'status': 'ok' })
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8081)
-EOF
-
-# Install Flask and Gunicorn
-echo "📦 Installing Flask and Gunicorn..."
-pip3 install --break-system-packages flask gunicorn
-
-# Create environment file for webhook secret
-echo "📝 Creating webhook environment file..."
-sudo tee /etc/default/ido-epo-rebuild > /dev/null << 'EOF'
-REBUILD_SHARED_SECRET=change-me
-EOF
-
-# Create systemd service for webhook
-echo "⚙️ Setting up systemd webhook service..."
-sudo tee /etc/systemd/system/ido-epo-rebuild.service > /dev/null << EOF
-[Unit]
-Description=Ido-Epo Rebuild Webhook
-After=network.target
-
-[Service]
-Type=simple
-WorkingDirectory=/opt/ido-epo-translator
-EnvironmentFile=/etc/default/ido-epo-rebuild
-ExecStart=/usr/bin/gunicorn -w 2 -b 0.0.0.0:8081 rebuild_webhook:app
-Restart=on-failure
-User=$USER
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl enable ido-epo-rebuild.service
-sudo systemctl restart ido-epo-rebuild.service || true
-
 # Create systemd service for auto-start
 echo "⚙️ Setting up systemd service..."
 sudo tee /etc/systemd/system/ido-epo-apy.service > /dev/null << EOF
@@ -248,11 +183,239 @@ sudo systemctl enable ido-epo-apy.service
 echo "🔥 Configuring firewall..."
 if command -v ufw &> /dev/null; then
     sudo ufw allow 22/tcp
+    sudo ufw allow 80/tcp
     sudo ufw allow 2737/tcp
-    sudo ufw allow 8081/tcp
     sudo ufw --force enable
     echo "✅ Firewall configured"
 fi
+
+# Install and configure Nginx
+echo "🌐 Installing and configuring Nginx..."
+sudo apt-get install -y nginx
+
+sudo tee /etc/nginx/sites-available/apy.conf > /dev/null << 'NGINXEOF'
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  server_name _;
+  
+  # Webhook endpoint for rebuilds
+  location = /rebuild {
+    proxy_pass http://127.0.0.1:9100/rebuild;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+  
+  # APy server
+  location / {
+    proxy_pass http://127.0.0.1:2737;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+}
+NGINXEOF
+
+sudo ln -sf /etc/nginx/sites-available/apy.conf /etc/nginx/sites-enabled/
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo nginx -t
+sudo systemctl restart nginx
+sudo systemctl enable nginx
+echo "✅ Nginx configured"
+
+# Install Node.js for webhook server
+echo "📦 Installing Node.js..."
+if ! command -v node &> /dev/null; then
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    echo "✅ Node.js installed"
+else
+    echo "✅ Node.js already installed"
+fi
+
+# Create webhook server
+echo "🔗 Setting up rebuild webhook server..."
+cat > webhook-server.js << 'WEBHOOKEOF'
+#!/usr/bin/env node
+/**
+ * Simple webhook server for EC2 to trigger Apertium rebuilds
+ * Listens on port 9100 and executes the rebuild script in Docker
+ */
+
+const http = require('http');
+const { spawn } = require('child_process');
+const fs = require('fs');
+
+const PORT = process.env.PORT || 9100;
+const SHARED_SECRET = process.env.REBUILD_SHARED_SECRET || '';
+const LOG_FILE = '/var/log/apertium-rebuild.log';
+
+// Log helper
+const log = (message) => {
+  const timestamp = new Date().toISOString();
+  const logLine = `[${timestamp}] ${message}\n`;
+  console.log(logLine.trim());
+  try {
+    fs.appendFileSync(LOG_FILE, logLine);
+  } catch (err) {
+    console.error('Failed to write to log file:', err.message);
+  }
+};
+
+// Execute rebuild script in Docker container
+const executeRebuild = () => {
+  return new Promise((resolve, reject) => {
+    log('Starting rebuild process...');
+    
+    const rebuild = spawn('docker', [
+      'exec',
+      'ido-epo-apy',
+      '/opt/apertium/rebuild.sh'
+    ]);
+
+    let stdout = '';
+    let stderr = '';
+
+    rebuild.stdout.on('data', (data) => {
+      const output = data.toString();
+      stdout += output;
+      log(`STDOUT: ${output.trim()}`);
+    });
+
+    rebuild.stderr.on('data', (data) => {
+      const output = data.toString();
+      stderr += output;
+      log(`STDERR: ${output.trim()}`);
+    });
+
+    rebuild.on('close', (code) => {
+      if (code === 0) {
+        log('Rebuild completed successfully');
+        resolve({ success: true, stdout, stderr });
+      } else {
+        log(`Rebuild failed with code ${code}`);
+        reject({ success: false, code, stdout, stderr });
+      }
+    });
+
+    rebuild.on('error', (err) => {
+      log(`Failed to start rebuild: ${err.message}`);
+      reject({ success: false, error: err.message });
+    });
+  });
+};
+
+// Create HTTP server
+const server = http.createServer(async (req, res) => {
+  // CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Rebuild-Token');
+
+  // Handle OPTIONS preflight
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
+
+  // Only accept POST to /rebuild
+  if (req.method !== 'POST' || req.url !== '/rebuild') {
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Not found' }));
+    return;
+  }
+
+  log(`Received rebuild request from ${req.socket.remoteAddress}`);
+
+  // Verify shared secret if configured
+  if (SHARED_SECRET) {
+    const token = req.headers['x-rebuild-token'];
+    if (token !== SHARED_SECRET) {
+      log('Rebuild request rejected: invalid token');
+      res.writeHead(401, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Unauthorized' }));
+      return;
+    }
+  }
+
+  // Execute rebuild
+  try {
+    const result = await executeRebuild();
+    res.writeHead(202, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      status: 'accepted',
+      message: 'Rebuild completed successfully',
+      log: result.stdout.split('\n').slice(-20).join('\n') // Last 20 lines
+    }));
+  } catch (err) {
+    res.writeHead(500, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      status: 'error',
+      message: 'Rebuild failed',
+      error: err.error || 'Unknown error',
+      log: (err.stderr || err.stdout || '').split('\n').slice(-20).join('\n')
+    }));
+  }
+});
+
+// Start server
+server.listen(PORT, '127.0.0.1', () => {
+  log(`Webhook server listening on http://127.0.0.1:${PORT}`);
+  log(`Shared secret ${SHARED_SECRET ? 'enabled' : 'disabled'}`);
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  log('Received SIGTERM, shutting down gracefully');
+  server.close(() => {
+    log('Server closed');
+    process.exit(0);
+  });
+});
+
+process.on('SIGINT', () => {
+  log('Received SIGINT, shutting down gracefully');
+  server.close(() => {
+    log('Server closed');
+    process.exit(0);
+  });
+});
+WEBHOOKEOF
+
+chmod +x webhook-server.js
+
+# Create systemd service for webhook server
+sudo tee /etc/systemd/system/webhook-server.service > /dev/null << 'WEBHOOKSVCEOF'
+[Unit]
+Description=Apertium Rebuild Webhook Server
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/ido-epo-translator
+ExecStart=/usr/bin/node /opt/ido-epo-translator/webhook-server.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=apertium-webhook
+
+# Environment variables
+Environment="PORT=9100"
+Environment="NODE_ENV=production"
+
+[Install]
+WantedBy=multi-user.target
+WEBHOOKSVCEOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable webhook-server
+sudo systemctl start webhook-server
+echo "✅ Webhook server configured and started"
 
 # Build and start
 echo "🏗️ Building Docker image (this will take 10-15 minutes)..."
@@ -269,12 +432,23 @@ echo ""
 echo "📋 Next steps:"
 echo "1. Wait for build to complete: docker-compose logs -f"
 echo "2. Test translation: curl http://localhost:2737/listPairs"
-echo "3. Get public IP: curl ifconfig.me"
-echo "4. Your EC2 IP: \$(curl -s ifconfig.me)"
-echo "5. Update Cloudflare Pages env: APY_SERVER_URL=http://\$(curl -s ifconfig.me):2737"
-echo "6. Set webhook secret on server: sudo sed -i 's|^REBUILD_SHARED_SECRET=.*$|REBUILD_SHARED_SECRET=<your-secret>|' /etc/default/ido-epo-rebuild && sudo systemctl restart ido-epo-rebuild.service"
-echo "7. Expose webhook to Worker: REBUILD_WEBHOOK_URL=http://\$(curl -s ifconfig.me):8081/rebuild and set REBUILD_SHARED_SECRET in Cloudflare env"
+echo "3. Test webhook: curl -X POST http://localhost/rebuild"
+echo "4. Get public hostname:"
+EC2_HOSTNAME=\$(ec2-metadata --public-hostname 2>/dev/null | cut -d ' ' -f 2)
+if [ -z "\$EC2_HOSTNAME" ]; then
+    EC2_IP=\$(curl -s ifconfig.me)
+    echo "   EC2 IP: \$EC2_IP"
+    echo "   Note: Get hostname from AWS Console if needed"
+else
+    echo "   \$EC2_HOSTNAME"
+fi
 echo ""
-echo "🔄 To update dictionaries: ./update-dictionaries.sh"
+echo "5. Configure Cloudflare Worker environment variables:"
+echo "   - APY_SERVER_URL = http://\${EC2_HOSTNAME:-YOUR_EC2_HOSTNAME}"
+echo "   - REBUILD_WEBHOOK_URL = http://\${EC2_HOSTNAME:-YOUR_EC2_HOSTNAME}/rebuild"
+echo ""
+echo "🔄 To update dictionaries manually: ./update-dictionaries.sh"
+echo "🔗 Webhook server logs: sudo journalctl -u webhook-server -f"
+echo "🌐 Nginx status: sudo systemctl status nginx"
 echo ""
 

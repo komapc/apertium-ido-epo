@@ -9,7 +9,6 @@ const root = process.cwd()
 const pkgPath = path.join(root, 'package.json')
 const versionStatePath = path.join(root, 'version.json')
 const envLocalPath = path.join(root, '.env.local')
-const envProdPath = path.join(root, '.env.production')
 
 const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
 let version = pkg.version || '0.0.0'
@@ -45,12 +44,6 @@ const devVersion = `${version}+build.${state.build}`
 try {
   const line = `VITE_APP_VERSION=${devVersion}\n`
   fs.writeFileSync(envLocalPath, line)
-} catch {}
-
-// For production build: write .env.production with clean semver
-try {
-  const line = `VITE_APP_VERSION=${version}\n`
-  fs.writeFileSync(envProdPath, line)
 } catch {}
 
 console.log(`Using version: ${version} (build ${state.build})`)

@@ -17,14 +17,14 @@ const App = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-[#1f3f7a] via-[#1f3f7a] to-[#1f7a3a]">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">
             Ido ⟷ Esperanto Translator
           </h1>
-          <p className="text-purple-200">
+          <p className="text-white/80">
             Powered by Apertium Machine Translation
           </p>
         </header>
@@ -35,7 +35,7 @@ const App = () => {
             onClick={() => setMode('text')}
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               mode === 'text'
-                ? 'bg-purple-600 text-white shadow-lg scale-105'
+                ? 'bg-[#1f3f7a] text-white shadow-lg scale-105'
                 : 'bg-white/10 text-white hover:bg-white/20'
             }`}
             aria-label="Switch to text translation mode"
@@ -46,7 +46,7 @@ const App = () => {
             onClick={() => setMode('url')}
             className={`px-6 py-2 rounded-lg font-medium transition-all ${
               mode === 'url'
-                ? 'bg-purple-600 text-white shadow-lg scale-105'
+                ? 'bg-[#1f7a3a] text-white shadow-lg scale-105'
                 : 'bg-white/10 text-white hover:bg-white/20'
             }`}
             aria-label="Switch to URL translation mode"
@@ -65,7 +65,7 @@ const App = () => {
               </span>
               <button
                 onClick={handleSwapDirection}
-                className="p-2 bg-purple-600 hover:bg-purple-700 rounded-full transition-all hover:scale-110"
+                className="p-2 bg-white/20 hover:bg-white/30 rounded-full transition-all hover:scale-110"
                 aria-label="Swap translation direction"
               >
                 <ArrowLeftRight className="w-5 h-5 text-white" />
@@ -84,9 +84,9 @@ const App = () => {
         </main>
 
         {/* Footer */}
-        <footer className="text-center mt-12 text-purple-200 text-sm">
+        <footer className="text-center mt-12 text-white/80 text-sm">
           <p>
-            Open source translation using Apertium ·{' '}
+            Open source translation using Apertium · v{import.meta.env.VITE_APP_VERSION || 'dev'} ·{' '}
             <a
               href="https://github.com/apertium"
               target="_blank"

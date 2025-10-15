@@ -5,13 +5,23 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url)
     const APY_SERVER_URL = (env.APY_SERVER_URL || 'http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com').replace(/\/$/, '')
-    const VERSION = env.APP_VERSION || 'dev'
-    const ADMIN_PASSWORD = env.ADMIN_PASSWORD || 'change-me-in-production'
+    // Handle the case where Wrangler passes variables as string keys
+    let VERSION = env.APP_VERSION || 'dev'
+    if (!env.APP_VERSION) {
+      // Look for any key that starts with "APP_VERSION="
+      for (const key of Object.keys(env)) {
+        if (key.startsWith('APP_VERSION=')) {
+          VERSION = key.split('=')[1]
+          break
+        }
+      }
+    }
+    const ADMIN_PASSWORD = env.ADMIN_PASSWORD || ''
 
     const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Allow-Headers': 'Content-Type',
     }
 
     if (request.method === 'OPTIONS') {
@@ -39,7 +49,11 @@ export default {
             { owner: 'apertium', repo: 'apertium-epo', label: 'epo' },
             { owner: 'komapc', repo: 'apertium-ido-epo', label: 'bilingual' },
           ]
-          const ghHeaders = { 'User-Agent': 'IdoEpoTranslator/1.0', 'Accept': 'application/vnd.github+json' }
+          const ghHeaders = {
+            'User-Agent': 'IdoEpoTranslator/1.0',
+            'Accept': 'application/vnd.github+json',
+            ...(env.GITHUB_TOKEN && { 'Authorization': `token ${env.GITHUB_TOKEN}` })
+          }
           const results = await Promise.all(repos.map(async ({ owner, repo, label }) => {
             const base = `https://api.github.com/repos/${owner}/${repo}`
             // Try latest release first
@@ -66,6 +80,16 @@ export default {
                   }
                 }
               } catch {}
+              // As a last resort, use default branch updated_at
+              if (!date) {
+                try {
+                  const repoInfo = await fetch(base, { headers: ghHeaders })
+                  if (repoInfo.ok) {
+                    const info = await repoInfo.json()
+                    date = info.updated_at || info.pushed_at || null
+                  }
+                } catch {}
+              }
             }
             return { label, owner, repo, version, date, commit }
           }))

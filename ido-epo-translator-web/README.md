@@ -12,7 +12,9 @@ A modern web application for translating between Ido and Esperanto, powered by A
 - **Text Translation**: Translate phrases and sentences between Ido and Esperanto
 - **URL Translation**: Translate entire webpages (e.g., Wikipedia articles) with side-by-side comparison
 - **Bidirectional**: Switch translation direction with one click
-- **Rebuild Button**: Trigger idempotent dictionary updates on EC2 (no password)
+- **Rebuild Button**: Trigger idempotent dictionary updates on EC2 (only rebuilds when changes detected)
+- **Visible App Version**: Footer shows build version `vX.Y.Z`
+- **Dictionaries Versions**: Footer widget shows latest tag or last commit date for `apertium-ido`, `apertium-epo`, and `apertium-ido-epo`
 - **Modern UI**: Beautiful, responsive interface built with React and TailwindCSS
 
 ## 🏗️ Architecture
@@ -45,13 +47,8 @@ A modern web application for translating between Ido and Esperanto, powered by A
 ```bash
 cd ido-epo-translator-web
 
-# Install frontend dependencies
+# Install dependencies
 npm install
-
-# Install functions dependencies
-cd functions
-npm install
-cd ..
 ```
 
 ### 2. Start the APy Server Locally
@@ -71,7 +68,15 @@ Wait for the server to build and start (first time takes 10-15 minutes).
 npm run dev
 ```
 
-Open http://localhost:5173 in your browser.
+Open http://localhost:5173 in your browser (Vite dev server).
+
+Alternatively, to run the real Worker locally (serves API routes and static assets):
+
+```bash
+npm run build
+npm run cf:dev
+# then open the printed localhost URL and test /api/health
+```
 
 ## 🔧 Configuration
 
@@ -86,10 +91,11 @@ Open http://localhost:5173 in your browser.
 
 ### Environment Variables
 
-Local development (wrangler / Pages dev): set in `wrangler.toml`
+Local development (Wrangler dev): set in `wrangler.toml`
 
 ```toml
-[vars]
+[env.dev]
+[env.dev.vars]
 APY_SERVER_URL = "http://localhost:2737"
 REBUILD_WEBHOOK_URL = "http://localhost/rebuild"
 ```
@@ -125,8 +131,8 @@ ADMIN_PASSWORD = <your-strong-secret>
 
 3) Deploy Worker with `wrangler deploy` or merge PR to `main`.
 
-### Option B: Firebase + Cloud Run (Legacy)
-If you prefer this path, see the older instructions in git history or `PROJECT_SUMMARY.md`. Current stack favors Cloudflare Pages + EC2.
+### Legacy: Firebase/Cloud Run (historical)
+Older instructions existed for Firebase/Cloud Run. This project now uses Cloudflare Worker + EC2. See git history if you need the legacy setup.
 
 ## 🔄 Updating Translation Dictionaries
 
@@ -204,32 +210,35 @@ ido-epo-translator-web/
 │   ├── components/           # React components
 │   │   ├── TextTranslator.tsx
 │   │   ├── UrlTranslator.tsx
-│   │   └── AdminPanel.tsx  # shows a single Rebuild button
-│   ├── App.tsx              # Main app component
-│   ├── main.tsx             # Entry point
-│   └── index.css            # Tailwind styles
-├── functions/               # Firebase Cloud Functions
-│   └── src/
-│       └── index.ts         # API endpoints
-├── apy-server/              # Docker setup for APy
-│   ├── Dockerfile
-│   ├── docker-compose.yml
-│   └── rebuild.sh
-├── public/                  # Static assets
-├── firebase.json           # Firebase configuration
-├── package.json            # Frontend dependencies
-└── README.md               # This file
+│   │   ├── RebuildButton.tsx
+│   │   └── RepoVersions.tsx
+│   ├── App.tsx               # Main app component
+│   ├── main.tsx              # Entry point
+│   └── index.css             # Tailwind styles
+├── _worker.js                # Cloudflare Worker (API + static assets)
+├── wrangler.toml             # Wrangler config (assets + dev env vars)
+├── package.json              # Scripts; build injects VITE_APP_VERSION
+├── .github/workflows/deploy-worker.yml  # CI deploy on push to main
+├── setup-ec2.sh              # EC2 bootstrap script (APy + Nginx)
+├── OPERATIONS.md             # Ops guide (rebuild, health, Nginx)
+├── DEPLOYMENT_CHECKLIST.md   # End-to-end deployment checklist
+└── README.md                 # This file
 ```
 
-## 💰 Cost Estimate (Firebase Free Tier)
+## 🔢 Versioning & Versions
 
-- **Firebase Hosting**: 10 GB storage, 360 MB/day transfer (FREE)
-- **Cloud Functions**: 2M invocations/month, 400K GB-seconds (FREE)
-- **Cloud Run**: 2M requests/month, 360K GB-seconds (FREE)
+- UI footer shows `v{VITE_APP_VERSION}`. The build sets this from `package.json`.
+- To bump: run `npm version patch` (or minor/major), commit, push to main.
+- API health (`/api/health`) returns `{ version: APP_VERSION }` if you set `APP_VERSION` as a Worker variable; otherwise it may show `dev`.
+- `/api/versions` returns latest tag or last commit date/sha for:
+  - `apertium/apertium-ido` (Ido)
+  - `apertium/apertium-epo` (Esperanto)
+  - `komapc/apertium-ido-epo` (bilingual)
 
-**Estimated monthly cost for low usage: $0-5/month**
+## ℹ️ Notes
 
-For moderate usage (1000 translations/day), expect $5-15/month.
+- The Worker must call the APy server via EC2 hostname on port 80 (Nginx proxy). Direct calls to non-standard ports or raw IPs can fail from Workers.
+- Ensure `lsb-release` is installed inside the APy Docker build before running the Apertium installer; alternatively use `ubuntu:22.04` as a base image.
 
 ## 🛠️ Development
 
@@ -241,14 +250,7 @@ npm run build        # Build for production
 npm run preview      # Preview production build
 ```
 
-### Functions Development
-
-```bash
-cd functions
-npm run build        # Compile TypeScript
-npm run serve        # Run locally with emulator
-npm run deploy       # Deploy functions only
-```
+<!-- Removed legacy Firebase functions section -->
 
 ## 🐛 Troubleshooting
 
@@ -295,4 +297,4 @@ Contributions to the translation dictionaries should be made to:
 
 For web app improvements, please open issues or pull requests in this repository.
 
-# Trigger redeploy
+<!-- End of README -->

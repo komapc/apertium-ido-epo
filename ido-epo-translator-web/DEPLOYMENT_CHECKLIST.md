@@ -28,6 +28,10 @@ Use this checklist to ensure successful deployment.
 ### Cloudflare Account
 - [ ] Cloudflare account created (free tier OK)
 - [ ] Can access dashboard at https://dash.cloudflare.com
+- [ ] Worker variables set in Dashboard:
+  - [ ] `APY_SERVER_URL` (hostname on port 80)
+  - [ ] `REBUILD_WEBHOOK_URL` (EC2 hostname `/rebuild`)
+  - [ ] Optional: `APP_VERSION` (e.g., `1.0.1`)
 
 ---
 
@@ -54,7 +58,7 @@ Use this checklist to ensure successful deployment.
 
 ### If External Test Fails
 - [ ] Check EC2 Security Group in AWS Console
-- [ ] Add inbound rule: Custom TCP, Port 2737, Source 0.0.0.0/0
+- [ ] Ensure Nginx is proxying port 80 to 127.0.0.1:2737
 - [ ] Retry external test
 
 ---
@@ -83,7 +87,9 @@ This project now deploys as a single Worker that serves static assets via the AS
 - [ ] Go to Cloudflare Dashboard → Workers & Pages → Select your Worker
 - [ ] Settings → Variables and Secrets:
   - [ ] Plaintext `APY_SERVER_URL` = `http://ec2-<EC2_DASH_IP>.<region>.compute.amazonaws.com`
-  - [ ] Secret `ADMIN_PASSWORD` = `your-secure-password`
+  - [ ] Plaintext `REBUILD_WEBHOOK_URL` = `http://ec2-<EC2_DASH_IP>.<region>.compute.amazonaws.com/rebuild`
+  - [ ] Secret `REBUILD_SHARED_SECRET` = `(optional but recommended - generate with: openssl rand -hex 32)`
+  - [ ] Secret `ADMIN_PASSWORD` = `your-secure-password` (deprecated - use REBUILD_SHARED_SECRET instead)
 
 ### Deploy
 - [ ] Deploy via Wrangler:
@@ -98,7 +104,8 @@ This project now deploys as a single Worker that serves static assets via the AS
 
 ### If Deploy Fails
 - [ ] Check `wrangler` output for errors
-- [ ] Ensure `dist/` exists, and `wrangler.toml` has `[assets] directory = "dist"`
+- [ ] Ensure `dist/` exists, and `wrangler.toml` has `[assets] directory = "dist"` and `run_worker_first = true`
+- [ ] Ensure CI workflow uses `npm run build` before `wrangler deploy`
 
 ---
 
