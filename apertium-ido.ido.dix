@@ -3470,7 +3470,11 @@
       <i>chefin</i>
       <par n="o__n" />
     </e>
-    <e lm="cheko">
+        <e lm="chefurbo">
+      <i>chefurb</i>
+      <par n="o__n" />
+    </e>
+<e lm="cheko">
       <i>chek</i>
       <par n="o__n" />
     </e>
@@ -8070,7 +8074,11 @@
       <i>kiosk</i>
       <par n="o__n" />
     </e>
-    <e lm="kiragro">
+        <e lm="kilometro">
+      <i>kilometr</i>
+      <par n="o__n" />
+    </e>
+<e lm="kiragro">
       <i>kiragr</i>
       <par n="o__n" />
     </e>
