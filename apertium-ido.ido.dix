@@ -371,6 +371,10 @@
       <i>l'</i>
       <par n="__det" />
     </e>
+    <e lm="la">
+      <i>l</i>
+      <par n="__det" />
+    </e>
     
     <!-- Possessive determiners (verified from Wikipedia) -->
     <e lm="olua">
