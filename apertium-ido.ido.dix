@@ -13950,6 +13950,10 @@
       <i>segment</i>
       <par n="o__n" />
     </e>
+    <e lm="segun">
+      <i>segun</i>
+      <par n="__pr" />
+    </e>
     <e lm="sekalo">
       <i>sekal</i>
       <par n="o__n" />
@@ -15485,6 +15489,10 @@
     <e lm="trezoro">
       <i>trezor</i>
       <par n="o__n" />
+    </e>
+    <e lm="tre">
+      <i>tre</i>
+      <par n="__adv" />
     </e>
     <e lm="triangulo">
       <i>triangul</i>
