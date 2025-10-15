@@ -156,6 +156,71 @@ EOF
 
 chmod +x update-dictionaries.sh
 
+# Create minimal Flask webhook server to trigger updates
+echo "🌐 Creating rebuild webhook server..."
+cat > rebuild_webhook.py << 'EOF'
+#!/usr/bin/env python3
+import os
+import subprocess
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+REBUILD_TOKEN = os.environ.get('REBUILD_SHARED_SECRET', '')
+SCRIPT_PATH = '/opt/ido-epo-translator/update-dictionaries.sh'
+
+@app.route('/rebuild', methods=['POST'])
+def rebuild():
+    token = request.headers.get('X-Rebuild-Token', '')
+    if not REBUILD_TOKEN or token != REBUILD_TOKEN:
+        return jsonify({ 'error': 'unauthorized' }), 401
+    try:
+        subprocess.Popen(['bash', SCRIPT_PATH], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return jsonify({ 'status': 'accepted' }), 202
+    except Exception as e:
+        return jsonify({ 'error': 'failed', 'details': str(e) }), 500
+
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({ 'status': 'ok' })
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8081)
+EOF
+
+# Install Flask and Gunicorn
+echo "📦 Installing Flask and Gunicorn..."
+pip3 install --break-system-packages flask gunicorn
+
+# Create environment file for webhook secret
+echo "📝 Creating webhook environment file..."
+sudo tee /etc/default/ido-epo-rebuild > /dev/null << 'EOF'
+REBUILD_SHARED_SECRET=change-me
+EOF
+
+# Create systemd service for webhook
+echo "⚙️ Setting up systemd webhook service..."
+sudo tee /etc/systemd/system/ido-epo-rebuild.service > /dev/null << EOF
+[Unit]
+Description=Ido-Epo Rebuild Webhook
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ido-epo-translator
+EnvironmentFile=/etc/default/ido-epo-rebuild
+ExecStart=/usr/bin/gunicorn -w 2 -b 0.0.0.0:8081 rebuild_webhook:app
+Restart=on-failure
+User=$USER
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable ido-epo-rebuild.service
+sudo systemctl restart ido-epo-rebuild.service || true
+
 # Create systemd service for auto-start
 echo "⚙️ Setting up systemd service..."
 sudo tee /etc/systemd/system/ido-epo-apy.service > /dev/null << EOF
@@ -184,6 +249,7 @@ echo "🔥 Configuring firewall..."
 if command -v ufw &> /dev/null; then
     sudo ufw allow 22/tcp
     sudo ufw allow 2737/tcp
+    sudo ufw allow 8081/tcp
     sudo ufw --force enable
     echo "✅ Firewall configured"
 fi
@@ -206,6 +272,8 @@ echo "2. Test translation: curl http://localhost:2737/listPairs"
 echo "3. Get public IP: curl ifconfig.me"
 echo "4. Your EC2 IP: \$(curl -s ifconfig.me)"
 echo "5. Update Cloudflare Pages env: APY_SERVER_URL=http://\$(curl -s ifconfig.me):2737"
+echo "6. Set webhook secret on server: sudo sed -i 's|^REBUILD_SHARED_SECRET=.*$|REBUILD_SHARED_SECRET=<your-secret>|' /etc/default/ido-epo-rebuild && sudo systemctl restart ido-epo-rebuild.service"
+echo "7. Expose webhook to Worker: REBUILD_WEBHOOK_URL=http://\$(curl -s ifconfig.me):8081/rebuild and set REBUILD_SHARED_SECRET in Cloudflare env"
 echo ""
 echo "🔄 To update dictionaries: ./update-dictionaries.sh"
 echo ""

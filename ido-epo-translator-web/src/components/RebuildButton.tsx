@@ -7,13 +7,19 @@ const RebuildButton = () => {
   const [status, setStatus] = useState<RebuildStatus>('idle')
   const [message, setMessage] = useState('')
   const [lastRebuildAt, setLastRebuildAt] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
 
   const handleRebuild = async () => {
     if (status === 'running') return
+    if (!password) {
+      setStatus('error')
+      setMessage('Admin password required')
+      return
+    }
     setStatus('running')
     setMessage('Starting rebuild process...')
     try {
-      const res = await fetch('/api/admin/rebuild', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({}) })
+      const res = await fetch('/api/admin/rebuild', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${password}` }, body: JSON.stringify({}) })
       const data = await res.json().catch(() => ({}))
       if (!res.ok || data.error) {
         setStatus('error')
@@ -35,6 +41,14 @@ const RebuildButton = () => {
 
   return (
     <div className="flex items-center gap-3">
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Admin password"
+        className="px-3 py-2 rounded-lg bg-white/10 text-white placeholder-purple-200/70 border border-white/10 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        aria-label="Admin password"
+      />
       <button
         onClick={handleRebuild}
         disabled={status === 'running'}

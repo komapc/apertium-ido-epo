@@ -8,11 +8,19 @@ directory = "dist"
 binding = "ASSETS"
 run_worker_first = true
 
-# Set production variables in the Dashboard (APY_SERVER_URL, ADMIN_PASSWORD).
-## Optional at runtime: APP_VERSION to surface version in /api/health
+# Environment variables (override in Dashboard for production)
+[vars]
+# Optional: Worker-side version surfaced by /api/health
+# APP_VERSION = "1.0.1"
+# Webhook configuration (set in Cloudflare Dashboard for production)
+# REBUILD_WEBHOOK_URL = "http://<EC2_IP>:8081/rebuild"
+# REBUILD_SHARED_SECRET = "change-me"
+ADMIN_PASSWORD = "change-me-in-production"
 
 [env.dev]
 [env.dev.vars]
-# Local development only
+# Local development only overrides
 APY_SERVER_URL = "http://localhost:2737"
 REBUILD_WEBHOOK_URL = "http://localhost/rebuild"
+REBUILD_SHARED_SECRET = "dev-secret"
+ADMIN_PASSWORD = "dev-admin"
