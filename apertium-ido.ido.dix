@@ -371,6 +371,10 @@
       <i>l'</i>
       <par n="__det" />
     </e>
+    <e lm="la">
+      <i>l</i>
+      <par n="__det" />
+    </e>
     
     <!-- Possessive determiners (verified from Wikipedia) -->
     <e lm="olua">
@@ -13950,6 +13954,10 @@
       <i>segment</i>
       <par n="o__n" />
     </e>
+    <e lm="segun">
+      <i>segun</i>
+      <par n="__pr" />
+    </e>
     <e lm="sekalo">
       <i>sekal</i>
       <par n="o__n" />
@@ -15485,6 +15493,10 @@
     <e lm="trezoro">
       <i>trezor</i>
       <par n="o__n" />
+    </e>
+    <e lm="tre">
+      <i>tre</i>
+      <par n="__adv" />
     </e>
     <e lm="triangulo">
       <i>triangul</i>
