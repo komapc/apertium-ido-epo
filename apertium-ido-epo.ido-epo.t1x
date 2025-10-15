@@ -19,6 +19,20 @@
       <cat-item lemma="esar" tags="vblex.*"/>
       <cat-item lemma="es" tags="vblex.*"/>
     </def-cat>
+    <def-cat n="vbintr">
+      <cat-item lemma="jacar" tags="vblex.*"/>
+      <cat-item lemma="venar" tags="vblex.*"/>
+      <cat-item lemma="irar" tags="vblex.*"/>
+      <cat-item lemma="star" tags="vblex.*"/>
+      <cat-item lemma="mortar" tags="vblex.*"/>
+      <cat-item lemma="dormar" tags="vblex.*"/>
+      <cat-item lemma="arivir" tags="vblex.*"/>
+      <cat-item lemma="departir" tags="vblex.*"/>
+      <cat-item lemma="aparar" tags="vblex.*"/>
+      <cat-item lemma="exisar" tags="vblex.*"/>
+      <cat-item lemma="existar" tags="vblex.*"/>
+      <cat-item lemma="restar" tags="vblex.*"/>
+    </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn"/>
       <cat-item tags="prn.*"/>
@@ -230,6 +244,51 @@
          These rules apply accusative to nouns, adjectives, AND pronouns when they
          are direct objects of transitive verbs, but keep nominative after copula.
          ============================================================================ -->
+    
+    <!-- Intransitive Verb + Noun: post-verbal subject stays nominative -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: nouns after verb are subjects, not objects -->
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <!-- Intransitive Verb + Det + Noun: post-verbal subject with determiner stays nominative -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: nouns after verb are subjects, not objects -->
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
     
     <!-- Verb + Adjective + Noun: check if copula or transitive
          
@@ -467,11 +526,13 @@
          - After subjects or standalone: keep nominative
          ============================================================================ -->
     
-    <!-- Verb + Noun + Conjunction + Noun: coordinated objects after transitive verb
+    <!-- Verb + Noun + Conjunction + Noun: coordinated objects/subjects after verb
          
-         Handles: "Me vidas la kato kaj la hundo" → "Mi vidas la katon kaj la hundon"
+         Handles: 
+         - Transitive: "Me vidas la kato kaj la hundo" → "Mi vidas la katon kaj la hundon"
+         - Intransitive: "jacas Oceano Atlantiko" → "kuŝas Oceano Atlantiko" (subjects stay nominative)
          
-         LINGUISTIC: Critical test case for accusative - BOTH nouns must receive -n. -->
+         LINGUISTIC: Critical test case for accusative - BOTH nouns must receive same case. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -529,6 +590,36 @@
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+    
+    <!-- Intransitive Verb + Noun + Conjunction + Noun: coordinated subjects stay nominative -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: post-verbal nouns are subjects, keep nominative -->
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
       </action>
     </rule>
     
@@ -608,6 +699,46 @@
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+    
+    <!-- Intransitive Verb + Det + Noun + Conjunction + Det + Noun: coordinated subjects with determiners -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: post-verbal nouns are subjects, keep nominative -->
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
       </action>
     </rule>
 
@@ -896,8 +1027,8 @@
          ============================================================================ -->
     
     <!-- Verb: convert Ido tense tags to Esperanto tense tags
-         Ido: pri (present), pii (past), fti (future)
-         Esperanto: pres, past, fti
+         Ido: pri (present), pii (past), fti (future), inf (infinitive)
+         Esperanto: pres, past, fti, inf
          
          NOTE: Default branch assumes present tense if no tense tag exists.
          This might mask errors from incomplete morphological analysis.
@@ -935,6 +1066,16 @@
                 <clip pos="1" side="tl" part="lem"/>
                 <clip pos="1" side="tl" part="a_vblex"/>
                 <lit-tag v="fti"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="inf"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="inf"/>
               </lu>
             </out>
           </when>
