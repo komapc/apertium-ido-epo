@@ -35,7 +35,7 @@ const RepoVersions = () => {
             {r.version ? (
               <span className="ml-1">{r.version}</span>
             ) : r.date ? (
-              <span className="ml-1">{new Date(r.date).toISOString().slice(0, 10)}</span>
+              <span className="ml-1">{new Date(r.date).toISOString().slice(0, 16).replace('T', ' ')}</span>
             ) : r.commit ? (
               <span className="ml-1">{r.commit.slice(0, 7)}</span>
             ) : (

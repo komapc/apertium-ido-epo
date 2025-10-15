@@ -12,6 +12,24 @@ const UrlTranslator = ({ direction }: UrlTranslatorProps) => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
+  // Calculate translation quality score (percentage of correctly translated words)
+  const calculateQualityScore = (text: string): number => {
+    if (!text.trim()) return 0
+    
+    const words = text.split(/\s+/)
+    const totalWords = words.length
+    
+    // Count words that contain error markers (*, #, @)
+    const errorWords = words.filter(word => 
+      word.includes('*') || word.includes('#') || word.includes('@')
+    ).length
+    
+    const correctWords = totalWords - errorWords
+    return Math.round((correctWords / totalWords) * 100)
+  }
+
+  const qualityScore = calculateQualityScore(translatedText)
+
   const handleTranslate = async () => {
     if (!url.trim()) return
 
@@ -111,9 +129,25 @@ const UrlTranslator = ({ direction }: UrlTranslatorProps) => {
 
           {/* Translated Text */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-xl">
-            <h2 className="text-xl font-semibold text-white mb-4">
-              Translation ({direction === 'ido-epo' ? 'Esperanto' : 'Ido'})
-            </h2>
+            <div className="flex items-center gap-3 mb-4">
+              <h2 className="text-xl font-semibold text-white">
+                Translation ({direction === 'ido-epo' ? 'Esperanto' : 'Ido'})
+              </h2>
+              {translatedText && (
+                <div 
+                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    qualityScore >= 95 
+                      ? 'bg-green-500/20 text-green-300' 
+                      : qualityScore >= 80 
+                      ? 'bg-yellow-500/20 text-yellow-300' 
+                      : 'bg-red-500/20 text-red-300'
+                  }`}
+                  title="Translation quality: percentage of words without errors (*, #, @ symbols)"
+                >
+                  Score: {qualityScore}%
+                </div>
+              )}
+            </div>
             <div className="p-4 bg-white/5 border border-white/20 rounded-lg max-h-96 overflow-y-auto">
               <p className="text-white whitespace-pre-wrap">{translatedText}</p>
             </div>
