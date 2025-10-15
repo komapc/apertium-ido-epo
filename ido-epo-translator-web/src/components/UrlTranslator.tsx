@@ -19,9 +19,10 @@ const UrlTranslator = ({ direction }: UrlTranslatorProps) => {
     const words = text.split(/\s+/)
     const totalWords = words.length
     
-    // Count words that contain error markers (*, #, @)
+    // Count words that contain error markers (*, @)
+    // Note: # is not an error marker, it's used for proper formatting
     const errorWords = words.filter(word => 
-      word.includes('*') || word.includes('#') || word.includes('@')
+      word.includes('*') || word.includes('@')
     ).length
     
     const correctWords = totalWords - errorWords
@@ -142,7 +143,7 @@ const UrlTranslator = ({ direction }: UrlTranslatorProps) => {
                       ? 'bg-yellow-500/20 text-yellow-300' 
                       : 'bg-red-500/20 text-red-300'
                   }`}
-                  title="Translation quality: percentage of words without errors (*, #, @ symbols)"
+                  title="Translation quality: percentage of words without errors (*, @ symbols)"
                 >
                   Score: {qualityScore}%
                 </div>
