@@ -39,4 +39,6 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npx wrangler --version
+          echo "Account ID length: ${#CLOUDFLARE_ACCOUNT_ID}"
+          echo "Account ID (first 8 chars): ${CLOUDFLARE_ACCOUNT_ID:0:8}"
           npx wrangler deploy --env=""
