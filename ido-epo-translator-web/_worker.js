@@ -45,7 +45,7 @@ export default {
       if (request.method === 'GET' && subpath === '/versions') {
         try {
           const repos = [
-            { owner: 'apertium', repo: 'apertium-ido', label: 'ido' },
+            { owner: 'komapc', repo: 'apertium-ido', label: 'ido' },
             { owner: 'apertium', repo: 'apertium-epo', label: 'epo' },
             { owner: 'komapc', repo: 'apertium-ido-epo', label: 'bilingual' },
           ]
