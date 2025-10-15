@@ -11,6 +11,24 @@ const TextTranslator = ({ direction }: TextTranslatorProps) => {
   const [isLoading, setIsLoading] = useState(false)
   const [copied, setCopied] = useState(false)
 
+  // Calculate translation quality score (percentage of correctly translated words)
+  const calculateQualityScore = (text: string): number => {
+    if (!text.trim()) return 0
+    
+    const words = text.split(/\s+/)
+    const totalWords = words.length
+    
+    // Count words that contain error markers (*, #, @)
+    const errorWords = words.filter(word => 
+      word.includes('*') || word.includes('#') || word.includes('@')
+    ).length
+    
+    const correctWords = totalWords - errorWords
+    return Math.round((correctWords / totalWords) * 100)
+  }
+
+  const qualityScore = calculateQualityScore(outputText)
+
   const handleTranslate = async () => {
     if (!inputText.trim()) return
 
@@ -78,9 +96,25 @@ const TextTranslator = ({ direction }: TextTranslatorProps) => {
       {/* Output Panel */}
       <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-xl">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold text-white">
-            {direction === 'ido-epo' ? 'Esperanto' : 'Ido'} Translation
-          </h2>
+          <div className="flex items-center gap-3">
+            <h2 className="text-xl font-semibold text-white">
+              {direction === 'ido-epo' ? 'Esperanto' : 'Ido'} Translation
+            </h2>
+            {outputText && (
+              <div 
+                className={`px-3 py-1 rounded-full text-sm font-medium ${
+                  qualityScore >= 95 
+                    ? 'bg-green-500/20 text-green-300' 
+                    : qualityScore >= 80 
+                    ? 'bg-yellow-500/20 text-yellow-300' 
+                    : 'bg-red-500/20 text-red-300'
+                }`}
+                title="Translation quality: percentage of words without errors (*, #, @ symbols)"
+              >
+                Score: {qualityScore}%
+              </div>
+            )}
+          </div>
           {outputText && (
             <button
               onClick={handleCopy}
