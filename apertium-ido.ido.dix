@@ -76,6 +76,18 @@
       <e><p><l>os</l><r><s n="vblex" /><s n="fti" /></r></p></e>
       <e><p><l>ez</l><r><s n="vblex" /><s n="imp" /></r></p></e>
       <e><p><l>us</l><r><s n="vblex" /><s n="cni" /></r></p></e>
+      <e><p><l>anta</l><r><s n="adj" /></r></p></e>
+      <e><p><l>ante</l><r><s n="adv" /></r></p></e>
+      <e><p><l>inta</l><r><s n="adj" /></r></p></e>
+      <e><p><l>inte</l><r><s n="adv" /></r></p></e>
+      <e><p><l>onta</l><r><s n="adj" /></r></p></e>
+      <e><p><l>onte</l><r><s n="adv" /></r></p></e>
+      <e><p><l>ata</l><r><s n="adj" /></r></p></e>
+      <e><p><l>ate</l><r><s n="adv" /></r></p></e>
+      <e><p><l>ita</l><r><s n="adj" /></r></p></e>
+      <e><p><l>ite</l><r><s n="adv" /></r></p></e>
+      <e><p><l>ota</l><r><s n="adj" /></r></p></e>
+      <e><p><l>ote</l><r><s n="adv" /></r></p></e>
     </pardef>
     
     <pardef n="__cnjcoo">
@@ -16857,6 +16869,10 @@
       <i>tempor</i>
       <par n="ala__adj" />
     </e>
+    <e lm="teritorio">
+      <i>teritori</i>
+      <par n="o__n" />
+    </e>
     <e lm="teritoriala">
       <i>teritori</i>
       <par n="ala__adj" />
@@ -20205,6 +20221,10 @@
     <e lm="habila">
       <i>habil</i>
       <par n="a__adj" />
+    </e>
+    <e lm="habitanto">
+      <i>habitant</i>
+      <par n="o__n" />
     </e>
     <e lm="habitantaro">
       <i>habitantar</i>
