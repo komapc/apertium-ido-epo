@@ -6,6 +6,7 @@
     <sdef n="adj"/>
     <sdef n="adv"/>
     <sdef n="vblex"/>
+    <sdef n="vbser"/>
     <sdef n="pr"/>
     <sdef n="prn"/>
     <sdef n="det"/>
@@ -11669,7 +11670,7 @@
     <e>
       <p>
         <l>esar<s n="vblex"/></l>
-        <r>esti<s n="vblex"/></r>
+        <r>esti<s n="vbser"/></r>
       </p>
     </e>
     <e>
