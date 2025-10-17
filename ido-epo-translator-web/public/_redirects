@@ -1,4 +1,0 @@
-# Redirect all non-file requests to index.html for client-side routing
-# Cloudflare Pages automatically handles SPA routing, so we only need API passthrough
-/api/*  /api/:splat  200
-
