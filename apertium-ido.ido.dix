@@ -365,13 +365,13 @@
     <e lm="Abdias">
       <p>
         <l>Abdias</l>
-        <r>Abdias<s n="adv"/></r>
+        <r>Abdias<s n="np"/></r>
       </p>
     </e>
     <e lm="Almatı">
       <p>
         <l>Almatı</l>
-        <r>Almatı<s n="adv"/></r>
+        <r>Almatı<s n="np"/></r>
       </p>
     </e>
     <e lm="Amerikana">
@@ -383,7 +383,7 @@
     <e lm="Aristoteles">
       <p>
         <l>Aristoteles</l>
-        <r>Aristoteles<s n="adv"/></r>
+        <r>Aristoteles<s n="np"/></r>
       </p>
     </e>
     <e lm="Arjentinia">
@@ -407,7 +407,7 @@
     <e lm="Bern">
       <p>
         <l>Bern</l>
-        <r>Bern<s n="adv"/></r>
+        <r>Bern<s n="np"/></r>
       </p>
     </e>
     <e lm="Brazilia">
@@ -425,7 +425,7 @@
     <e lm="Chili">
       <p>
         <l>Chili</l>
-        <r>Chili<s n="adv"/></r>
+        <r>Chili<s n="np"/></r>
       </p>
     </e>
     <e lm="Chinia">
@@ -437,7 +437,7 @@
     <e lm="Daniel">
       <p>
         <l>Daniel</l>
-        <r>Daniel<s n="adv"/></r>
+        <r>Daniel<s n="np"/></r>
       </p>
     </e>
     <e lm="Denaskulo">
@@ -455,13 +455,13 @@
     <e lm="Edipus">
       <p>
         <l>Edipus</l>
-        <r>Edipus<s n="adv"/></r>
+        <r>Edipus<s n="np"/></r>
       </p>
     </e>
     <e lm="Esdras">
       <p>
         <l>Esdras</l>
-        <r>Esdras<s n="adv"/></r>
+        <r>Esdras<s n="np"/></r>
       </p>
     </e>
     <e lm="Europana">
@@ -473,7 +473,7 @@
     <e lm="Fidji">
       <p>
         <l>Fidji</l>
-        <r>Fidji<s n="adv"/></r>
+        <r>Fidji<s n="np"/></r>
       </p>
     </e>
     <e lm="Finnlando">
@@ -491,7 +491,7 @@
     <e lm="Habakuk">
       <p>
         <l>Habakuk</l>
-        <r>Habakuk<s n="adv"/></r>
+        <r>Habakuk<s n="np"/></r>
       </p>
     </e>
     <e lm="Hodie">
@@ -527,13 +527,13 @@
     <e lm="Ioannes">
       <p>
         <l>Ioannes</l>
-        <r>Ioannes<s n="adv"/></r>
+        <r>Ioannes<s n="np"/></r>
       </p>
     </e>
     <e lm="Iob">
       <p>
         <l>Iob</l>
-        <r>Iob<s n="adv"/></r>
+        <r>Iob<s n="np"/></r>
       </p>
     </e>
     <e lm="Iosue">
@@ -545,7 +545,7 @@
     <e lm="Isaias">
       <p>
         <l>Isaias</l>
-        <r>Isaias<s n="adv"/></r>
+        <r>Isaias<s n="np"/></r>
       </p>
     </e>
     <e lm="Islandana">
@@ -569,13 +569,13 @@
     <e lm="Kazakstan">
       <p>
         <l>Kazakstan</l>
-        <r>Kazakstan<s n="adv"/></r>
+        <r>Kazakstan<s n="np"/></r>
       </p>
     </e>
     <e lm="Kirgizistan">
       <p>
         <l>Kirgizistan</l>
-        <r>Kirgizistan<s n="adv"/></r>
+        <r>Kirgizistan<s n="np"/></r>
       </p>
     </e>
     <e lm="Klingona linguo">
@@ -605,7 +605,7 @@
     <e lm="Lukas">
       <p>
         <l>Lukas</l>
-        <r>Lukas<s n="adv"/></r>
+        <r>Lukas<s n="np"/></r>
       </p>
     </e>
     <e lm="Ma">
@@ -617,19 +617,19 @@
     <e lm="Markus">
       <p>
         <l>Markus</l>
-        <r>Markus<s n="adv"/></r>
+        <r>Markus<s n="np"/></r>
       </p>
     </e>
     <e lm="Mateus">
       <p>
         <l>Mateus</l>
-        <r>Mateus<s n="adv"/></r>
+        <r>Mateus<s n="np"/></r>
       </p>
     </e>
     <e lm="Mikaeas">
       <p>
         <l>Mikaeas</l>
-        <r>Mikaeas<s n="adv"/></r>
+        <r>Mikaeas<s n="np"/></r>
       </p>
     </e>
     <e lm="Nam">
@@ -641,7 +641,7 @@
     <e lm="Nepal">
       <p>
         <l>Nepal</l>
-        <r>Nepal<s n="adv"/></r>
+        <r>Nepal<s n="np"/></r>
       </p>
     </e>
     <e lm="New York">
@@ -671,13 +671,13 @@
     <e lm="Portugal">
       <p>
         <l>Portugal</l>
-        <r>Portugal<s n="adv"/></r>
+        <r>Portugal<s n="np"/></r>
       </p>
     </e>
     <e lm="Reykjavik">
       <p>
         <l>Reykjavik</l>
-        <r>Reykjavik<s n="adv"/></r>
+        <r>Reykjavik<s n="np"/></r>
       </p>
     </e>
     <e lm="Roma">
@@ -695,7 +695,7 @@
     <e lm="Samuel">
       <p>
         <l>Samuel</l>
-        <r>Samuel<s n="adv"/></r>
+        <r>Samuel<s n="np"/></r>
       </p>
     </e>
     <e lm="Se">
@@ -725,7 +725,7 @@
     <e lm="Turkmenistan">
       <p>
         <l>Turkmenistan</l>
-        <r>Turkmenistan<s n="adv"/></r>
+        <r>Turkmenistan<s n="np"/></r>
       </p>
     </e>
     <e lm="Ulm">
@@ -767,7 +767,7 @@
     <e lm="Zakarias">
       <p>
         <l>Zakarias</l>
-        <r>Zakarias<s n="adv"/></r>
+        <r>Zakarias<s n="np"/></r>
       </p>
     </e>
     <e lm="a">
