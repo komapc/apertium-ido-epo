@@ -929,13 +929,19 @@
     <e lm="ego">
       <p>
         <l>ego</l>
-        <r>ego<s n="adv"/></r>
+        <r>ego<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="el">
       <p>
         <l>el</l>
         <r>el<s n="prn"/></r>
+      </p>
+    </e>
+    <e lm="ek">
+      <p>
+        <l>ek</l>
+        <r>ek<s n="pr"/>/</r>
       </p>
     </e>
     <e lm="ela">
@@ -1007,7 +1013,7 @@
     <e lm="ghetto">
       <p>
         <l>ghetto</l>
-        <r>ghetto<s n="adv"/></r>
+        <r>ghetto<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="habitanti">
@@ -1055,7 +1061,7 @@
     <e lm="hundyuno">
       <p>
         <l>hundyuno</l>
-        <r>hundyuno<s n="adv"/></r>
+        <r>hundyuno<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="il">
@@ -1151,7 +1157,7 @@
     <e lm="lavomashino">
       <p>
         <l>lavomashino</l>
-        <r>lavomashino<s n="adv"/></r>
+        <r>lavomashino<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="li">
@@ -1163,7 +1169,7 @@
     <e lm="linguo">
       <p>
         <l>linguo</l>
-        <r>linguo<s n="adv"/></r>
+        <r>linguo<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="lo">
@@ -1193,7 +1199,7 @@
     <e lm="manjajo">
       <p>
         <l>manjajo</l>
-        <r>manjajo<s n="adv"/></r>
+        <r>manjajo<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="maxim">
@@ -1229,13 +1235,13 @@
     <e lm="muelilo">
       <p>
         <l>muelilo</l>
-        <r>muelilo<s n="adv"/></r>
+        <r>muelilo<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="muelodisko">
       <p>
         <l>muelodisko</l>
-        <r>muelodisko<s n="adv"/></r>
+        <r>muelodisko<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="multe">
@@ -1247,7 +1253,7 @@
     <e lm="musketiero">
       <p>
         <l>musketiero</l>
-        <r>musketiero<s n="adv"/></r>
+        <r>musketiero<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="nam">
@@ -1541,7 +1547,7 @@
     <e lm="submersonavo">
       <p>
         <l>submersonavo</l>
-        <r>submersonavo<s n="adv"/></r>
+        <r>submersonavo<s n="n"/><s n="sg"/><s n="nom"/></r>
       </p>
     </e>
     <e lm="sul">
