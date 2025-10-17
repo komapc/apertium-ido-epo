@@ -1,16 +1,16 @@
-# Apertium Belarusian-Russian Development Environment
+# Apertium Ido–Esperanto Development Guide
 
 ## 🎯 **Mission Accomplished!**
 
-You now have a fully functional Apertium development environment following the official installation guidelines.
+This repository contains the Ido ↔ Esperanto language pair. The guide below focuses only on this pair and its build/test workflow.
 
 ## 📁 **Project Structure**
 
 ```
 /home/mark/apertium-dev/
 ├── lttoolbox/          # Core morphological processing library
-├── apertium/           # Main Apertium translation engine  
-└── apertium-bel-rus/   # Belarusian-Russian language pair
+├── apertium/           # Main Apertium translation engine
+└── apertium-ido-epo/   # Ido–Esperanto language pair (this repo)
 ```
 
 ## 🔧 **Development Environment**
@@ -21,34 +21,27 @@ You now have a fully functional Apertium development environment following the o
 - **VISL CG3** - Constraint grammar processor
 
 ### **Language Pair Status**
-- ✅ **bel-rus** - Belarusian → Russian translation
-- ✅ **rus-bel** - Russian → Belarusian translation
+- ✅ **ido-epo** - Ido → Esperanto translation
+- ✅ **epo-ido** - Esperanto → Ido translation
 
 ## 🚀 **Usage Examples**
 
 ### **Translation Commands**
 ```bash
-# Russian to Belarusian
-echo "Привет, мир!" | apertium rus-bel
-# Output: *Привет, мір!
+# Ido to Esperanto
+echo "me havas granda kato" | apertium ido-epo
 
-# Belarusian to Russian  
-echo "Прывітанне, свет!" | apertium bel-rus
-# Output: Приветствие, мир!
-
-# Complex sentence
-echo "Дом красного цвета" | apertium rus-bel
-# Output: Дом чырвонага колеру
+# Esperanto to Ido
+echo "mi havas grandan katon" | apertium epo-ido
 ```
 
 ### **Development Commands**
 ```bash
-# Rebuild after changes
-cd /home/mark/apertium-dev/apertium-bel-rus
-make langs
+cd /home/mark/apertium-dev/apertium-ido-epo
+make
 
 # Test with local changes
-echo "Your text" | apertium -d . bel-rus
+echo "Your text" | apertium -d . ido-epo
 
 # List all available modes
 apertium -l -d .
@@ -57,19 +50,19 @@ apertium -l -d .
 ## 🛠 **Making Changes & Pull Requests**
 
 ### **Git Configuration**
-- **Remote**: `https://github.com/apertium/apertium-bel-rus.git`
-- **Working Directory**: `/home/mark/apertium-dev/apertium-bel-rus/`
+- **Remote**: `https://github.com/komapc/apertium-ido-epo.git`
+- **Working Directory**: `/home/mark/apertium-dev/apertium-ido-epo/`
 
 ### **Development Workflow**
 1. **Make Changes** to dictionary or transfer files:
-   - `apertium-bel-rus.bel-rus.dix` - Bilingual dictionary
-   - `apertium-bel-rus.bel-rus.t1x` - Transfer rules (bel→rus)
-   - `apertium-bel-rus.rus-bel.t1x` - Transfer rules (rus→bel)
+   - `apertium-ido-epo.ido-epo.dix` - Bilingual dictionary
+   - `apertium-ido-epo.ido-epo.t1x` - Transfer rules (ido→epo)
+   - `apertium-ido-epo.epo-ido.t1x` - Transfer rules (epo→ido)
 
 2. **Test Changes**:
    ```bash
-   make langs
-   echo "Test text" | apertium -d . bel-rus
+   make
+   echo "Test text" | apertium -d . ido-epo
    ```
 
 3. **Submit Pull Request**:
@@ -81,9 +74,9 @@ apertium -l -d .
 
 ## 📚 **Key Files for Modification**
 
-- **`apertium-bel-rus.bel-rus.dix`** - Main bilingual dictionary (6.3MB)
-- **`apertium-bel-rus.bel-rus.t1x`** - Bel→Rus transfer rules (17KB)
-- **`apertium-bel-rus.rus-bel.t1x`** - Rus→Bel transfer rules (23KB)
+- **`apertium-ido-epo.ido-epo.dix`** - Main bilingual dictionary
+- **`apertium-ido-epo.ido-epo.t1x`** - Ido→Esperanto transfer rules
+- **`apertium-ido-epo.epo-ido.t1x`** - Esperanto→Ido transfer rules
 - **`modes.xml`** - Translation pipeline configuration
 
 ## 🏗 **Build System**
@@ -106,6 +99,6 @@ Following the [official Apertium build instructions](https://wiki.apertium.org/w
 
 - [Apertium Wiki](https://wiki.apertium.org)
 - [Build Instructions](https://wiki.apertium.org/wiki/Install_How_to_use_a_build)
-- [GitHub Repository](https://github.com/apertium/apertium-bel-rus)
+- [GitHub Repository](https://github.com/komapc/apertium-ido-epo)
 
 **Environment Ready for Development!** 🎉
