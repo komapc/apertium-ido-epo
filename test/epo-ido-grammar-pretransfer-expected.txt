@@ -1,0 +1,20 @@
+[6SdG9qcRg2X3#0] ^ni/*ni$ ^iris/iri<vblex><past>$ ^al/al<pr>$ ^la/la<det><def><sp>$ ^urbo/urbo<n><sg><nom>$
+[/6SdG9qcRg2X3]
+[8e5_eCn1Tp0B#0] ^la/la<det><def><sp>$ ^ĉevaloj/ĉevalo<n><pl><nom>/ĉevalo<n><m><pl><nom>$ ^kuras/kuri<vblex><pres>$ ^en/en<pr>$ ^la/la<det><def><sp>$ ^kampo/kampo<n><sg><nom>$
+[/8e5_eCn1Tp0B]
+[9aRyjwNmq1kE#0] ^ili/*ili$ ^manĝis/*manĝis$ ^pomojn/pomo<n><pl><acc>$ ^kaj/kaj<cnjcoo>$ ^pirojn/piro<n><pl><acc>$
+[/9aRyjwNmq1kE]
+[DE9Tj-bZz6um#0] ^mi/*mi$ ^donacis/donaci<vblex><past>$ ^florojn/floro<n><pl><acc>$ ^al/al<pr>$ ^mia/mia<adj><sg><nom>$ ^patrino/patro<n><f><sg><nom>/patrino<n><sg><nom>$
+[/DE9Tj-bZz6um]
+[JmODlPqY9A1Y#0] ^la/la<det><def><sp>$ ^libro/libro<n><sg><nom>$ ^estas/*estas$ ^tre/tre<adv>$ ^interesa/*interesa$
+[/JmODlPqY9A1Y]
+[RI-5S3AUrj1j#0] ^mi/*mi$ ^vidis/vidi<vblex><past>$ ^la/la<det><def><sp>$ ^grandan/granda<adj><sg><acc>$ ^domon/domo<n><sg><acc>$
+[/RI-5S3AUrj1j]
+[UHGGgTS_cbnI#0] ^mi/*mi$ ^deziras/deziri<vblex><pres>$ ^trinki/trinki<vblex><inf>$ ^akvon/akvo<n><sg><acc>$
+[/UHGGgTS_cbnI]
+[X5xUjG7_52Tg#0] ^la/la<det><def><sp>$ ^hundo/hundo<n><m><sg><nom>$ ^kaj/kaj<cnjcoo>$ ^la/la<det><def><sp>$ ^kato/kato<n><m><sg><nom>$ ^estas/*estas$ ^amikoj/amiko<n><m><pl><nom>$
+[/X5xUjG7_52Tg]
+[YTINo1Cv0OvQ#0] ^li/*li$ ^skribis/skribi<vblex><past>$ ^longan/longa<adj><sg><acc>$ ^leteron/letero<n><sg><acc>$
+[/YTINo1Cv0OvQ]
+[igPBlafsA3fz#0] ^ili/*ili$ ^kantis/kanti<vblex><past>$ ^belan/bela<adj><sg><acc>$ ^kanton/kanto<n><sg><acc>$
+[/igPBlafsA3fz]

@@ -1,0 +1,20 @@
+[25V_EVF33u_Z#0] ^*me$ ^donaci<vblex><past>$ ^*flowri$ ^*a$ ^mia<adj><sg><nom>$ ^patrino<n><sg><nom>$
+[/25V_EVF33u_Z]
+[AZzy3J1EoTcG#0] ^*il$ ^skribi<vblex><pii>$ ^longa<adj><sg><acc>$ ^letero<n><sg><acc>$
+[/AZzy3J1EoTcG]
+[Mr2Qn1cDibwW#0] ^*me$ ^*desiras$ ^trinki<vblex><inf>$ ^akvo<n><sg><acc>$
+[/Mr2Qn1cDibwW]
+[PPkpl7SkXXHH#0] ^*la$ ^libro<n><sg><nom>$ ^esti<vblex><pres>$ ^*tre$ ^*interesanta$
+[/PPkpl7SkXXHH]
+[Vp-ZtHabVHVK#0] ^*la$ ^ĉevalo<n><pl><nom>$ ^kuri<vblex><pres>$ ^*en$ ^*la$ ^*kampo$
+[/Vp-ZtHabVHVK]
+[W2EZ-LsUInHH#0] ^*me$ ^vidi<vblex><past>$ ^*la$ ^granda<adj><sg><nom>$ ^domo<n><sg><nom>$
+[/W2EZ-LsUInHH]
+[WCVXtorvJh4d#0] ^*elu$ ^konsumi<vblex><pii>$ ^pomo<n><pl><acc>$ ^*e$ ^*peri$
+[/WCVXtorvJh4d]
+[mTdPtgjMDaCP#0] ^*elu$ ^kanti<vblex><pii>$ ^bela<adj><sg><acc>$ ^kanto<n><sg><acc>$
+[/mTdPtgjMDaCP]
+[q923GoKB4CAY#0] ^*la$ ^hundo<n><sg><nom>$ ^*e$ ^*la$ ^kato<n><sg><nom>$ ^esti<vblex><pri>$ ^amika<adj><sg><nom>$
+[/q923GoKB4CAY]
+[uuOQEO-RdN3I#0] ^*ni$ ^iri<vblex><past>$ ^*a$ ^*la$ ^urbo<n><sg><nom>$
+[/uuOQEO-RdN3I]

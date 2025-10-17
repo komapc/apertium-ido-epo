@@ -1,0 +1,20 @@
+[27kIEvaPLXN2#0] ^la/*la$ ^kato/kato<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^bela/bela<adj><sg>$
+[/27kIEvaPLXN2]
+[75hjTAWSIXhH#0] ^la/*la$ ^hundo/hundo<n><sg><nom>$ ^kuras/kurar<vblex><pri>$ ^rapide/*rapide$
+[/75hjTAWSIXhH]
+[AEpFR4gYt2D4#0] ^il/*il$ ^helpas/helpar<vblex><pri>$ ^la/*la$ ^amiko/amiko<n><sg><nom>$
+[/AEpFR4gYt2D4]
+[B1ULTk0TLfq0#0] ^la/*la$ ^domo/domo<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^granda/granda<adj><sg>$
+[/B1ULTk0TLfq0]
+[SKfhDGGx0IaW#0] ^me/*me$ ^konas/konar<vblex><pri>$ ^la/*la$ ^viro/viro<n><sg><nom>$
+[/SKfhDGGx0IaW]
+[UZ9qqXEsznBx#0] ^ni/*ni$ ^volas/volar<vblex><pri>$ ^irar/irar<vblex><inf>$
+[/UZ9qqXEsznBx]
+[W4oZOGOEXpVe#0] ^elu/*elu$ ^studas/studar<vblex><pri>$ ^en/*en$ ^la/*la$ ^skolo/skolo<n><sg><nom>$
+[/W4oZOGOEXpVe]
+[pn1AgucgMc63#0] ^me/*me$ ^havas/havar<vblex><pri>$ ^kato/kato<n><sg><nom>$
+[/pn1AgucgMc63]
+[qd1dRRh___K7#0] ^me/*me$ ^havas/havar<vblex><pri>$ ^granda/granda<adj><sg>$ ^kato/kato<n><sg><nom>$
+[/qd1dRRh___K7]
+[rNsgs4TCmKsI#0] ^me/*me$ ^manjas/manjar<vblex><pri>$ ^pomo/pomo<n><sg><nom>$
+[/rNsgs4TCmKsI]

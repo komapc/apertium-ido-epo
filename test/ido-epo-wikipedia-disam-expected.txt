@@ -1,0 +1,30 @@
+[BHEZ9rHtD4uM#0] ^La/*La$ ^Indo/*Indo$-^Europana/*Europana$ ^lingui/*lingui$ ^esas/esar<vblex><pri>$ ^linguofamilio/*linguofamilio$ ^parlata/*parlata$ ^da/*da$ ^plusa/plusa<adj><sg>$ ^kam/*kam$ ^tri/*tri$ ^miliardi/miliardo<n><pl><nom>$ ^homi/homa<adj><pl>/homo<n><pl><nom>$.
+[/BHEZ9rHtD4uM]
+[D0-TGd2AFxpo#0] ^La/*La$ ^hundo/hundo<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^domestikigita/*domestikigita$ ^mamifero/mamifero<n><sg><nom>$ ^qui/qua<adj><pl>/quo<n><pl><nom>$ ^apartenas/apartenar<vblex><pri>$ ^a/*a$ ^la/*la$ ^familio/familio<n><sg><nom>$ ^Canidae/*Canidae$.
+[/D0-TGd2AFxpo]
+[MTzH_M2v4hVI#0] ^Fiziko/Fiziko<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^naturala/*naturala$ ^cienco/cienco<n><sg><nom>$ ^qui/qua<adj><pl>/quo<n><pl><nom>$ ^studas/studar<vblex><pri>$ ^materio/materio<n><sg><nom>$, ^energio/energio<n><sg><nom>$ ^e/*e$ ^lua/*lua$ ^relateso/*relateso$.
+[/MTzH_M2v4hVI]
+[SG6OB7RlZskJ#0] ^Muziko/*Muziko$ ^esas/esar<vblex><pri>$ ^arto/arto<n><sg><nom>$ ^di/*di$ ^aranjar/aranjar<vblex><inf>$ ^soni/sono<n><pl><nom>$ ^en/*en$ ^tempo/tempo<n><sg><nom>$ ^por/*por$ ^produktar/produktar<vblex><inf>$ ^kompozajo/*kompozajo$.
+[/SG6OB7RlZskJ]
+[TSDKNEccJ463#0] ^Matematiko/Matematiko<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^la/*la$ ^cienco/cienco<n><sg><nom>$ ^pri/*pri$ ^nombri/nombro<n><pl><nom>$, ^spaco/spaco<n><sg><nom>$ ^e/*e$ ^strukturo/strukturo<n><sg><nom>$.
+[/TSDKNEccJ463]
+[UcP21kylSIaP#0] ^La/*La$ ^Mediterana/*Mediterana$ ^Maro/Maro<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^maro/maro<n><sg><nom>$ ^konektita/*konektita$ ^a/*a$ ^la/*la$ ^Atlantikala/*Atlantikala$ ^Oceano/Oceano<n><sg><nom>$.
+[/UcP21kylSIaP]
+[UzUxWHItUJOl#0] ^La/*La$ ^Tero/Tero<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^la/*la$ ^tria/*tria$ ^planeto/planeto<n><sg><nom>$ ^de/*de$ ^la/*la$ ^sunala/*sunala$ ^sistemo/sistemo<n><sg><nom>$.
+[/UzUxWHItUJOl]
+[YqovXlTa1nql#0] ^La/*La$ ^angla/*angla$ ^linguo/*linguo$ ^esas/esar<vblex><pri>$ ^la/*la$ ^plusa/plusa<adj><sg>$ ^parolata/*parolata$ ^linguo/*linguo$ ^en/*en$ ^la/*la$ ^mondo/mondo<n><sg><nom>$.
+[/YqovXlTa1nql]
+[k9eQgYmoI0Zb#0] ^Berlin/*Berlin$ ^esas/esar<vblex><pri>$ ^la/*la$ ^chefurbo/*chefurbo$ ^e/*e$ ^maxim/*maxim$ ^granda/granda<adj><sg>$ ^urbo/urbo<n><sg><nom>$ ^di/*di$ ^Germania/Germania<adj><sg>$.
+[/k9eQgYmoI0Zb]
+[pH1dlBKVq_xf#0] ^Hispania/Hispania<adj><sg>$ ^esas/esar<vblex><pri>$ ^lando/lando<n><sg><nom>$ ^en/*en$ ^Sud/*Sud$-^Westa/*Westa$ ^Europa/Europa<adj><sg>$.
+[/pH1dlBKVq_xf]
+[qzb-d2ynrWUJ#0] ^La/*La$ ^akvo/akvo<n><sg><nom>$ ^bulias/*bulias$ ^che/*che$ ^cent/*cent$ ^gradi/grado<n><pl><nom>$ ^Celsius/*Celsius$.
+[/qzb-d2ynrWUJ]
+[s4Ze08ZFP5gk#0] ^Ido/Ido<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^linguajo/*linguajo$ ^kreita/*kreita$ ^da/*da$ ^Louis/*Louis$ ^de/*de$ ^Beaufront/*Beaufront$ ^en/*en$ ^1907/*1907$.
+[/s4Ze08ZFP5gk]
+[tkWAOyEmXtRs#0] ^Astronomio/Astronomio<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^naturala/*naturala$ ^cienco/cienco<n><sg><nom>$ ^qui/qua<adj><pl>/quo<n><pl><nom>$ ^studas/studar<vblex><pri>$ ^celestala/*celestala$ ^objekti/objekto<n><pl><nom>$ ^e/*e$ ^fenomeni/fenomeno<n><pl><nom>$.
+[/tkWAOyEmXtRs]
+[wRQjmfcial3p#0] ^Paris/*Paris$ ^esas/esar<vblex><pri>$ ^la/*la$ ^chefurbo/*chefurbo$ ^di/*di$ ^Francia/Francia<adj><sg>$.
+[/wRQjmfcial3p]
+[xEfEhKMvbzmT#0] ^Republiko/Republiko<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^guvernala/guvernala<adj><sg>$ ^sistemo/sistemo<n><sg><nom>$ ^en/*en$ ^qua/qua<adj><sg>$ ^la/*la$ ^chefo/chefo<n><sg><nom>$ ^di/*di$ ^stato/stato<n><sg><nom>$ ^ne/*ne$ ^esas/esar<vblex><pri>$ ^heredala/*heredala$ ^monarko/*monarko$.
+[/xEfEhKMvbzmT]
