@@ -1,0 +1,49 @@
+.Dd March 21, 2006
+.Dt APERTIUM-DESTXT 1
+.Os Apertium
+.Sh NAME
+.Nm apertium-destxt
+.Nd TXT format processor for Apertium
+.Sh SYNOPSIS
+.Nm apertium-destxt
+.Op Fl hin
+.Op Ar input_file Op Ar output_file
+.Sh DESCRIPTION
+.Nm apertium-destxt
+is an text format processor.
+Data should be passed through this processor before being piped to
+.Xr lt-proc 1 .
+The program takes input in the form of a text file
+and produces output suitable for processing with
+.Xr lt-proc 1 .
+Format information (newlines, tabs, etc.) is enclosed in brackets so that
+.Xr lt-proc 1
+treats it as whitespace between words.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl h , Fl Fl help
+Display this help.
+.It Fl i
+Makes the addition of trailing sentence terminator
+.Pq Ql \&.
+unconditional, often leading to duplicates.
+.It Fl n
+Suppresses the addition of a trailing sentence terminator.
+.El
+.Sh EXAMPLES
+You could write the following to show how the word
+.Dq gener
+is analysed:
+.Dl echo Qo gener Qc | apertium-destxt | lt-proc ca-es.automorf.bin
+.Sh SEE ALSO
+.Xr apertium 1 ,
+.Xr apertium-deshtml 1 ,
+.Xr apertium-desrtf 1 ,
+.Xr lt-proc 1
+.Sh COPYRIGHT
+Copyright \(co 2005, 2006 Universitat d'Alacant / Universidad de Alicante.
+This is free software.
+You may redistribute copies of it under the terms of
+.Lk https://www.gnu.org/licenses/gpl.html the GNU General Public License .
+.Sh BUGS
+Many... lurking in the dark and waiting for you!

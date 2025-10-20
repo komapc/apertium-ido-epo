@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+'''
+Setup for SWIG Python bindings for apertium
+'''
+from distutils.core import Extension, setup
+from sys import platform
+
+compile_args = '@CPPFLAGS@'.split() + '@CXXFLAGS@'.split() + '@LTTOOLBOX_CFLAGS@'.split() + '@ICU_CFLAGS@'.split()
+link_args = []
+if platform == 'darwin':
+    compile_args += ['-stdlib=libc++', '-mmacosx-version-min=10.7']
+    link_args.append('-mmacosx-version-min=10.7')
+
+apertium_core_module = Extension(
+    name='_apertium_core',
+    language='c++',
+    sources=['apertium_core.i'],
+    swig_opts=['-c++', '-I..', '-I@top_srcdir@/apertium', '-Wall'],
+    include_dirs=['@top_srcdir@', '@top_srcdir@/apertium'] + '@LIBXML2_CFLAGS@'.replace('-I', '').split(),
+    library_dirs=['@top_srcdir@/apertium/.libs'],
+    libraries = ['apertium'],
+    extra_compile_args=compile_args,
+    extra_link_args=link_args,
+)
+
+setup(
+    name='@PACKAGE@',
+    version='@PACKAGE_VERSION@',
+    description='SWIG interface to @PACKAGE_NAME@',
+    long_description='SWIG interface to @PACKAGE_NAME@ for use in apertium-python',
+    # TODO: author, maintainer, url
+    author_email='@PACKAGE_BUGREPORT@',
+    license='GPL-3.0+',
+    maintainer_email='@PACKAGE_BUGREPORT@',
+    ext_modules=[apertium_core_module],
+    py_modules=['apertium_core'],
+    data_files=[],
+)

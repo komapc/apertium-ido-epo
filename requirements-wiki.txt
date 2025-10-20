@@ -1,6 +1,0 @@
-requests>=2.31.0
-wikiextractor>=3.0.6
-mwparserfromhell>=0.6.6
-mwxml==0.3.6
-
-

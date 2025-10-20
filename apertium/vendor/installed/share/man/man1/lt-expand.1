@@ -1,0 +1,62 @@
+.Dd March 8, 2006
+.Dt LT-EXPAND 1
+.Os Apertium
+.Sh NAME
+.Nm lt-expand
+.Nd dictionary expander for Apertium
+.Sh SYNOPSIS
+.Nm lt-expand
+.Op Fl a | v | l | r | m | h
+.Ar dictionary_file
+.Op Ar output_file
+.Sh DESCRIPTION
+.Nm lt-expand
+is the application responsible for expanding a dictionary
+into a simple list of input string-output string pairs
+by eliminating paradigms through substitution and unfolding.
+.Pp
+The output goes to
+.Ar output_file
+if it is present or to standard output if it is missing.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl a , Fl Fl alt
+Sets the value of the
+.Sy alt
+attribute to use in expansion
+.It Fl v , Fl Fl var
+Sets the value of the
+.Sy v
+attribute to use in expansion of monodixes
+.It Fl l , Fl Fl var-left
+Sets the value of the
+.Sy vl
+attribute to use in expansion of bidixes
+.It Fl r , Fl Fl var-right
+Sets the value of the
+.Sy vr
+attribute to use in expansion of bidixes
+.It Fl m , Fl Fl keep-boundaries
+Keep any morpheme boundaries defined by the <m/> symbol
+.It Fl h , Fl Fl help
+Prints a short help message
+.El
+.Sh FILES
+.Bl -tag -width Ds
+.It Ar dictionary_file
+The input dictionary to expand.
+.It Ar output_file
+Text containing the expanded dictionary information.
+.El
+.Sh SEE ALSO
+.Xr apertium 1 ,
+.Xr apertium-tagger 1 ,
+.Xr lt-comp 1 ,
+.Xr lt-proc 1
+.Sh COPYRIGHT
+Copyright \(co 2005, 2006 Universitat d'Alacant / Universidad de Alicante.
+This is free software.
+You may redistribute copies of it under the terms of
+.Lk https://www.gnu.org/licenses/gpl.html the GNU General Public License .
+.Sh BUGS
+Many... lurking in the dark and waiting for you!

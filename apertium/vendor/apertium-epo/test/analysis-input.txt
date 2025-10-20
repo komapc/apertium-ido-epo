@@ -1,0 +1,6 @@
+# from https://wiki.apertium.org/wiki/English_and_Esperanto/Outstanding_tests
+ĉu iu ajn komprenas?
+ĉu vi komprenas?
+Ĝi laboras.
+Li diris ion al la infanoj
+video-luda desegn-industrio
