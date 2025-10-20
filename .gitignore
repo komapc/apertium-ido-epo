@@ -112,3 +112,5 @@ add_pronoun_entries.py
 generate_reverse_entries.py
 convert_esperanto_chars.sh
 
+.cursor/
+.worktrees/
