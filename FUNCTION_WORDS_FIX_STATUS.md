@@ -222,11 +222,11 @@ Transfer still failing:
 
 ## 📝 Files Modified
 
-1. ✅ `/home/mark/apertium-dev/apertium-ido-epo/apertium-ido.ido.dix`
+1. ✅ `/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido.ido.dix`
    - Added paradigms
    - Added ~40 function word entries
    
-2. ✅ `/home/mark/apertium-dev/apertium-ido-epo/apertium-ido-epo.ido-epo.dix`
+2. ✅ `/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido-epo.ido-epo.dix`
    - Added ~40 bilingual mappings
    
 3. ✅ Compilation successful

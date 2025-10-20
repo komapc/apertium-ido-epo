@@ -1,0 +1,62 @@
+[-Hc7OQYqz1Oh#0] ^*ni/*ni$ ^viziti<vblex><pres>/vizitar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^muzeo<n><sg><acc>/muzeo<n><sg><acc>$
+[/-Hc7OQYqz1Oh]
+[0o2A-a8rZHWK#0] ^la<det><def><sp>/la<det><def><sp>$ ^*studentojn/*studentojn$ ^instrui<vblex><pres>/instruar<vblex><pres>/instruktar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^profesoro<n><m><sg><nom>/profesoro<n><m><sg><nom>$
+[/0o2A-a8rZHWK]
+[2vsirIZWxXHv#0] ^*mi/*mi$ ^koni<vblex><pres>/konar<vblex><pres>/konocar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^viro<n><sg><acc>/viro<n><sg><acc>$ ^kaj<cnjcoo>/kaj<cnjcoo>$ ^la<det><def><sp>/la<det><def><sp>$ ^viro<n><f><sg><acc>/viro<n><f><sg><acc>$
+[/2vsirIZWxXHv]
+[35ePeR6E9cjT#0] ^la<det><def><sp>/la<det><def><sp>$ ^hundo<n><m><sg><nom>/hundo<n><m><sg><nom>$ ^ĉasi<vblex><pres>/chasar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^kato<n><m><sg><acc>/kato<n><m><sg><acc>$
+[/35ePeR6E9cjT]
+[3g_wnGDIOq-J#0] ^la<det><def><sp>/la<det><def><sp>$ ^kato<n><m><sg><nom>/kato<n><m><sg><nom>$ ^*manĝis/*manĝis$ ^la<det><def><sp>/la<det><def><sp>$ ^muso<n><sg><acc>/muso<n><sg><acc>$
+[/3g_wnGDIOq-J]
+[5snqpxN5dpTu#0] ^la<det><def><sp>/la<det><def><sp>$ ^pomo<n><sg><acc>/pomo<n><sg><acc>$ ^*ŝi/*ŝi$ ^*manĝis/*manĝis$
+[/5snqpxN5dpTu]
+[9C46MjYx3JW0#0] ^*mi/*mi$ ^helpi<vblex><pres>/helpar<vblex><pres>/sokursar<vblex><pres>$ ^mia<adj><sg><acc>/mea<adj><sg><acc>$ ^amiko<n><m><sg><acc>/amiko<n><m><sg><acc>$
+[/9C46MjYx3JW0]
+[9PhkpkdXiPAR#0] ^la<det><def><sp>/la<det><def><sp>$ ^profesoro<n><m><sg><nom>/profesoro<n><m><sg><nom>$ ^instrui<vblex><pres>/instruar<vblex><pres>/instruktar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*studentojn/*studentojn$
+[/9PhkpkdXiPAR]
+[AzJSuHqHqA-x#0] ^la<det><def><sp>/la<det><def><sp>$ ^libro<n><pl><acc>/libro<n><pl><acc>$ ^*mi/*mi$ ^ami<vblex><pres>/amar<vblex><pres>$
+[/AzJSuHqHqA-x]
+[Br8JlH0orrRd#0] ^*mi/*mi$ ^ami<vblex><pres>/amar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^libro<n><sg><acc>/libro<n><sg><acc>$
+[/Br8JlH0orrRd]
+[EKiOu-1sSgT1#0] ^*mi/*mi$ ^vidi<vblex><pres>/vidar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^kato<n><m><sg><acc>/kato<n><m><sg><acc>$
+[/EKiOu-1sSgT1]
+[Eo1e3o4S2l9x#0] ^*mi/*mi$ ^vidi<vblex><pres>/vidar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^bela<adj><pl><acc>/bela<adj><pl><acc>$ ^kato<n><m><pl><acc>/kato<n><m><pl><acc>$
+[/Eo1e3o4S2l9x]
+[FBgby28mpZts#0] ^la<det><def><sp>/la<det><def><sp>$ ^muso<n><sg><acc>/muso<n><sg><acc>$ ^la<det><def><sp>/la<det><def><sp>$ ^kato<n><m><sg><nom>/kato<n><m><sg><nom>$ ^*manĝis/*manĝis$
+[/FBgby28mpZts]
+[Fo3OaKaAO4LO#0] ^*ni/*ni$ ^helpi<vblex><pres>/helpar<vblex><pres>/sokursar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^malriĉa<adj><pl><acc>/povra<adj><pl><acc>$ ^homo<n><pl><acc>/homo<n><pl><acc>$
+[/Fo3OaKaAO4LO]
+[LpgAbJDpct1B#0] ^*mi/*mi$ ^aŭdi<vblex><pres>/audar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^muziko<n><sg><acc>/muziko<n><sg><acc>$
+[/LpgAbJDpct1B]
+[MJc4iuryzSKY#0] ^*ŝi/*ŝi$ ^*manĝis/*manĝis$ ^la<det><def><sp>/la<det><def><sp>$ ^pomo<n><sg><acc>/pomo<n><sg><acc>$
+[/MJc4iuryzSKY]
+[PgUexyiWSmal#0] ^*mi/*mi$ ^ami<vblex><pres>/amar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^libro<n><pl><acc>/libro<n><pl><acc>$
+[/PgUexyiWSmal]
+[UJidSoI7txNQ#0] ^la<det><def><sp>/la<det><def><sp>$ ^kato<n><m><sg><acc>/kato<n><m><sg><acc>$ ^la<det><def><sp>/la<det><def><sp>$ ^hundo<n><m><sg><nom>/hundo<n><m><sg><nom>$ ^ĉasi<vblex><pres>/chasar<vblex><pres>$
+[/UJidSoI7txNQ]
+[YGRM3oVgOZh_#0] ^la<det><def><sp>/la<det><def><sp>$ ^granda<adj><sg><acc>/granda<adj><sg><acc>$ ^kato<n><m><sg><acc>/kato<n><m><sg><acc>$ ^*mi/*mi$ ^vidi<vblex><pres>/vidar<vblex><pres>$
+[/YGRM3oVgOZh_]
+[ZRccG483IWPS#0] ^la<det><def><sp>/la<det><def><sp>$ ^muzeo<n><sg><acc>/muzeo<n><sg><acc>$ ^*ni/*ni$ ^viziti<vblex><pres>/vizitar<vblex><pres>$
+[/ZRccG483IWPS]
+[bsf4irx9mheS#0] ^la<det><def><sp>/la<det><def><sp>$ ^viro<n><sg><acc>/viro<n><sg><acc>$ ^kaj<cnjcoo>/kaj<cnjcoo>$ ^la<det><def><sp>/la<det><def><sp>$ ^viro<n><f><sg><acc>/viro<n><f><sg><acc>$ ^*mi/*mi$ ^koni<vblex><pres>/konar<vblex><pres>/konocar<vblex><pres>$
+[/bsf4irx9mheS]
+[d-PAArYpJjeu#0] ^*mi/*mi$ ^vidi<vblex><pres>/vidar<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^granda<adj><sg><acc>/granda<adj><sg><acc>$ ^kato<n><m><sg><acc>/kato<n><m><sg><acc>$
+[/d-PAArYpJjeu]
+[g1YuGkn4iluG#0] ^la<det><def><sp>/la<det><def><sp>$ ^urbo<n><sg><acc>/urbo<n><sg><acc>$ ^vidi<vblex><past>/vidar<vblex><past>$ ^*mi/*mi$
+[/g1YuGkn4iluG]
+[gjxv9TubhfUK#0] ^mia<adj><sg><acc>/mea<adj><sg><acc>$ ^amiko<n><m><sg><acc>/amiko<n><m><sg><acc>$ ^*mi/*mi$ ^helpi<vblex><pres>/helpar<vblex><pres>/sokursar<vblex><pres>$
+[/gjxv9TubhfUK]
+[gnrFnt3GCmkn#0] ^la<det><def><sp>/la<det><def><sp>$ ^bela<adj><pl><acc>/bela<adj><pl><acc>$ ^kato<n><m><pl><acc>/kato<n><m><pl><acc>$ ^*mi/*mi$ ^vidi<vblex><pres>/vidar<vblex><pres>$
+[/gnrFnt3GCmkn]
+[hu3QggwQeN_t#0] ^la<det><def><sp>/la<det><def><sp>$ ^muziko<n><sg><acc>/muziko<n><sg><acc>$ ^aŭdi<vblex><pres>/audar<vblex><pres>$ ^*mi/*mi$
+[/hu3QggwQeN_t]
+[lW-2431BzACU#0] ^la<det><def><sp>/la<det><def><sp>$ ^malriĉa<adj><pl><acc>/povra<adj><pl><acc>$ ^homo<n><pl><acc>/homo<n><pl><acc>$ ^*ni/*ni$ ^helpi<vblex><pres>/helpar<vblex><pres>/sokursar<vblex><pres>$
+[/lW-2431BzACU]
+[oNq5EQgq37F0#0] ^la<det><def><sp>/la<det><def><sp>$ ^kato<n><m><sg><acc>/kato<n><m><sg><acc>$ ^*mi/*mi$ ^vidi<vblex><pres>/vidar<vblex><pres>$
+[/oNq5EQgq37F0]
+[ommPdVv29Zlk#0] ^*mi/*mi$ ^vidi<vblex><past>/vidar<vblex><past>$ ^la<det><def><sp>/la<det><def><sp>$ ^urbo<n><sg><acc>/urbo<n><sg><acc>$
+[/ommPdVv29Zlk]
+[pJCzc-qLesTu#0] ^*li/*li$ ^skribi<vblex><past>/skribar<vblex><past>$ ^longa<adj><sg><acc>/longa<adj><sg><acc>$ ^letero<n><sg><acc>/letro<n><sg><acc>$ ^al<pr>/ad<pr>$ ^mia<adj><sg><nom>/mea<adj><sg><nom>$ ^patro<n><f><sg><nom>/patro<n><f><sg><nom>$
+[/pJCzc-qLesTu]
+[v3hxWFIy3M2y#0] ^la<det><def><sp>/la<det><def><sp>$ ^libro<n><sg><acc>/libro<n><sg><acc>$ ^*mi/*mi$ ^ami<vblex><pres>/amar<vblex><pres>$
+[/v3hxWFIy3M2y]

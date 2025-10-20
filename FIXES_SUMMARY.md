@@ -138,7 +138,7 @@ All three critical issues have been fixed:
 
 ### Quick Test:
 ```bash
-cd /home/mark/apertium-dev/apertium-ido-epo
+cd /home/mark/apertium-ido-epo/apertium-ido-epo
 
 # Rebuild
 ./autogen.sh
@@ -215,7 +215,7 @@ The system is now ready for:
 
 ```bash
 # Navigate to project
-cd /home/mark/apertium-dev/apertium-ido-epo
+cd /home/mark/apertium-ido-epo/apertium-ido-epo
 
 # Rebuild system
 ./autogen.sh && make clean && make

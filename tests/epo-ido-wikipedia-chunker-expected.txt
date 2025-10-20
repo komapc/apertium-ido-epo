@@ -1,0 +1,30 @@
+[CuxkV8ueckAm#0] ^La<det>$ ^*angla$ ^linguo<n><sg><nom>$ ^*estas$ ^la<det>$ ^maxim<adv>$ ^*parolata$ ^linguo<n><sg><nom>$ ^en<pr>$ ^la<det>$ ^mondo<n><sg><nom>$.
+[/CuxkV8ueckAm]
+[DBoN-ZYCd5cZ#0] ^La<det>$ ^akvo<n><sg><nom>$ ^boliar<vblex><pri>$ ^che<adv>$ ^*cent$ ^grado<n><pl><nom>$ ^*Celsiuso$.
+[/DBoN-ZYCd5cZ]
+[QdBOZ3qoaPjT#0] ^Matematiko<n><sg><nom>$ ^*estas$ ^cienco<n><sg><nom>$ ^pri<pr>$ ^nombro<n><pl><nom>$, ^spaco<n><sg><nom>$ ^kaj<cnjcoo>$ ^strukturo<n><sg><nom>$.
+[/QdBOZ3qoaPjT]
+[WNU-Rv9cAmL1#0] ^*Hispanio$ ^*estas$ ^lando<n><sg><nom>$ ^en<pr>$ ^*Sud$-^*Okcidenta$ ^*Eŭropo$.
+[/WNU-Rv9cAmL1]
+[XOhcO3zGWM44#0] ^*Parizo$ ^*estas$ ^la<det>$ ^chefurbo<n><sg><nom>$ ^di<pr>$ ^*Francio$.
+[/XOhcO3zGWM44]
+[YSPVSHpTbkk2#0] ^Fiziko<n><sg><nom>$ ^*estas$ ^naturala<adj><sg>$ ^cienco<n><sg><nom>$ ^qui<prn><nom>$ ^studar<vblex><pri>$ ^materiajo<n><sg><acc>$, ^energio<n><sg><acc>$ ^kaj<cnjcoo>$ ^olia<adj><sg>$ ^*rilatojn$.
+[/YSPVSHpTbkk2]
+[ZxeXKdXaCW8J#0] ^La<det>$ ^*Hindoeŭropaj$ ^linguo<n><pl><nom>$ ^*estas$ ^*lingvofamilio$ ^*parolata$ ^di<pr>$ ^pluse<adv>$ ^*ol$ ^*tri$ ^miliardo<n><pl><nom>$ ^*da$ ^homo<n><pl><nom>$.
+[/ZxeXKdXaCW8J]
+[hU1V75m7u807#0] ^La<det>$ ^hundo<n><sg><nom>$ ^*estas$ ^*domestikigita$ ^*mamulo$ ^qui<prn><nom>$ ^apartenar<vblex><pri>$ ^ad<pr>$ ^la<det>$ ^familio<n><sg><nom>$ ^*Canidae$.
+[/hU1V75m7u807]
+[k9AM64diTK4a#0] ^La<det>$ ^*Tero$ ^*estas$ ^la<det>$ ^3ma<adj><sg>$ ^planeto<n><sg><nom>$ ^di<pr>$ ^la<det>$ ^*Sunsistemo$.
+[/k9AM64diTK4a]
+[nED3Q-qdtNwl#0] ^La<det>$ ^*Mediteranea$ ^Maro<n><sg><nom>$ ^*estas$ ^maro<n><sg><nom>$ ^konektar<vblex><pp><sg><nom>$ ^ad<pr>$ ^la<det>$ ^*Atlantika$ ^Oceano<n><sg><nom>$.
+[/nED3Q-qdtNwl]
+[psaIvSSTnLrL#0] ^Republiko<n><sg><nom>$ ^*estas$ ^guvernala<adj><sg>$ ^sistemo<n><sg><nom>$ ^en<pr>$ ^qui<prn><nom>$ ^la<det>$ ^*ŝtatestro$ ^ne<adv>$ ^*estas$ ^heredala<adj><sg>$ ^*monarko$.
+[/psaIvSSTnLrL]
+[ryq_6owmTGAr#0] ^Ido<n><sg><nom>$ ^*estas$ ^linguo<n><sg><nom>$ ^krear<vblex><pp><sg><nom>$ ^di<pr>$ ^*Louis$ ^di<pr>$ ^*Beaufront$ ^en<pr>$ ^*1907$.
+[/ryq_6owmTGAr]
+[sDZlcGNYtAdk#0] ^Muziko<n><sg><nom>$ ^*estas$ ^arto<n><sg><nom>$ ^di<pr>$ ^aranjar<vblex><inf>$ ^sono<n><pl><acc>$ ^en<pr>$ ^tempo<n><sg><nom>$ ^*por$ ^produktar<vblex><inf>$ ^*komponaĵon$.
+[/sDZlcGNYtAdk]
+[sTOZ-u3QLMqU#0] ^Astronomio<n><sg><nom>$ ^*estas$ ^naturala<adj><sg>$ ^cienco<n><sg><nom>$ ^qui<prn><nom>$ ^studar<vblex><pri>$ ^celestala<adj><sg>$ ^objekto<n><pl><acc>$ ^kaj<cnjcoo>$ ^fenomeno<n><pl><acc>$.
+[/sTOZ-u3QLMqU]
+[vAmoa0oqX3dP#0] ^*Berlino$ ^*estas$ ^la<det>$ ^chefurbo<n><sg><nom>$ ^kaj<cnjcoo>$ ^maxim<adv>$ ^granda<adj><sg><nom>$ ^urbo<n><sg><nom>$ ^di<pr>$ ^*Germanio$.
+[/vAmoa0oqX3dP]

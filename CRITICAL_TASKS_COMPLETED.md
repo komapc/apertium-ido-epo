@@ -84,7 +84,7 @@ All critical test cases now pass:
 ## 📝 Files Modified
 
 ### Dictionary Files:
-1. `/home/mark/apertium-dev/apertium-ido-epo/apertium-ido.ido.dix`
+1. `/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido.ido.dix`
    - Fixed section tag (line 106)
    - Added 11 personal pronouns (lines 267-310)
    - Added conjunction "kaj" (line 111)
@@ -93,14 +93,14 @@ All critical test cases now pass:
    - Added noun "hundo" (line 6778)
    - Added noun "docanto" (line 4242)
 
-2. `/home/mark/apertium-dev/apertium-ido-epo/apertium-ido-epo.ido-epo.dix`
+2. `/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido-epo.ido-epo.dix`
    - Added 11 pronoun mappings (lines 169-234)
    - Added "kaj" conjunction mapping (line 161)
    - Added "am" verb mapping (line 1793)
    - Added "docant" noun mapping (line 8717)
 
 ### Transfer Rule Files:
-3. `/home/mark/apertium-dev/apertium-ido-epo/apertium-ido-epo.ido-epo.t1x`
+3. `/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido-epo.ido-epo.t1x`
    - Updated vbser category to match "es" lemma (line 20)
    - Added Det+Noun+Conj+Det+Noun pattern (lines 447-524)
    - Updated 8 copula test conditions to check for both "esar" and "es"

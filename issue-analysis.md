@@ -145,7 +145,7 @@ Transfer rules might need to add plural tags or convert case.
 ### Test #1: Verify Stem Output
 
 ```bash
-cd /home/mark/apertium-dev/apertium-ido-epo
+cd /home/mark/apertium-ido-epo/apertium-ido-epo
 
 # Check what analyzer outputs
 echo "esas" | lt-proc ido-epo.automorf.bin

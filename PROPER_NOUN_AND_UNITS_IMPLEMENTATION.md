@@ -124,9 +124,9 @@ Based on the error analysis in `SIDE_BY_SIDE_TRANSLATION_EXAMPLES.md`:
 
 ## Files Modified
 
-1. `/home/mark/apertium-dev/apertium-ido-epo/apertium-ido-epo.ido-epo.dix` - Bilingual dictionary
-2. `/home/mark/apertium-dev/apertium-ido-epo/apertium-ido.ido.dix` - Ido monolingual dictionary
-3. `/home/mark/apertium-dev/apertium-ido-epo/apertium-epo.epo.dix` - Esperanto monolingual dictionary
+1. `/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido-epo.ido-epo.dix` - Bilingual dictionary
+2. `/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido.ido.dix` - Ido monolingual dictionary
+3. `/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-epo.epo.dix` - Esperanto monolingual dictionary
 
 ## Compilation Status
 

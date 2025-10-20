@@ -222,7 +222,7 @@ echo "fromajo" | apertium -d . ido-epo
 
 ### Compile Dictionary
 ```bash
-cd /home/mark/apertium-dev/apertium-ido-epo
+cd /home/mark/apertium-ido-epo/apertium-ido-epo
 make
 ```
 

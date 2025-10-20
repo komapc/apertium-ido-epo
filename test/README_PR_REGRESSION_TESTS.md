@@ -75,8 +75,8 @@ These tests serve as a regression safety net. If any of these translations chang
 
 ## Related Documentation
 
-- `/home/mark/apertium-dev/PR_REVIEW_AND_TESTS_SUMMARY.md` - Full PR review
-- `/home/mark/apertium-dev/PROPOSED_TEST_SENTENCES.md` - Detailed test explanations
+- `/home/mark/apertium-ido-epo/PR_REVIEW_AND_TESTS_SUMMARY.md` - Full PR review
+- `/home/mark/apertium-ido-epo/PROPOSED_TEST_SENTENCES.md` - Detailed test explanations
 
 ## Note
 

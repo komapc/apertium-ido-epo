@@ -220,7 +220,7 @@ echo "Li estas instruisto" | apertium -d . epo-ido
 Run existing test suites to ensure fixes don't break previously working translations:
 
 ```bash
-cd /home/mark/apertium-dev/apertium-ido-epo
+cd /home/mark/apertium-ido-epo/apertium-ido-epo
 make test
 ```
 
