@@ -48,3 +48,5 @@ convert_esperanto_chars.sh
 apertium-epo.epo.dix
 apertium-ido.ido.dix
 .worktrees/
+apertium/apertium-dev/vendor/installed/
+apertium/apertium-dev/build/
