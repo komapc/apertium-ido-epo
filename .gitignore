@@ -47,3 +47,4 @@ convert_esperanto_chars.sh
 # Symlinks
 apertium-epo.epo.dix
 apertium-ido.ido.dix
+.worktrees/
