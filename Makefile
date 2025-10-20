@@ -1,79 +1,198 @@
 ###############################################################################
-## Makefile for Ido-Esperanto Apertium language pair
+## Top-level Makefile for apertium-dev repository
+## Orchestrates builds across all subprojects
 ###############################################################################
 
-LANG1=ido
-LANG2=epo
-PREFIX1=$(LANG1)-$(LANG2)
-PREFIX2=$(LANG2)-$(LANG1)
+# Project root paths
+ROOT_DIR := $(shell pwd)
+APERTIUM_DEV := $(ROOT_DIR)/apertium/apertium-dev
+TOOLS_DIR := $(ROOT_DIR)/tools
+EXTRACTOR_DIR := $(TOOLS_DIR)/extractor/ido-esperanto-extractor
+WEB_DIR := $(TOOLS_DIR)/web/ido-epo-translator-web
 
-BASENAME=apertium-$(PREFIX1)
+# Default target
+.PHONY: all
+all: core
 
-## Dictionaries
-DICS=$(PREFIX1).autobil.bin $(PREFIX1).automorf.bin $(PREFIX1).autogen.bin $(PREFIX1).autopgen.bin \
-     $(PREFIX2).autobil.bin $(PREFIX2).automorf.bin $(PREFIX2).autogen.bin $(PREFIX2).autopgen.bin
+# Help target
+.PHONY: help
+help:
+	@echo "Apertium Development Repository"
+	@echo "================================"
+	@echo ""
+	@echo "Available targets:"
+	@echo "  make core        - Build Apertium language pairs"
+	@echo "  make extractor   - Run dictionary extractor pipeline"
+	@echo "  make web         - Build web translator UI"
+	@echo "  make test        - Run all tests"
+	@echo "  make clean       - Clean all build artifacts"
+	@echo "  make install     - Install Apertium tools (requires sudo)"
+	@echo "  make status      - Show status of all subprojects"
+	@echo ""
+	@echo "Development targets:"
+	@echo "  make vendor      - Build vendor dependencies"
+	@echo "  make submodules  - Initialize and update submodules"
+	@echo ""
 
-## Transfer rules
-TRANSFER=$(PREFIX1).t1x.bin $(PREFIX2).t1x.bin
+# Initialize submodules
+.PHONY: submodules
+submodules:
+	@echo "==> Initializing and updating submodules..."
+	git submodule update --init --recursive
+	@echo "==> Submodules ready"
 
-## Build targets
-all: $(DICS) $(TRANSFER)
+# Build vendor dependencies (lttoolbox, apertium)
+.PHONY: vendor
+vendor: submodules
+	@echo "==> Building vendor dependencies..."
+	@if [ -d "$(APERTIUM_DEV)/vendor" ]; then \
+		$(MAKE) -C $(APERTIUM_DEV) vendor; \
+	else \
+		echo "WARNING: Vendor directory not found. Run 'make submodules' first."; \
+		exit 1; \
+	fi
+	@echo "==> Vendor dependencies built"
 
-## Morphological analyzers (using lt-comp)
-$(PREFIX1).automorf.bin: apertium-$(LANG1).$(LANG1).dix
-	lt-comp lr $< $@
+# Build core Apertium language pairs
+.PHONY: core
+core:
+	@echo "==> Building Apertium language pairs..."
+	@if [ -d "$(APERTIUM_DEV)" ]; then \
+		$(MAKE) -C $(APERTIUM_DEV); \
+	else \
+		echo "ERROR: $(APERTIUM_DEV) not found"; \
+		echo "Run migration first or check STRUCTURE.md"; \
+		exit 1; \
+	fi
+	@echo "==> Core build complete"
 
-$(PREFIX2).automorf.bin: apertium-$(LANG2).$(LANG2).dix
-	lt-comp lr $< $@
+# Run extractor pipeline
+.PHONY: extractor
+extractor:
+	@echo "==> Running dictionary extractor..."
+	@if [ -d "$(EXTRACTOR_DIR)" ]; then \
+		$(MAKE) -C $(EXTRACTOR_DIR); \
+	else \
+		echo "ERROR: $(EXTRACTOR_DIR) not found"; \
+		exit 1; \
+	fi
+	@echo "==> Extractor complete"
 
-## Morphological generators (using lt-comp)
-$(PREFIX1).autogen.bin: apertium-$(LANG2).$(LANG2).dix
-	lt-comp rl $< $@
+# Build web translator UI
+.PHONY: web
+web:
+	@echo "==> Building web translator UI..."
+	@if [ -d "$(WEB_DIR)" ]; then \
+		cd $(WEB_DIR) && npm install && npm run build; \
+	else \
+		echo "ERROR: $(WEB_DIR) not found"; \
+		exit 1; \
+	fi
+	@echo "==> Web build complete"
 
-$(PREFIX2).autogen.bin: apertium-$(LANG1).$(LANG1).dix
-	lt-comp rl $< $@
-## Post-generation dictionaries
-$(PREFIX1).autopgen.bin: $(BASENAME).post-$(LANG2).dix
-	lt-comp lr $< $@
+# Run tests
+.PHONY: test
+test:
+	@echo "==> Running tests..."
+	@if [ -d "$(APERTIUM_DEV)" ]; then \
+		$(MAKE) -C $(APERTIUM_DEV) test; \
+	else \
+		echo "ERROR: Tests directory not found"; \
+		exit 1; \
+	fi
+	@echo "==> All tests passed"
 
-$(PREFIX2).autopgen.bin: $(BASENAME).post-$(LANG1).dix
-	lt-comp lr $< $@
-
-
-## Bilingual dictionaries (using lt-comp)
-$(PREFIX1).autobil.bin: $(BASENAME).$(PREFIX1).dix
-	lt-comp lr $< $@
-
-$(PREFIX2).autobil.bin: $(BASENAME).$(PREFIX1).dix
-	lt-comp rl $< $@
-
-## Transfer rules (using apertium-preprocess-transfer and lt-comp)
-$(PREFIX1).t1x.bin: $(BASENAME).$(PREFIX1).t1x
-	apertium-preprocess-transfer $< $@
-
-$(PREFIX2).t1x.bin: $(BASENAME).$(PREFIX2).t1x
-	apertium-preprocess-transfer $< $@
-
-## Modes
-modes: modes.xml
-	apertium-gen-modes modes.xml
-
-## Test targets
-test-ido-epo:
-	@echo "Testing Ido → Esperanto"
-	@echo "abako" | apertium -d . $(PREFIX1)
-
-test-epo-ido:
-	@echo "Testing Esperanto → Ido"
-	@echo "abako" | apertium -d . $(PREFIX2)
-
-test: test-ido-epo test-epo-ido
-
-## Clean
+# Clean all build artifacts
+.PHONY: clean
 clean:
-	rm -f $(DICS) $(TRANSFER)
-	rm -rf .deps modes *.mode
+	@echo "==> Cleaning all build artifacts..."
+	@if [ -d "$(APERTIUM_DEV)" ]; then \
+		$(MAKE) -C $(APERTIUM_DEV) clean; \
+	fi
+	@if [ -d "$(EXTRACTOR_DIR)" ]; then \
+		$(MAKE) -C $(EXTRACTOR_DIR) clean 2>/dev/null || true; \
+	fi
+	@if [ -d "$(WEB_DIR)" ]; then \
+		cd $(WEB_DIR) && npm run clean 2>/dev/null || true; \
+	fi
+	@echo "==> Clean complete"
 
-.PHONY: all modes test test-ido-epo test-epo-ido clean
+# Install Apertium tools system-wide
+.PHONY: install
+install: vendor
+	@echo "==> Installing Apertium tools..."
+	@echo "This requires sudo privileges"
+	@cd $(APERTIUM_DEV)/vendor/lttoolbox && sudo make install
+	@cd $(APERTIUM_DEV)/vendor/apertium && sudo make install
+	@echo "==> Installation complete"
+
+# Show status of all subprojects
+.PHONY: status
+status:
+	@echo "==> Repository Status"
+	@echo ""
+	@echo "Apertium Language Pairs:"
+	@if [ -d "$(APERTIUM_DEV)/apertium-ido-epo" ]; then \
+		echo "  ✓ Ido-Esperanto pair found"; \
+	else \
+		echo "  ✗ Ido-Esperanto pair NOT found"; \
+	fi
+	@echo ""
+	@echo "Tools:"
+	@if [ -d "$(EXTRACTOR_DIR)" ]; then \
+		echo "  ✓ Dictionary extractor found"; \
+	else \
+		echo "  ✗ Dictionary extractor NOT found"; \
+	fi
+	@if [ -d "$(WEB_DIR)" ]; then \
+		echo "  ✓ Web translator found"; \
+	else \
+		echo "  ✗ Web translator NOT found"; \
+	fi
+	@echo ""
+	@echo "Vendor Dependencies:"
+	@if [ -d "$(APERTIUM_DEV)/vendor/apertium" ]; then \
+		echo "  ✓ apertium submodule present"; \
+	else \
+		echo "  ✗ apertium submodule NOT present (run 'make submodules')"; \
+	fi
+	@if [ -d "$(APERTIUM_DEV)/vendor/lttoolbox" ]; then \
+		echo "  ✓ lttoolbox submodule present"; \
+	else \
+		echo "  ✗ lttoolbox submodule NOT present (run 'make submodules')"; \
+	fi
+	@echo ""
+
+# Development convenience targets
+.PHONY: dev-setup
+dev-setup: submodules vendor
+	@echo "==> Setting up development environment..."
+	@if [ -d "$(WEB_DIR)" ]; then \
+		cd $(WEB_DIR) && npm install; \
+	fi
+	@if [ ! -d "venv" ]; then \
+		python3 -m venv venv; \
+		./venv/bin/pip install -r requirements-wiki.txt 2>/dev/null || true; \
+	fi
+	@echo "==> Development environment ready"
+	@echo ""
+	@echo "To activate Python environment: source venv/bin/activate"
+
+.PHONY: quick-test
+quick-test:
+	@echo "==> Quick test: Ido → Esperanto"
+	@cd $(APERTIUM_DEV)/apertium-ido-epo && \
+		echo "me havas granda kato" | apertium -d . ido-epo
+
+###############################################################################
+## Backward compatibility (temporary during migration)
+###############################################################################
+
+# These targets work with old paths and show migration warnings
+.PHONY: old-path-warning
+old-path-warning:
+	@echo "WARNING: You are using old paths"
+	@echo "Please update your scripts to use new structure"
+	@echo "See STRUCTURE.md and MIGRATION_PLAN.md"
 
 
