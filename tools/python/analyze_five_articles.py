@@ -185,7 +185,7 @@ def translate_text(text: str) -> str:
     """Translate Ido text to Esperanto using Apertium."""
     try:
         result = subprocess.run(
-            ['apertium', '-d', '/home/mark/apertium-dev/apertium-ido-epo', 'ido-epo'],
+            ['apertium', '-d', '/home/mark/apertium-ido-epo/apertium-ido-epo', 'ido-epo'],
             input=text.encode('utf-8'),
             capture_output=True,
             timeout=60

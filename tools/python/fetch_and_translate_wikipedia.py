@@ -148,7 +148,7 @@ def main():
         "Eŭropo",  # Europe
     ]
     
-    apertium_dir = "/home/mark/apertium-dev/apertium-ido-epo"
+    apertium_dir = "/home/mark/apertium-ido-epo/apertium-ido-epo"
     results = []
     
     # Process Ido articles (translate to Esperanto)
@@ -234,7 +234,7 @@ def main():
             print(f"    {i}. {problem}")
     
     # Save results to JSON
-    output_file = '/home/mark/apertium-dev/wikipedia_translation_analysis.json'
+    output_file = '/home/mark/apertium-ido-epo/wikipedia_translation_analysis.json'
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     
@@ -243,7 +243,7 @@ def main():
     print(f"Total translations analyzed: {len(results)}")
     
     # Create a summary report
-    summary_file = '/home/mark/apertium-dev/wikipedia_translation_summary.txt'
+    summary_file = '/home/mark/apertium-ido-epo/wikipedia_translation_summary.txt'
     with open(summary_file, 'w', encoding='utf-8') as f:
         f.write("WIKIPEDIA TRANSLATION ANALYSIS SUMMARY\n")
         f.write("=" * 80 + "\n\n")

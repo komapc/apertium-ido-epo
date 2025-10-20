@@ -22,7 +22,7 @@ Successfully restructured the `apertium-dev` repository from a flat, duplicated 
 ## Final Structure
 
 ```
-/home/mark/apertium-dev/
+/home/mark/apertium-ido-epo/
 ├── apertium/
 │   └── apertium-dev/                    # All Apertium language resources
 │       ├── vendor/                      # ✅ Vendor submodules
@@ -65,13 +65,13 @@ Successfully restructured the `apertium-dev` repository from a flat, duplicated 
 ## What Was Accomplished
 
 ### Phase 1: Vendor Separation ✅
-- Created `apertium/apertium-dev/vendor/` structure
+- Created `apertium/vendor/` structure
 - Added 4 vendor submodules (lttoolbox, apertium, apertium-ido, apertium-epo)
 - Built lttoolbox successfully (14 tools available)
 - Installed Makefile for apertium-dev
 
 ### Phase 2: Core Pair Move ✅
-- Moved `apertium-ido-epo/` to `apertium/apertium-dev/`
+- Moved `apertium-ido-epo/` to `apertium/`
 - Archived inactive language repos (bel, rus, bel-rus, fra)
 - Removed duplicate `.dix`/`.t1x` files from root
 - Removed all `.bin` files from root
@@ -88,14 +88,14 @@ Successfully restructured the `apertium-dev` repository from a flat, duplicated 
 - Removed empty `scripts/` directory
 
 ### Phase 5: Tests Consolidation ✅
-- Consolidated all tests under `apertium/apertium-dev/tests/`
+- Consolidated all tests under `apertium/tests/`
 - Organized by language pair (ido-epo, epo-ido)
 - Removed duplicate test directories
 
 ### Phase 6: Documentation Move ✅
-- Moved analysis docs to `apertium/apertium-dev/docs/analyses/`
-- Moved progress docs to `apertium/apertium-dev/docs/progress/`
-- Moved test data to `apertium/apertium-dev/data/raw/`
+- Moved analysis docs to `apertium/docs/analyses/`
+- Moved progress docs to `apertium/docs/progress/`
+- Moved test data to `apertium/data/raw/`
 
 ### Phase 7: New Configuration ✅
 - Installed new top-level `Makefile` with targets for core/extractor/web
@@ -114,7 +114,7 @@ Successfully restructured the `apertium-dev` repository from a flat, duplicated 
 1. `9a82943` - docs: Add restructure planning documents
 2. `4ae187e` - fix: Remove worktrees from git index
 3. `d1fc158` - refactor: Remove old submodule configurations
-4. `a780ee6` - feat: Add vendor submodules under apertium/apertium-dev/vendor
+4. `a780ee6` - feat: Add vendor submodules under apertium/vendor
 5. `2fbe79b` - docs: Phase 1 progress
 6. `c1f7cb5` - refactor: Move core pair and archive inactive repos
 7. `5884293` - refactor: Reorganize tools, scripts, tests, and documentation
@@ -139,15 +139,15 @@ $ find . -maxdepth 2 -type d | grep -E "(apertium|tools)" | sort
 ### Vendor Submodules ✅
 ```bash
 $ git submodule status
-+c7ea3aea1bc124cf6cc974a79ffd5019d9808487 apertium/apertium-dev/vendor/apertium
-+8a29547297d1237c2eb7355bc9fe085617608edb apertium/apertium-dev/vendor/apertium-epo
-+1368ac9cb59eded97a1bd5cae7e8049be2cfbc90 apertium/apertium-dev/vendor/apertium-ido
-+ae189f7de208d20b57246f20217bcd37d373b1ae apertium/apertium-dev/vendor/lttoolbox
++c7ea3aea1bc124cf6cc974a79ffd5019d9808487 apertium/vendor/apertium
++8a29547297d1237c2eb7355bc9fe085617608edb apertium/vendor/apertium-epo
++1368ac9cb59eded97a1bd5cae7e8049be2cfbc90 apertium/vendor/apertium-ido
++ae189f7de208d20b57246f20217bcd37d373b1ae apertium/vendor/lttoolbox
 ```
 
 ### lttoolbox Tools ✅
 ```bash
-$ ls apertium/apertium-dev/vendor/installed/bin/
+$ ls apertium/vendor/installed/bin/
 lsx-comp  lt-append  lt-apply-acx  lt-comp  lt-compose  lt-expand  
 lt-invert  lt-merge  lt-paradigm  lt-print  lt-proc  lt-restrict  
 lt-tmxcomp  lt-tmxproc  lt-trim
@@ -230,7 +230,7 @@ git push origin feature/repo-restructure-vendor
 ## Compatibility
 
 ### Temporary Symlink
-- `apertium-ido-epo` → `apertium/apertium-dev/apertium-ido-epo`
+- `apertium-ido-epo` → `apertium/apertium-ido-epo`
 - Ensures scripts using old path still work
 - Remove after CI/CD is updated
 

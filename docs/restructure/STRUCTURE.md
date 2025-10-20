@@ -15,7 +15,7 @@ This document describes the planned restructuring of the apertium-dev repository
 ## Target Directory Layout
 
 ```
-/home/mark/apertium-dev/
+/home/mark/apertium-ido-epo/
 ├── apertium/                           # All Apertium language resources
 │   └── apertium-dev/                   # Main development tree
 │       ├── vendor/                     # Upstream Apertium dependencies (submodules)
@@ -91,29 +91,29 @@ This document describes the planned restructuring of the apertium-dev repository
 ## Key Principles
 
 ### 1. Vendor Dependencies
-- All upstream Apertium repos under `apertium/apertium-dev/vendor/`
+- All upstream Apertium repos under `apertium/vendor/`
 - Managed as Git submodules pinned to stable commits
 - Never duplicate vendor files into first-party projects
 
 ### 2. Build Artifacts
-- Apertium pair builds go to `apertium/apertium-dev/build/`
+- Apertium pair builds go to `apertium/build/`
 - Extractor builds go to `tools/extractor/ido-esperanto-extractor/build/`
 - Web builds go to `tools/web/ido-epo-translator-web/dist/`
 - All build directories are gitignored
 
 ### 3. Scripts
-- **Pair-specific scripts** stay in `apertium/apertium-dev/apertium-ido-epo/scripts/`
+- **Pair-specific scripts** stay in `apertium/apertium-ido-epo/scripts/`
 - **Shared analysis/utility scripts** go to `tools/python/` or `tools/shell/`
 - **Tool-specific scripts** stay within their tool directories (e.g., extractor scripts, web scripts)
 - No loose scripts at repository root
 
 ### 4. Tests
-- Consolidated under `apertium/apertium-dev/tests/`
+- Consolidated under `apertium/tests/`
 - Organized by language pair: `tests/ido-epo/`, `tests/epo-ido/`
 - Root Makefile provides `make test` target that runs all tests
 
 ### 5. Documentation
-- Project docs and analyses under `apertium/apertium-dev/docs/`
+- Project docs and analyses under `apertium/docs/`
 - Organized by type: `docs/analyses/`, `docs/progress/`, `docs/guides/`
 - Each subproject keeps its own README
 
@@ -162,19 +162,19 @@ These are duplicates of root scripts; after consolidation, remove from apertium-
 
 ### Dictionary and transfer files at root
 These exist both at root and inside `apertium-ido-epo/`:
-- `apertium-ido.ido.dix` (root) → keep only in `apertium/apertium-dev/apertium-ido-epo/`
-- `apertium-epo.epo.dix` (root) → keep only in `apertium/apertium-dev/apertium-ido-epo/`
-- `apertium-ido-epo.ido-epo.dix` (root) → keep only in `apertium/apertium-dev/apertium-ido-epo/`
-- `apertium-ido-epo.ido-epo.t1x` (root) → keep only in `apertium/apertium-dev/apertium-ido-epo/`
-- `apertium-ido-epo.epo-ido.t1x` (root) → keep only in `apertium/apertium-dev/apertium-ido-epo/`
+- `apertium-ido.ido.dix` (root) → keep only in `apertium/apertium-ido-epo/`
+- `apertium-epo.epo.dix` (root) → keep only in `apertium/apertium-ido-epo/`
+- `apertium-ido-epo.ido-epo.dix` (root) → keep only in `apertium/apertium-ido-epo/`
+- `apertium-ido-epo.ido-epo.t1x` (root) → keep only in `apertium/apertium-ido-epo/`
+- `apertium-ido-epo.epo-ido.t1x` (root) → keep only in `apertium/apertium-ido-epo/`
 - All `.bin` files at root → these should be in `build/` directory
 
 ### Test files at root
-- `test/` directory at root → move contents to `apertium/apertium-dev/tests/`
+- `test/` directory at root → move contents to `apertium/tests/`
 - `tests/` directory at root → merge with above
 
 ### Documentation files at root
-Move to `apertium/apertium-dev/docs/`:
+Move to `apertium/docs/`:
 - All `*_ANALYSIS.md`, `*_SUMMARY.md`, `*_FIX*.md` files
 - `BEFORE_AFTER_COMPARISON.md`
 - `development_guide.md`
@@ -182,7 +182,7 @@ Move to `apertium/apertium-dev/docs/`:
 
 ## Makefile Strategy
 
-### Top-level `/home/mark/apertium-dev/Makefile`
+### Top-level `/home/mark/apertium-ido-epo/Makefile`
 Orchestrates all subprojects:
 ```makefile
 # Project paths
@@ -212,7 +212,7 @@ clean:
 	cd $(WEB) && npm run clean
 ```
 
-### `/home/mark/apertium-dev/apertium/apertium-dev/Makefile`
+### `/home/mark/apertium-ido-epo/apertium/Makefile`
 Enhanced version of current Makefile with:
 - `BUILD_DIR = build/` prefix for all artifacts
 - Environment variables for vendor paths
@@ -268,20 +268,20 @@ git submodule add https://github.com/apertium/apertium-epo.git vendor/apertium-e
 ## Migration Plan
 
 ### Phase 1: Foundation (No file moves)
-1. Create `apertium/apertium-dev/` directory structure
+1. Create `apertium/` directory structure
 2. Add/update `.gitignore`
 3. Create `STRUCTURE.md` (this document)
 4. Update root `Makefile` with new path variables (but keep working with old paths)
 
 ### Phase 2: Vendor separation
-1. Initialize submodules under `apertium/apertium-dev/vendor/`
+1. Initialize submodules under `apertium/vendor/`
 2. Update pair build scripts to reference vendor paths
 3. Test builds work with new vendor layout
 4. Remove old vendor copies after verification
 
 ### Phase 3: Core move
-1. Move `apertium-ido-epo/` to `apertium/apertium-dev/`
-2. Move other language repos to `apertium/apertium-dev/`
+1. Move `apertium-ido-epo/` to `apertium/`
+2. Move other language repos to `apertium/`
 3. Update Makefiles and paths
 4. Test builds
 
@@ -297,12 +297,12 @@ git submodule add https://github.com/apertium/apertium-epo.git vendor/apertium-e
 4. Update import paths and shebangs
 
 ### Phase 6: Tests consolidation
-1. Create `apertium/apertium-dev/tests/` structure
+1. Create `apertium/tests/` structure
 2. Move test files from root `test/` and `tests/`
 3. Update test runner and Makefile
 
 ### Phase 7: Documentation
-1. Create `apertium/apertium-dev/docs/` structure
+1. Create `apertium/docs/` structure
 2. Move analysis and progress files
 3. Update cross-references
 
@@ -318,8 +318,8 @@ git submodule add https://github.com/apertium/apertium-epo.git vendor/apertium-e
 During migration, use symlinks to avoid breaking existing workflows:
 ```bash
 # At root, link to new locations
-ln -s apertium/apertium-dev/apertium-ido-epo/apertium-ido.ido.dix .
-ln -s apertium/apertium-dev/build/*.bin .
+ln -s apertium/apertium-ido-epo/apertium-ido.ido.dix .
+ln -s apertium/build/*.bin .
 ```
 
 Remove symlinks after all scripts and CI are updated to new paths.
@@ -350,7 +350,7 @@ After migration:
 ## Questions for User
 
 1. Should `outputs/` directory be gitignored or kept in version control?
-2. Should we keep `data/` at top level or move under `apertium/apertium-dev/data/`?
+2. Should we keep `data/` at top level or move under `apertium/data/`?
 3. Any specific scripts that should stay at root for convenience?
 4. Preferred approach for Python dependencies: single root `requirements.txt` or per-tool?
 

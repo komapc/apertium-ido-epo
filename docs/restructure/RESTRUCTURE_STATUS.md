@@ -10,14 +10,14 @@
 
 ### ✅ Phase 1: Vendor Separation (COMPLETE)
 
-**Goal:** Separate vendor dependencies into submodules under `apertium/apertium-dev/vendor/`
+**Goal:** Separate vendor dependencies into submodules under `apertium/vendor/`
 
 **Accomplished:**
 1. Created new directory structure:
-   - `apertium/apertium-dev/vendor/` - for vendor submodules
-   - `apertium/apertium-dev/build/` - for build artifacts
-   - `apertium/apertium-dev/tests/` - for tests (empty, ready)
-   - `apertium/apertium-dev/docs/` - for documentation (empty, ready)
+   - `apertium/vendor/` - for vendor submodules
+   - `apertium/build/` - for build artifacts
+   - `apertium/tests/` - for tests (empty, ready)
+   - `apertium/docs/` - for documentation (empty, ready)
 
 2. Cleaned up old submodule configuration:
    - Removed 10 old submodule entries
@@ -29,7 +29,7 @@
    - ✅ `vendor/apertium-ido` → https://github.com/komapc/apertium-ido.git
    - ✅ `vendor/apertium-epo` → https://github.com/apertium/apertium-epo.git
 
-4. Installed Makefile for `apertium/apertium-dev/`
+4. Installed Makefile for `apertium/`
 
 5. Partially built vendor tools:
    - ✅ lttoolbox: Fully built and installed (14 tools available)
@@ -44,7 +44,7 @@
 
 ### Directory Structure (Partial)
 ```
-/home/mark/apertium-dev/
+/home/mark/apertium-ido-epo/
 ├── apertium/
 │   └── apertium-dev/
 │       ├── vendor/                    # ✅ Created
@@ -98,7 +98,7 @@
 Since vendor submodules are configured and lttoolbox is built, we can continue restructuring without waiting for the full apertium build.
 
 **Phase 2: Core Pair Move**
-1. Move `apertium-ido-epo/` to `apertium/apertium-dev/`
+1. Move `apertium-ido-epo/` to `apertium/`
 2. Remove duplicate `.dix` files from root
 3. Create temporary symlink for compatibility
 4. Update pair Makefile (if needed)
@@ -123,13 +123,13 @@ If you want to review the vendor setup before continuing:
 
 1. Finish building apertium:
    ```bash
-   cd /home/mark/apertium-dev/apertium/apertium-dev
+   cd /home/mark/apertium-ido-epo/apertium/apertium-dev
    make vendor  # Resume where it left off
    ```
 
 2. Test vendor tools:
    ```bash
-   export PATH=/home/mark/apertium-dev/apertium/apertium-dev/vendor/installed/bin:$PATH
+   export PATH=/home/mark/apertium-ido-epo/apertium/vendor/installed/bin:$PATH
    lt-comp --version
    # After full build:
    apertium-preprocess-transfer --version

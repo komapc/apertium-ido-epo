@@ -8,7 +8,7 @@
 
 ### Migration Strategy
 - ✅ **Vendor repos:** Fresh submodules (Option A)
-- ✅ **Inactive language pairs:** Move bel/rus/bel-rus/fra to `apertium/apertium-dev/archived/`
+- ✅ **Inactive language pairs:** Move bel/rus/bel-rus/fra to `apertium/archived/`
 - ✅ **Root Makefile scope:** Delegate to all subprojects (core, extractor, web)
 - ✅ **Python dependencies:** Per-tool (not centralized)
 - ✅ **Data directory:** Keep at root level
@@ -38,11 +38,11 @@
 
 #### 1.1 Create directory structure
 ```bash
-mkdir -p apertium/apertium-dev/vendor
-mkdir -p apertium/apertium-dev/build
-mkdir -p apertium/apertium-dev/tests
-mkdir -p apertium/apertium-dev/docs/{analyses,progress,guides}
-mkdir -p apertium/apertium-dev/data/{raw,processed}
+mkdir -p apertium/vendor
+mkdir -p apertium/build
+mkdir -p apertium/tests
+mkdir -p apertium/docs/{analyses,progress,guides}
+mkdir -p apertium/data/{raw,processed}
 ```
 
 #### 1.2 Check vendor repo remotes
@@ -56,7 +56,7 @@ cd ../apertium-epo && git remote -v
 #### 1.3 Remove old vendor directories (after confirming no local changes)
 ```bash
 # Check for uncommitted changes in each
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 git status apertium/ lttoolbox/ apertium-ido/ apertium-epo/
 
 # If clean, remove them
@@ -65,7 +65,7 @@ rm -rf apertium lttoolbox apertium-ido apertium-epo
 
 #### 1.4 Initialize vendor submodules
 ```bash
-cd /home/mark/apertium-dev/apertium/apertium-dev
+cd /home/mark/apertium-ido-epo/apertium/apertium-dev
 
 # Add submodules
 git submodule add https://github.com/apertium/apertium.git vendor/apertium
@@ -79,12 +79,12 @@ git submodule update --init --recursive
 
 #### 1.5 Install Makefile.apertium-dev
 ```bash
-cp /home/mark/apertium-dev/Makefile.apertium-dev /home/mark/apertium-dev/apertium/apertium-dev/Makefile
+cp /home/mark/apertium-ido-epo/Makefile.apertium-dev /home/mark/apertium-ido-epo/apertium/Makefile
 ```
 
 #### 1.6 Test vendor build
 ```bash
-cd /home/mark/apertium-dev/apertium/apertium-dev
+cd /home/mark/apertium-ido-epo/apertium/apertium-dev
 make vendor
 ```
 
@@ -102,7 +102,7 @@ Will execute only after Phase 1 is verified working.
 
 #### 2.1 Move apertium-ido-epo
 ```bash
-mv /home/mark/apertium-dev/apertium-ido-epo /home/mark/apertium-dev/apertium/apertium-dev/
+mv /home/mark/apertium-ido-epo/apertium-ido-epo /home/mark/apertium-ido-epo/apertium/
 ```
 
 #### 2.2 Update pair Makefile to use vendor
@@ -111,14 +111,14 @@ mv /home/mark/apertium-dev/apertium-ido-epo /home/mark/apertium-dev/apertium/ape
 
 #### 2.3 Test pair build
 ```bash
-cd /home/mark/apertium-dev/apertium/apertium-dev
+cd /home/mark/apertium-ido-epo/apertium/apertium-dev
 make pair
 ```
 
 #### 2.4 Create temporary symlink for compatibility
 ```bash
-cd /home/mark/apertium-dev
-ln -s apertium/apertium-dev/apertium-ido-epo apertium-ido-epo
+cd /home/mark/apertium-ido-epo
+ln -s apertium/apertium-ido-epo apertium-ido-epo
 ```
 
 ---
@@ -127,7 +127,7 @@ ln -s apertium/apertium-dev/apertium-ido-epo apertium-ido-epo
 
 #### 3.1 Create tools structure
 ```bash
-mkdir -p /home/mark/apertium-dev/tools/{extractor,web,python,shell}
+mkdir -p /home/mark/apertium-ido-epo/tools/{extractor,web,python,shell}
 ```
 
 #### 3.2 Move projects

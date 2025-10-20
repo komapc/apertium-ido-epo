@@ -20,7 +20,7 @@ Use this checklist to review the restructuring plan before execution.
       _Recommendation: A_
 
 - [ ] **Inactive language pairs:** What to do with bel/rus/bel-rus/fra?
-      _Recommendation: Archive under apertium/apertium-dev/archived/_
+      _Recommendation: Archive under apertium/archived/_
 
 - [ ] **Root Makefile scope:** All subprojects or just apertium-dev?
       _Recommendation: All (core, extractor, web)_
@@ -28,7 +28,7 @@ Use this checklist to review the restructuring plan before execution.
 - [ ] **Python dependencies:** Single requirements.txt or per-tool?
       _Recommendation: Per-tool_
 
-- [ ] **Data directory:** Root level or under apertium/apertium-dev/?
+- [ ] **Data directory:** Root level or under apertium/?
       _Recommendation: Root level_
 
 ### CI/CD Preferences
@@ -68,7 +68,7 @@ Choose one:
 - [ ] All uncommitted work is stashed or committed
 - [ ] Current build is working (`make` succeeds)
 - [ ] Current tests pass (`make test`)
-- [ ] Backup created (just in case): `cp -r /home/mark/apertium-dev /tmp/apertium-dev-backup`
+- [ ] Backup created (just in case): `cp -r /home/mark/apertium-ido-epo /tmp/apertium-dev-backup`
 - [ ] Ready to create feature branch
 
 ## 🔍 Post-Migration Verification
