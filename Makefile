@@ -5,7 +5,7 @@
 
 # Project root paths
 ROOT_DIR := $(shell pwd)
-APERTIUM_DEV := $(ROOT_DIR)/apertium/apertium-dev
+APERTIUM_DEV := $(ROOT_DIR)/apertium
 TOOLS_DIR := $(ROOT_DIR)/tools
 EXTRACTOR_DIR := $(TOOLS_DIR)/extractor/ido-esperanto-extractor
 WEB_DIR := $(TOOLS_DIR)/web/ido-epo-translator-web
