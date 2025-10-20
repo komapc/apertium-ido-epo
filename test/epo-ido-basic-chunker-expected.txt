@@ -1,0 +1,20 @@
+[0aLeppj6JZ5Z#0] ^*li$ ^helpar<vblex><pri>$ ^la<det>$ ^amiko<n><sg><acc>$
+[/0aLeppj6JZ5Z]
+[75hjTAWSIXhH#0] ^la<det>$ ^hundo<n><sg><nom>$ ^kurar<vblex><pri>$ ^*rapide$
+[/75hjTAWSIXhH]
+[B2IXeX-ZvvrQ#0] ^*mi$ ^havar<vblex><pri>$ ^granda<adj><sg>$ ^kato<n><sg><acc>$
+[/B2IXeX-ZvvrQ]
+[DWmQL-1xebP8#0] ^*ili$ ^studar<vblex><pri>$ ^en<pr>$ ^la<det>$ ^skolo<n><sg><nom>$
+[/DWmQL-1xebP8]
+[Dw_N41ENGtx-#0] ^*mi$ ^*manĝas$ ^pomo<n><sg><acc>$
+[/Dw_N41ENGtx-]
+[E84W0XpQe6KN#0] ^*ni$ ^volar<vblex><pri>$ ^irar<vblex><inf>$
+[/E84W0XpQe6KN]
+[FJRLo-aP_Bd4#0] ^*mi$ ^havar<vblex><pri>$ ^kato<n><sg><acc>$
+[/FJRLo-aP_Bd4]
+[NyvOQneahW0h#0] ^la<det>$ ^kato<n><sg><nom>$ ^*estas$ ^bela<adj><sg>$
+[/NyvOQneahW0h]
+[k_nb4njNECFv#0] ^la<det>$ ^domo<n><sg><nom>$ ^*estas$ ^granda<adj><sg>$
+[/k_nb4njNECFv]
+[ktv2a9TGLOPP#0] ^*mi$ ^konar<vblex><pri>$ ^la<det>$ ^viro<n><sg><acc>$
+[/ktv2a9TGLOPP]

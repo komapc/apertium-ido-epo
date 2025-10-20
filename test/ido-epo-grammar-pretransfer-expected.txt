@@ -1,0 +1,20 @@
+[25V_EVF33u_Z#0] ^me/*me$ ^donacis/donacar<vblex><pii>$ ^flowri/*flowri$ ^a/*a$ ^mea/mea<adj><sg>$ ^matro/matro<n><sg><nom>$
+[/25V_EVF33u_Z]
+[AZzy3J1EoTcG#0] ^il/*il$ ^skribis/skribar<vblex><pii>$ ^longa/longa<adj><sg>$ ^letro/letro<n><sg><nom>$
+[/AZzy3J1EoTcG]
+[Mr2Qn1cDibwW#0] ^me/*me$ ^desiras/*desiras$ ^drinkar/drinkar<vblex><inf>$ ^aquo/aquo<n><sg><nom>$
+[/Mr2Qn1cDibwW]
+[PPkpl7SkXXHH#0] ^la/*la$ ^libro/libro<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^tre/*tre$ ^interesanta/*interesanta$
+[/PPkpl7SkXXHH]
+[Vp-ZtHabVHVK#0] ^la/*la$ ^kavali/kavalo<n><pl><nom>$ ^kuras/kurar<vblex><pri>$ ^en/*en$ ^la/*la$ ^kampo/*kampo$
+[/Vp-ZtHabVHVK]
+[W2EZ-LsUInHH#0] ^me/*me$ ^vidis/vidar<vblex><pii>$ ^la/*la$ ^granda/granda<adj><sg>$ ^domo/domo<n><sg><nom>$
+[/W2EZ-LsUInHH]
+[WCVXtorvJh4d#0] ^elu/*elu$ ^manjis/manjar<vblex><pii>$ ^pomi/pomo<n><pl><nom>$ ^e/*e$ ^peri/*peri$
+[/WCVXtorvJh4d]
+[mTdPtgjMDaCP#0] ^elu/*elu$ ^kantis/kantar<vblex><pii>$ ^bela/bela<adj><sg>$ ^kansono/kansono<n><sg><nom>$
+[/mTdPtgjMDaCP]
+[q923GoKB4CAY#0] ^la/*la$ ^hundo/hundo<n><sg><nom>$ ^e/*e$ ^la/*la$ ^kato/kato<n><sg><nom>$ ^esas/esar<vblex><pri>$ ^amiki/amika<adj><pl>/amiko<n><pl><nom>$
+[/q923GoKB4CAY]
+[uuOQEO-RdN3I#0] ^ni/*ni$ ^iris/irar<vblex><pii>$ ^a/*a$ ^la/*la$ ^urbo/urbo<n><sg><nom>$
+[/uuOQEO-RdN3I]
