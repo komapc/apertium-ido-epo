@@ -170,7 +170,7 @@ def main():
         }
     ]
     
-    apertium_dir = "/home/mark/apertium-dev/apertium-ido-epo"
+    apertium_dir = "/home/mark/apertium-ido-epo/apertium-ido-epo"
     results = []
     
     for article in articles:
@@ -253,7 +253,7 @@ def main():
             print(f"\n  ⚠ Pronoun issues (@prpers): {error_analysis['specific_issues']['prpers_count']}")
     
     # Save results to JSON
-    output_file = '/home/mark/apertium-dev/specific_articles_translation_results.json'
+    output_file = '/home/mark/apertium-ido-epo/specific_articles_translation_results.json'
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     
@@ -262,7 +262,7 @@ def main():
     print(f"{'=' * 80}\n")
     
     # Create detailed error report
-    report_file = '/home/mark/apertium-dev/specific_articles_error_report.md'
+    report_file = '/home/mark/apertium-ido-epo/specific_articles_error_report.md'
     with open(report_file, 'w', encoding='utf-8') as f:
         f.write("# Translation Error Analysis Report\n\n")
         f.write("**Analysis Date:** October 9, 2025\n\n")

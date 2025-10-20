@@ -28,7 +28,7 @@ def translate_text(text, direction):
     try:
         # Use apertium from the built directory
         process = subprocess.Popen(
-            ['apertium', '-d', '/home/mark/apertium-dev/apertium-ido-epo', direction],
+            ['apertium', '-d', '/home/mark/apertium-ido-epo/apertium-ido-epo', direction],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE

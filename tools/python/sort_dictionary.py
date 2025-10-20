@@ -87,8 +87,8 @@ def sort_dictionary(file_path):
     return tree
 
 def main():
-    input_file = '/home/mark/apertium-dev/apertium-ido-epo/apertium-ido.ido.dix'
-    output_file = '/home/mark/apertium-dev/apertium-ido-epo/apertium-ido.ido.dix'
+    input_file = '/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido.ido.dix'
+    output_file = '/home/mark/apertium-ido-epo/apertium-ido-epo/apertium-ido.ido.dix'
     
     print("Sorting Ido dictionary alphabetically...")
     tree = sort_dictionary(input_file)

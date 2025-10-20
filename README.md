@@ -5,7 +5,7 @@ This is a workspace directory containing multiple Apertium projects and tools.
 ## Projects
 
 ### Core Apertium Resources
-- **[apertium/apertium-dev/](apertium/apertium-dev/)** - Apertium language resources
+- **[apertium/](apertium/)** - Apertium language resources
   - Language pairs (Ido-Esperanto, etc.)
   - Vendor dependencies (lttoolbox, apertium core)
   - Tests and documentation
@@ -38,7 +38,7 @@ make help
 ## Structure
 
 Each subdirectory is an independent project with its own README:
-- See `apertium/apertium-dev/README.md` for Apertium pair documentation
+- See `apertium/README.md` for Apertium pair documentation
 - See `tools/extractor/ido-esperanto-extractor/README.md` for extractor docs
 - See `tools/web/ido-epo-translator-web/README.md` for web app docs
 
