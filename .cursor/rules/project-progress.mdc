@@ -93,3 +93,15 @@ To update progress:
 - [SUSPICIOUS_PATTERNS_FIXED.md](mdc:SUSPICIOUS_PATTERNS_FIXED.md) - Dictionary error patterns
 - [IMPLEMENTATION_SUCCESS_SUMMARY.md](mdc:apertium-ido-epo/IMPLEMENTATION_SUCCESS_SUMMARY.md) - Previous work summary
 - [README.md](mdc:apertium-ido-epo/README.md) - Project overview and statistics
+
+## Versioning Rule (Enforced)
+- For any PR that touches `ido-epo-translator-web/**`:
+  1) Bump `package.json` version (patch-level at minimum).
+  2) Build writes the version to the bundle via `VITE_APP_VERSION=$npm_package_version`.
+  3) If `version.json` is used, regenerate it.
+  4) CI must fail PRs without a version bump.
+
+Suggested command:
+```bash
+jq '.version |= (.|split(".")|.[2]=(.[2]|tonumber+1)|join("."))' package.json > package.json.tmp && mv package.json.tmp package.json
+```

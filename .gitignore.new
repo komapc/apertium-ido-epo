@@ -1,0 +1,114 @@
+# Build artifacts - all binaries and compiled files
+build/**
+**/build/**
+**/*.bin
+**/*.att.gz
+**/*.mode
+**/*.pc
+.deps/
+**/. deps/
+modes/
+**/modes/
+
+# Autotools build artifacts
+autom4te.cache/
+**/autom4te.cache/
+aclocal.m4
+/aclocal.m4
+configure
+/configure
+config.log
+/config.log
+config.status
+/config.status
+Makefile.in
+/Makefile.in
+install-sh
+/install-sh
+missing
+/missing
+INSTALL
+/INSTALL
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+*.egg-info/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js / Web
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.cache/
+*.tsbuildinfo
+
+# Editor and IDE
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+
+# Temporary and backup files
+*.bak
+*.backup
+*.tmp
+*.orig
+*.log
+
+# Analysis and output files (optional - can be adjusted)
+outputs/*.json
+outputs/*.tsv
+# Keep outputs/ directory structure but ignore large generated files
+
+# Test outputs
+test_output_*.txt
+*_output.txt
+
+# Data dumps and large files
+*.dump
+*.gz
+data/raw/*.xml
+data/raw/*.json.gz
+
+# Worktrees
+.worktrees/
+
+# Agent tools
+.cursor/.agent-tools/
+
+# Specific files that shouldn't be tracked
+apertium-epo.epo.dix
+# (symlink - will be removed after restructure)
+
+# Development analysis files (moved to docs/)
+*_ANALYSIS.md
+*_SUMMARY.md
+*_FIX*.md
+*_IMPROVEMENTS.md
+*_REPORT.md
+QUICK_SUMMARY.md
+RECOMMENDED_NEXT_STEPS.md
+test_*.txt
+
+# Python scripts marked for removal/consolidation
+add_essential_words.py
+add_pronoun_entries.py
+generate_reverse_entries.py
+convert_esperanto_chars.sh
+

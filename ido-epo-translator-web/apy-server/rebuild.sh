@@ -8,13 +8,16 @@ echo "=== Rebuilding Apertium Ido-Esperanto Translator ==="
 # Update repositories
 echo "Pulling latest code..."
 cd /opt/apertium/apertium-ido
-git pull origin master
+git fetch origin
+git reset --hard origin/main
 
 cd /opt/apertium/apertium-epo  
-git pull origin master
+git fetch origin
+git reset --hard origin/master
 
 cd /opt/apertium/apertium-ido-epo
-git pull origin master
+git fetch origin
+git reset --hard origin/main
 
 # Rebuild apertium-ido
 echo "Rebuilding apertium-ido..."

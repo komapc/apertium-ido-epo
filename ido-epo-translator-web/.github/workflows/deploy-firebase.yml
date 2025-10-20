@@ -1,11 +1,13 @@
 name: Deploy Firebase Hosting and Functions
 
+# DISABLED: Project now uses Cloudflare Workers (_worker.js) instead of Firebase Functions
+# This workflow is kept for reference but will not run
 on:
-  push:
-    branches: [ main ]
-    paths-ignore:
-      - 'apy-server/**'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      enable:
+        description: 'Disabled - project uses Cloudflare Workers'
+        required: false
 
 jobs:
   deploy:

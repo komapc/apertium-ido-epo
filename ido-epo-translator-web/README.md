@@ -2,19 +2,36 @@
 
 A modern web application for translating between Ido and Esperanto, powered by Apertium machine translation. Features text translation and full webpage translation with side-by-side comparison.
 
-> Current deployment: Cloudflare Worker (static assets + API) + EC2 APy server
+**🌐 Live:** https://ido-epo-translator.pages.dev  
+**📚 Documentation:** [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)  
+**📊 Project Status:** [STATUS.md](STATUS.md)
+
+> **Current deployment:** Cloudflare Worker (static assets + API) + EC2 APy server
 >
-- Set `APY_SERVER_URL` in the Worker to your APy base URL (e.g., `http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com`)
-- Set `REBUILD_WEBHOOK_URL` to `http://<ec2-hostname>/rebuild` to enable the Rebuild button
+> - Set `APY_SERVER_URL` in the Worker to your APy base URL (e.g., `http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com`)
+> - Set `REBUILD_WEBHOOK_URL` to `http://<ec2-hostname>/rebuild` to enable the Rebuild button
 
 ## 🌟 Features
 
+### Translation Features
 - **Text Translation**: Translate phrases and sentences between Ido and Esperanto
 - **URL Translation**: Translate entire webpages (e.g., Wikipedia articles) with side-by-side comparison
 - **Bidirectional**: Switch translation direction with one click
-- **Rebuild Button**: Trigger idempotent dictionary updates on EC2 (only rebuilds when changes detected)
-- **Visible App Version**: Footer shows build version `vX.Y.Z`
-- **Dictionaries Versions**: Footer widget shows latest tag or last commit date for `apertium-ido`, `apertium-epo`, and `apertium-ido-epo`
+- **Color-coded Output**: Visual quality indicators
+  - 🔴 Red: Unknown words (*)
+  - 🟠 Orange: Generation errors (@)
+  - 🟡 Yellow: Ambiguous translations (#)
+- **Quality Score**: Shows percentage of correctly translated words
+- **Toggle Display**: Switch between color mode and symbol mode
+
+### Infrastructure Features
+- **Smart Rebuild Button**: Trigger dictionary updates on EC2
+  - Checks for updates before rebuilding (prevents unnecessary rebuilds)
+  - Real-time progress indicator with elapsed timer (MM:SS)
+  - Progress bar (estimated 5-minute completion)
+  - "Up to date" notification when no rebuild needed
+- **Version Display**: Footer shows app version `vX.Y.Z`
+- **Dictionary Versions**: Shows latest versions of `apertium-ido`, `apertium-epo`, and `apertium-ido-epo`
 - **Modern UI**: Beautiful, responsive interface built with React and TailwindCSS
 
 ## 🏗️ Architecture
@@ -152,21 +169,17 @@ docker exec ido-epo-apy /opt/apertium-ido-epo-local/rebuild.sh
 docker-compose restart
 ```
 
-### Option 3: Rebuild and Redeploy Cloud Run
+### Option 3: Via EC2 Webhook
 
 ```bash
-cd apy-server
+# Trigger rebuild via API
+curl -X POST http://ec2-52-211-137-158.eu-west-1.compute.amazonaws.com/rebuild \
+  -H "Content-Type: application/json" \
+  -H "X-Rebuild-Token: YOUR_SHARED_SECRET"
 
-# Copy your latest local repos (optional)
-cp -r ../../apertium-ido ./apertium-ido-local
-cp -r ../../apertium-ido-epo ./apertium-ido-epo-local
-
-# Rebuild and push
-docker build --no-cache -t gcr.io/$PROJECT_ID/ido-epo-apy .
-docker push gcr.io/$PROJECT_ID/ido-epo-apy
-
-# Update Cloud Run service (triggers rolling update)
-gcloud run services update ido-epo-apy --region us-central1
+# Check rebuild logs on EC2
+ssh ubuntu@ec2-52-211-137-158.eu-west-1.compute.amazonaws.com
+sudo tail -f /var/log/apertium-rebuild.log
 ```
 
 ## 🧪 Testing
@@ -272,18 +285,30 @@ Common issues:
 2. Check if language pair is installed
 3. Test with simple text first
 
-### Firebase Deployment Fails
+### Deployment Issues
 
-1. Ensure you're logged in: `firebase login`
-2. Verify project ID: `firebase projects:list`
-3. Check quota limits in Firebase console
+1. **GitHub Actions failing?** Check workflow logs in GitHub
+2. **Worker not deploying?** Verify Wrangler is authenticated: `wrangler whoami`
+3. **EC2 connection issues?** Check security group rules (ports 80, 22, 9100)
 
 ## 📚 Resources
 
+### Apertium
 - [Apertium Documentation](https://wiki.apertium.org)
 - [Apertium APy Repository](https://github.com/apertium/apertium-apy)
-- [Firebase Documentation](https://firebase.google.com/docs)
-- [Cloud Run Documentation](https://cloud.google.com/run/docs)
+- [Ido Dictionary](https://github.com/komapc/apertium-ido)
+- [Ido-Esperanto Bilingual](https://github.com/komapc/apertium-ido-epo)
+
+### Cloudflare
+- [Cloudflare Workers](https://developers.cloudflare.com/workers/)
+- [Cloudflare Pages](https://developers.cloudflare.com/pages/)
+- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)
+
+### Project Documentation
+- [Full Documentation Index](DOCUMENTATION_INDEX.md)
+- [Deployment Guide](DEPLOYMENT_GUIDE.md)
+- [Operations Guide](OPERATIONS.md)
+- [Current Status](STATUS.md)
 
 ## 📄 License
 

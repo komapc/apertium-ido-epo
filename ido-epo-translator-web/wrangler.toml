@@ -11,6 +11,9 @@ run_worker_first = true
 # Set production variables in the Dashboard (APY_SERVER_URL, ADMIN_PASSWORD, REBUILD_WEBHOOK_URL, REBUILD_SHARED_SECRET).
 # Optional at runtime: APP_VERSION to surface version in /api/health
 
+# Note: To deploy to production (default environment), use: wrangler deploy --env=""
+# or just: wrangler deploy (will use default top-level config)
+
 [env.dev]
 [env.dev.vars]
 # Local development only
