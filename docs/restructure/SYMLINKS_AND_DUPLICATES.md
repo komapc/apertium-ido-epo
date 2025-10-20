@@ -7,9 +7,9 @@
 
 ### 1. Dictionary and Transfer Files at Root
 
-**Source of truth:** `apertium/apertium-dev/apertium-ido-epo/`
+**Source of truth:** `apertium/apertium-ido-epo/`
 
-Files to **remove** from `/home/mark/apertium-dev/`:
+Files to **remove** from `/home/mark/apertium-ido-epo/`:
 ```
 apertium-ido.ido.dix           → Duplicate of apertium-ido-epo/apertium-ido.ido.dix
 apertium-epo.epo.dix           → Symlink (already in .gitignore), remove
@@ -37,7 +37,7 @@ epo-ido.autopgen.bin
 epo-ido.t1x.bin
 ```
 
-**New location:** `apertium/apertium-dev/build/`
+**New location:** `apertium/build/`
 
 ### 3. Python Scripts
 
@@ -113,7 +113,7 @@ apertium-ido-epo/tests/test_date_normalizer.py (duplicate of root tests/)
 ```
 
 **Action:**
-- Consolidate all under `apertium/apertium-dev/tests/`
+- Consolidate all under `apertium/tests/`
 - Remove duplicates from `apertium-ido-epo/test/` and `apertium-ido-epo/tests/`
 
 ### 6. Documentation Files
@@ -138,7 +138,7 @@ TRANSFER_RULES_REVIEW.md
 **Many also exist in `apertium-ido-epo/`**
 
 **Action:**
-- Move authoritative versions to `apertium/apertium-dev/docs/`
+- Move authoritative versions to `apertium/docs/`
 - Remove duplicates from both root and `apertium-ido-epo/`
 
 ### 7. Data Files
@@ -166,7 +166,7 @@ ido-eu-translated-*.txt
 ```
 
 **Action:**
-- Move to `apertium/apertium-dev/data/raw/`
+- Move to `apertium/data/raw/`
 - Remove duplicates
 
 ### 8. Output and Analysis Files
@@ -186,7 +186,7 @@ outputs/*.tsv
 ```
 
 **Action:**
-- Move to `apertium/apertium-dev/docs/analyses/` or `.gitignore` if regeneratable
+- Move to `apertium/docs/analyses/` or `.gitignore` if regeneratable
 - Consider keeping `outputs/` but gitignoring contents
 
 ### 9. Stray/Malformed Files
@@ -204,24 +204,24 @@ outputs/*.tsv
 
 During migration, create these symlinks to avoid breaking workflows:
 
-### At repository root `/home/mark/apertium-dev/`:
+### At repository root `/home/mark/apertium-ido-epo/`:
 
 ```bash
 # Link to relocated pair
-ln -s apertium/apertium-dev/apertium-ido-epo apertium-ido-epo
+ln -s apertium/apertium-ido-epo apertium-ido-epo
 
 # Link to build artifacts
-ln -s apertium/apertium-dev/build/*.bin .
+ln -s apertium/build/*.bin .
 
 # Link to common scripts (if scripts expect them at root)
 ln -s tools/python/analyze_translations.py analyze_translations.py
 ln -s tools/python/translate_articles.py translate_articles.py
 
 # Link to test directory
-ln -s apertium/apertium-dev/tests test
+ln -s apertium/tests test
 
 # Link to current Makefile
-ln -s apertium/apertium-dev/Makefile Makefile.pair
+ln -s apertium/Makefile Makefile.pair
 ```
 
 ### Symlink removal plan:
@@ -237,7 +237,7 @@ ln -s apertium/apertium-dev/Makefile Makefile.pair
 
 ### Find all duplicates by hash:
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 find . -type f -name "*.py" -o -name "*.sh" | xargs md5sum | sort | uniq -w32 -D
 ```
 

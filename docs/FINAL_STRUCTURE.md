@@ -15,7 +15,7 @@ The root `apertium-dev/` is **NOT a git repository itself** - it's a **workspace
 ## Root Structure (6 Items Only!)
 
 ```
-/home/mark/apertium-dev/
+/home/mark/apertium-ido-epo/
 ├── apertium/              # Apertium language work
 │   └── apertium-dev/      # Language pairs, vendor deps, tests, data
 ├── tools/                 # Supporting tools
@@ -33,7 +33,7 @@ The root `apertium-dev/` is **NOT a git repository itself** - it's a **workspace
 
 ## What Lives Where
 
-### `apertium/apertium-dev/` - Apertium Language Work
+### `apertium/` - Apertium Language Work
 **Purpose:** All Apertium linguistic resources
 **Contains:**
 - `vendor/` - Vendor submodules (lttoolbox, apertium, apertium-ido, apertium-epo)
@@ -85,7 +85,7 @@ The root `apertium-dev/` is **NOT a git repository itself** - it's a **workspace
 - Shows basic usage
 
 **`apertium-ido-epo`** - Symlink for compatibility
-- Points to `apertium/apertium-dev/apertium-ido-epo/`
+- Points to `apertium/apertium-ido-epo/`
 - Temporary during transition
 - Remove after CI/CD is updated
 
@@ -157,7 +157,7 @@ Clean separation of concerns
 
 ### Build Everything
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 make help        # Show all commands
 make core        # Build Apertium pairs
 make test        # Run tests
@@ -166,7 +166,7 @@ make test        # Run tests
 ### Work on Specific Projects
 ```bash
 # Work on language pair
-cd apertium/apertium-dev/apertium-ido-epo
+cd apertium/apertium-ido-epo
 make
 make test
 

@@ -95,12 +95,12 @@ on:
   push:
     branches: [ main, feature/* ]
     paths:
-      - 'apertium/apertium-dev/**'
+      - 'apertium/**'
       - '.github/workflows/build-apertium-pair.yml'
   pull_request:
     branches: [ main ]
     paths:
-      - 'apertium/apertium-dev/**'
+      - 'apertium/**'
   workflow_dispatch:
 
 jobs:
@@ -125,8 +125,8 @@ jobs:
       - name: Cache vendor builds
         uses: actions/cache@v3
         with:
-          path: apertium/apertium-dev/vendor/installed
-          key: vendor-${{ runner.os }}-${{ hashFiles('apertium/apertium-dev/vendor/*/configure.ac') }}
+          path: apertium/vendor/installed
+          key: vendor-${{ runner.os }}-${{ hashFiles('apertium/vendor/*/configure.ac') }}
       
       - name: Build vendor dependencies
         working-directory: apertium/apertium-dev
@@ -144,7 +144,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: apertium-ido-epo-binaries
-          path: apertium/apertium-dev/build/*.bin
+          path: apertium/build/*.bin
           retention-days: 7
 ```
 
@@ -209,11 +209,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Check if dictionaries have changes
-          if [ -n "$(git status --porcelain apertium/apertium-dev/apertium-ido-epo/*.dix)" ]; then
+          if [ -n "$(git status --porcelain apertium/apertium-ido-epo/*.dix)" ]; then
             git config user.name "Extractor Bot"
             git config user.email "bot@apertium-ido-epo"
             git checkout -b extractor-update-$(date +%Y%m%d)
-            git add apertium/apertium-dev/apertium-ido-epo/*.dix
+            git add apertium/apertium-ido-epo/*.dix
             git commit -m "chore: Update dictionaries from extractor pipeline"
             git push origin extractor-update-$(date +%Y%m%d)
             
@@ -269,8 +269,8 @@ const APERTIUM_PAIR_DIR = '/path/to/apertium-ido-epo';
 
 **After:**
 ```javascript
-const APERTIUM_PAIR_DIR = '/path/to/apertium/apertium-dev/apertium-ido-epo';
-const VENDOR_DIR = '/path/to/apertium/apertium-dev/vendor';
+const APERTIUM_PAIR_DIR = '/path/to/apertium/apertium-ido-epo';
+const VENDOR_DIR = '/path/to/apertium/vendor';
 ```
 
 #### 2. Update rebuild scripts
@@ -315,7 +315,7 @@ git submodule update --init --recursive
    - Update directory structure section
    - Add submodule initialization steps
 
-2. **apertium/apertium-dev/README.md**
+2. **apertium/README.md**
    - New file with pair-specific docs
    - Reference vendor submodules
 

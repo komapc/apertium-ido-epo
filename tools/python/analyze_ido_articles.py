@@ -52,7 +52,7 @@ def translate_text(text, mode='ido-epo'):
     """Translate text using apertium."""
     try:
         result = subprocess.run(
-            ['apertium', '-d', '/home/mark/apertium-dev/apertium-ido-epo', mode],
+            ['apertium', '-d', '/home/mark/apertium-ido-epo/apertium-ido-epo', mode],
             input=text,
             capture_output=True,
             text=True,

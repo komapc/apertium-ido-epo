@@ -30,15 +30,15 @@ apertium/
 ```
 
 ### 4. Added vendor submodules in new location ✅
-- `apertium/apertium-dev/vendor/lttoolbox` → https://github.com/apertium/lttoolbox.git
-- `apertium/apertium-dev/vendor/apertium` → https://github.com/apertium/apertium.git
-- `apertium/apertium-dev/vendor/apertium-ido` → https://github.com/komapc/apertium-ido.git (your fork)
-- `apertium/apertium-dev/vendor/apertium-epo` → https://github.com/apertium/apertium-epo.git
+- `apertium/vendor/lttoolbox` → https://github.com/apertium/lttoolbox.git
+- `apertium/vendor/apertium` → https://github.com/apertium/apertium.git
+- `apertium/vendor/apertium-ido` → https://github.com/komapc/apertium-ido.git (your fork)
+- `apertium/vendor/apertium-epo` → https://github.com/apertium/apertium-epo.git
 
 All submodules cloned successfully.
 
 ### 5. Installed Makefile ✅
-- Copied `Makefile.apertium-dev` to `apertium/apertium-dev/Makefile`
+- Copied `Makefile.apertium-dev` to `apertium/Makefile`
 - Makefile configured to:
   - Build vendor dependencies to `vendor/installed/`
   - Set PATH and PKG_CONFIG_PATH for vendor tools
@@ -55,7 +55,7 @@ All submodules cloned successfully.
 1. `9a82943` - docs: Add restructure planning documents and extractor pipeline changes
 2. `4ae187e` - fix: Remove worktrees from git index and ignore them
 3. `d1fc158` - refactor: Remove old submodule configurations for restructure
-4. `a780ee6` - feat: Add vendor submodules under apertium/apertium-dev/vendor
+4. `a780ee6` - feat: Add vendor submodules under apertium/vendor
 
 ## Verification Status
 
@@ -72,14 +72,14 @@ All submodules cloned successfully.
 
 1. Verify vendor tools work:
    ```bash
-   export PATH=/home/mark/apertium-dev/apertium/apertium-dev/vendor/installed/bin:$PATH
+   export PATH=/home/mark/apertium-ido-epo/apertium/vendor/installed/bin:$PATH
    which lt-comp
    which apertium-preprocess-transfer
    ```
 
 2. Move apertium-ido-epo to new location:
    ```bash
-   mv /home/mark/apertium-dev/apertium-ido-epo /home/mark/apertium-dev/apertium/apertium-dev/
+   mv /home/mark/apertium-ido-epo/apertium-ido-epo /home/mark/apertium-ido-epo/apertium/
    ```
 
 3. Update pair Makefile to use vendor tools

@@ -9,14 +9,14 @@
 ### Step 1.1: Identify current vendor repos
 
 Current vendor repositories at root:
-- `/home/mark/apertium-dev/apertium/` - Core Apertium runtime
-- `/home/mark/apertium-dev/lttoolbox/` - Lexical toolkit
-- `/home/mark/apertium-dev/apertium-ido/` - Ido monolingual
-- `/home/mark/apertium-dev/apertium-epo/` - Esperanto monolingual
-- `/home/mark/apertium-dev/apertium-bel/` - Belarusian monolingual
-- `/home/mark/apertium-dev/apertium-rus/` - Russian monolingual
-- `/home/mark/apertium-dev/apertium-bel-rus/` - Belarusian-Russian pair
-- `/home/mark/apertium-dev/apertium-fra/` - French monolingual
+- `/home/mark/apertium-ido-epo/apertium/` - Core Apertium runtime
+- `/home/mark/apertium-ido-epo/lttoolbox/` - Lexical toolkit
+- `/home/mark/apertium-ido-epo/apertium-ido/` - Ido monolingual
+- `/home/mark/apertium-ido-epo/apertium-epo/` - Esperanto monolingual
+- `/home/mark/apertium-ido-epo/apertium-bel/` - Belarusian monolingual
+- `/home/mark/apertium-ido-epo/apertium-rus/` - Russian monolingual
+- `/home/mark/apertium-ido-epo/apertium-bel-rus/` - Belarusian-Russian pair
+- `/home/mark/apertium-ido-epo/apertium-fra/` - French monolingual
 
 **Decision needed:** Are bel, rus, bel-rus, fra repos actively used or historical?
 
@@ -24,21 +24,21 @@ Current vendor repositories at root:
 
 ```bash
 # Create the new apertium directory structure
-mkdir -p /home/mark/apertium-dev/apertium/apertium-dev/vendor
-mkdir -p /home/mark/apertium-dev/apertium/apertium-dev/build
-mkdir -p /home/mark/apertium-dev/apertium/apertium-dev/tests
-mkdir -p /home/mark/apertium-dev/apertium/apertium-dev/docs/{analyses,progress,guides}
-mkdir -p /home/mark/apertium-dev/apertium/apertium-dev/data/{raw,processed}
+mkdir -p /home/mark/apertium-ido-epo/apertium/vendor
+mkdir -p /home/mark/apertium-ido-epo/apertium/build
+mkdir -p /home/mark/apertium-ido-epo/apertium/tests
+mkdir -p /home/mark/apertium-ido-epo/apertium/docs/{analyses,progress,guides}
+mkdir -p /home/mark/apertium-ido-epo/apertium/data/{raw,processed}
 ```
 
 ### Step 1.3: Check Git remotes for vendor repos
 
 Commands to verify submodule source URLs:
 ```bash
-cd /home/mark/apertium-dev/apertium && git remote -v
-cd /home/mark/apertium-dev/lttoolbox && git remote -v
-cd /home/mark/apertium-dev/apertium-ido && git remote -v
-cd /home/mark/apertium-dev/apertium-epo && git remote -v
+cd /home/mark/apertium-ido-epo/apertium && git remote -v
+cd /home/mark/apertium-ido-epo/lttoolbox && git remote -v
+cd /home/mark/apertium-ido-epo/apertium-ido && git remote -v
+cd /home/mark/apertium-ido-epo/apertium-epo && git remote -v
 ```
 
 Expected upstream URLs:
@@ -51,7 +51,7 @@ Expected upstream URLs:
 
 **Option A: Fresh submodule initialization (recommended)**
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 
 # Remove old vendor directories (after backing up any local changes)
 # WARNING: Check for uncommitted changes first!
@@ -81,33 +81,33 @@ cd vendor/lttoolbox && git checkout stable && cd ../..
 **Option B: Preserve git history by moving**
 ```bash
 # If vendor repos have important local changes:
-cd /home/mark/apertium-dev
-mv apertium apertium/apertium-dev/vendor/
-mv lttoolbox apertium/apertium-dev/vendor/
-mv apertium-ido apertium/apertium-dev/vendor/
-mv apertium-epo apertium/apertium-dev/vendor/
+cd /home/mark/apertium-ido-epo
+mv apertium apertium/vendor/
+mv lttoolbox apertium/vendor/
+mv apertium-ido apertium/vendor/
+mv apertium-epo apertium/vendor/
 
 # Then convert to submodules in-place (more complex, ask if needed)
 ```
 
 ### Step 1.5: Submodule configuration
 
-Create `.gitmodules` at `/home/mark/apertium-dev/.gitmodules`:
+Create `.gitmodules` at `/home/mark/apertium-ido-epo/.gitmodules`:
 ```
-[submodule "apertium/apertium-dev/vendor/apertium"]
-	path = apertium/apertium-dev/vendor/apertium
+[submodule "apertium/vendor/apertium"]
+	path = apertium/vendor/apertium
 	url = https://github.com/apertium/apertium.git
 	branch = stable
-[submodule "apertium/apertium-dev/vendor/lttoolbox"]
-	path = apertium/apertium-dev/vendor/lttoolbox
+[submodule "apertium/vendor/lttoolbox"]
+	path = apertium/vendor/lttoolbox
 	url = https://github.com/apertium/lttoolbox.git
 	branch = stable
-[submodule "apertium/apertium-dev/vendor/apertium-ido"]
-	path = apertium/apertium-dev/vendor/apertium-ido
+[submodule "apertium/vendor/apertium-ido"]
+	path = apertium/vendor/apertium-ido
 	url = https://github.com/apertium/apertium-ido.git
 	branch = master
-[submodule "apertium/apertium-dev/vendor/apertium-epo"]
-	path = apertium/apertium-dev/vendor/apertium-epo
+[submodule "apertium/vendor/apertium-epo"]
+	path = apertium/vendor/apertium-epo
 	url = https://github.com/apertium/apertium-epo.git
 	branch = master
 ```
@@ -123,7 +123,7 @@ Create `.gitmodules` at `/home/mark/apertium-dev/.gitmodules`:
 
 **Environment variables approach:**
 ```bash
-# In apertium/apertium-dev/Makefile or build scripts
+# In apertium/Makefile or build scripts
 VENDOR_DIR ?= $(CURDIR)/vendor
 APERTIUM_DIR ?= $(VENDOR_DIR)/apertium
 LTTOOLBOX_DIR ?= $(VENDOR_DIR)/lttoolbox
@@ -138,7 +138,7 @@ export PKG_CONFIG_PATH := $(APERTIUM_DIR)/lib/pkgconfig:$(LTTOOLBOX_DIR)/lib/pkg
 ### Step 1.7: Test builds with vendor submodules
 
 ```bash
-cd /home/mark/apertium-dev/apertium/apertium-dev/vendor
+cd /home/mark/apertium-ido-epo/apertium/vendor
 
 # Build lttoolbox first (dependency)
 cd lttoolbox
@@ -165,12 +165,12 @@ which apertium-preprocess-transfer
 ### Step 1.8: Handle other language repos
 
 **Question for user:** What to do with these?
-- `apertium-bel/` - Move to `apertium/apertium-dev/` or archive?
-- `apertium-rus/` - Move to `apertium/apertium-dev/` or archive?
-- `apertium-bel-rus/` - Move to `apertium/apertium-dev/` or archive?
-- `apertium-fra/` - Move to `apertium/apertium-dev/` or archive?
+- `apertium-bel/` - Move to `apertium/` or archive?
+- `apertium-rus/` - Move to `apertium/` or archive?
+- `apertium-bel-rus/` - Move to `apertium/` or archive?
+- `apertium-fra/` - Move to `apertium/` or archive?
 
-**Recommendation:** If not actively used, move to `apertium/apertium-dev/archived/` or remove.
+**Recommendation:** If not actively used, move to `apertium/archived/` or remove.
 
 ---
 
@@ -179,13 +179,13 @@ which apertium-preprocess-transfer
 ### Step 2.1: Move apertium-ido-epo
 
 ```bash
-cd /home/mark/apertium-dev
-mv apertium-ido-epo apertium/apertium-dev/
+cd /home/mark/apertium-ido-epo
+mv apertium-ido-epo apertium/
 ```
 
 ### Step 2.2: Update Makefile paths
 
-Inside `apertium/apertium-dev/apertium-ido-epo/`:
+Inside `apertium/apertium-ido-epo/`:
 - Update any relative paths to vendor repos
 - Update output paths to use `../build/` instead of local directory
 
@@ -193,7 +193,7 @@ Inside `apertium/apertium-dev/apertium-ido-epo/`:
 
 Remove these from root (they're duplicates):
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 rm -f apertium-ido.ido.dix
 rm -f apertium-epo.epo.dix  # Note: check .gitignore, this is a symlink
 rm -f apertium-ido-epo.ido-epo.dix
@@ -215,16 +215,16 @@ See section below for new root Makefile.
 ### Step 3.1: Create tools structure
 
 ```bash
-mkdir -p /home/mark/apertium-dev/tools/extractor
-mkdir -p /home/mark/apertium-dev/tools/web
-mkdir -p /home/mark/apertium-dev/tools/python
-mkdir -p /home/mark/apertium-dev/tools/shell
+mkdir -p /home/mark/apertium-ido-epo/tools/extractor
+mkdir -p /home/mark/apertium-ido-epo/tools/web
+mkdir -p /home/mark/apertium-ido-epo/tools/python
+mkdir -p /home/mark/apertium-ido-epo/tools/shell
 ```
 
 ### Step 3.2: Move extractor
 
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 mv ido-esperanto-extractor tools/extractor/
 ```
 
@@ -235,7 +235,7 @@ Update paths in:
 ### Step 3.3: Move web app
 
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 mv ido-epo-translator-web tools/web/
 ```
 
@@ -247,7 +247,7 @@ Update paths in:
 ### Step 3.4: Move shared scripts
 
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 
 # Python utilities
 mv analyze_five_articles.py tools/python/
@@ -280,20 +280,20 @@ rm -rf scripts/  # if empty
 ### Step 4.1: Merge test directories
 
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 
-# Move root test/ to apertium/apertium-dev/tests/
-cp -r test/* apertium/apertium-dev/tests/
+# Move root test/ to apertium/tests/
+cp -r test/* apertium/tests/
 rm -rf test/
 
 # Move root tests/ if it exists
 if [ -d tests ]; then
-    cp -r tests/* apertium/apertium-dev/tests/
+    cp -r tests/* apertium/tests/
     rm -rf tests/
 fi
 
 # Organize by language pair
-cd apertium/apertium-dev/tests
+cd apertium/tests
 mkdir -p ido-epo epo-ido
 mv ido-epo-* ido-epo/
 mv epo-ido-* epo-ido/
@@ -302,7 +302,7 @@ mv epo-ido-* epo-ido/
 ### Step 4.2: Remove duplicate tests from apertium-ido-epo
 
 ```bash
-cd /home/mark/apertium-dev/apertium/apertium-dev/apertium-ido-epo
+cd /home/mark/apertium-ido-epo/apertium/apertium-ido-epo
 # Check if test/ exists and has duplicates
 # If so, remove and point to ../tests/ instead
 ```
@@ -314,27 +314,27 @@ cd /home/mark/apertium-dev/apertium/apertium-dev/apertium-ido-epo
 ### Step 5.1: Move analysis files
 
 ```bash
-cd /home/mark/apertium-dev
-mv *_ANALYSIS.md apertium/apertium-dev/docs/analyses/
-mv *_SUMMARY.md apertium/apertium-dev/docs/progress/
-mv *_FIX*.md apertium/apertium-dev/docs/progress/
-mv *_REPORT*.md apertium/apertium-dev/docs/analyses/
-mv BEFORE_AFTER_COMPARISON.md apertium/apertium-dev/docs/analyses/
-mv development_guide.md apertium/apertium-dev/docs/guides/
-mv NEXT_STEPS_RECOMMENDATIONS.md apertium/apertium-dev/docs/progress/
-mv PR_*.md apertium/apertium-dev/docs/progress/
+cd /home/mark/apertium-ido-epo
+mv *_ANALYSIS.md apertium/docs/analyses/
+mv *_SUMMARY.md apertium/docs/progress/
+mv *_FIX*.md apertium/docs/progress/
+mv *_REPORT*.md apertium/docs/analyses/
+mv BEFORE_AFTER_COMPARISON.md apertium/docs/analyses/
+mv development_guide.md apertium/docs/guides/
+mv NEXT_STEPS_RECOMMENDATIONS.md apertium/docs/progress/
+mv PR_*.md apertium/docs/progress/
 ```
 
 ### Step 5.2: Create index documents
 
-Create `apertium/apertium-dev/docs/README.md` with links to all docs.
+Create `apertium/docs/README.md` with links to all docs.
 
 ---
 
 ## Phase 6: Update .gitignore
 
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 mv .gitignore.new .gitignore
 ```
 
@@ -352,7 +352,7 @@ mv .gitignore.new .gitignore
    ```
 
 2. **Path updates:**
-   - Change references from `apertium-ido-epo/` to `apertium/apertium-dev/apertium-ido-epo/`
+   - Change references from `apertium-ido-epo/` to `apertium/apertium-ido-epo/`
    - Update artifact paths
 
 3. **Web deployment:**
@@ -365,7 +365,7 @@ mv .gitignore.new .gitignore
 ### Step 8.1: Remove duplicates
 
 ```bash
-cd /home/mark/apertium-dev/apertium/apertium-dev/apertium-ido-epo
+cd /home/mark/apertium-ido-epo/apertium/apertium-ido-epo
 
 # Remove duplicate analysis scripts
 rm -f analyze_five_articles.py
@@ -384,14 +384,14 @@ rm -f translate_specific_articles.py
 ### Step 8.2: Remove stray files
 
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 rm -f ", new)\nif pair_counts:\n    top=pair_counts.most_common(1)[0][0]\n    print(TOP_PAIR,top)\n    for lemma,o,n in entries:\n        if (o,n)==top:\n            print(*,lemma)\n            break\nPY"
 ```
 
 ### Step 8.3: Clean build artifacts
 
 ```bash
-cd /home/mark/apertium-dev
+cd /home/mark/apertium-ido-epo
 rm -f *.bin
 rm -rf autom4te.cache
 rm -f config.log config.status
@@ -426,7 +426,7 @@ If anything breaks:
 2. **Inactive language pairs:** Archive or keep apertium-bel, apertium-rus, apertium-bel-rus, apertium-fra?
 3. **Root Makefile:** Should it delegate to all subprojects or just apertium-dev?
 4. **Python environment:** Single requirements.txt at root or per-tool?
-5. **Data directory:** Keep at `/home/mark/apertium-dev/data/` or move under `apertium/apertium-dev/data/`?
+5. **Data directory:** Keep at `/home/mark/apertium-ido-epo/data/` or move under `apertium/data/`?
 
 ---
 
