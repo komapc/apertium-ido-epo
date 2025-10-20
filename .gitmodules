@@ -10,3 +10,6 @@
 [submodule "apertium/vendor/apertium-epo"]
 	path = apertium/vendor/apertium-epo
 	url = https://github.com/apertium/apertium-epo.git
+[submodule "apertium/apertium-ido-epo"]
+	path = apertium/apertium-ido-epo
+	url = https://github.com/komapc/apertium-ido-epo.git
