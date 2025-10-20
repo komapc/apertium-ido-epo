@@ -1,12 +1,12 @@
-[submodule "apertium/apertium-dev/vendor/lttoolbox"]
-	path = apertium/apertium-dev/vendor/lttoolbox
+[submodule "apertium/vendor/lttoolbox"]
+	path = apertium/vendor/lttoolbox
 	url = https://github.com/apertium/lttoolbox.git
-[submodule "apertium/apertium-dev/vendor/apertium"]
-	path = apertium/apertium-dev/vendor/apertium
+[submodule "apertium/vendor/apertium"]
+	path = apertium/vendor/apertium
 	url = https://github.com/apertium/apertium.git
-[submodule "apertium/apertium-dev/vendor/apertium-ido"]
-	path = apertium/apertium-dev/vendor/apertium-ido
+[submodule "apertium/vendor/apertium-ido"]
+	path = apertium/vendor/apertium-ido
 	url = https://github.com/komapc/apertium-ido.git
-[submodule "apertium/apertium-dev/vendor/apertium-epo"]
-	path = apertium/apertium-dev/vendor/apertium-epo
+[submodule "apertium/vendor/apertium-epo"]
+	path = apertium/vendor/apertium-epo
 	url = https://github.com/apertium/apertium-epo.git
