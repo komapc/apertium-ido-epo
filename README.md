@@ -15,10 +15,18 @@ This is a workspace directory containing multiple Apertium projects and tools.
 - **[tools/python/](tools/python/)** - Python utilities
 - **[tools/shell/](tools/shell/)** - Shell scripts
 
-### Web Interface
-The online Ido-Esperanto dictionary has been moved to a standalone repository:
-- **[Vortaro](https://github.com/komapc/vortaro)** - Web translation interface
-  - Live at: https://ido-epo-translator.pages.dev
+### Web Applications
+Web applications have been moved to standalone repositories:
+
+- **[Vortaro](https://github.com/komapc/vortaro)** - Simple Ido-Esperanto dictionary
+  - 📖 Dictionary lookup with 7,500+ entries
+  - 🔍 Instant search (no backend needed)
+  - 🌐 Live at: https://komapc.github.io/vortaro/
+
+- **[Ido-Epo Translator](https://github.com/komapc/ido-epo-translator)** - Full Apertium translator
+  - 🔄 Text and URL translation
+  - ⚙️ Powered by Apertium APy server
+  - 🌐 Live at: https://ido-epo-translator.pages.dev
 
 ## Quick Start
 
@@ -44,7 +52,8 @@ make help
 Each subdirectory is an independent project with its own README:
 - See `apertium/README.md` for Apertium pair documentation
 - See `tools/extractor/ido-esperanto-extractor/README.md` for extractor docs
-- See [Vortaro](https://github.com/komapc/vortaro) for the web translator (moved to separate repository)
+- See [Vortaro](https://github.com/komapc/vortaro) for the simple dictionary
+- See [Ido-Epo Translator](https://github.com/komapc/ido-epo-translator) for the full translator
 
 ## Documentation
 
