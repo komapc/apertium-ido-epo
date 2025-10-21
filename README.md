@@ -12,9 +12,13 @@ This is a workspace directory containing multiple Apertium projects and tools.
 
 ### Tools
 - **[tools/extractor/](tools/extractor/)** - Dictionary extraction pipeline
-- **[tools/web/](tools/web/)** - Web translation interface (moved to [Vortaro](https://github.com/komapc/vortaro))
 - **[tools/python/](tools/python/)** - Python utilities
 - **[tools/shell/](tools/shell/)** - Shell scripts
+
+### Web Interface
+The online Ido-Esperanto dictionary has been moved to a standalone repository:
+- **[Vortaro](https://github.com/komapc/vortaro)** - Web translation interface
+  - Live at: https://ido-epo-translator.pages.dev
 
 ## Quick Start
 
