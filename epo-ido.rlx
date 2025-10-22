@@ -1,0 +1,79 @@
+# Constraint Grammar for Esperanto (epo)
+# Disambiguates morphological analyses for Esperanto→Ido translation
+
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>";
+
+# ======================
+# SETS - Define word classes and contexts
+# ======================
+
+LIST Det = det;
+LIST Noun = n;
+LIST Prep = pr;
+LIST Adv = adv;
+LIST Prn = prn;
+LIST Vblex = vblex;
+LIST Vbser = vbser;
+LIST Adj = adj;
+
+# Specific words (case-insensitive)
+LIST La = "la" "La";
+LIST De = "de" "De";
+LIST Sur = "sur" "Sur";
+LIST Da = "da" "Da";
+LIST En = "en" "En";
+LIST Oni = "oni" "Oni";
+
+# ======================
+# DISAMBIGUATION RULES
+# ======================
+
+SECTION
+
+# Rule 1: "la" is almost always the definite article (determiner), not a noun
+# Exception: when it's clearly used as a musical note, but that's rare
+SELECT Det IF
+    (0 La)
+;
+
+# Rule 2: "de" is a preposition (of/from), not bare/other
+SELECT Prep IF
+    (0 De)
+;
+
+# Rule 3: "sur" is a preposition (on/upon), not adverb
+SELECT Prep IF
+    (0 Sur)
+;
+
+# Rule 4: "da" is the partitive preposition in quantitative contexts
+# Pattern: NUMBER/QUANTITY da NOUN
+SELECT Prep IF
+    (0 Da)
+    (-1 Noun) # After a noun (usually quantity word like miliardoj)
+    (1 Noun)  # Before a noun
+;
+
+# Rule 5: "en" is a preposition (in/inside)
+SELECT Prep IF
+    (0 En)
+;
+
+# Rule 6: "oni" - REMOVE verb analysis, keep only pronoun
+REMOVE Vblex IF
+    (0 Oni)
+;
+
+# Rule 7: Select simplest pronoun form for oni (nominative singular)
+# This ensures consistent selection
+SELECT ("oni" prn tn sg nom) IF
+    (0 Oni)
+    (1 Vblex OR Vbser) # Followed by a verb (subject position)
+;
+
+# Rule 8: "Li" is usually the pronoun "he", not a proper noun
+REMOVE ("Li" np) IF
+    (0 ("Li"))
+    (1 Vblex OR Vbser) # Followed by verb (subject position)
+;
+

@@ -1,0 +1,1333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer default="lu">
+  <section-def-cats>
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+    </def-cat>
+    <def-cat n="adj">
+      <cat-item tags="adj"/>
+      <cat-item tags="adj.*"/>
+    </def-cat>
+    <def-cat n="adv">
+      <cat-item tags="adv"/>
+      <cat-item tags="adv.*"/>
+    </def-cat>
+    <def-cat n="vblex">
+      <cat-item tags="vblex.*"/>
+    </def-cat>
+    <def-cat n="vbser">
+      <cat-item lemma="esar" tags="vblex.*"/>
+      <cat-item lemma="es" tags="vblex.*"/>
+    </def-cat>
+    <def-cat n="vbintr">
+      <cat-item lemma="jacar" tags="vblex.*"/>
+      <cat-item lemma="venar" tags="vblex.*"/>
+      <cat-item lemma="irar" tags="vblex.*"/>
+      <cat-item lemma="star" tags="vblex.*"/>
+      <cat-item lemma="mortar" tags="vblex.*"/>
+      <cat-item lemma="dormar" tags="vblex.*"/>
+      <cat-item lemma="arivir" tags="vblex.*"/>
+      <cat-item lemma="departir" tags="vblex.*"/>
+      <cat-item lemma="aparar" tags="vblex.*"/>
+      <cat-item lemma="exisar" tags="vblex.*"/>
+      <cat-item lemma="existar" tags="vblex.*"/>
+      <cat-item lemma="restar" tags="vblex.*"/>
+    </def-cat>
+    <def-cat n="prn">
+      <cat-item tags="prn"/>
+      <cat-item tags="prn.*"/>
+    </def-cat>
+    <def-cat n="pr">
+      <cat-item tags="pr"/>
+      <cat-item tags="pr.*"/>
+    </def-cat>
+    <def-cat n="cnjcoo">
+      <cat-item tags="cnjcoo"/>
+      <cat-item tags="cnjcoo.*"/>
+    </def-cat>
+    <def-cat n="cnjsub">
+      <cat-item tags="cnjsub"/>
+      <cat-item tags="cnjsub.*"/>
+    </def-cat>
+    <def-cat n="det">
+      <cat-item tags="det"/>
+      <cat-item tags="det.*"/>
+    </def-cat>
+    <def-cat n="np">
+      <cat-item tags="np"/>
+      <cat-item tags="np.*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+    </def-attr>
+    <def-attr n="a_adj">
+      <attr-item tags="adj"/>
+    </def-attr>
+    <def-attr n="a_adv">
+      <attr-item tags="adv"/>
+    </def-attr>
+    <def-attr n="a_vblex">
+      <attr-item tags="vblex"/>
+    </def-attr>
+    <def-attr n="a_prn">
+      <attr-item tags="prn"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+    </def-attr>
+    <def-attr n="cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+    </def-attr>
+    <def-attr n="temps">
+      <attr-item tags="inf"/>
+      <attr-item tags="pri"/>
+      <attr-item tags="pii"/>
+      <attr-item tags="fti"/>
+      <attr-item tags="cni"/>
+      <attr-item tags="imp"/>
+      <attr-item tags="pres"/>
+      <attr-item tags="past"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="dummy"/>
+  </section-def-vars>
+
+  <section-rules>
+    <!-- ============================================================================
+         COPULA RULES (vbser category - matches lemma "esar" or "es")
+         
+         LINGUISTIC CONTEXT:
+         The copula verb (esar → esti, "to be") is fundamental to the difference
+         between Ido and Esperanto's case systems. Both languages use nominative
+         case for copula predicates (predicate nominatives and predicate adjectives).
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido
+         - Esperanto: "Li estas instruisto" (nominative predicate)
+         - Ido: "Il esas docanto" (no case marking on nouns)
+         
+         TECHNICAL NOTES:
+         These rules have PRIORITY over vblex rules due to lemma-based matching.
+         They handle simple copula patterns (copula + predicate).
+         
+         Complex patterns (e.g., copula + det + noun, coordinations) are handled
+         by vblex rules below with explicit copula checking.
+         
+         Copula predicates remain in NOMINATIVE case (unlike transitive objects).
+         ============================================================================ -->
+    
+    <!-- Copula (esar/esti) + Adjective + Noun: keep nominative (predicate)
+         
+         Handles: "Il esas bela kato" → "Li estas bela kato"
+         
+         LINGUISTIC: In both languages, predicate adjectives with copula don't take
+         accusative. Esperanto adjectives agree with the noun in number. -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Copula + Noun: keep nominative (predicate nominative)
+         
+         Handles: "Il esas docanto" → "Li estas instruisto"
+         
+         LINGUISTIC: Predicate nominatives identify or rename the subject.
+         Both Ido and Esperanto keep predicates after copula in nominative case.
+         This contrasts with transitive verbs which govern accusative objects. -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbser"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Copula + Adjective: keep nominative, add sg/nom
+         
+         Handles: "La kato esas bela" → "La kato estas bela"
+         
+         LINGUISTIC: Predicate adjectives after copula describe the subject.
+         KEY DIFFERENCE: Ido adjectives are invariable; Esperanto adjectives
+         must agree in number and case with what they modify.
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Morphology
+         - Ido: "bela" (always invariable)
+         - Esperanto: "bela" (sg), "belaj" (pl), "belan" (sg+acc), "belajn" (pl+acc) -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- ============================================================================
+         VERB + COMPLEMENT RULES (vblex category - all verbs)
+         
+         LINGUISTIC CONTEXT - THE ACCUSATIVE CASE:
+         This is THE fundamental difference between Ido and Esperanto grammar.
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Syntax
+         
+         IDO: No accusative case on nouns/adjectives (word order indicates function)
+         - "Me vidas la kato" (I see the cat) - no case marking
+         - Direct objects identified by position after transitive verb
+         
+         ESPERANTO: Mandatory accusative -n on direct objects AND modifying adjectives
+         - "Mi vidas la katon" (I see the cat) - accusative -n required
+         - "Mi vidas la belan katon" - both adjective and noun take -n
+         - Allows flexible word order: "La katon mi vidas" still clear
+         
+         PRONOUNS: Exception! Both languages mark case on personal pronouns:
+         - Ido: me/mi (nom/acc), nos/ni, vu/vu, li/li
+         - Esperanto: mi/min, ni/nin, vi/vin, ili/ilin
+         
+         TECHNICAL NOTES:
+         These rules handle complex verb patterns including:
+         - Transitive verbs + objects (apply ACCUSATIVE case)
+         - Copula + determiners/coordinations (keep NOMINATIVE)
+         
+         Simple copula patterns are already handled by vbser rules above.
+         These rules check for copula (esar/es) explicitly for patterns not
+         covered by vbser (e.g., verb + determiner + noun).
+         
+         These rules apply accusative to nouns, adjectives, AND pronouns when they
+         are direct objects of transitive verbs, but keep nominative after copula.
+         ============================================================================ -->
+    
+    <!-- Intransitive Verb + Noun: post-verbal subject stays nominative -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: nouns after verb are subjects, not objects -->
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <!-- Intransitive Verb + Det + Noun: post-verbal subject with determiner stays nominative -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: nouns after verb are subjects, not objects -->
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <!-- Verb + Adjective + Noun: check if copula or transitive
+         
+         Handles: "Me vidas bela kato" → "Mi vidas belan katon" (transitive)
+                  "Il esas bela kato" → "Li estas bela kato" (copula)
+         
+         LINGUISTIC: Demonstrates the core accusative transformation.
+         Adjective AND noun both receive -n in Esperanto when accusative. -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (to be), keep nominative (predicate) -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Verb + Noun: check if copula or transitive -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (to be), keep nominative (predicate) -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_nom"/>
+                <clip pos="2" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Verb + Determiner + Noun: check if copula or transitive -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (to be), keep nominative (predicate) -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative to noun -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Verb + Determiner + Adjective + Noun: check if copula or transitive -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (to be), keep nominative (predicate) -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_adj"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative to both adjective and noun -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_adj"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="4" side="tl" part="lem"/>
+                <clip pos="4" side="tl" part="a_nom"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- ============================================================================
+         CONJUNCTION RULES - Coordinated Phrases
+         
+         LINGUISTIC CONTEXT:
+         Coordination (kaj/e = "and") presents a challenge because BOTH coordinated
+         elements must receive the same case marking in Esperanto.
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Syntax
+         
+         ESPERANTO: All coordinated objects take accusative together:
+         - "Mi vidas la katon kaj la hundon" (I see the cat and the dog)
+         - Both "katon" and "hundon" receive -n
+         
+         IDO: No case marking on nouns:
+         - "Me vidas la kato kaj la hundo"
+         
+         TECHNICAL: These rules include the preceding verb to determine case:
+         - After transitive verbs (non-esar): apply accusative to ALL coordinated objects
+         - After copula: keep nominative for ALL coordinated predicates
+         - After subjects or standalone: keep nominative
+         ============================================================================ -->
+    
+    <!-- Verb + Noun + Conjunction + Noun: coordinated objects/subjects after verb
+         
+         Handles: 
+         - Transitive: "Me vidas la kato kaj la hundo" → "Mi vidas la katon kaj la hundon"
+         - Intransitive: "jacas Oceano Atlantiko" → "kuŝas Oceano Atlantiko" (subjects stay nominative)
+         
+         LINGUISTIC: Critical test case for accusative - BOTH nouns must receive same case. -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (copula), keep nominative for both -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative to both coordinated objects -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_nom"/>
+                <clip pos="2" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="lem"/>
+                <clip pos="4" side="tl" part="a_nom"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    
+    <!-- Intransitive Verb + Noun + Conjunction + Noun: coordinated subjects stay nominative -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: post-verbal nouns are subjects, keep nominative -->
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <!-- Verb + Det + Noun + Conjunction + Det + Noun: coordinated objects with determiners -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (copula), keep nominative for both -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative to both coordinated objects -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="whole"/>
+              </lu>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="lem"/>
+                <clip pos="6" side="tl" part="a_nom"/>
+                <clip pos="6" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    
+    <!-- Intransitive Verb + Det + Noun + Conjunction + Det + Noun: coordinated subjects with determiners -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: post-verbal nouns are subjects, keep nominative -->
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Verb + Adjective + Noun + Conjunction + Adjective + Noun: coordinated modified objects -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (copula), keep nominative -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="lem"/>
+                <clip pos="5" side="tl" part="a_adj"/>
+                <clip pos="6" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative to both coordinated objects -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="lem"/>
+                <clip pos="5" side="tl" part="a_adj"/>
+                <clip pos="6" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="lem"/>
+                <clip pos="6" side="tl" part="a_nom"/>
+                <clip pos="6" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Verb + Det + Adj + Noun + Conjunction + Det + Adj + Noun: coordinated objects with determiners and adjectives -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is copula, keep nominative -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <b pos="2"/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+              <b pos="3"/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+              <b pos="4"/>
+              <lu><clip pos="5" side="tl" part="whole"/></lu>
+              <b pos="5"/>
+              <lu><clip pos="6" side="tl" part="whole"/></lu>
+              <b pos="6"/>
+              <lu><clip pos="7" side="tl" part="whole"/></lu>
+              <b pos="7"/>
+              <lu><clip pos="8" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive: accusative on both nouns -->
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+              <lu>
+                <clip pos="4" side="tl" part="lem"/>
+                <clip pos="4" side="tl" part="a_nom"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b pos="4"/>
+              <lu><clip pos="5" side="tl" part="whole"/></lu>
+              <b pos="5"/>
+              <lu><clip pos="6" side="tl" part="whole"/></lu>
+              <b pos="6"/>
+              <lu><clip pos="7" side="tl" part="whole"/></lu>
+              <b pos="7"/>
+              <lu>
+                <clip pos="8" side="tl" part="lem"/>
+                <clip pos="8" side="tl" part="a_nom"/>
+                <clip pos="8" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    
+    <!-- Noun + Conjunction + Noun: coordinated subjects or standalone nouns
+         Without verb context, we must assume nominative (default case) -->
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- ============================================================================
+         ADJECTIVE-NOUN AGREEMENT RULES
+         
+         LINGUISTIC CONTEXT - Adjective Agreement:
+         This is another KEY difference between Ido and Esperanto.
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Morphology
+         
+         IDO: Adjectives are completely INVARIABLE
+         - "bela kato" (beautiful cat, sg)
+         - "bela kati" (beautiful cats, pl) - adjective stays "bela"
+         
+         ESPERANTO: Adjectives AGREE in number and case
+         - "bela kato" (sg, nom)
+         - "belaj katoj" (pl, nom) - both take -j
+         - "belan katon" (sg, acc) - both take -n
+         - "belajn katojn" (pl, acc) - both take -jn
+         
+         These rules propagate the noun's number and case to modifying adjectives.
+         ============================================================================ -->
+    
+    <!-- Adjective + Noun: propagate number and case from noun to adjective
+         
+         Handles: "bela kato" → "bela kato" (sg nom)
+                  "bela kato" → "belan katon" (when in accusative context)
+         
+         LINGUISTIC: Implements Esperanto's adjective agreement requirement. -->
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_adj"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="cas"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Noun rule: pass through (Esperanto nouns don't always have gender) -->
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Adjective rule: add sg/nom for Esperanto (default form when alone) -->
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_adj"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Adverb rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- ============================================================================
+         BASIC WORD CLASS RULES (pass-through or simple transformations)
+         ============================================================================ -->
+    
+    <!-- Verb: convert Ido tense tags to Esperanto tense tags
+         Ido: pri (present), pii (past), fti (future), inf (infinitive)
+         Esperanto: pres, past, fti, inf
+         
+         NOTE: Default branch assumes present tense if no tense tag exists.
+         This might mask errors from incomplete morphological analysis.
+         Consider logging/warning when this fallback is used. -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="pres"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="past"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="fti"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="inf"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="inf"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Default: if no tense tag, assume present tense -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="pres"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Verb + Pronoun: apply accusative to pronoun after transitive verb
+         
+         LINGUISTIC CONTEXT - Personal Pronouns:
+         Pronouns are THE EXCEPTION to the Ido "no accusative" rule!
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Pronouns
+         
+         BOTH languages distinguish case in personal pronouns:
+         
+         IDO pronoun cases:
+         - me/mi (I/me), tu/tu (you), il/il (he/him), el/el (she/her)
+         - nos/ni (we/us), vi/vi (you-pl), li/li (they/them)
+         
+         ESPERANTO pronoun cases:
+         - mi/min (I/me), vi/vin (you), li/lin (he/him), ŝi/ŝin (she/her)
+         - ni/nin (we/us), vi/vin (you-pl), ili/ilin (they/them)
+         
+         Handles: "Me amas vu" → "Mi amas vin" (I love you - acc)
+                  "Il esas me" → "Li estas mi" (He is me - nom after copula)
+         
+         CRITICAL: Pronouns take different forms for nominative/accusative in BOTH languages. -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is copula, keep pronoun in nominative (predicate nominative) -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_prn"/>
+                <lit-tag v="nom"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: add accusative to pronoun -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_prn"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Pronoun rule: add nominative case (when not after verb, i.e., subjects) -->
+    <rule>
+      <pattern>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_prn"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Preposition rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="pr"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Coordinating conjunction rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="cnjcoo"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Subordinating conjunction rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="cnjsub"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Determiner rule: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <!-- Determiner + Adjective + Noun: ensure agreement -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="cas"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <!-- Determiner + Noun: pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- ============================================================================
+         PROPER NOUN RULES
+         ============================================================================ -->
+    
+    <!-- Proper noun (standalone): pass through -->
+    <rule>
+      <pattern>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Verb + Proper noun: check if copula or transitive - FIXED -->
+    <rule>
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <!-- If verb is "esar" (copula), keep nominative (predicate nominative) -->
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <!-- Transitive verb: apply accusative to proper noun object -->
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="np"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+  </section-rules>
+</transfer>

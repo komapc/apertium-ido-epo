@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+  <alphabet/>
+  <pardefs>
+    <pardef n="voyelles">
+      <e><i>a</i></e>
+      <e><i>e</i></e>
+      <e><i>i</i></e>
+      <e><i>o</i></e>
+      <e><i>u</i></e>
+      <e><i>A</i></e>
+      <e><i>E</i></e>
+      <e><i>I</i></e>
+      <e><i>O</i></e>
+      <e><i>U</i></e>
+    </pardef>
+  </pardefs>
+
+  <section id="main" type="standard">
+    <!-- la + vowel → l' (poetic/informal) in Ido -->
+    <e><p><l><a/>la<b/></l><r>l'</r></p><par n="voyelles"/></e>
+    
+    <!-- di + la → d' + vowel -->
+    <e><p><l><a/>di<b/><a/>la<b/></l><r>di<b/>l'</r></p><par n="voyelles"/></e>
+  </section>
+
+</dictionary>
+
