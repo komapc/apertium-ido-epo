@@ -114,3 +114,4 @@ convert_esperanto_chars.sh
 
 .cursor/
 .worktrees/
+apertium/vendor/installed/
