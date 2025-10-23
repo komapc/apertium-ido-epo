@@ -4,7 +4,116 @@
 
 ## 🎯 Current Priorities
 
-### ✅ 0. Verify Merged PRs in Production **[NEW - Oct 23, 2025]**
+### 🔴 0. FIX CRITICAL MORPHOLOGY BUGS **[NEW - Oct 23, 2025]**
+**Status:** CRITICAL - Blocking 80% of translations  
+**Priority:** URGENT  
+**Time:** 3-6 hours total
+
+#### 🔴 **Priority 1: Complete Verb Paradigm (CRITICAL)**
+**File:** `apertium-ido.ido.dix` - lines 29-91 (`<pardefs>` section)  
+**Time:** 2-3 hours  
+**Impact:** HIGH - Fixes most "red words" (unknown conjugated verbs)
+
+**Problem:**
+- Current `ar__vblex` paradigm only recognizes infinitives (`esar` ✅)
+- Missing ALL conjugations: present (`esas` ❌), past (`esis` ❌), future (`esos` ❌)
+- Result: Sentences like "Me esas bona" fail because `esas` is unknown
+
+**Solution:**
+```xml
+<pardef n="ar__vblex">
+  <!-- Current (only this exists): -->
+  <e><p><l>ar</l><r><s n="vblex"/><s n="inf"/></r></p></e>
+  
+  <!-- ADD THESE: -->
+  <e><p><l>as</l><r><s n="vblex"/><s n="pri"/></r></p></e>   <!-- present -->
+  <e><p><l>is</l><r><s n="vblex"/><s n="pii"/></r></p></e>   <!-- past -->
+  <e><p><l>os</l><r><s n="vblex"/><s n="fti"/></r></p></e>   <!-- future -->
+  <e><p><l>us</l><r><s n="vblex"/><s n="cni"/></r></p></e>   <!-- conditional -->
+  <e><p><l>ez</l><r><s n="vblex"/><s n="imp"/></r></p></e>   <!-- imperative -->
+</pardef>
+```
+
+**Test after fix:**
+```bash
+echo "Me esas bona" | apertium ido-epo
+# Should produce: Mi estas bona (not *esas)
+```
+
+---
+
+#### 🔴 **Priority 2: Complete Noun Paradigm (HIGH)**
+**File:** `apertium-ido.ido.dix` - same `<pardefs>` section  
+**Time:** 1-2 hours  
+**Impact:** MEDIUM-HIGH - Fixes plural and accusative nouns
+
+**Problem:**
+- Current `o__n` paradigm only recognizes singular nominative (`kato` ✅)
+- Missing: plural (`kati` ❌), accusative (`katon` ❌, `katin` ❌)
+
+**Solution:**
+```xml
+<pardef n="o__n">
+  <!-- Current: -->
+  <e><p><l>o</l><r><s n="n"/><s n="sg"/><s n="nom"/></r></p></e>
+  
+  <!-- ADD THESE: -->
+  <e><p><l>on</l><r><s n="n"/><s n="sg"/><s n="acc"/></r></p></e>  <!-- singular accusative -->
+  <e><p><l>i</l><r><s n="n"/><s n="pl"/><s n="nom"/></r></p></e>   <!-- plural nominative -->
+  <e><p><l>in</l><r><s n="n"/><s n="pl"/><s n="acc"/></r></p></e>  <!-- plural accusative -->
+</pardef>
+```
+
+**Test:**
+```bash
+echo "Me vidas katon" | apertium ido-epo
+# Should recognize "katon" (cat - accusative)
+```
+
+---
+
+#### ⚠️ **Priority 3: Complete Adjective Paradigm (MEDIUM)**
+**File:** `apertium-ido.ido.dix`  
+**Time:** 30 minutes - 1 hour  
+**Impact:** MEDIUM - Fixes adjective agreement
+
+**Problem:**
+- Current `a__adj` only recognizes base form (`granda` ✅)
+- Missing: plural (`grandi` ❌), accusative (`grandan` ❌, `grandi-n` ❌)
+
+**Solution:**
+```xml
+<pardef n="a__adj">
+  <e><p><l>a</l><r><s n="adj"/></r></p></e>           <!-- base -->
+  <e><p><l>an</l><r><s n="adj"/><s n="acc"/></r></p></e>  <!-- accusative -->
+  <e><p><l>i</l><r><s n="adj"/><s n="pl"/></r></p></e>    <!-- plural -->
+  <e><p><l>in</l><r><s n="adj"/><s n="pl"/><s n="acc"/></r></p></e>  <!-- plural acc -->
+</pardef>
+```
+
+---
+
+#### 📋 **Priority 4: Document & Test (1 hour)**
+- [ ] Test all paradigm changes bidirectionally (Ido→Esperanto, Esperanto→Ido)
+- [ ] Run comprehensive test suite with conjugated verbs
+- [ ] Document changes in CHANGELOG.md
+- [ ] Create test cases for each paradigm
+- [ ] Update MORPHOLOGY_EXPLANATION.md with "FIXED" status
+
+**Success Criteria:**
+- ✅ Conjugated verbs recognized: `esas`, `esis`, `esos`, `esus`
+- ✅ Plural nouns recognized: `kati`, `katoj`
+- ✅ Accusative forms recognized: `katon`, `grandan`
+- ✅ Test sentence translates correctly: "Me esas bona" → "Mi estas bona"
+
+**References:**
+- See: `MORPHOLOGY_EXPLANATION.md` for detailed problem analysis
+- Ido grammar: Verbs are regular (-ar, -as, -is, -os, -us, -ez)
+- Compare with: Esperanto `apertium-epo` paradigms (similar structure)
+
+---
+
+### ✅ 1. Verify Merged PRs in Production **[Oct 23, 2025]**
 **Status:** PRs merged, needs verification  
 **Priority:** HIGH  
 **Time:** 15-30 minutes
@@ -30,9 +139,30 @@
 
 ---
 
-### 1. Improve Grammatical Rules
+### 1. Additional Morphology Improvements (After Priority 0)
+**Status:** Planning  
+**Priority:** Medium (After verb/noun/adjective paradigms fixed)
+
+#### Additional Paradigms Needed:
+- [ ] **Adverbial Forms** (`-e` endings)
+  - Already complete (adverbs don't inflect)
+  - But check: comparative/superlative (`plu bone`, `maxim bone`)
+
+- [ ] **Participles** (if Ido has them)
+  - Present participle: `-anta` (IO) → `-anta` (EO)
+  - Past participle: `-inta` (IO) → `-inta` (EO)
+  - Check Ido grammar for participle system
+
+- [ ] **Correlatives** (question words, demonstratives)
+  - kel, kua, kande, ube, etc.
+  - Most should already be in dictionary as function words
+  - Verify completeness
+
+---
+
+### 2. Improve Grammatical Rules
 **Status:** Planning
-**Priority:** High
+**Priority:** High (After morphology fixed)
 
 #### Specific Areas to Improve:
 - [ ] **Verb Conjugation Rules**
@@ -67,9 +197,9 @@
 
 ---
 
-### 2. Add More Tests
+### 3. Add More Tests
 **Status:** Planning
-**Priority:** High
+**Priority:** High (Run after morphology fixes)
 
 #### Test Coverage Needed:
 - [ ] **Basic Grammar Tests**
