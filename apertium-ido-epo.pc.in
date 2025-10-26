@@ -1,0 +1,9 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: apertium-ido-epo
+Description: Apertium Ido-Esperanto Translation Pair
+Version: @VERSION@
+Requires: apertium >= 3.4.0 lttoolbox >= 3.3.2

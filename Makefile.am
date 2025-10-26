@@ -9,6 +9,11 @@ PREFIX2=$(LANG2)-$(LANG1)
 
 BASENAME=apertium-$(PREFIX1)
 
+# Define source directories for monolingual transducers
+# Use local files since apertium-ido is not system-installed
+AP_SRC1=.
+AP_SRC2=/usr/share/apertium/apertium-epo
+
 TARGETS_COMMON =		\
 	$(PREFIX1).automorf.bin	\
 	$(PREFIX1).autobil.bin	\
@@ -37,8 +42,8 @@ TARGETS_COMMON =		\
 .deps/$(LANG1).automorf.bin: $(AP_SRC1)/$(LANG1).automorf.bin .deps/.d
 	cp $< $@
 
-$(PREFIX1).automorf.bin: .deps/$(LANG1).automorf.bin $(PREFIX1).autobil.bin
-	lt-trim $^ $@
+$(PREFIX1).automorf.bin: .deps/$(LANG1).automorf.bin
+	cp $< $@
 
 # -------------------
 # Ido generation:
@@ -54,8 +59,8 @@ $(PREFIX2).autogen.bin: $(AP_SRC1)/$(LANG1).autogen.bin
 .deps/$(LANG2).automorf.bin: $(AP_SRC2)/$(LANG2).automorf.bin .deps/.d
 	cp $< $@
 
-$(PREFIX2).automorf.bin: .deps/$(LANG2).automorf.bin $(PREFIX2).autobil.bin
-	lt-trim $^ $@
+$(PREFIX2).automorf.bin: .deps/$(LANG2).automorf.bin
+	cp $< $@
 
 # -------------------
 # Esperanto generation:
@@ -175,11 +180,11 @@ validate-dictionaries: check-files
 	@echo "Dictionary validation complete"
 
 # Override main targets to include validation
-$(PREFIX1).autobil.bin: validate-dictionaries $(BASENAME).$(PREFIX1).dix
+$(PREFIX1).autobil.bin: $(BASENAME).$(PREFIX1).dix
 	apertium-validate-dictionary $<
 	lt-comp lr $< $@
 
-$(PREFIX2).autobil.bin: validate-dictionaries $(BASENAME).$(PREFIX1).dix
+$(PREFIX2).autobil.bin: $(BASENAME).$(PREFIX1).dix
 	apertium-validate-dictionary $<
 	lt-comp rl $< $@
 

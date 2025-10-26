@@ -1,0 +1,14 @@
+# ChangeLog
+
+## [0.1.0] - 2025-01-26
+
+### Added
+- Initial release of Ido-Esperanto translation pair
+- Basic morphological analysis and generation
+- Bilingual dictionary with number handling
+- Transfer rules for basic translation
+- Post-generation rules for both languages
+
+### Fixed
+- Proper number handling in translation pipeline
+- Configuration files for Apertium build system

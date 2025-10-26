@@ -1,0 +1,38 @@
+# Apertium Ido-Esperanto Translation Pair
+
+This package provides translation capabilities between Ido and Esperanto using the Apertium machine translation platform.
+
+## Features
+
+- Bidirectional translation between Ido and Esperanto
+- Proper number handling in translation pipeline
+- Basic morphological analysis and generation
+- Bilingual dictionary with core vocabulary
+
+## Installation
+
+```bash
+./configure --prefix=/usr/local
+make
+sudo make install
+```
+
+## Usage
+
+After installation, you can use:
+
+```bash
+echo "En oktobro 1782 Durrani mortis pro naturala kauzi." | apertium ido-epo
+echo "En oktobro 1782 Durrani mortis pro naturaj kaŭzoj." | apertium epo-ido
+```
+
+## Requirements
+
+- Apertium >= 3.4.0
+- lttoolbox >= 3.3.2
+- apertium-ido (monolingual Ido package)
+- apertium-epo (monolingual Esperanto package)
+
+## License
+
+GNU General Public License v3
