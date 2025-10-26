@@ -19,8 +19,8 @@
 - ✅ `ciph` symbol (added for number recognition)
 
 ### What's NOT Protected (URGENT)
-- ❌ `numeros` paradigm (for number recognition)
-- ❌ `final` section with `<par n="numeros"/>` activation
+- ✅ `numeros` paradigm (for number recognition) - **NOW PROTECTED**
+- ✅ `final` section with `<par n="numeros"/>` activation - **NOW PROTECTED**
 - ❌ POS tagger in `modes.xml` (epo-ido pipeline)
 - ❌ Transfer rules for number handling
 - ❌ Post-generation rules (including the problematic `-ala` rule)
@@ -60,6 +60,8 @@
 </program>
 ```
 
+**Status:** ⚠️ **MANUAL PROTECTION REQUIRED** - This is not in preserved rules file, must be manually preserved during extractor runs.
+
 ### 3. Protect Transfer Rules
 **File:** `apertium-ido-epo.epo-ido.t1x` - Number handling rules must be preserved:
 ```xml
@@ -83,6 +85,17 @@
   </action>
 </rule>
 ```
+
+**Status:** ⚠️ **MANUAL PROTECTION REQUIRED** - Transfer rules are not in preserved rules file, must be manually preserved during extractor runs.
+
+### 4. Protect Post-Generation Rules
+**File:** `apertium-ido-epo.post-epo.dix` - Contains problematic `-ala` rule:
+```xml
+<!-- Suffix transformations: -ala → -a (relational adjectives) -->
+<e><p><l>ala</l><r>a</r></p></e>
+```
+
+**Status:** ⚠️ **MANUAL PROTECTION REQUIRED** - Post-generation rules are not in preserved rules file, must be manually preserved during extractor runs.
 
 ---
 
