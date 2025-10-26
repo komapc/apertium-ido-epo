@@ -28,7 +28,40 @@
     <sdef n="p2" />
     <sdef n="p3" />
     <sdef n="ciph" />
+    <sdef n="percent" />
   </sdefs>
+  <pardefs>
+    <pardef n="numeros">
+      <e>
+        <re>[0-9]+([.,][0-9]+)*</re>
+        <p>
+          <l><s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
+          <r><s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
+        </p>
+      </e>
+      <e>
+        <re>[0-9]+([.,][0-9]+)*</re>
+        <p>
+          <l><s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
+          <r><s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
+        </p>
+      </e>
+      <e>
+        <re>[0-9]+([.,][0-9]+)*%</re>
+        <p>
+          <l><s n="num"/><s n="percent"/><s n="sp"/><s n="nom"/></l>
+          <r><s n="num"/><s n="percent"/><s n="sp"/><s n="nom"/></r>
+        </p>
+      </e>
+      <e>
+        <re>[0-9]+([.,][0-9]+)*%</re>
+        <p>
+          <l><s n="num"/><s n="percent"/><s n="sp"/><s n="acc"/></l>
+          <r><s n="num"/><s n="percent"/><s n="sp"/><s n="acc"/></r>
+        </p>
+      </e>
+    </pardef>
+  </pardefs>
   <section id="main" type="standard">
     <e>
       <p>
@@ -7644,6 +7677,43 @@
       <p>
         <l>zinko</l>
         <r>zinko</r>
+      </p>
+    </e>
+    <!-- Number entries matching paradigm exactly -->
+    <e>
+      <p>
+        <l>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
+        <r>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
+        <r>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>5<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
+        <r>5<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>5<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
+        <r>5<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
+        <r>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
+      </p>
+    </e>
+    <e>
+      <p>
+        <l>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
+        <r>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
       </p>
     </e>
   </section>

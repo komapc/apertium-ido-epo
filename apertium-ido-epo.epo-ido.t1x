@@ -16,6 +16,12 @@
       <cat-item tags="num"/>
       <cat-item tags="num.*"/>
     </def-cat>
+    <def-cat n="num_ciph">
+      <cat-item tags="num.ciph.sp.nom"/>
+      <cat-item tags="num.ciph.sp.acc"/>
+      <cat-item tags="num.percent.sp.nom"/>
+      <cat-item tags="num.percent.sp.acc"/>
+    </def-cat>
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
       <cat-item tags="vbtr.*"/>
@@ -306,6 +312,20 @@
     <rule>
       <pattern>
         <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Number with ciph rule: pass through unchanged (numbers same in both languages) -->
+    <rule>
+      <pattern>
+        <pattern-item n="num_ciph"/>
       </pattern>
       <action>
         <out>

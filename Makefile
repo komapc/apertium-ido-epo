@@ -267,8 +267,8 @@ PREFIX2 = $(LANG2)-$(LANG1)
 BASENAME = apertium-$(PREFIX1)
 
 # Define source directories for monolingual transducers
-# Use local files since apertium-ido is not system-installed
-AP_SRC1 = .
+# Use system-installed files
+AP_SRC1 = /usr/local/share/apertium/apertium-ido
 AP_SRC2 = /usr/share/apertium/apertium-epo
 TARGETS_COMMON = \
 	$(PREFIX1).automorf.bin	\
@@ -322,15 +322,15 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
-	      echo ' cd $(srcdir) && $(AUTOMAKE) --gnu'; \
-	      $(am__cd) $(srcdir) && $(AUTOMAKE) --gnu \
+	      echo ' cd $(srcdir) && $(AUTOMAKE) --foreign'; \
+	      $(am__cd) $(srcdir) && $(AUTOMAKE) --foreign \
 		&& exit 0; \
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu Makefile
+	  $(AUTOMAKE) --foreign Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
