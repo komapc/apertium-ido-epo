@@ -10,8 +10,8 @@ PREFIX2=$(LANG2)-$(LANG1)
 BASENAME=apertium-$(PREFIX1)
 
 # Define source directories for monolingual transducers
-# Use system-installed files
-AP_SRC1=/usr/local/share/apertium/apertium-ido
+# Use local files instead of system-installed
+AP_SRC1=/home/mark/apertium-dev/apertium/apertium-ido
 AP_SRC2=/usr/share/apertium/apertium-epo
 
 TARGETS_COMMON =		\

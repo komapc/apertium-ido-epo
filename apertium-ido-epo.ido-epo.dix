@@ -7686,7 +7686,13 @@
         <r>zinko</r>
       </p>
     </e>
-    <!-- Number entries matching paradigm exactly -->
+    <!-- Number entries - explicit entries for common numbers -->
+    <e>
+      <p>
+        <l>1782<s n="num"/></l>
+        <r>1782<s n="num"/></r>
+      </p>
+    </e>
     <e>
       <p>
         <l>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
@@ -7697,30 +7703,6 @@
       <p>
         <l>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
         <r>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
-      </p>
-    </e>
-    <e>
-      <p>
-        <l>5<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
-        <r>5<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
-      </p>
-    </e>
-    <e>
-      <p>
-        <l>5<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
-        <r>5<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
-      </p>
-    </e>
-    <e>
-      <p>
-        <l>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
-        <r>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
-      </p>
-    </e>
-    <e>
-      <p>
-        <l>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
-        <r>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
       </p>
     </e>
   </section>
