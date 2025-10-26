@@ -35,6 +35,13 @@
       <e>
         <re>[0-9]+([.,][0-9]+)*</re>
         <p>
+          <l><s n="num"/></l>
+          <r><s n="num"/></r>
+        </p>
+      </e>
+      <e>
+        <re>[0-9]+([.,][0-9]+)*</re>
+        <p>
           <l><s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
           <r><s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
         </p>
@@ -7715,6 +7722,11 @@
         <l>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
         <r>2023<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
       </p>
+    </e>
+  </section>
+  <section id="final" type="inconditional">
+    <e>
+      <par n="numeros"/>
     </e>
   </section>
 </dictionary>
