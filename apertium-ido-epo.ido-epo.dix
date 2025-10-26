@@ -7686,29 +7686,41 @@
         <r>zinko</r>
       </p>
     </e>
-    <!-- Number entries - explicit entries for common numbers -->
+    <!-- Number entries - regex patterns for any number -->
     <e>
+      <re>[0-9]+([.,][0-9]+)*</re>
       <p>
-        <l>1782<s n="num"/></l>
-        <r>1782<s n="num"/></r>
+        <l><s n="num"/></l>
+        <r><s n="num"/></r>
       </p>
     </e>
     <e>
+      <re>[0-9]+([.,][0-9]+)*</re>
       <p>
-        <l>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
-        <r>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
+        <l><s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
+        <r><s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
       </p>
     </e>
     <e>
+      <re>[0-9]+([.,][0-9]+)*</re>
       <p>
-        <l>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
-        <r>1782<s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
+        <l><s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
+        <r><s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
       </p>
     </e>
-  </section>
-  <section id="final" type="inconditional">
     <e>
-      <par n="numeros"/>
+      <re>[0-9]+([.,][0-9]+)*%</re>
+      <p>
+        <l><s n="num"/><s n="percent"/><s n="sp"/><s n="nom"/></l>
+        <r><s n="num"/><s n="percent"/><s n="sp"/><s n="nom"/></r>
+      </p>
+    </e>
+    <e>
+      <re>[0-9]+([.,][0-9]+)*%</re>
+      <p>
+        <l><s n="num"/><s n="percent"/><s n="sp"/><s n="acc"/></l>
+        <r><s n="num"/><s n="percent"/><s n="sp"/><s n="acc"/></r>
+      </p>
     </e>
   </section>
 </dictionary>
