@@ -1,0 +1,14 @@
+# NEWS
+
+## Version 0.1.0 (2025-01-26)
+
+### New Features
+- Initial release of Apertium Ido-Esperanto translation pair
+- Support for basic Ido to Esperanto translation
+- Number handling in translation pipeline
+- Bilingual dictionary with core vocabulary
+
+### Technical Details
+- Morphological analysis and generation
+- Transfer rules for structural translation
+- Post-generation rules for both languages

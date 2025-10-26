@@ -1,0 +1,7 @@
+DELIMITERS = "^$";
+
+LIST nom = (n) ;
+
+SECTION
+
+REMOVE nom IF (0 nom);

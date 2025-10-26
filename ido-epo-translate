@@ -1,0 +1,25 @@
+#!/bin/bash
+# Simple ido-epo translator
+# Usage: echo "text" | ido-epo-translate
+# Or: ido-epo-translate "text"
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+APERTIUM_DIR="$SCRIPT_DIR"
+
+ido-epo-translate() {
+    local input
+    if [ -t 0 ]; then
+        # No input from pipe, use arguments
+        input="$*"
+    else
+        # Input from pipe
+        input=$(cat)
+    fi
+    
+    echo "$input" | bash -c "cd '$APERTIUM_DIR' && lt-proc ido-epo.automorf.bin | apertium-pretransfer | lt-proc -b ido-epo.autobil.bin | apertium-transfer -b apertium-ido-epo.ido-epo.t1x ido-epo.t1x.bin | lt-proc -g ido-epo.autogen.bin | lt-proc -p ido-epo.autopgen.bin"
+}
+
+# If script is run directly, call the function
+if [ "${BASH_SOURCE[0]}" == "${0}" ]; then
+    ido-epo-translate "$@"
+fi
