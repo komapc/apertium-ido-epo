@@ -1,7 +1,7 @@
 AC_PREREQ(2.52)
 
 AC_INIT([Apertium Ido-Esperanto], [0.1.0], [mark@example.com], [apertium-ido-epo], [https://wiki.apertium.org/wiki/Apertium-ido-epo])
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
 AC_PROG_LN_S
 AC_PROG_AWK
