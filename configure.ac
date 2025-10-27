@@ -18,6 +18,12 @@ AS_IF([test x$CGCOMP = xfalse], [AC_MSG_ERROR([You don't have cg-comp installed]
 PKG_CHECK_MODULES(REGTEST, apertium-regtest >= 0.0.1, [],
                   [AC_MSG_WARN([Running tests requires apertium-regtest])])
 
+# Find source directories for monolingual dictionaries
+AP_SRC1=`pkg-config --variable=dir apertium-ido 2>/dev/null || echo "/usr/local/share/apertium/apertium-ido"`
+AP_SRC2=`pkg-config --variable=dir apertium-epo 2>/dev/null || echo "/usr/share/apertium/apertium-epo"`
+AC_SUBST(AP_SRC1)
+AC_SUBST(AP_SRC2)
+
 AP_MKINCLUDE
 
 AC_OUTPUT([Makefile apertium-ido-epo.pc])
