@@ -19,8 +19,8 @@ PKG_CHECK_MODULES(REGTEST, apertium-regtest >= 0.0.1, [],
                   [AC_MSG_WARN([Running tests requires apertium-regtest])])
 
 # Find source directories for monolingual dictionaries
-AP_SRC1=`pkg-config --variable=dir apertium-ido 2>/dev/null || echo "/usr/local/share/apertium/apertium-ido"`
-AP_SRC2=`pkg-config --variable=dir apertium-epo 2>/dev/null || echo "/usr/share/apertium/apertium-epo"`
+AP_SRC1=`pkg-config --variable=srcdir apertium-ido 2>/dev/null || pkg-config --variable=dir apertium-ido 2>/dev/null || echo "/usr/local/share/apertium/apertium-ido"`
+AP_SRC2=`pkg-config --variable=srcdir apertium-epo 2>/dev/null || pkg-config --variable=dir apertium-epo 2>/dev/null || echo "/usr/share/apertium/apertium-epo"`
 AC_SUBST(AP_SRC1)
 AC_SUBST(AP_SRC2)
 
