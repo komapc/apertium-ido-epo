@@ -1,5 +1,20 @@
 # ChangeLog
 
+## [Unreleased]
+
+### Added
+- Regenerate `apertium-ido-epo.ido-epo.dix` from unified JSON sources (BERT, Vortaro, extractor)
+- Add ~29,000 bidix entries covering ~12,000 Ido lemmas
+- Integrate BERT-aligned candidates with Vortaro-format and extractor-derived translations
+
+### Changed
+- Update bilingual dictionary entries to align with new monodix/YAML pipeline
+- Improve coverage for common and proper-noun vocabulary
+
+### Technical
+- Source JSONs: `bert_aligned_clean_0.60/bert_candidates.json`, `vortaro_format/ido_epo_dictionary.json`, `extractor/dist/bidix_big.json`
+- Regeneration scripts: `projects/embedding-aligner/scripts/regenerate_bidix.py`, `regenerate_monodix.py`
+
 ## [0.1.0] - 2025-01-26
 
 ### Added
