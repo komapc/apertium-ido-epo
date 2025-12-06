@@ -1,0 +1,9 @@
+# Test Sentences for Ido → Esperanto Translation
+# Used for testing translation improvements and quality
+
+# Sentence 1: Historical/linguistic description of Ido
+Ido esas konstruktita linguo derivante de Reformita Esperanto (reformita linguo konstruktita de Esperanto, facita da la originala kreinto di Esperanto) adoptita kom Esperanto reformita en Paris da la Delegitaro (Délégation pour l'adoption d'une langue auxiliaire internationale) ye la 24ma di oktobro 1907. Ido kreesis por havar poka polisemio, esas sat konciza, facile lernebla e uzebla. Ol kreesis por esar Internaciona auxiliara linguo por personi de diversa origini e esas la maxim sucesoza de la multa Esperanto-derivaji, quin on nomizas Esperantidoj.
+
+# Sentence 2: Discussion about Ido community meeting
+Hodie partoprenis kin Idisti la saturdiala video-konfero. Ni diskutis inter altro kelka detali dil internaciona Ido-renkontro 2025 e la nova vorti dil google-grupo Linguo. Restas la questiono kad esas bona remplacigar od adjuntar ja existanta vorti per nova vorti por la sama kozo.
+
