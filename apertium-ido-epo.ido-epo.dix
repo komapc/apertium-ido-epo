@@ -179,7 +179,7 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>ye</l>
+        <l>y</l>
         <r>je</r>
       </p>
     </e>
@@ -361,7 +361,7 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>ke</l>
+        <l>k</l>
         <r>ke</r>
       </p>
     </e>
@@ -1621,7 +1621,7 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>se</l>
+        <l>s</l>
         <r>se</r>
       </p>
     </e>
