@@ -19,21 +19,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>l<s n="adj" /></l>
-        <r>la ↓<s n="adj" /></r>
+        <r>la<s n="adj" /></r>
       </p>
     </e>
     <e>
       <!-- confidence: 1.0000 -->
       <p>
         <l>en</l>
-        <r>en ↓</r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>esas</l>
-        <r>estas</r>
+        <r>en</r>
       </p>
     </e>
     <e>
@@ -187,7 +180,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>d<s n="adj" /></l>
-        <r>de ↓ (indikante aganton)<s n="adj" /></r>
+        <r>de<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -446,7 +439,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>n</l>
-        <r>ne ↓</r>
+        <r>ne</r>
       </p>
     </e>
     <e>
@@ -558,7 +551,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>sol<s n="adj" /></l>
-        <r>sola ↓<s n="adj" /></r>
+        <r>sola<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -1048,7 +1041,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>nur</l>
-        <r>nur ↓</r>
+        <r>nur</r>
       </p>
     </e>
     <e>
@@ -1195,7 +1188,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>nov<s n="adj" /></l>
-        <r>nova ↓<s n="adj" /></r>
+        <r>nova<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -1580,7 +1573,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>grup<s n="n" /></l>
-        <r>grupo ↓<s n="n" /></r>
+        <r>grupo<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -1713,7 +1706,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>last<s n="adj" /></l>
-        <r>lasta ↓<s n="adj" /></r>
+        <r>lasta<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -1944,7 +1937,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>apud</l>
-        <r>apud (↓)</r>
+        <r>apud (</r>
       </p>
     </e>
     <e>
@@ -2455,7 +2448,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>propr<s n="adj" /></l>
-        <r>propra ↓<s n="adj" /></r>
+        <r>propra<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -2847,7 +2840,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>temp<s n="n" /></l>
-        <r>tempo ↓<s n="n" /></r>
+        <r>tempo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>temp<s n="n" /></l>
+        <r>Tempo<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -2889,7 +2889,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>pac<s n="n" /></l>
-        <r>paco ↓<s n="n" /></r>
+        <r>paco<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -3785,13 +3785,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>seri<s n="n" /></l>
-        <r>serio ↓<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>seri<s n="n" /></l>
         <r>floko<s n="n" /></r>
       </p>
     </e>
@@ -4667,7 +4660,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>vast<s n="adj" /></l>
-        <r>vasta ↓<s n="adj" /></r>
+        <r>vasta<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -5206,7 +5199,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>princ<s n="n" /></l>
-        <r>princo ↓<s n="n" /></r>
+        <r>princo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>princ<s n="n" /></l>
+        <r>Princo<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -6438,7 +6438,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>objekt<s n="n" /></l>
-        <r>objekto ↓<s n="n" /></r>
+        <r>objekto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>objekt<s n="n" /></l>
+        <r>Objekto<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -7690,13 +7697,6 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>spec<s n="n" /></l>
-        <r>speco ↓<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
         <l>rang<s n="n" /></l>
         <r>rango, serio, etendiĝo<s n="n" /></r>
       </p>
@@ -7957,7 +7957,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>lum<s n="n" /></l>
-        <r>lumo ↓<s n="n" /></r>
+        <r>lumo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>lum<s n="n" /></l>
+        <r>Lumo<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -8328,7 +8335,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>vi</l>
-        <r>vi ↓</r>
+        <r>vi</r>
       </p>
     </e>
     <e>
@@ -8524,7 +8531,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>trans</l>
-        <r>trans ↓</r>
+        <r>trans</r>
       </p>
     </e>
     <e>
@@ -9420,7 +9427,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>klar<s n="adj" /></l>
-        <r>klara ↓, distinta<s n="adj" /></r>
+        <r>klara<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -9784,7 +9791,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>plen<s n="adj" /></l>
-        <r>plena ↓<s n="adj" /></r>
+        <r>plena<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -10344,7 +10351,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>egal<s n="adj" /></l>
-        <r>egala ↓<s n="adj" /></r>
+        <r>egala<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -11058,7 +11065,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>pianist<s n="n" /></l>
-        <r>(profesia) pianisto ↓<s n="n" /></r>
+        <r>(profesia) pianisto<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -11478,7 +11485,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>neces<s n="adj" /></l>
-        <r>necesa (↓)<s n="adj" /></r>
+        <r>necesa (<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -12226,15 +12233,8 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>front<s n="n" /></l>
-        <r>fronto ↓<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
         <l>fru<s n="adv" /></l>
-        <r>frue ↓<s n="adv" /></r>
+        <r>frue<s n="adv" /></r>
       </p>
     </e>
     <e>
@@ -12612,7 +12612,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>pec<s n="n" /></l>
-        <r>peco ↓<s n="n" /></r>
+        <r>peco<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -13249,7 +13249,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>grandeg<s n="adj" /></l>
-        <r>grandega ↓<s n="adj" /></r>
+        <r>grandega<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -14131,7 +14131,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>apart<s n="adj" /></l>
-        <r>aparta ↓, distinta<s n="adj" /></r>
+        <r>aparta<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -14922,7 +14922,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>kern<s n="n" /></l>
-        <r>kerno ↓<s n="n" /></r>
+        <r>kerno<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -15846,7 +15846,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>kaldron<s n="n" /></l>
-        <r>kaldrono ↓<s n="n" /></r>
+        <r>kaldrono<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -16217,7 +16217,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>fripon<s n="n" /></l>
-        <r>fripono ↓, kanajlo<s n="n" /></r>
+        <r>fripono<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -16231,7 +16231,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>helik<s n="n" /></l>
-        <r>heliko ↓<s n="n" /></r>
+        <r>heliko<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>helik<s n="n" /></l>
+        <r>Heliko<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -16518,7 +16525,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>indulgem<s n="adj" /></l>
-        <r>indulgema ↓<s n="adj" /></r>
+        <r>indulgema<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -45278,13 +45285,6 @@
       </p>
     </e>
     <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>fek<s n="n" /></l>
-        <r>feko ↓, fekaĵo<s n="n" /></r>
-      </p>
-    </e>
-    <e>
       <!-- confidence: 0.9000 -->
       <p>
         <l>fek<s n="n" /></l>
@@ -46283,13 +46283,6 @@
       <p>
         <l>bufal<s n="n" /></l>
         <r>Akvobubalo<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>cerv<s n="n" /></l>
-        <r>cervo ↓<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -73400,7 +73393,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>akar<s n="n" /></l>
-        <r>akaro ↓<s n="n" /></r>
+        <r>akaro<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>akar<s n="n" /></l>
+        <r>Akaro<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -75739,13 +75739,6 @@
       <p>
         <l>budjet<s n="n" /></l>
         <r>Buĝeto<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>delt<s n="n" /></l>
-        <r>delto ↓<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -79378,7 +79371,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>genu<s n="n" /></l>
-        <r>genuo ↓<s n="n" /></r>
+        <r>genuo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>genu<s n="n" /></l>
+        <r>Genuo<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -79449,13 +79449,6 @@
       <p>
         <l>gips<s n="n" /></l>
         <r>gipsmineralo<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>gips<s n="n" /></l>
-        <r>gipso ↓<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -79665,13 +79658,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>glute<s n="n" /></l>
-        <r>gluteo ↓<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>glute<s n="n" /></l>
         <r>(ĉevalo ktp) gropo<s n="n" /></r>
       </p>
     </e>
@@ -79680,13 +79666,6 @@
       <p>
         <l>glute<s n="n" /></l>
         <r>Pugo<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>pelv<s n="n" /></l>
-        <r>pelvo ↓<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -79875,7 +79854,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>gudr<s n="n" /></l>
-        <r>gudro ↓<s n="n" /></r>
+        <r>gudro<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>gudr<s n="n" /></l>
+        <r>Gudro<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -83550,7 +83536,7 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>salik<s n="n" /></l>
-        <r>saliko (↓)<s n="n" /></r>
+        <r>saliko (<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -84068,7 +84054,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>sfer<s n="n" /></l>
-        <r>sfero ↓<s n="n" /></r>
+        <r>sfero<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>sfer<s n="n" /></l>
+        <r>Sfero<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -84380,13 +84373,6 @@
       </p>
     </e>
     <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>abutment<s n="n" /></l>
-        <r>abutmento ↓<s n="n" /></r>
-      </p>
-    </e>
-    <e>
       <!-- confidence: 0.9000 -->
       <p>
         <l>abutment<s n="n" /></l>
@@ -84621,7 +84607,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>sokl<s n="n" /></l>
-        <r>soklo ↓<s n="n" /></r>
+        <r>soklo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>sokl<s n="n" /></l>
+        <r>Soklo<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -85448,13 +85441,6 @@
       <p>
         <l>atlant<s n="n" /></l>
         <r>Atlanto (arkitekturo)<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>atlas<s n="n" /></l>
-        <r>atlaso ↓<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -88205,7 +88191,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>forn<s n="n" /></l>
-        <r>forno ↓<s n="n" /></r>
+        <r>forno<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>forn<s n="n" /></l>
+        <r>Forno<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -88786,7 +88779,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>hor<s n="n" /></l>
-        <r>horo ↓<s n="n" /></r>
+        <r>horo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>hor<s n="n" /></l>
+        <r>Horo<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -94387,13 +94387,6 @@
       <p>
         <l>saint-john perse<s n="np" /></l>
         <r>Saint-John Perse<s n="np" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>kar<s n="adj" /></l>
-        <r>kara ↓<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -102209,13 +102202,6 @@
       </p>
     </e>
     <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>sterk<s n="n" /></l>
-        <r>sterko ↓<s n="n" /></r>
-      </p>
-    </e>
-    <e>
       <!-- confidence: 0.9000 -->
       <p>
         <l>sterk<s n="n" /></l>
@@ -102506,7 +102492,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>suk<s n="n" /></l>
-        <r>suko ↓<s n="n" /></r>
+        <r>suko<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>suk<s n="n" /></l>
+        <r>Suko<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -107707,7 +107700,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>honor<s n="n" /></l>
-        <r>honoro ↓<s n="n" /></r>
+        <r>honoro<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>honor<s n="n" /></l>
+        <r>Honoro<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -130800,7 +130800,14 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>gem<s n="n" /></l>
-        <r>gemo ↓<s n="n" /></r>
+        <r>gemo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>gem<s n="n" /></l>
+        <r>Gemo<s n="n" /></r>
       </p>
     </e>
     <e>
@@ -193856,13 +193863,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>brul<s n="vblex" /></l>
-        <r>bruli.<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>brul<s n="vblex" /></l>
         <r>bruligi<s n="vblex" /></r>
       </p>
     </e>
@@ -193948,13 +193948,6 @@
       <p>
         <l>nu</l>
         <r>nu</r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>subskrib<s n="vblex" /></l>
-        <r>skribi sube<s n="vblex" /></r>
       </p>
     </e>
     <e>
@@ -198147,13 +198140,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>depres<s n="vblex" /></l>
-        <r>premi malsupren<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>depres<s n="vblex" /></l>
         <r>deprimi<s n="vblex" /></r>
       </p>
     </e>
@@ -198840,13 +198826,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>diskurs<s n="vblex" /></l>
-        <r>doni diskurson<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>diskurs<s n="vblex" /></l>
         <r>paroladi<s n="vblex" /></r>
       </p>
     </e>
@@ -199435,13 +199414,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>ecel<s n="vblex" /></l>
-        <r>esti bonega<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>ecel<s n="vblex" /></l>
         <r>superi<s n="vblex" /></r>
       </p>
     </e>
@@ -199464,13 +199436,6 @@
       <p>
         <l>ecept<s n="vblex" /></l>
         <r>escepti<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>eces<s n="vblex" /></l>
-        <r>havi eksceson<s n="vblex" /></r>
       </p>
     </e>
     <e>
@@ -199786,13 +199751,6 @@
       <p>
         <l>fervor<s n="vblex" /></l>
         <r>fervori<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>fest<s n="vblex" /></l>
-        <r>havi ferion<s n="vblex" /></r>
       </p>
     </e>
     <e>
@@ -200521,13 +200479,6 @@
       <p>
         <l>entuziasm<s n="vblex" /></l>
         <r>entuziasmi<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>entuziasm<s n="vblex" /></l>
-        <r>esti entuziasma<s n="vblex" /></r>
       </p>
     </e>
     <e>
@@ -204131,13 +204082,6 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>vigil<s n="vblex" /></l>
-        <r>deĵori por noktogardo<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
         <l>vigor<s n="n" /></l>
         <r>forteco<s n="n" /></r>
       </p>
@@ -205554,20 +205498,6 @@
       <p>
         <l>repas<s n="vblex" /></l>
         <r>gladi<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>remedi<s n="vblex" /></l>
-        <r>resanigi (malsanon<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>remedi<s n="vblex" /></l>
-        <r>malsanecon)<s n="vblex" /></r>
       </p>
     </e>
     <e>
@@ -207913,13 +207843,6 @@
       <p>
         <l>spar<s n="vblex" /></l>
         <r>ŝpari<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>spar<s n="vblex" /></l>
-        <r>esti ŝparema<s n="vblex" /></r>
       </p>
     </e>
     <e>
@@ -211055,13 +210978,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>erekt<s n="vblex" /></l>
-        <r>starigi (vertikale)<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>erekt<s n="vblex" /></l>
         <r>erekti<s n="vblex" /></r>
       </p>
     </e>
@@ -211833,13 +211749,6 @@
       <p>
         <l>equival<s n="vblex" /></l>
         <r>egalvalori<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>equival<s n="vblex" /></l>
-        <r>esti ekvivalenta<s n="vblex" /></r>
       </p>
     </e>
     <e>
@@ -212680,13 +212589,6 @@
       <p>
         <l>rekurs<s n="vblex" /></l>
         <r>konfidi<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>rekurs<s n="vblex" /></l>
-        <r>sin turni al<s n="vblex" /></r>
       </p>
     </e>
     <e>
@@ -217166,13 +217068,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>etap<s n="vblex" /></l>
-        <r>halti je etapo<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>etap<s n="vblex" /></l>
         <r>ripozi<s n="vblex" /></r>
       </p>
     </e>
@@ -217866,13 +217761,6 @@
       <!-- confidence: 1.0000 -->
       <p>
         <l>locion<s n="vblex" /></l>
-        <r>lavi per tualetakvo<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>locion<s n="vblex" /></l>
         <r>locii<s n="vblex" /></r>
       </p>
     </e>
@@ -217951,13 +217839,6 @@
       <p>
         <l>menstru<s n="vblex" /></l>
         <r>menstrui<s n="vblex" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 1.0000 -->
-      <p>
-        <l>menuz<s n="vblex" /></l>
-        <r>menuzi*<s n="vblex" /></r>
       </p>
     </e>
     <e>
