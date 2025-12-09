@@ -5,7 +5,12 @@ This directory contains test sentences for evaluating translation quality and im
 ## File Structure
 
 - `ido-epo-test-sentences.txt` - Test sentences in Ido for translation to Esperanto
+  - **Full Path:** `/home/mark/apertium-dev/apertium/apertium-ido-epo/corpus/ido-epo-test-sentences.txt`
+  - **Purpose:** Contains test sentences for evaluating translation quality and improvements
+  - **Format:** Plain text with comments (lines starting with `#`)
+  - **Current Content:** 2 test sentences (as of December 8, 2025)
 - `README.md` - This file
+- `TEST_RESULTS_2025-12-08.md` - Latest detailed test results and error analysis
 
 ## Usage
 
