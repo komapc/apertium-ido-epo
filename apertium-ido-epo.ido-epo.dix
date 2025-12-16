@@ -23797,6 +23797,13 @@
     <e>
       <!-- confidence: 0.9000 -->
       <p>
+        <l>adavan</l>
+        <r>Adavane</r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
         <l>astronomiala kayereto<s n="np" /></l>
         <r>Astronomiala Kayereto<s n="np" /></r>
       </p>
@@ -81178,6 +81185,13 @@
       <p>
         <l>e</l>
         <r>kaj</r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9000 -->
+      <p>
+        <l>e</l>
+        <r>E</r>
       </p>
     </e>
     <e>
