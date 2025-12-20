@@ -57,6 +57,27 @@
       <cat-item tags="np"/>
       <cat-item tags="np.*"/>
     </def-cat>
+    
+    <!-- PASSIVE VOICE verbs: Ido uses synthetic passive with -es- infix
+         kreesar (passive inf), kreesas (passive pres), kreesis (passive past), etc.
+         These need to be converted to Esperanto periphrastic passive (esti + participle) -->
+    <def-cat n="vbpasv">
+      <cat-item tags="vblex.pasv.*"/>
+    </def-cat>
+    
+    <!-- PARTICIPLES: verb forms used as adjectives/adverbs
+         Present: -ante (derivante = deriving)
+         Past: -inte (derivinte = having derived)
+         Future: -onte (derivonte = about to derive) -->
+    <def-cat n="pprs">
+      <cat-item tags="vblex.pprs"/>
+      <cat-item tags="vblex.pprs.*"/>
+    </def-cat>
+    
+    <def-cat n="pp">
+      <cat-item tags="vblex.pp"/>
+      <cat-item tags="vblex.pp.*"/>
+    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
@@ -93,6 +114,19 @@
       <attr-item tags="imp"/>
       <attr-item tags="pres"/>
       <attr-item tags="past"/>
+    </def-attr>
+    
+    <!-- Voice attribute: active or passive -->
+    <def-attr n="voice">
+      <attr-item tags="pasv"/>
+      <attr-item tags="act"/>
+    </def-attr>
+    
+    <!-- Participle types -->
+    <def-attr n="part">
+      <attr-item tags="pprs"/>  <!-- present participle (-ante) -->
+      <attr-item tags="pp"/>    <!-- past participle (-ita/-inta) -->
+      <attr-item tags="pfut"/>  <!-- future participle (-onte/-ota) -->
     </def-attr>
   </section-def-attrs>
 
@@ -206,6 +240,223 @@
             <clip pos="2" side="tl" part="a_adj"/>
             <lit-tag v="sg"/>
             <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- ============================================================================
+         PASSIVE VOICE RULES
+         
+         LINGUISTIC CONTEXT:
+         Ido uses a SYNTHETIC passive with the -es- infix:
+         - kreesar (passive infinitive: to be created)
+         - kreesas (passive present: is being created)
+         - kreesis (passive past: was created)
+         - kreesos (passive future: will be created)
+         
+         Esperanto uses a PERIPHRASTIC passive with esti + participle:
+         - esti kreita (to be created) - infinitive
+         - estas kreata (is being created) - present progressive
+         - estis kreita (was created) - past
+         - estos kreita (will be created) - future
+         
+         Reference: https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido#Verb_morphology
+         
+         TRANSLATION STRATEGY:
+         - Passive present → estas + present passive participle (-ata)
+         - Passive past → estis + past passive participle (-ita)
+         - Passive future → estos + past passive participle (-ita)
+         - Passive infinitive → esti + past passive participle (-ita)
+         - Passive conditional → estus + past passive participle (-ita)
+         - Passive imperative → estu + past passive participle (-ita)
+         ============================================================================ -->
+    
+    <!-- Passive verb (standalone): convert to Esperanto periphrastic passive
+         
+         Handles: "kreesis" → "estis kreita" (was created)
+                  "kreesas" → "estas kreata" (is being created)
+                  "kreesos" → "estos kreita" (will be created)
+                  "kreesar" → "esti kreita" (to be created) -->
+    <rule comment="Ido passive → Esperanto esti + participle">
+      <pattern>
+        <pattern-item n="vbpasv"/>
+      </pattern>
+      <action>
+        <choose>
+          <!-- Passive Present: estas + -ita (past passive participle)
+               Note: In Esperanto, "estas kreita" is more common than "estas kreata"
+               for expressing the passive. This is the statal passive. -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pres"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Past: estis + -ita (past passive participle) -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="past"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Future: estos + -ita -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="fti"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Infinitive: esti + -ita -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="inf"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="inf"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Conditional: estus + -ita -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="cni"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="cni"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Imperative: estu + -ita -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="imp"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="imp"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Default: present passive -->
+          <otherwise>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pres"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- ============================================================================
+         PARTICIPLE RULES
+         
+         LINGUISTIC CONTEXT:
+         Ido and Esperanto have similar participle systems with subtle differences.
+         
+         IDO PARTICIPLES (active):
+         - -ante: present active (vidante = seeing)
+         - -inte: past active (vidinte = having seen)
+         - -onte: future active (vidonte = about to see)
+         
+         ESPERANTO PARTICIPLES (active):
+         - -anta: present active (vidanta = seeing)
+         - -inta: past active (vidinta = having seen)
+         - -onta: future active (vidonta = about to see)
+         
+         Note: Ido uses -e ending for adverbial participles, Esperanto uses -a for adjectival.
+         ============================================================================ -->
+    
+    <!-- Present participle: -ante → -ante (gerund/adverbial participle)
+         Handles: "derivante" → "derivante" 
+         Note: Esperanto generator uses <ger> tag for -ante forms -->
+    <rule comment="Present participle -ante → -ante">
+      <pattern>
+        <pattern-item n="pprs"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="vblex"/>
+            <lit-tag v="ger"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <!-- Past participle: pass through
+         Handles: "kreita" → "kreita" -->
+    <rule comment="Past participle -ita → -ita">
+      <pattern>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="vblex"/>
+            <lit-tag v="pp"/>
           </lu>
         </out>
       </action>
