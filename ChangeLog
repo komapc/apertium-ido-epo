@@ -12,6 +12,14 @@
 - Update bilingual dictionary entries to align with new monodix/YAML pipeline
 - Improve coverage for common and proper-noun vocabulary
 
+### Fixed - December 20, 2025 (Part 2)
+- **Passive voice transfer rules**: Ido synthetic passive (-es- infix) now converts to Esperanto periphrastic passive (esti + participle)
+  - kreesis → estis kreita (was created)
+  - kreesas → estas kreita (is created)  
+  - kreesos → estos kreita (will be created)
+  - kreesar → esti kreita (to be created)
+- **Present participle transfer**: Ido -ante → Esperanto -ante (derivante → derivante)
+
 ### Fixed - December 20, 2025
 - **Accusative case morphology**: Nouns now recognize accusative forms (-on, -in)
   - Example: `hundon` → `hund<n><sg><acc>` ✓
