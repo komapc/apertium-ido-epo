@@ -13,6 +13,9 @@
     <sdef n="cnjsub" />
     <sdef n="num" />
     <sdef n="np" />
+    <sdef n="ciph" />
+    <sdef n="sp" />
+    <sdef n="nom" />
   </sdefs>
   <section id="main" type="standard">
     <e>
@@ -234611,6 +234614,13 @@
       <p>
         <l>intensig<s n="adj" /></l>
         <r>intensigebla<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <re>[0-9]+([.,][0-9]+)*</re>
+      <p>
+        <l><s n="num" /><s n="ciph" /><s n="sp" /><s n="nom" /></l>
+        <r><s n="num" /><s n="ciph" /><s n="sp" /><s n="nom" /></r>
       </p>
     </e>
   </section>
