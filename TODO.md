@@ -1,86 +1,106 @@
 # TODO - Apertium Ido-Esperanto Translation Pair
 
-**Last Updated:** December 6, 2025
+**Last Updated:** December 20, 2025
 
-## 🚨 Critical & Immediate
+## ✅ Recently Completed
 
-### 0. 🔤 Fix Case Sensitivity for Proper Nouns (EASY FIX - 15-30 min)
-**Priority:** HIGH  
-**Time:** 15-30 minutes  
-**Status:** Not Started
+### ✅ Morphological Paradigm Extensions (Dec 20, 2025)
+**Status:** COMPLETED
 
-**Issue:** Proper nouns like `Ido`, `Paris`, `Idisti` exist in JSON as lowercase but appear capitalized in text. Morphological analyzer requires exact case match.
+The following paradigm extensions have been implemented in `projects/data/pardefs.xml`:
 
-**Solution:**
-- [x] Removed `source_manual.json` - all dictionaries regenerated from sources only
-- [x] Added automatic `np__np` paradigm assignment in `merge_sources.py` for entries with `pos: "np"`
-- [x] Proper nouns from `source_io_wikipedia.json` now automatically get `np__np` paradigm
-- [ ] Regenerate dictionaries: `cd projects/data && python3 scripts/regenerate_all.py`
-- [ ] Copy generated files to apertium directories
-- [ ] Recompile and test
+- [x] **Accusative case for nouns** (`o__n`): Added `-on` (sg) and `-in` (pl) forms
+- [x] **Accusative case for adjectives** (`a__adj`, `ebl__adj`): Added `-an` forms  
+- [x] **Passive voice for verbs** (`ar__vblex`): Added `-esar`, `-esas`, `-esis`, `-esos`, `-esus`, `-esez`
+- [x] **Participles for verbs** (`ar__vblex`): Added `-ante` (present), `-inte` (past active), `-onte` (future), `-ata`, `-ita`, `-ota` (passive)
+- [x] **Elided article l'**: Fixed to be parsed as determiner (was preposition)
 
-**IMPORTANT:** 
-- Do NOT manually edit .dix files. Always regenerate from JSON sources.
-- All source JSON files are generated automatically. No manual entries needed.
-
-**Files:**
-- `projects/data/scripts/merge_sources.py` (updated - assigns `np__np` paradigm automatically)
-- `projects/data/pardefs.xml` (contains `np__np` paradigm)
-
-**Documentation:** `corpus/EASY_FIX_CASE_SENSITIVITY.md`
+**Test Results:**
+```
+hundon    → hund<n><sg><acc>      ✓
+kreesis   → kre<vblex><pasv><pii> ✓
+derivante → deriv<vblex><pprs>    ✓
+l'        → l'<det>               ✓
+```
 
 ---
 
-### 1. 🔧 Fix Missing Dictionary Entries
+## 🚨 Critical & Immediate
+
+### 1. 🎯 Add CG3 Disambiguation Rules
+**Priority:** HIGH  
+**Time:** 2-4 hours  
+**Status:** Not Started
+
+**Issue:** The `ido-epo` mode has NO disambiguation step. When words have multiple readings (e.g., `la` → `l<adj>` or `la<det>`), the first reading is picked, which is often wrong.
+
+**Solution:**
+- [ ] Create `apertium-ido-epo.ido.rlx` with CG3 disambiguation rules
+- [ ] Add `cg-proc` step to `modes.xml` for `ido-epo` mode
+- [ ] Add rules to select correct readings (e.g., SELECT det IF next is noun/adj)
+
+**Documentation:** `docs/FIX_PLAN_TRANSLATION_ERRORS.md`
+
+---
+
+### 2. 🔧 Add Missing Dictionary Entries
+**Priority:** HIGH  
+**Time:** 1-2 hours  
+**Status:** Partially Complete
+
+**Missing Words Identified:**
+- [ ] `maxim` - Superlative marker (adverb) → `plej`
+- [ ] `nomizar` - "to name" (verb) → `nomi`
+- [ ] `Esperantidoj` - Proper noun plural handling
+- [ ] Cardinal numbers (1907, etc.) - Enable num_regex paradigm
+
+**Documentation:** `docs/FIX_PLAN_TRANSLATION_ERRORS.md`
+
+---
+
+### 3. 📝 Add Transfer Rules for New Morphology
 **Priority:** HIGH  
 **Time:** 1-2 hours  
 **Status:** Not Started
 
-**Missing Words:**
-- [ ] `kreinto` - Add to monodix and bidix (exists in JSON)
-- [ ] `remplacigar` - Add to JSON sources, then monodix and bidix
-- [ ] `existant` - Add to JSON sources, then monodix and bidix
+**Issue:** The new morphological forms (passive voice, participles) are recognized but need transfer rules to generate correct Esperanto.
 
-**Documentation:** `corpus/MISSING_WORDS_ANALYSIS.md`
-
----
-
-### 2. ⏰ Fix Tense Translation Errors
-**Priority:** HIGH  
-**Time:** 15-30 minutes  
-**Status:** Not Started
-
-**Issue:** Past tense verbs (`partoprenis`, `diskutis`) translated as present tense.
-
-**Root Causes:**
-1. Wrong tags in paradigm (`pres`/`past`/`fut` instead of `pri`/`pii`/`fti`)
-2. Wrong stem in static entry (`partoprenis` instead of `partopren`)
-
-**Solution:**
-- [ ] Fix `ar__vblex` paradigm tags in `../apertium-ido/pardefs.xml`: `pres`→`pri`, `past`→`pii`, `fut`→`fti`
-- [ ] Fix static entry stem in `../apertium-ido/apertium-ido.ido.dix` or remove entry
-- [ ] Recompile and test
-
-**Documentation:** `corpus/TENSE_ERRORS_FIX.md`
+**Needed Rules:**
+- [ ] Passive voice → Esperanto periphrastic passive (esti + participle)
+- [ ] Present participle (-ante) → Esperanto (-anta)
+- [ ] Accusative handling in output
 
 ---
 
 ## 📊 Translation Quality Issues
 
-### 3. Fix Grammar/Agreement Errors
+### 4. Fix Case Sensitivity for Proper Nouns
+**Priority:** MEDIUM  
+**Time:** 15-30 minutes  
+**Status:** In Progress
+
+**Issue:** Proper nouns like `Ido`, `Paris`, `Idisti` exist in JSON as lowercase but appear capitalized in text.
+
+**Solution:**
+- [x] Added automatic `np__np` paradigm assignment in `merge_sources.py`
+- [x] Proper nouns from `source_io_wikipedia.json` now automatically get `np__np` paradigm
+- [x] Regenerate dictionaries: `cd projects/data && python3 scripts/regenerate_all.py`
+- [x] Copy generated files to apertium directories
+- [x] Recompile and test
+
+---
+
+### 5. Fix Grammar/Agreement Errors
 **Priority:** MEDIUM  
 **Time:** 2-4 hours
 
 **Issues Found:**
-- Case errors: `lingvon` (accusative) should be `lingvo` (nominative)
-- Tense errors: Past participles translated as present tense verbs
+- Case errors: `lingvon` (accusative) should be `lingvo` (nominative) in certain contexts
 - Agreement errors: Adjective agreement issues (`nova` → `novaj`)
-
-**Documentation:** `corpus/TRANSLATION_ERRORS_ANALYSIS.md`
 
 ---
 
-### 4. Fix Compound Word Recognition
+### 6. Fix Compound Word Recognition
 **Priority:** MEDIUM  
 **Time:** 1-2 hours
 
@@ -93,34 +113,23 @@
 
 ---
 
-### 5. Fix Function Word Translations
-**Priority:** MEDIUM  
-**Time:** 1 hour
-
-**Issues:**
-- `di` → `@di` (should be `de`)
-- `ye` → `@ye` (should be `je`)
-- `dil` → `#de l'` (should be `de la`)
-- `da` → `#de ↓ (indikante aganton)` (agent marker)
-
----
-
 ## 📈 Improvements
 
-### 6. Add More Test Sentences
+### 7. Add More Test Sentences
 **Priority:** LOW  
 **Time:** 1 hour
 
 - [ ] Add test cases for all verb tenses
-- [ ] Add test cases for various noun cases
-- [ ] Add test cases for various adjective forms
+- [ ] Add test cases for accusative case
+- [ ] Add test cases for passive voice
+- [ ] Add test cases for participles
 - [ ] Add test cases for compound words
 
 **File:** `corpus/ido-epo-test-sentences.txt`
 
 ---
 
-### 7. Improve Error Reporting
+### 8. Improve Error Reporting
 **Priority:** LOW  
 **Time:** 1-2 hours
 
@@ -132,7 +141,7 @@
 
 ## 📚 Documentation
 
-### 8. Update Translation Rule Documentation
+### 9. Update Translation Rule Documentation
 **Priority:** LOW  
 **Time:** 2-3 hours
 
@@ -146,6 +155,7 @@
 
 ## 🔗 Related Documentation
 
+- **Fix Plan:** `docs/FIX_PLAN_TRANSLATION_ERRORS.md`
 - **Error Analysis:** `corpus/TRANSLATION_ERRORS_ANALYSIS.md`
 - **Missing Words:** `corpus/MISSING_WORDS_ANALYSIS.md`
 - **Tense Errors:** `corpus/TENSE_ERRORS_FIX.md`

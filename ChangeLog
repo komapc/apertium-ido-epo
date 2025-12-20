@@ -6,14 +6,31 @@
 - Regenerate `apertium-ido-epo.ido-epo.dix` from unified JSON sources (BERT, Vortaro, extractor)
 - Add ~29,000 bidix entries covering ~12,000 Ido lemmas
 - Integrate BERT-aligned candidates with Vortaro-format and extractor-derived translations
+- Add comprehensive fix plan documentation (`docs/FIX_PLAN_TRANSLATION_ERRORS.md`)
 
 ### Changed
 - Update bilingual dictionary entries to align with new monodix/YAML pipeline
 - Improve coverage for common and proper-noun vocabulary
 
+### Fixed - December 20, 2025
+- **Accusative case morphology**: Nouns now recognize accusative forms (-on, -in)
+  - Example: `hundon` → `hund<n><sg><acc>` ✓
+- **Passive voice morphology**: Verbs now recognize passive forms with -es- infix
+  - Example: `kreesis` → `kre<vblex><pasv><pii>` ✓
+- **Participle morphology**: Verbs now recognize present participle (-ante) and other participle forms
+  - Example: `derivante` → `deriv<vblex><pprs>` ✓
+- **Elided article l'**: Now correctly parsed as determiner (was incorrectly tagged as preposition)
+  - Example: `l'` → `l'<det>` → translates to `la` ✓
+- **Adjective accusative**: Adjectives now recognize accusative forms (-an)
+
 ### Technical
 - Source JSONs: `bert_aligned_clean_0.60/bert_candidates.json`, `vortaro_format/ido_epo_dictionary.json`, `extractor/dist/bidix_big.json`
 - Regeneration scripts: `projects/embedding-aligner/scripts/regenerate_bidix.py`, `regenerate_monodix.py`
+- Updated paradigms in `projects/data/pardefs.xml`:
+  - `o__n`: Added accusative singular (-on) and plural (-in)
+  - `a__adj`: Added accusative (-an)
+  - `ar__vblex`: Added passive voice (-esar, -esas, -esis, -esos, -esus, -esez)
+  - `ar__vblex`: Added participles (-ante, -inte, -onte, -ata, -ita, -ota)
 
 ## [0.1.0] - 2025-01-26
 
