@@ -4,24 +4,24 @@
 
 ## ✅ Recently Completed
 
-### ✅ Morphological Paradigm Extensions (Dec 20, 2025)
+### ✅ Transfer Rules for New Morphology (Dec 20, 2025)
 **Status:** COMPLETED
 
-The following paradigm extensions have been implemented in `projects/data/pardefs.xml`:
+- [x] **Passive voice**: Ido synthetic passive (`-esar`, `-esis`) → Esperanto periphrastic (`esti` + participle)
+  - `kreesis` → `estis kreita` (was created)
+  - `kreesas` → `estas kreita` (is created)
+  - `kreesar` → `esti kreita` (to be created)
+- [x] **Participles**: Ido `-ante` → Esperanto `-ante` (adverbial participle)
+  - `derivante` → `derivante`
+
+### ✅ Morphological Paradigm Extensions (Dec 20, 2025)
+**Status:** COMPLETED
 
 - [x] **Accusative case for nouns** (`o__n`): Added `-on` (sg) and `-in` (pl) forms
 - [x] **Accusative case for adjectives** (`a__adj`, `ebl__adj`): Added `-an` forms  
 - [x] **Passive voice for verbs** (`ar__vblex`): Added `-esar`, `-esas`, `-esis`, `-esos`, `-esus`, `-esez`
 - [x] **Participles for verbs** (`ar__vblex`): Added `-ante` (present), `-inte` (past active), `-onte` (future), `-ata`, `-ita`, `-ota` (passive)
 - [x] **Elided article l'**: Fixed to be parsed as determiner (was preposition)
-
-**Test Results:**
-```
-hundon    → hund<n><sg><acc>      ✓
-kreesis   → kre<vblex><pasv><pii> ✓
-derivante → deriv<vblex><pprs>    ✓
-l'        → l'<det>               ✓
-```
 
 ---
 
@@ -33,6 +33,10 @@ l'        → l'<det>               ✓
 **Status:** Not Started
 
 **Issue:** The `ido-epo` mode has NO disambiguation step. When words have multiple readings (e.g., `la` → `l<adj>` or `la<det>`), the first reading is picked, which is often wrong.
+
+**Evidence:**
+- `#la` in translation output suggests `la` is being misparsed or mistranslated because of ambiguity.
+- `@l` errors in previous tests.
 
 **Solution:**
 - [ ] Create `apertium-ido-epo.ido.rlx` with CG3 disambiguation rules
@@ -52,29 +56,15 @@ l'        → l'<det>               ✓
 - [ ] `maxim` - Superlative marker (adverb) → `plej`
 - [ ] `nomizar` - "to name" (verb) → `nomi`
 - [ ] `Esperantidoj` - Proper noun plural handling
-- [ ] Cardinal numbers (1907, etc.) - Enable num_regex paradigm
+- [x] Cardinal numbers (1907, etc.) - Added num_regex paradigm and bidix handling
 
 **Documentation:** `docs/FIX_PLAN_TRANSLATION_ERRORS.md`
 
 ---
 
-### 3. 📝 Add Transfer Rules for New Morphology
-**Priority:** HIGH  
-**Time:** 1-2 hours  
-**Status:** Not Started
-
-**Issue:** The new morphological forms (passive voice, participles) are recognized but need transfer rules to generate correct Esperanto.
-
-**Needed Rules:**
-- [ ] Passive voice → Esperanto periphrastic passive (esti + participle)
-- [ ] Present participle (-ante) → Esperanto (-anta)
-- [ ] Accusative handling in output
-
----
-
 ## 📊 Translation Quality Issues
 
-### 4. Fix Case Sensitivity for Proper Nouns
+### 3. Fix Case Sensitivity for Proper Nouns
 **Priority:** MEDIUM  
 **Time:** 15-30 minutes  
 **Status:** In Progress
@@ -90,7 +80,7 @@ l'        → l'<det>               ✓
 
 ---
 
-### 5. Fix Grammar/Agreement Errors
+### 4. Fix Grammar/Agreement Errors
 **Priority:** MEDIUM  
 **Time:** 2-4 hours
 
@@ -100,7 +90,7 @@ l'        → l'<det>               ✓
 
 ---
 
-### 6. Fix Compound Word Recognition
+### 5. Fix Compound Word Recognition
 **Priority:** MEDIUM  
 **Time:** 1-2 hours
 
@@ -115,7 +105,7 @@ l'        → l'<det>               ✓
 
 ## 📈 Improvements
 
-### 7. Add More Test Sentences
+### 6. Add More Test Sentences
 **Priority:** LOW  
 **Time:** 1 hour
 
@@ -129,7 +119,7 @@ l'        → l'<det>               ✓
 
 ---
 
-### 8. Improve Error Reporting
+### 7. Improve Error Reporting
 **Priority:** LOW  
 **Time:** 1-2 hours
 
@@ -141,7 +131,7 @@ l'        → l'<det>               ✓
 
 ## 📚 Documentation
 
-### 9. Update Translation Rule Documentation
+### 8. Update Translation Rule Documentation
 **Priority:** LOW  
 **Time:** 2-3 hours
 
@@ -161,4 +151,3 @@ l'        → l'<det>               ✓
 - **Tense Errors:** `corpus/TENSE_ERRORS_FIX.md`
 - **Easy Fix:** `corpus/EASY_FIX_CASE_SENSITIVITY.md`
 - **Summary:** `corpus/ANALYSIS_SUMMARY.md`
-
