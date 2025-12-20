@@ -5149,6 +5149,13 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
+        <l>l'<s n="det" /></l>
+        <r>la<s n="det" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 1.0000 -->
+      <p>
         <l>cienc<s n="n" /></l>
         <r>scienco<s n="n" /></r>
       </p>
