@@ -133,7 +133,8 @@ def generate_monodix(input_file: Path, output_file: Path, min_confidence: float 
         'inf', 'pri', 'pii', 'fti', 'cni', 'imp',
         'p1', 'p2', 'p3', 'm', 'f', 'mf', 'nt',
         'np', 'ant', 'cog', 'top', 'al', 'ciph',
-        'pres', 'past', 'fut', 'cond', 'pp'
+        'pres', 'past', 'fut', 'cond', 'pp',
+        'pprs', 'pasv', 'act', 'pfut'
     ]
     
     for sdef_name in sdef_list:
