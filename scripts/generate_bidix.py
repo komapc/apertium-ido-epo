@@ -20,18 +20,32 @@ import re
 # POS mapping from JSON to Apertium symbol definitions
 POS_MAP = {
     'n': 'n',           # noun
+    'noun': 'n',
     'v': 'vblex',       # verb
+    'verb': 'vblex',
     'vblex': 'vblex',   # verb (already mapped)
     'adj': 'adj',       # adjective
+    'adjective': 'adj',
     'adv': 'adv',       # adverb
-    'pr': 'prep',       # preposition -> prep in bidix
-    'prep': 'prep',     # preposition
+    'adverb': 'adv',
+    'pr': 'pr',         # preposition -> pr in bidix
+    'prep': 'pr',       # preposition
+    'preposition': 'pr',
     'prn': 'prn',       # pronoun
+    'pronoun': 'prn',
     'det': 'det',       # determiner
+    'determiner': 'det',
     'num': 'num',       # numeral
+    'numeral': 'num',
     'cnjcoo': 'cnjcoo', # coordinating conjunction
+    'conjunction': 'cnjcoo', # generic conjunction maps to cnjcoo
+    'coordinating conjunction': 'cnjcoo',
     'cnjsub': 'cnjsub', # subordinating conjunction
+    'subordinating conjunction': 'cnjsub',
     'ij': 'ij',         # interjection
+    'interjection': 'ij',
+    'proper noun': 'np',
+    'np': 'np',
 }
 
 
@@ -93,13 +107,15 @@ def extract_lemma_ido(word: str, pos: Optional[str] = None) -> str:
     if not pos:
         pos = guess_pos_ido(word)
     
-    if pos == 'n' and word.endswith('o'):
+    pos_lower = pos.lower() if pos else ''
+    
+    if (pos_lower in ('n', 'noun', 'np') or 'proper' in pos_lower) and word.endswith('o'):
         return word[:-1]
-    elif pos in ('v', 'vblex') and word.endswith('ar'):
+    elif pos_lower in ('v', 'vblex', 'verb') and word.endswith('ar'):
         return word[:-2]
-    elif pos == 'adj' and word.endswith('a'):
+    elif pos_lower in ('adj', 'adjective') and word.endswith('a'):
         return word[:-1]
-    elif pos == 'adv' and word.endswith('e'):
+    elif pos_lower in ('adv', 'adverb') and word.endswith('e'):
         return word[:-1]
     
     return word
@@ -125,13 +141,15 @@ def extract_lemma_esperanto(word: str, pos: Optional[str] = None) -> str:
     if not pos:
         pos = guess_pos_esperanto(word)
     
-    if pos == 'n' and word.endswith('o'):
+    pos_lower = pos.lower() if pos else ''
+    
+    if pos_lower in ('n', 'noun') and word.endswith('o'):
         return word[:-1]
-    elif pos in ('v', 'vblex') and word.endswith('i'):
+    elif pos_lower in ('v', 'vblex', 'verb') and word.endswith('i'):
         return word[:-1]
-    elif pos == 'adj' and word.endswith('a'):
+    elif pos_lower in ('adj', 'adjective') and word.endswith('a'):
         return word[:-1]
-    elif pos == 'adv' and word.endswith('e'):
+    elif pos_lower in ('adv', 'adverb') and word.endswith('e'):
         return word[:-1]
     
     return word
@@ -222,8 +240,8 @@ def generate_bidix(input_file: Path, output_file: Path, min_confidence: float = 
     sdefs = ET.SubElement(root, 'sdefs')
     
     # Standard symbol definitions for bidix
-    sdef_list = ['n', 'vblex', 'adj', 'adv', 'prn', 'det', 'prep', 
-                 'cnjcoo', 'cnjsub', 'num']
+    sdef_list = ['n', 'vblex', 'adj', 'adv', 'prn', 'det', 'pr', 
+                 'cnjcoo', 'cnjsub', 'num', 'np', 'ij']
     
     for sdef_name in sdef_list:
         sdef = ET.SubElement(sdefs, 'sdef')
@@ -368,5 +386,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
