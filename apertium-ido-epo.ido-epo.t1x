@@ -63,6 +63,8 @@
          These need to be converted to Esperanto periphrastic passive (esti + participle) -->
     <def-cat n="vbpasv">
       <cat-item tags="vblex.pasv.*"/>
+      <cat-item tags="vblex.*.pasv"/>
+      <cat-item tags="vblex.*.pasv.*"/>
     </def-cat>
     
     <!-- PARTICIPLES: verb forms used as adjectives/adverbs
@@ -293,7 +295,7 @@
               <lu>
                 <lit v="esti"/>
                 <lit-tag v="vblex"/>
-                <lit-tag v="pres"/>
+                <lit-tag v="pri"/>
               </lu>
               <b/>
               <lu>
