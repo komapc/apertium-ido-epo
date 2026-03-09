@@ -15,6 +15,19 @@
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
     </def-cat>
+    <def-cat n="vbconj">
+      <cat-item tags="vblex.pri.*"/>
+      <cat-item tags="vblex.pii.*"/>
+      <cat-item tags="vblex.fti.*"/>
+      <cat-item tags="vblex.cni.*"/>
+      <cat-item tags="vblex.imp.*"/>
+      <!-- Support for cases where pasv is present -->
+      <cat-item tags="vblex.pri.pasv.*"/>
+      <cat-item tags="vblex.pii.pasv.*"/>
+      <cat-item tags="vblex.fti.pasv.*"/>
+      <cat-item tags="vblex.cni.pasv.*"/>
+      <cat-item tags="vblex.imp.pasv.*"/>
+    </def-cat>
     <def-cat n="vbser">
       <cat-item lemma="esar" tags="vblex.*"/>
       <cat-item lemma="es" tags="vblex.*"/>
@@ -80,6 +93,14 @@
       <cat-item tags="vblex.pp"/>
       <cat-item tags="vblex.pp.*"/>
     </def-cat>
+    <def-cat n="num">
+      <cat-item tags="num"/>
+      <cat-item tags="num.*"/>
+    </def-cat>
+    <def-cat n="ord">
+      <cat-item tags="num.ord"/>
+      <cat-item tags="num.ord.*"/>
+    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
@@ -129,6 +150,25 @@
       <attr-item tags="pprs"/>  <!-- present participle (-ante) -->
       <attr-item tags="pp"/>    <!-- past participle (-ita/-inta) -->
       <attr-item tags="pfut"/>  <!-- future participle (-onte/-ota) -->
+    </def-attr>
+    <!-- Proper noun subtypes -->
+    <def-attr n="np_type">
+      <attr-item tags="al"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="ant"/>
+      <attr-item tags="cog"/>
+    </def-attr>
+    <!-- Person and gender -->
+    <def-attr n="pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+    <def-attr n="gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="nt"/>
     </def-attr>
   </section-def-attrs>
 
@@ -280,6 +320,70 @@
                   "kreesas" → "estas kreata" (is being created)
                   "kreesos" → "estos kreita" (will be created)
                   "kreesar" → "esti kreita" (to be created) -->
+
+    <!-- ============================================================================
+         PARTICIPLE RULES
+         
+         LINGUISTIC CONTEXT:
+         Ido and Esperanto have similar participle systems with subtle differences.
+         
+         IDO PARTICIPLES (active):
+         - -ante: present active (vidante = seeing)
+         - -inte: past active (vidinte = having seen)
+         - -onte: future active (vidonte = about to see)
+         
+         ESPERANTO PARTICIPLES (active):
+         - -anta: present active (vidanta = seeing)
+         - -inta: past active (vidinta = having seen)
+         - -onta: future active (vidonta = about to see)
+         
+         Note: Ido uses -e ending for adverbial participles, Esperanto uses -a for adjectival.
+         ============================================================================ -->
+    
+    <!-- Present participle: -ante → -anta (adjectival)
+         Handles: "derivante" → "derivanta" -->
+    <rule comment="Present participle -ante → -anta">
+      <pattern>
+        <pattern-item n="pprs"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="vblex"/>
+            <lit-tag v="pprs"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <!-- Past participle: -ita → -ita
+         Handles: "kreita" → "kreita" -->
+    <rule comment="Past participle -ita → -ita">
+      <pattern>
+        <pattern-item n="pp"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="vblex"/>
+            <lit-tag v="pp"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Passive verb (standalone): convert to Esperanto periphrastic passive
+         
+         Handles: "kreesis" → "estis kreita" (was created)
+                  "kreesas" → "estas kreata" (is being created)
+                  "kreesos" → "estos kreita" (will be created)
+                  "kreesar" → "esti kreita" (to be created) -->
     <rule comment="Ido passive → Esperanto esti + participle">
       <pattern>
         <pattern-item n="vbpasv"/>
@@ -407,60 +511,6 @@
             </out>
           </otherwise>
         </choose>
-      </action>
-    </rule>
-
-    <!-- ============================================================================
-         PARTICIPLE RULES
-         
-         LINGUISTIC CONTEXT:
-         Ido and Esperanto have similar participle systems with subtle differences.
-         
-         IDO PARTICIPLES (active):
-         - -ante: present active (vidante = seeing)
-         - -inte: past active (vidinte = having seen)
-         - -onte: future active (vidonte = about to see)
-         
-         ESPERANTO PARTICIPLES (active):
-         - -anta: present active (vidanta = seeing)
-         - -inta: past active (vidinta = having seen)
-         - -onta: future active (vidonta = about to see)
-         
-         Note: Ido uses -e ending for adverbial participles, Esperanto uses -a for adjectival.
-         ============================================================================ -->
-    
-    <!-- Present participle: -ante → -ante (gerund/adverbial participle)
-         Handles: "derivante" → "derivante" 
-         Note: Esperanto generator uses <ger> tag for -ante forms -->
-    <rule comment="Present participle -ante → -ante">
-      <pattern>
-        <pattern-item n="pprs"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <lit-tag v="vblex"/>
-            <lit-tag v="ger"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
-    
-    <!-- Past participle: pass through
-         Handles: "kreita" → "kreita" -->
-    <rule comment="Past participle -ita → -ita">
-      <pattern>
-        <pattern-item n="pp"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <lit-tag v="vblex"/>
-            <lit-tag v="pp"/>
-          </lu>
-        </out>
       </action>
     </rule>
 
@@ -1367,15 +1417,16 @@
                   "Il esas me" → "Li estas mi" (He is me - nom after copula)
          
          CRITICAL: Pronouns take different forms for nominative/accusative in BOTH languages. -->
+    <!-- Verb + Pronoun: check if copula or transitive -->
     <rule>
       <pattern>
-        <pattern-item n="vblex"/>
+        <pattern-item n="vbconj"/>
         <pattern-item n="prn"/>
       </pattern>
       <action>
         <choose>
           <when>
-            <!-- If verb is copula, keep pronoun in nominative (predicate nominative) -->
+            <!-- If verb is copula, keep pronoun in nominative -->
             <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
@@ -1383,8 +1434,8 @@
               </lu>
               <b/>
               <lu>
-                <clip pos="2" side="tl" part="lem"/>
-                <clip pos="2" side="tl" part="a_prn"/>
+                <clip pos="2" side="tl" part="whole"/>
+                <!-- Fallback tags if missing from bidix -->
                 <lit-tag v="nom"/>
               </lu>
             </out>
@@ -1398,7 +1449,11 @@
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="lem"/>
-                <clip pos="2" side="tl" part="a_prn"/>
+                <lit-tag v="prn"/>
+                <!-- Inherit person/gender from source if available -->
+                <clip pos="2" side="tl" part="pers"/>
+                <clip pos="2" side="tl" part="gen"/>
+                <clip pos="2" side="tl" part="nbr"/>
                 <lit-tag v="acc"/>
               </lu>
             </out>
@@ -1407,7 +1462,7 @@
       </action>
     </rule>
 
-    <!-- Pronoun rule: add nominative case (when not after verb, i.e., subjects) -->
+    <!-- Pronoun rule (standalone): pass through with default tags -->
     <rule>
       <pattern>
         <pattern-item n="prn"/>
@@ -1415,8 +1470,8 @@
       <action>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <clip pos="1" side="tl" part="a_prn"/>
+            <clip pos="1" side="tl" part="whole"/>
+            <!-- Add default nominative if no case was in bidix -->
             <lit-tag v="nom"/>
           </lu>
         </out>
@@ -1465,7 +1520,7 @@
       </action>
     </rule>
 
-    <!-- Determiner rule: pass through -->
+    <!-- Determiner rule: add def/sp for la -->
     <rule>
       <pattern>
         <pattern-item n="det"/>
@@ -1474,6 +1529,8 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sp"/>
           </lu>
         </out>
       </action>
@@ -1490,6 +1547,8 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sp"/>
           </lu>
           <b/>
           <lu>
@@ -1506,7 +1565,7 @@
       </action>
     </rule>
     
-    <!-- Determiner + Noun: pass through -->
+    <!-- Determiner + Noun: ensure agreement -->
     <rule>
       <pattern>
         <pattern-item n="det"/>
@@ -1516,6 +1575,8 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sp"/>
           </lu>
           <b/>
           <lu>
@@ -1538,21 +1599,25 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
+            <!-- Fallback tags for unknown proper nouns -->
+            <lit-tag v="al"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
           </lu>
         </out>
       </action>
     </rule>
 
-    <!-- Verb + Proper noun: check if copula or transitive - FIXED -->
+    <!-- Verb + Proper noun: check if copula or transitive -->
     <rule>
       <pattern>
-        <pattern-item n="vblex"/>
+        <pattern-item n="vbconj"/>
         <pattern-item n="np"/>
       </pattern>
       <action>
         <choose>
           <when>
-            <!-- If verb is "esar" (copula), keep nominative (predicate nominative) -->
+            <!-- If verb is copula, keep nominative -->
             <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
@@ -1561,6 +1626,9 @@
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="al"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
               </lu>
             </out>
           </when>
@@ -1574,12 +1642,100 @@
               <lu>
                 <clip pos="2" side="tl" part="lem"/>
                 <lit-tag v="np"/>
-                <lit-tag v="sg"/>
+                <!-- Inherit tags from bidix if available -->
+                <clip pos="2" side="tl" part="np_type"/>
+                <clip pos="2" side="tl" part="nbr"/>
                 <lit-tag v="acc"/>
               </lu>
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+    <!-- Numeral: pass through and add sp/nom for epo compatibility -->
+    <rule>
+      <pattern>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Determiner + Ordinal + Noun: ensure agreement -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="ord"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sp"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <lit-tag v="num"/>
+            <lit-tag v="ord"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Ordinal + Noun: propagate number and case to ordinal -->
+    <rule>
+      <pattern>
+        <pattern-item n="ord"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="num"/>
+            <lit-tag v="ord"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Ordinal: default to singular nominative if alone -->
+    <rule>
+      <pattern>
+        <pattern-item n="ord"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="num"/>
+            <lit-tag v="ord"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
       </action>
     </rule>
   </section-rules>

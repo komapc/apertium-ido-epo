@@ -46,7 +46,7 @@
 ```
 /home/mark/apertium-ido-epo/
 ├── apertium/
-│   └── apertium-dev/
+│   └── apertium-gemini/
 │       ├── vendor/                    # ✅ Created
 │       │   ├── lttoolbox/            # ✅ Submodule (built)
 │       │   ├── apertium/             # ✅ Submodule (partial)
@@ -123,7 +123,7 @@ If you want to review the vendor setup before continuing:
 
 1. Finish building apertium:
    ```bash
-   cd /home/mark/apertium-ido-epo/apertium/apertium-dev
+   cd /home/mark/apertium-ido-epo/apertium/apertium-gemini
    make vendor  # Resume where it left off
    ```
 

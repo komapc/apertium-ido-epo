@@ -362,7 +362,7 @@ After making changes, regenerate dictionaries using:
 # 1. Update source JSON files in projects/data/sources/
 # 2. Update pardefs.xml if paradigms changed
 # 3. Run regeneration pipeline
-cd /home/mark/apertium-dev/projects/data
+cd /home/mark/apertium-gemini/projects/data
 python3 scripts/regenerate_all.py --validate-xml
 
 # 4. Copy generated files

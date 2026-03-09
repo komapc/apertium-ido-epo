@@ -30,7 +30,7 @@
 ## 🔧 Required Actions
 
 ### 1. Update Preserved Rules File
-**File:** `/home/mark/apertium-dev/projects/extractor/rules/apertium-ido.ido.dix.rules`
+**File:** `/home/mark/apertium-gemini/projects/extractor/rules/apertium-ido.ido.dix.rules`
 
 **Add missing elements:**
 ```xml
@@ -102,8 +102,8 @@
 ## 🛡️ Protection Mechanism
 
 ### How It Works
-1. **Rules File:** `/home/mark/apertium-dev/projects/extractor/rules/apertium-ido.ido.dix.rules`
-2. **Merge Script:** `/home/mark/apertium-dev/projects/extractor/scripts/merge_with_extractor.py`
+1. **Rules File:** `/home/mark/apertium-gemini/projects/extractor/rules/apertium-ido.ido.dix.rules`
+2. **Merge Script:** `/home/mark/apertium-gemini/projects/extractor/scripts/merge_with_extractor.py`
 3. **Process:** Rules + Word Entries → Complete Dictionary
 
 ### Current Workflow

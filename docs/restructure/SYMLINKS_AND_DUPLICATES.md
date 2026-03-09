@@ -264,7 +264,7 @@ find . -maxdepth 1 -type l -ls
 #!/bin/bash
 # Safe removal script with verification
 
-BACKUP_DIR="/tmp/apertium-dev-cleanup-backup-$(date +%Y%m%d-%H%M%S)"
+BACKUP_DIR="/tmp/apertium-gemini-cleanup-backup-$(date +%Y%m%d-%H%M%S)"
 mkdir -p "$BACKUP_DIR"
 
 echo "Creating backup at $BACKUP_DIR"

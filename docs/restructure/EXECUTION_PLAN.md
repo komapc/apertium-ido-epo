@@ -65,7 +65,7 @@ rm -rf apertium lttoolbox apertium-ido apertium-epo
 
 #### 1.4 Initialize vendor submodules
 ```bash
-cd /home/mark/apertium-ido-epo/apertium/apertium-dev
+cd /home/mark/apertium-ido-epo/apertium/apertium-gemini
 
 # Add submodules
 git submodule add https://github.com/apertium/apertium.git vendor/apertium
@@ -77,14 +77,14 @@ git submodule add https://github.com/apertium/apertium-epo.git vendor/apertium-e
 git submodule update --init --recursive
 ```
 
-#### 1.5 Install Makefile.apertium-dev
+#### 1.5 Install Makefile.apertium-gemini
 ```bash
-cp /home/mark/apertium-ido-epo/Makefile.apertium-dev /home/mark/apertium-ido-epo/apertium/Makefile
+cp /home/mark/apertium-ido-epo/Makefile.apertium-gemini /home/mark/apertium-ido-epo/apertium/Makefile
 ```
 
 #### 1.6 Test vendor build
 ```bash
-cd /home/mark/apertium-ido-epo/apertium/apertium-dev
+cd /home/mark/apertium-ido-epo/apertium/apertium-gemini
 make vendor
 ```
 
@@ -111,7 +111,7 @@ mv /home/mark/apertium-ido-epo/apertium-ido-epo /home/mark/apertium-ido-epo/aper
 
 #### 2.3 Test pair build
 ```bash
-cd /home/mark/apertium-ido-epo/apertium/apertium-dev
+cd /home/mark/apertium-ido-epo/apertium/apertium-gemini
 make pair
 ```
 

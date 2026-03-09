@@ -1,6 +1,6 @@
 # Test Results - December 8, 2025
 
-**Test Corpus Location:** `/home/mark/apertium-dev/apertium/apertium-ido-epo/corpus/ido-epo-test-sentences.txt`
+**Test Corpus Location:** `/home/mark/apertium-gemini/apertium/apertium-ido-epo/corpus/ido-epo-test-sentences.txt`
 
 This document contains the current translation results for all test sentences in the corpus file, along with a detailed error analysis.
 
@@ -261,17 +261,17 @@ Hodiaŭ partoprenis kvin Idistoj la sabata videokonferenco. Ni diskutis inter al
 ## File Location Documentation
 
 **Test Corpus File:**
-- **Path:** `/home/mark/apertium-dev/apertium/apertium-ido-epo/corpus/ido-epo-test-sentences.txt`
+- **Path:** `/home/mark/apertium-gemini/apertium/apertium-ido-epo/corpus/ido-epo-test-sentences.txt`
 - **Purpose:** Contains test sentences for evaluating translation quality
 - **Format:** Plain text with comments (lines starting with `#`)
 - **Directions:** Currently Ido → Esperanto
 - **Last Updated:** Contains 2 sentences as of December 8, 2025
 
 **Related Files:**
-- `/home/mark/apertium-dev/apertium/apertium-ido-epo/corpus/README.md` - Corpus documentation
-- `/home/mark/apertium-dev/apertium/apertium-ido-epo/corpus/TRANSLATIONS.md` - Previous translation results
-- `/home/mark/apertium-dev/apertium/apertium-ido-epo/corpus/test_results_current.txt` - Current test results
-- `/home/mark/apertium-dev/apertium/apertium-ido-epo/corpus/test_results_after_regeneration.txt` - Previous regeneration results
+- `/home/mark/apertium-gemini/apertium/apertium-ido-epo/corpus/README.md` - Corpus documentation
+- `/home/mark/apertium-gemini/apertium/apertium-ido-epo/corpus/TRANSLATIONS.md` - Previous translation results
+- `/home/mark/apertium-gemini/apertium/apertium-ido-epo/corpus/test_results_current.txt` - Current test results
+- `/home/mark/apertium-gemini/apertium/apertium-ido-epo/corpus/test_results_after_regeneration.txt` - Previous regeneration results
 
 ---
 
