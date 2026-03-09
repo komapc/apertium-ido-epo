@@ -18,7 +18,7 @@ Successfully restructured the `apertium-ido-epo` repository from a cluttered, fl
 
 **Changes:**
 - Restructured repository (150+ root items → 4)
-- Renamed directory (apertium-dev → apertium-ido-epo)  
+- Renamed directory (apertium-gemini → apertium-ido-epo)  
 - Added vendor submodules (lttoolbox, apertium, etc.)
 - Freed 800 MB (deleted archived repos + duplicates)
 - Moved all tools to `tools/` directory
@@ -40,7 +40,7 @@ Successfully restructured the `apertium-ido-epo` repository from a cluttered, fl
 ## Final Structure
 
 ```
-/home/mark/apertium-ido-epo/          ← Renamed from apertium-dev ✓
+/home/mark/apertium-ido-epo/          ← Renamed from apertium-gemini ✓
 ├── apertium/                          (253 MB)
 │   ├── apertium-ido-epo/             ← Main language pair
 │   │   ├── data/                     (Corpora, Wikipedia extracts)
@@ -77,8 +77,8 @@ Successfully restructured the `apertium-ido-epo` repository from a cluttered, fl
 
 ### All occurrences changed:
 ```
-/home/mark/apertium-dev       → /home/mark/apertium-ido-epo
-apertium/apertium-dev/        → apertium/
+/home/mark/apertium-gemini       → /home/mark/apertium-ido-epo
+apertium/apertium-gemini/        → apertium/
 ../apertium-ido-epo           → ../../apertium/apertium-ido-epo (in extractor)
 ```
 
@@ -137,7 +137,7 @@ apertium/apertium-dev/        → apertium/
 
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
-| Directory name | apertium-dev | apertium-ido-epo | Matches repo ✓ |
+| Directory name | apertium-gemini | apertium-ido-epo | Matches repo ✓ |
 | Root items | 150+ | 4 | 96% reduction |
 | Duplicates | ~100 | 0 | 100% eliminated |
 | Disk space | 1.7 GB | 950 MB | 800 MB freed |

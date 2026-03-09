@@ -43,7 +43,7 @@
 ## Transformation Stats
 
 ### Before (Oct 10, 2025)
-- **Directory name:** `apertium-dev` (didn't match repo!)
+- **Directory name:** `apertium-gemini` (didn't match repo!)
 - **Root items:** 150+ files/directories
 - **Structure:** Flat, chaotic
 - **Duplicates:** ~100 files
@@ -68,7 +68,7 @@
 - **96% cleaner root** (150+ → 4 items)
 - **800 MB saved** (archived/ + duplicates)
 - **0 duplicates** (was ~100)
-- **1 less nesting level** (removed apertium-dev/)
+- **1 less nesting level** (removed apertium-gemini/)
 - **Clear naming** (directory = repo name)
 
 ---
@@ -95,7 +95,7 @@
 
 ### Actions Taken
 ✅ Created vendor submodules (lttoolbox, apertium, apertium-ido, apertium-epo)  
-✅ Flattened structure (removed apertium-dev/ level)  
+✅ Flattened structure (removed apertium-gemini/ level)  
 ✅ Deleted archived repos (701 MB freed)  
 ✅ Deleted venv  
 ✅ Removed ~100 duplicate files  
@@ -181,7 +181,7 @@ python3 sort_dictionary.py
 ## What Changed for CI/CD
 
 ### Paths to update
-- **Old:** Root was `apertium-dev/`
+- **Old:** Root was `apertium-gemini/`
 - **New:** Root is `apertium-ido-epo/`
 
 ### GitHub Actions

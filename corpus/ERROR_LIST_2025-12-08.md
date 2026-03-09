@@ -1,6 +1,6 @@
 # Complete Error List - December 8, 2025
 
-**Test Corpus:** `/home/mark/apertium-dev/apertium/apertium-ido-epo/corpus/ido-epo-test-sentences.txt`
+**Test Corpus:** `/home/mark/apertium-gemini/apertium/apertium-ido-epo/corpus/ido-epo-test-sentences.txt`
 
 This document lists all translation errors found in the test sentences.
 

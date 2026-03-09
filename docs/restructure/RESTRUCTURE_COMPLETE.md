@@ -8,7 +8,7 @@
 
 ## Summary
 
-Successfully restructured the `apertium-dev` repository from a flat, duplicated structure into a clean, organized hierarchy with vendor submodules and proper separation of concerns.
+Successfully restructured the `apertium-gemini` repository from a flat, duplicated structure into a clean, organized hierarchy with vendor submodules and proper separation of concerns.
 
 ### Statistics
 - **Commits:** 8 commits
@@ -24,7 +24,7 @@ Successfully restructured the `apertium-dev` repository from a flat, duplicated 
 ```
 /home/mark/apertium-ido-epo/
 ├── apertium/
-│   └── apertium-dev/                    # All Apertium language resources
+│   └── apertium-gemini/                    # All Apertium language resources
 │       ├── vendor/                      # ✅ Vendor submodules
 │       │   ├── lttoolbox/              # ✅ Built and installed
 │       │   ├── apertium/               # ✅ Submodule (partial build)
@@ -68,7 +68,7 @@ Successfully restructured the `apertium-dev` repository from a flat, duplicated 
 - Created `apertium/vendor/` structure
 - Added 4 vendor submodules (lttoolbox, apertium, apertium-ido, apertium-epo)
 - Built lttoolbox successfully (14 tools available)
-- Installed Makefile for apertium-dev
+- Installed Makefile for apertium-gemini
 
 ### Phase 2: Core Pair Move ✅
 - Moved `apertium-ido-epo/` to `apertium/`
@@ -128,7 +128,7 @@ Successfully restructured the `apertium-dev` repository from a flat, duplicated 
 ```bash
 $ find . -maxdepth 2 -type d | grep -E "(apertium|tools)" | sort
 ./apertium
-./apertium/apertium-dev
+./apertium/apertium-gemini
 ./tools
 ./tools/extractor
 ./tools/python
@@ -191,7 +191,7 @@ After: ~30 items (mostly planning docs and key config files)
 ### Building
 ```bash
 # Build vendor (if not complete)
-cd apertium/apertium-dev
+cd apertium/apertium-gemini
 make vendor
 
 # Build language pair

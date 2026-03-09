@@ -21,7 +21,7 @@
 ### 3. Created new directory structure ✅
 ```
 apertium/
-└── apertium-dev/
+└── apertium-gemini/
     ├── vendor/          # New vendor submodules
     ├── build/           # For compiled artifacts
     ├── tests/           # For consolidated tests
@@ -38,7 +38,7 @@ apertium/
 All submodules cloned successfully.
 
 ### 5. Installed Makefile ✅
-- Copied `Makefile.apertium-dev` to `apertium/Makefile`
+- Copied `Makefile.apertium-gemini` to `apertium/Makefile`
 - Makefile configured to:
   - Build vendor dependencies to `vendor/installed/`
   - Set PATH and PKG_CONFIG_PATH for vendor tools

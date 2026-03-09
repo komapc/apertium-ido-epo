@@ -64,7 +64,7 @@ git status apertium-epo/
 rm -rf apertium lttoolbox apertium-ido apertium-epo
 
 # Initialize as submodules in new location
-cd apertium/apertium-dev
+cd apertium/apertium-gemini
 git submodule add https://github.com/apertium/apertium.git vendor/apertium
 git submodule add https://github.com/apertium/lttoolbox.git vendor/lttoolbox
 git submodule add https://github.com/apertium/apertium-ido.git vendor/apertium-ido
@@ -402,10 +402,10 @@ rm -f config.log config.status
 ## Verification Steps
 
 After each phase:
-1. Test builds: `make -C apertium/apertium-dev`
+1. Test builds: `make -C apertium/apertium-gemini`
 2. Test tools: `make -C tools/extractor/ido-esperanto-extractor`
 3. Test web: `cd tools/web/ido-epo-translator-web && npm install && npm run build`
-4. Run tests: `make -C apertium/apertium-dev test`
+4. Run tests: `make -C apertium/apertium-gemini test`
 5. Check git status: `git status` (should not show unintended changes)
 
 ---
@@ -424,7 +424,7 @@ If anything breaks:
 
 1. **Vendor repos:** Should I use Option A (fresh submodules) or Option B (preserve history)?
 2. **Inactive language pairs:** Archive or keep apertium-bel, apertium-rus, apertium-bel-rus, apertium-fra?
-3. **Root Makefile:** Should it delegate to all subprojects or just apertium-dev?
+3. **Root Makefile:** Should it delegate to all subprojects or just apertium-gemini?
 4. **Python environment:** Single requirements.txt at root or per-tool?
 5. **Data directory:** Keep at `/home/mark/apertium-ido-epo/data/` or move under `apertium/data/`?
 

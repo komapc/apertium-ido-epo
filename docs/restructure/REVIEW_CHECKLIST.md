@@ -9,7 +9,7 @@ Use this checklist to review the restructuring plan before execution.
 - [ ] **SYMLINKS_AND_DUPLICATES.md** - Check which files will be removed
 - [ ] **CI_CD_UPDATE_PLAN.md** - Verify CI/CD changes are acceptable
 - [ ] **Makefile.new** - Review top-level build orchestration
-- [ ] **Makefile.apertium-dev** - Review apertium-dev Makefile
+- [ ] **Makefile.apertium-gemini** - Review apertium-gemini Makefile
 - [ ] **.gitignore.new** - Verify ignore patterns are correct
 - [ ] **RESTRUCTURE_SUMMARY.md** - Overall summary and timeline
 
@@ -22,7 +22,7 @@ Use this checklist to review the restructuring plan before execution.
 - [ ] **Inactive language pairs:** What to do with bel/rus/bel-rus/fra?
       _Recommendation: Archive under apertium/archived/_
 
-- [ ] **Root Makefile scope:** All subprojects or just apertium-dev?
+- [ ] **Root Makefile scope:** All subprojects or just apertium-gemini?
       _Recommendation: All (core, extractor, web)_
 
 - [ ] **Python dependencies:** Single requirements.txt or per-tool?
@@ -68,7 +68,7 @@ Choose one:
 - [ ] All uncommitted work is stashed or committed
 - [ ] Current build is working (`make` succeeds)
 - [ ] Current tests pass (`make test`)
-- [ ] Backup created (just in case): `cp -r /home/mark/apertium-ido-epo /tmp/apertium-dev-backup`
+- [ ] Backup created (just in case): `cp -r /home/mark/apertium-ido-epo /tmp/apertium-gemini-backup`
 - [ ] Ready to create feature branch
 
 ## 🔍 Post-Migration Verification
@@ -76,9 +76,9 @@ Choose one:
 After migration, verify:
 
 - [ ] Vendor submodules initialized: `git submodule status`
-- [ ] Vendor builds: `make -C apertium/apertium-dev vendor`
-- [ ] Pair builds: `make -C apertium/apertium-dev pair`
-- [ ] Tests pass: `make -C apertium/apertium-dev test`
+- [ ] Vendor builds: `make -C apertium/apertium-gemini vendor`
+- [ ] Pair builds: `make -C apertium/apertium-gemini pair`
+- [ ] Tests pass: `make -C apertium/apertium-gemini test`
 - [ ] Web builds: `cd tools/web/ido-epo-translator-web && npm run build`
 - [ ] Extractor runs: `cd tools/extractor/ido-esperanto-extractor && make`
 - [ ] No unexpected files in `git status`

@@ -5,7 +5,7 @@
 
 ## Philosophy
 
-The root `apertium-dev/` is **NOT a git repository itself** - it's a **workspace container** that holds independent projects. Each subdirectory is self-contained with its own:
+The root `apertium-gemini/` is **NOT a git repository itself** - it's a **workspace container** that holds independent projects. Each subdirectory is self-contained with its own:
 - Git repository
 - README
 - Build system
@@ -17,7 +17,7 @@ The root `apertium-dev/` is **NOT a git repository itself** - it's a **workspace
 ```
 /home/mark/apertium-ido-epo/
 ├── apertium/              # Apertium language work
-│   └── apertium-dev/      # Language pairs, vendor deps, tests, data
+│   └── apertium-gemini/      # Language pairs, vendor deps, tests, data
 ├── tools/                 # Supporting tools
 │   ├── extractor/         # Dictionary extraction pipeline
 │   ├── web/               # Web translation interface

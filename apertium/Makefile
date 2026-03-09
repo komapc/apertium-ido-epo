@@ -1,5 +1,5 @@
 ###############################################################################
-## Makefile for apertium/apertium-dev
+## Makefile for apertium/apertium-gemini
 ## Builds Apertium language pairs with vendor dependencies
 ###############################################################################
 

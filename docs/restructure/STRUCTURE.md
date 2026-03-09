@@ -6,7 +6,7 @@
 
 ## Overview
 
-This document describes the planned restructuring of the apertium-dev repository to achieve:
+This document describes the planned restructuring of the apertium-gemini repository to achieve:
 - Clear separation of Apertium language resources, tools, and vendor dependencies
 - Consistent build artifact locations
 - Elimination of duplicates and scattered scripts
@@ -17,7 +17,7 @@ This document describes the planned restructuring of the apertium-dev repository
 ```
 /home/mark/apertium-ido-epo/
 ├── apertium/                           # All Apertium language resources
-│   └── apertium-dev/                   # Main development tree
+│   └── apertium-gemini/                   # Main development tree
 │       ├── vendor/                     # Upstream Apertium dependencies (submodules)
 │       │   ├── apertium/              # Core Apertium runtime (submodule)
 │       │   ├── lttoolbox/             # Lexical toolkit (submodule)
@@ -186,7 +186,7 @@ Move to `apertium/docs/`:
 Orchestrates all subprojects:
 ```makefile
 # Project paths
-APERTIUM_DEV = apertium/apertium-dev
+APERTIUM_DEV = apertium/apertium-gemini
 EXTRACTOR = tools/extractor/ido-esperanto-extractor
 WEB = tools/web/ido-epo-translator-web
 
@@ -258,7 +258,7 @@ outputs/
 ### Submodule configuration
 Initialize vendor repos as submodules:
 ```bash
-cd apertium/apertium-dev
+cd apertium/apertium-gemini
 git submodule add https://github.com/apertium/apertium.git vendor/apertium
 git submodule add https://github.com/apertium/lttoolbox.git vendor/lttoolbox
 git submodule add https://github.com/apertium/apertium-ido.git vendor/apertium-ido

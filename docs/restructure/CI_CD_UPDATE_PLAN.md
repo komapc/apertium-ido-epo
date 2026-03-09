@@ -129,15 +129,15 @@ jobs:
           key: vendor-${{ runner.os }}-${{ hashFiles('apertium/vendor/*/configure.ac') }}
       
       - name: Build vendor dependencies
-        working-directory: apertium/apertium-dev
+        working-directory: apertium/apertium-gemini
         run: make vendor
       
       - name: Build Ido-Esperanto pair
-        working-directory: apertium/apertium-dev
+        working-directory: apertium/apertium-gemini
         run: make pair
       
       - name: Run tests
-        working-directory: apertium/apertium-dev
+        working-directory: apertium/apertium-gemini
         run: make test
       
       - name: Upload build artifacts
@@ -286,7 +286,7 @@ make
 
 **After:**
 ```bash
-cd /path/to/apertium/apertium-dev
+cd /path/to/apertium/apertium-gemini
 make vendor  # Ensure vendor is built
 make pair    # Build the pair
 ```
@@ -393,7 +393,7 @@ If CI/CD breaks after restructure:
 
 ```bash
 # Test vendor build
-cd apertium/apertium-dev
+cd apertium/apertium-gemini
 make vendor
 
 # Test pair build

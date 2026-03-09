@@ -100,6 +100,13 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
+        <l>til</l>
+        <r>ĝis<s n="pr" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 1.0000 -->
+      <p>
         <l>provinc<s n="n" /></l>
         <r>provinco<s n="n" /></r>
       </p>
@@ -604,6 +611,13 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
+        <l>su<s n="adj" /></l>
+        <r>sia<s n="prn" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 1.0000 -->
+      <p>
         <l>surfac<s n="n" /></l>
         <r>surfaco<s n="n" /></r>
       </p>
@@ -716,6 +730,13 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
+        <l>german<s n="adj" /></l>
+        <r>Germana<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 1.0000 -->
+      <p>
         <l>sur<s n="pr" /></l>
         <r>sur<s n="pr" /></r>
       </p>
@@ -786,6 +807,13 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
+        <l>t<s n="n" /></l>
+        <r>tio<s n="prn" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 1.0000 -->
+      <p>
         <l>dist<s n="n" /></l>
         <r>distanco<s n="n" /></r>
       </p>
@@ -830,6 +858,13 @@
       <p>
         <l>Franci<s n="adj" /></l>
         <r>Francio<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 1.0000 -->
+      <p>
+        <l>rus<s n="adj" /></l>
+        <r>Rusa<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -1411,6 +1446,13 @@
       <p>
         <l>brazili<s n="adj" /></l>
         <r>Brazilo<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 1.0000 -->
+      <p>
+        <l>ja<s n="adv" /></l>
+        <r>jam<s n="adv" /></r>
       </p>
     </e>
     <e>
@@ -3866,7 +3908,7 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>Pana<s n="num" /><s n="ord" /></l>
+        <l>pana<s n="num" /><s n="ord" /></l>
         <r>Panamo<s n="ord" /></r>
       </p>
     </e>
@@ -5569,6 +5611,13 @@
       <p>
         <l>aktiv<s n="adj" /></l>
         <r>aktiva<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 1.0000 -->
+      <p>
+        <l>katalunian<s n="adj" /></l>
+        <r>Kataluna<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -165452,6 +165501,1189 @@
       </p>
     </e>
     <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>demografial<s n="adj" /></l>
+        <r>demografia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>vilajal<s n="adj" /></l>
+        <r>Vilaĝa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>piktist<s n="n" /></l>
+        <r>pentristo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>sidey<s n="n" /></l>
+        <r>sidejo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>julial<s n="adj" /></l>
+        <r>julia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>romal<s n="adj" /></l>
+        <r>Roma<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>estal<s n="adj" /></l>
+        <r>Orienta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>braziliana<s n="n" /></l>
+        <r>Braziloano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>romana<s n="n" /></l>
+        <r>Romoano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>nacional<s n="adj" /></l>
+        <r>nacia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>kompozist<s n="n" /></l>
+        <r>komponisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>aktorin<s n="n" /></l>
+        <r>aktorino<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>olimpial<s n="adj" /></l>
+        <r>Olimpia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>ofical<s n="adj" /></l>
+        <r>ofica<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>politikal<s n="adj" /></l>
+        <r>politika<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>muzikist<s n="n" /></l>
+        <r>muzikisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>mondal<s n="adj" /></l>
+        <r>monda<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>lokal<s n="adj" /></l>
+        <r>loka<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>westal<s n="adj" /></l>
+        <r>Okcidenta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>central<s n="adj" /></l>
+        <r>centra<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>urbal<s n="adj" /></l>
+        <r>urba<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>historial<s n="adj" /></l>
+        <r>historia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>milital<s n="adj" /></l>
+        <r>milita<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>ekonomial<s n="adj" /></l>
+        <r>ekonomia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>maral<s n="adj" /></l>
+        <r>Tajda<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>muzikal<s n="adj" /></l>
+        <r>muzika<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>forestal<s n="adj" /></l>
+        <r>arbara<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>social<s n="adj" /></l>
+        <r>socia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>komercal<s n="adj" /></l>
+        <r>komerca<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>dana<s n="n" /></l>
+        <r>doano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>austriana<s n="n" /></l>
+        <r>Aŭstrioano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>hokeist<s n="n" /></l>
+        <r>hokeisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>yaral<s n="adj" /></l>
+        <r>jara<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>nordal<s n="adj" /></l>
+        <r>norda<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>statal<s n="adj" /></l>
+        <r>Ŝtata<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>tal<s n="adj" /></l>
+        <r>Tara<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>shakoludist<s n="n" /></l>
+        <r>Ŝakisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>metropolal<s n="adj" /></l>
+        <r>Metropola<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>kemial<s n="adj" /></l>
+        <r>kemia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>religial<s n="adj" /></l>
+        <r>religia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>sudal<s n="adj" /></l>
+        <r>suda<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>ciencal<s n="adj" /></l>
+        <r>Scienca<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>matematikist<s n="n" /></l>
+        <r>matematikisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>rejal<s n="adj" /></l>
+        <r>Reĝa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>klimatal<s n="adj" /></l>
+        <r>klimata<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>federal<s n="adj" /></l>
+        <r>federa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>ekonomikist<s n="n" /></l>
+        <r>ekonomikisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>bazal<s n="adj" /></l>
+        <r>Bazara<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>arjentiniana<s n="n" /></l>
+        <r>Argentinoano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>klasifikur<s n="n" /></l>
+        <r>klasifikaĵo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>specal<s n="adj" /></l>
+        <r>speca<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>tropikal<s n="adj" /></l>
+        <r>Tropikoja<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>financal<s n="adj" /></l>
+        <r>Financoja<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>federur<s n="n" /></l>
+        <r>federaĵo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>dominikana<s n="n" /></l>
+        <r>Dominikoano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>industrial<s n="adj" /></l>
+        <r>industria<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>produktur<s n="n" /></l>
+        <r>produktaĵo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>komediist<s n="n" /></l>
+        <r>Komediisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>bielorusiana<s n="n" /></l>
+        <r>Belorusioano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>futbalal<s n="adj" /></l>
+        <r>Futbala<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>populal<s n="adj" /></l>
+        <r>populara<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>boxist<s n="n" /></l>
+        <r>Boksadisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>artal<s n="adj" /></l>
+        <r>arta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>ferovoyal<s n="adj" /></l>
+        <r>fervoja<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>bizancana<s n="n" /></l>
+        <r>Bizancano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>personal<s n="adj" /></l>
+        <r>persona<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>lingual<s n="adj" /></l>
+        <r>Lingva familia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>fizikal<s n="adj" /></l>
+        <r>fizika<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>total<s n="adj" /></l>
+        <r>tuta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>guvernist<s n="n" /></l>
+        <r>guvernisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>konstitucal<s n="adj" /></l>
+        <r>Konstitucia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>elektral<s n="adj" /></l>
+        <r>Elektra<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>kontinental<s n="adj" /></l>
+        <r>kontinenta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>docist<s n="n" /></l>
+        <r>instruisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>islamana<s n="n" /></l>
+        <r>islamano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>sloveniana<s n="n" /></l>
+        <r>Slovenioano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>kubana<s n="n" /></l>
+        <r>Kubano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>sexual<s n="adj" /></l>
+        <r>Seksa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>regional<s n="adj" /></l>
+        <r>regiona<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>landal<s n="adj" /></l>
+        <r>landa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>geografial<s n="adj" /></l>
+        <r>Geografia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>diplomacal<s n="adj" /></l>
+        <r>Diplomatia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>final<s n="adj" /></l>
+        <r>finiĝa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>aktivist<s n="n" /></l>
+        <r>aktivisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>linguist<s n="n" /></l>
+        <r>Lingva familiisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>teral<s n="adj" /></l>
+        <r>Tera<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>legal<s n="adj" /></l>
+        <r>leĝa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>poloniana<s n="n" /></l>
+        <r>Poloniano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>arkeologial<s n="adj" /></l>
+        <r>arkeologia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>bazey<s n="n" /></l>
+        <r>Bazarejo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>agrokultival<s n="adj" /></l>
+        <r>agrikultura<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>fotografist<s n="n" /></l>
+        <r>fotografisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>matematikal<s n="adj" /></l>
+        <r>matematika<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>automobilist<s n="n" /></l>
+        <r>Aŭtisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>prezidantal<s n="adj" /></l>
+        <r>Prezidanta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>komputeral<s n="adj" /></l>
+        <r>komputila<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>parlamental<s n="adj" /></l>
+        <r>parlamenta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>vintral<s n="adj" /></l>
+        <r>vintra<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>normal<s n="adj" /></l>
+        <r>norma<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>chiliana<s n="n" /></l>
+        <r>Ĉiliano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>deal<s n="adj" /></l>
+        <r>de, daa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>sportal<s n="adj" /></l>
+        <r>sporta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>kolektur<s n="n" /></l>
+        <r>kolektaĵo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>kosmal<s n="adj" /></l>
+        <r>Kosma<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>kolonial<s n="adj" /></l>
+        <r>kolonia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>rezist<s n="n" /></l>
+        <r>samnivelisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>fundamental<s n="adj" /></l>
+        <r>fundamenta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>dein<s n="n" /></l>
+        <r>de, daino<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>votal<s n="adj" /></l>
+        <r>voĉdona<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>atletin<s n="n" /></l>
+        <r>Atletino<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>serbiana<s n="n" /></l>
+        <r>Serbioano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>liberal<s n="adj" /></l>
+        <r>libera<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>iranana<s n="n" /></l>
+        <r>Iranoano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>universal<s n="adj" /></l>
+        <r>Universa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>inventist<s n="n" /></l>
+        <r>Inventisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>prezidantin<s n="n" /></l>
+        <r>Prezidantino<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>rumana<s n="n" /></l>
+        <r>rumano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>strategial<s n="adj" /></l>
+        <r>strategia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>sudafrikana<s n="n" /></l>
+        <r>Sud-Afrikoano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>biologiist<s n="n" /></l>
+        <r>biologiisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>chefministrin<s n="n" /></l>
+        <r>Ĉefministrino<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>luktist<s n="n" /></l>
+        <r>luktisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>etnial<s n="adj" /></l>
+        <r>etna<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>naval<s n="adj" /></l>
+        <r>Navara<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>ekonomikal<s n="adj" /></l>
+        <r>ekonomika<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>tenisist<s n="n" /></l>
+        <r>Tenisisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>direktist<s n="n" /></l>
+        <r>direktisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>aeral<s n="adj" /></l>
+        <r>aera<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>islamal<s n="adj" /></l>
+        <r>islama<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>produktist<s n="n" /></l>
+        <r>produktisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>noktal<s n="adj" /></l>
+        <r>nokta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>elektronikal<s n="adj" /></l>
+        <r>Elektronika<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>rezidey<s n="n" /></l>
+        <r>rezidejo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>viral<s n="adj" /></l>
+        <r>vira<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>equatoral<s n="adj" /></l>
+        <r>Ekvatora<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>gitarist<s n="n" /></l>
+        <r>Gitaristo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>someral<s n="adj" /></l>
+        <r>somera<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>kazakstanana<s n="n" /></l>
+        <r>Kazaĥioano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>ganist<s n="n" /></l>
+        <r>gajnisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>teknikal<s n="adj" /></l>
+        <r>Teknika<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>guvernal<s n="adj" /></l>
+        <r>guverna<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>persiana<s n="n" /></l>
+        <r>Persojano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>rasal<s n="adj" /></l>
+        <r>rasa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>global<s n="adj" /></l>
+        <r>Globusa<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>biologial<s n="adj" /></l>
+        <r>biologia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>desegnist<s n="n" /></l>
+        <r>Desegnaĵisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>imperial<s n="adj" /></l>
+        <r>imperia<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>ordin<s n="n" /></l>
+        <r>Ordinaciino<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>punisey<s n="n" /></l>
+        <r>punejo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>koreana<s n="n" /></l>
+        <r>ĥoreano<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>skolal<s n="adj" /></l>
+        <r>skola<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>magnetal<s n="adj" /></l>
+        <r>Magneta<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>incendial<s n="adj" /></l>
+        <r>ekbruliga<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>sorgist<s n="n" /></l>
+        <r>zorgisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>fotografur<s n="n" /></l>
+        <r>fotografaĵo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>lavey<s n="n" /></l>
+        <r>Lafejo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>policist<s n="n" /></l>
+        <r>policisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>marist<s n="n" /></l>
+        <r>Tajdisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>navist<s n="n" /></l>
+        <r>Navaroisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>prehistorial<s n="adj" /></l>
+        <r>Prahistoria<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>blokal<s n="adj" /></l>
+        <r>bloka<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>semanal<s n="adj" /></l>
+        <r>Semajna<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>portist<s n="n" /></l>
+        <r>Portisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>plural<s n="adj" /></l>
+        <r>pluraja<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>lavist<s n="n" /></l>
+        <r>Lafisto<s n="n" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>nukleal<s n="adj" /></l>
+        <r>nuklea<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>desesperal<s n="adj" /></l>
+        <r>malespera<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>emendal<s n="adj" /></l>
+        <r>amenda<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.8500 -->
+      <p>
+        <l>emendey<s n="n" /></l>
+        <r>amendejo<s n="n" /></r>
+      </p>
+    </e>
+    <e>
       <!-- confidence: 0.9500 -->
       <p>
         <l>es<s n="adj" /></l>
@@ -165610,6 +166842,13 @@
       <p>
         <l>explor<s n="adj" /></l>
         <r>esplorebla<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9500 -->
+      <p>
+        <l>vid<s n="adj" /></l>
+        <r>videbla<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -168865,6 +170104,13 @@
       <p>
         <l>fatig<s n="adj" /></l>
         <r>lacigebla<s n="adj" /></r>
+      </p>
+    </e>
+    <e>
+      <!-- confidence: 0.9500 -->
+      <p>
+        <l>favor<s n="adj" /></l>
+        <r>favorebla<s n="adj" /></r>
       </p>
     </e>
     <e>
