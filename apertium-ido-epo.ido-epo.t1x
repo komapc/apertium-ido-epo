@@ -130,9 +130,9 @@
     </def-attr>
     <def-attr n="temps">
       <attr-item tags="inf"/>
-      <attr-item tags="pri"/>
-      <attr-item tags="pii"/>
-      <attr-item tags="fti"/>
+      <attr-item tags="pri"/><attr-item tags="pres"/>
+      <attr-item tags="pii"/><attr-item tags="past"/>
+      <attr-item tags="fti"/><attr-item tags="fut"/>
       <attr-item tags="cni"/>
       <attr-item tags="imp"/>
       <attr-item tags="pres"/>
@@ -399,7 +399,7 @@
               <lu>
                 <lit v="esti"/>
                 <lit-tag v="vblex"/>
-                <lit-tag v="pri"/>
+                <lit-tag v="pres"/>
               </lu>
               <b/>
               <lu>
@@ -433,7 +433,7 @@
               <lu>
                 <lit v="esti"/>
                 <lit-tag v="vblex"/>
-                <lit-tag v="fti"/>
+                <lit-tag v="fut"/>
               </lu>
               <b/>
               <lu>
@@ -1368,7 +1368,7 @@
               <lu>
                 <clip pos="1" side="tl" part="lem"/>
                 <clip pos="1" side="tl" part="a_vblex"/>
-                <lit-tag v="fti"/>
+                <lit-tag v="fut"/>
               </lu>
             </out>
           </when>
@@ -1652,6 +1652,29 @@
         </choose>
       </action>
     </rule>
+    <!-- Big Numbers: combine two adjacent numerals (e.g., 4 803 -> 4 803) -->
+    <rule>
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Numeral: pass through and add sp/nom for epo compatibility -->
     <rule>
       <pattern>

@@ -165706,13 +165706,6 @@
     <e>
       <!-- confidence: 0.8500 -->
       <p>
-        <l>dana<s n="n" /></l>
-        <r>doano<s n="n" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 0.8500 -->
-      <p>
         <l>austriana<s n="n" /></l>
         <r>Aŭstrioano<s n="n" /></r>
       </p>
@@ -165743,13 +165736,6 @@
       <p>
         <l>statal<s n="adj" /></l>
         <r>Ŝtata<s n="adj" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 0.8500 -->
-      <p>
-        <l>tal<s n="adj" /></l>
-        <r>Tara<s n="adj" /></r>
       </p>
     </e>
     <e>
@@ -166203,13 +166189,6 @@
     <e>
       <!-- confidence: 0.8500 -->
       <p>
-        <l>deal<s n="adj" /></l>
-        <r>de, daa<s n="adj" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 0.8500 -->
-      <p>
         <l>sportal<s n="adj" /></l>
         <r>sporta<s n="adj" /></r>
       </p>
@@ -166247,13 +166226,6 @@
       <p>
         <l>fundamental<s n="adj" /></l>
         <r>fundamenta<s n="adj" /></r>
-      </p>
-    </e>
-    <e>
-      <!-- confidence: 0.8500 -->
-      <p>
-        <l>dein<s n="n" /></l>
-        <r>de, daino<s n="n" /></r>
       </p>
     </e>
     <e>
