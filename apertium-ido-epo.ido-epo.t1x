@@ -212,22 +212,47 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="2" side="tl" part="lem"/>
-            <clip pos="2" side="tl" part="a_adj"/>
-            <clip pos="3" side="tl" part="nbr"/>
-            <lit-tag v="nom"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="3" side="tl" part="whole"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="pres"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="past"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fut"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><clip pos="1" side="sl" part="temps"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -244,15 +269,39 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="2" side="tl" part="whole"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="pres"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="past"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fut"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><clip pos="1" side="sl" part="temps"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -272,18 +321,39 @@
         <pattern-item n="adj"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="2" side="tl" part="lem"/>
-            <clip pos="2" side="tl" part="a_adj"/>
-            <lit-tag v="sg"/>
-            <lit-tag v="nom"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="pres"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="past"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fut"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><clip pos="1" side="sl" part="temps"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
