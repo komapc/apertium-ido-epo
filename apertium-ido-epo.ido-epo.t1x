@@ -1532,19 +1532,52 @@
       </action>
     </rule>
 
-    <!-- Pronoun rule (standalone): pass through with default tags -->
+    <!-- Adjective rule (standalone): pass through -->
+    <!-- Adjectives should translate directly via bilingual dictionary -->
     <rule>
       <pattern>
-        <pattern-item n="prn"/>
+        <pattern-item n="adj"/>
       </pattern>
       <action>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
-            <!-- Add default nominative if no case was in bidix -->
-            <lit-tag v="nom"/>
           </lu>
         </out>
+      </action>
+    </rule>
+
+    <!-- Pronoun rule (standalone): pass through with minimal morphology -->
+    <!-- Ido pronouns map to Esperanto via bilingual dictionary
+         Most should work by just passing through without extra tags -->
+    <rule>
+      <pattern>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <choose>
+          <!-- REFLEXIVE SPECIAL CASE: su → si (needs <ref> tag in Esperanto) -->
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
+            <out>
+              <lu>
+                <lit v="si"/>
+                <lit-tag v="prn"/>
+                <lit-tag v="ref"/>
+                <lit-tag v="nom"/>
+              </lu>
+            </out>
+          </when>
+
+          <!-- All other pronouns: just pass through as-is -->
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
