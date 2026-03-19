@@ -28,8 +28,8 @@
       <program name="lt-proc">
         <file name="epo-ido.automorf.bin"/>
       </program>
-      <program name="apertium-tagger -g">
-        <file name="/usr/share/apertium/apertium-epo/epo.prob"/>
+      <program name="cg-proc">
+        <file name="epo-ido.rlx.bin"/>
       </program>
       <program name="apertium-pretransfer"/>
       <program name="lt-proc -b">
