@@ -132,3 +132,4 @@ apertium-ido.ido.dix
 
 # Test files
 test.bin
+Makefile
