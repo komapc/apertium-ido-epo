@@ -105,6 +105,12 @@ echo "=== REVERSE DIRECTION TESTS ==="
 run_test_no_asterisk "Reverse: 1782" "1782" "ido-epo"
 run_test_no_asterisk "Reverse: naturala" "naturala" "ido-epo"
 
+# Test 6: Adjective/Noun Translation (bitra, planto)
+echo
+echo "=== ADJECTIVE/NOUN TESTS ==="
+run_test_no_asterisk "Adj: bitra (bitter)" "bitra" "ido-epo"
+run_test_no_asterisk "Noun: planto (plant)" "planto" "ido-epo"
+
 echo
 echo "=========================================="
 echo "TEST SUMMARY"

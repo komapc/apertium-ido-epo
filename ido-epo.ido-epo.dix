@@ -46,20 +46,31 @@
     <sdef n="ref" />
     <sdef n="pos" />
     <sdef n="ij" />
+    <sdef n="ciph" />
   </sdefs>
-  <pardefs>
-    <!-- Paradigm for numbers that passthrough unchanged -->
-    <pardef n="num__num">
-      <e><p><l><s n="num" /></l><r><s n="num" /></r></p></e>
-    </pardef>
-    <pardef n="num_ord__num_ord">
-      <e><p><l><s n="num" /><s n="ord" /></l><r><s n="num" /><s n="ord" /></r></p></e>
-    </pardef>
-  </pardefs>
   <section id="main" type="standard">
-    <!-- Passthrough numbers as regex entries -->
-    <e><p><l><re>[0-9]+</re></l><r><re>[0-9]+</re></r></p></e>
-    <e><p><l><re>[0-9]+\-a</re></l><r><re>[0-9]+\-a</re></r></p></e>
+    <!-- Passthrough numbers: match lemma by regex, map full tag sequence -->
+    <e>
+      <re>[0-9]+</re>
+      <p>
+        <l><s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></l>
+        <r><s n="num"/><s n="ciph"/><s n="sp"/><s n="nom"/></r>
+      </p>
+    </e>
+    <e>
+      <re>[0-9]+</re>
+      <p>
+        <l><s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></l>
+        <r><s n="num"/><s n="ciph"/><s n="sp"/><s n="acc"/></r>
+      </p>
+    </e>
+    <e>
+      <re>[0-9]+\-a</re>
+      <p>
+        <l><s n="num"/><s n="ord"/></l>
+        <r><s n="num"/><s n="ord"/></r>
+      </p>
+    </e>
     <e>
       <!-- confidence: 1.0000 -->
       <p>
@@ -2009,7 +2020,7 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>Germanian<s n="adj" /></l>
+        <l>germana<s n="adj" /></l>
         <r>germana<s n="adj" /></r>
       </p>
     </e>
@@ -158473,7 +158484,7 @@
     <e>
       <!-- confidence: 1.0000 -->
       <p>
-        <l>Germanian<s n="n" /></l>
+        <l>Germano<s n="n" /></l>
         <r>germano<s n="n" /></r>
       </p>
     </e>
