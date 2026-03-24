@@ -12,6 +12,13 @@
       <cat-item tags="adv"/>
       <cat-item tags="adv.*"/>
     </def-cat>
+    <!-- Derived nouns from verbs/adjectives: kre<vblex><der_pres>, bon<adj><der_qual>, etc.
+         Must be listed BEFORE vblex/adj so these take priority in pattern matching. -->
+    <def-cat n="der_nom">
+      <cat-item tags="vblex.der_pres.*"/>
+      <cat-item tags="vblex.der_act.*"/>
+      <cat-item tags="adj.der_qual.*"/>
+    </def-cat>
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
     </def-cat>
@@ -199,6 +206,22 @@
          Copula predicates remain in NOMINATIVE case (unlike transitive objects).
          ============================================================================ -->
     
+    <!-- Derived nouns (kreanto, kreado, boneso → boneco): pass through as plain nouns.
+         The bilingual dict has already resolved the Esperanto form; the transfer just
+         outputs it unchanged. Must appear first to beat vblex catch-all rules. -->
+    <rule comment="derived noun passthrough">
+      <pattern>
+        <pattern-item n="der_nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Copula (esar/esti) + Adjective + Noun: keep nominative (predicate)
          
          Handles: "Il esas bela kato" → "Li estas bela kato"
