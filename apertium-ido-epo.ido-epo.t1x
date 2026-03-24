@@ -17,7 +17,9 @@
     <def-cat n="der_nom">
       <cat-item tags="vblex.der_pres.*"/>
       <cat-item tags="vblex.der_act.*"/>
+      <cat-item tags="vblex.der_past.*"/>
       <cat-item tags="adj.der_qual.*"/>
+      <cat-item tags="n.der_oz.adj.*"/>
     </def-cat>
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
