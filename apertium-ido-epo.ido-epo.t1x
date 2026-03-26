@@ -22,6 +22,7 @@
       <cat-item tags="vblex.der_ppas.*"/>
       <cat-item tags="vblex.der_pprs.*"/>
       <cat-item tags="vblex.der_pfut.*"/>
+      <cat-item tags="vblex.der_ppra.*"/>
       <cat-item tags="adj.der_qual.*"/>
       <cat-item tags="n.der_oz.adj.*"/>
     </def-cat>
