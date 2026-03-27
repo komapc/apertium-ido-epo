@@ -1603,7 +1603,55 @@
             </out>
           </when>
 
-          <!-- All other pronouns: just pass through as-is -->
+          <!-- Personal pronouns: map to prpers<prn><subj>... form for Epo generator.
+               Plain lemma<prn> is not enough; the Epo generator needs full tags. -->
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="mi"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="sg"/></lu></out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ni"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="vi"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="li"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="m"/><lit-tag v="sg"/></lu></out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝi"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="f"/><lit-tag v="sg"/></lu></out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝi"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="nt"/><lit-tag v="sg"/></lu></out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ili"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
+            <out><lu><lit v="oni"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+          </when>
+          <!-- ci: Epo generator only supports RL for ci via prpers, use vi (standard 2nd person) -->
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+          </when>
+          <!-- ŝiaro/ĝiaro: non-standard gender-specific plurals; map to ili (standard Epo) -->
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝiaro"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝiaro"/></equal></test>
+            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          </when>
+          <!-- All other pronouns: pass through as-is -->
           <otherwise>
             <out>
               <lu>
