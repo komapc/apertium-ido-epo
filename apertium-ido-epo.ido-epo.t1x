@@ -25,6 +25,7 @@
       <cat-item tags="vblex.der_ppra.*"/>
       <cat-item tags="adj.der_qual.*"/>
       <cat-item tags="n.der_oz.adj.*"/>
+      <cat-item tags="n.der_izar.vblex.*"/>
     </def-cat>
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
