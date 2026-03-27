@@ -65,6 +65,9 @@
       <cat-item tags="prn"/>
       <cat-item tags="prn.*"/>
     </def-cat>
+    <def-cat n="prep_art">
+      <cat-item tags="pr.def"/>
+    </def-cat>
     <def-cat n="pr">
       <cat-item tags="pr"/>
       <cat-item tags="pr.*"/>
@@ -1609,6 +1612,23 @@
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+
+    <!-- Prep-article contraction expansion: dal/del/dil → de/da/di + la -->
+    <rule comment="prep-art contraction expansion">
+      <pattern>
+        <pattern-item n="prep_art"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="pr"/>
+          </lu>
+          <b/>
+          <lu><lit v="la"/><lit-tag v="det"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+        </out>
       </action>
     </rule>
 
