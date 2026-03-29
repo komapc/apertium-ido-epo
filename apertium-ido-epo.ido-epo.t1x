@@ -97,6 +97,7 @@
       <cat-item tags="vblex.pasv.*"/>
       <cat-item tags="vblex.*.pasv"/>
       <cat-item tags="vblex.*.pasv.*"/>
+      <cat-item tags="vblex.der_esar.vblex.*"/>
     </def-cat>
     
     <!-- PARTICIPLES: verb forms used as adjectives/adverbs
@@ -538,7 +539,7 @@
               <lu>
                 <lit v="esti"/>
                 <lit-tag v="vblex"/>
-                <lit-tag v="fut"/>
+                <lit-tag v="fti"/>
               </lu>
               <b/>
               <lu>
