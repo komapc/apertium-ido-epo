@@ -1639,6 +1639,11 @@
             <test><equal><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
             <out><lu><lit v="oni"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
           </when>
+          <!-- tiu: demonstrative pronoun/adjective -->
+          <when>
+            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
+            <out><lu><lit v="tiu"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+          </when>
           <!-- ci: Epo generator only supports RL for ci via prpers, use vi (standard 2nd person) -->
           <when>
             <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
@@ -1710,17 +1715,25 @@
       </action>
     </rule>
 
-    <!-- Subordinating conjunction rule: pass through -->
+    <!-- Subordinating conjunction rule: pass through.
+         kiam/kiel/kvankam are tagged as adv/cnjcoo in Epo generator; use adv for those. -->
     <rule>
       <pattern>
         <pattern-item n="cnjsub"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test><or>
+              <equal><clip pos="1" side="tl" part="lem"/><lit v="kiam"/></equal>
+              <equal><clip pos="1" side="tl" part="lem"/><lit v="kiel"/></equal>
+            </or></test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="adv"/></lu></out>
+          </when>
+          <otherwise>
+            <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
