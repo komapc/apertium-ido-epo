@@ -31,7 +31,7 @@
       <program name="cg-proc">
         <file name="epo-ido.rlx.bin"/>
       </program>
-      <program name="apertium-pretransfer"/>
+      <program name="apertium-pretransfer -n"/>
       <program name="lt-proc -b">
         <file name="epo-ido.autobil.bin"/>
       </program>
