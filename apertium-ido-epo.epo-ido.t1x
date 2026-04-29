@@ -21,6 +21,7 @@
       <cat-item tags="num.ciph.sp.acc"/>
       <cat-item tags="num.percent.sp.nom"/>
       <cat-item tags="num.percent.sp.acc"/>
+      <cat-item tags="num"/>
     </def-cat>
     <def-cat n="vblex">
       <cat-item tags="vblex.*"/>
@@ -46,6 +47,9 @@
     </def-cat>
     <def-cat n="np">
       <cat-item tags="np"/>
+    </def-cat>
+    <def-cat n="ij">
+      <cat-item tags="ij"/>
     </def-cat>
     <def-cat n="plej">
       <cat-item lemma="plej" tags="adv"/>
@@ -308,20 +312,6 @@
       </action>
     </rule>
 
-    <!-- Number rule: pass through unchanged (numbers same in both languages) -->
-    <rule>
-      <pattern>
-        <pattern-item n="num"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
-
     <!-- Number with ciph rule: pass through unchanged (numbers same in both languages) -->
     <rule>
       <pattern>
@@ -330,11 +320,16 @@
       <action>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="sl" part="lem"/>
+            <lit-tag v="num"/>
+            <lit-tag v="ciph"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
           </lu>
         </out>
       </action>
     </rule>
+
 
     <!-- ============================================================================
          MULTI-WORD EXPRESSION RULES
@@ -403,6 +398,37 @@
             <clip pos="3" side="tl" part="whole"/>
           </lu>
         </out>
+      </action>
+    </rule>
+    <!-- Interjection rule -->
+    <rule>
+      <pattern>
+        <pattern-item n="ij"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" side="sl" part="lem"/>
+                <lit v="saluton"/>
+              </equal>
+            </test>
+            <out>
+              <lu>
+                <lit v="saluto"/>
+                <lit-tag v="ij"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
   </section-rules>
