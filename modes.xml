@@ -14,7 +14,11 @@
         <file name="apertium-ido-epo.ido-epo.t1x"/>
         <file name="ido-epo.t1x.bin"/>
       </program>
-      <program name="lt-proc -g">
+      <!-- -n: drop "#" markers from generation. The EO autogen falls back to
+           lemma-as-surface for sentence-start closed-class words (La<det>,
+           Kiu<prn>) because the dict only has lowercase entries; the surface
+           form is correct, so suppress the cosmetic flag. -->
+      <program name="lt-proc -n -g">
         <file name="ido-epo.autogen.bin"/>
       </program>
       <program name="lt-proc -p">
