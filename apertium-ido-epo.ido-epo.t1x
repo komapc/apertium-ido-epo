@@ -272,7 +272,7 @@
           <when>
             <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
             <out>
-              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fut"/></lu>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fti"/></lu>
               <b/>
               <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
               <b/>
@@ -325,7 +325,7 @@
           <when>
             <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
             <out>
-              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fut"/></lu>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fti"/></lu>
               <b/>
               <lu><clip pos="2" side="tl" part="whole"/></lu>
             </out>
@@ -377,7 +377,7 @@
           <when>
             <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
             <out>
-              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fut"/></lu>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_vblex"/><lit-tag v="fti"/></lu>
               <b/>
               <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
             </out>
@@ -1474,7 +1474,27 @@
               <lu>
                 <clip pos="1" side="tl" part="lem"/>
                 <clip pos="1" side="tl" part="a_vblex"/>
-                <lit-tag v="fut"/>
+                <lit-tag v="fti"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="cni"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="cni"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="imp"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_vblex"/>
+                <lit-tag v="imp"/>
               </lu>
             </out>
           </when>
