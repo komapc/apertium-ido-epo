@@ -1637,7 +1637,10 @@
       </pattern>
       <action>
         <choose>
-          <!-- REFLEXIVE SPECIAL CASE: su → si (needs <ref> tag in Esperanto) -->
+          <!-- REFLEXIVE SPECIAL CASE: su → sin (accusative). A bare reflexive
+               pronoun in this position is a direct object (Ido "lavas su" =
+               "washes oneself" → "lavas sin"); prepositional reflexives ("pri
+               su" → "pri si") route through the pr+prn rule and keep nominative. -->
           <when>
             <test><equal><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
             <out>
@@ -1645,7 +1648,7 @@
                 <lit v="si"/>
                 <lit-tag v="prn"/>
                 <lit-tag v="ref"/>
-                <lit-tag v="nom"/>
+                <lit-tag v="acc"/>
               </lu>
             </out>
           </when>
