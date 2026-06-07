@@ -3,6 +3,11 @@
 
   <mode name="ido-epo" install="yes">
     <pipeline>
+      <!-- Split the elided definite article l' (= la before a vowel): lttoolbox
+           cannot tokenize the glued clitic (l'unika), so normalise l' -> "la "
+           before analysis. The apostrophe is written \x27 to keep the mode
+           shell-quoting clean; covers lowercase and sentence-initial L'. -->
+      <program name="sed -e 's/l\x27/la /g' -e 's/L\x27/La /g'"/>
       <program name="lt-proc">
         <file name="ido-epo.automorf.bin"/>
       </program>

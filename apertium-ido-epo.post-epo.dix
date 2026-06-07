@@ -63,9 +63,11 @@
   </pardefs>
 
   <section id="main" type="standard">
-    <!-- la + space + vowel → l' + vowel -->
-    <e><p><l>la<b/></l><r>l'</r></p><par n="vowel"/></e>
-    
+    <!-- NOTE: the la+vowel → l' poetic elision was removed (2026-06-07). Standard
+         Esperanto keeps the full article ("la akvo", not "l'akvo"); the elision
+         only produced apostrophe-glued output (l'unika). The vowel/cons pardefs
+         above are now unused but kept for reference. -->
+
     <!-- Suffix transformations: -eso → -eco (abstract quality nouns) -->
     <!-- Examples: richeso → riĉeco, Sekureso → Sekureco, grandeso → grandeco -->
     <e><p><l>eso</l><r>eco</r></p></e>
