@@ -7,3 +7,6 @@ Ido esas konstruktita linguo derivante de Reformita Esperanto (reformita linguo 
 # Sentence 2: Discussion about Ido community meeting
 Hodie partoprenis kin Idisti la saturdiala video-konfero. Ni diskutis inter altro kelka detali dil internaciona Ido-renkontro 2025 e la nova vorti dil google-grupo Linguo. Restas la questiono kad esas bona remplacigar od adjuntar ja existanta vorti per nova vorti por la sama kozo.
 
+# Sentence 3: Botanical description (Equisetum / horsetail)
+Equiseto esas planto kriptogama, di qua la stipo esas rugoza. Ol konsistas ek l'unika genero di planto de la familio Equisetaceae, e judikesas kom "vivanta fosilo", nam l'altra planti de la subklaso Equisetidae dominacis la foresti dum Paleozoiko e Karbonifero. La familio di planti Equisetaceae esas l'unika qui riproduktas su tra spori, vice semini.
+

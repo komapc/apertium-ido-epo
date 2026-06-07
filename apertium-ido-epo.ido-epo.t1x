@@ -196,6 +196,22 @@
     <def-var n="dummy"/>
   </section-def-vars>
 
+  <section-def-macros>
+    <def-macro n="pii_to_past" npar="1">
+      <!-- Ido past indicative <pii> has no Esperanto generation form (the EO
+           generator only knows <past>), so a finite past verb otherwise falls
+           back to the infinitive (dominacis -> "domini"). Rewrite the target
+           tense before output; harmless for any non-<pii> unit. -->
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+          <let><clip pos="1" side="tl" part="temps"/><lit-tag v="past"/></let>
+        </when>
+      </choose>
+    </def-macro>
+  </section-def-macros>
+
+
   <section-rules>
     <!-- ============================================================================
          COPULA RULES (vbser category - matches lemma "esar" or "es")
@@ -713,6 +729,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
@@ -767,6 +784,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
@@ -808,6 +826,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
@@ -858,6 +877,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
@@ -950,6 +970,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative for both -->
@@ -1043,6 +1064,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative for both -->
@@ -1162,6 +1184,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative -->
@@ -1255,6 +1278,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <!-- If verb is copula, keep nominative -->
@@ -1447,6 +1471,7 @@
         <pattern-item n="vblex"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
@@ -1612,7 +1637,10 @@
       </pattern>
       <action>
         <choose>
-          <!-- REFLEXIVE SPECIAL CASE: su → si (needs <ref> tag in Esperanto) -->
+          <!-- REFLEXIVE SPECIAL CASE: su → sin (accusative). A bare reflexive
+               pronoun in this position is a direct object (Ido "lavas su" =
+               "washes oneself" → "lavas sin"); prepositional reflexives ("pri
+               su" → "pri si") route through the pr+prn rule and keep nominative. -->
           <when>
             <test><equal><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
             <out>
@@ -1620,7 +1648,7 @@
                 <lit v="si"/>
                 <lit-tag v="prn"/>
                 <lit-tag v="ref"/>
-                <lit-tag v="nom"/>
+                <lit-tag v="acc"/>
               </lu>
             </out>
           </when>
