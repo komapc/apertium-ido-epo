@@ -276,6 +276,36 @@
     <!-- Derived nouns (kreanto, kreado, boneso → boneco): pass through as plain nouns.
          The bilingual dict has already resolved the Esperanto form; the transfer just
          outputs it unchanged. Must appear first to beat vblex catch-all rules. -->
+    <!-- Adjective/quantifier + DERIVED noun (der_nom: -ado/-anto/-ilo… heads like
+         moviĝado, konkuranto). der_nom is matched before `nom`, so the plain
+         `adj nom`/`quant nom` rules miss it and the modifier stays singular
+         ("arta moviĝadoj" → should be "artaj…"). Same agreement, der_nom head. -->
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="der_nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_adj"/><clip pos="2" side="tl" part="nbr"/><clip pos="2" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="quant"/>
+        <pattern-item n="der_nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="2" side="tl" part="nbr"/><clip pos="2" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
     <rule comment="derived noun passthrough">
       <pattern>
         <pattern-item n="der_nom"/>
