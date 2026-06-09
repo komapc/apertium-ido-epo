@@ -78,6 +78,13 @@
       <cat-item tags="prn"/>
       <cat-item tags="prn.*"/>
     </def-cat>
+    <!-- Unambiguously-plural personal pronouns (Ido li=they, ni=we). Used to agree
+         a predicate adjective with a pronoun subject. vu/vi (you) is excluded — its
+         number is ambiguous (polite singular or plural) so pluralizing would regress. -->
+    <def-cat n="prn_pl">
+      <cat-item lemma="li" tags="prn"/>
+      <cat-item lemma="ni" tags="prn"/>
+    </def-cat>
     <def-cat n="prep_art">
       <cat-item tags="pr.def"/>
     </def-cat>
@@ -606,6 +613,44 @@
           <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
           <b/>
           <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="1" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Plural-pronoun subject + copula + predicate adjective: "li esas bela" →
+         "ili estas belaj", "ni restas forta" → "ni restas fortaj". The pronoun has
+         no number attribute, so the predicate adjective takes a literal <pl>. -->
+    <rule>
+      <pattern>
+        <pattern-item n="prn_pl"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><lit-tag v="pl"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="prn_pl"/>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><lit-tag v="pl"/><lit-tag v="nom"/></lu>
         </out>
       </action>
     </rule>
