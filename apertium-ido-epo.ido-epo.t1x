@@ -117,6 +117,16 @@
       <cat-item tags="num"/>
       <cat-item tags="num.*"/>
     </def-cat>
+    <!-- Quantifier-adjectives mis-tagged <num> in the lexicon (kelka=some,
+         multa=many, diversa=diverse, cetera=remaining). Unlike cardinals
+         (du/tri) and the correlative tanta→tiom, these AGREE in Esperanto
+         (kelkaj, multaj). Listed by lemma so cardinals are untouched. -->
+    <def-cat n="quant">
+      <cat-item lemma="kelka" tags="num"/>
+      <cat-item lemma="multa" tags="num"/>
+      <cat-item lemma="diversa" tags="num"/>
+      <cat-item lemma="cetera" tags="num"/>
+    </def-cat>
     <def-cat n="ord">
       <cat-item tags="num.ord"/>
       <cat-item tags="num.ord.*"/>
@@ -1399,6 +1409,30 @@
           <lu>
             <clip pos="1" side="tl" part="lem"/>
             <clip pos="1" side="tl" part="a_adj"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="cas"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Quantifier + Noun: agree number+case, re-emit as <adj> so EO generates
+         the -j/-n forms (kelka triboj → kelkaj triboj; the lexicon's <num> tag
+         blocks generation of kelkaj). -->
+    <rule>
+      <pattern>
+        <pattern-item n="quant"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="adj"/>
             <clip pos="2" side="tl" part="nbr"/>
             <clip pos="2" side="tl" part="cas"/>
           </lu>
