@@ -219,6 +219,22 @@
         </when>
       </choose>
     </def-macro>
+    <!-- Map an Ido finite tense to the Esperanto generation tense on the TL
+         unit (pri->pres, pii->past; fti and others pass through unchanged).
+         Used so a copula can be output via clip part="temps" instead of an
+         inline 4-way <choose>. -->
+    <def-macro n="io_to_eo_tense" npar="1">
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+          <let><clip pos="1" side="tl" part="temps"/><lit-tag v="pres"/></let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+          <let><clip pos="1" side="tl" part="temps"/><lit-tag v="past"/></let>
+        </when>
+      </choose>
+    </def-macro>
   </section-def-macros>
 
 
@@ -419,9 +435,53 @@
       </action>
     </rule>
 
+    <!-- Subject + Copula + Predicate adjective: agree the predicate adjective
+         with the SUBJECT's number (Eo: "la katoj estas belaj", not "...bela").
+         The bare `vbser adj` rule above can't see the subject (it's across the
+         copula) so it defaults to sg; these wider patterns carry the subject
+         noun's number to the predicate adjective. Det and bare-noun subjects;
+         pronoun subjects are skipped (Ido `li` carries no number tag). -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_vblex"/><clip pos="3" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_adj"/><clip pos="2" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="1" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- ============================================================================
          PASSIVE VOICE RULES
-         
+
          LINGUISTIC CONTEXT:
          Ido uses a SYNTHETIC passive with the -es- infix:
          - kreesar (passive infinitive: to be created)
