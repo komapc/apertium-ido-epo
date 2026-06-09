@@ -491,6 +491,54 @@
       </action>
     </rule>
 
+    <!-- Pre-modified subject + copula + predicate adjective: the subject NP has
+         an attributive adjective, so the bare `nom vbser adj` rule can't see the
+         subject noun. Agree both the attributive adj and the predicate adj with
+         the subject noun: "granda urbi esas bela" → "grandaj urboj estas belaj". -->
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_adj"/><clip pos="2" side="tl" part="nbr"/><clip pos="2" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_vblex"/><clip pos="3" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_adj"/><clip pos="2" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_vblex"/><clip pos="4" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="5" side="tl" part="lem"/><clip pos="5" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Same predicate-adjective agreement for non-esar copulatives (vbcop:
          divenar/restar/semblar): "la domoj fariĝis novaj", "la homoj restas
          feliĉaj". -->
@@ -1506,11 +1554,65 @@
          These rules propagate the noun's number and case to modifying adjectives.
          ============================================================================ -->
     
+    <!-- Multi-modifier agreement: apertium has no variable-length patterns, so
+         the single `adj nom`/`quant nom` rules below only reach the noun-adjacent
+         modifier. These enumerate the common 2-modifier noun phrases so EVERY
+         modifier agrees with the noun: "nacionala historiala lingui" → "naciaj
+         historiaj lingvoj", "kelka diversa homi" → "kelkaj diversaj homoj". -->
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="quant"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="quant"/>
+        <pattern-item n="quant"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Adjective + Noun: propagate number and case from noun to adjective
-         
+
          Handles: "bela kato" → "bela kato" (sg nom)
                   "bela kato" → "belan katon" (when in accusative context)
-         
+
          LINGUISTIC: Implements Esperanto's adjective agreement requirement. -->
     <rule>
       <pattern>
