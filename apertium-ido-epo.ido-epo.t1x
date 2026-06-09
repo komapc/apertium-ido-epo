@@ -48,6 +48,18 @@
       <cat-item lemma="esar" tags="vblex.*"/>
       <cat-item lemma="es" tags="vblex.*"/>
     </def-cat>
+    <!-- Non-esar copulative verbs that also take an agreeing predicate adjective
+         (Eo: "la domoj fariĝis novaj", "la homoj restas feliĉaj"). The Ido
+         analyser emits the bare stem as the verb lemma (divenis→diven<vblex>),
+         so match the stem; infinitive forms listed too for safety. -->
+    <def-cat n="vbcop">
+      <cat-item lemma="diven"   tags="vblex.*"/>  <!-- divenar = become -> fariĝi -->
+      <cat-item lemma="divenar" tags="vblex.*"/>
+      <cat-item lemma="rest"    tags="vblex.*"/>  <!-- restar  = remain -> resti  -->
+      <cat-item lemma="restar"  tags="vblex.*"/>
+      <cat-item lemma="sembl"   tags="vblex.*"/>  <!-- semblar = seem   -> ŝajni  -->
+      <cat-item lemma="semblar" tags="vblex.*"/>
+    </def-cat>
     <def-cat n="vbintr">
       <cat-item lemma="jacar" tags="vblex.*"/>
       <cat-item lemma="venar" tags="vblex.*"/>
@@ -465,6 +477,47 @@
       <pattern>
         <pattern-item n="nom"/>
         <pattern-item n="vbser"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="1" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Same predicate-adjective agreement for non-esar copulatives (vbcop:
+         divenar/restar/semblar): "la domoj fariĝis novaj", "la homoj restas
+         feliĉaj". -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_vblex"/><clip pos="3" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_adj"/><clip pos="2" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="vbcop"/>
         <pattern-item n="adj"/>
       </pattern>
       <action>
