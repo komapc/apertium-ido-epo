@@ -85,6 +85,14 @@
       <cat-item lemma="li" tags="prn"/>
       <cat-item lemma="ni" tags="prn"/>
     </def-cat>
+    <!-- The reflexive pronoun only (Ido su). Used by the pr+prn_ref rule to keep
+         a prepositional reflexive nominative (pri su → pri si), while the bare
+         object case (lavas su → lavas sin) stays accusative via the standalone
+         pronoun rule. Lemma-targeted so personal pronouns are untouched. -->
+    <def-cat n="prn_ref">
+      <cat-item lemma="su" tags="prn"/>
+      <cat-item lemma="su" tags="prn.*"/>
+    </def-cat>
     <def-cat n="prep_art">
       <cat-item tags="pr.def"/>
     </def-cat>
@@ -1948,6 +1956,26 @@
           <lu>
             <clip pos="1" side="tl" part="whole"/>
           </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Preposition + reflexive: a reflexive after a preposition is NOT a direct
+         object, so it stays nominative: "pri su" → "pri si" (not "pri sin").
+         Two-token pattern wins LRLM over the standalone pr and prn rules. The
+         lemma-targeted prn_ref category means no other pronoun reaches this
+         rule (the earlier reject-current-rule attempt corrupted personal
+         pronouns — this design cannot). -->
+    <rule comment="preposition + reflexive pronoun: nominative si">
+      <pattern>
+        <pattern-item n="pr"/>
+        <pattern-item n="prn_ref"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/></lu>
         </out>
       </action>
     </rule>
