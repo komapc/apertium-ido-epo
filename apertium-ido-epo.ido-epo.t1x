@@ -154,6 +154,28 @@
       <cat-item lemma="diversa" tags="num"/>
       <cat-item lemma="cetera" tags="num"/>
     </def-cat>
+    <!-- Ido determiner correlatives (analyzed as adj) whose EO equivalents are
+         -u tabelvortoj (ĉiu/iu/neniu/tiu). The EO generator has no <adj> entry
+         for most of them (#ĉiu), so the corr_u+nom rule re-emits them as
+         <prn><tn> with the noun's number/case (omna homi → ĉiuj homoj). -->
+    <def-cat n="corr_u">
+      <cat-item lemma="omn" tags="adj"/>
+      <cat-item lemma="Omn" tags="adj"/>
+      <cat-item lemma="ul" tags="adj"/>
+      <cat-item lemma="Ul" tags="adj"/>
+      <cat-item lemma="irg" tags="adj"/>
+      <cat-item lemma="Irg" tags="adj"/>
+      <cat-item lemma="nul" tags="adj"/>
+      <cat-item lemma="Nul" tags="adj"/>
+      <cat-item lemma="it" tags="adj"/>
+      <cat-item lemma="It" tags="adj"/>
+      <cat-item lemma="t" tags="adj"/>
+      <cat-item lemma="T" tags="adj"/>
+      <cat-item lemma="ic" tags="adj"/>
+      <cat-item lemma="Ic" tags="adj"/>
+      <cat-item lemma="c" tags="adj"/>
+      <cat-item lemma="C" tags="adj"/>
+    </def-cat>
     <def-cat n="ord">
       <cat-item tags="num.ord"/>
       <cat-item tags="num.ord.*"/>
@@ -1687,6 +1709,32 @@
           <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
           <b/>
           <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Correlative determiner + Noun: emit the EO -u tabelvorto as prn+tn
+         with the noun's number/case (omna homi → ĉiuj homoj). The generator
+         rejects ĉiu/neniu/tiu as <adj> (#ĉiu), so adj agreement can't be used.
+         Must precede the generic adj+nom rule (equal-length, first wins). -->
+    <rule comment="correlative determiner + noun agreement">
+      <pattern>
+        <pattern-item n="corr_u"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="prn"/>
+            <lit-tag v="tn"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="cas"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
         </out>
       </action>
     </rule>
