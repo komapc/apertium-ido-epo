@@ -93,6 +93,17 @@
       <cat-item lemma="su" tags="prn"/>
       <cat-item lemma="su" tags="prn.*"/>
     </def-cat>
+    <!-- Equative correlative pair: tam X kam → tiel X kiel. kam's bare bidix
+         value stays 'ol' (the comparative "than" reading: plu forta kam → pli
+         forta ol); the equative reading is selected by the tam … kam pattern. -->
+    <def-cat n="adv_tam">
+      <cat-item lemma="tam" tags="adv"/>
+      <cat-item lemma="Tam" tags="adv"/>
+    </def-cat>
+    <def-cat n="adv_kam">
+      <cat-item lemma="kam" tags="adv"/>
+      <cat-item lemma="Kam" tags="adv"/>
+    </def-cat>
     <def-cat n="prep_art">
       <cat-item tags="pr.def"/>
     </def-cat>
@@ -1709,6 +1720,46 @@
           <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
           <b/>
           <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Equative: tam ADJ kam → tiel ADJ kiel (Me esas tam forta kam tu →
+         Mi estas tiel forta kiel vi). The adjective defaults to sg/nom — the
+         subject is outside this pattern, same default as the standalone adj
+         rule. Whatever follows kam (the standard of comparison) is handled by
+         its own rules (tu → vi). -->
+    <rule comment="equative tam + adj + kam">
+      <pattern>
+        <pattern-item n="adv_tam"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="adv_kam"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><lit v="tiel"/><lit-tag v="adv"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+          <b pos="2"/>
+          <lu><lit v="kiel"/><lit-tag v="adv"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Equative: tam ADV kam → tiel ADV kiel (kuras tam rapide kam …). -->
+    <rule comment="equative tam + adv + kam">
+      <pattern>
+        <pattern-item n="adv_tam"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="adv_kam"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><lit v="tiel"/><lit-tag v="adv"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><lit v="kiel"/><lit-tag v="adv"/></lu>
         </out>
       </action>
     </rule>
