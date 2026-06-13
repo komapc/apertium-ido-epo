@@ -116,10 +116,12 @@ def main() -> int:
     #    when the derivation reading is itself an @-gap (pure upside). Preferring
     #    lexical unconditionally here regresses (saneso: saneco->sano), so it is
     #    restricted to the @-gap cases (der_qual/der_act).
-    ap.add_argument("--full-tags", default="der_aj,der_aro",
-                    help="prefer lexical whenever it translates")
-    ap.add_argument("--gap-tags", default="der_qual,der_act",
-                    help="prefer lexical only when the derivation is an @-gap")
+    ap.add_argument("--full-tags", default="der_aj,der_aro,der_izar",
+                    help="prefer lexical whenever it translates "
+                         "(tags where the lexical reading is the real word)")
+    ap.add_argument("--gap-tags", default="der_qual,der_act,der_pres",
+                    help="prefer lexical only when the derivation is an @-gap "
+                         "(tags where the derivation reading is usually correct)")
     args = ap.parse_args()
     full_tags = tuple(t.strip() for t in args.full_tags.split(",") if t.strip())
     gap_tags = tuple(t.strip() for t in args.gap_tags.split(",") if t.strip())
