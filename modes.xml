@@ -16,6 +16,14 @@
       <program name="lt-proc">
         <file name="ido-epo.automorf.bin"/>
       </program>
+      <!-- Disambiguate: drop paradigm-generated derivational readings
+           (der_aj/-ajo, der_aro/-aro) when a fully lexicalized reading exists
+           for the same surface, so the real word wins the phantom derivation
+           (e.g. vilajo -> vilaĝo, not @vil). Mirrors the cg-proc stage the
+           epo-ido mode already uses. -->
+      <program name="cg-proc">
+        <file name="ido-epo.rlx.bin"/>
+      </program>
       <program name="apertium-pretransfer -n"/>
       <program name="lt-proc -b">
         <file name="ido-epo.autobil.bin"/>

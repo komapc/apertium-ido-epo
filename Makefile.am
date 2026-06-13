@@ -20,6 +20,7 @@ TARGETS_COMMON =		\
 	$(PREFIX1).autogen.bin	\
 	$(PREFIX1).autopgen.bin	\
 	$(PREFIX1).t1x.bin	\
+	$(PREFIX1).rlx.bin	\
 	$(PREFIX2).automorf.bin	\
 	$(PREFIX2).autobil.bin	\
 	$(PREFIX2).autogen.bin	\
@@ -85,8 +86,23 @@ $(PREFIX2).autopgen.bin: $(BASENAME).post-$(LANG1).dix
 ## Disambiguation rules  
 ###############################################################################
 
+$(PREFIX1).rlx.bin: $(BASENAME).$(LANG1).$(LANG1).rlx
+	cg-comp $< $@
+
 $(PREFIX2).rlx.bin: $(BASENAME).$(LANG2).$(LANG2).rlx
 	cg-comp $< $@
+
+# The ido grammar's SAFELEX list is derived from bidix coverage (which lexical
+# readings are translatable) -- regenerate it whenever the dictionaries change.
+# Kept out of the default build graph on purpose: it needs the compiled
+# analyser + bidix, and the committed .rlx is the reproducible artifact.
+.PHONY: regen-disambig
+regen-disambig: $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin
+	python3 dev/gen_ido_disambig.py \
+		--morf $(PREFIX1).automorf.bin \
+		--bidix $(PREFIX1).autobil.bin \
+		--monodix $(AP_SRC1)/apertium-$(LANG1).$(LANG1).dix \
+		--out $(BASENAME).$(LANG1).$(LANG1).rlx
 
 ###############################################################################
 ## Bilingual dictionaries
@@ -122,6 +138,7 @@ EXTRA_DIST=					\
 		$(BASENAME).$(PREFIX2).t1x	\
 		$(BASENAME).post-$(LANG1).dix	\
 		$(BASENAME).post-$(LANG2).dix	\
+		$(BASENAME).$(LANG1).$(LANG1).rlx	\
 		$(BASENAME).$(LANG2).$(LANG2).rlx	\
 		modes.xml
 
@@ -170,6 +187,7 @@ check-files:
 	@test -f $(BASENAME).$(PREFIX2).t1x || (echo "ERROR: Missing $(BASENAME).$(PREFIX2).t1x" && exit 1)
 	@test -f $(BASENAME).post-$(LANG1).dix || (echo "ERROR: Missing $(BASENAME).post-$(LANG1).dix" && exit 1)
 	@test -f $(BASENAME).post-$(LANG2).dix || (echo "ERROR: Missing $(BASENAME).post-$(LANG2).dix" && exit 1)
+	@test -f $(BASENAME).$(LANG1).$(LANG1).rlx || (echo "ERROR: Missing $(BASENAME).$(LANG1).$(LANG1).rlx" && exit 1)
 	@test -f $(BASENAME).$(LANG2).$(LANG2).rlx || (echo "ERROR: Missing $(BASENAME).$(LANG2).$(LANG2).rlx" && exit 1)
 	@echo "All required files present"
 
