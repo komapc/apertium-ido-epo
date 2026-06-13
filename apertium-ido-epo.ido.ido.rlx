@@ -3,17 +3,20 @@
 # (built by the Makefile from the monodix + compiled bidix).
 #
 # Resolves the "der-shadow" ambiguity: Ido paradigms auto-generate productive
-# derivations (der_aj, der_aro) for every root, so a surface like vilajo
+# derivations (der_aj, der_aro, der_qual, der_act) for every root, so a surface like vilajo
 # analyses both as the phantom root+suffix AND as the real lexicalized word.
-# With no disambiguation in ido->epo the phantom wins (-> @vil). We drop the
-# derivation reading ONLY for lexemes whose lexicalized reading is actually
-# translatable in the bidix (verified at build time), so we never turn a usable
-# fallback into a visible @-gap. Mirrors the cg-proc stage epo-ido already uses.
+# With no disambiguation in ido->epo the phantom wins (-> @vil). A baseform is
+# listed in SAFELEX (and its derivation reading dropped) only when verified at
+# build time against the bidix, so we never turn a usable fallback into a visible
+# @-gap. Two policies: for der_aj, der_aro the lexical reading is the real
+# word, so prefer it whenever it translates; for der_qual, der_act the
+# derivation is usually correct, so prefer lexical ONLY when the derivation
+# reading is itself an @-gap. Mirrors the cg-proc stage epo-ido already uses.
 
 DELIMITERS = "<.>" "<!>" "<?>" "<...>" ;
 
-# In-scope productive nominal derivation tags.
-LIST DER = der_aj der_aro ;
+# In-scope productive derivation tags.
+LIST DER = der_aj der_aro der_qual der_act ;
 
 # Lexicalized baseforms whose lexical reading is bidix-translatable, i.e. safe
 # to prefer over the phantom derivation. Generated from bidix coverage.
@@ -21,12 +24,15 @@ LIST SAFELEX =
 	"Barbar"
 	"Katar"
 	"Kristanar"
+	"Latinigad"
 	"Linguar"
 	"Sensencaj"
+	"absorbad"
 	"adjuntaj"
 	"administrar"
 	"admiralar"
 	"adresar"
+	"afines"
 	"agar"
 	"almonaj"
 	"altar"
@@ -40,39 +46,53 @@ LIST SAFELEX =
 	"apartamentar"
 	"apertar"
 	"aplikaj"
+	"aprentises"
 	"aquafortaj"
 	"aquar"
 	"aquiraj"
 	"asemblaj"
 	"asistantar"
+	"atakes"
+	"austeres"
+	"autarkes"
+	"autokrates"
 	"avionar"
 	"bandaj"
 	"barbar"
 	"barbaraj"
 	"bazar"
+	"bigames"
 	"bitraj"
 	"bovar"
 	"butikar"
 	"char"
 	"ciencistar"
+	"cinematografad"
 	"ciraj"
 	"citar"
 	"civitanar"
+	"danjeres"
 	"debaj"
+	"defektes"
 	"delegitar"
 	"delikataj"
 	"denar"
 	"derivaj"
+	"desfelices"
+	"despotes"
 	"dextranar"
 	"dialektar"
 	"diar"
+	"difamad"
 	"direktantar"
 	"direktistar"
 	"diskar"
 	"diskursar"
 	"dolar"
 	"domaj"
+	"domajes"
 	"drinkaj"
+	"duktiles"
 	"edificar"
 	"elementar"
 	"empirikar"
@@ -88,6 +108,7 @@ LIST SAFELEX =
 	"explorerar"
 	"extingistar"
 	"familianar"
+	"fertiligad"
 	"figar"
 	"fiktivaj"
 	"filar"
@@ -97,6 +118,7 @@ LIST SAFELEX =
 	"fotografurar"
 	"foxar"
 	"framar"
+	"frates"
 	"fromaj"
 	"fungar"
 	"genar"
@@ -106,16 +128,20 @@ LIST SAFELEX =
 	"grupar"
 	"guvernistar"
 	"habilaj"
+	"habiles"
 	"habitantar"
 	"havaj"
 	"herbar"
 	"heroaj"
+	"hipokrites"
 	"homaj"
 	"hotelar"
 	"imajar"
+	"infres"
 	"insignar"
 	"intelektozar"
 	"jenrar"
+	"judicies"
 	"judiciistar"
 	"jurnalistar"
 	"kaj"
@@ -126,6 +152,7 @@ LIST SAFELEX =
 	"kargaj"
 	"kartar"
 	"katar"
+	"kauzes"
 	"kayar"
 	"kloakaj"
 	"koagulaj"
@@ -164,6 +191,7 @@ LIST SAFELEX =
 	"lignar"
 	"linguar"
 	"ludar"
+	"magnetes"
 	"mamiferar"
 	"manjaj"
 	"mariaj"
@@ -174,20 +202,29 @@ LIST SAFELEX =
 	"militar"
 	"militistar"
 	"militonavar"
+	"miopes"
 	"miraj"
+	"mizantropes"
 	"molar"
 	"molekular"
 	"muelilar"
 	"mulierar"
 	"neregulozaj"
+	"neregulozes"
 	"nombrar"
+	"nombrizad"
 	"novaj"
 	"novelar"
+	"novigad"
 	"nutraj"
 	"nutrivar"
+	"parteneres"
 	"pasaj"
 	"pasturaj"
 	"peninsular"
+	"perseveremes"
+	"plumultes"
+	"poliandres"
 	"policistar"
 	"politikistar"
 	"popular"
@@ -199,6 +236,7 @@ LIST SAFELEX =
 	"principar"
 	"prodaj"
 	"programar"
+	"programes"
 	"projektaj"
 	"propraj"
 	"proprietaj"
@@ -206,6 +244,7 @@ LIST SAFELEX =
 	"proverbar"
 	"pulsar"
 	"pumpistar"
+	"puntizad"
 	"radar"
 	"receptar"
 	"redakterar"
@@ -220,6 +259,8 @@ LIST SAFELEX =
 	"sakrifikaj"
 	"sekretaj"
 	"sensencaj"
+	"sensexues"
+	"senvoces"
 	"servar"
 	"servistar"
 	"signar"
@@ -240,9 +281,12 @@ LIST SAFELEX =
 	"stufaj"
 	"subsidiaj"
 	"tartar"
+	"taxad"
 	"teatraj"
 	"texaj"
 	"textar"
+	"times"
+	"tornad"
 	"trabar"
 	"tradicionar"
 	"transportar"
@@ -250,7 +294,9 @@ LIST SAFELEX =
 	"ucelar"
 	"urbar"
 	"urinar"
+	"vacinizad"
 	"vandalaj"
+	"vandales"
 	"vaskular"
 	"vehilar"
 	"veraj"
@@ -262,8 +308,13 @@ LIST SAFELEX =
 	"voyar"
 	"yuristar" ;
 
+# SAFELEX restricted to NON-derivation readings: a derivation whose own lemma
+# happens to be in SAFELEX (e.g. popular<der_qual>, lemma "popular") must not
+# satisfy the condition and remove itself.
+SET SAFELEXLEX = SAFELEX - DER ;
+
 SECTION
 
-# Drop the phantom derivation when a verified-translatable lexical reading for
-# the same surface exists in the cohort.
-REMOVE DER IF (0 SAFELEX) ;
+# Drop the phantom derivation when a verified-translatable lexicalized reading
+# for the same surface exists in the cohort.
+REMOVE DER IF (0 SAFELEXLEX) ;

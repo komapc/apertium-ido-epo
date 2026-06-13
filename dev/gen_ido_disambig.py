@@ -32,9 +32,11 @@ import sys
 from pathlib import Path
 
 # Productive nominal derivation tags whose phantom forms shadow real lexemes.
-# Verbal derivations (der_esar passive, der_pres/der_act agents) are excluded:
-# there the derived reading is frequently the correct one (prezidanto, uzesar).
-SCOPE_TAGS = ("der_aj", "der_aro")
+# der_aj (-ajo) / der_aro (-aro): the LEXICAL reading is the real word and the
+# derivation is the phantom -> always prefer lexical when it translates.
+# Verbal derivations (der_esar passive, der_pres agents) are excluded: there the
+# derived reading is frequently the correct one (prezidanto, uzesar).
+DEFAULT_SCOPE_TAGS = ("der_aj", "der_aro")
 
 
 def citation_forms(monodix: Path) -> list[str]:
@@ -82,14 +84,15 @@ def translatable_batch(readings: list[str], bidix: Path) -> dict[str, bool]:
     return res
 
 
-def collisions(analysis: dict[str, list[str]]):
+def collisions(analysis: dict[str, list[str]], scope_tags):
     """Yield (surface, der_reading, lexical_reading) where the first reading is
     an in-scope derivation and a later reading is a plain lexicalized one."""
+    want = tuple(f"<{x}>" for x in scope_tags)
     for surf, readings in analysis.items():
         if len(readings) < 2:
             continue
         first = readings[0]
-        if not any(t in first for t in (f"<{x}>" for x in SCOPE_TAGS)):
+        if not any(t in first for t in want):
             continue
         for r in readings[1:]:
             if "<der_" not in r:
@@ -106,7 +109,20 @@ def main() -> int:
                     default=here.parent.parent / "apertium-ido" / "apertium-ido.ido.dix")
     ap.add_argument("--out", type=Path,
                     default=here.parent / "apertium-ido-epo.ido.ido.rlx")
+    # Two policy groups (per measured behaviour):
+    #  full-tags: the LEXICAL reading is the real word, the derivation is the
+    #    phantom -> prefer lexical whenever it translates (der_aj/der_aro).
+    #  gap-tags:  the DERIVATION is usually the real word -> prefer lexical ONLY
+    #    when the derivation reading is itself an @-gap (pure upside). Preferring
+    #    lexical unconditionally here regresses (saneso: saneco->sano), so it is
+    #    restricted to the @-gap cases (der_qual/der_act).
+    ap.add_argument("--full-tags", default="der_aj,der_aro",
+                    help="prefer lexical whenever it translates")
+    ap.add_argument("--gap-tags", default="der_qual,der_act",
+                    help="prefer lexical only when the derivation is an @-gap")
     args = ap.parse_args()
+    full_tags = tuple(t.strip() for t in args.full_tags.split(",") if t.strip())
+    gap_tags = tuple(t.strip() for t in args.gap_tags.split(",") if t.strip())
 
     for f in (args.morf, args.bidix, args.monodix):
         if not f.exists():
@@ -117,17 +133,26 @@ def main() -> int:
     print(f"[gen-disambig] {len(forms)} citation forms", file=sys.stderr)
     analysis = analyse(forms, args.morf)
 
-    cols = list(collisions(analysis))
-    lex_readings = sorted({lex for _, _, lex in cols})
-    print(f"[gen-disambig] {len(cols)} der_aj/der_aro collisions; "
-          f"{len(lex_readings)} distinct lexical readings", file=sys.stderr)
+    def safe_lexemes(tags, gap_only):
+        if not tags:
+            return set()
+        cols = list(collisions(analysis, tags))
+        trans = translatable_batch(sorted({lex for _, _, lex in cols}), args.bidix)
+        der_trans = (translatable_batch(sorted({der for _, der, _ in cols}),
+                                        args.bidix) if gap_only else {})
+        sset = {baseform(lex) for _, der, lex in cols
+                if trans.get(lex) and (not gap_only or not der_trans.get(der))}
+        print(f"[gen-disambig] {'/'.join(tags)}"
+              f"{' (gap-only)' if gap_only else ''}: {len(cols)} collisions -> "
+              f"{len(sset)} safe lexemes", file=sys.stderr)
+        return sset
 
-    trans = translatable_batch(lex_readings, args.bidix)
-    safe = sorted({baseform(lex) for _, _, lex in cols if trans.get(lex)})
+    safe = safe_lexemes(full_tags, False) | safe_lexemes(gap_tags, True)
     # keep only baseforms that are CG-literal-safe (plain word chars / hyphen)
-    safe = [s for s in safe if re.fullmatch(r"[\w’'-]+", s)]
-    print(f"[gen-disambig] {len(safe)} safe (bidix-translatable) lexemes -> "
-          f"{args.out.name}", file=sys.stderr)
+    safe = sorted(s for s in safe if re.fullmatch(r"[\w’'-]+", s))
+    scope_tags = full_tags + gap_tags
+    print(f"[gen-disambig] {len(safe)} total safe lexemes -> {args.out.name}",
+          file=sys.stderr)
 
     listing = "\n".join(f'\t"{s}"' for s in safe)
     rlx = f'''# Constraint Grammar for Ido (ido)  --  GENERATED FILE, DO NOT EDIT.
@@ -135,28 +160,36 @@ def main() -> int:
 # (built by the Makefile from the monodix + compiled bidix).
 #
 # Resolves the "der-shadow" ambiguity: Ido paradigms auto-generate productive
-# derivations ({", ".join(SCOPE_TAGS)}) for every root, so a surface like vilajo
+# derivations ({", ".join(scope_tags)}) for every root, so a surface like vilajo
 # analyses both as the phantom root+suffix AND as the real lexicalized word.
-# With no disambiguation in ido->epo the phantom wins (-> @vil). We drop the
-# derivation reading ONLY for lexemes whose lexicalized reading is actually
-# translatable in the bidix (verified at build time), so we never turn a usable
-# fallback into a visible @-gap. Mirrors the cg-proc stage epo-ido already uses.
+# With no disambiguation in ido->epo the phantom wins (-> @vil). A baseform is
+# listed in SAFELEX (and its derivation reading dropped) only when verified at
+# build time against the bidix, so we never turn a usable fallback into a visible
+# @-gap. Two policies: for {", ".join(full_tags)} the lexical reading is the real
+# word, so prefer it whenever it translates; for {", ".join(gap_tags)} the
+# derivation is usually correct, so prefer lexical ONLY when the derivation
+# reading is itself an @-gap. Mirrors the cg-proc stage epo-ido already uses.
 
 DELIMITERS = "<.>" "<!>" "<?>" "<...>" ;
 
-# In-scope productive nominal derivation tags.
-LIST DER = {" ".join(SCOPE_TAGS)} ;
+# In-scope productive derivation tags.
+LIST DER = {" ".join(scope_tags)} ;
 
 # Lexicalized baseforms whose lexical reading is bidix-translatable, i.e. safe
 # to prefer over the phantom derivation. Generated from bidix coverage.
 LIST SAFELEX =
 {listing} ;
 
+# SAFELEX restricted to NON-derivation readings: a derivation whose own lemma
+# happens to be in SAFELEX (e.g. popular<der_qual>, lemma "popular") must not
+# satisfy the condition and remove itself.
+SET SAFELEXLEX = SAFELEX - DER ;
+
 SECTION
 
-# Drop the phantom derivation when a verified-translatable lexical reading for
-# the same surface exists in the cohort.
-REMOVE DER IF (0 SAFELEX) ;
+# Drop the phantom derivation when a verified-translatable lexicalized reading
+# for the same surface exists in the cohort.
+REMOVE DER IF (0 SAFELEXLEX) ;
 '''
     args.out.write_text(rlx)
     return 0
