@@ -29,6 +29,7 @@ import argparse
 import re
 import subprocess
 import sys
+from difflib import SequenceMatcher
 from pathlib import Path
 
 # Productive nominal derivation tags whose phantom forms shadow real lexemes.
@@ -68,9 +69,9 @@ def baseform(reading: str) -> str:
     return m.group(1) if m else ""
 
 
-def translatable_batch(readings: list[str], bidix: Path) -> dict[str, bool]:
-    """Probe each full reading through the bidix; True if it yields a
-    non-gap right side."""
+def translations_batch(readings: list[str], bidix: Path) -> dict[str, str]:
+    """Probe each full reading through the bidix; return the bare EO translation
+    string (lemma without tags), or "" if untranslatable (@-gap)."""
     stream = "".join(f"^{r}$ " for r in readings)
     p = subprocess.run(["lt-proc", "-b", str(bidix)], input=stream,
                        capture_output=True, text=True)
@@ -80,8 +81,30 @@ def translatable_batch(readings: list[str], bidix: Path) -> dict[str, bool]:
         parts = tok.split("/")
         # lt-proc -b marks an untranslatable lemma with a leading '@'
         right = parts[1] if len(parts) > 1 else "@"
-        res[reading] = not right.startswith("@")
+        res[reading] = "" if right.startswith("@") else re.sub(r"<[^>]*>", "", right)
     return res
+
+
+# --- cognate-similarity discriminator (for the gap-tag silent-conflict cases) -
+# Some gap-tag surfaces translate under BOTH readings but to different words
+# (quanto: der->kvar, lex->kvanto). Morphology can't separate these (prezidanto
+# is identical-shaped but der-correct), but the right reading's EO translation is
+# the cognate of the IO surface. So flip to the lexical reading only when its
+# translation is clearly more form-similar to the surface than the derivation's.
+COGNATE_LO = 0.70       # absolute floor on lexical-translation similarity
+COGNATE_MARGIN = 0.15   # lexical must beat the derivation by this much
+
+def _fold(s: str) -> str:
+    """Rough Ido->Esperanto orthographic fold so cognates line up."""
+    s = s.lower()
+    for a, b in (("qu", "kv"), ("c", "k"), ("x", "ks"), ("ch", "ĉ"),
+                 ("sh", "ŝ"), ("j", "ĝ"), ("y", "j"), ("w", "v")):
+        s = s.replace(a, b)
+    return re.sub(r"[^a-zĉĝŝ]", "", s)
+
+def cognate_sim(io_surface: str, eo_translation: str) -> float:
+    eo = eo_translation.split()[0] if eo_translation else ""
+    return SequenceMatcher(None, _fold(io_surface), _fold(eo)).ratio()
 
 
 def collisions(analysis: dict[str, list[str]], scope_tags):
@@ -136,17 +159,33 @@ def main() -> int:
     analysis = analyse(forms, args.morf)
 
     def safe_lexemes(tags, gap_only):
+        """gap_only=False (full): prefer lexical whenever it translates.
+        gap_only=True: prefer lexical only when the derivation reading is an
+        @-gap (pure upside) OR the lexical translation is clearly more cognate
+        to the surface than the derivation's (the quanto-vs-prezidanto case)."""
         if not tags:
             return set()
         cols = list(collisions(analysis, tags))
-        trans = translatable_batch(sorted({lex for _, _, lex in cols}), args.bidix)
-        der_trans = (translatable_batch(sorted({der for _, der, _ in cols}),
-                                        args.bidix) if gap_only else {})
-        sset = {baseform(lex) for _, der, lex in cols
-                if trans.get(lex) and (not gap_only or not der_trans.get(der))}
+        lex_tr = translations_batch(sorted({lex for _, _, lex in cols}), args.bidix)
+        der_tr = (translations_batch(sorted({der for _, der, _ in cols}),
+                                     args.bidix) if gap_only else {})
+        sset = set(); flips = 0
+        for surf, der, lex in cols:
+            lt = lex_tr.get(lex, "")
+            if not lt:                      # never create a new @-gap
+                continue
+            if not gap_only:                # full: lexical is the real word
+                sset.add(baseform(lex)); continue
+            dt = der_tr.get(der, "")
+            if not dt:                      # derivation is an @-gap -> upside
+                sset.add(baseform(lex))
+            elif (dt != lt and cognate_sim(surf, lt) >= COGNATE_LO
+                  and cognate_sim(surf, lt) - cognate_sim(surf, dt) >= COGNATE_MARGIN):
+                sset.add(baseform(lex)); flips += 1   # cognate flip
         print(f"[gen-disambig] {'/'.join(tags)}"
-              f"{' (gap-only)' if gap_only else ''}: {len(cols)} collisions -> "
-              f"{len(sset)} safe lexemes", file=sys.stderr)
+              f"{' (gap-only+cognate)' if gap_only else ''}: {len(cols)} "
+              f"collisions -> {len(sset)} safe lexemes"
+              f"{f' ({flips} cognate-flips)' if gap_only else ''}", file=sys.stderr)
         return sset
 
     safe = safe_lexemes(full_tags, False) | safe_lexemes(gap_tags, True)
@@ -169,8 +208,10 @@ def main() -> int:
 # build time against the bidix, so we never turn a usable fallback into a visible
 # @-gap. Two policies: for {", ".join(full_tags)} the lexical reading is the real
 # word, so prefer it whenever it translates; for {", ".join(gap_tags)} the
-# derivation is usually correct, so prefer lexical ONLY when the derivation
-# reading is itself an @-gap. Mirrors the cg-proc stage epo-ido already uses.
+# derivation is usually correct, so prefer lexical only when the derivation is an
+# @-gap OR the lexical translation is clearly more cognate to the surface than
+# the derivation's (quanto: der=kvar vs lex=kvanto, while prezidanto stays der).
+# Mirrors the cg-proc stage epo-ido already uses.
 
 DELIMITERS = "<.>" "<!>" "<?>" "<...>" ;
 
