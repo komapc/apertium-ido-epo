@@ -2250,6 +2250,29 @@
         <call-macro n="prn_to_subj"><with-param pos="2"/></call-macro>
       </action>
     </rule>
+    <!-- Verb + pronoun + verb: the pronoun is the SUBJECT of the second verb, not
+         the object of the first, so it stays NOMINATIVE. This guards the common
+         clause-boundary case where a comma (a superblank, invisible to the pattern)
+         separates the clauses: "Kande il venis, me dormis" → "Kiam li venis, mi
+         dormis" (NOT "min dormis"); "Me savas, il venos" → "li venos". Longer match
+         wins over the 2-token object rule below. (Residual: a perception/causative
+         verb + pronoun + infinitive — "Me audas tu kantar" — is genuinely
+         accusative-with-infinitive and would want "vin"; that case is rare and is
+         the price of not being able to test the comma directly in t1x.) -->
+    <rule comment="verb + pronoun + verb: pronoun is the 2nd verb's subject, nominative">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="prn"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <call-macro n="pii_to_past"><with-param pos="3"/></call-macro>
+        <out><lu><clip pos="1" side="tl" part="whole"/></lu><b pos="1"/></out>
+        <call-macro n="prn_to_subj"><with-param pos="2"/></call-macro>
+        <out><b pos="2"/><lu><clip pos="3" side="tl" part="whole"/></lu></out>
+      </action>
+    </rule>
     <rule comment="transitive verb + pronoun object: accusative (me amas tu → mi amas vin)">
       <pattern>
         <pattern-item n="vblex"/>
