@@ -295,6 +295,133 @@
         </when>
       </choose>
     </def-macro>
+    <!-- ── Pronoun → Esperanto prpers mapping ───────────────────────────────
+         Ido pronouns reach transfer as the bare Esperanto lemma from the bidix
+         (me→mi<prn>, tu→ci<prn>, …); the Eo generator needs the full prpers
+         form with person/gender/number AND case. prn_to_subj emits the
+         NOMINATIVE (subject / isolated / predicate) reading, prn_to_obj the
+         ACCUSATIVE (direct-object) reading. Factored out so the standalone
+         pronoun rule (pos 1) and the verb+pronoun object rules (pos 2) share
+         one lemma→features table instead of duplicating it. The reflexive si
+         stays accusative in both (a bare reflexive is an object). -->
+    <def-macro n="prn_to_subj" npar="1">
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
+          <out><lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="acc"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="mi"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="sg"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ni"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="vi"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="li"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="m"/><lit-tag v="sg"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝi"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="f"/><lit-tag v="sg"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝi"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="nt"/><lit-tag v="sg"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ili"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝiaro"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝiaro"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
+          <out><lu><lit v="oni"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
+          <out><lu><lit v="tiu"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+        </when>
+        <otherwise>
+          <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
+        </otherwise>
+      </choose>
+    </def-macro>
+    <def-macro n="prn_to_obj" npar="1">
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
+          <out><lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="acc"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="mi"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="sg"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ni"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="vi"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="li"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="m"/><lit-tag v="sg"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝi"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="f"/><lit-tag v="sg"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝi"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="nt"/><lit-tag v="sg"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ili"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝiaro"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝiaro"/></equal></test>
+          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
+          <out><lu><lit v="oni"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
+          <out><lu><lit v="tiu"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+        </when>
+        <otherwise>
+          <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
+        </otherwise>
+      </choose>
+    </def-macro>
   </section-def-macros>
 
 
@@ -2079,93 +2206,71 @@
       </action>
     </rule>
 
-    <!-- Pronoun rule (standalone): pass through with minimal morphology -->
-    <!-- Ido pronouns map to Esperanto via bilingual dictionary
-         Most should work by just passing through without extra tags -->
+    <!-- ── Verb + pronoun object → Esperanto accusative ────────────────────
+         Ido marks no case on a pronoun object, but Esperanto requires it
+         (me amas tu → mi amas vin). The pronoun's role is fixed by the verb:
+         after a copula (esar), a copulative verb (diveni/resti/ŝajni) or an
+         intransitive verb the post-verbal pronoun is a subject/predicate and
+         stays NOMINATIVE (prn_to_subj); after any other (transitive) verb it
+         is a direct object and takes the ACCUSATIVE (prn_to_obj). Narrow
+         verb-class rules precede the general transitive rule so first-match
+         routes each verb correctly. The reflexive (su→si) is accusative in
+         both macros, preserving "lavas su → lavas sin". Subject and isolated
+         pronouns are still handled by the standalone rule below. -->
+    <rule comment="copula + pronoun: predicate stays nominative">
+      <pattern>
+        <pattern-item n="vbser"/>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out><lu><clip pos="1" side="tl" part="whole"/></lu><b pos="1"/></out>
+        <call-macro n="prn_to_subj"><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+    <rule comment="copulative verb + pronoun: predicate stays nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out><lu><clip pos="1" side="tl" part="whole"/></lu><b pos="1"/></out>
+        <call-macro n="prn_to_subj"><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+    <rule comment="intransitive verb + pronoun: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out><lu><clip pos="1" side="tl" part="whole"/></lu><b pos="1"/></out>
+        <call-macro n="prn_to_subj"><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+    <rule comment="transitive verb + pronoun object: accusative (me amas tu → mi amas vin)">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out><lu><clip pos="1" side="tl" part="whole"/></lu><b pos="1"/></out>
+        <call-macro n="prn_to_obj"><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+
+    <!-- Pronoun rule (standalone): subject / isolated pronoun, nominative.
+         The lemma→prpers mapping lives in the prn_to_subj macro (shared with
+         the verb+pronoun object rules above, which use the accusative variant). -->
     <rule>
       <pattern>
         <pattern-item n="prn"/>
       </pattern>
       <action>
-        <choose>
-          <!-- REFLEXIVE SPECIAL CASE: su → sin (accusative). A bare reflexive
-               pronoun in this position is a direct object (Ido "lavas su" =
-               "washes oneself" → "lavas sin"); prepositional reflexives ("pri
-               su" → "pri si") route through the pr+prn rule and keep nominative. -->
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
-            <out>
-              <lu>
-                <lit v="si"/>
-                <lit-tag v="prn"/>
-                <lit-tag v="ref"/>
-                <lit-tag v="acc"/>
-              </lu>
-            </out>
-          </when>
-
-          <!-- Personal pronouns: map to prpers<prn><subj>... form for Epo generator.
-               Plain lemma<prn> is not enough; the Epo generator needs full tags. -->
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="mi"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="sg"/></lu></out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ni"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="vi"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="li"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="m"/><lit-tag v="sg"/></lu></out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝi"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="f"/><lit-tag v="sg"/></lu></out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝi"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="nt"/><lit-tag v="sg"/></lu></out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ili"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
-            <out><lu><lit v="oni"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
-          </when>
-          <!-- tiu: demonstrative pronoun/adjective -->
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
-            <out><lu><lit v="tiu"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
-          </when>
-          <!-- ci: Epo generator only supports RL for ci via prpers, use vi (standard 2nd person) -->
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
-          </when>
-          <!-- ŝiaro/ĝiaro: non-standard gender-specific plurals; map to ili (standard Epo) -->
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝiaro"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝiaro"/></equal></test>
-            <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
-          </when>
-          <!-- All other pronouns: pass through as-is -->
-          <otherwise>
-            <out>
-              <lu>
-                <clip pos="1" side="tl" part="whole"/>
-              </lu>
-            </out>
-          </otherwise>
-        </choose>
+        <call-macro n="prn_to_subj"><with-param pos="1"/></call-macro>
       </action>
     </rule>
 
