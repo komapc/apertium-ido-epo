@@ -155,6 +155,13 @@
       <cat-item tags="num"/>
       <cat-item tags="num.*"/>
     </def-cat>
+    <!-- The "and" conjunction (Ido e/ed), used only to drop it between numerals:
+         Ido writes compound numbers with it (dek e du), Esperanto juxtaposes
+         (dek du). NOT the "or" conjunction (o/od), which must stay (aŭ). -->
+    <def-cat n="cnjcoo_e">
+      <cat-item lemma="e" tags="cnjcoo"/>
+      <cat-item lemma="ed" tags="cnjcoo"/>
+    </def-cat>
     <!-- Quantifier-adjectives mis-tagged <num> in the lexicon (kelka=some,
          multa=many, diversa=diverse, cetera=remaining). Unlike cardinals
          (du/tri) and the correlative tanta→tiom, these AGREE in Esperanto
@@ -2497,6 +2504,32 @@
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+    <!-- Compound numeral: Ido joins number words with "e" (dek e du = 12),
+         Esperanto juxtaposes them (dek du). Drop the conjunction. Restricted to
+         e/ed so "du o tri" (two or three) keeps its aŭ. Longer match wins over the
+         bare num+num rule below. -->
+    <rule comment="number + e + number → juxtaposed (dek e du → dek du)">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="cnjcoo_e"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+            <lit-tag v="sp"/>
+            <lit-tag v="nom"/>
+          </lu>
+        </out>
       </action>
     </rule>
     <!-- Big Numbers: combine two adjacent numerals (e.g., 4 803 -> 4 803) -->
