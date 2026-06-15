@@ -1,0 +1,326 @@
+[-6yocRk5D4mu#0] ^La<det>$ ^urb<n><sg><nom>$ ^es<vblex><pri>$ ^grand<adj>$^.<sent>$
+[/-6yocRk5D4mu]
+[-ZyHxY2pyj2f#0] ^Es<vblex><pri>$ ^dek<num>$ ^hom<n><pl><nom>$ ^en<pr>$ ^la<det>$ ^chambr<n><sg><nom>$^.<sent>$
+[/-ZyHxY2pyj2f]
+[-hJoEoANupwC#0] ^Me<prn>$ ^vid<vblex><pri>$ ^la<det>$ ^grand<adj>$ ^dom<n><sg><nom>$^.<sent>$
+[/-hJoEoANupwC]
+[-q4m_C5HUeqa#0] ^Tu<prn>$ ^pren<vblex><pri>$ ^ol<prn>$^.<sent>$
+[/-q4m_C5HUeqa]
+[0XUhm1ofu9ES#0] ^Qua<prn>$ ^es<vblex><pri>$ ^tu<prn>$^?<sent>$
+[/0XUhm1ofu9ES]
+[0g36-HByqnxW#0] ^Ni<prn>$ ^labor<vblex><fti>$ ^morg<adv>$^.<sent>$
+[/0g36-HByqnxW]
+[0rqnqsMtkxOt#0] ^Ol<prn>$ ^es<vblex><pri>$ ^grand<adj>$^.<sent>$
+[/0rqnqsMtkxOt]
+[2VN1cZ8dFaNV#0] ^Long<adj>$ ^promen<vblex><der_act><n><pl><nom>/promenad<n><pl><nom>$ ^es<vblex><pri>$ ^*agrabla$^.<sent>$
+[/2VN1cZ8dFaNV]
+[2pkv7T5Pjr94#0] ^Il<prn>$ ^ven<vblex><pri>$ ^kun<pr>$ ^su<adj>$ ^amik<n><sg><nom>$^.<sent>$
+[/2pkv7T5Pjr94]
+[2us_pQsDM4E5#0] ^Nul<adj>$ ^hom<n><sg><nom>$ ^ven<vblex><pri>$^.<sent>$
+[/2us_pQsDM4E5]
+[2zMpWG9GilMR#0] ^La<det>$ ^libr<n><sg><nom>$ ^di<pr>$ ^Mari<adj>$ ^es<vblex><pri>$ ^hik<adv>$^.<sent>$
+[/2zMpWG9GilMR]
+[3NAythoUx47H#0] ^Ulu<prn>$ ^frap<vblex><pri>$^.<sent>$
+[/3NAythoUx47H]
+[3yFoHRM7_EH9#0] ^Quo<prn>$ ^event<vblex><pri>$^?<sent>$
+[/3yFoHRM7_EH9]
+[4E5_afpsvFMb#0] ^Qual<adv>$ ^tu<prn>$ ^fac<vblex><pri>$ ^to<prn>$^?<sent>$
+[/4E5_afpsvFMb]
+[4J1aATnd7zLs#0] ^Omnu<prn>$ ^ven<vblex><pii>$^.<sent>$
+[/4J1aATnd7zLs]
+[4pJvu5HKIUxv#0] ^Me<prn>$ ^hav<vblex><pri>$ ^du<num>$ ^bel<adj>$ ^libr<n><pl><nom>$^.<sent>$
+[/4pJvu5HKIUxv]
+[5Penob92tsUa#0] ^Kelka<num>$ ^yun<adj>$ ^puer<n><pl><nom>$ ^lud<vblex><pri>$^.<sent>$
+[/5Penob92tsUa]
+[5SeK6fWu-vtd#0] ^Il<prn>$ ^es<vblex><pri>$ ^ja<adv>$ ^hik<adv>$^.<sent>$
+[/5SeK6fWu-vtd]
+[60GGKXRgW3ux#0] ^Ilu<prn>$ ^invent<vblex><pii>$ ^parafulmin<n><sg><nom>$ ^en<pr>$ ^1749<num><ciph><sp><nom>$^.<sent>$
+[/60GGKXRgW3ux]
+[6o666qgP3P0q#0] ^To<prn>$ ^es<vblex><pri>$ ^ver<adj>$^.<sent>$
+[/6o666qgP3P0q]
+[7l51KKPKXfZ_#0] ^La<det>$ ^pord<n><sg><nom>$ ^apert<vblex><der_esar><vblex><pri>/apertes<vblex><pri>$^.<sent>$
+[/7l51KKPKXfZ_]
+[83dvhIi5HvQn#0] ^Me<prn>$ ^e<cnjcoo>$ ^tu<prn>$ ^ven<vblex><pri>$^.<sent>$
+[/83dvhIi5HvQn]
+[8GyYXq-1FJ3g#0] ^La<det>$ ^libr<n><sg><nom>$ ^quan<prn>$ ^me<prn>$ ^lekt<vblex><pri>$ ^es<vblex><pri>$ ^bon<adj>$^.<sent>$
+[/8GyYXq-1FJ3g]
+[8d_ZyXd78zUG#0] ^La<det>$ ^urb<n><sg><nom>$ ^destrukt<vblex><der_esar><vblex><pii>/destruktes<vblex><pii>$ ^dum<pr>$ ^la<det>$ ^milit<n><sg><nom>$^.<sent>$
+[/8d_ZyXd78zUG]
+[8oydKqDpaJT7#0] ^Ni<adj>$ ^urb<n><sg><nom>$ ^es<vblex><pri>$ ^mikr<adj>$^.<sent>$
+[/8oydKqDpaJT7]
+[97nvx7Jtngtg#0] ^Multa<num>$ ^puer<n><pl><nom>$ ^kant<vblex><pri>$^.<sent>$
+[/97nvx7Jtngtg]
+[9cnpca3X-aEQ#0] ^Ub<adv>$ ^es<vblex><pri>$ ^la<det>$ ^dom<n><sg><nom>$^?<sent>$
+[/9cnpca3X-aEQ]
+[A-oZU890CRc0#0] ^Il<prn>$ ^nultemp<adv>$ ^ven<vblex><pri>$^.<sent>$
+[/A-oZU890CRc0]
+[AHSJfM51qdCz#0] ^Ulo<prn>/Ul<n><sg><nom>$ ^es<vblex><pri>$ ^hik<adv>$^.<sent>$
+[/AHSJfM51qdCz]
+[AQr_b7PLD58W#0] ^La<det>$ ^dom<n><sg><nom>$ ^es<vblex><pri>$ ^en<pr>$ ^la<det>$ ^urb<n><sg><nom>$^.<sent>$
+[/AQr_b7PLD58W]
+[ARRPIWm9YOsm#0] ^Omno<prn>$ ^es<vblex><pri>$ ^bon<adj>$^.<sent>$
+[/ARRPIWm9YOsm]
+[ASS_hSb1DsC0#0] ^Me<prn>$ ^rest<vblex><fti>$ ^hik<adv>$ ^til<pr>$ ^*lundi$^.<sent>$
+[/ASS_hSb1DsC0]
+[AZW-4rjNmrTM#0] ^Elu<prn>$ ^ven<vblex><fti>$ ^morg<adv>$^.<sent>$
+[/AZW-4rjNmrTM]
+[AredICctz2OQ#0] ^Me<prn>$ ^vid<vblex><pri>$ ^tu<prn>$^.<sent>$
+[/AredICctz2OQ]
+[B16qVqS3KBzP#0] ^El<prn>$ ^es<vblex><pri>$ ^tro<adv>$ ^yun<adj>$^.<sent>$
+[/B16qVqS3KBzP]
+[B5bZLh-vd0GR#0] ^La<det>$ ^grandeg<adj>$ ^urb<n><pl><nom>$ ^es<vblex><pri>$ ^bel<adj>$^.<sent>$
+[/B5bZLh-vd0GR]
+[BVKsBOfdtObu#0] ^La<det>$ ^hund<n><sg><nom>$ ^dorm<vblex><pri>$^.<sent>$
+[/BVKsBOfdtObu]
+[BYPF-tHJ41c3#0] ^La<det>$ ^nov<adj>$ ^lern<vblex><der_pres><n><pl><nom>/lernant<n><pl><nom>$ ^es<vblex><pri>$ ^yun<adj>$^.<sent>$
+[/BYPF-tHJ41c3]
+[C_JzRQo_V7Sl#0] ^Me<prn>$ ^ven<vblex><pri>$ ^per<pr>$ ^tren<n><sg><nom>$^.<sent>$
+[/C_JzRQo_V7Sl]
+[DXjpLjLrQxBs#0] ^Quant<adv>$ ^kust<vblex><pri>$ ^to<prn>$^?<sent>$
+[/DXjpLjLrQxBs]
+[EOOtCmjnnmSd#0] ^La<det>$ ^grand<adj>$ ^blank<adj>$ ^dom<n><pl><nom>$ ^es<vblex><pri>$ ^nov<adj>$^.<sent>$
+[/EOOtCmjnnmSd]
+[EP-VzdYYM_Xf#0] ^Me<prn>$ ^n<adv>$ ^sav<vblex><pri>$^.<sent>$
+[/EP-VzdYYM_Xf]
+[EUL0ee6Kmdxc#0] ^Il<prn>$ ^vid<vblex><pri>$ ^su<prn>$ ^en<pr>$ ^la<det>$ ^spegul<n><sg><nom>$^.<sent>$
+[/EUL0ee6Kmdxc]
+[Elt0AvemA0z-#0] ^Me<prn>$ ^manj<vblex><pri>$^.<sent>$
+[/Elt0AvemA0z-]
+[F1vAgO20YinV#0] ^Ca<prn>$ ^dom<n><sg><nom>$ ^es<vblex><pri>$ ^plu<adv>$ ^grand<adj>$ ^kam<adv>$ ^t<adj>$^.<sent>$
+[/F1vAgO20YinV]
+[F2UoabyXDBrk#0] ^La<det>$ ^film<n><sg><nom>$ ^es<vblex><pri>$ ^mal<adj>$^.<sent>$
+[/F2UoabyXDBrk]
+[F84YDNGO1kxR#0] ^Ni<prn>$ ^ankor<adv>$ ^labor<vblex><pri>$^.<sent>$
+[/F84YDNGO1kxR]
+[FI7stLefuoRH#0] ^Li<prn>$ ^priz<vblex><pri>$ ^su<adj>$ ^dom<n><sg><nom>$^.<sent>$
+[/FI7stLefuoRH]
+[FUM9DPPfAWgs#0] ^Me<prn>$ ^vok<vblex><pri>$ ^vu<prn>$^.<sent>$
+[/FUM9DPPfAWgs]
+[FXyW0etFpc0Z#0] ^La<det>$ ^libr<n><pl><nom>$ ^quin<prn>$ ^me<prn>$ ^lekt<vblex><pri>$ ^es<vblex><pri>$ ^bon<adj>$^.<sent>$
+[/FXyW0etFpc0Z]
+[FvPDOXmsxeAF#0] ^*Franklin$ ^es<vblex><pii>$ ^un<num>$ ^ek<pr>$ ^la<det>$ ^fond<vblex><der_past><n><pl><nom>/fondint<n><pl><nom>$ ^di<pr>$ ^Us<adj>$^.<sent>$
+[/FvPDOXmsxeAF]
+[GAaN5p80PVc-#0] ^Lor<adv>$ ^me<prn>$ ^kompren<vblex><pii>$^.<sent>$
+[/GAaN5p80PVc-]
+[GmxgyMJq-iDp#0] ^Quo<prn>$ ^es<vblex><pri>$ ^to<prn>$^?<sent>$
+[/GmxgyMJq-iDp]
+[H1Oz6G-EOtLO#0] ^T<adj>$ ^dom<n><sg><nom>$ ^es<vblex><pri>$ ^mikr<adj>$^.<sent>$
+[/H1Oz6G-EOtLO]
+[HJh3gYa5slp-#0] ^Me<prn>$ ^nur<adv>$ ^vol<vblex><pri>$ ^help<vblex><inf>$^.<sent>$
+[/HJh3gYa5slp-]
+[HdeQdV790xta#0] ^Lu<prn>$ ^labor<vblex><pri>$^.<sent>$
+[/HdeQdV790xta]
+[ISdJr0GoWZyL#0] ^Tu<prn>$ ^parol<vblex><fti>$^.<sent>$
+[/ISdJr0GoWZyL]
+[IiyxVm6643tx#0] ^Ul<adj>$ ^hom<n><sg><nom>$ ^ven<vblex><pri>$^.<sent>$
+[/IiyxVm6643tx]
+[J8J-V-u--RLQ#0] ^Nulo<prn>$ ^event<vblex><pii>$^.<sent>$
+[/J8J-V-u--RLQ]
+[JIgxMxQj5syE#0] ^El<prn>$ ^diven<vblex><pri>$ ^rich<adj>$^.<sent>$
+[/JIgxMxQj5syE]
+[JTNYF9MzOWUI#0] ^Ca<prn>$ ^dom<n><sg><nom>$ ^es<vblex><pri>$ ^grand<adj>$^.<sent>$
+[/JTNYF9MzOWUI]
+[JlGzdmUtQO2-#0] ^Tri<num>$ ^puer<n><pl><nom>$ ^lud<vblex><pri>$^.<sent>$
+[/JlGzdmUtQO2-]
+[K-XoHAxip72L#0] ^Ni<prn>$ ^es<vblex><pri>$ ^fort<adj>$^.<sent>$
+[/K-XoHAxip72L]
+[KV8UQleM_NHH#0] ^La<det>$ ^hund<n><sg><nom>$ ^hav<vblex><pri>$ ^qu<vblex><inf>$ ^gamb<n><pl><nom>$^.<sent>$
+[/KV8UQleM_NHH]
+[L0-8lb1QEDb7#0] ^Ni<prn>$ ^ir<vblex><pri>$^.<sent>$
+[/L0-8lb1QEDb7]
+[LARfggdaCr0O#0] ^Me<prn>$ ^lekt<vblex><pii>$ ^la<det>$ ^artikl<n><sg><nom>$^.<sent>$
+[/LARfggdaCr0O]
+[LSGJDG-QMK9o#0] ^*Benjamin$ ^*Franklin$ ^es<vblex><pii>$ ^Usan<adj>$ ^politikist<n><sg><nom>$ ^ed<cnjcoo>$ ^inventist<n><sg><nom>$^.<sent>$
+[/LSGJDG-QMK9o]
+[LY-xRMow8SjE#0] ^Ni<prn>$ ^rest<vblex><pri>$ ^felic<adj>$^.<sent>$
+[/LY-xRMow8SjE]
+[LjE_lA6WcMAi#0] ^Parol<vblex><imp>$^!<sent>$
+[/LjE_lA6WcMAi]
+[Lm6D0TtOMlXC#0] ^Grand<adj>$ ^hund<n><pl><nom>$ ^kur<vblex><pri>$^.<sent>$
+[/Lm6D0TtOMlXC]
+[M6nTpFHWtIt3#0] ^Me<prn>$ ^ir<vblex><pri>$ ^a<pr>$ ^la<det>$ ^urb<n><sg><nom>$^.<sent>$
+[/M6nTpFHWtIt3]
+[M76bZj_H8ses#0] ^Il<prn>$ ^dorm<vblex><pri>$^.<sent>$
+[/M76bZj_H8ses]
+[MF6vAnB4hFWG#0] ^Me<prn>$ ^ven<vblex><pri>$^.<sent>$
+[/MF6vAnB4hFWG]
+[N0n_YuzIpwuy#0] ^Tu<prn>$ ^parol<vblex><pri>$^.<sent>$
+[/N0n_YuzIpwuy]
+[NMfyKCvT3pWh#0] ^El<prn>$ ^am<vblex><pri>$ ^me<prn>$^.<sent>$
+[/NMfyKCvT3pWh]
+[O7ko3v4rtyHE#0] ^Me<prn>$ ^am<vblex><pri>$ ^la<det>$ ^hund<n><sg><nom>$^.<sent>$
+[/O7ko3v4rtyHE]
+[Ovu3klH63al7#0] ^Me<prn>$ ^ven<vblex><pri>$ ^kun<pr>$ ^me<adj>$ ^amik<n><sg><nom>$^.<sent>$
+[/Ovu3klH63al7]
+[P75m8FL2aFhw#0] ^Pan<n><sg><nom>$ ^ed<cnjcoo>$ ^aqu<n><sg><nom>$^.<sent>$
+[/P75m8FL2aFhw]
+[PAHnGw7gC4RX#0] ^Pro qu<n><sg><nom>$ ^tu<prn>$ ^plor<vblex><pri>$^?<sent>$
+[/PAHnGw7gC4RX]
+[PD2mjeJvMMFi#0] ^La<det>$ ^hund<n><sg><nom>$ ^es<vblex><pri>$ ^sub<pr>$ ^la<det>$ ^lit<n><sg><nom>$^.<sent>$
+[/PD2mjeJvMMFi]
+[PHY648C9UcwU#0] ^Tu<prn>$ ^hav<vblex><pri>$ ^libr<n><sg><nom>$^.<sent>$
+[/PHY648C9UcwU]
+[Ph-NAIIbkXx-#0] ^Ica<prn>$ ^libr<n><sg><nom>$ ^es<vblex><pri>$ ^min<adv>$ ^cher<adj>$ ^kam<adv>$ ^it<adj>$^.<sent>$
+[/Ph-NAIIbkXx-]
+[PkL7v5TJUs_S#0] ^Me<prn>$ ^vol<vblex><pri>$ ^ke<cnjcoo>$ ^tu<prn>$ ^ven<vblex><imp>$^.<sent>$
+[/PkL7v5TJUs_S]
+[PoaFH4mIi1RL#0] ^La<det>$ ^dormant<adj>/dorm<vblex><der_ppra><adj><sg><nom>$ ^hund<n><sg><nom>$ ^es<vblex><pri>$ ^hik<adv>$^.<sent>$
+[/PoaFH4mIi1RL]
+[QA3W3N2OmUiv#0] ^El<prn>$ ^kant<vblex><pri>$ ^bel<adv>$^.<sent>$
+[/QA3W3N2OmUiv]
+[QdoAzsE_KcAe#0] ^Ilu<adj>$ ^dom<n><sg><nom>$ ^es<vblex><pri>$ ^grand<adj>$^.<sent>$
+[/QdoAzsE_KcAe]
+[Qym17AqpYiRm#0] ^La<det>$ ^yun<adj>$ ^lern<vblex><der_pres><n><pl><nom>/lernant<n><pl><nom>$ ^lekt<vblex><pri>$^.<sent>$
+[/Qym17AqpYiRm]
+[RlUimDTxRrz0#0] ^Kelka<num>$ ^hom<n><pl><nom>$ ^ven<vblex><pii>$^.<sent>$
+[/RlUimDTxRrz0]
+[RmyGn16SZWl_#0] ^Elu<adj>$ ^har<n><der_aro><n><sg><nom>$ ^es<vblex><pri>$ ^long<adj>$^.<sent>$
+[/RmyGn16SZWl_]
+[SnS_nYLe9_hb#0] ^Co<prn>$ ^es<vblex><pri>$ ^nov<adj>$^.<sent>$
+[/SnS_nYLe9_hb]
+[Spxp8H8-zOKv#0] ^Me<adj>$ ^libr<n><sg><nom>$ ^es<vblex><pri>$ ^nov<adj>$^.<sent>$
+[/Spxp8H8-zOKv]
+[TH_uMbxlSzQp#0] ^Tal<adv>$ ^me<prn>$ ^pens<vblex><pri>$^.<sent>$
+[/TH_uMbxlSzQp]
+[TqSjzRgOGSnY#0] ^Me<prn>$ ^n<adv>$ ^konoc<vblex><pri>$ ^la<det>$ ^urb<n><sg><nom>$ ^di qua<prn>$ ^tu<prn>$ ^ven<vblex><pri>$^.<sent>$
+[/TqSjzRgOGSnY]
+[U-qZQSSEPFS-#0] ^Lu<adj>$ ^nom<n><sg><nom>$ ^es<vblex><pri>$ ^Mari<n><sg><nom>$^.<sent>$
+[/U-qZQSSEPFS-]
+[UEXJPo1NVbq2#0] ^Me<prn>$ ^manj<vblex><pii>$^.<sent>$
+[/UEXJPo1NVbq2]
+[UGbHD_9gTG8n#0] ^Olu<adj>$ ^kolor<n><sg><nom>$ ^es<vblex><pri>$ ^blu<adj>$^.<sent>$
+[/UGbHD_9gTG8n]
+[UxGCNylNtZTJ#0] ^Kad<cnjcoo>$ ^vu<prn>$ ^ven<vblex><pri>$^?<sent>$
+[/UxGCNylNtZTJ]
+[VEQE16s5p3m9#0] ^La<det>$ ^vir<n><sg><nom>$ ^qua<prn>$ ^dorm<vblex><pri>$ ^es<vblex><pri>$ ^me<adj>$ ^patr<n><sg><nom>$^.<sent>$
+[/VEQE16s5p3m9]
+[VR5tBGhvIRff#0] ^Tu<prn>$ ^parol<vblex><cni>$^.<sent>$
+[/VR5tBGhvIRff]
+[VXx8hrtvRpTS#0] ^Ni<prn>$ ^ir<vblex><imp>$^!<sent>$
+[/VXx8hrtvRpTS]
+[WCUW8vJjd-r5#0] ^La<det>$ ^letr<n><sg><nom>$ ^skrib<vblex><der_esar><vblex><pii>/skribes<vblex><pii>$^.<sent>$
+[/WCUW8vJjd-r5]
+[X6tk9yZHjEQI#0] ^El<prn>$ ^lav<vblex><pri>$ ^su<prn>$^.<sent>$
+[/X6tk9yZHjEQI]
+[XmARPoqb_mZI#0] ^La<det>$ ^dom<n><sg><nom>$ ^konstrukt<vblex><der_esar><vblex><pri>/konstruktes<vblex><pri>$^.<sent>$
+[/XmARPoqb_mZI]
+[YLiao2eWN0D6#0] ^Me<prn>$ ^vid<vblex><pri>$ ^el<prn>$^.<sent>$
+[/YLiao2eWN0D6]
+[Ybz7s6Ed04bJ#0] ^Li<adj>$ ^dom<n><sg><nom>$ ^es<vblex><pri>$ ^grand<adj>$^.<sent>$
+[/Ybz7s6Ed04bJ]
+[Ys4n5bVz02_0#0] ^La<det>$ ^*rompita$ ^vaz<n><sg><nom>$ ^es<vblex><pri>$ ^sur<pr>$ ^la<det>$ ^tabl<n><sg><nom>$^.<sent>$
+[/Ys4n5bVz02_0]
+[ZBaEHRqhYZac#0] ^Me<prn>$ ^vol<vblex><pri>$ ^ven<vblex><inf>$ ^ma<cnjcoo>$ ^me<prn>$ ^n<adv>$ ^pov<vblex><pri>$^.<sent>$
+[/ZBaEHRqhYZac]
+[ZGyRN_lo8jJJ#0] ^Il<prn>$ ^n<adv>$ ^ven<vblex><pii>$^.<sent>$
+[/ZGyRN_lo8jJJ]
+[_IPI53jTxGyp#0] ^Me<prn>$ ^manj<vblex><fti>$^.<sent>$
+[/_IPI53jTxGyp]
+[_T2cDiayxEhe#0] ^Pan<n><sg><nom>$ ^o<cnjcoo>$ ^aqu<n><sg><nom>$^.<sent>$
+[/_T2cDiayxEhe]
+[_kEYdfx6s9C7#0] ^Il<prn>$ ^parol<vblex><pri>$ ^pri<pr>$ ^su<prn>$^.<sent>$
+[/_kEYdfx6s9C7]
+[a89aV-JusxVm#0] ^El<prn>$ ^kant<vblex><pri>$^.<sent>$
+[/a89aV-JusxVm]
+[aSbLSUAZjtja#0] ^Vi<prn>$ ^ven<vblex><pri>$^.<sent>$
+[/aSbLSUAZjtja]
+[ac8OQ_sxlv2c#0] ^Lu<prn>$ ^es<vblex><pri>$ ^la<det>$ ^maxim<adv>$ ^alt<adj>$ ^hom<n><sg><nom>$^.<sent>$
+[/ac8OQ_sxlv2c]
+[b-ta2M-iyXpR#0] ^Tu<adj>$ ^dom<n><sg><nom>$ ^es<vblex><pri>$ ^bel<adj>$^.<sent>$
+[/b-ta2M-iyXpR]
+[d3xV5BUJ1bRB#0] ^Me<prn>$ ^hav<vblex><pri>$ ^du<num>$ ^fratul<n><pl><nom>$^.<sent>$
+[/d3xV5BUJ1bRB]
+[eFyJl0qLXj_M#0] ^Me<prn>$ ^drink<vblex><pri>$ ^aqu<n><sg><nom>$^.<sent>$
+[/eFyJl0qLXj_M]
+[eYY4_Q3eOtQK#0] ^Nulu<prn>$ ^respond<vblex><pii>$^.<sent>$
+[/eYY4_Q3eOtQK]
+[eqJW-_2YEQns#0] ^Morg<adv>$ ^ni<prn>$ ^ir<vblex><fti>$^.<sent>$
+[/eqJW-_2YEQns]
+[eu4i3EhnFRMa#0] ^Il<prn>$ ^sid<vblex><pri>$ ^inter<pr>$ ^du<num>$ ^hom<n><pl><nom>$^.<sent>$
+[/eu4i3EhnFRMa]
+[fCvJERXB9Wt9#0] ^Me<prn>$ ^lekt<vblex><pri>$ ^skribit<adj>/skrib<vblex><der_ppas><adj><sg><nom>$ ^letr<n><sg><nom>$^.<sent>$
+[/fCvJERXB9Wt9]
+[g4-n3d9lwkJC#0] ^Hodi<adv>$ ^es<vblex><pri>$ ^bel<adj>$ ^di<n><sg><nom>$^.<sent>$
+[/g4-n3d9lwkJC]
+[gsffb187pmV4#0] ^La<det>$ ^hund<n><pl><nom>$ ^kur<vblex><pri>$^.<sent>$
+[/gsffb187pmV4]
+[h5cBJ2PPOMhe#0] ^Ub<adv>$ ^tu<prn>$ ^es<vblex><pri>$^?<sent>$
+[/h5cBJ2PPOMhe]
+[hXqJExWKBqjU#0] ^La<det>$ ^hom<n><sg><nom>$ ^qua<prn>$ ^ven<vblex><pri>$ ^es<vblex><pri>$ ^me<adj>$ ^amik<n><sg><nom>$^.<sent>$
+[/hXqJExWKBqjU]
+[hpWRz0_iZidN#0] ^La<det>$ ^mont<n><der_aro><n><sg><nom>$ ^es<vblex><pri>$ ^alt<adj>$^.<sent>$
+[/hpWRz0_iZidN]
+[iXwqfttopO9X#0] ^Hier<adv>$ ^me<prn>$ ^es<vblex><pii>$ ^hik<adv>$^.<sent>$
+[/iXwqfttopO9X]
+[iqE1J97IgBp6#0] ^Ib<adv>$ ^es<vblex><pri>$ ^la<det>$ ^dom<n><sg><nom>$^.<sent>$
+[/iqE1J97IgBp6]
+[iwgYbl4ALGfP#0] ^Vu<prn>$ ^parol<vblex><pri>$^.<sent>$
+[/iwgYbl4ALGfP]
+[jFZ140rK-5xE#0] ^Me<prn>$ ^vid<vblex><pri>$ ^kin<num>$ ^stel<n><pl><nom>$^.<sent>$
+[/jFZ140rK-5xE]
+[kfNNdHAHLgrQ#0] ^Vu<adj>$ ^fili<n><sg><nom>$ ^es<vblex><pri>$ ^yun<adj>$^.<sent>$
+[/kfNNdHAHLgrQ]
+[kzMef8p0L6xj#0] ^La<det>$ ^hom<n><pl><nom>$ ^qui<prn>$ ^labor<vblex><pri>$ ^es<vblex><pri>$ ^felic<adj>$^.<sent>$
+[/kzMef8p0L6xj]
+[lp9RUU3qN3DS#0] ^Me<prn>$ ^studi<vblex><pri>$ ^la<det>$ ^vort<n><der_aro><n><sg><nom>$^.<sent>$
+[/lp9RUU3qN3DS]
+[mNZTR7eG4B2J#0] ^Manj<vblex><imp>$^!<sent>$
+[/mNZTR7eG4B2J]
+[mPNJMoHZv8Du#0] ^Step<n><sg><nom>$ ^trov<vblex><der_esar><vblex><pri>/troves<vblex><pri>$ ^en<pr>$ ^*Central$ ^Azi<adj>$^.<sent>$
+[/mPNJMoHZv8Du]
+[mvfosllPywxH#0] ^Nulu<prn>$ ^kompren<vblex><pri>$ ^me<prn>$^.<sent>$
+[/mvfosllPywxH]
+[ni_YyeNLWD1F#0] ^Me<prn>$ ^hav<vblex><pri>$ ^blank<adj>$ ^dom<n><sg><nom>$^.<sent>$
+[/ni_YyeNLWD1F]
+[nrTcWGSL8eoP#0] ^La<det>$ ^hom<n><sg><nom>$ ^qua<prn>$ ^labor<vblex><pri>$ ^es<vblex><pri>$ ^felic<adj>$^.<sent>$
+[/nrTcWGSL8eoP]
+[nwvQcPf_tR-M#0] ^Me<prn>$ ^labor<vblex><pri>$ ^por<pr>$ ^vu<prn>$^.<sent>$
+[/nwvQcPf_tR-M]
+[oGFG4Pn46d0v#0] ^Me<prn>$ ^vid<vblex><pri>$ ^tri<num>$ ^blank<adj>$ ^hund<n><pl><nom>$^.<sent>$
+[/oGFG4Pn46d0v]
+[oWSmEt3sOcax#0] ^Me<prn>$ ^manj<vblex><cni>$^.<sent>$
+[/oWSmEt3sOcax]
+[pQTQSE3b8AQD#0] ^Ni<prn>$ ^nultemp<adv>$ ^vid<vblex><pii>$ ^lu<prn>$^.<sent>$
+[/pQTQSE3b8AQD]
+[poTsX9zdLcb8#0] ^Li<prn>$ ^dorm<vblex><pri>$^.<sent>$
+[/poTsX9zdLcb8]
+[px5l9JZk_e9z#0] ^Li<prn>$ ^ven<vblex><pii>$ ^hier<adv>$^.<sent>$
+[/px5l9JZk_e9z]
+[qIOvs87-6QIA#0] ^Me<prn>$ ^parol<vblex><pri>$ ^bon<adv>$^.<sent>$
+[/qIOvs87-6QIA]
+[sZ-pnPmaGRAj#0] ^Li<prn>$ ^sembl<vblex><pri>$ ^saj<adj>$^.<sent>$
+[/sZ-pnPmaGRAj]
+[sZ4pNLPBhNB8#0] ^La<det>$ ^venont<adj>$ ^seman<n><sg><nom>$ ^es<vblex><fti>$ ^varm<adj>$^.<sent>$
+[/sZ4pNLPBhNB8]
+[selVQiqVwH_Y#0] ^Kand<adv>$ ^tu<prn>$ ^ven<vblex><fti>$^?<sent>$
+[/selVQiqVwH_Y]
+[shOB0cPieg7l#0] ^Ni<prn>$ ^parol<vblex><pri>$ ^pri<pr>$ ^la<det>$ ^libr<n><sg><nom>$^.<sent>$
+[/shOB0cPieg7l]
+[tmSQ2wsIZ0Ph#0] ^Li<prn>$ ^es<vblex><pri>$ ^felic<adj>$^.<sent>$
+[/tmSQ2wsIZ0Ph]
+[u76unfA-eXqj#0] ^Ni<prn>$ ^konoc<vblex><pri>$ ^lu<prn>$^.<sent>$
+[/u76unfA-eXqj]
+[v0UdFaOPb7mi#0] ^Omn<adj>$ ^hom<n><pl><nom>$ ^labor<vblex><pri>$^.<sent>$
+[/v0UdFaOPb7mi]
+[vW6gGGKvS12a#0] ^Me<prn>$ ^vid<vblex><pri>$ ^la<det>$ ^amik<n><sg><nom>$^.<sent>$
+[/vW6gGGKvS12a]
+[vZo_WTsJ9U6A#0] ^Tu<prn>$ ^parol<vblex><pii>$^.<sent>$
+[/vZo_WTsJ9U6A]
+[wpol78MROwyl#0] ^La<det>$ ^bel<adj>$ ^ucel<n><sg><nom>$ ^kant<vblex><pri>$^.<sent>$
+[/wpol78MROwyl]
+[wtlBjj-DHCJs#0] ^Lu<prn>$ ^help<vblex><pri>$ ^ni<prn>$^.<sent>$
+[/wtlBjj-DHCJs]
+[xuV0b2w6s-Mk#0] ^El<prn>$ ^es<vblex><pri>$ ^tr<adv>$ ^bel<adj>$^.<sent>$
+[/xuV0b2w6s-Mk]
+[xwc8THVUtYxP#0] ^Il<prn>$ ^kur<vblex><pri>$ ^rapid<adv>$^.<sent>$
+[/xwc8THVUtYxP]
+[yAcztT304saO#0] ^La<det>$ ^sun<n><sg><nom>$ ^bril<vblex><pri>$^.<sent>$
+[/yAcztT304saO]
+[ywGLSxL7Gtkw#0] ^On<prn>$ ^dic<vblex><pri>$ ^ke<cnjcoo>$ ^yes<adv>$^.<sent>$
+[/ywGLSxL7Gtkw]
+[yyhwsGwyvlP3#0] ^Ank<adv>$ ^me<prn>$ ^ven<vblex><pri>$^.<sent>$
+[/yyhwsGwyvlP3]
+[zM0n4InRALdJ#0] ^La<det>$ ^kat<n><sg><nom>$ ^es<vblex><pri>$ ^sur<pr>$ ^la<det>$ ^tabl<n><sg><nom>$^.<sent>$
+[/zM0n4InRALdJ]
+[zyMEXZ6xBYGt#0] ^Me<prn>$ ^es<vblex><pri>$ ^tam<adv>$ ^fort<adj>$ ^kam<adv>$ ^tu<prn>$^.<sent>$
+[/zyMEXZ6xBYGt]

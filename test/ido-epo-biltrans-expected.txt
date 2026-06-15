@@ -1,0 +1,326 @@
+[-6yocRk5D4mu#0] ^La<det>/La<det>$ ^urb<n><sg><nom>/urbo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^grand<adj>/granda<adj>$^.<sent>/.<sent>$
+[/-6yocRk5D4mu]
+[-ZyHxY2pyj2f#0] ^Es<vblex><pri>/Esti<vblex><pri>$ ^dek<num>/dek<num>$ ^hom<n><pl><nom>/homo<n><pl><nom>$ ^en<pr>/en<pr>$ ^la<det>/la<det>$ ^chambr<n><sg><nom>/ĉambro<n><sg><nom>$^.<sent>/.<sent>$
+[/-ZyHxY2pyj2f]
+[-hJoEoANupwC#0] ^Me<prn>/Mi<prn>$ ^vid<vblex><pri>/vidi<vblex><pri>$ ^la<det>/la<det>$ ^grand<adj>/granda<adj>$ ^dom<n><sg><nom>/domo<n><sg><nom>$^.<sent>/.<sent>$
+[/-hJoEoANupwC]
+[-q4m_C5HUeqa#0] ^Tu<prn>/Ci<prn>$ ^pren<vblex><pri>/preni<vblex><pri>$ ^ol<prn>/ĝi<prn>$^.<sent>/.<sent>$
+[/-q4m_C5HUeqa]
+[0XUhm1ofu9ES#0] ^Qua<prn>/Kiu<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^tu<prn>/ci<prn>$^?<sent>/?<sent>$
+[/0XUhm1ofu9ES]
+[0g36-HByqnxW#0] ^Ni<prn>/Ni<prn>$ ^labor<vblex><fti>/labori<vblex><fti>/laboras<vblex><fti>$ ^morg<adv>/morgaŭ<adv>$^.<sent>/.<sent>$
+[/0g36-HByqnxW]
+[0rqnqsMtkxOt#0] ^Ol<prn>/Ĝi<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^grand<adj>/granda<adj>$^.<sent>/.<sent>$
+[/0rqnqsMtkxOt]
+[2VN1cZ8dFaNV#0] ^Long<adj>/Longa<adj>$ ^promen<vblex><der_act><n><pl><nom>/promenado<n><pl><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^*agrabla/*agrabla$^.<sent>/.<sent>$
+[/2VN1cZ8dFaNV]
+[2pkv7T5Pjr94#0] ^Il<prn>/Li<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$ ^kun<pr>/kun<pr>$ ^su<adj>/sia<adj>$ ^amik<n><sg><nom>/amiko<n><sg><nom>$^.<sent>/.<sent>$
+[/2pkv7T5Pjr94]
+[2us_pQsDM4E5#0] ^Nul<adj>/Neniu<adj>$ ^hom<n><sg><nom>/homo<n><sg><nom>$ ^ven<vblex><pri>/veni<vblex><pri>$^.<sent>/.<sent>$
+[/2us_pQsDM4E5]
+[2zMpWG9GilMR#0] ^La<det>/La<det>$ ^libr<n><sg><nom>/libro<n><sg><nom>$ ^di<pr>/de<pr>$ ^Mari<adj>/Maria<adj>$ ^es<vblex><pri>/esti<vblex><pri>$ ^hik<adv>/tie ĉi<adv>$^.<sent>/.<sent>$
+[/2zMpWG9GilMR]
+[3NAythoUx47H#0] ^Ulu<prn>/Iu<prn>$ ^frap<vblex><pri>/frapi<vblex><pri>$^.<sent>/.<sent>$
+[/3NAythoUx47H]
+[3yFoHRM7_EH9#0] ^Quo<prn>/Kio<prn>$ ^event<vblex><pri>/okazi<vblex><pri>$^?<sent>/?<sent>$
+[/3yFoHRM7_EH9]
+[4E5_afpsvFMb#0] ^Qual<adv>/Kiel<adv>$ ^tu<prn>/ci<prn>$ ^fac<vblex><pri>/fari<vblex><pri>$ ^to<prn>/tio<prn>$^?<sent>/?<sent>$
+[/4E5_afpsvFMb]
+[4J1aATnd7zLs#0] ^Omnu<prn>/Ĉiu<prn>$ ^ven<vblex><pii>/veni<vblex><pii>$^.<sent>/.<sent>$
+[/4J1aATnd7zLs]
+[4pJvu5HKIUxv#0] ^Me<prn>/Mi<prn>$ ^hav<vblex><pri>/havi<vblex><pri>/havigis<vblex><pri>$ ^du<num>/du<num>$ ^bel<adj>/bela<adj>$ ^libr<n><pl><nom>/libro<n><pl><nom>$^.<sent>/.<sent>$
+[/4pJvu5HKIUxv]
+[5Penob92tsUa#0] ^Kelka<num>/Kelka<num>$ ^yun<adj>/juna<adj>$ ^puer<n><pl><nom>/infano<n><pl><nom>$ ^lud<vblex><pri>/ludi<vblex><pri>$^.<sent>/.<sent>$
+[/5Penob92tsUa]
+[5SeK6fWu-vtd#0] ^Il<prn>/Li<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^ja<adv>/@ja<adv>$ ^hik<adv>/tie ĉi<adv>$^.<sent>/.<sent>$
+[/5SeK6fWu-vtd]
+[60GGKXRgW3ux#0] ^Ilu<prn>/Li<prn>$ ^invent<vblex><pii>/inventi<vblex><pii>$ ^parafulmin<n><sg><nom>/@parafulmin<n><sg><nom>$ ^en<pr>/en<pr>$ ^1749<num><ciph><sp><nom>/1749<num><ciph><sp><nom>/1749<num><ciph><sp><acc>$^.<sent>/.<sent>$
+[/60GGKXRgW3ux]
+[6o666qgP3P0q#0] ^To<prn>/Tio<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^ver<adj>/vera<adj>$^.<sent>/.<sent>$
+[/6o666qgP3P0q]
+[7l51KKPKXfZ_#0] ^La<det>/La<det>$ ^pord<n><sg><nom>/pordo<n><sg><nom>$ ^apert<vblex><der_esar><vblex><pri>/malfermi<vblex><der_esar><vblex><pri>$^.<sent>/.<sent>$
+[/7l51KKPKXfZ_]
+[83dvhIi5HvQn#0] ^Me<prn>/Mi<prn>$ ^e<cnjcoo>/kaj<cnjcoo>$ ^tu<prn>/ci<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$^.<sent>/.<sent>$
+[/83dvhIi5HvQn]
+[8GyYXq-1FJ3g#0] ^La<det>/La<det>$ ^libr<n><sg><nom>/libro<n><sg><nom>$ ^quan<prn>/kiun<prn>$ ^me<prn>/mi<prn>$ ^lekt<vblex><pri>/legi<vblex><pri>$ ^es<vblex><pri>/esti<vblex><pri>$ ^bon<adj>/bona<adj>$^.<sent>/.<sent>$
+[/8GyYXq-1FJ3g]
+[8d_ZyXd78zUG#0] ^La<det>/La<det>$ ^urb<n><sg><nom>/urbo<n><sg><nom>$ ^destrukt<vblex><der_esar><vblex><pii>/detrui<vblex><der_esar><vblex><pii>$ ^dum<pr>/dum<pr>$ ^la<det>/la<det>$ ^milit<n><sg><nom>/milito<n><sg><nom>$^.<sent>/.<sent>$
+[/8d_ZyXd78zUG]
+[8oydKqDpaJT7#0] ^Ni<adj>/Nia<adj>$ ^urb<n><sg><nom>/urbo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^mikr<adj>/malgranda<adj>$^.<sent>/.<sent>$
+[/8oydKqDpaJT7]
+[97nvx7Jtngtg#0] ^Multa<num>/Multa<num>$ ^puer<n><pl><nom>/infano<n><pl><nom>$ ^kant<vblex><pri>/kanti<vblex><pri>$^.<sent>/.<sent>$
+[/97nvx7Jtngtg]
+[9cnpca3X-aEQ#0] ^Ub<adv>/Kie<adv>$ ^es<vblex><pri>/esti<vblex><pri>$ ^la<det>/la<det>$ ^dom<n><sg><nom>/domo<n><sg><nom>$^?<sent>/?<sent>$
+[/9cnpca3X-aEQ]
+[A-oZU890CRc0#0] ^Il<prn>/Li<prn>$ ^nultemp<adv>/neniam<adv>$ ^ven<vblex><pri>/veni<vblex><pri>$^.<sent>/.<sent>$
+[/A-oZU890CRc0]
+[AHSJfM51qdCz#0] ^Ulo<prn>/Io<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^hik<adv>/tie ĉi<adv>$^.<sent>/.<sent>$
+[/AHSJfM51qdCz]
+[AQr_b7PLD58W#0] ^La<det>/La<det>$ ^dom<n><sg><nom>/domo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^en<pr>/en<pr>$ ^la<det>/la<det>$ ^urb<n><sg><nom>/urbo<n><sg><nom>$^.<sent>/.<sent>$
+[/AQr_b7PLD58W]
+[ARRPIWm9YOsm#0] ^Omno<prn>/Ĉio<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^bon<adj>/bona<adj>$^.<sent>/.<sent>$
+[/ARRPIWm9YOsm]
+[ASS_hSb1DsC0#0] ^Me<prn>/Mi<prn>$ ^rest<vblex><fti>/resti<vblex><fti>$ ^hik<adv>/tie ĉi<adv>$ ^til<pr>/ĝis<pr>$ ^*lundi/*lundi$^.<sent>/.<sent>$
+[/ASS_hSb1DsC0]
+[AZW-4rjNmrTM#0] ^Elu<prn>/Ŝi<prn>$ ^ven<vblex><fti>/veni<vblex><fti>$ ^morg<adv>/morgaŭ<adv>$^.<sent>/.<sent>$
+[/AZW-4rjNmrTM]
+[AredICctz2OQ#0] ^Me<prn>/Mi<prn>$ ^vid<vblex><pri>/vidi<vblex><pri>$ ^tu<prn>/ci<prn>$^.<sent>/.<sent>$
+[/AredICctz2OQ]
+[B16qVqS3KBzP#0] ^El<prn>/Ŝi<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^tro<adv>/@tro<adv>$ ^yun<adj>/juna<adj>$^.<sent>/.<sent>$
+[/B16qVqS3KBzP]
+[B5bZLh-vd0GR#0] ^La<det>/La<det>$ ^grandeg<adj>/grandega<adj>$ ^urb<n><pl><nom>/urbo<n><pl><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^bel<adj>/bela<adj>$^.<sent>/.<sent>$
+[/B5bZLh-vd0GR]
+[BVKsBOfdtObu#0] ^La<det>/La<det>$ ^hund<n><sg><nom>/hundo<n><sg><nom>$ ^dorm<vblex><pri>/dormi<vblex><pri>$^.<sent>/.<sent>$
+[/BVKsBOfdtObu]
+[BYPF-tHJ41c3#0] ^La<det>/La<det>$ ^nov<adj>/nova<adj>$ ^lern<vblex><der_pres><n><pl><nom>/lernanto<n><pl><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^yun<adj>/juna<adj>$^.<sent>/.<sent>$
+[/BYPF-tHJ41c3]
+[C_JzRQo_V7Sl#0] ^Me<prn>/Mi<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$ ^per<pr>/per<pr>$ ^tren<n><sg><nom>/trajno<n><sg><nom>$^.<sent>/.<sent>$
+[/C_JzRQo_V7Sl]
+[DXjpLjLrQxBs#0] ^Quant<adv>/@Quant<adv>$ ^kust<vblex><pri>/kosti<vblex><pri>$ ^to<prn>/tio<prn>$^?<sent>/?<sent>$
+[/DXjpLjLrQxBs]
+[EOOtCmjnnmSd#0] ^La<det>/La<det>$ ^grand<adj>/granda<adj>$ ^blank<adj>/blanka<adj>$ ^dom<n><pl><nom>/domo<n><pl><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^nov<adj>/nova<adj>$^.<sent>/.<sent>$
+[/EOOtCmjnnmSd]
+[EP-VzdYYM_Xf#0] ^Me<prn>/Mi<prn>$ ^n<adv>/ne<adv>/neono<adv>$ ^sav<vblex><pri>/scii<vblex><pri>$^.<sent>/.<sent>$
+[/EP-VzdYYM_Xf]
+[EUL0ee6Kmdxc#0] ^Il<prn>/Li<prn>$ ^vid<vblex><pri>/vidi<vblex><pri>$ ^su<prn>/si<prn>$ ^en<pr>/en<pr>$ ^la<det>/la<det>$ ^spegul<n><sg><nom>/spegulo<n><sg><nom>$^.<sent>/.<sent>$
+[/EUL0ee6Kmdxc]
+[Elt0AvemA0z-#0] ^Me<prn>/Mi<prn>$ ^manj<vblex><pri>/manĝi<vblex><pri>$^.<sent>/.<sent>$
+[/Elt0AvemA0z-]
+[F1vAgO20YinV#0] ^Ca<prn>/Ĉi<prn>$ ^dom<n><sg><nom>/domo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^plu<adv>/pli<adv>/plue<adv>$ ^grand<adj>/granda<adj>$ ^kam<adv>/ol<adv>$ ^t<adj>/tiu<adj>$^.<sent>/.<sent>$
+[/F1vAgO20YinV]
+[F2UoabyXDBrk#0] ^La<det>/La<det>$ ^film<n><sg><nom>/filmo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^mal<adj>/malbona<adj>$^.<sent>/.<sent>$
+[/F2UoabyXDBrk]
+[F84YDNGO1kxR#0] ^Ni<prn>/Ni<prn>$ ^ankor<adv>/ankoraŭ<adv>$ ^labor<vblex><pri>/labori<vblex><pri>/laboras<vblex><pri>$^.<sent>/.<sent>$
+[/F84YDNGO1kxR]
+[FI7stLefuoRH#0] ^Li<prn>/Ili<prn>$ ^priz<vblex><pri>/altetaksi<vblex><pri>$ ^su<adj>/sia<adj>$ ^dom<n><sg><nom>/domo<n><sg><nom>$^.<sent>/.<sent>$
+[/FI7stLefuoRH]
+[FUM9DPPfAWgs#0] ^Me<prn>/Mi<prn>$ ^vok<vblex><pri>/voki<vblex><pri>$ ^vu<prn>/vi<prn>$^.<sent>/.<sent>$
+[/FUM9DPPfAWgs]
+[FXyW0etFpc0Z#0] ^La<det>/La<det>$ ^libr<n><pl><nom>/libro<n><pl><nom>$ ^quin<prn>/kiojn<prn>$ ^me<prn>/mi<prn>$ ^lekt<vblex><pri>/legi<vblex><pri>$ ^es<vblex><pri>/esti<vblex><pri>$ ^bon<adj>/bona<adj>$^.<sent>/.<sent>$
+[/FXyW0etFpc0Z]
+[FvPDOXmsxeAF#0] ^*Franklin/*Franklin$ ^es<vblex><pii>/esti<vblex><pii>$ ^un<num>/unu<num>$ ^ek<pr>/el<pr>$ ^la<det>/la<det>$ ^fond<vblex><der_past><n><pl><nom>/fondinto<n><pl><nom>$ ^di<pr>/de<pr>$ ^Us<adj>/Usono<adj>$^.<sent>/.<sent>$
+[/FvPDOXmsxeAF]
+[GAaN5p80PVc-#0] ^Lor<adv>/Tiam<adv>$ ^me<prn>/mi<prn>$ ^kompren<vblex><pii>/kompreni<vblex><pii>$^.<sent>/.<sent>$
+[/GAaN5p80PVc-]
+[GmxgyMJq-iDp#0] ^Quo<prn>/Kio<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^to<prn>/tio<prn>$^?<sent>/?<sent>$
+[/GmxgyMJq-iDp]
+[H1Oz6G-EOtLO#0] ^T<adj>/Tiu<adj>$ ^dom<n><sg><nom>/domo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^mikr<adj>/malgranda<adj>$^.<sent>/.<sent>$
+[/H1Oz6G-EOtLO]
+[HJh3gYa5slp-#0] ^Me<prn>/Mi<prn>$ ^nur<adv>/nur<adv>/nure<adv>$ ^vol<vblex><pri>/voli<vblex><pri>$ ^help<vblex><inf>/helpi<vblex><inf>/helpis<vblex><inf>$^.<sent>/.<sent>$
+[/HJh3gYa5slp-]
+[HdeQdV790xta#0] ^Lu<prn>/Li<prn>$ ^labor<vblex><pri>/labori<vblex><pri>/laboras<vblex><pri>$^.<sent>/.<sent>$
+[/HdeQdV790xta]
+[ISdJr0GoWZyL#0] ^Tu<prn>/Ci<prn>$ ^parol<vblex><fti>/paroli<vblex><fti>$^.<sent>/.<sent>$
+[/ISdJr0GoWZyL]
+[IiyxVm6643tx#0] ^Ul<adj>/Iu<adj>$ ^hom<n><sg><nom>/homo<n><sg><nom>$ ^ven<vblex><pri>/veni<vblex><pri>$^.<sent>/.<sent>$
+[/IiyxVm6643tx]
+[J8J-V-u--RLQ#0] ^Nulo<prn>/Nenio<prn>$ ^event<vblex><pii>/okazi<vblex><pii>$^.<sent>/.<sent>$
+[/J8J-V-u--RLQ]
+[JIgxMxQj5syE#0] ^El<prn>/Ŝi<prn>$ ^diven<vblex><pri>/fariĝi<vblex><pri>$ ^rich<adj>/riĉa<adj>$^.<sent>/.<sent>$
+[/JIgxMxQj5syE]
+[JTNYF9MzOWUI#0] ^Ca<prn>/Ĉi<prn>$ ^dom<n><sg><nom>/domo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^grand<adj>/granda<adj>$^.<sent>/.<sent>$
+[/JTNYF9MzOWUI]
+[JlGzdmUtQO2-#0] ^Tri<num>/Tri<num>$ ^puer<n><pl><nom>/infano<n><pl><nom>$ ^lud<vblex><pri>/ludi<vblex><pri>$^.<sent>/.<sent>$
+[/JlGzdmUtQO2-]
+[K-XoHAxip72L#0] ^Ni<prn>/Ni<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^fort<adj>/forta<adj>$^.<sent>/.<sent>$
+[/K-XoHAxip72L]
+[KV8UQleM_NHH#0] ^La<det>/La<det>$ ^hund<n><sg><nom>/hundo<n><sg><nom>$ ^hav<vblex><pri>/havi<vblex><pri>/havigis<vblex><pri>$ ^qu<vblex><inf>/kvar<vblex><inf>$ ^gamb<n><pl><nom>/gambo<n><pl><nom>$^.<sent>/.<sent>$
+[/KV8UQleM_NHH]
+[L0-8lb1QEDb7#0] ^Ni<prn>/Ni<prn>$ ^ir<vblex><pri>/iri<vblex><pri>$^.<sent>/.<sent>$
+[/L0-8lb1QEDb7]
+[LARfggdaCr0O#0] ^Me<prn>/Mi<prn>$ ^lekt<vblex><pii>/legi<vblex><pii>$ ^la<det>/la<det>$ ^artikl<n><sg><nom>/artikolo<n><sg><nom>$^.<sent>/.<sent>$
+[/LARfggdaCr0O]
+[LSGJDG-QMK9o#0] ^*Benjamin/*Benjamin$ ^*Franklin/*Franklin$ ^es<vblex><pii>/esti<vblex><pii>$ ^Usan<adj>/Usona<adj>$ ^politikist<n><sg><nom>/politikisto<n><sg><nom>$ ^ed<cnjcoo>/kaj<cnjcoo>$ ^inventist<n><sg><nom>/inventisto<n><sg><nom>$^.<sent>/.<sent>$
+[/LSGJDG-QMK9o]
+[LY-xRMow8SjE#0] ^Ni<prn>/Ni<prn>$ ^rest<vblex><pri>/resti<vblex><pri>$ ^felic<adj>/feliĉa<adj>$^.<sent>/.<sent>$
+[/LY-xRMow8SjE]
+[LjE_lA6WcMAi#0] ^Parol<vblex><imp>/Paroli<vblex><imp>$^!<sent>/!<sent>$
+[/LjE_lA6WcMAi]
+[Lm6D0TtOMlXC#0] ^Grand<adj>/Granda<adj>$ ^hund<n><pl><nom>/hundo<n><pl><nom>$ ^kur<vblex><pri>/kuri<vblex><pri>$^.<sent>/.<sent>$
+[/Lm6D0TtOMlXC]
+[M6nTpFHWtIt3#0] ^Me<prn>/Mi<prn>$ ^ir<vblex><pri>/iri<vblex><pri>$ ^a<pr>/al<pr>$ ^la<det>/la<det>$ ^urb<n><sg><nom>/urbo<n><sg><nom>$^.<sent>/.<sent>$
+[/M6nTpFHWtIt3]
+[M76bZj_H8ses#0] ^Il<prn>/Li<prn>$ ^dorm<vblex><pri>/dormi<vblex><pri>$^.<sent>/.<sent>$
+[/M76bZj_H8ses]
+[MF6vAnB4hFWG#0] ^Me<prn>/Mi<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$^.<sent>/.<sent>$
+[/MF6vAnB4hFWG]
+[N0n_YuzIpwuy#0] ^Tu<prn>/Ci<prn>$ ^parol<vblex><pri>/paroli<vblex><pri>$^.<sent>/.<sent>$
+[/N0n_YuzIpwuy]
+[NMfyKCvT3pWh#0] ^El<prn>/Ŝi<prn>$ ^am<vblex><pri>/ami<vblex><pri>$ ^me<prn>/mi<prn>$^.<sent>/.<sent>$
+[/NMfyKCvT3pWh]
+[O7ko3v4rtyHE#0] ^Me<prn>/Mi<prn>$ ^am<vblex><pri>/ami<vblex><pri>$ ^la<det>/la<det>$ ^hund<n><sg><nom>/hundo<n><sg><nom>$^.<sent>/.<sent>$
+[/O7ko3v4rtyHE]
+[Ovu3klH63al7#0] ^Me<prn>/Mi<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$ ^kun<pr>/kun<pr>$ ^me<adj>/mia<adj>$ ^amik<n><sg><nom>/amiko<n><sg><nom>$^.<sent>/.<sent>$
+[/Ovu3klH63al7]
+[P75m8FL2aFhw#0] ^Pan<n><sg><nom>/Pano<n><sg><nom>/Pajno<n><sg><nom>$ ^ed<cnjcoo>/kaj<cnjcoo>$ ^aqu<n><sg><nom>/akvo<n><sg><nom>$^.<sent>/.<sent>$
+[/P75m8FL2aFhw]
+[PAHnGw7gC4RX#0] ^Pro qu<n><sg><nom>/Kial<n><sg><nom>$ ^tu<prn>/ci<prn>$ ^plor<vblex><pri>/plori<vblex><pri>$^?<sent>/?<sent>$
+[/PAHnGw7gC4RX]
+[PD2mjeJvMMFi#0] ^La<det>/La<det>$ ^hund<n><sg><nom>/hundo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^sub<pr>/@sub<pr>$ ^la<det>/la<det>$ ^lit<n><sg><nom>/lito<n><sg><nom>$^.<sent>/.<sent>$
+[/PD2mjeJvMMFi]
+[PHY648C9UcwU#0] ^Tu<prn>/Ci<prn>$ ^hav<vblex><pri>/havi<vblex><pri>/havigis<vblex><pri>$ ^libr<n><sg><nom>/libro<n><sg><nom>$^.<sent>/.<sent>$
+[/PHY648C9UcwU]
+[Ph-NAIIbkXx-#0] ^Ica<prn>/Ĉi tiu<prn>$ ^libr<n><sg><nom>/libro<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^min<adv>/malpli<adv>$ ^cher<adj>/altepreza<adj>$ ^kam<adv>/ol<adv>$ ^it<adj>/tiu<adj>$^.<sent>/.<sent>$
+[/Ph-NAIIbkXx-]
+[PkL7v5TJUs_S#0] ^Me<prn>/Mi<prn>$ ^vol<vblex><pri>/voli<vblex><pri>$ ^ke<cnjcoo>/ke<cnjcoo>$ ^tu<prn>/ci<prn>$ ^ven<vblex><imp>/veni<vblex><imp>$^.<sent>/.<sent>$
+[/PkL7v5TJUs_S]
+[PoaFH4mIi1RL#0] ^La<det>/La<det>$ ^dormant<adj>/dormanta<adj>$ ^hund<n><sg><nom>/hundo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^hik<adv>/tie ĉi<adv>$^.<sent>/.<sent>$
+[/PoaFH4mIi1RL]
+[QA3W3N2OmUiv#0] ^El<prn>/Ŝi<prn>$ ^kant<vblex><pri>/kanti<vblex><pri>$ ^bel<adv>/bele<adv>$^.<sent>/.<sent>$
+[/QA3W3N2OmUiv]
+[QdoAzsE_KcAe#0] ^Ilu<adj>/Lia<adj>$ ^dom<n><sg><nom>/domo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^grand<adj>/granda<adj>$^.<sent>/.<sent>$
+[/QdoAzsE_KcAe]
+[Qym17AqpYiRm#0] ^La<det>/La<det>$ ^yun<adj>/juna<adj>$ ^lern<vblex><der_pres><n><pl><nom>/lernanto<n><pl><nom>$ ^lekt<vblex><pri>/legi<vblex><pri>$^.<sent>/.<sent>$
+[/Qym17AqpYiRm]
+[RlUimDTxRrz0#0] ^Kelka<num>/Kelka<num>$ ^hom<n><pl><nom>/homo<n><pl><nom>$ ^ven<vblex><pii>/veni<vblex><pii>$^.<sent>/.<sent>$
+[/RlUimDTxRrz0]
+[RmyGn16SZWl_#0] ^Elu<adj>/Ŝia<adj>$ ^har<n><der_aro><n><sg><nom>/hararo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^long<adj>/longa<adj>$^.<sent>/.<sent>$
+[/RmyGn16SZWl_]
+[SnS_nYLe9_hb#0] ^Co<prn>/@Co<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^nov<adj>/nova<adj>$^.<sent>/.<sent>$
+[/SnS_nYLe9_hb]
+[Spxp8H8-zOKv#0] ^Me<adj>/Mia<adj>$ ^libr<n><sg><nom>/libro<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^nov<adj>/nova<adj>$^.<sent>/.<sent>$
+[/Spxp8H8-zOKv]
+[TH_uMbxlSzQp#0] ^Tal<adv>/Tiel<adv>$ ^me<prn>/mi<prn>$ ^pens<vblex><pri>/pensi<vblex><pri>$^.<sent>/.<sent>$
+[/TH_uMbxlSzQp]
+[TqSjzRgOGSnY#0] ^Me<prn>/Mi<prn>$ ^n<adv>/ne<adv>/neono<adv>$ ^konoc<vblex><pri>/koni<vblex><pri>$ ^la<det>/la<det>$ ^urb<n><sg><nom>/urbo<n><sg><nom>$ ^di qua<prn>/de kiu<prn>$ ^tu<prn>/ci<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$^.<sent>/.<sent>$
+[/TqSjzRgOGSnY]
+[U-qZQSSEPFS-#0] ^Lu<adj>/Lia<adj>/Siaj<adj>$ ^nom<n><sg><nom>/nomo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^Mari<n><sg><nom>/Mario<n><sg><nom>$^.<sent>/.<sent>$
+[/U-qZQSSEPFS-]
+[UEXJPo1NVbq2#0] ^Me<prn>/Mi<prn>$ ^manj<vblex><pii>/manĝi<vblex><pii>$^.<sent>/.<sent>$
+[/UEXJPo1NVbq2]
+[UGbHD_9gTG8n#0] ^Olu<adj>/Ĝia<adj>$ ^kolor<n><sg><nom>/koloro<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^blu<adj>/blua<adj>$^.<sent>/.<sent>$
+[/UGbHD_9gTG8n]
+[UxGCNylNtZTJ#0] ^Kad<cnjcoo>/Ĉu<cnjcoo>$ ^vu<prn>/vi<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$^?<sent>/?<sent>$
+[/UxGCNylNtZTJ]
+[VEQE16s5p3m9#0] ^La<det>/La<det>$ ^vir<n><sg><nom>/viro<n><sg><nom>$ ^qua<prn>/kiu<prn>$ ^dorm<vblex><pri>/dormi<vblex><pri>$ ^es<vblex><pri>/esti<vblex><pri>$ ^me<adj>/mia<adj>$ ^patr<n><sg><nom>/patro<n><sg><nom>$^.<sent>/.<sent>$
+[/VEQE16s5p3m9]
+[VR5tBGhvIRff#0] ^Tu<prn>/Ci<prn>$ ^parol<vblex><cni>/paroli<vblex><cni>$^.<sent>/.<sent>$
+[/VR5tBGhvIRff]
+[VXx8hrtvRpTS#0] ^Ni<prn>/Ni<prn>$ ^ir<vblex><imp>/iri<vblex><imp>$^!<sent>/!<sent>$
+[/VXx8hrtvRpTS]
+[WCUW8vJjd-r5#0] ^La<det>/La<det>$ ^letr<n><sg><nom>/letero<n><sg><nom>$ ^skrib<vblex><der_esar><vblex><pii>/skribi<vblex><der_esar><vblex><pii>/skribas<vblex><der_esar><vblex><pii>$^.<sent>/.<sent>$
+[/WCUW8vJjd-r5]
+[X6tk9yZHjEQI#0] ^El<prn>/Ŝi<prn>$ ^lav<vblex><pri>/lavi<vblex><pri>$ ^su<prn>/si<prn>$^.<sent>/.<sent>$
+[/X6tk9yZHjEQI]
+[XmARPoqb_mZI#0] ^La<det>/La<det>$ ^dom<n><sg><nom>/domo<n><sg><nom>$ ^konstrukt<vblex><der_esar><vblex><pri>/konstrui<vblex><der_esar><vblex><pri>$^.<sent>/.<sent>$
+[/XmARPoqb_mZI]
+[YLiao2eWN0D6#0] ^Me<prn>/Mi<prn>$ ^vid<vblex><pri>/vidi<vblex><pri>$ ^el<prn>/ŝi<prn>$^.<sent>/.<sent>$
+[/YLiao2eWN0D6]
+[Ybz7s6Ed04bJ#0] ^Li<adj>/Ilia<adj>/Siaj<adj>$ ^dom<n><sg><nom>/domo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^grand<adj>/granda<adj>$^.<sent>/.<sent>$
+[/Ybz7s6Ed04bJ]
+[Ys4n5bVz02_0#0] ^La<det>/La<det>$ ^*rompita/*rompita$ ^vaz<n><sg><nom>/vazo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^sur<pr>/sur<pr>$ ^la<det>/la<det>$ ^tabl<n><sg><nom>/tablo<n><sg><nom>$^.<sent>/.<sent>$
+[/Ys4n5bVz02_0]
+[ZBaEHRqhYZac#0] ^Me<prn>/Mi<prn>$ ^vol<vblex><pri>/voli<vblex><pri>$ ^ven<vblex><inf>/veni<vblex><inf>$ ^ma<cnjcoo>/sed<cnjcoo>$ ^me<prn>/mi<prn>$ ^n<adv>/ne<adv>/neono<adv>$ ^pov<vblex><pri>/povi<vblex><pri>$^.<sent>/.<sent>$
+[/ZBaEHRqhYZac]
+[ZGyRN_lo8jJJ#0] ^Il<prn>/Li<prn>$ ^n<adv>/ne<adv>/neono<adv>$ ^ven<vblex><pii>/veni<vblex><pii>$^.<sent>/.<sent>$
+[/ZGyRN_lo8jJJ]
+[_IPI53jTxGyp#0] ^Me<prn>/Mi<prn>$ ^manj<vblex><fti>/manĝi<vblex><fti>$^.<sent>/.<sent>$
+[/_IPI53jTxGyp]
+[_T2cDiayxEhe#0] ^Pan<n><sg><nom>/Pano<n><sg><nom>/Pajno<n><sg><nom>$ ^o<cnjcoo>/aŭ<cnjcoo>$ ^aqu<n><sg><nom>/akvo<n><sg><nom>$^.<sent>/.<sent>$
+[/_T2cDiayxEhe]
+[_kEYdfx6s9C7#0] ^Il<prn>/Li<prn>$ ^parol<vblex><pri>/paroli<vblex><pri>$ ^pri<pr>/pri<pr>$ ^su<prn>/si<prn>$^.<sent>/.<sent>$
+[/_kEYdfx6s9C7]
+[a89aV-JusxVm#0] ^El<prn>/Ŝi<prn>$ ^kant<vblex><pri>/kanti<vblex><pri>$^.<sent>/.<sent>$
+[/a89aV-JusxVm]
+[aSbLSUAZjtja#0] ^Vi<prn>/Vi<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$^.<sent>/.<sent>$
+[/aSbLSUAZjtja]
+[ac8OQ_sxlv2c#0] ^Lu<prn>/Li<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^la<det>/la<det>$ ^maxim<adv>/plej<adv>$ ^alt<adj>/alta<adj>$ ^hom<n><sg><nom>/homo<n><sg><nom>$^.<sent>/.<sent>$
+[/ac8OQ_sxlv2c]
+[b-ta2M-iyXpR#0] ^Tu<adj>/Cia<adj>$ ^dom<n><sg><nom>/domo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^bel<adj>/bela<adj>$^.<sent>/.<sent>$
+[/b-ta2M-iyXpR]
+[d3xV5BUJ1bRB#0] ^Me<prn>/Mi<prn>$ ^hav<vblex><pri>/havi<vblex><pri>/havigis<vblex><pri>$ ^du<num>/du<num>$ ^fratul<n><pl><nom>/frato<n><pl><nom>$^.<sent>/.<sent>$
+[/d3xV5BUJ1bRB]
+[eFyJl0qLXj_M#0] ^Me<prn>/Mi<prn>$ ^drink<vblex><pri>/trinki<vblex><pri>$ ^aqu<n><sg><nom>/akvo<n><sg><nom>$^.<sent>/.<sent>$
+[/eFyJl0qLXj_M]
+[eYY4_Q3eOtQK#0] ^Nulu<prn>/Neniu<prn>$ ^respond<vblex><pii>/respondi<vblex><pii>$^.<sent>/.<sent>$
+[/eYY4_Q3eOtQK]
+[eqJW-_2YEQns#0] ^Morg<adv>/Morgaŭ<adv>$ ^ni<prn>/ni<prn>$ ^ir<vblex><fti>/iri<vblex><fti>$^.<sent>/.<sent>$
+[/eqJW-_2YEQns]
+[eu4i3EhnFRMa#0] ^Il<prn>/Li<prn>$ ^sid<vblex><pri>/sidi<vblex><pri>$ ^inter<pr>/inter<pr>$ ^du<num>/du<num>$ ^hom<n><pl><nom>/homo<n><pl><nom>$^.<sent>/.<sent>$
+[/eu4i3EhnFRMa]
+[fCvJERXB9Wt9#0] ^Me<prn>/Mi<prn>$ ^lekt<vblex><pri>/legi<vblex><pri>$ ^skribit<adj>/skribita<adj>$ ^letr<n><sg><nom>/letero<n><sg><nom>$^.<sent>/.<sent>$
+[/fCvJERXB9Wt9]
+[g4-n3d9lwkJC#0] ^Hodi<adv>/Hodiaŭ<adv>$ ^es<vblex><pri>/esti<vblex><pri>$ ^bel<adj>/bela<adj>$ ^di<n><sg><nom>/tago<n><sg><nom>$^.<sent>/.<sent>$
+[/g4-n3d9lwkJC]
+[gsffb187pmV4#0] ^La<det>/La<det>$ ^hund<n><pl><nom>/hundo<n><pl><nom>$ ^kur<vblex><pri>/kuri<vblex><pri>$^.<sent>/.<sent>$
+[/gsffb187pmV4]
+[h5cBJ2PPOMhe#0] ^Ub<adv>/Kie<adv>$ ^tu<prn>/ci<prn>$ ^es<vblex><pri>/esti<vblex><pri>$^?<sent>/?<sent>$
+[/h5cBJ2PPOMhe]
+[hXqJExWKBqjU#0] ^La<det>/La<det>$ ^hom<n><sg><nom>/homo<n><sg><nom>$ ^qua<prn>/kiu<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$ ^es<vblex><pri>/esti<vblex><pri>$ ^me<adj>/mia<adj>$ ^amik<n><sg><nom>/amiko<n><sg><nom>$^.<sent>/.<sent>$
+[/hXqJExWKBqjU]
+[hpWRz0_iZidN#0] ^La<det>/La<det>$ ^mont<n><der_aro><n><sg><nom>/montaro<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^alt<adj>/alta<adj>$^.<sent>/.<sent>$
+[/hpWRz0_iZidN]
+[iXwqfttopO9X#0] ^Hier<adv>/Hieraŭ<adv>$ ^me<prn>/mi<prn>$ ^es<vblex><pii>/esti<vblex><pii>$ ^hik<adv>/tie ĉi<adv>$^.<sent>/.<sent>$
+[/iXwqfttopO9X]
+[iqE1J97IgBp6#0] ^Ib<adv>/Tie<adv>$ ^es<vblex><pri>/esti<vblex><pri>$ ^la<det>/la<det>$ ^dom<n><sg><nom>/domo<n><sg><nom>$^.<sent>/.<sent>$
+[/iqE1J97IgBp6]
+[iwgYbl4ALGfP#0] ^Vu<prn>/Vi<prn>$ ^parol<vblex><pri>/paroli<vblex><pri>$^.<sent>/.<sent>$
+[/iwgYbl4ALGfP]
+[jFZ140rK-5xE#0] ^Me<prn>/Mi<prn>$ ^vid<vblex><pri>/vidi<vblex><pri>$ ^kin<num>/kvin<num>$ ^stel<n><pl><nom>/stelo<n><pl><nom>$^.<sent>/.<sent>$
+[/jFZ140rK-5xE]
+[kfNNdHAHLgrQ#0] ^Vu<adj>/Via<adj>$ ^fili<n><sg><nom>/filo<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^yun<adj>/juna<adj>$^.<sent>/.<sent>$
+[/kfNNdHAHLgrQ]
+[kzMef8p0L6xj#0] ^La<det>/La<det>$ ^hom<n><pl><nom>/homo<n><pl><nom>$ ^qui<prn>/kiuj<prn>$ ^labor<vblex><pri>/labori<vblex><pri>/laboras<vblex><pri>$ ^es<vblex><pri>/esti<vblex><pri>$ ^felic<adj>/feliĉa<adj>$^.<sent>/.<sent>$
+[/kzMef8p0L6xj]
+[lp9RUU3qN3DS#0] ^Me<prn>/Mi<prn>$ ^studi<vblex><pri>/studi<vblex><pri>$ ^la<det>/la<det>$ ^vort<n><der_aro><n><sg><nom>/vortaro<n><sg><nom>$^.<sent>/.<sent>$
+[/lp9RUU3qN3DS]
+[mNZTR7eG4B2J#0] ^Manj<vblex><imp>/Manĝi<vblex><imp>$^!<sent>/!<sent>$
+[/mNZTR7eG4B2J]
+[mPNJMoHZv8Du#0] ^Step<n><sg><nom>/Stepo<n><sg><nom>$ ^trov<vblex><der_esar><vblex><pri>/trovis<vblex><der_esar><vblex><pri>/lumigi<vblex><der_esar><vblex><pri>$ ^en<pr>/en<pr>$ ^*Central/*Central$ ^Azi<adj>/Azio<adj>$^.<sent>/.<sent>$
+[/mPNJMoHZv8Du]
+[mvfosllPywxH#0] ^Nulu<prn>/Neniu<prn>$ ^kompren<vblex><pri>/kompreni<vblex><pri>$ ^me<prn>/mi<prn>$^.<sent>/.<sent>$
+[/mvfosllPywxH]
+[ni_YyeNLWD1F#0] ^Me<prn>/Mi<prn>$ ^hav<vblex><pri>/havi<vblex><pri>/havigis<vblex><pri>$ ^blank<adj>/blanka<adj>$ ^dom<n><sg><nom>/domo<n><sg><nom>$^.<sent>/.<sent>$
+[/ni_YyeNLWD1F]
+[nrTcWGSL8eoP#0] ^La<det>/La<det>$ ^hom<n><sg><nom>/homo<n><sg><nom>$ ^qua<prn>/kiu<prn>$ ^labor<vblex><pri>/labori<vblex><pri>/laboras<vblex><pri>$ ^es<vblex><pri>/esti<vblex><pri>$ ^felic<adj>/feliĉa<adj>$^.<sent>/.<sent>$
+[/nrTcWGSL8eoP]
+[nwvQcPf_tR-M#0] ^Me<prn>/Mi<prn>$ ^labor<vblex><pri>/labori<vblex><pri>/laboras<vblex><pri>$ ^por<pr>/por<pr>$ ^vu<prn>/vi<prn>$^.<sent>/.<sent>$
+[/nwvQcPf_tR-M]
+[oGFG4Pn46d0v#0] ^Me<prn>/Mi<prn>$ ^vid<vblex><pri>/vidi<vblex><pri>$ ^tri<num>/tri<num>$ ^blank<adj>/blanka<adj>$ ^hund<n><pl><nom>/hundo<n><pl><nom>$^.<sent>/.<sent>$
+[/oGFG4Pn46d0v]
+[oWSmEt3sOcax#0] ^Me<prn>/Mi<prn>$ ^manj<vblex><cni>/manĝi<vblex><cni>$^.<sent>/.<sent>$
+[/oWSmEt3sOcax]
+[pQTQSE3b8AQD#0] ^Ni<prn>/Ni<prn>$ ^nultemp<adv>/neniam<adv>$ ^vid<vblex><pii>/vidi<vblex><pii>$ ^lu<prn>/li<prn>$^.<sent>/.<sent>$
+[/pQTQSE3b8AQD]
+[poTsX9zdLcb8#0] ^Li<prn>/Ili<prn>$ ^dorm<vblex><pri>/dormi<vblex><pri>$^.<sent>/.<sent>$
+[/poTsX9zdLcb8]
+[px5l9JZk_e9z#0] ^Li<prn>/Ili<prn>$ ^ven<vblex><pii>/veni<vblex><pii>$ ^hier<adv>/hieraŭ<adv>$^.<sent>/.<sent>$
+[/px5l9JZk_e9z]
+[qIOvs87-6QIA#0] ^Me<prn>/Mi<prn>$ ^parol<vblex><pri>/paroli<vblex><pri>$ ^bon<adv>/bone<adv>$^.<sent>/.<sent>$
+[/qIOvs87-6QIA]
+[sZ-pnPmaGRAj#0] ^Li<prn>/Ili<prn>$ ^sembl<vblex><pri>/ŝajni<vblex><pri>$ ^saj<adj>/saĝa<adj>$^.<sent>/.<sent>$
+[/sZ-pnPmaGRAj]
+[sZ4pNLPBhNB8#0] ^La<det>/La<det>$ ^venont<adj>/venonta<adj>$ ^seman<n><sg><nom>/semajno<n><sg><nom>$ ^es<vblex><fti>/esti<vblex><fti>$ ^varm<adj>/varma<adj>$^.<sent>/.<sent>$
+[/sZ4pNLPBhNB8]
+[selVQiqVwH_Y#0] ^Kand<adv>/Kiam<adv>$ ^tu<prn>/ci<prn>$ ^ven<vblex><fti>/veni<vblex><fti>$^?<sent>/?<sent>$
+[/selVQiqVwH_Y]
+[shOB0cPieg7l#0] ^Ni<prn>/Ni<prn>$ ^parol<vblex><pri>/paroli<vblex><pri>$ ^pri<pr>/pri<pr>$ ^la<det>/la<det>$ ^libr<n><sg><nom>/libro<n><sg><nom>$^.<sent>/.<sent>$
+[/shOB0cPieg7l]
+[tmSQ2wsIZ0Ph#0] ^Li<prn>/Ili<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^felic<adj>/feliĉa<adj>$^.<sent>/.<sent>$
+[/tmSQ2wsIZ0Ph]
+[u76unfA-eXqj#0] ^Ni<prn>/Ni<prn>$ ^konoc<vblex><pri>/koni<vblex><pri>$ ^lu<prn>/li<prn>$^.<sent>/.<sent>$
+[/u76unfA-eXqj]
+[v0UdFaOPb7mi#0] ^Omn<adj>/Ĉiu<adj>$ ^hom<n><pl><nom>/homo<n><pl><nom>$ ^labor<vblex><pri>/labori<vblex><pri>/laboras<vblex><pri>$^.<sent>/.<sent>$
+[/v0UdFaOPb7mi]
+[vW6gGGKvS12a#0] ^Me<prn>/Mi<prn>$ ^vid<vblex><pri>/vidi<vblex><pri>$ ^la<det>/la<det>$ ^amik<n><sg><nom>/amiko<n><sg><nom>$^.<sent>/.<sent>$
+[/vW6gGGKvS12a]
+[vZo_WTsJ9U6A#0] ^Tu<prn>/Ci<prn>$ ^parol<vblex><pii>/paroli<vblex><pii>$^.<sent>/.<sent>$
+[/vZo_WTsJ9U6A]
+[wpol78MROwyl#0] ^La<det>/La<det>$ ^bel<adj>/bela<adj>$ ^ucel<n><sg><nom>/birdo<n><sg><nom>$ ^kant<vblex><pri>/kanti<vblex><pri>$^.<sent>/.<sent>$
+[/wpol78MROwyl]
+[wtlBjj-DHCJs#0] ^Lu<prn>/Li<prn>$ ^help<vblex><pri>/helpi<vblex><pri>/helpis<vblex><pri>$ ^ni<prn>/ni<prn>$^.<sent>/.<sent>$
+[/wtlBjj-DHCJs]
+[xuV0b2w6s-Mk#0] ^El<prn>/Ŝi<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^tr<adv>/tre<adv>$ ^bel<adj>/bela<adj>$^.<sent>/.<sent>$
+[/xuV0b2w6s-Mk]
+[xwc8THVUtYxP#0] ^Il<prn>/Li<prn>$ ^kur<vblex><pri>/kuri<vblex><pri>$ ^rapid<adv>/rapide<adv>$^.<sent>/.<sent>$
+[/xwc8THVUtYxP]
+[yAcztT304saO#0] ^La<det>/La<det>$ ^sun<n><sg><nom>/suno<n><sg><nom>$ ^bril<vblex><pri>/brili<vblex><pri>$^.<sent>/.<sent>$
+[/yAcztT304saO]
+[ywGLSxL7Gtkw#0] ^On<prn>/Oni<prn>$ ^dic<vblex><pri>/diri<vblex><pri>$ ^ke<cnjcoo>/ke<cnjcoo>$ ^yes<adv>/jes<adv>$^.<sent>/.<sent>$
+[/ywGLSxL7Gtkw]
+[yyhwsGwyvlP3#0] ^Ank<adv>/Ankaŭ<adv>$ ^me<prn>/mi<prn>$ ^ven<vblex><pri>/veni<vblex><pri>$^.<sent>/.<sent>$
+[/yyhwsGwyvlP3]
+[zM0n4InRALdJ#0] ^La<det>/La<det>$ ^kat<n><sg><nom>/kato<n><sg><nom>$ ^es<vblex><pri>/esti<vblex><pri>$ ^sur<pr>/sur<pr>$ ^la<det>/la<det>$ ^tabl<n><sg><nom>/tablo<n><sg><nom>$^.<sent>/.<sent>$
+[/zM0n4InRALdJ]
+[zyMEXZ6xBYGt#0] ^Me<prn>/Mi<prn>$ ^es<vblex><pri>/esti<vblex><pri>$ ^tam<adv>/tiel<adv>$ ^fort<adj>/forta<adj>$ ^kam<adv>/ol<adv>$ ^tu<prn>/ci<prn>$^.<sent>/.<sent>$
+[/zyMEXZ6xBYGt]

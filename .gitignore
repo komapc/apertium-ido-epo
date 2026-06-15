@@ -133,3 +133,6 @@ apertium-ido.ido.dix
 # Test files
 test.bin
 Makefile
+
+# apertium-regtest transient run output (expected snapshots are committed)
+test/*-output.txt

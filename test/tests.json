@@ -1,0 +1,10 @@
+{
+  "ido-epo": {
+    "mode": "ido-epo",
+    "input": "ido-epo-input.txt"
+  },
+  "epo-ido": {
+    "mode": "epo-ido",
+    "input": "epo-ido-input.txt"
+  }
+}
