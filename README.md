@@ -49,4 +49,5 @@ Regressions are caught by the extractor's evaluation harness
 ## License
 
 GNU General Public License v3.0 (see `COPYING`). Dictionary data derives from Wiktionary,
-Wikipedia, and Wikidata (CC BY-SA); see the extractor for full attribution.
+Wikipedia, and Wikidata; see [`PROVENANCE.md`](PROVENANCE.md) for the full per-source
+breakdown, licensing (CC BY-SA / CC0 → GPL-3.0) and attribution.
