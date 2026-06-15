@@ -34,22 +34,20 @@
       </program>
       <!-- Plain -g (NOT -n): -n suppressed ALL unknown-word marks, including the
            "*" the frontend needs to flag genuinely untranslatable Ido words and
-           compute its quality score (without it every text scored 100%). The
-           cosmetic "#" that -n was meant to hide (the EO autogen echoes the
-           lemma for sentence-start closed-class words like La<det>/Kiu<prn>,
-           whose surface form is actually correct) is dropped by the final sed
-           instead — that strips only "#" and preserves "*" (red/unknown) and
-           "@" (orange/bidix-gap). -->
+           compute its quality score (without it every text scored 100%). With
+           plain -g the output keeps the standard Apertium marks: "*" (unknown),
+           "@" (bidix gap) and "#" (generation failure). The "#" mark is noisy
+           here (the EO autogen echoes the lemma for sentence-start closed-class
+           words like La<det>/Kiu<prn>, whose surface form is actually correct),
+           so consumers that want to hide it strip "#" downstream — the
+           translator frontend does this in its display normalizer. The mode
+           itself stays a pure apertium/lttoolbox/cg pipeline. -->
       <program name="lt-proc -g">
         <file name="ido-epo.autogen.bin"/>
       </program>
       <program name="lt-proc -p">
         <file name="ido-epo.autopgen.bin"/>
       </program>
-      <!-- Strip the unreliable "#" generation-failure mark (mix of false
-           positives on correct closed-class words and honest gaps lt-proc can't
-           tell apart) while keeping "*"/"@". -u is required for APy streaming. -->
-      <program name="sed -u -e 's/#//g'"/>
     </pipeline>
   </mode>
 
