@@ -136,3 +136,7 @@ Makefile
 
 # apertium-regtest transient run output (expected snapshots are committed)
 test/*-output.txt
+
+# stray compiled-binary test artifacts (never commit binaries)
+*.bin.test
+*.bin.test[0-9]
