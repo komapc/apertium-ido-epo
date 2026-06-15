@@ -1135,12 +1135,158 @@
         </out>
       </action>
     </rule>
-    
+
+    <!-- ============================================================================
+         CORRELATIVE (tabelvorto) AGREEMENT across an adjective and after a verb.
+         Correlatives are <adj> in Ido (omn<adj>, it<adj>), so the generic adj
+         rules below would emit them as ĉiu<adj>/tiu<adj> — which the Esperanto
+         generator cannot inflect (#ĉiu). The bare corr_u+nom rule re-emits them
+         correctly as LEM<prn><tn><nbr><cas>, but it is only 2 tokens, so an
+         intervening adjective or a preceding verb stole the match and broke
+         agreement (ta granda domi → "tiu grandaj domoj"; Me vidas ta domi →
+         "tiu domojn"). These rules mirror the verb/adj+noun accusative rules but
+         emit the correlative with the prn<tn> shape. Placed before the generic
+         adj rules so they win by document order.
+         ============================================================================ -->
+    <!-- Correlative + Adjective + Noun (standalone): agree all three, nominative -->
+    <rule comment="correlative + adjective + noun agreement">
+      <pattern>
+        <pattern-item n="corr_u"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="prn"/><lit-tag v="tn"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="cas"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <clip pos="3" side="tl" part="cas"/>
+          </lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <!-- Intransitive verb + Correlative + Noun: post-verbal subject stays nominative -->
+    <rule comment="intransitive verb + correlative + noun: nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="corr_u"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <lit-tag v="prn"/><lit-tag v="tn"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <!-- Verb + Correlative + Noun: accusative if transitive, nominative after copula -->
+    <rule comment="verb + correlative + noun: accusative if transitive">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="corr_u"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <choose>
+          <when>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="prn"/><lit-tag v="tn"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="prn"/><lit-tag v="tn"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    <!-- Verb + Correlative + Adjective + Noun: accusative if transitive -->
+    <rule comment="verb + correlative + adjective + noun: accusative if transitive">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="corr_u"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <choose>
+          <when>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="prn"/><lit-tag v="tn"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="prn"/><lit-tag v="tn"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_nom"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
     <!-- Verb + Adjective + Noun: check if copula or transitive
-         
+
          Handles: "Me vidas bela kato" → "Mi vidas belan katon" (transitive)
                   "Il esas bela kato" → "Li estas bela kato" (copula)
-         
+
          LINGUISTIC: Demonstrates the core accusative transformation.
          Adjective AND noun both receive -n in Esperanto when accusative. -->
     <rule>
