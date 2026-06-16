@@ -128,13 +128,14 @@
       </action>
     </rule>
 
-    <!-- Adjective: remove number/case agreement tags
-         
+    <!-- Adjective: drop the Esperanto number/case agreement tags.
+
          Esperanto: Adjectives agree with nouns (bela kato, bela**j** kato**j**)
          Ido: Adjectives are invariable (bela kato, bela kati)
-         
-         The sg tag is added for consistency with Ido morphology representation,
-         but semantically Ido adjectives don't inflect for number. -->
+
+         The Ido a__adj paradigm generates from a bare `lemma<adj>` (granda),
+         with NO number tag — emitting <sg> here (the old behaviour) yielded an
+         ungeneratable `grand<adj><sg>` → #grand. So output just `lemma<adj>`. -->
     <rule>
       <pattern>
         <pattern-item n="adj"/>
@@ -144,7 +145,6 @@
           <lu>
             <clip pos="1" side="tl" part="lem"/>
             <clip pos="1" side="tl" part="a_adj"/>
-            <lit-tag v="sg"/>
           </lu>
         </out>
       </action>
@@ -360,7 +360,8 @@
           </lu>
           <b pos="1"/>
           <lu>
-            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
           </lu>
         </out>
       </action>
