@@ -314,56 +314,56 @@
     <def-macro n="prn_to_subj" npar="1">
       <choose>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
-          <out><lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="acc"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="si"/></get-case-from><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="acc"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="mi"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="sg"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="mi"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="sg"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ni"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ni"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="vi"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="vi"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="li"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="m"/><lit-tag v="sg"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="li"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="m"/><lit-tag v="sg"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝi"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="f"/><lit-tag v="sg"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ŝi"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="f"/><lit-tag v="sg"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝi"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="nt"/><lit-tag v="sg"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ĝi"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="nt"/><lit-tag v="sg"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ili"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ili"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝiaro"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ŝiaro"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝiaro"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ĝiaro"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="subj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
-          <out><lu><lit v="oni"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="oni"/></get-case-from><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
-          <out><lu><lit v="tiu"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="tiu"/></get-case-from><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
         </when>
         <otherwise>
           <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
@@ -373,56 +373,56 @@
     <def-macro n="prn_to_obj" npar="1">
       <choose>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
-          <out><lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="acc"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="si"/></get-case-from><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="acc"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="mi"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="sg"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="mi"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="sg"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ni"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ni"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p1"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="vi"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="vi"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ci"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p2"/><lit-tag v="mf"/><lit-tag v="sp"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="li"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="m"/><lit-tag v="sg"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="li"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="m"/><lit-tag v="sg"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝi"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="f"/><lit-tag v="sg"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ŝi"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="f"/><lit-tag v="sg"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝi"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="nt"/><lit-tag v="sg"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ĝi"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="nt"/><lit-tag v="sg"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ili"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ili"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ŝiaro"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ŝiaro"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="ĝiaro"/></equal></test>
-          <out><lu><lit v="prpers"/><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ĝiaro"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="prpers"/></get-case-from><lit-tag v="prn"/><lit-tag v="obj"/><lit-tag v="p3"/><lit-tag v="mf"/><lit-tag v="pl"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
-          <out><lu><lit v="oni"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="oni"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="oni"/></get-case-from><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
         </when>
         <when>
-          <test><equal><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
-          <out><lu><lit v="tiu"/><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="tiu"/></get-case-from><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
         </when>
         <otherwise>
           <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
