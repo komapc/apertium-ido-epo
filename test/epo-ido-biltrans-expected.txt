@@ -1,40 +1,40 @@
-[-OJplR8kQ5CB#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^havi<vblex><pres>/hav<vblex><pres>$ ^blanka<adj><sg><acc>/blank<adj><sg><acc>/blank<n><der_ala><adj><sg><acc>/blank<n><der_oz><adj><sg><acc>$ ^*domon./*domon.$
+[-OJplR8kQ5CB#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^havi<vblex><pres>/hav<vblex><pres>$ ^blanka<adj><sg><acc>/blank<adj><sg><acc>/blank<n><der_ala><adj><sg><acc>/blank<n><der_oz><adj><sg><acc>$ ^*domon./*domon.$
 [/-OJplR8kQ5CB]
-[-aLGoqKWvJ84#0] ^Prpers<prn><subj><p2><mf><sp>/@Prpers<prn><subj><p2><mf><sp>$ ^*parolus./*parolus.$
+[-aLGoqKWvJ84#0] ^Prpers<prn><subj><p2><mf><sp>/Tu<prn>$ ^*parolus./*parolus.$
 [/-aLGoqKWvJ84]
 [-dRGhZhjZV9s#0] ^La<det><def><sp>/La<det><def><sp>$ ^grandega<adj><pl><nom>/grandeg<adj><pl><nom>/imens<adj><pl><nom>/enorm<adj><pl><nom>$ ^urbo<n><pl><nom>/urb<n><pl><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*belaj./*belaj.$
 [/-dRGhZhjZV9s]
 [-k9FKO-96f4H#0] ^Multa<adj><pl><nom>/Multeg<adj><pl><nom>/Mult<n><der_ala><adj><pl><nom>/Mult<n><der_oz><adj><pl><nom>$ ^infano<n><pl><nom>/infani<n><pl><nom>/infant<n><pl><nom>/puer<n><pl><nom>/pueret<n><pl><nom>/kind<n><pl><nom>$ ^*kantas./*kantas.$
 [/-k9FKO-96f4H]
-[-ygVfSAbnNO1#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^paroli<vblex><pres>/parol<vblex><pres>$ ^*bone./*bone.$
+[-ygVfSAbnNO1#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^paroli<vblex><pres>/parol<vblex><pres>$ ^*bone./*bone.$
 [/-ygVfSAbnNO1]
 [0NiAOb_Z6isV#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^paroli# pri<vbntr><pres>/@paroli# pri<vbntr><pres>$ ^*si./*si.$
 [/0NiAOb_Z6isV]
-[0jY1MKF945pu#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^voli<vblex><pres>/vol<vblex><pres>$ ^ke<adv>/@ke<adv>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$ ^*venu./*venu.$
+[0jY1MKF945pu#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^voli<vblex><pres>/vol<vblex><pres>$ ^ke<adv>/@ke<adv>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$ ^*venu./*venu.$
 [/0jY1MKF945pu]
 [0v2i3orNHnD8#0] ^La<det><def><sp>/La<det><def><sp>$ ^rompi<vblex><pp><sg><nom>/rupt<vblex><der_ppas><adj><sg><nom>/ruptes<vblex><der_ppas><adj><sg><nom>/violac<vblex><der_ppas><adj><sg><nom>$ ^vazo<n><sg><nom>/vaz<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^sur<adv>/@sur<adv>$ ^la<det><def><sp>/la<det><def><sp>$ ^*tablo./*tablo.$
 [/0v2i3orNHnD8]
 [1aUul7gsvlAY#0] ^Neniu<det><ind><sp>/@Neniu<det><ind><sp>$ ^*respondis./*respondis.$
 [/1aUul7gsvlAY]
-[1ctl-2BhaayE#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^ne<adv>/n<adv>$ ^*scias./*scias.$
+[1ctl-2BhaayE#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^ne<adv>/n<adv>$ ^*scias./*scias.$
 [/1ctl-2BhaayE]
 [1ybCeCQ0hOWy#0] ^La<det><def><sp>/La<det><def><sp>$ ^urbo<n><sg><nom>/urb<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*granda./*granda.$
 [/1ybCeCQ0hOWy]
-[3zdJgWEUhxJH#0] ^Prpers<prn><subj><p2><mf><sp>/@Prpers<prn><subj><p2><mf><sp>$ ^*parolis./*parolis.$
+[3zdJgWEUhxJH#0] ^Prpers<prn><subj><p2><mf><sp>/Tu<prn>$ ^*parolis./*parolis.$
 [/3zdJgWEUhxJH]
-[4Qez5jSBC7V7#0] ^Prpers<prn><subj><p3><f><sg>/@Prpers<prn><subj><p3><f><sg>$ ^lavi<vblex><pres>/lav<vblex><pres>$ ^*sin./*sin.$
+[4Qez5jSBC7V7#0] ^Prpers<prn><subj><p3><f><sg>/El<prn>$ ^lavi<vblex><pres>/lav<vblex><pres>$ ^*sin./*sin.$
 [/4Qez5jSBC7V7]
 [4R925XGpPdzZ#0] ^Pano<n><sg><nom>/Pan<n><sg><nom>/Eukaristi<n><sg><nom>$ ^aŭ<adv>/@aŭ<adv>$ ^*akvo./*akvo.$
 [/4R925XGpPdzZ]
-[4iLVdDi6ixK9#0] ^Hieraŭ<adv>/Hier<adv>$ ^prpers<prn><subj><p1><mf><sg>/@prpers<prn><subj><p1><mf><sg>$ ^esti<vbser><past>/@esti<vbser><past>$ ^ĉi<adv>/@ĉi<adv>$ ^*tie./*tie.$
+[4iLVdDi6ixK9#0] ^Hieraŭ<adv>/Hier<adv>$ ^prpers<prn><subj><p1><mf><sg>/me<prn>$ ^esti<vbser><past>/@esti<vbser><past>$ ^ĉi<adv>/@ĉi<adv>$ ^*tie./*tie.$
 [/4iLVdDi6ixK9]
-[5_JX9qfl_5NX#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^voki<vblex><pres>/vok<vblex><pres>/telefon<vblex><pres>$ ^*vin./*vin.$
+[5_JX9qfl_5NX#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^voki<vblex><pres>/vok<vblex><pres>/telefon<vblex><pres>$ ^*vin./*vin.$
 [/5_JX9qfl_5NX]
-[6U1xZb5aAgGt#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^labori<vblex><pres>/labor<vblex><pres>$ ^por<cnjadv>/@por<cnjadv>$ ^*vi./*vi.$
+[6U1xZb5aAgGt#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^labori<vblex><pres>/labor<vblex><pres>$ ^por<cnjadv>/@por<cnjadv>$ ^*vi./*vi.$
 [/6U1xZb5aAgGt]
 [6lNV8huV9SZ5#0] ^Ilia<adj><sg><nom>/Ili<adj><sg><nom>/Li<adj><sg><nom>$ ^domo<n><sg><nom>/dom<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*granda./*granda.$
 [/6lNV8huV9SZ5]
-[78HKpRlUDBhp#0] ^Kiu<rel><nn><sg>/@Kiu<rel><nn><sg>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$^?<sent>/?<sent>$
+[78HKpRlUDBhp#0] ^Kiu<rel><nn><sg>/@Kiu<rel><nn><sg>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$^?<sent>/?<sent>$
 [/78HKpRlUDBhp]
 [7GVLL1_YvSsC#0] ^Granda<adj><pl><nom>/Grand<adj><pl><nom>/Granda-kan<n><der_ala><adj><pl><nom>/Granda-kan<n><der_oz><adj><pl><nom>$ ^hundo<n><m><pl><nom>/hund<n><m><pl><nom>/chasohund<n><m><pl><nom>/hundochasad<n><m><pl><nom>$ ^*kuras./*kuras.$
 [/7GVLL1_YvSsC]
@@ -42,7 +42,7 @@
 [/7hYuV8ATBQ3J]
 [7kb47f13SxCS#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^helpi<vblex><pres>/help<vblex><pres>/sokurs<vblex><pres>$ ^*nin./*nin.$
 [/7kb47f13SxCS]
-[7nAL9QXL-SP0#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^legi<vblex><past>/lekt<vblex><past>$ ^la<det><def><sp>/la<det><def><sp>$ ^*artikolon./*artikolon.$
+[7nAL9QXL-SP0#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^legi<vblex><past>/lekt<vblex><past>$ ^la<det><def><sp>/la<det><def><sp>$ ^*artikolon./*artikolon.$
 [/7nAL9QXL-SP0]
 [87bjIvgiYfcc#0] ^Kiom<adv>/@Kiom<adv>$ ^kosti<vblex><pres>/kust<vblex><pres>$ ^tio<prn><tn><sg><nom>/ito<prn><tn><sg><nom>/to<prn><tn><sg><nom>/lo<prn><tn><sg><nom>$^?<sent>/?<sent>$
 [/87bjIvgiYfcc]
@@ -52,17 +52,17 @@
 [/8mj4qbl3zDth]
 [9Hn8kdqUHF8S#0] ^Longa<adj><pl><nom>/Long<adj><pl><nom>/Long<n><der_ala><adj><pl><nom>/Long<n><der_oz><adj><pl><nom>/Longesal<adj><pl><nom>$ ^promenado<n><pl><nom>/promenad<n><pl><nom>/promen<vblex><der_act><n><pl><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*agrablaj./*agrablaj.$
 [/9Hn8kdqUHF8S]
-[AfnWcRB8SY8B#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^*manĝas./*manĝas.$
+[AfnWcRB8SY8B#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^*manĝas./*manĝas.$
 [/AfnWcRB8SY8B]
 [BVKsBOfdtObu#0] ^La<det><def><sp>/La<det><def><sp>$ ^hundo<n><m><sg><nom>/hund<n><m><sg><nom>/chasohund<n><m><sg><nom>/hundochasad<n><m><sg><nom>$ ^*dormas./*dormas.$
 [/BVKsBOfdtObu]
-[BXA1MHxaPjkc#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^tri<num><sp>/tri<num><sp>$ ^blanka<adj><pl><acc>/blank<adj><pl><acc>/blank<n><der_ala><adj><pl><acc>/blank<n><der_oz><adj><pl><acc>$ ^*hundojn./*hundojn.$
+[BXA1MHxaPjkc#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^tri<num><sp>/tri<num><sp>$ ^blanka<adj><pl><acc>/blank<adj><pl><acc>/blank<n><der_ala><adj><pl><acc>/blank<n><der_oz><adj><pl><acc>$ ^*hundojn./*hundojn.$
 [/BXA1MHxaPjkc]
-[BnlbYoP7YjIY#0] ^Kie<adv>/Ki<adv>/Ub<adv>/Qu<adv>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$ ^esti<vbser><pres>/@esti<vbser><pres>$^?<sent>/?<sent>$
+[BnlbYoP7YjIY#0] ^Kie<adv>/Ki<adv>/Ub<adv>/Qu<adv>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$ ^esti<vbser><pres>/@esti<vbser><pres>$^?<sent>/?<sent>$
 [/BnlbYoP7YjIY]
-[Brt7Z7-knzuB#0] ^Prpers<prn><subj><p2><mf><sp>/@Prpers<prn><subj><p2><mf><sp>$ ^*parolas./*parolas.$
+[Brt7Z7-knzuB#0] ^Prpers<prn><subj><p2><mf><sp>/Tu<prn>$ ^*parolas./*parolas.$
 [/Brt7Z7-knzuB]
-[CZqR5XW8b6iX#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^tiel<adv>/tal<adv>/tam<adv>$ ^forta<adj><sg><nom>/fort<adj><sg><nom>/forc<adj><sg><nom>/fort<n><der_ala><adj><sg><nom>/fort<n><der_oz><adj><sg><nom>/forc<n><der_ala><adj><sg><nom>/forc<n><der_oz><adj><sg><nom>/forcoz<adj><sg><nom>/fortu<n><der_ala><adj><sg><nom>/fortu<n><der_oz><adj><sg><nom>$ ^kiel<adv>/qual<adv>$ ^*vi./*vi.$
+[CZqR5XW8b6iX#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^tiel<adv>/tal<adv>/tam<adv>$ ^forta<adj><sg><nom>/fort<adj><sg><nom>/forc<adj><sg><nom>/fort<n><der_ala><adj><sg><nom>/fort<n><der_oz><adj><sg><nom>/forc<n><der_ala><adj><sg><nom>/forc<n><der_oz><adj><sg><nom>/forcoz<adj><sg><nom>/fortu<n><der_ala><adj><sg><nom>/fortu<n><der_oz><adj><sg><nom>$ ^kiel<adv>/qual<adv>$ ^*vi./*vi.$
 [/CZqR5XW8b6iX]
 [Czv_vXjI0nQq#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^*laboras./*laboras.$
 [/Czv_vXjI0nQq]
@@ -72,7 +72,7 @@
 [/EHpXo06X6mfv]
 [EJgdkj76wn9O#0] ^Lia<adj><sg><nom>/Lu<adj><sg><nom>/Ilu<adj><sg><nom>/Il<n><der_ala><adj><sg><nom>/Il<n><der_oz><adj><sg><nom>$ ^domo<n><sg><nom>/dom<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*granda./*granda.$
 [/EJgdkj76wn9O]
-[F6jgXC_ltyhL#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^kaj<cnjcoo>/ed<cnjcoo>/e<cnjcoo>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$ ^*venas./*venas.$
+[F6jgXC_ltyhL#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^kaj<cnjcoo>/ed<cnjcoo>/e<cnjcoo>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$ ^*venas./*venas.$
 [/F6jgXC_ltyhL]
 [F8xGN8BTqR8c#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^neniam<adv>/nultemp<adv>/nulatemp<adv>$ ^*venas./*venas.$
 [/F8xGN8BTqR8c]
@@ -80,19 +80,19 @@
 [/F_5pdDcV35YZ]
 [FfR4xrHQ3cKI#0] ^Manĝi<vblex><imp>/Manj<vblex><imp>/Repast<vblex><imp>$^!<sent>/!<sent>$
 [/FfR4xrHQ3cKI]
-[Fg3XHPRJtJP9#0] ^Prpers<prn><subj><p3><mf><pl>/@Prpers<prn><subj><p3><mf><pl>$ ^veni<vbser><past>/@veni<vbser><past>$ ^*hieraŭ./*hieraŭ.$
+[Fg3XHPRJtJP9#0] ^Prpers<prn><subj><p3><mf><pl>/Li<prn>$ ^veni<vbser><past>/@veni<vbser><past>$ ^*hieraŭ./*hieraŭ.$
 [/Fg3XHPRJtJP9]
 [Fgtb0Nl5cj4U#0] ^Ĉi tiu<det><dem><sp>/@Ĉi tiu<det><dem><sp>$ ^domo<n><sg><nom>/dom<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^pli granda ol<pr>/@pli granda ol<pr>$ ^*tiu./*tiu.$
 [/Fgtb0Nl5cj4U]
 [GHQhWTIPJFG9#0] ^Kio<prn><rel><sg><nom>/Quo<prn><rel><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^tio<prn><tn><sg><nom>/ito<prn><tn><sg><nom>/to<prn><tn><sg><nom>/lo<prn><tn><sg><nom>$^?<sent>/?<sent>$
 [/GHQhWTIPJFG9]
-[GMtHdxvP7C8y#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^havi<vblex><pres>/hav<vblex><pres>$ ^du<num><sp>/du<num><sp>$ ^*fratojn./*fratojn.$
+[GMtHdxvP7C8y#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^havi<vblex><pres>/hav<vblex><pres>$ ^du<num><sp>/du<num><sp>$ ^*fratojn./*fratojn.$
 [/GMtHdxvP7C8y]
-[GPIA2g9oK3Fq#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^*manĝis./*manĝis.$
+[GPIA2g9oK3Fq#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^*manĝis./*manĝis.$
 [/GPIA2g9oK3Fq]
-[GcEifl8llsZl#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^neniam<adv>/nultemp<adv>/nulatemp<adv>$ ^vidi<vblex><past>/vid<vblex><past>$ ^*lin./*lin.$
+[GcEifl8llsZl#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^neniam<adv>/nultemp<adv>/nulatemp<adv>$ ^vidi<vblex><past>/vid<vblex><past>$ ^*lin./*lin.$
 [/GcEifl8llsZl]
-[GrEBtQbuqVeJ#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^resti<vbser><pres>/@resti<vbser><pres>$ ^*feliĉaj./*feliĉaj.$
+[GrEBtQbuqVeJ#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^resti<vbser><pres>/@resti<vbser><pres>$ ^*feliĉaj./*feliĉaj.$
 [/GrEBtQbuqVeJ]
 [HPtx4Joc0Eg_#0] ^Ĉi tiu<det><dem><sp>/@Ĉi tiu<det><dem><sp>$ ^libro<n><sg><nom>/libr<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^malpli<adv>/min<adv>$ ^kara<adj><sg><nom>/kar<adj><sg><nom>$ ^ol<cnjcoo>/@ol<cnjcoo>$ ^*tiu./*tiu.$
 [/HPtx4Joc0Eg_]
@@ -102,29 +102,29 @@
 [/HdW2HbuEf2zN]
 [HiqzvcSLMvrv#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^veni<vbser><pres>/@veni<vbser><pres>$ ^kun<pr>/kun<pr>$ ^sia<adj><sg><nom>/si<adj><sg><nom>/su<adj><sg><nom>$ ^*amiko./*amiko.$
 [/HiqzvcSLMvrv]
-[IOSRuwZPcG9P#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*amikon./*amikon.$
+[IOSRuwZPcG9P#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*amikon./*amikon.$
 [/IOSRuwZPcG9P]
-[IRU1hKUU-qaP#0] ^Prpers<prn><subj><p3><mf><pl>/@Prpers<prn><subj><p3><mf><pl>$ ^ŝati<vblex><pres>/fantazi<vblex><pres>$ ^sia<adj><sg><acc>/si<adj><sg><acc>/su<adj><sg><acc>$ ^*domon./*domon.$
+[IRU1hKUU-qaP#0] ^Prpers<prn><subj><p3><mf><pl>/Li<prn>$ ^ŝati<vblex><pres>/fantazi<vblex><pres>$ ^sia<adj><sg><acc>/si<adj><sg><acc>/su<adj><sg><acc>$ ^*domon./*domon.$
 [/IRU1hKUU-qaP]
 [IT54WpL-ZYr4#0] ^La<det><def><sp>/La<det><def><sp>$ ^homo<n><sg><nom>/hom<n><sg><nom>/kreit<n><sg><nom>$ ^kiu<rel><nn><sg>/@kiu<rel><nn><sg>$ ^veni<vbser><pres>/@veni<vbser><pres>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^mia<adj><sg><nom>/mi<adj><sg><nom>/me<adj><sg><nom>$ ^*amiko./*amiko.$
 [/IT54WpL-ZYr4]
-[IkPBoQ5_fuCD#0] ^Kial<adv>/@Kial<adv>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$ ^plori<vblex><pres>/plor<vblex><pres>$^?<sent>/?<sent>$
+[IkPBoQ5_fuCD#0] ^Kial<adv>/@Kial<adv>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$ ^plori<vblex><pres>/plor<vblex><pres>$^?<sent>/?<sent>$
 [/IkPBoQ5_fuCD]
-[IpdDA6x1eNU2#0] ^Prpers<prn><subj><p3><f><sg>/@Prpers<prn><subj><p3><f><sg>$ ^fari<vbtr><iĝi><pres>/@fari<vbtr><iĝi><pres>$ ^*riĉa./*riĉa.$
+[IpdDA6x1eNU2#0] ^Prpers<prn><subj><p3><f><sg>/El<prn>$ ^fari<vbtr><iĝi><pres>/@fari<vbtr><iĝi><pres>$ ^*riĉa./*riĉa.$
 [/IpdDA6x1eNU2]
 [J37Y2audIRHO#0] ^Nenio<prn><tn><sg><nom>/Nulo<prn><tn><sg><nom>$ ^*okazis./*okazis.$
 [/J37Y2audIRHO]
 [JOf03DVp8ioE#0] ^Oni<vblex><inf>/@Oni<vblex><inf>$ ^diri<vblex><pres>/dic<vblex><pres>$ ^ke<adv>/@ke<adv>$ ^*jes./*jes.$
 [/JOf03DVp8ioE]
-[JqQ_In7ltOOZ#0] ^Tiam<adv>/Lor<adv>$ ^prpers<prn><subj><p1><mf><sg>/@prpers<prn><subj><p1><mf><sg>$ ^*komprenis./*komprenis.$
+[JqQ_In7ltOOZ#0] ^Tiam<adv>/Lor<adv>$ ^prpers<prn><subj><p1><mf><sg>/me<prn>$ ^*komprenis./*komprenis.$
 [/JqQ_In7ltOOZ]
-[Jv1QqEdW13dE#0] ^Prpers<prn><subj><p3><mf><pl>/@Prpers<prn><subj><p3><mf><pl>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*feliĉaj./*feliĉaj.$
+[Jv1QqEdW13dE#0] ^Prpers<prn><subj><p3><mf><pl>/Li<prn>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*feliĉaj./*feliĉaj.$
 [/Jv1QqEdW13dE]
 [Kf9Rs5y9JvVR#0] ^Tio estas<cnjcoo>/@Tio estas<cnjcoo>$ ^*vera./*vera.$
 [/Kf9Rs5y9JvVR]
-[L-LARny3H4ij#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^legi<vblex><pres>/lekt<vblex><pres>$ ^skribi<vblex><pp><sg><acc>/skrib<vblex><der_ppas><adj><sg><acc>$ ^*leteron./*leteron.$
+[L-LARny3H4ij#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^legi<vblex><pres>/lekt<vblex><pres>$ ^skribi<vblex><pp><sg><acc>/skrib<vblex><der_ppas><adj><sg><acc>$ ^*leteron./*leteron.$
 [/L-LARny3H4ij]
-[L0-8lb1QEDb7#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^*iras./*iras.$
+[L0-8lb1QEDb7#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^*iras./*iras.$
 [/L0-8lb1QEDb7]
 [LgX__921XqBl#0] ^La<det><def><sp>/La<det><def><sp>$ ^urbo<n><sg><nom>/urb<n><sg><nom>$ ^esti<vbser><past>/@esti<vbser><past>$ ^detrui<vblex><pp><sg><nom>/destrukt<vblex><der_ppas><adj><sg><nom>$ ^dum<cnjadv>/@dum<cnjadv>$ ^la<det><def><sp>/la<det><def><sp>$ ^*milito./*milito.$
 [/LgX__921XqBl]
@@ -138,19 +138,19 @@
 [/OJVGGPg1G6gk]
 [OYxhzjzgr6Gx#0] ^La<det><def><sp>/La<det><def><sp>$ ^homo<n><sg><nom>/hom<n><sg><nom>/kreit<n><sg><nom>$ ^kiu<rel><nn><sg>/@kiu<rel><nn><sg>$ ^labori<vblex><pres>/labor<vblex><pres>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*feliĉa./*feliĉa.$
 [/OYxhzjzgr6Gx]
-[OeVtkVYbW2l5#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^nur<adv>/nur<adv>$ ^voli<vblex><pres>/vol<vblex><pres>$ ^*helpi./*helpi.$
+[OeVtkVYbW2l5#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^nur<adv>/nur<adv>$ ^voli<vblex><pres>/vol<vblex><pres>$ ^*helpi./*helpi.$
 [/OeVtkVYbW2l5]
-[QDMCkE_BQmI4#0] ^Prpers<prn><subj><p3><f><sg>/@Prpers<prn><subj><p3><f><sg>$ ^kanti<vblex><pres>/kant<vblex><pres>$ ^*bele./*bele.$
+[QDMCkE_BQmI4#0] ^Prpers<prn><subj><p3><f><sg>/El<prn>$ ^kanti<vblex><pres>/kant<vblex><pres>$ ^*bele./*bele.$
 [/QDMCkE_BQmI4]
-[QPFg51RJ6el3#0] ^Prpers<prn><subj><p3><mf><pl>/@Prpers<prn><subj><p3><mf><pl>$ ^ŝajni<vbser><pres>/@ŝajni<vbser><pres>$ ^*saĝaj./*saĝaj.$
+[QPFg51RJ6el3#0] ^Prpers<prn><subj><p3><mf><pl>/Li<prn>$ ^ŝajni<vbser><pres>/@ŝajni<vbser><pres>$ ^*saĝaj./*saĝaj.$
 [/QPFg51RJ6el3]
-[QRMyVNtztj7B#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^resti<vbser><fti>/@resti<vbser><fti>$ ^ĉi tie<adv>/adhik<adv>$ ^ĝis<cnjadv>/@ĝis<cnjadv>$ ^*lundo./*lundo.$
+[QRMyVNtztj7B#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^resti<vbser><fti>/@resti<vbser><fti>$ ^ĉi tie<adv>/adhik<adv>$ ^ĝis<cnjadv>/@ĝis<cnjadv>$ ^*lundo./*lundo.$
 [/QRMyVNtztj7B]
 [QZiaAZ7uNBvj#0] ^La<det><def><sp>/La<det><def><sp>$ ^kato<n><m><sg><nom>/kat<n><m><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^sur<adv>/@sur<adv>$ ^la<det><def><sp>/la<det><def><sp>$ ^*tablo./*tablo.$
 [/QZiaAZ7uNBvj]
 [RAfrrkUT7Dwm#0] ^Iu<adj><sg><nom>/Ul<adj><sg><nom>$ ^*frapas./*frapas.$
 [/RAfrrkUT7Dwm]
-[RwHQ3k0rAx_5#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^koni<vblex><pres>/konoc<vblex><pres>$ ^*lin./*lin.$
+[RwHQ3k0rAx_5#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^koni<vblex><pres>/konoc<vblex><pres>$ ^*lin./*lin.$
 [/RwHQ3k0rAx_5]
 [Rzd79kITy5ks#0] ^Neniu<det><ind><sp>/@Neniu<det><ind><sp>$ ^homo<n><sg><nom>/hom<n><sg><nom>/kreit<n><sg><nom>$ ^*venas./*venas.$
 [/Rzd79kITy5ks]
@@ -158,9 +158,9 @@
 [/SUKH1Okodb3Q]
 [TDf4Bjh4ua_N#0] ^Kio<prn><rel><sg><nom>/Quo<prn><rel><sg><nom>$ ^okazi<vbser><pres>/@okazi<vbser><pres>$^?<sent>/?<sent>$
 [/TDf4Bjh4ua_N]
-[TDrHYbs8ChvP#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^studi<vblex><pres>/studi<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*vortaron./*vortaron.$
+[TDrHYbs8ChvP#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^studi<vblex><pres>/studi<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*vortaron./*vortaron.$
 [/TDrHYbs8ChvP]
-[TV4cKnrqKOb1#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^iri<vblex><imp>/ir<vblex><imp>$^!<sent>/!<sent>$
+[TV4cKnrqKOb1#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^iri<vblex><imp>/ir<vblex><imp>$^!<sent>/!<sent>$
 [/TV4cKnrqKOb1]
 [Tslmb2U0VwyI#0] ^La<det><def><sp>/La<det><def><sp>$ ^granda<adj><pl><nom>/grand<adj><pl><nom>/granda-kan<n><der_ala><adj><pl><nom>/granda-kan<n><der_oz><adj><pl><nom>$ ^blanka<adj><pl><nom>/blank<adj><pl><nom>/blank<n><der_ala><adj><pl><nom>/blank<n><der_oz><adj><pl><nom>$ ^domo<n><pl><nom>/dom<n><pl><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*novaj./*novaj.$
 [/Tslmb2U0VwyI]
@@ -168,71 +168,71 @@
 [/UCwotxFYH-XZ]
 [Ur--gt3C4txG#0] ^Mia<adj><sg><nom>/Mi<adj><sg><nom>/Me<adj><sg><nom>$ ^libro<n><sg><nom>/libr<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*nova./*nova.$
 [/Ur--gt3C4txG]
-[VG2mcyGH_ONZ#0] ^Morgaŭ<adv>/Morg<adv>$ ^prpers<prn><subj><p1><mf><pl>/@prpers<prn><subj><p1><mf><pl>$ ^*iros./*iros.$
+[VG2mcyGH_ONZ#0] ^Morgaŭ<adv>/Morg<adv>$ ^prpers<prn><subj><p1><mf><pl>/ni<prn>$ ^*iros./*iros.$
 [/VG2mcyGH_ONZ]
 [VXRs1bKNDcPX#0] ^Kelka<adj><pl><nom>/@Kelka<adj><pl><nom>$ ^homo<n><pl><nom>/hom<n><pl><nom>/kreit<n><pl><nom>$ ^*venis./*venis.$
 [/VXRs1bKNDcPX]
 [VYKWXrmRqwmC#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^ne<adv>/n<adv>$ ^*venis./*venis.$
 [/VYKWXrmRqwmC]
-[VkIRFHLJZEM7#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^veni<vbser><pres>/@veni<vbser><pres>$ ^per<pr>/per<pr>$ ^*trajno./*trajno.$
+[VkIRFHLJZEM7#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^veni<vbser><pres>/@veni<vbser><pres>$ ^per<pr>/per<pr>$ ^*trajno./*trajno.$
 [/VkIRFHLJZEM7]
 [W14LA6JrjxXj#0] ^La<det><def><sp>/La<det><def><sp>$ ^montaro<n><sg><nom>/montar<n><sg><nom>/montari<n><sg><nom>/mont<n><der_aro><n><sg><nom>/montor<n><der_aro><n><sg><nom>/montokaten<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*alta./*alta.$
 [/W14LA6JrjxXj]
-[WdEfLSOFEfao#0] ^Ankaŭ<adv>/Ank<adv>$ ^prpers<prn><subj><p1><mf><sg>/@prpers<prn><subj><p1><mf><sg>$ ^*venas./*venas.$
+[WdEfLSOFEfao#0] ^Ankaŭ<adv>/Ank<adv>$ ^prpers<prn><subj><p1><mf><sg>/me<prn>$ ^*venas./*venas.$
 [/WdEfLSOFEfao]
-[WuRHNKdL9nh6#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*fortaj./*fortaj.$
+[WuRHNKdL9nh6#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*fortaj./*fortaj.$
 [/WuRHNKdL9nh6]
 [XF4jPmUbJLrC#0] ^La<det><def><sp>/La<det><def><sp>$ ^nova<adj><pl><nom>/nov<adj><pl><nom>/novay<adj><pl><nom>/nov<n><der_ala><adj><pl><nom>/nov<n><der_oz><adj><pl><nom>$ ^lernanto<n><m><pl><nom>/lernant<n><m><pl><nom>/lern<vblex><der_pres><n><m><pl><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*junaj./*junaj.$
 [/XF4jPmUbJLrC]
 [XJVcVoLZOneH#0] ^Via<adj><sg><nom>/Vi<adj><sg><nom>/Vu<adj><sg><nom>$ ^domo<n><sg><nom>/dom<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*bela./*bela.$
 [/XJVcVoLZOneH]
-[YI2sAb6Q-Gaj#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^labori<vblex><fti>/labor<vblex><fti>$ ^*morgaŭ./*morgaŭ.$
+[YI2sAb6Q-Gaj#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^labori<vblex><fti>/labor<vblex><fti>$ ^*morgaŭ./*morgaŭ.$
 [/YI2sAb6Q-Gaj]
-[YevGDxwFkTBx#0] ^La<det><def><sp>/La<det><def><sp>$ ^libro<n><pl><nom>/libr<n><pl><nom>$ ^kiu<prn><itg><pl><acc>/qua<prn><itg><pl><acc>$ ^prpers<prn><subj><p1><mf><sg>/@prpers<prn><subj><p1><mf><sg>$ ^legi<vblex><pres>/lekt<vblex><pres>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*bonaj./*bonaj.$
+[YevGDxwFkTBx#0] ^La<det><def><sp>/La<det><def><sp>$ ^libro<n><pl><nom>/libr<n><pl><nom>$ ^kiu<prn><itg><pl><acc>/qua<prn><itg><pl><acc>$ ^prpers<prn><subj><p1><mf><sg>/me<prn>$ ^legi<vblex><pres>/lekt<vblex><pres>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*bonaj./*bonaj.$
 [/YevGDxwFkTBx]
-[Yfr4f6FtQ_uy#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^iri<vblex><pres>/ir<vblex><pres>$ ^al<pr>/a<pr>/al<pr>/ad<pr>$ ^la<det><def><sp>/la<det><def><sp>$ ^*urbo./*urbo.$
+[Yfr4f6FtQ_uy#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^iri<vblex><pres>/ir<vblex><pres>$ ^al<pr>/a<pr>/al<pr>/ad<pr>$ ^la<det><def><sp>/la<det><def><sp>$ ^*urbo./*urbo.$
 [/Yfr4f6FtQ_uy]
 [ZIYNGr12-0rV#0] ^La<det><def><sp>/La<det><def><sp>$ ^homo<n><pl><nom>/hom<n><pl><nom>/kreit<n><pl><nom>$ ^kiu<prn><itg><pl><nom>/qua<prn><itg><pl><nom>$ ^labori<vblex><pres>/labor<vblex><pres>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*feliĉaj./*feliĉaj.$
 [/ZIYNGr12-0rV]
-[ZU-fDqQGpBXN#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^voli<vblex><pres>/vol<vblex><pres>$ ^veni<vbser><inf>/@veni<vbser><inf>$ ^sed<cnjcoo>/ma<cnjcoo>$ ^prpers<prn><subj><p1><mf><sg>/@prpers<prn><subj><p1><mf><sg>$ ^ne<adv>/n<adv>$ ^*povas./*povas.$
+[ZU-fDqQGpBXN#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^voli<vblex><pres>/vol<vblex><pres>$ ^veni<vbser><inf>/@veni<vbser><inf>$ ^sed<cnjcoo>/ma<cnjcoo>$ ^prpers<prn><subj><p1><mf><sg>/me<prn>$ ^ne<adv>/n<adv>$ ^*povas./*povas.$
 [/ZU-fDqQGpBXN]
-[Zwf6TFygdDEi#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^havi<vblex><pres>/hav<vblex><pres>$ ^du<num><sp>/du<num><sp>$ ^bela<adj><pl><acc>/bel<adj><pl><acc>/bel<n><der_ala><adj><pl><acc>/bel<n><der_oz><adj><pl><acc>$ ^*librojn./*librojn.$
+[Zwf6TFygdDEi#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^havi<vblex><pres>/hav<vblex><pres>$ ^du<num><sp>/du<num><sp>$ ^bela<adj><pl><acc>/bel<adj><pl><acc>/bel<n><der_ala><adj><pl><acc>/bel<n><der_oz><adj><pl><acc>$ ^*librojn./*librojn.$
 [/Zwf6TFygdDEi]
 [_5_mFJfkSF6r#0] ^Paroli<vblex><imp>/Parol<vblex><imp>$^!<sent>/!<sent>$
 [/_5_mFJfkSF6r]
 [_yhZVT3MGahf#0] ^Franklin<np><ant><m><sg>/@Franklin<np><ant><m><sg>$ ^esti<vbser><past>/@esti<vbser><past>$ ^unu el<det><ind><sg><nom>/@unu el<det><ind><sg><nom>$ ^la<det><def><sp>/la<det><def><sp>$ ^fondinto<n><pl><nom>/fondint<n><pl><nom>/fond<vblex><der_past><n><pl><nom>/fonder<n><pl><nom>$ ^de/dal/dil$ ^*Usono./*Usono.$
 [/_yhZVT3MGahf]
-[aSbLSUAZjtja#0] ^Prpers<prn><subj><p2><mf><sp>/@Prpers<prn><subj><p2><mf><sp>$ ^*venas./*venas.$
+[aSbLSUAZjtja#0] ^Prpers<prn><subj><p2><mf><sp>/Tu<prn>$ ^*venas./*venas.$
 [/aSbLSUAZjtja]
-[aXsoGEU-InjT#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^granda<adj><sg><acc>/grand<adj><sg><acc>/granda-kan<n><der_ala><adj><sg><acc>/granda-kan<n><der_oz><adj><sg><acc>$ ^*domon./*domon.$
+[aXsoGEU-InjT#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^granda<adj><sg><acc>/grand<adj><sg><acc>/granda-kan<n><der_ala><adj><sg><acc>/granda-kan<n><der_oz><adj><sg><acc>$ ^*domon./*domon.$
 [/aXsoGEU-InjT]
-[aZKtsMdCYYD-#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^trinki<vblex><pres>/drink<vblex><pres>$ ^*akvon./*akvon.$
+[aZKtsMdCYYD-#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^trinki<vblex><pres>/drink<vblex><pres>$ ^*akvon./*akvon.$
 [/aZKtsMdCYYD-]
-[a_ftahRIzVQI#0] ^Prpers<prn><subj><p3><f><sg>/@Prpers<prn><subj><p3><f><sg>$ ^veni<vbser><fti>/@veni<vbser><fti>$ ^*morgaŭ./*morgaŭ.$
+[a_ftahRIzVQI#0] ^Prpers<prn><subj><p3><f><sg>/El<prn>$ ^veni<vbser><fti>/@veni<vbser><fti>$ ^*morgaŭ./*morgaŭ.$
 [/a_ftahRIzVQI]
 [b52-TKg3plsN#0] ^Tiu<det><dem><sp>/@Tiu<det><dem><sp>$ ^domo<n><sg><nom>/dom<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*malgranda./*malgranda.$
 [/b52-TKg3plsN]
 [btHzkQ4MmjSZ#0] ^Tia<adv>/@Tia<adv>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*domo./*domo.$
 [/btHzkQ4MmjSZ]
-[bvQgXPLqDVay#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^ami<vblex><pres>/am<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*hundon./*hundon.$
+[bvQgXPLqDVay#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^ami<vblex><pres>/am<vblex><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*hundon./*hundon.$
 [/bvQgXPLqDVay]
-[ciM2Cvlo9VJ3#0] ^Prpers<prn><subj><p3><f><sg>/@Prpers<prn><subj><p3><f><sg>$ ^*kantas./*kantas.$
+[ciM2Cvlo9VJ3#0] ^Prpers<prn><subj><p3><f><sg>/El<prn>$ ^*kantas./*kantas.$
 [/ciM2Cvlo9VJ3]
-[cu01ayg1a1-x#0] ^Prpers<prn><subj><p3><nt><sg>/@Prpers<prn><subj><p3><nt><sg>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*granda./*granda.$
+[cu01ayg1a1-x#0] ^Prpers<prn><subj><p3><nt><sg>/Ol<prn>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*granda./*granda.$
 [/cu01ayg1a1-x]
 [diIfE-udHdQD#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^inventi<vblex><past>/invent<vblex><past>$ ^fulmoŝirmilo<n><sg><acc>/@fulmoŝirmilo<n><sg><acc>$ ^en<pr>/en<pr>/po<pr>$ ^1749<num>/1749<num>$^.<sent>/.<sent>$
 [/diIfE-udHdQD]
-[eDvAGyeju2AB#0] ^Ĉu<cnjadv>/@Ĉu<cnjadv>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$ ^veni<vbser><pres>/@veni<vbser><pres>$^?<sent>/?<sent>$
+[eDvAGyeju2AB#0] ^Ĉu<cnjadv>/@Ĉu<cnjadv>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$ ^veni<vbser><pres>/@veni<vbser><pres>$^?<sent>/?<sent>$
 [/eDvAGyeju2AB]
 [ePsuKtFPeqZF#0] ^La<det><def><sp>/La<det><def><sp>$ ^domo<n><sg><nom>/dom<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*konstruata./*konstruata.$
 [/ePsuKtFPeqZF]
 [ehYg-86MUaPc#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^kuri<vblex><pres>/kur<vblex><pres>$ ^*rapide./*rapide.$
 [/ehYg-86MUaPc]
-[f-DggK9cnWse#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^*manĝos./*manĝos.$
+[f-DggK9cnWse#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^*manĝos./*manĝos.$
 [/f-DggK9cnWse]
 [feeNQ5lH0M3j#0] ^Io<prn><tn><sg><nom>/Ulo<prn><tn><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^ĉi<adv>/@ĉi<adv>$ ^*tie./*tie.$
 [/feeNQ5lH0M3j]
-[flUU0BiUT-mL#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^kvin<num><sp>/kin<num><sp>$ ^*stelojn./*stelojn.$
+[flUU0BiUT-mL#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^kvin<num><sp>/kin<num><sp>$ ^*stelojn./*stelojn.$
 [/flUU0BiUT-mL]
 [ftEJNdfYdrJM#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^jam<adv>/@jam<adv>$ ^ĉi<adv>/@ĉi<adv>$ ^*tie./*tie.$
 [/ftEJNdfYdrJM]
@@ -242,21 +242,21 @@
 [/h9NLJ2sBXGCq]
 [hJnPyR-gmTg2#0] ^La<det><def><sp>/La<det><def><sp>$ ^dormi<vbntr><ppres><sg><nom>/@dormi<vbntr><ppres><sg><nom>$ ^hundo<n><m><sg><nom>/hund<n><m><sg><nom>/chasohund<n><m><sg><nom>/hundochasad<n><m><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^ĉi<adv>/@ĉi<adv>$ ^*tie./*tie.$
 [/hJnPyR-gmTg2]
-[h_eVnUq7oQlJ#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^*ŝin./*ŝin.$
+[h_eVnUq7oQlJ#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^*ŝin./*ŝin.$
 [/h_eVnUq7oQlJ]
-[i3CVYaEugnS0#0] ^Prpers<prn><subj><p3><mf><pl>/@Prpers<prn><subj><p3><mf><pl>$ ^*dormas./*dormas.$
+[i3CVYaEugnS0#0] ^Prpers<prn><subj><p3><mf><pl>/Li<prn>$ ^*dormas./*dormas.$
 [/i3CVYaEugnS0]
-[ijxsGah3mb8I#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^*manĝus./*manĝus.$
+[ijxsGah3mb8I#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^*manĝus./*manĝus.$
 [/ijxsGah3mb8I]
-[ilORyPs2SOO_#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^*vin./*vin.$
+[ilORyPs2SOO_#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^*vin./*vin.$
 [/ilORyPs2SOO_]
-[iwaZSE6gPvai#0] ^Prpers<prn><subj><p3><f><sg>/@Prpers<prn><subj><p3><f><sg>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^tro<adv>/@tro<adv>$ ^*juna./*juna.$
+[iwaZSE6gPvai#0] ^Prpers<prn><subj><p3><f><sg>/El<prn>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^tro<adv>/@tro<adv>$ ^*juna./*juna.$
 [/iwaZSE6gPvai]
-[jfEqaVkC-KoN#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^ne koni<vbtr><pres>/@ne koni<vbtr><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^urbo<n><sg><acc>/urb<n><sg><acc>$ ^de kiu<prn><rel><sg><nom>/di qua<prn><rel><sg><nom>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$ ^*venas./*venas.$
+[jfEqaVkC-KoN#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^ne koni<vbtr><pres>/@ne koni<vbtr><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^urbo<n><sg><acc>/urb<n><sg><acc>$ ^de kiu<prn><rel><sg><nom>/di qua<prn><rel><sg><nom>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$ ^*venas./*venas.$
 [/jfEqaVkC-KoN]
 [jmxneKaDVvGu#0] ^La<det><def><sp>/La<det><def><sp>$ ^viro<n><sg><nom>/vir<n><sg><nom>$ ^kiu<rel><nn><sg>/@kiu<rel><nn><sg>$ ^dormi<vblex><pres>/dorm<vblex><pres>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^mia<adj><sg><nom>/mi<adj><sg><nom>/me<adj><sg><nom>$ ^*patro./*patro.$
 [/jmxneKaDVvGu]
-[jztzzNa5lMES#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^ankoraŭ<adv>/ankor<adv>$ ^*laboras./*laboras.$
+[jztzzNa5lMES#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^ankoraŭ<adv>/ankor<adv>$ ^*laboras./*laboras.$
 [/jztzzNa5lMES]
 [k-5PS7fe0Ktg#0] ^La<det><def><sp>/La<det><def><sp>$ ^hundo<n><m><pl><nom>/hund<n><m><pl><nom>/chasohund<n><m><pl><nom>/hundochasad<n><m><pl><nom>$ ^*kuras./*kuras.$
 [/k-5PS7fe0Ktg]
@@ -272,33 +272,33 @@
 [/msRbYThEV6zQ]
 [mtz_Es5oPJgh#0] ^Hodiaŭ<adv>/Hodi<adv>/Cadi<adv>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^bela<adj><sg><nom>/bel<adj><sg><nom>/bel<n><der_ala><adj><sg><nom>/bel<n><der_oz><adj><sg><nom>$ ^*tago./*tago.$
 [/mtz_Es5oPJgh]
-[nS5l5wyH4MSy#0] ^Kiel<adv>/Qual<adv>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$ ^fari<vblex><pres>/fac<vblex><pres>$ ^tio<prn><tn><sg><acc>/ito<prn><tn><sg><acc>/to<prn><tn><sg><acc>/lo<prn><tn><sg><acc>$^?<sent>/?<sent>$
+[nS5l5wyH4MSy#0] ^Kiel<adv>/Qual<adv>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$ ^fari<vblex><pres>/fac<vblex><pres>$ ^tio<prn><tn><sg><acc>/ito<prn><tn><sg><acc>/to<prn><tn><sg><acc>/lo<prn><tn><sg><acc>$^?<sent>/?<sent>$
 [/nS5l5wyH4MSy]
 [o28um1ClKVV-#0] ^Via<adj><sg><nom>/Vi<adj><sg><nom>/Vu<adj><sg><nom>$ ^infano<n><sg><nom>/infani<n><sg><nom>/infant<n><sg><nom>/puer<n><sg><nom>/pueret<n><sg><nom>/kind<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*juna./*juna.$
 [/o28um1ClKVV-]
 [oEwS3dgPw8YV#0] ^Ĉio<prn><tn><sg><nom>/Omno<prn><tn><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*bona./*bona.$
 [/oEwS3dgPw8YV]
-[oyHFKUtyvEgz#0] ^Prpers<prn><subj><p3><f><sg>/@Prpers<prn><subj><p3><f><sg>$ ^ami<vblex><pres>/am<vblex><pres>$ ^*min./*min.$
+[oyHFKUtyvEgz#0] ^Prpers<prn><subj><p3><f><sg>/El<prn>$ ^ami<vblex><pres>/am<vblex><pres>$ ^*min./*min.$
 [/oyHFKUtyvEgz]
-[p-vJHEAUasNa#0] ^Kiam<adv>/Kand<adv>/Unfoy<adv>$ ^prpers<prn><subj><p2><mf><sp>/@prpers<prn><subj><p2><mf><sp>$ ^veni<vbser><fti>/@veni<vbser><fti>$^?<sent>/?<sent>$
+[p-vJHEAUasNa#0] ^Kiam<adv>/Kand<adv>/Unfoy<adv>$ ^prpers<prn><subj><p2><mf><sp>/tu<prn>$ ^veni<vbser><fti>/@veni<vbser><fti>$^?<sent>/?<sent>$
 [/p-vJHEAUasNa]
-[pWvsPaJ9eN2h#0] ^Prpers<prn><subj><p2><mf><sp>/@Prpers<prn><subj><p2><mf><sp>$ ^*parolos./*parolos.$
+[pWvsPaJ9eN2h#0] ^Prpers<prn><subj><p2><mf><sp>/Tu<prn>$ ^*parolos./*parolos.$
 [/pWvsPaJ9eN2h]
-[phvIHTiBhDoU#0] ^Prpers<prn><subj><p2><mf><sp>/@Prpers<prn><subj><p2><mf><sp>$ ^havi<vblex><pres>/hav<vblex><pres>$ ^*libron./*libron.$
+[phvIHTiBhDoU#0] ^Prpers<prn><subj><p2><mf><sp>/Tu<prn>$ ^havi<vblex><pres>/hav<vblex><pres>$ ^*libron./*libron.$
 [/phvIHTiBhDoU]
 [poTsX9zdLcb8#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^*dormas./*dormas.$
 [/poTsX9zdLcb8]
-[rg7hedqEWsY0#0] ^Prpers<prn><subj><p3><f><sg>/@Prpers<prn><subj><p3><f><sg>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^tra<adv>/@tra<adv>$ ^*bela./*bela.$
+[rg7hedqEWsY0#0] ^Prpers<prn><subj><p3><f><sg>/El<prn>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^tra<adv>/@tra<adv>$ ^*bela./*bela.$
 [/rg7hedqEWsY0]
 [roXBPJ7VGxx0#0] ^La<det><def><sp>/La<det><def><sp>$ ^domo<n><sg><nom>/dom<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^en<pr>/en<pr>/po<pr>$ ^la<det><def><sp>/la<det><def><sp>$ ^*urbo./*urbo.$
 [/roXBPJ7VGxx0]
-[rtuAN01__vOL#0] ^Prpers<prn><subj><p2><mf><sp>/@Prpers<prn><subj><p2><mf><sp>$ ^preni<vblex><pres>/pren<vblex><pres>$ ^*ĝin./*ĝin.$
+[rtuAN01__vOL#0] ^Prpers<prn><subj><p2><mf><sp>/Tu<prn>$ ^preni<vblex><pres>/pren<vblex><pres>$ ^*ĝin./*ĝin.$
 [/rtuAN01__vOL]
-[shOB0cPieg7l#0] ^Prpers<prn><subj><p1><mf><pl>/@Prpers<prn><subj><p1><mf><pl>$ ^paroli# pri<vbntr><pres>/@paroli# pri<vbntr><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*libro./*libro.$
+[shOB0cPieg7l#0] ^Prpers<prn><subj><p1><mf><pl>/Ni<prn>$ ^paroli# pri<vbntr><pres>/@paroli# pri<vbntr><pres>$ ^la<det><def><sp>/la<det><def><sp>$ ^*libro./*libro.$
 [/shOB0cPieg7l]
 [sstNj3wsGeEj#0] ^Pano<n><sg><nom>/Pan<n><sg><nom>/Eukaristi<n><sg><nom>$ ^kaj<cnjcoo>/ed<cnjcoo>/e<cnjcoo>$ ^*akvo./*akvo.$
 [/sstNj3wsGeEj]
-[tntL-VLJRFlo#0] ^Tiel<adv>/Tal<adv>/Tam<adv>$ ^prpers<prn><subj><p1><mf><sg>/@prpers<prn><subj><p1><mf><sg>$ ^*pensas./*pensas.$
+[tntL-VLJRFlo#0] ^Tiel<adv>/Tal<adv>/Tam<adv>$ ^prpers<prn><subj><p1><mf><sg>/me<prn>$ ^*pensas./*pensas.$
 [/tntL-VLJRFlo]
 [tt3Lz0LtmCP6#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^sidi<vblex><pres>/sid<vblex><pres>/perch<vblex><pres>$ ^inter<pr>/inter<pr>$ ^du<num><sp>/du<num><sp>$ ^*homoj./*homoj.$
 [/tt3Lz0LtmCP6]
@@ -306,13 +306,13 @@
 [/uGpTFFqbmly9]
 [uHiMrvwe6tPm#0] ^Lia<adj><sg><nom>/Lu<adj><sg><nom>/Ilu<adj><sg><nom>/Il<n><der_ala><adj><sg><nom>/Il<n><der_oz><adj><sg><nom>$ ^nomo<n><sg><nom>/nom<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*Mario./*Mario.$
 [/uHiMrvwe6tPm]
-[v5CnlX8JVyzD#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^*venas./*venas.$
+[v5CnlX8JVyzD#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^*venas./*venas.$
 [/v5CnlX8JVyzD]
 [vAMr_9aQTEFD#0] ^Nia<adj><sg><nom>/Ni<adj><sg><nom>$ ^urbo<n><sg><nom>/urb<n><sg><nom>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*malgranda./*malgranda.$
 [/vAMr_9aQTEFD]
-[vKbr0v9lK8O7#0] ^La<det><def><sp>/La<det><def><sp>$ ^libro<n><sg><nom>/libr<n><sg><nom>$ ^kiu<prn><itg><sg><acc>/qua<prn><itg><sg><acc>$ ^prpers<prn><subj><p1><mf><sg>/@prpers<prn><subj><p1><mf><sg>$ ^legi<vblex><pres>/lekt<vblex><pres>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*bona./*bona.$
+[vKbr0v9lK8O7#0] ^La<det><def><sp>/La<det><def><sp>$ ^libro<n><sg><nom>/libr<n><sg><nom>$ ^kiu<prn><itg><sg><acc>/qua<prn><itg><sg><acc>$ ^prpers<prn><subj><p1><mf><sg>/me<prn>$ ^legi<vblex><pres>/lekt<vblex><pres>$ ^esti<vbser><pres>/@esti<vbser><pres>$ ^*bona./*bona.$
 [/vKbr0v9lK8O7]
-[vNqHn3VLR8Zm#0] ^Prpers<prn><subj><p1><mf><sg>/@Prpers<prn><subj><p1><mf><sg>$ ^veni<vbser><pres>/@veni<vbser><pres>$ ^kun<pr>/kun<pr>$ ^mia<adj><sg><nom>/mi<adj><sg><nom>/me<adj><sg><nom>$ ^*amiko./*amiko.$
+[vNqHn3VLR8Zm#0] ^Prpers<prn><subj><p1><mf><sg>/Me<prn>$ ^veni<vbser><pres>/@veni<vbser><pres>$ ^kun<pr>/kun<pr>$ ^mia<adj><sg><nom>/mi<adj><sg><nom>/me<adj><sg><nom>$ ^*amiko./*amiko.$
 [/vNqHn3VLR8Zm]
 [x27VZ6EQiHH3#0] ^Li<np><cog><mf><sp>/@Li<np><cog><mf><sp>$ ^vidi<vblex><pres>/vid<vblex><pres>$ ^si<prn><ref><acc>/su<prn><ref><acc>$ ^en<pr>/en<pr>/po<pr>$ ^la<det><def><sp>/la<det><def><sp>$ ^*spegulo./*spegulo.$
 [/x27VZ6EQiHH3]
