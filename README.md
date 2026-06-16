@@ -3,7 +3,7 @@
 Bidirectional machine translation between **Ido** and **Esperanto** on the
 [Apertium](https://www.apertium.org) platform.
 
-Translation quality (130-sentence gold set, `ido-epo`): **chrF 93.2, coverage 99.4%**.
+Translation quality (163-sentence gold set, `ido-epo`): **chrF 96.5, coverage 98.4%**.
 
 ## How it works
 
