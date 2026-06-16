@@ -35,6 +35,7 @@
     <sdef n="adv"/>
     <sdef n="vblex"/>
     <sdef n="vbtr"/>
+    <sdef n="vbser"/>
     <sdef n="pr"/>
     <sdef n="prn"/>
     <sdef n="det"/>
@@ -6456,6 +6457,7 @@
     <e><p><l>aparant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>aperanteco<s n="n"/></r></p></e>
     <e><p><l>aparant<s n="adv"/></l><r>aperante<s n="adv"/></r></p></e>
     <e><p><l>apar<s n="vblex"/></l><r>aperi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>apar<s n="vblex"/></l><r>aperi<s n="vbser"/></r></p></e>
     <e><p><l>apar<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>aperanto<s n="n"/></r></p></e>
     <e><p><l>apar<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>aperado<s n="n"/></r></p></e>
     <e><p><l>apar<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>aperinto<s n="n"/></r></p></e>
@@ -7703,6 +7705,7 @@
     <e><p><l>arivant<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>alvenanta<s n="adj"/></r></p></e>
     <e><p><l>arivant<s n="n"/><s n="der_aro"/><s n="n"/></l><r>alvenantaro<s n="n"/></r></p></e>
     <e><p><l>ariv<s n="vblex"/></l><r>alveni<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>ariv<s n="vblex"/></l><r>alveni<s n="vbser"/></r></p></e>
     <e><p><l>ariv<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>alvenanto<s n="n"/></r></p></e>
     <e><p><l>ariv<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>alvenado<s n="n"/></r></p></e>
     <e><p><l>ariv<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>alveninto<s n="n"/></r></p></e>
@@ -8963,6 +8966,7 @@
     <e><p><l>aspektant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>aspektanteco<s n="n"/></r></p></e>
     <e><p><l>aspektant<s n="adv"/></l><r>aspektante<s n="adv"/></r></p></e>
     <e><p><l>aspekt<s n="vblex"/></l><r>aspekti<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>aspekt<s n="vblex"/></l><r>aspekti<s n="vbser"/></r></p></e>
     <e><p><l>aspekt<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>aspektanto<s n="n"/></r></p></e>
     <e><p><l>aspekt<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>aspektado<s n="n"/></r></p></e>
     <e><p><l>aspekt<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>aspektinto<s n="n"/></r></p></e>
@@ -22232,6 +22236,7 @@
     <e><p><l>desaparant<s n="adj"/></l><r>malaperanta<s n="adj"/></r></p></e>
     <e><p><l>desaparant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>malaperanteco<s n="n"/></r></p></e>
     <e><p><l>desapar<s n="vblex"/></l><r>malaperi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>desapar<s n="vblex"/></l><r>malaperi<s n="vbser"/></r></p></e>
     <e><p><l>desapar<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>malaperanto<s n="n"/></r></p></e>
     <e><p><l>desapar<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>malaperado<s n="n"/></r></p></e>
     <e><p><l>desapar<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>malaperinto<s n="n"/></r></p></e>
@@ -25014,6 +25019,7 @@
     <e><p><l>divenant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>fariĝanteco<s n="n"/></r></p></e>
     <e><p><l>divenant<s n="adv"/></l><r>fariĝante<s n="adv"/></r></p></e>
     <e><p><l>diven<s n="vblex"/></l><r>fariĝi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>diven<s n="vblex"/></l><r>fariĝi<s n="vbser"/></r></p></e>
     <e><p><l>diven<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>fariĝanto<s n="n"/></r></p></e>
     <e><p><l>diven<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>fariĝado<s n="n"/></r></p></e>
     <e><p><l>diven<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>fariĝinto<s n="n"/></r></p></e>
@@ -30516,6 +30522,7 @@
     <e><p><l>Erwin Rommel<s n="n"/></l><r>Erwin Rommel<s n="n"/></r></p></e>
     <e><p><l>Erykah Badu<s n="n"/></l><r>Erykah Badu<s n="n"/></r></p></e>
     <e><p><l>es<s n="vblex"/></l><r>esti<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>es<s n="vblex"/></l><r>esti<s n="vbser"/></r></p></e>
     <e><p><l>es<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>estanto<s n="n"/></r></p></e>
     <e><p><l>es<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>estado<s n="n"/></r></p></e>
     <e><p><l>es<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>estinto<s n="n"/></r></p></e>
@@ -30553,6 +30560,7 @@
     <e><p><l>esant<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>estanta<s n="adj"/></r></p></e>
     <e><p><l>esant<s n="n"/><s n="der_aro"/><s n="n"/></l><r>estantaro<s n="n"/></r></p></e>
     <e><p><l>es<s n="vblex"/></l><r>esti<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>es<s n="vblex"/></l><r>esti<s n="vbser"/></r></p></e>
     <e><p><l>es<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>estanto<s n="n"/></r></p></e>
     <e><p><l>es<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>estado<s n="n"/></r></p></e>
     <e><p><l>es<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>estinto<s n="n"/></r></p></e>
@@ -31885,6 +31893,7 @@
     <e><p><l>eventant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>okazanteco<s n="n"/></r></p></e>
     <e><p><l>eventant<s n="adv"/></l><r>okazante<s n="adv"/></r></p></e>
     <e><p><l>event<s n="vblex"/></l><r>okazi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>event<s n="vblex"/></l><r>okazi<s n="vbser"/></r></p></e>
     <e><p><l>event<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>okazanto<s n="n"/></r></p></e>
     <e><p><l>event<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>okazado<s n="n"/></r></p></e>
     <e><p><l>event<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>okazinto<s n="n"/></r></p></e>
@@ -32339,6 +32348,7 @@
     <e><p><l>existant<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>ekzistanta<s n="adj"/></r></p></e>
     <e><p><l>existant<s n="n"/><s n="der_aro"/><s n="n"/></l><r>ekzistantaro<s n="n"/></r></p></e>
     <e><p><l>exist<s n="vblex"/></l><r>ekzisti<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>exist<s n="vblex"/></l><r>ekzisti<s n="vbser"/></r></p></e>
     <e><p><l>exist<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>ekzistanto<s n="n"/></r></p></e>
     <e><p><l>exist<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>ekzistado<s n="n"/></r></p></e>
     <e><p><l>exist<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>ekzistinto<s n="n"/></r></p></e>
@@ -47972,6 +47982,7 @@
     <e><p><l>indijant<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>mankanta<s n="adj"/></r></p></e>
     <e><p><l>indijant<s n="n"/><s n="der_aro"/><s n="n"/></l><r>mankantaro<s n="n"/></r></p></e>
     <e><p><l>indij<s n="vblex"/></l><r>manki<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>indij<s n="vblex"/></l><r>manki<s n="vbser"/></r></p></e>
     <e><p><l>indij<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>mankanto<s n="n"/></r></p></e>
     <e><p><l>indij<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>mankado<s n="n"/></r></p></e>
     <e><p><l>indij<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>mankinto<s n="n"/></r></p></e>
@@ -61238,6 +61249,7 @@
     <e><p><l>konsequant<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>sekvanta<s n="adj"/></r></p></e>
     <e><p><l>konsequant<s n="n"/><s n="der_aro"/><s n="n"/></l><r>sekvantaro<s n="n"/></r></p></e>
     <e><p><l>konsequ<s n="vblex"/></l><r>sekvi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>konsequ<s n="vblex"/></l><r>sekvi<s n="vbser"/></r></p></e>
     <e><p><l>konsequ<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>sekvanto<s n="n"/></r></p></e>
     <e><p><l>konsequ<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>sekvado<s n="n"/></r></p></e>
     <e><p><l>konsequ<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>sekvinto<s n="n"/></r></p></e>
@@ -65467,6 +65479,7 @@
     <e><p><l>kunen<s n="adv"/></l><r>kune<s n="adv"/></r></p></e>
     <e><p><l>kunes<s n="vblex"/></l><r>kune esti<s n="vblex"/></r></p></e>
     <e><p><l>kunexist<s n="vblex"/></l><r>kunekzisti<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>kunexist<s n="vblex"/></l><r>kunekzisti<s n="vbser"/></r></p></e>
     <e><p><l>kunexist<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>kunekzistanto<s n="n"/></r></p></e>
     <e><p><l>kunexist<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>kunekzistado<s n="n"/></r></p></e>
     <e><p><l>kunexist<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>kunekzistinto<s n="n"/></r></p></e>
@@ -71730,6 +71743,7 @@
     <e><p><l>mankant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>mankanteco<s n="n"/></r></p></e>
     <e><p><l>mankant<s n="adv"/></l><r>mankante<s n="adv"/></r></p></e>
     <e><p><l>mank<s n="vblex"/></l><r>manki<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>mank<s n="vblex"/></l><r>manki<s n="vbser"/></r></p></e>
     <e><p><l>mank<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>mankanto<s n="n"/></r></p></e>
     <e><p><l>mank<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>mankado<s n="n"/></r></p></e>
     <e><p><l>mank<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>mankinto<s n="n"/></r></p></e>
@@ -78917,6 +78931,7 @@
     <e><p><l>naskant<s n="adj"/></l><r>naskiĝanta<s n="adj"/></r></p></e>
     <e><p><l>naskant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>naskiĝanteco<s n="n"/></r></p></e>
     <e><p><l>nask<s n="vblex"/></l><r>naskiĝi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>nask<s n="vblex"/></l><r>naskiĝi<s n="vbser"/></r></p></e>
     <e><p><l>nask<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>naskiĝanto<s n="n"/></r></p></e>
     <e><p><l>nask<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>naskiĝado<s n="n"/></r></p></e>
     <e><p><l>nask<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>naskiĝinto<s n="n"/></r></p></e>
@@ -100663,6 +100678,7 @@
     <e><p><l>restant<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>restanta<s n="adj"/></r></p></e>
     <e><p><l>restant<s n="n"/><s n="der_aro"/><s n="n"/></l><r>restantaro<s n="n"/></r></p></e>
     <e><p><l>rest<s n="vblex"/></l><r>resti<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>rest<s n="vblex"/></l><r>resti<s n="vbser"/></r></p></e>
     <e><p><l>rest<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>restanto<s n="n"/></r></p></e>
     <e><p><l>rest<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>restado<s n="n"/></r></p></e>
     <e><p><l>rest<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>restinto<s n="n"/></r></p></e>
@@ -101559,6 +101575,7 @@
     <e><p><l>riajustit<s n="adj"/></l><r>reĝustigita<s n="adj"/></r></p></e>
     <e><p><l>riajustit<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>reĝustigiteco<s n="n"/></r></p></e>
     <e><p><l>riapar<s n="vblex"/></l><r>reaperi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>riapar<s n="vblex"/></l><r>reaperi<s n="vbser"/></r></p></e>
     <e><p><l>riapar<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>reaperanto<s n="n"/></r></p></e>
     <e><p><l>riapar<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>reaperado<s n="n"/></r></p></e>
     <e><p><l>riapar<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>reaperinto<s n="n"/></r></p></e>
@@ -105787,6 +105804,7 @@
     <e><p><l>semblant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>ŝajnanteco<s n="n"/></r></p></e>
     <e><p><l>semblant<s n="adv"/></l><r>ŝajnante<s n="adv"/></r></p></e>
     <e><p><l>sembl<s n="vblex"/></l><r>ŝajni<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>sembl<s n="vblex"/></l><r>ŝajni<s n="vbser"/></r></p></e>
     <e><p><l>sembl<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>ŝajnanto<s n="n"/></r></p></e>
     <e><p><l>sembl<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>ŝajnado<s n="n"/></r></p></e>
     <e><p><l>sembl<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>ŝajninto<s n="n"/></r></p></e>
@@ -106389,6 +106407,7 @@
     <e><p><l>sequant<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>sekvanta<s n="adj"/></r></p></e>
     <e><p><l>sequant<s n="n"/><s n="der_aro"/><s n="n"/></l><r>sekvantaro<s n="n"/></r></p></e>
     <e><p><l>sequ<s n="vblex"/></l><r>sekvi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>sequ<s n="vblex"/></l><r>sekvi<s n="vbser"/></r></p></e>
     <e><p><l>sequ<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>sekvanto<s n="n"/></r></p></e>
     <e><p><l>sequ<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>sekvado<s n="n"/></r></p></e>
     <e><p><l>sequ<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>sekvinto<s n="n"/></r></p></e>
@@ -113776,6 +113795,7 @@
     <e><p><l>sucedant<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>sekvanta<s n="adj"/></r></p></e>
     <e><p><l>sucedant<s n="n"/><s n="der_aro"/><s n="n"/></l><r>sekvantaro<s n="n"/></r></p></e>
     <e><p><l>suced<s n="vblex"/></l><r>sekvi<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>suced<s n="vblex"/></l><r>sekvi<s n="vbser"/></r></p></e>
     <e><p><l>suced<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>sekvanto<s n="n"/></r></p></e>
     <e><p><l>suced<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>sekvado<s n="n"/></r></p></e>
     <e><p><l>suced<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>sekvinto<s n="n"/></r></p></e>
@@ -122738,6 +122758,7 @@
     <e><p><l>venant<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>venanteco<s n="n"/></r></p></e>
     <e><p><l>venant<s n="adv"/></l><r>venante<s n="adv"/></r></p></e>
     <e><p><l>ven<s n="vblex"/></l><r>veni<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>ven<s n="vblex"/></l><r>veni<s n="vbser"/></r></p></e>
     <e><p><l>ven<s n="vblex"/><s n="der_pres"/><s n="n"/></l><r>venanto<s n="n"/></r></p></e>
     <e><p><l>ven<s n="vblex"/><s n="der_act"/><s n="n"/></l><r>venado<s n="n"/></r></p></e>
     <e><p><l>ven<s n="vblex"/><s n="der_past"/><s n="n"/></l><r>veninto<s n="n"/></r></p></e>
