@@ -53,6 +53,17 @@
 
   <mode name="epo-ido" install="yes">
     <pipeline>
+      <!-- Detach a period that follows a word so lt-proc tokenises it. apertium-epo
+           keeps '.' in its alphabet (needed for decimals like 3.14), so "domo." is
+           read as ONE maximal token and fails (*domo.) — unlike '!?:;' which are not
+           in the alphabet and split on their own. Insert a space between a LETTER and
+           a following '.' so it becomes "domo ." → domo<n> + .<sent> (apertium-epo
+           already analyses a lone '.'). Only a LETTER triggers it, so 3.14 / ordinals
+           (digit before '.') stay intact; this also covers the sentence-terminator
+           '.' apertium-destxt appends, which otherwise glues the final word. The
+           post-generation sed below removes the inserted space again. -u + \x20 for
+           the same APy-streaming reasons as the ido-epo l' sed. -->
+      <program name="sed -u -e 's/\([a-zA-Z]\)\./\1\x20./g'"/>
       <program name="lt-proc">
         <file name="epo-ido.automorf.bin"/>
       </program>
@@ -73,6 +84,10 @@
       <program name="lt-proc -p">
         <file name="epo-ido.autopgen.bin"/>
       </program>
+      <!-- Re-join the period(s) detached by the pre-analysis sed above: drop the
+           inserted space before each '.' so "granda . la hundo ." → "granda. la
+           hundo.". -->
+      <program name="sed -u -e 's/\x20\././g'"/>
     </pipeline>
   </mode>
 
