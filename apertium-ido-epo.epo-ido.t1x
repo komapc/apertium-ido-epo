@@ -109,9 +109,12 @@
          These rules strip Esperanto-specific features that don't exist in Ido
          ============================================================================ -->
     
-    <!-- Noun: preserve number and case, but remove gender
-         Ido doesn't have grammatical gender for common nouns
-         NOTE: Both languages keep case (nominative/accusative) for nouns -->
+    <!-- Noun: keep number, drop the Esperanto accusative.
+         Esperanto marks the direct object with -n (domo → domon, domoj → domojn);
+         Ido nouns are caseless (object is fixed by word order), and the Ido n
+         paradigm only generates the nominative — passing <acc> through yielded an
+         ungeneratable dom<n><sg><acc> → #dom. So force <nom>; number (sg/pl) is
+         kept since Ido nouns DO inflect for it (domo / domi). -->
     <rule>
       <pattern>
         <pattern-item n="nom"/>
@@ -122,7 +125,7 @@
             <clip pos="1" side="tl" part="lem"/>
             <clip pos="1" side="tl" part="a_nom"/>
             <clip pos="1" side="tl" part="nbr"/>
-            <clip pos="1" side="tl" part="cas"/>
+            <lit-tag v="nom"/>
           </lu>
         </out>
       </action>
