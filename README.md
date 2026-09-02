@@ -46,6 +46,29 @@ Regressions are caught by the extractor's evaluation harness
 (`scripts/eval_translation.py` → chrF + coverage on `data/gold/ido_epo.tsv`) and the
 `conflict_winner_diff` / `dict_diff` gates, run before each regen is deployed here.
 
+## Officialization status
+
+Work toward making this an official Apertium pair (tracked informally; target 2026-06-15).
+
+**Retired blockers:**
+- Readable `.dix` files — `apertium-ido-epo.ido-epo.dix` is plain multi-line lttoolbox XML
+  (not minified).
+- Provenance documentation — see [`PROVENANCE.md`](PROVENANCE.md) for per-source licensing
+  and attribution.
+
+**Open blockers:**
+- Repository ownership/hosting — still under a personal account, not the `apertium` org.
+- 15 non-standard `der_*` sdefs in the bidix (`der_act`, `der_aj`, `der_ala`, `der_aro`,
+  `der_esar`, `der_izar`, `der_oz`, `der_past`, `der_pfut`, `der_ppa`, `der_ppas`,
+  `der_ppra`, `der_pprs`, `der_pres`, `der_qual`) drive derivational morphology
+  (participles, `-igi`/`-iĝi` derivations, etc.) — upstream review would likely ask for
+  these to follow more conventional Apertium symbol naming or be folded into standard tags.
+- `sed`-based pre/post-processing hacks in `modes.xml` (apostrophe contraction spacing,
+  period spacing) — functional but non-standard; an upstream-quality pair would handle
+  these in the FST rather than shell pipeline hacks.
+- epo→ido transfer-rule coverage lags ido→epo (`epo-ido.t1x` has 14 rules vs.
+  `ido-epo.t1x`'s 70) and has no dedicated evaluation corpus — see #188, #189.
+
 ## License
 
 GNU General Public License v3.0 (see `COPYING`). Dictionary data derives from Wiktionary,
