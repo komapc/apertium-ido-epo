@@ -174,10 +174,12 @@ clean-local:
 test: all
 	apertium-regtest test
 
-# Standalone sentence-list regression guard for the ido-epo conjunction
-# fix (ke/se/kad/quankam/nam/quoniam/tamen/do/or) — see test/test_conjunctions.sh
-# for why apertium-regtest's gold files can't cover this (they embed
-# per-run random correlation IDs, so byte comparison is meaningless).
+# Standalone sentence-list regression guard for the ido-epo conjunction fix
+# (ke/se/kad/quankam/nam/quoniam/tamen/do/or). apertium-regtest (see `test`
+# above) already covers the 3 sentences whose gold output changed with this
+# fix (test/ido-epo-*-expected.txt, re-accepted). This script is a faster,
+# narrower smoke test aimed specifically at every rule shape the cnjcoo_lu
+# macro touches (standalone + embedded noun-cnjcoo-noun contexts).
 test-conjunctions: all
 	test/test_conjunctions.sh
 
