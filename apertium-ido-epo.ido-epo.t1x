@@ -2481,17 +2481,65 @@
       </action>
     </rule>
 
-    <!-- Coordinating conjunction rule: pass through -->
+    <!-- Coordinating conjunction rule: pass through, EXCEPT for a set of Ido
+         words whose Epo dictionary entry cannot generate under <cnjcoo> at
+         all (confirmed with lt-proc -g against epo.autogen.bin):
+           ke   -> only <cnjsub> (or <adv>) generates
+           se/ĉu/kvankam/tamen/do/nu -> only <cnjsub> or <cnjadv> generate
+           ĉar  -> ONLY <cnjadv> generates (not even <cnjsub>)
+         These are real Ido words (che/se/kad/quankam/nam/quoniam/tamen/do/or)
+         that io_wiktionary tags as a generic "conjunction", same as e/o/ma,
+         so the Ido side cannot distinguish them from true coordinators — the
+         dispatch has to happen here, on the Epo target lemma, mirroring the
+         kiam/kiel special case in the cnjsub rule below. -->
     <rule>
       <pattern>
         <pattern-item n="cnjcoo"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test>
+              <equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ke"/></equal>
+            </test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="cnjsub"/></lu></out>
+          </when>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="se"/></equal></test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="cnjadv"/></lu></out>
+          </when>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ĉu"/></equal></test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="cnjadv"/></lu></out>
+          </when>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="kvankam"/></equal></test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="cnjadv"/></lu></out>
+          </when>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="ĉar"/></equal></test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="cnjadv"/></lu></out>
+          </when>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="tamen"/></equal></test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="cnjadv"/></lu></out>
+          </when>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="do"/></equal></test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="cnjadv"/></lu></out>
+          </when>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="nu"/></equal></test>
+            <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="cnjadv"/></lu></out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
