@@ -162,7 +162,7 @@
 [/PHY648C9UcwU]
 [Ph-NAIIbkXx-#0] ^Ĉi tiu<prn>$ ^libro<n><sg><nom>$ ^esti<vblex><pres>$ ^malpli<adv>$ ^altepreza<adj><sg><nom>$ ^ol<adv>$ ^tiu<adj><sg><nom>$^.<sent>$
 [/Ph-NAIIbkXx-]
-[PkL7v5TJUs_S#0] ^Prpers<prn><subj><p1><mf><sg>$ ^voli<vblex><pres>$ ^ke<cnjcoo>$ ^prpers<prn><subj><p2><mf><sp>$ ^veni<vblex><imp>$^.<sent>$
+[PkL7v5TJUs_S#0] ^Prpers<prn><subj><p1><mf><sg>$ ^voli<vblex><pres>$ ^ke<cnjsub>$ ^prpers<prn><subj><p2><mf><sp>$ ^veni<vblex><imp>$^.<sent>$
 [/PkL7v5TJUs_S]
 [PoaFH4mIi1RL#0] ^La<det><def><sg><nom>$ ^dormanta<adj><sg><nom>$ ^hundo<n><sg><nom>$ ^esti<vblex><pres>$ ^tie ĉi<adv>$^.<sent>$
 [/PoaFH4mIi1RL]
@@ -190,7 +190,7 @@
 [/UEXJPo1NVbq2]
 [UGbHD_9gTG8n#0] ^Ĝia<adj><sg><nom>$ ^koloro<n><sg><nom>$ ^esti<vblex><pres>$ ^blua<adj><sg><nom>$^.<sent>$
 [/UGbHD_9gTG8n]
-[UxGCNylNtZTJ#0] ^Ĉu<cnjcoo>$ ^prpers<prn><subj><p2><mf><sp>$ ^veni<vblex><pres>$^?<sent>$
+[UxGCNylNtZTJ#0] ^Ĉu<cnjadv>$ ^prpers<prn><subj><p2><mf><sp>$ ^veni<vblex><pres>$^?<sent>$
 [/UxGCNylNtZTJ]
 [VEQE16s5p3m9#0] ^La<det><def><sg><nom>$ ^viro<n><sg><nom>$ ^kiu<prn>$ ^dormi<vblex><pres>$ ^esti<vblex><pres>$ ^mia<adj><sg><nom>$ ^patro<n><sg><nom>$^.<sent>$
 [/VEQE16s5p3m9]
@@ -316,7 +316,7 @@
 [/xwc8THVUtYxP]
 [yAcztT304saO#0] ^La<det><def><sg><nom>$ ^suno<n><sg><nom>$ ^brili<vblex><pres>$^.<sent>$
 [/yAcztT304saO]
-[ywGLSxL7Gtkw#0] ^Oni<prn><tn><sg><nom>$ ^diri<vblex><pres>$ ^ke<cnjcoo>$ ^jes<adv>$^.<sent>$
+[ywGLSxL7Gtkw#0] ^Oni<prn><tn><sg><nom>$ ^diri<vblex><pres>$ ^ke<cnjsub>$ ^jes<adv>$^.<sent>$
 [/ywGLSxL7Gtkw]
 [yyhwsGwyvlP3#0] ^Ankaŭ<adv>$ ^prpers<prn><subj><p1><mf><sg>$ ^veni<vblex><pres>$^.<sent>$
 [/yyhwsGwyvlP3]

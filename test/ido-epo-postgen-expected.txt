@@ -162,7 +162,7 @@
 [/PHY648C9UcwU]
 [Ph-NAIIbkXx-#0] #Ĉi tiu libro estas malpli #altepreza #ol #tiu.
 [/Ph-NAIIbkXx-]
-[PkL7v5TJUs_S#0] Mi volas #ke vi venu.
+[PkL7v5TJUs_S#0] Mi volas ke vi venu.
 [/PkL7v5TJUs_S]
 [PoaFH4mIi1RL#0] La dormanta hundo estas tie ĉi.
 [/PoaFH4mIi1RL]
@@ -190,7 +190,7 @@
 [/UEXJPo1NVbq2]
 [UGbHD_9gTG8n#0] Ĝia koloro estas blua.
 [/UGbHD_9gTG8n]
-[UxGCNylNtZTJ#0] #Ĉu vi venas?
+[UxGCNylNtZTJ#0] Ĉu vi venas?
 [/UxGCNylNtZTJ]
 [VEQE16s5p3m9#0] La viro #kiu dormas estas mia patro.
 [/VEQE16s5p3m9]
@@ -316,7 +316,7 @@
 [/xwc8THVUtYxP]
 [yAcztT304saO#0] La suno brilas.
 [/yAcztT304saO]
-[ywGLSxL7Gtkw#0] Oni diras #ke jes.
+[ywGLSxL7Gtkw#0] Oni diras ke jes.
 [/ywGLSxL7Gtkw]
 [yyhwsGwyvlP3#0] Ankaŭ mi venas.
 [/yyhwsGwyvlP3]
