@@ -174,6 +174,13 @@ clean-local:
 test: all
 	apertium-regtest test
 
+# Standalone sentence-list regression guard for the ido-epo conjunction
+# fix (ke/se/kad/quankam/nam/quoniam/tamen/do/or) — see test/test_conjunctions.sh
+# for why apertium-regtest's gold files can't cover this (they embed
+# per-run random correlation IDs, so byte comparison is meaningless).
+test-conjunctions: all
+	test/test_conjunctions.sh
+
 
 
 ###############################################################################
