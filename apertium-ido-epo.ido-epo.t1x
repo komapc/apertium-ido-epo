@@ -25,6 +25,12 @@
       <cat-item tags="vblex.der_pfut.*"/>
       <cat-item tags="vblex.der_ppra.*"/>
       <cat-item tags="vblex.der_onta.*"/>
+      <cat-item tags="vblex.der_ante.*"/>
+      <cat-item tags="vblex.der_inte.*"/>
+      <cat-item tags="vblex.der_onte.*"/>
+      <cat-item tags="vblex.der_ate.*"/>
+      <cat-item tags="vblex.der_ite.*"/>
+      <cat-item tags="vblex.der_ote.*"/>
       <cat-item tags="adj.der_qual.*"/>
       <cat-item tags="n.der_ala.adj.*"/>
       <cat-item tags="n.der_oz.adj.*"/>
