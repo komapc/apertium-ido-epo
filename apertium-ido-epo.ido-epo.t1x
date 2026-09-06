@@ -101,6 +101,18 @@
       <cat-item lemma="su" tags="prn"/>
       <cat-item lemma="su" tags="prn.*"/>
     </def-cat>
+    <!-- Ido "qua" ("who"/"which") doubles as an interrogative determiner
+         before a noun (qua libro → which book), unlike "quo" ("what"),
+         which is only ever a standalone pronoun. Bidix maps it to bare EO
+         "kiu<prn>"; used attributively it must be re-emitted as <det><itg>
+         agreeing with the noun (see the prn_itg+nom rule family below,
+         #205) instead of falling through to the generic prn_to_obj/subj
+         dispatch (which would wrongly consume the noun-less "kiu" alone and
+         leave the following noun uninflected: "qua libro" → "kiun libro"). -->
+    <def-cat n="prn_itg">
+      <cat-item lemma="qua" tags="prn"/>
+      <cat-item lemma="Qua" tags="prn"/>
+    </def-cat>
     <!-- Equative correlative pair: tam X kam → tiel X kiel. kam's bare bidix
          value stays 'ol' (the comparative "than" reading: plu forta kam → pli
          forta ol); the equative reading is selected by the tam … kam pattern. -->
@@ -386,6 +398,18 @@
           <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
           <out><lu><get-case-from pos="1"><lit v="tiu"/></get-case-from><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
         </when>
+        <!-- qua/quo ("who"/"what", #205): the bidix hands over the bare
+             lemma (kiu/kio<prn>, no itg/sg/cas), which the EO generator
+             rejects outright: minimum tags are itg-or-rel + sg/pl +
+             nom/acc. Source doesn't distinguish number, so default sg. -->
+        <when>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="kiu"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="kiu"/></get-case-from><lit-tag v="prn"/><lit-tag v="itg"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+        </when>
+        <when>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="kio"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="kio"/></get-case-from><lit-tag v="prn"/><lit-tag v="itg"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+        </when>
         <otherwise>
           <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
         </otherwise>
@@ -442,8 +466,21 @@
           <out><lu><get-case-from pos="1"><lit v="oni"/></get-case-from><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
         </when>
         <when>
+          <!-- Direct-object position: accusative, not the nominative "tiu"
+               takes as a subject/predicate in prn_to_subj above. Currently
+               unreachable (no bidix pair maps to bare tl lemma "tiu"), but
+               correct-in-principle should one appear. -->
           <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="tiu"/></equal></test>
-          <out><lu><get-case-from pos="1"><lit v="tiu"/></get-case-from><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="nom"/></lu></out>
+          <out><lu><get-case-from pos="1"><lit v="tiu"/></get-case-from><lit-tag v="prn"/><lit-tag v="tn"/><lit-tag v="sg"/><lit-tag v="acc"/></lu></out>
+        </when>
+        <!-- qua/quo object (#205): same tag gap as prn_to_subj, accusative. -->
+        <when>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="kiu"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="kiu"/></get-case-from><lit-tag v="prn"/><lit-tag v="itg"/><lit-tag v="sg"/><lit-tag v="acc"/></lu></out>
+        </when>
+        <when>
+          <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="kio"/></equal></test>
+          <out><lu><get-case-from pos="1"><lit v="kio"/></get-case-from><lit-tag v="prn"/><lit-tag v="itg"/><lit-tag v="sg"/><lit-tag v="acc"/></lu></out>
         </when>
         <otherwise>
           <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
@@ -2748,6 +2785,105 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out><lu><clip pos="1" side="tl" part="whole"/></lu><b pos="1"/></out>
         <call-macro n="prn_to_obj"><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+
+    <!-- Interrogative determiner ("qua" attributive) + Noun (#205): re-emit
+         as EO <det><itg> agreeing with the noun in number/case (qua libro →
+         kiu libro; qua libri → kiuj libroj). Longer match than the 2-item
+         vblex+prn / standalone prn rules, so it wins regardless of order,
+         but grouped here with the other pronoun rules for locality. -->
+    <rule comment="interrogative determiner + noun agreement (qua libro)">
+      <pattern>
+        <pattern-item n="prn_itg"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="det"/>
+            <lit-tag v="itg"/>
+            <clip pos="2" side="tl" part="nbr"/>
+            <clip pos="2" side="tl" part="cas"/>
+          </lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <!-- Intransitive verb + interrogative determiner + Noun: post-verbal
+         subject stays nominative. -->
+    <rule comment="intransitive verb + interrogative determiner + noun: nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="prn_itg"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <lit-tag v="det"/>
+            <lit-tag v="itg"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <!-- Verb + interrogative determiner + Noun: accusative if transitive,
+         nominative after copula. -->
+    <rule comment="verb + interrogative determiner + noun: accusative if transitive">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="prn_itg"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <choose>
+          <when>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="det"/>
+                <lit-tag v="itg"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="det"/>
+                <lit-tag v="itg"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
