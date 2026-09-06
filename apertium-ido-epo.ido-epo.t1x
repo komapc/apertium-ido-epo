@@ -68,18 +68,34 @@
       <cat-item lemma="sembl"   tags="vblex.*"/>  <!-- semblar = seem   -> ŝajni  -->
       <cat-item lemma="semblar" tags="vblex.*"/>
     </def-cat>
+    <!-- Intransitive verbs. As with vbcop above, the Ido analyser emits the
+         bare stem as the verb lemma (venis->ven<vblex>), so this def-cat was
+         entirely dead until the bare-stem items were added: every cat-item
+         here originally listed only the infinitive form, which never
+         matches at runtime (apertium-ido-epo#209). -->
     <def-cat n="vbintr">
+      <cat-item lemma="jac" tags="vblex.*"/>
       <cat-item lemma="jacar" tags="vblex.*"/>
+      <cat-item lemma="ven" tags="vblex.*"/>
       <cat-item lemma="venar" tags="vblex.*"/>
+      <cat-item lemma="ir" tags="vblex.*"/>
       <cat-item lemma="irar" tags="vblex.*"/>
+      <cat-item lemma="st" tags="vblex.*"/>
       <cat-item lemma="star" tags="vblex.*"/>
+      <cat-item lemma="mort" tags="vblex.*"/>
       <cat-item lemma="mortar" tags="vblex.*"/>
+      <cat-item lemma="dorm" tags="vblex.*"/>
       <cat-item lemma="dormar" tags="vblex.*"/>
+      <cat-item lemma="ariv" tags="vblex.*"/>
       <cat-item lemma="arivir" tags="vblex.*"/>
+      <cat-item lemma="depart" tags="vblex.*"/>
       <cat-item lemma="departir" tags="vblex.*"/>
+      <cat-item lemma="apar" tags="vblex.*"/>
       <cat-item lemma="aparar" tags="vblex.*"/>
       <cat-item lemma="exisar" tags="vblex.*"/>
+      <cat-item lemma="exist" tags="vblex.*"/>
       <cat-item lemma="existar" tags="vblex.*"/>
+      <cat-item lemma="rest" tags="vblex.*"/>
       <cat-item lemma="restar" tags="vblex.*"/>
     </def-cat>
     <def-cat n="prn">
@@ -1211,6 +1227,7 @@
       </pattern>
       <action>
         <!-- Intransitive verbs: nouns after verb are subjects, not objects -->
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -1240,6 +1257,7 @@
       </pattern>
       <action>
         <!-- Intransitive verbs: nouns after verb are subjects, not objects -->
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -1306,6 +1324,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
           <b/>
@@ -1405,6 +1424,44 @@
       </action>
     </rule>
 
+    <!-- Partitive-quantity correlative + Adjective + Noun (standalone): the
+         3-token corr_u+adj+nom rule above has no corr_da analog, so "Quanta
+         bela domi" fell through to the generic adj+adj+nom rule (which wins
+         the 3-token tie by document order) and emitted "#kiom" as a bare
+         untaggable adjective. Both the adjective and the noun after "da"
+         stay nominative regardless of context, same as the 2-token
+         corr_da+nom rule below. -->
+    <rule comment="partitive-quantity correlative + adjective + noun agreement">
+      <pattern>
+        <pattern-item n="corr_da"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="tanta"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="qnt"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="itg"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
     <!-- Partitive-quantity correlative + Noun (standalone), #206: re-emit
          tanta/quanta as the invariant multiword "tiom da"/"kiom da" with
          <det><qnt|itg><nbr><cas>, leaving the noun bare/nominative: "da"
@@ -1446,6 +1503,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
             <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tanta"/></equal></test>
@@ -1547,6 +1605,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
           <b/>
@@ -1904,12 +1963,48 @@
          - After subjects or standalone: keep nominative
          ============================================================================ -->
     
+    <!-- Intransitive Verb + Noun + Conjunction + Noun: coordinated subjects stay
+         nominative. Must precede the generic vblex sibling below: "vblex"
+         matches any vblex verb (including bare-stem intransitives like
+         "ven"), so with equal pattern length the tie is broken by document
+         order (apertium-ido-epo#209 fallout — this rule was entirely dead
+         until vbintr's def-cat learned to match bare stems). -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: post-verbal nouns are subjects, keep nominative -->
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="cnjcoo_lu"><with-param pos="3"/></call-macro>
+        <out>
+          <b pos="3"/>
+          <lu>
+            <clip pos="4" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Verb + Noun + Conjunction + Noun: coordinated objects/subjects after verb
-         
-         Handles: 
+
+         Handles:
          - Transitive: "Me vidas la kato kaj la hundo" → "Mi vidas la katon kaj la hundon"
          - Intransitive: "jacas Oceano Atlantiko" → "kuŝas Oceano Atlantiko" (subjects stay nominative)
-         
+
          LINGUISTIC: Critical test case for accusative - BOTH nouns must receive same case. -->
     <rule>
       <pattern>
@@ -1972,36 +2067,6 @@
       </action>
     </rule>
 
-    <!-- Intransitive Verb + Noun + Conjunction + Noun: coordinated subjects stay nominative -->
-    <rule>
-      <pattern>
-        <pattern-item n="vbintr"/>
-        <pattern-item n="nom"/>
-        <pattern-item n="cnjcoo"/>
-        <pattern-item n="nom"/>
-      </pattern>
-      <action>
-        <!-- Intransitive verbs: post-verbal nouns are subjects, keep nominative -->
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b pos="1"/>
-          <lu>
-            <clip pos="2" side="tl" part="whole"/>
-          </lu>
-          <b pos="2"/>
-        </out>
-        <call-macro n="cnjcoo_lu"><with-param pos="3"/></call-macro>
-        <out>
-          <b pos="3"/>
-          <lu>
-            <clip pos="4" side="tl" part="whole"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
-    
     <!-- Ditransitive word order (#204): "me donis a la puero la libro" (I gave
          to the boy the book) puts the dative-marked indirect object BEFORE
          the direct object. Without a dedicated rule, the shorter existing
@@ -2110,6 +2175,60 @@
       </action>
     </rule>
 
+    <!-- Intransitive Verb + Det + Noun + Conjunction + Det + Noun: coordinated
+         subjects with determiners. Must precede the generic vblex sibling
+         below: "vblex" matches any vblex verb (including bare-stem
+         intransitives like "ven"), so with equal pattern length the tie is
+         broken by document order (apertium-ido-epo#209 fallout — this rule
+         was entirely dead until vbintr's def-cat learned to match bare
+         stems). Both "la"s need their def/sg/nom tags injected explicitly:
+         see the comment on the intransitive-verb det+nom rule above. -->
+    <rule>
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: post-verbal nouns are subjects, keep nominative -->
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b pos="2"/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+          <b pos="3"/>
+        </out>
+        <call-macro n="cnjcoo_lu"><with-param pos="4"/></call-macro>
+        <out>
+          <b pos="4"/>
+          <lu>
+            <clip pos="5" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b pos="5"/>
+          <lu>
+            <clip pos="6" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Verb + Det + Noun + Conjunction + Det + Noun: coordinated objects with determiners
 
          Both "la"s need their def/sg/cas tags injected explicitly: see the
@@ -2202,55 +2321,6 @@
             </out>
           </otherwise>
         </choose>
-      </action>
-    </rule>
-
-    <!-- Intransitive Verb + Det + Noun + Conjunction + Det + Noun: coordinated subjects with determiners
-
-         Both "la"s need their def/sg/nom tags injected explicitly: see the
-         comment on the intransitive-verb det+nom rule above. -->
-    <rule>
-      <pattern>
-        <pattern-item n="vbintr"/>
-        <pattern-item n="det"/>
-        <pattern-item n="nom"/>
-        <pattern-item n="cnjcoo"/>
-        <pattern-item n="det"/>
-        <pattern-item n="nom"/>
-      </pattern>
-      <action>
-        <!-- Intransitive verbs: post-verbal nouns are subjects, keep nominative -->
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-          <b pos="1"/>
-          <lu>
-            <clip pos="2" side="tl" part="whole"/>
-            <lit-tag v="def"/>
-            <lit-tag v="sg"/>
-            <lit-tag v="nom"/>
-          </lu>
-          <b pos="2"/>
-          <lu>
-            <clip pos="3" side="tl" part="whole"/>
-          </lu>
-          <b pos="3"/>
-        </out>
-        <call-macro n="cnjcoo_lu"><with-param pos="4"/></call-macro>
-        <out>
-          <b pos="4"/>
-          <lu>
-            <clip pos="5" side="tl" part="whole"/>
-            <lit-tag v="def"/>
-            <lit-tag v="sg"/>
-            <lit-tag v="nom"/>
-          </lu>
-          <b pos="5"/>
-          <lu>
-            <clip pos="6" side="tl" part="whole"/>
-          </lu>
-        </out>
       </action>
     </rule>
 
@@ -3025,6 +3095,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
           <b/>
