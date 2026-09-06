@@ -202,6 +202,19 @@
       <cat-item lemma="c" tags="adj"/>
       <cat-item lemma="C" tags="adj"/>
     </def-cat>
+    <!-- Ido partitive-quantity correlatives tanta/quanta ("so much/many" /
+         "how much/many"). The bidix maps them to bare EO "tiom"/"kiom", but
+         those lemmas are only generatable as the invariant multiword "tiom
+         da"/"kiom da" (apertium-epo requires the following noun with "da",
+         bare/uninflected: "tiom domoj" doesn't exist, only "tiom da domoj").
+         Matched by SL lemma so cardinals/other <num>/<adj> words are untouched;
+         see the corr_da+nom rule family below (#206). -->
+    <def-cat n="corr_da">
+      <cat-item lemma="tanta" tags="num"/>
+      <cat-item lemma="Tanta" tags="num"/>
+      <cat-item lemma="quant" tags="adj"/>
+      <cat-item lemma="Quant" tags="adj"/>
+    </def-cat>
     <def-cat n="ord">
       <cat-item tags="num.ord"/>
       <cat-item tags="num.ord.*"/>
@@ -1327,6 +1340,247 @@
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
               <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="prn"/><lit-tag v="tn"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_nom"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Partitive-quantity correlative + Noun (standalone), #206: re-emit
+         tanta/quanta as the invariant multiword "tiom da"/"kiom da" with
+         <det><qnt|itg><nbr><cas>, leaving the noun bare/nominative: "da"
+         governs no case in Esperanto, so the noun never gets -n even when
+         the whole phrase is a direct object (that -n, if any, lands on
+         "tiom"/"kiom" itself; see the transitive rule below). Must precede
+         the generic num/adj rules (equal-length ties, first wins). -->
+    <rule comment="partitive-quantity correlative + noun agreement">
+      <pattern>
+        <pattern-item n="corr_da"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="tanta"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="qnt"/><clip pos="2" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_nom"/><clip pos="2" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="itg"/><clip pos="2" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_nom"/><clip pos="2" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    <!-- Intransitive verb + partitive-quantity correlative + Noun: post-verbal
+         subject stays nominative on both the quantifier and the noun. -->
+    <rule comment="intransitive verb + partitive-quantity correlative + noun: nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="corr_da"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tanta"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="qnt"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="itg"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    <!-- Verb + partitive-quantity correlative + Noun: accusative on the
+         quantifier if transitive (nominative after copula); the noun after
+         "da" always stays nominative regardless. -->
+    <rule comment="verb + partitive-quantity correlative + noun: accusative quantifier if transitive">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="corr_da"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <choose>
+          <when>
+            <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tanta"/></equal></test>
+            <choose>
+              <when>
+                <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+                <out>
+                  <lu><clip pos="1" side="tl" part="whole"/></lu>
+                  <b/>
+                  <lu><clip pos="2" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="qnt"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+                  <b/>
+                  <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+                </out>
+              </when>
+              <otherwise>
+                <out>
+                  <lu><clip pos="1" side="tl" part="whole"/></lu>
+                  <b/>
+                  <lu><clip pos="2" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="qnt"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+                  <b/>
+                  <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+                </out>
+              </otherwise>
+            </choose>
+          </when>
+          <otherwise>
+            <choose>
+              <when>
+                <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+                <out>
+                  <lu><clip pos="1" side="tl" part="whole"/></lu>
+                  <b/>
+                  <lu><clip pos="2" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="itg"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+                  <b/>
+                  <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+                </out>
+              </when>
+              <otherwise>
+                <out>
+                  <lu><clip pos="1" side="tl" part="whole"/></lu>
+                  <b/>
+                  <lu><clip pos="2" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="itg"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+                  <b/>
+                  <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+                </out>
+              </otherwise>
+            </choose>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Quantifier accusative (#203): kelka/multa/diversa/cetera are mis-tagged
+         <num> in the lexicon but agree like adjectives (see the "quant" def-cat
+         above and the standalone quant+nom rule below). Those existing rules
+         only cover the noun phrase itself; a verb immediately in front left the
+         quantifier and noun stuck at nominative even when the verb is
+         transitive ("Me havas multa amiki" → "Mi havas multaj amikoj", missing
+         -n). These three mirror the corr_u trio above. -->
+    <!-- Intransitive verb + Quantifier + Noun: post-verbal subject stays nominative -->
+    <rule comment="intransitive verb + quantifier + noun: nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="quant"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <lit-tag v="adj"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <!-- Verb + Quantifier + Noun: accusative if transitive, nominative after copula -->
+    <rule comment="verb + quantifier + noun: accusative if transitive">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="quant"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <choose>
+          <when>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <lit-tag v="adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_nom"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    <!-- Verb + Quantifier + Adjective + Noun: accusative if transitive -->
+    <rule comment="verb + quantifier + adjective + noun: accusative if transitive">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="quant"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <choose>
+          <when>
+            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
               <b/>
               <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
               <b/>
