@@ -131,6 +131,13 @@
       <cat-item tags="pr"/>
       <cat-item tags="pr.*"/>
     </def-cat>
+    <!-- Dative-marking "to" (a/ad), restricted from the generic "pr" category
+         so the ditransitive word-order rules below (#204) only fire for a
+         genuine indirect-object preposition, not "en"/"pri"/etc. -->
+    <def-cat n="pr_dat">
+      <cat-item lemma="a" tags="pr"/>
+      <cat-item lemma="ad" tags="pr"/>
+    </def-cat>
     <def-cat n="cnjcoo">
       <cat-item tags="cnjcoo"/>
       <cat-item tags="cnjcoo.*"/>
@@ -780,7 +787,7 @@
       <action>
         <call-macro n="io_to_eo_tense"><with-param pos="3"/></call-macro>
         <out>
-          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <lu><clip pos="1" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
           <b/>
           <lu><clip pos="2" side="tl" part="whole"/></lu>
           <b/>
@@ -843,7 +850,7 @@
       <action>
         <call-macro n="io_to_eo_tense"><with-param pos="4"/></call-macro>
         <out>
-          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <lu><clip pos="1" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
           <b/>
           <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
           <b/>
@@ -869,7 +876,7 @@
       <action>
         <call-macro n="io_to_eo_tense"><with-param pos="3"/></call-macro>
         <out>
-          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <lu><clip pos="1" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
           <b/>
           <lu><clip pos="2" side="tl" part="whole"/></lu>
           <b/>
@@ -1216,7 +1223,15 @@
       </action>
     </rule>
     
-    <!-- Intransitive Verb + Det + Noun: post-verbal subject with determiner stays nominative -->
+    <!-- Intransitive Verb + Det + Noun: post-verbal subject with determiner stays nominative
+
+         "la" (det) needs its def/sg/cas tags injected explicitly: the
+         bidix hands it over bare, and the generator fails it outright
+         without them (a "#la" generation failure, NOT the documented
+         harmless "#" artifact for sentence-initial closed-class words; see
+         modes.xml: this one occurs mid-sentence after a verb and produces
+         wrong output, not just a stray marker). Mirrors the working
+         standalone det+nom rule below. -->
     <rule>
       <pattern>
         <pattern-item n="vbintr"/>
@@ -1232,6 +1247,9 @@
           <b/>
           <lu>
             <clip pos="2" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
           </lu>
           <b/>
           <lu>
@@ -1731,7 +1749,10 @@
       </action>
     </rule>
 
-    <!-- Verb + Determiner + Noun: check if copula or transitive -->
+    <!-- Verb + Determiner + Noun: check if copula or transitive
+
+         "la" (det) needs its def/sg/cas tags injected explicitly: see the
+         comment on the intransitive-verb version above. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -1751,6 +1772,9 @@
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
               </lu>
               <b/>
               <lu>
@@ -1767,6 +1791,9 @@
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="acc"/>
               </lu>
               <b/>
               <lu>
@@ -1781,7 +1808,10 @@
       </action>
     </rule>
 
-    <!-- Verb + Determiner + Adjective + Noun: check if copula or transitive -->
+    <!-- Verb + Determiner + Adjective + Noun: check if copula or transitive
+
+         "la" (det) needs its def/sg/cas tags injected explicitly: see the
+         comment on the intransitive-verb det+nom rule above. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -1802,6 +1832,9 @@
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
               </lu>
               <b/>
               <lu>
@@ -1825,6 +1858,9 @@
               <b/>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="acc"/>
               </lu>
               <b/>
               <lu>
@@ -1966,7 +2002,118 @@
       </action>
     </rule>
     
-    <!-- Verb + Det + Noun + Conjunction + Det + Noun: coordinated objects with determiners -->
+    <!-- Ditransitive word order (#204): "me donis a la puero la libro" (I gave
+         to the boy the book) puts the dative-marked indirect object BEFORE
+         the direct object. Without a dedicated rule, the shorter existing
+         rules match greedily left-to-right: "a" alone, then "la puero" via
+         the standalone det+nom rule (always nominative — correct, it's a
+         PP object), leaving "la libro" to ALSO fall into the standalone
+         det+nom rule instead of getting the accusative a direct object of a
+         transitive verb needs. These four rules span the whole "verb +
+         pr_dat + IO + DO" sequence (both objects with or without a
+         determiner) so the trailing NP is recognized as the direct object
+         and gets the accusative; the dative-marked NP always stays
+         nominative (it's an object of "al", not of the verb). The DO-before-IO
+         order ("me donis la libro a la puero") already works via the
+         ordinary verb+nom / verb+det+nom rules earlier in this file — only
+         IO-before-DO needed a new rule. -->
+    <rule comment="verb + dative pr + det-IO + det-DO: accusative on the trailing direct object">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="pr_dat"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="acc"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" side="tl" part="lem"/><clip pos="6" side="tl" part="a_nom"/><clip pos="6" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="verb + dative pr + det-IO + bare-DO: accusative on the trailing direct object">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="pr_dat"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="lem"/><clip pos="5" side="tl" part="a_nom"/><clip pos="5" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="verb + dative pr + bare-IO + det-DO: accusative on the trailing direct object">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="pr_dat"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="acc"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="lem"/><clip pos="5" side="tl" part="a_nom"/><clip pos="5" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="verb + dative pr + bare-IO + bare-DO: accusative on the trailing direct object">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="pr_dat"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_nom"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Verb + Det + Noun + Conjunction + Det + Noun: coordinated objects with determiners
+
+         Both "la"s need their def/sg/cas tags injected explicitly: see the
+         comment on the intransitive-verb det+nom rule above. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -1989,6 +2136,9 @@
               <b pos="1"/>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
               </lu>
               <b pos="2"/>
               <lu>
@@ -2001,6 +2151,9 @@
               <b pos="4"/>
               <lu>
                 <clip pos="5" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
               </lu>
               <b pos="5"/>
               <lu>
@@ -2017,6 +2170,9 @@
               <b pos="1"/>
               <lu>
                 <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="acc"/>
               </lu>
               <b pos="2"/>
               <lu>
@@ -2032,6 +2188,9 @@
               <b pos="4"/>
               <lu>
                 <clip pos="5" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="acc"/>
               </lu>
               <b pos="5"/>
               <lu>
@@ -2046,7 +2205,10 @@
       </action>
     </rule>
 
-    <!-- Intransitive Verb + Det + Noun + Conjunction + Det + Noun: coordinated subjects with determiners -->
+    <!-- Intransitive Verb + Det + Noun + Conjunction + Det + Noun: coordinated subjects with determiners
+
+         Both "la"s need their def/sg/nom tags injected explicitly: see the
+         comment on the intransitive-verb det+nom rule above. -->
     <rule>
       <pattern>
         <pattern-item n="vbintr"/>
@@ -2065,6 +2227,9 @@
           <b pos="1"/>
           <lu>
             <clip pos="2" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
           </lu>
           <b pos="2"/>
           <lu>
@@ -2077,6 +2242,9 @@
           <b pos="4"/>
           <lu>
             <clip pos="5" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
           </lu>
           <b pos="5"/>
           <lu>
@@ -2178,7 +2346,15 @@
       </action>
     </rule>
 
-    <!-- Verb + Det + Adj + Noun + Conjunction + Det + Adj + Noun: coordinated objects with determiners and adjectives -->
+    <!-- Verb + Det + Adj + Noun + Conjunction + Det + Adj + Noun: coordinated objects with determiners and adjectives
+
+         Both "la"s need their def/sg/cas tags injected explicitly: see the
+         comment on the intransitive-verb det+nom rule above. Also fixes a
+         second bug found alongside it: the transitive branch applied
+         accusative to both coordinated NOUNS but left both coordinated
+         ADJECTIVES nominative ("Me havas la bela domo e la granda domo" ->
+         "domon" but "bela"/"granda" stayed unmarked): adjectives must
+         agree with their own noun's case like everywhere else in this file. -->
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2199,7 +2375,12 @@
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b pos="1"/>
-              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
               <b pos="2"/>
               <lu><clip pos="3" side="tl" part="whole"/></lu>
               <b pos="3"/>
@@ -2209,7 +2390,12 @@
             <call-macro n="cnjcoo_lu"><with-param pos="5"/></call-macro>
             <out>
               <b pos="5"/>
-              <lu><clip pos="6" side="tl" part="whole"/></lu>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
               <b pos="6"/>
               <lu><clip pos="7" side="tl" part="whole"/></lu>
               <b pos="7"/>
@@ -2217,14 +2403,22 @@
             </out>
           </when>
           <otherwise>
-            <!-- Transitive: accusative on both nouns -->
+            <!-- Transitive: accusative on both determiners, adjectives, and nouns -->
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b pos="1"/>
-              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="acc"/>
+              </lu>
               <b pos="2"/>
               <lu>
-                <clip pos="3" side="tl" part="whole"/>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_adj"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
               </lu>
               <b pos="3"/>
               <lu>
@@ -2238,9 +2432,19 @@
             <call-macro n="cnjcoo_lu"><with-param pos="5"/></call-macro>
             <out>
               <b pos="5"/>
-              <lu><clip pos="6" side="tl" part="whole"/></lu>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="acc"/>
+              </lu>
               <b pos="6"/>
-              <lu><clip pos="7" side="tl" part="whole"/></lu>
+              <lu>
+                <clip pos="7" side="tl" part="lem"/>
+                <clip pos="7" side="tl" part="a_adj"/>
+                <clip pos="8" side="tl" part="nbr"/>
+                <lit-tag v="acc"/>
+              </lu>
               <b pos="7"/>
               <lu>
                 <clip pos="8" side="tl" part="lem"/>
