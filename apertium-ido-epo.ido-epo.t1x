@@ -412,6 +412,13 @@
          stays accusative in both (a bare reflexive is an object). -->
     <def-macro n="prn_to_subj" npar="1">
       <choose>
+        <!-- The bidix already carries apertium-epo's full tags (tio<prn><tn><sg><nom>,
+             kiu<prn><itg><sg><acc> for quan): keep them, incl. number and case. The
+             per-lemma branches below only serve bare-lemma TLs. -->
+        <when>
+          <test><not><equal><clip pos="1" side="tl" part="cas"/><lit v=""/></equal></not></test>
+          <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
+        </when>
         <when>
           <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
           <out><lu><get-case-from pos="1"><lit v="si"/></get-case-from><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="acc"/></lu></out>
@@ -483,6 +490,12 @@
     </def-macro>
     <def-macro n="prn_to_obj" npar="1">
       <choose>
+        <!-- Full-tag TL (see prn_to_subj): same pronoun, object case. -->
+        <when>
+          <test><not><equal><clip pos="1" side="tl" part="cas"/><lit v=""/></equal></not></test>
+          <let><clip pos="1" side="tl" part="cas"/><lit-tag v="acc"/></let>
+          <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
+        </when>
         <when>
           <test><equal caseless="yes"><clip pos="1" side="tl" part="lem"/><lit v="si"/></equal></test>
           <out><lu><get-case-from pos="1"><lit v="si"/></get-case-from><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="acc"/></lu></out>
