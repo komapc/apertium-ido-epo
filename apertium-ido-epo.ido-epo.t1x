@@ -286,10 +286,14 @@
          da"/"kiom da" (apertium-epo requires the following noun with "da",
          bare/uninflected: "tiom domoj" doesn't exist, only "tiom da domoj").
          Matched by SL lemma so cardinals/other <num>/<adj> words are untouched;
-         see the corr_da+nom rule family below (#206). -->
+         see the corr_da+nom rule family below (#206). tanta is analysed as
+         tant<adj> since the extractor stopped reading "nombro" in its gloss as
+         a numeral label; tanta<num> stays for older lexicons. -->
     <def-cat n="corr_da">
       <cat-item lemma="tanta" tags="num"/>
       <cat-item lemma="Tanta" tags="num"/>
+      <cat-item lemma="tant" tags="adj"/>
+      <cat-item lemma="Tant" tags="adj"/>
       <cat-item lemma="quant" tags="adj"/>
       <cat-item lemma="Quant" tags="adj"/>
     </def-cat>
@@ -1496,7 +1500,7 @@
       <action>
         <choose>
           <when>
-            <test><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="tanta"/></equal></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="tanta"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="tant"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="qnt"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
               <b/>
@@ -1533,7 +1537,7 @@
       <action>
         <choose>
           <when>
-            <test><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="tanta"/></equal></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="tanta"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="tant"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="lem"/><lit v=" da"/><lit-tag v="det"/><lit-tag v="qnt"/><clip pos="2" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
               <b/>
@@ -1562,7 +1566,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tanta"/></equal></test>
+            <test><or><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tanta"/></equal><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tant"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -1596,7 +1600,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tanta"/></equal></test>
+            <test><or><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tanta"/></equal><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tant"/></equal></or></test>
             <choose>
               <when>
                 <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
