@@ -297,6 +297,12 @@
       <cat-item lemma="quant" tags="adj"/>
       <cat-item lemma="Quant" tags="adj"/>
     </def-cat>
+    <!-- Cardinals only (du, quar, 3): bare <num> and digits. Unlike num.*,
+         excludes ordinals and anything else carrying more num.* tags. -->
+    <def-cat n="card">
+      <cat-item tags="num"/>
+      <cat-item tags="num.ciph.*"/>
+    </def-cat>
     <def-cat n="ord">
       <cat-item tags="num.ord"/>
       <cat-item tags="num.ord.*"/>
@@ -1759,6 +1765,157 @@
               <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
               <b/>
               <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_nom"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <!-- Cardinal numerals in a verb's object ("La hundo havas quar gambi"
+         → "…kvar gamboj", missing -n). EO cardinals are invariable, so only the
+         noun (and an adjective before it) takes the case; the noun is emitted
+         whole with just its case replaced, keeping gender (filiini → filinojn).
+         Intransitive and copulative verbs keep a post-verbal subject/predicate
+         nominative; they precede the vblex rules because equal-length patterns
+         tie-break by document order. -->
+    <rule comment="intransitive verb + cardinal + noun: nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="card"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sp"/><lit-tag v="nom"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="copulative verb + cardinal + noun: nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="card"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sp"/><lit-tag v="nom"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="intransitive verb + cardinal + adjective + noun: nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="card"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sp"/><lit-tag v="nom"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+          <b/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="copulative verb + cardinal + adjective + noun: nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="card"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sp"/><lit-tag v="nom"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+          <b/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="verb + cardinal + noun: accusative if transitive">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="card"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <choose>
+          <when>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sp"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <let><clip pos="3" side="tl" part="cas"/><lit-tag v="acc"/></let>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sp"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+    <rule comment="verb + cardinal + adjective + noun: accusative if transitive">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="card"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <choose>
+          <when>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sp"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+            </out>
+          </when>
+          <otherwise>
+            <let><clip pos="4" side="tl" part="cas"/><lit-tag v="acc"/></let>
+            <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sp"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
             </out>
           </otherwise>
         </choose>
