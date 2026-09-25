@@ -47,6 +47,7 @@
     </def-cat>
     <def-cat n="np">
       <cat-item tags="np"/>
+      <cat-item tags="np.*"/>
     </def-cat>
     <def-cat n="ij">
       <cat-item tags="ij"/>
@@ -301,7 +302,9 @@
       </action>
     </rule>
 
-    <!-- Proper noun rule: pass through -->
+    <!-- Proper noun: Ido names are invariable (the Ido monodix has a bare
+         Francia<np>), so apertium-epo's subtype, number and case are dropped
+         (Francion → Francia). -->
     <rule>
       <pattern>
         <pattern-item n="np"/>
@@ -309,7 +312,8 @@
       <action>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="np"/>
           </lu>
         </out>
       </action>

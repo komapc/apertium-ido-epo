@@ -3655,63 +3655,74 @@
          PROPER NOUN RULES
          ============================================================================ -->
     
-    <!-- Proper noun (standalone): pass through -->
-    <rule>
+    <!-- Proper noun. The bidix gives apertium-epo's own np reading minus
+         number and case (Francio<np><loc>, Maria<np><ant><f>; or a common
+         noun, Japano<n><m>, where apertium-epo has no name) — names are
+         singular, so only the case is decided here. -->
+    <rule comment="proper noun">
       <pattern>
         <pattern-item n="np"/>
       </pattern>
       <action>
         <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-            <!-- Fallback tags for unknown proper nouns -->
-            <lit-tag v="al"/>
-            <lit-tag v="sg"/>
-            <lit-tag v="nom"/>
-          </lu>
+          <lu><clip pos="1" side="tl" part="whole"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
         </out>
       </action>
     </rule>
 
-    <!-- Verb + Proper noun: check if copula or transitive -->
-    <rule>
+    <!-- Verb + proper noun: the object takes -n (Me vizitis Francia → Mi vizitis
+         Francion) unless the verb is intransitive or copulative. Same ordering
+         as the cardinal rules: vbintr/vbcop must precede vblex (document order
+         breaks the equal-length tie). -->
+    <rule comment="intransitive verb + proper noun: nominative">
       <pattern>
-        <pattern-item n="vbconj"/>
+        <pattern-item n="vbintr"/>
         <pattern-item n="np"/>
       </pattern>
       <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="copulative verb + proper noun: nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="verb + proper noun: accusative unless esar">
+      <pattern>
+        <pattern-item n="vblex"/>
+        <pattern-item n="np"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <!-- If verb is copula, keep nominative -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
-              <lu>
-                <clip pos="1" side="tl" part="whole"/>
-              </lu>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
-              <lu>
-                <clip pos="2" side="tl" part="whole"/>
-                <lit-tag v="al"/>
-                <lit-tag v="sg"/>
-                <lit-tag v="nom"/>
-              </lu>
+              <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
             </out>
           </when>
           <otherwise>
-            <!-- Transitive verb: apply accusative to proper noun object -->
             <out>
-              <lu>
-                <clip pos="1" side="tl" part="whole"/>
-              </lu>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
-              <lu>
-                <clip pos="2" side="tl" part="lem"/>
-                <lit-tag v="np"/>
-                <!-- Inherit tags from bidix if available -->
-                <clip pos="2" side="tl" part="np_type"/>
-                <clip pos="2" side="tl" part="nbr"/>
-                <lit-tag v="acc"/>
-              </lu>
+              <lu><clip pos="2" side="tl" part="whole"/><lit-tag v="sg"/><lit-tag v="acc"/></lu>
             </out>
           </otherwise>
         </choose>
