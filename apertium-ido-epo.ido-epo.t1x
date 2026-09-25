@@ -257,6 +257,14 @@
       <cat-item lemma="multa" tags="num"/>
       <cat-item lemma="diversa" tags="num"/>
       <cat-item lemma="cetera" tags="num"/>
+      <!-- Since the Sept 2026 regeneration (apertium-ido #100) the analyser
+           gives these as stem adjectives (multa → mult<adj>), which left
+           every quant rule dead and let "Venis multa homi" fall through to
+           the generic vblex+adj+nom rule (→ multajn homojn). -->
+      <cat-item lemma="kelk" tags="adj"/>
+      <cat-item lemma="mult" tags="adj"/>
+      <cat-item lemma="divers" tags="adj"/>
+      <cat-item lemma="ceter" tags="adj"/>
     </def-cat>
     <!-- Ido determiner correlatives (analyzed as adj) whose EO equivalents are
          -u tabelvortoj (ĉiu/iu/neniu/tiu). The EO generator has no <adj> entry
@@ -395,6 +403,15 @@
   </section-def-vars>
 
   <section-def-macros>
+    <!-- Numerals: digits now arrive from the analyser already tagged
+         <sp><nom> (bidix also offers <sp><acc>), while word numerals
+         (du, dek) arrive bare. Rules append <sp><nom> themselves, so strip
+         any existing number/case first or digits get it twice
+         (1749<num><ciph><sp><nom><sp><nom> → #1749). -->
+    <def-macro n="num_bare" npar="1">
+      <let><clip pos="1" side="tl" part="nbr"/><lit v=""/></let>
+      <let><clip pos="1" side="tl" part="cas"/><lit v=""/></let>
+    </def-macro>
     <def-macro n="pii_to_past" npar="1">
       <!-- Ido past indicative <pii> has no Esperanto generation form (the EO
            generator only knows <past>), so a finite past verb otherwise falls
@@ -1009,11 +1026,13 @@
       </pattern>
       <action>
         <call-macro n="io_to_eo_tense"><with-param pos="2"/></call-macro>
+        <!-- The bare bidix pronoun (Ili<prn>) has no generator entry; emit the
+             subject form like every other pronoun rule does. -->
+        <call-macro n="prn_to_subj"><with-param pos="1"/></call-macro>
         <out>
-          <lu><clip pos="1" side="tl" part="whole"/></lu>
-          <b/>
+          <b pos="1"/>
           <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
-          <b/>
+          <b pos="2"/>
           <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><lit-tag v="pl"/><lit-tag v="nom"/></lu>
         </out>
       </action>
@@ -1026,11 +1045,13 @@
       </pattern>
       <action>
         <call-macro n="io_to_eo_tense"><with-param pos="2"/></call-macro>
+        <!-- The bare bidix pronoun (Ili<prn>) has no generator entry; emit the
+             subject form like every other pronoun rule does. -->
+        <call-macro n="prn_to_subj"><with-param pos="1"/></call-macro>
         <out>
-          <lu><clip pos="1" side="tl" part="whole"/></lu>
-          <b/>
+          <b pos="1"/>
           <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
-          <b/>
+          <b pos="2"/>
           <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><lit-tag v="pl"/><lit-tag v="nom"/></lu>
         </out>
       </action>
@@ -1428,7 +1449,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -1476,7 +1497,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -1621,7 +1642,7 @@
             <test><or><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tanta"/></equal><equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="tant"/></equal></or></test>
             <choose>
               <when>
-                <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+                <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
                 <out>
                   <lu><clip pos="1" side="tl" part="whole"/></lu>
                   <b/>
@@ -1644,7 +1665,7 @@
           <otherwise>
             <choose>
               <when>
-                <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+                <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
                 <out>
                   <lu><clip pos="1" side="tl" part="whole"/></lu>
                   <b/>
@@ -1709,7 +1730,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -1757,7 +1778,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -1797,6 +1818,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="2"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
@@ -1814,6 +1836,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="2"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
@@ -1832,6 +1855,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="2"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
@@ -1852,6 +1876,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="2"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
@@ -1871,6 +1896,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="2"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
@@ -1904,6 +1930,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="2"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
@@ -1952,7 +1979,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -2007,7 +2034,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -2052,7 +2079,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -2092,7 +2119,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -2148,7 +2175,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -2208,7 +2235,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (to be), keep nominative (predicate) -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -2343,7 +2370,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative for both -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -2572,7 +2599,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative for both -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -2664,7 +2691,7 @@
         <choose>
           <when>
             <!-- If verb is "esar" (copula), keep nominative -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -2766,7 +2793,7 @@
         <choose>
           <when>
             <!-- If verb is copula, keep nominative -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b pos="1"/>
@@ -3238,7 +3265,7 @@
         <choose>
           <when>
             <!-- If verb is copula, keep pronoun in nominative -->
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -3458,7 +3485,7 @@
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
-            <test><or><equal><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
+            <test><or><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="esar"/></equal><equal caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="es"/></equal></or></test>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -3739,6 +3766,8 @@
         <pattern-item n="num"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="1"/></call-macro>
+        <call-macro n="num_bare"><with-param pos="3"/></call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3761,6 +3790,8 @@
         <pattern-item n="num"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="1"/></call-macro>
+        <call-macro n="num_bare"><with-param pos="2"/></call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
@@ -3783,6 +3814,7 @@
         <pattern-item n="num"/>
       </pattern>
       <action>
+        <call-macro n="num_bare"><with-param pos="1"/></call-macro>
         <out>
           <lu>
             <clip pos="1" side="tl" part="whole"/>
