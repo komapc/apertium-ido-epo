@@ -314,7 +314,19 @@
       <attr-item tags="n"/>
     </def-attr>
     <def-attr n="a_adj">
+      <!-- An Ido adjective can come out as an EO determiner or correlative
+           (omna → ĉiu<det><ind>, ta → tiu<prn><tn>, quala → kia<prn><rel>);
+           the rules rebuild it as lem + a_adj + nbr + cas, so a_adj must carry
+           those POS tags too or the word reaches the generator bare (#tiu). -->
       <attr-item tags="adj"/>
+      <attr-item tags="det.ind"/>
+      <attr-item tags="det.dem"/>
+      <attr-item tags="det.itg"/>
+      <attr-item tags="det.qnt"/>
+      <attr-item tags="det.rel"/>
+      <attr-item tags="prn.tn"/>
+      <attr-item tags="prn.rel"/>
+      <attr-item tags="prn.itg"/>
     </def-attr>
     <def-attr n="a_adv">
       <attr-item tags="adv"/>
