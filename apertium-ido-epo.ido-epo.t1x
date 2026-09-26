@@ -152,6 +152,8 @@
       <cat-item lemma="li" tags="prn"/>
       <cat-item lemma="ni" tags="prn"/>
       <cat-item lemma="vi" tags="prn"/>
+      <cat-item lemma="ili" tags="prn"/>
+      <cat-item lemma="oli" tags="prn"/>
     </def-cat>
     <!-- The reflexive pronoun only (Ido su). Used by the pr+prn_ref rule to keep
          a prepositional reflexive nominative (pri su → pri si), while the bare
