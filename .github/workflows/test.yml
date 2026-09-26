@@ -1,0 +1,42 @@
+name: regtest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Install Apertium toolchain (nightly)
+        run: |
+          wget -q https://apertium.projectjj.com/apt/install-nightly.sh -O - | sudo bash
+          sudo apt-get install -y apertium-all-dev apertium-regtest
+
+      - uses: actions/checkout@v4
+        with:
+          path: apertium-ido-epo
+
+      # configure.ac prefers ../apertium-ido and ../apertium-epo when present.
+      - name: Build apertium-ido
+        run: |
+          git clone --depth 1 https://github.com/komapc/apertium-ido.git
+          cd apertium-ido
+          touch NEWS README AUTHORS ChangeLog COPYING
+          ./autogen.sh && ./configure && make -j2
+
+      - name: Build apertium-epo
+        run: |
+          git clone --depth 1 https://github.com/apertium/apertium-epo.git
+          cd apertium-epo
+          ./autogen.sh && ./configure && make -j2
+
+      - name: Build apertium-ido-epo
+        working-directory: apertium-ido-epo
+        run: ./autogen.sh && ./configure && make -j2
+
+      - name: Regression tests
+        working-directory: apertium-ido-epo
+        run: make test
