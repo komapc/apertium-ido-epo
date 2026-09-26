@@ -151,6 +151,7 @@
     <def-cat n="prn_pl">
       <cat-item lemma="li" tags="prn"/>
       <cat-item lemma="ni" tags="prn"/>
+      <cat-item lemma="vi" tags="prn"/>
     </def-cat>
     <!-- The reflexive pronoun only (Ido su). Used by the pr+prn_ref rule to keep
          a prepositional reflexive nominative (pri su → pri si), while the bare
@@ -1486,6 +1487,26 @@
       </action>
     </rule>
     <!-- Verb + Correlative + Adjective + Noun: accusative if transitive -->
+    <rule comment="intransitive verb + corr_u + adj + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="corr_u"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="prn"/><lit-tag v="tn"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+            </out>
+      </action>
+    </rule>
     <rule comment="verb + correlative + adjective + noun: accusative if transitive">
       <pattern>
         <pattern-item n="vblex"/>
@@ -1767,6 +1788,26 @@
       </action>
     </rule>
     <!-- Verb + Quantifier + Adjective + Noun: accusative if transitive -->
+    <rule comment="intransitive verb + quant + adj + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="quant"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+            </out>
+      </action>
+    </rule>
     <rule comment="verb + quantifier + adjective + noun: accusative if transitive">
       <pattern>
         <pattern-item n="vblex"/>
@@ -1968,6 +2009,32 @@
 
          LINGUISTIC: Demonstrates the core accusative transformation.
          Adjective AND noun both receive -n in Esperanto when accusative. -->
+    <rule comment="intransitive verb + adj + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+      </action>
+    </rule>
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2069,6 +2136,23 @@
          Only the noun gets -n: the participle is emitted unchanged because the
          EO participle forms (pp2/pp3) have no accusative in apertium-epo.
          "Me havas suficanta tempo" → "Mi havas sufiĉanta tempon". -->
+    <rule comment="intransitive verb + ptcp_adj + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="ptcp_adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+      </action>
+    </rule>
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2108,6 +2192,31 @@
 
     <!-- Verb + Determiner + attributive participle + Noun (#210):
          "me vidas la kantanta viro" → "mi vidas la kantanta viron". -->
+    <rule comment="intransitive verb + det + ptcp_adj + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="ptcp_adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+            </out>
+      </action>
+    </rule>
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2223,6 +2332,40 @@
 
          "la" (det) needs its def/sg/cas tags injected explicitly: see the
          comment on the intransitive-verb det+nom rule above. -->
+    <rule comment="intransitive verb + det + adj + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_adj"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+      </action>
+    </rule>
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2434,6 +2577,32 @@
          order ("me donis la libro a la puero") already works via the
          ordinary verb+nom / verb+det+nom rules earlier in this file — only
          IO-before-DO needed a new rule. -->
+    <rule comment="intransitive verb + pr_dat + det + nom + det + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="pr_dat"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" side="tl" part="lem"/><clip pos="6" side="tl" part="a_nom"/><clip pos="6" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
     <rule comment="verb + dative pr + det-IO + det-DO: accusative on the trailing direct object">
       <pattern>
         <pattern-item n="vblex"/>
@@ -2460,6 +2629,29 @@
         </out>
       </action>
     </rule>
+    <rule comment="intransitive verb + pr_dat + det + nom + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="pr_dat"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="lem"/><clip pos="5" side="tl" part="a_nom"/><clip pos="5" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
     <rule comment="verb + dative pr + det-IO + bare-DO: accusative on the trailing direct object">
       <pattern>
         <pattern-item n="vblex"/>
@@ -2483,6 +2675,29 @@
         </out>
       </action>
     </rule>
+    <rule comment="intransitive verb + pr_dat + nom + det + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="pr_dat"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="lem"/><clip pos="5" side="tl" part="a_nom"/><clip pos="5" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
     <rule comment="verb + dative pr + bare-IO + det-DO: accusative on the trailing direct object">
       <pattern>
         <pattern-item n="vblex"/>
@@ -2503,6 +2718,26 @@
           <lu><clip pos="4" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="acc"/></lu>
           <b pos="4"/>
           <lu><clip pos="5" side="tl" part="lem"/><clip pos="5" side="tl" part="a_nom"/><clip pos="5" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="intransitive verb + pr_dat + nom + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="pr_dat"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="lem"/><clip pos="4" side="tl" part="a_nom"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
         </out>
       </action>
     </rule>
@@ -2677,6 +2912,50 @@
     </rule>
 
     <!-- Verb + Adjective + Noun + Conjunction + Adjective + Noun: coordinated modified objects -->
+    <rule comment="intransitive verb + adj + nom + cnjcoo + adj + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b pos="2"/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+              <b pos="3"/>
+            </out>
+            <call-macro n="cnjcoo_lu"><with-param pos="4"/></call-macro>
+            <out>
+              <b pos="4"/>
+              <lu>
+                <clip pos="5" side="tl" part="lem"/>
+                <clip pos="5" side="tl" part="a_adj"/>
+                <clip pos="6" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+              </lu>
+            </out>
+      </action>
+    </rule>
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2777,6 +3056,50 @@
          ADJECTIVES nominative ("Me havas la bela domo e la granda domo" ->
          "domon" but "bela"/"granda" stayed unmarked): adjectives must
          agree with their own noun's case like everywhere else in this file. -->
+    <rule comment="intransitive verb + det + adj + nom + cnjcoo + det + adj + nom: post-verbal subject stays nominative">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="cnjcoo"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b pos="2"/>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b pos="3"/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+              <b pos="4"/>
+            </out>
+            <call-macro n="cnjcoo_lu"><with-param pos="5"/></call-macro>
+            <out>
+              <b pos="5"/>
+              <lu>
+                <clip pos="6" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b pos="6"/>
+              <lu><clip pos="7" side="tl" part="lem"/><clip pos="7" side="tl" part="a_adj"/><clip pos="8" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+              <b pos="7"/>
+              <lu><clip pos="8" side="tl" part="whole"/></lu>
+            </out>
+      </action>
+    </rule>
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2804,7 +3127,7 @@
                 <lit-tag v="nom"/>
               </lu>
               <b pos="2"/>
-              <lu><clip pos="3" side="tl" part="whole"/></lu>
+              <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="4" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
               <b pos="3"/>
               <lu><clip pos="4" side="tl" part="whole"/></lu>
               <b pos="4"/>
@@ -2819,7 +3142,7 @@
                 <lit-tag v="nom"/>
               </lu>
               <b pos="6"/>
-              <lu><clip pos="7" side="tl" part="whole"/></lu>
+              <lu><clip pos="7" side="tl" part="lem"/><clip pos="7" side="tl" part="a_adj"/><clip pos="8" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
               <b pos="7"/>
               <lu><clip pos="8" side="tl" part="whole"/></lu>
             </out>
