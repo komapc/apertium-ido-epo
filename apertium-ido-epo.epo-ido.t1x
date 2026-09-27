@@ -65,6 +65,9 @@
     <def-attr n="a_nom">
       <attr-item tags="n"/>
     </def-attr>
+    <def-attr n="a_fem">
+      <attr-item tags="f"/>
+    </def-attr>
     <def-attr n="a_adj">
       <attr-item tags="adj"/>
     </def-attr>
@@ -148,7 +151,8 @@
          These rules strip Esperanto-specific features that don't exist in Ido
          ============================================================================ -->
     
-    <!-- Noun: keep number, drop the Esperanto accusative.
+    <!-- Noun: keep number and the feminine (bovo<n><f> -> bovino), drop the
+         Esperanto accusative.
          Esperanto marks the direct object with -n (domo → domon, domoj → domojn);
          Ido nouns are caseless (object is fixed by word order), and the Ido n
          paradigm only generates the nominative — passing <acc> through yielded an
@@ -164,6 +168,7 @@
             <clip pos="1" side="tl" part="lem"/>
             <clip pos="1" side="tl" part="a_der"/>
             <clip pos="1" side="tl" part="a_nom"/>
+            <clip pos="1" side="tl" part="a_fem"/>
             <clip pos="1" side="tl" part="nbr"/>
             <lit-tag v="nom"/>
           </lu>
@@ -512,17 +517,10 @@
       </action>
     </rule>
 
-    <!-- Partitive construction: NOUN da NOUN → NOUN di NOUN
-         
-         Esperanto partitive: "glaso da akvo" (glass of water)
-         Ido genitive: "glaso di aquo" (glass of water)
-         
-         This handles the partitive preposition difference:
-         - Esperanto: "da" (used for quantity expressions)
-         - Ido: "di" (genitive, more general possessive/partitive)
-         
-         NOTE: This is a direct lexical mapping. Both constructions are
-         semantically equivalent in their respective languages. -->
+    <!-- Partitive construction: NOUN da NOUN → NOUN de NOUN (glaso da akvo →
+         glaso de aquo). The preposition comes from the bidix (da → de); both
+         nouns are output like the plain noun rule (number kept, <acc> dropped:
+         tason da kafo → taso de kafeo). -->
     <rule>
       <pattern>
         <pattern-item n="nom"/>
@@ -532,16 +530,25 @@
       <action>
         <out>
           <lu>
-            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_der"/>
+            <clip pos="1" side="tl" part="a_nom"/>
+            <clip pos="1" side="tl" part="a_fem"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <lit-tag v="nom"/>
           </lu>
           <b pos="1"/>
           <lu>
-            <lit v="di"/>
-            <lit-tag v="pr"/>
+            <clip pos="2" side="tl" part="whole"/>
           </lu>
           <b pos="2"/>
           <lu>
-            <clip pos="3" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_der"/>
+            <clip pos="3" side="tl" part="a_nom"/>
+            <clip pos="3" side="tl" part="a_fem"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="nom"/>
           </lu>
         </out>
       </action>
