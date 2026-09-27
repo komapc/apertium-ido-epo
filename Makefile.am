@@ -100,10 +100,11 @@ $(PREFIX2).rlx.bin: $(BASENAME).$(LANG2).$(LANG2).rlx
 # Kept out of the default build graph on purpose: it needs the compiled
 # analyser + bidix, and the committed .rlx is the reproducible artifact.
 .PHONY: regen-disambig
-regen-disambig: $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin
+regen-disambig: $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autogen.bin
 	python3 dev/gen_ido_disambig.py \
 		--morf $(PREFIX1).automorf.bin \
 		--bidix $(PREFIX1).autobil.bin \
+		--gen $(PREFIX1).autogen.bin \
 		--monodix $(AP_SRC1)/apertium-$(LANG1).$(LANG1).dix \
 		--out $(BASENAME).$(LANG1).$(LANG1).rlx
 

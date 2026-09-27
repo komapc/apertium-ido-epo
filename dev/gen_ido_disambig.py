@@ -85,6 +85,18 @@ def translations_batch(readings: list[str], bidix: Path) -> dict[str, str]:
     return res
 
 
+def feminine_generates(lemmas, gen: Path) -> set:
+    """The EO noun lemmas the generator inflects as <f> (frato -> fratino)."""
+    lemmas = sorted(l for l in lemmas if l and re.fullmatch(r"[^\s^$/<>@#*]+", l))
+    if not lemmas:
+        return set()
+    stream = "".join(f"^{l}<n><f><sg><nom>$ " for l in lemmas)
+    p = subprocess.run(["lt-proc", "-g", str(gen)], input=stream,
+                       capture_output=True, text=True)
+    out = p.stdout.split()
+    return {l for l, o in zip(lemmas, out) if not o.startswith("#")}
+
+
 # --- cognate-similarity discriminator (for the gap-tag silent-conflict cases) -
 # Some gap-tag surfaces translate under BOTH readings but to different words
 # (quanto: der->kvar, lex->kvanto). Morphology can't separate these (prezidanto
@@ -130,6 +142,8 @@ def main() -> int:
     ap.add_argument("--bidix", type=Path, default=here.parent / "ido-epo.autobil.bin")
     ap.add_argument("--monodix", type=Path,
                     default=here.parent.parent / "apertium-ido" / "apertium-ido.ido.dix")
+    ap.add_argument("--gen", type=Path, default=here.parent / "ido-epo.autogen.bin",
+                    help="EO generator, to check which feminines generate")
     ap.add_argument("--out", type=Path,
                     default=here.parent / "apertium-ido-epo.ido.ido.rlx")
     # Two policy groups (per measured behaviour):
@@ -139,7 +153,10 @@ def main() -> int:
     #    when the derivation reading is itself an @-gap (pure upside). Preferring
     #    lexical unconditionally here regresses (saneso: saneco->sano), so it is
     #    restricted to the @-gap cases (der_qual/der_act).
-    ap.add_argument("--full-tags", default="der_aj,der_izar",
+    # f: the -ino feminine is generated for every noun root, so it shadows
+    #    lexical -in- nouns (vicino = neighbour -> vic<n><f>, matino = morning ->
+    #    mat<n><f>) and its EO target rarely generates (homo<n><f> -> #homo).
+    ap.add_argument("--full-tags", default="der_aj,der_izar,f",
                     help="prefer lexical whenever it translates "
                          "(tags where the lexical reading is the real word)")
     ap.add_argument("--gap-tags", default="der_qual,der_act,der_pres,der_aro",
@@ -151,7 +168,7 @@ def main() -> int:
     full_tags = tuple(t.strip() for t in args.full_tags.split(",") if t.strip())
     gap_tags = tuple(t.strip() for t in args.gap_tags.split(",") if t.strip())
 
-    for f in (args.morf, args.bidix, args.monodix):
+    for f in (args.morf, args.bidix, args.monodix, args.gen):
         if not f.exists():
             print(f"ERROR: missing input {f}", file=sys.stderr)
             return 1
@@ -169,14 +186,24 @@ def main() -> int:
             return set()
         cols = list(collisions(analysis, tags))
         lex_tr = translations_batch(sorted({lex for _, _, lex in cols}), args.bidix)
-        der_tr = (translations_batch(sorted({der for _, der, _ in cols}),
-                                     args.bidix) if gap_only else {})
+        der_tr = translations_batch(sorted({der for _, der, _ in cols}), args.bidix)
+        # EO translations whose feminine the EO generator actually produces
+        # (pentristo -> pentristino; not krimo, which has no -ino form).
+        fem_ok = feminine_generates(
+            {lex_tr.get(lex, "") for _, der, lex in cols
+             if "<f>" in der and der_tr.get(der, "") == lex_tr.get(lex, "")},
+            args.gen) if not gap_only else set()
         sset = set(); flips = 0
         for surf, der, lex in cols:
             lt = lex_tr.get(lex, "")
             if not lt:                      # never create a new @-gap
                 continue
             if not gap_only:                # full: lexical is the real word
+                # ...unless it is only the -ino form of the same word with the
+                # gender lost on the way (piktistin -> pentristo, while
+                # piktist<f> -> pentristino).
+                if "<f>" in der and der_tr.get(der, "") == lt and lt in fem_ok:
+                    continue
                 sset.add(baseform(lex)); continue
             dt = der_tr.get(der, "")
             if not dt:                      # derivation is an @-gap -> upside
