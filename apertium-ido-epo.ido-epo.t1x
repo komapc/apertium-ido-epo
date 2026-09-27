@@ -350,6 +350,11 @@
       <attr-item tags="vbtr"/>
       <attr-item tags="vbntr"/>
     </def-attr>
+    <!-- Invariable EO targets of Ido adjectives (ipsa -> mem<prn><ref>):
+         apertium-epo generates them bare, without number or case. -->
+    <def-attr n="a_invar">
+      <attr-item tags="prn.ref"/>
+    </def-attr>
     <def-attr n="a_ij">
       <attr-item tags="ij"/>
     </def-attr>
@@ -3475,6 +3480,12 @@
       <action>
         <choose>
           <when>
+            <test><equal><clip pos="1" side="tl" part="a_invar"/><lit-tag v="prn.ref"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_invar"/></lu>
+            </out>
+          </when>
+          <when>
             <test><equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="pl"/></equal></test>
             <out>
               <lu>
@@ -3701,7 +3712,7 @@
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
           <b pos="1"/>
-          <lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/></lu>
+          <lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="nom"/></lu>
         </out>
       </action>
     </rule>
