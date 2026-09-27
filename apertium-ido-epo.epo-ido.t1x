@@ -121,6 +121,8 @@
       <attr-item tags="vblex.der_ppa"/>
       <attr-item tags="vblex.der_pfut"/>
       <attr-item tags="vblex.der_onta"/>
+      <attr-item tags="n.der_ala"/>
+      <attr-item tags="n.der_oz"/>
     </def-attr>
     <def-attr n="a_der_nocase">
       <attr-item tags="der_ppa"/>
