@@ -245,6 +245,9 @@ def main() -> int:
 DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
 
 LIST nom = (n) ;
+LIST det = (det) ;
+LIST prntn = (prn tn) ;
+SET nominal = (n) OR (adj) OR (np) ;
 
 # Lemma lists of the generated rules (BADn: lemmas whose reading is dropped,
 # GOODn: lemmas whose translating reading must be present).
@@ -257,7 +260,18 @@ SECTION
 REMOVE nom IF (0 nom) ;
 
 # Generated: {nrules} rules.
-''' + "\n".join(rules) + "\n")
+''' + "\n".join(rules) + '''
+
+SECTION
+
+# Hand rules, after the generated ones (which condition on the first
+# translating reading, often the pronoun): a correlative that is both
+# determiner and pronoun (neniu, tiu, ĉiu) is the determiner before a noun or
+# adjective and the pronoun elsewhere -- Ido tells them apart (nula homo /
+# nulu venis).
+REMOVE prntn IF (0 det) (1 nominal) ;
+REMOVE det IF (0 prntn) (NOT 1 nominal) ;
+''')
     return 0
 
 
