@@ -68,6 +68,9 @@
     <def-attr n="a_adj">
       <attr-item tags="adj"/>
     </def-attr>
+    <def-attr n="a_prn">
+      <attr-item tags="prn"/>
+    </def-attr>
     <def-attr n="a_adv">
       <attr-item tags="adv"/>
     </def-attr>
@@ -294,14 +297,11 @@
       </action>
     </rule>
 
-    <!-- Pronoun: preserve lemma, pronoun tag, and case - FIXED
-         
-         Both Esperanto and Ido distinguish pronoun cases:
-         - Esperanto: mi/min (nom/acc), ni/nin (nom/acc)
-         - Ido: me/mi (nom/acc), nos/ni (nom/acc)
-         
-         We now preserve case information to ensure correct pronoun forms.
-         Number and gender are stripped as they may not apply uniformly. -->
+    <!-- Pronoun: lemma + <prn>. The Ido pronoun paradigm (__prn) has no case
+         (the accusative is only for inverted word order, not generated), so
+         a case the bidix left on the target (sin -> su<prn><ref><acc>) must
+         not be passed on: su<prn><acc> -> #su. Number and gender are in the
+         Ido lemma itself (il/el/ol, li). -->
     <rule>
       <pattern>
         <pattern-item n="prn"/>
@@ -324,7 +324,6 @@
               <lu>
                 <clip pos="1" side="tl" part="lem"/>
                 <lit-tag v="prn"/>
-                <clip pos="1" side="tl" part="cas"/>
               </lu>
             </out>
           </otherwise>
@@ -395,6 +394,16 @@
               <lu>
                 <clip pos="1" side="tl" part="lem"/>
                 <lit-tag v="adj"/>
+              </lu>
+            </out>
+          </when>
+          <!-- ... and an Ido pronoun target (ĉi -> ca<prn>): #ca<det> otherwise. -->
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_prn"/><lit-tag v="prn"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="prn"/>
               </lu>
             </out>
           </when>
