@@ -247,6 +247,9 @@ DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
 LIST nom = (n) ;
 LIST det = (det) ;
 LIST prntn = (prn tn) ;
+# apertium-epo also reads some correlatives as adjectives (iu<adj>): the
+# modifier readings, whichever tag they carry.
+SET modifier = det OR (adj) ;
 SET nominal = (n) OR (adj) OR (np) ;
 
 # Lemma lists of the generated rules (BADn: lemmas whose reading is dropped,
@@ -268,9 +271,9 @@ SECTION
 # translating reading, often the pronoun): a correlative that is both
 # determiner and pronoun (neniu, tiu, ĉiu) is the determiner before a noun or
 # adjective and the pronoun elsewhere -- Ido tells them apart (nula homo /
-# nulu venis).
-REMOVE prntn IF (0 det) (1 nominal) ;
-REMOVE det IF (0 prntn) (NOT 1 nominal) ;
+# nulu venis, ula homo / ulu venis).
+REMOVE prntn IF (0 modifier) (1 nominal) ;
+REMOVE modifier IF (0 prntn) (NOT 1 nominal) ;
 ''')
     return 0
 

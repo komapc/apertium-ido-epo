@@ -92,6 +92,33 @@
       <attr-item tags="mf"/>
       <attr-item tags="nt"/>
     </def-attr>
+    <!-- Base POS + derivation of an Ido derived noun target (lernanto ->
+         lern<vblex><der_pres><n>, vortaro -> vort<n><der_aro><n>). The Ido
+         generator needs the whole chain; clipping only a_nom left lern<n>
+         -> #lern. -->
+    <def-attr n="a_der">
+      <attr-item tags="vblex.der_pres"/>
+      <attr-item tags="vblex.der_past"/>
+      <attr-item tags="vblex.der_onto"/>
+      <attr-item tags="vblex.der_act"/>
+      <attr-item tags="n.der_aro"/>
+      <attr-item tags="n.der_aj"/>
+      <attr-item tags="adj.der_qual"/>
+      <attr-item tags="adj.der_aj"/>
+    </def-attr>
+    <!-- The derivations the adjective rule keeps (below): participles and
+         adjective-based ones. Not n.der_ala/n.der_oz: the bidix generates
+         those from a noun pair onto the EO adjective of the noun (japoniano
+         -> japano gives japonian<n><der_ala> -> japana), where the plain Ido
+         adjective japoniana is the translation, not japonianala. -->
+    <def-attr n="a_der_adj">
+      <attr-item tags="vblex.der_pprs"/>
+      <attr-item tags="vblex.der_ppra"/>
+      <attr-item tags="vblex.der_ppas"/>
+      <attr-item tags="vblex.der_ppa"/>
+      <attr-item tags="vblex.der_pfut"/>
+      <attr-item tags="vblex.der_onta"/>
+    </def-attr>
     <def-attr n="a_der_nocase">
       <attr-item tags="der_ppa"/>
       <attr-item tags="der_onta"/>
@@ -130,6 +157,7 @@
         <out>
           <lu>
             <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_der"/>
             <clip pos="1" side="tl" part="a_nom"/>
             <clip pos="1" side="tl" part="nbr"/>
             <lit-tag v="nom"/>
@@ -145,18 +173,47 @@
 
          The Ido a__adj paradigm generates from a bare `lemma<adj>` (granda),
          with NO number tag — emitting <sg> here (the old behaviour) yielded an
-         ungeneratable `grand<adj><sg>` → #grand. So output just `lemma<adj>`. -->
+         ungeneratable `grand<adj><sg>` → #grand. So output just `lemma<adj>`.
+         A participle target is the exception: its derivation paradigm
+         generates only <sg><nom> (interesata), or a bare <sg> for -inta/-onta. -->
     <rule>
       <pattern>
         <pattern-item n="adj"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <clip pos="1" side="tl" part="a_adj"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_der_adj"/><lit v=""/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_adj"/>
+              </lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_der_nocase"/><lit v=""/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_der_adj"/>
+                <clip pos="1" side="tl" part="a_adj"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_der_adj"/>
+                <clip pos="1" side="tl" part="a_adj"/>
+                <lit-tag v="sg"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
