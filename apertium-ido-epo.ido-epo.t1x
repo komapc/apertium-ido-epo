@@ -345,6 +345,18 @@
     </def-attr>
     <def-attr n="a_vblex">
       <attr-item tags="vblex"/>
+      <!-- apertium-epo's transitivity classes, carried by bidix rows of verbs
+           it knows only as vbtr/vbntr (edzigi, aĝi) -->
+      <attr-item tags="vbtr"/>
+      <attr-item tags="vbntr"/>
+    </def-attr>
+    <!-- Invariable EO targets of Ido adjectives (ipsa -> mem<prn><ref>):
+         apertium-epo generates them bare, without number or case. -->
+    <def-attr n="a_invar">
+      <attr-item tags="prn.ref"/>
+    </def-attr>
+    <def-attr n="a_ij">
+      <attr-item tags="ij"/>
     </def-attr>
     <def-attr n="a_prn">
       <attr-item tags="prn"/>
@@ -420,11 +432,17 @@
       <!-- Ido past indicative <pii> has no Esperanto generation form (the EO
            generator only knows <past>), so a finite past verb otherwise falls
            back to the infinitive (dominacis -> "domini"). Rewrite the target
-           tense before output; harmless for any non-<pii> unit. -->
+           tense before output; harmless for any non-<pii> unit. Present <pri>
+           generates only as <vblex> (a legacy alias in apertium-epo), not for
+           vbtr/vbntr verbs (evas -> aĝi<vbntr>), so it becomes <pres>. -->
       <choose>
         <when>
           <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
           <let><clip pos="1" side="tl" part="temps"/><lit-tag v="past"/></let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+          <let><clip pos="1" side="tl" part="temps"/><lit-tag v="pres"/></let>
         </when>
       </choose>
     </def-macro>
@@ -3423,34 +3441,72 @@
       </action>
     </rule>
 
-    <!-- Noun rule: pass through (Esperanto nouns don't always have gender) -->
+    <!-- Noun rule: pass through (Esperanto nouns don't always have gender).
+         A set greeting Ido inflects as a noun but apertium-epo lists as one
+         interjection (bona jorno -> bonan tagon<ij>) drops the noun tags. -->
     <rule>
       <pattern>
         <pattern-item n="nom"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_ij"/><lit-tag v="ij"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="ij"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
-    <!-- Adjective rule: add sg/nom for Esperanto (default form when alone) -->
+    <!-- Adjective rule: add sg/nom for Esperanto (default form when alone).
+         A target the bidix already marks plural (amb -> ambaŭ<prn><tn><pl>)
+         has no singular to generate, so its number is kept. -->
     <rule>
       <pattern>
         <pattern-item n="adj"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <clip pos="1" side="tl" part="a_adj"/>
-            <lit-tag v="sg"/>
-            <lit-tag v="nom"/>
-          </lu>
-        </out>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_invar"/><lit-tag v="prn.ref"/></equal></test>
+            <out>
+              <lu><clip pos="1" side="tl" part="lem"/><clip pos="1" side="tl" part="a_invar"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="pl"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_adj"/>
+                <lit-tag v="pl"/>
+                <lit-tag v="nom"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_adj"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -3656,7 +3712,7 @@
         <out>
           <lu><clip pos="1" side="tl" part="whole"/></lu>
           <b pos="1"/>
-          <lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/></lu>
+          <lu><lit v="si"/><lit-tag v="prn"/><lit-tag v="ref"/><lit-tag v="nom"/></lu>
         </out>
       </action>
     </rule>

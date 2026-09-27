@@ -43,8 +43,11 @@ TARGETS_COMMON =		\
 .deps/$(LANG1).automorf.bin: $(AP_SRC1)/$(LANG1).automorf.bin .deps/.d
 	cp $< $@
 
-$(PREFIX1).automorf.bin: .deps/$(LANG1).automorf.bin
-	cp $< $@
+# Trimmed to what the bidix translates (standard for released pairs): an
+# analysis with no bidix entry would only surface as an @-gap, while the
+# untrimmed analyser also shadows multiword splits and passthrough of unknowns.
+$(PREFIX1).automorf.bin: .deps/$(LANG1).automorf.bin $(PREFIX1).autobil.bin
+	lt-trim $< $(PREFIX1).autobil.bin $@
 
 # -------------------
 # Ido generation:
@@ -60,8 +63,8 @@ $(PREFIX2).autogen.bin: $(AP_SRC1)/$(LANG1).autogen.bin
 .deps/$(LANG2).automorf.bin: $(AP_SRC2)/$(LANG2).automorf.bin .deps/.d
 	cp $< $@
 
-$(PREFIX2).automorf.bin: .deps/$(LANG2).automorf.bin
-	cp $< $@
+$(PREFIX2).automorf.bin: .deps/$(LANG2).automorf.bin $(PREFIX2).autobil.bin
+	lt-trim $< $(PREFIX2).autobil.bin $@
 
 # -------------------
 # Esperanto generation:
@@ -97,10 +100,11 @@ $(PREFIX2).rlx.bin: $(BASENAME).$(LANG2).$(LANG2).rlx
 # Kept out of the default build graph on purpose: it needs the compiled
 # analyser + bidix, and the committed .rlx is the reproducible artifact.
 .PHONY: regen-disambig
-regen-disambig: $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin
+regen-disambig: $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autogen.bin
 	python3 dev/gen_ido_disambig.py \
 		--morf $(PREFIX1).automorf.bin \
 		--bidix $(PREFIX1).autobil.bin \
+		--gen $(PREFIX1).autogen.bin \
 		--monodix $(AP_SRC1)/apertium-$(LANG1).$(LANG1).dix \
 		--out $(BASENAME).$(LANG1).$(LANG1).rlx
 
