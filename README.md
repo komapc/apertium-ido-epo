@@ -12,7 +12,9 @@ constraint-grammar disambiguation → structural transfer → generation.
 
 - `apertium-ido-epo.ido-epo.dix` — bilingual dictionary (~103,600 entries)
 - `apertium-ido-epo.ido-epo.t1x` / `apertium-ido-epo.epo-ido.t1x` — transfer rules
-- `epo-ido.rlx` / `apertium-ido-epo.epo.epo.rlx` — constraint-grammar disambiguation
+- `apertium-ido-epo.ido.ido.rlx` / `apertium-ido-epo.epo.epo.rlx` — constraint-grammar
+  disambiguation, both generated from the pair (`make regen-disambig`,
+  `make regen-disambig-epo`; rerun after a bidix, transfer or Ido monodix change)
 - `apertium-ido.ido.dix` — Ido monodix (from [apertium-ido](https://github.com/komapc/apertium-ido))
 
 The dictionaries are **auto-generated** by the

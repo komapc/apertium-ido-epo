@@ -104,6 +104,21 @@ regen-disambig: $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin
 		--monodix $(AP_SRC1)/apertium-$(LANG1).$(LANG1).dix \
 		--out $(BASENAME).$(LANG1).$(LANG1).rlx
 
+# The epo grammar is generated from the pair itself: every reading of an
+# ambiguous Esperanto surface is pushed through bidix + transfer + generation,
+# and readings that come out as @/# gaps are removed when a translating one is
+# present. Rerun after any bidix, epo-ido.t1x or apertium-ido monodix change
+# (the probe goes through the Ido generator) -- a stale grammar can drop a
+# reading that has since become translatable.
+.PHONY: regen-disambig-epo
+regen-disambig-epo: $(PREFIX2).autobil.bin $(PREFIX2).t1x.bin $(PREFIX2).autogen.bin
+	python3 dev/gen_epo_disambig.py \
+		--monodix $(AP_SRC2)/apertium-$(LANG2).$(LANG2).dix \
+		--bidix $(PREFIX2).autobil.bin \
+		--t1x $(BASENAME).$(PREFIX2).t1x --t1x-bin $(PREFIX2).t1x.bin \
+		--gen $(PREFIX2).autogen.bin \
+		--out $(BASENAME).$(LANG2).$(LANG2).rlx
+
 ###############################################################################
 ## Bilingual dictionaries
 ###############################################################################

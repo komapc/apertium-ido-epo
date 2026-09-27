@@ -27,6 +27,7 @@
       <cat-item tags="vblex.*"/>
       <cat-item tags="vbtr.*"/>
       <cat-item tags="vbser.*"/>
+      <cat-item tags="vbntr.*"/>
     </def-cat>
     <def-cat n="prn">
       <cat-item tags="prn.*"/>
@@ -74,6 +75,7 @@
       <attr-item tags="vblex"/>
       <attr-item tags="vbtr"/>
       <attr-item tags="vbser"/>
+      <attr-item tags="vbntr"/>
     </def-attr>
     <def-attr n="nbr">
       <attr-item tags="sg"/>
@@ -89,6 +91,10 @@
       <attr-item tags="f"/>
       <attr-item tags="mf"/>
       <attr-item tags="nt"/>
+    </def-attr>
+    <def-attr n="a_der_nocase">
+      <attr-item tags="der_ppa"/>
+      <attr-item tags="der_onta"/>
     </def-attr>
     <def-attr n="temps">
       <attr-item tags="pres"/>
@@ -206,6 +212,21 @@
             </out>
           </when>
           <otherwise>
+            <!-- Participles: the bidix maps them to Ido participle adjectives
+                 (skribitajn -> skrib<vblex><der_ppas><adj><pl><acc>). Ido
+                 adjectives don't agree, and the Ido monodix generates them only
+                 as <sg><nom>, except -inta/-onta (der_ppa/der_onta), which
+                 take a bare <sg>. -->
+            <let><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></let>
+            <choose>
+              <when>
+                <test><not><equal><clip pos="1" side="tl" part="a_der_nocase"/><lit v=""/></equal></not></test>
+                <let><clip pos="1" side="tl" part="cas"/><lit v=""/></let>
+              </when>
+              <otherwise>
+                <let><clip pos="1" side="tl" part="cas"/><lit-tag v="nom"/></let>
+              </otherwise>
+            </choose>
             <out>
               <lu>
                 <clip pos="1" side="tl" part="whole"/>
@@ -229,13 +250,28 @@
         <pattern-item n="prn"/>
       </pattern>
       <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <lit-tag v="prn"/>
-            <clip pos="1" side="tl" part="cas"/>
-          </lu>
-        </out>
+        <choose>
+          <!-- Ido demonstratives are adjectives (tiu -> ta<adj>, ĉi tiu -> ca):
+               forcing <prn> onto such a bidix target left t<prn> -> #t. -->
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_adj"/><lit-tag v="adj"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="adj"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="prn"/>
+                <clip pos="1" side="tl" part="cas"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
       </action>
     </rule>
 
@@ -332,6 +368,25 @@
             <lit-tag v="ciph"/>
             <lit-tag v="sp"/>
             <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Number word (du, tri, unu, dek...): apertium-epo tags it <num><sp>
+         (or <sg>), but Ido numerals are bare <num> in the monodix, so passing
+         the number tag through left du<num><sp> ungeneratable (#du). Keep the
+         bidix lemma and emit plain <num>. Must stay AFTER the num_ciph rule:
+         both are one-item patterns, and document order breaks the tie. -->
+    <rule>
+      <pattern>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="num"/>
           </lu>
         </out>
       </action>
