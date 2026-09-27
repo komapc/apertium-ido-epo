@@ -107,7 +107,9 @@ regen-disambig: $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin
 # The epo grammar is generated from the pair itself: every reading of an
 # ambiguous Esperanto surface is pushed through bidix + transfer + generation,
 # and readings that come out as @/# gaps are removed when a translating one is
-# present. Rerun after any bidix or epo-ido.t1x change.
+# present. Rerun after any bidix, epo-ido.t1x or apertium-ido monodix change
+# (the probe goes through the Ido generator) -- a stale grammar can drop a
+# reading that has since become translatable.
 .PHONY: regen-disambig-epo
 regen-disambig-epo: $(PREFIX2).autobil.bin $(PREFIX2).t1x.bin $(PREFIX2).autogen.bin
 	python3 dev/gen_epo_disambig.py \

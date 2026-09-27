@@ -18,7 +18,7 @@ readings all fail (those stay visible as gaps to fix in the dictionaries).
 
 Everything is derived from the dictionaries and the compiled pair, so the
 grammar is regeneratable and auditable, not hand-curated. Rerun it (make
-regen-disambig-epo) after any bidix or transfer change.
+regen-disambig-epo) after any bidix, epo-ido.t1x or Ido monodix change.
 
 Usage:
   python3 dev/gen_epo_disambig.py \\
