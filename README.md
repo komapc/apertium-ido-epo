@@ -60,11 +60,14 @@ Work toward making this an official Apertium pair (tracked informally; target 20
 
 **Open blockers:**
 - Repository ownership/hosting — still under a personal account, not the `apertium` org.
-- 15 non-standard `der_*` sdefs in the bidix (`der_act`, `der_aj`, `der_ala`, `der_aro`,
-  `der_esar`, `der_izar`, `der_oz`, `der_past`, `der_pfut`, `der_ppa`, `der_ppas`,
-  `der_ppra`, `der_pprs`, `der_pres`, `der_qual`) drive derivational morphology
-  (participles, `-igi`/`-iĝi` derivations, etc.) — upstream review would likely ask for
-  these to follow more conventional Apertium symbol naming or be folded into standard tags.
+- Language-specific `der_*` derivation sdefs (23 in the bidix: `der_act`, `der_aj`, `der_ala`,
+  `der_aro`, `der_oz`, `der_ppra`, … ) drive Ido's productive derivational morphology
+  (participles, `-ar-`/`-oz-`/`-al-` derivations, etc.). They are not a blocker as such: official
+  `apertium` pairs (e.g. `apertium-myv-fin`, `apertium-kpv-koi`, `apertium-sme-nob`) also use
+  `der_*` sdefs in bilingual dictionaries. Every sdef carries a `c="…"` description and is
+  listed in the `.dix` header. Open question for Apertium maintainers: whether the participle
+  tags should be aligned with standard `pp`/`pprs`/`ger` (which cover only 3 of the 12
+  participle/gerund forms) — see #190.
 - `sed`-based pre/post-processing hacks in `modes.xml` (apostrophe contraction spacing,
   period spacing) — functional but non-standard; an upstream-quality pair would handle
   these in the FST rather than shell pipeline hacks.

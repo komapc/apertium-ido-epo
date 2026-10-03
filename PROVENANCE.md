@@ -56,7 +56,7 @@ entries (an entry may draw on more than one source).
 The dictionaries use a small set of language-specific `der_*` symbols for Ido's
 productive derivational morphology (e.g. `der_aro` = the Ido `-ar-` collective
 suffix). Each symbol is documented, with its Ido → Esperanto mapping, in the
-header comment of every generated `.dix` file.
+header comment of every generated `.dix` file and in the `c="…"` attribute of its `<sdef>`.
 
 ## Regenerating
 
