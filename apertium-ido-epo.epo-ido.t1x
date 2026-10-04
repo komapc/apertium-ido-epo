@@ -174,6 +174,8 @@
 
   <section-def-vars>
     <def-var n="dummy"/>
+    <def-var n="rk"/>
+    <def-var n="rk_prev"/>
   </section-def-vars>
 
   <section-def-macros>
@@ -231,6 +233,50 @@
         </when>
         <otherwise>
           <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="vblex"/><lit-tag v="der_esar"/><lit-tag v="vblex"/><lit-tag v="pri"/></lu></out>
+        </otherwise>
+      </choose>
+    </def-macro>
+
+    <!-- Ido adds numerals with "e" (dek e du, cent e dudek e tri) but multiplies
+         by juxtaposition (du mil, tri cent). Esperanto numeral words arrive as
+         separate tokens, so "e" goes between two when the first is of a higher
+         order than the second: mil > *cent > *dek > units. -->
+    <def-macro n="num_rank" npar="1">
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="sl" part="lem"/><lit v="mil"/></equal></test>
+          <let><var n="rk"/><lit v="4"/></let>
+        </when>
+        <when>
+          <test><ends-with><clip pos="1" side="sl" part="lem"/><lit v="cent"/></ends-with></test>
+          <let><var n="rk"/><lit v="3"/></let>
+        </when>
+        <when>
+          <test><ends-with><clip pos="1" side="sl" part="lem"/><lit v="dek"/></ends-with></test>
+          <let><var n="rk"/><lit v="2"/></let>
+        </when>
+        <otherwise>
+          <let><var n="rk"/><lit v="1"/></let>
+        </otherwise>
+      </choose>
+    </def-macro>
+    <def-macro n="num_join" npar="2">
+      <call-macro n="num_rank"><with-param pos="1"/></call-macro>
+      <let><var n="rk_prev"/><var n="rk"/></let>
+      <call-macro n="num_rank"><with-param pos="2"/></call-macro>
+      <choose>
+        <when>
+          <test>
+            <or>
+              <and><equal><var n="rk_prev"/><lit v="4"/></equal><not><equal><var n="rk"/><lit v="4"/></equal></not></and>
+              <and><equal><var n="rk_prev"/><lit v="3"/></equal><or><equal><var n="rk"/><lit v="1"/></equal><equal><var n="rk"/><lit v="2"/></equal></or></and>
+              <and><equal><var n="rk_prev"/><lit v="2"/></equal><equal><var n="rk"/><lit v="1"/></equal></and>
+            </or>
+          </test>
+          <out><b/><lu><lit v="e"/><lit-tag v="cnjcoo"/></lu><b/></out>
+        </when>
+        <otherwise>
+          <out><b/></out>
         </otherwise>
       </choose>
     </def-macro>
@@ -717,6 +763,119 @@
       </pattern>
       <action>
         <call-macro n="passive_ido"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+
+    <!-- Sequence of numeral words (up to 7): "e" between an additive pair (see num_join). -->
+    <rule comment="7 numerals: Ido adds with e">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out><lu><clip pos="3" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out><lu><clip pos="4" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <out><lu><clip pos="5" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <out><lu><clip pos="6" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <out><lu><clip pos="7" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+      </action>
+    </rule>
+    <rule comment="6 numerals: Ido adds with e">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out><lu><clip pos="3" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out><lu><clip pos="4" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <out><lu><clip pos="5" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <out><lu><clip pos="6" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+      </action>
+    </rule>
+    <rule comment="5 numerals: Ido adds with e">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out><lu><clip pos="3" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out><lu><clip pos="4" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <out><lu><clip pos="5" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+      </action>
+    </rule>
+    <rule comment="4 numerals: Ido adds with e">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out><lu><clip pos="3" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out><lu><clip pos="4" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+      </action>
+    </rule>
+    <rule comment="3 numerals: Ido adds with e">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out><lu><clip pos="3" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+      </action>
+    </rule>
+    <rule comment="2 numerals: Ido adds with e">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out><lu><clip pos="1" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
+        <call-macro n="num_join"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="num"/></lu></out>
       </action>
     </rule>
   </section-rules>
