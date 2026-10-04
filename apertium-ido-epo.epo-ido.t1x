@@ -732,6 +732,34 @@
       </action>
     </rule>
 
+    <!-- Degree "tiel ADJ/ADV" without a following "kiel" is Ido "tante ADJ/ADV"
+         ("Li estas tiel gaja" = "Il es tante gaya", Tatoeba); the 3-token
+         "tiel ... kiel" rules above are longer and win when kiel follows.
+         A bare manner "tiel" (no adj/adv after it) stays "tale". -->
+    <rule comment="tiel ADJ -> tante ADJ">
+      <pattern>
+        <pattern-item n="tiel_adv"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <out><lu><get-case-from pos="1"><lit v="tant"/></get-case-from><lit-tag v="adv"/></lu><b pos="1"/></out>
+        <call-macro n="adj_to_ido"><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+    <rule comment="tiel ADV -> tante ADV">
+      <pattern>
+        <pattern-item n="tiel_adv"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><get-case-from pos="1"><lit v="tant"/></get-case-from><lit-tag v="adv"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- "ĉi tie" is the single Ido adverb "hike" (not "ca ibe"). -->
     <rule comment="ĉi tie -> hike">
       <pattern>
