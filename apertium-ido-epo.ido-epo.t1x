@@ -1360,6 +1360,25 @@
         </out>
       </action>
     </rule>
+    <rule comment="copulative verb + nom: predicate stays nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: nouns after verb are subjects, not objects -->
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
     
     <!-- Intransitive Verb + Det + Noun: post-verbal subject with determiner stays nominative
 
@@ -1373,6 +1392,33 @@
     <rule>
       <pattern>
         <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <!-- Intransitive verbs: nouns after verb are subjects, not objects -->
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="copulative verb + det+nom: predicate stays nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
         <pattern-item n="det"/>
         <pattern-item n="nom"/>
       </pattern>
@@ -2056,6 +2102,32 @@
             </out>
       </action>
     </rule>
+    <rule comment="copulative verb + adj + nom: predicate stays nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="lem"/>
+                <clip pos="2" side="tl" part="a_adj"/>
+                <clip pos="3" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="whole"/>
+              </lu>
+            </out>
+      </action>
+    </rule>
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2174,6 +2246,23 @@
             </out>
       </action>
     </rule>
+    <rule comment="copulative verb + ptcp_adj + nom: predicate stays nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
+        <pattern-item n="ptcp_adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+            </out>
+      </action>
+    </rule>
     <rule>
       <pattern>
         <pattern-item n="vblex"/>
@@ -2216,6 +2305,31 @@
     <rule comment="intransitive verb + det + ptcp_adj + nom: post-verbal subject stays nominative">
       <pattern>
         <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="ptcp_adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu><clip pos="1" side="tl" part="whole"/></lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu><clip pos="3" side="tl" part="whole"/></lu>
+              <b/>
+              <lu><clip pos="4" side="tl" part="whole"/></lu>
+            </out>
+      </action>
+    </rule>
+    <rule comment="copulative verb + det + ptcp_adj + nom: predicate stays nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
         <pattern-item n="det"/>
         <pattern-item n="ptcp_adj"/>
         <pattern-item n="nom"/>
@@ -2356,6 +2470,40 @@
     <rule comment="intransitive verb + det + adj + nom: post-verbal subject stays nominative">
       <pattern>
         <pattern-item n="vbintr"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+                <lit-tag v="def"/>
+                <lit-tag v="sg"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="3" side="tl" part="lem"/>
+                <clip pos="3" side="tl" part="a_adj"/>
+                <clip pos="4" side="tl" part="nbr"/>
+                <lit-tag v="nom"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="4" side="tl" part="whole"/>
+              </lu>
+            </out>
+      </action>
+    </rule>
+    <rule comment="copulative verb + det + adj + nom: predicate stays nominative">
+      <pattern>
+        <pattern-item n="vbcop"/>
         <pattern-item n="det"/>
         <pattern-item n="adj"/>
         <pattern-item n="nom"/>
