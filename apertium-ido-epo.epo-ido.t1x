@@ -73,6 +73,23 @@
     <def-cat n="tie_adv">
       <cat-item lemma="tie" tags="adv"/>
     </def-cat>
+    <def-cat n="es_vb">
+      <cat-item lemma="esti" tags="vbser.*"/>
+    </def-cat>
+    <def-cat n="es_pastfut">
+      <cat-item lemma="esti" tags="vbser.past"/>
+      <cat-item lemma="esti" tags="vbser.fti"/>
+    </def-cat>
+    <def-cat n="ptcp_pprs">
+      <cat-item tags="vblex.ppres.*"/>
+      <cat-item tags="vbtr.ppres.*"/>
+      <cat-item tags="vbntr.ppres.*"/>
+    </def-cat>
+    <def-cat n="ptcp_ppas">
+      <cat-item tags="vblex.pp.*"/>
+      <cat-item tags="vbtr.pp.*"/>
+      <cat-item tags="vbntr.pp.*"/>
+    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
@@ -197,6 +214,25 @@
               </out>
             </otherwise>
           </choose>
+    </def-macro>
+
+    <!-- Esperanto "esti + -ata/-ita" is the Ido synthetic passive: the participle
+         stem + es + the tense of "esti" (estas malfermata -> apertesas,
+         estis skribita -> skribesis). pos 1 = esti, pos 2 = participle. -->
+    <def-macro n="passive_ido" npar="2">
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="temps"/><lit-tag v="past"/></equal></test>
+          <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="vblex"/><lit-tag v="der_esar"/><lit-tag v="vblex"/><lit-tag v="pii"/></lu></out>
+        </when>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="temps"/><lit-tag v="fti"/></equal></test>
+          <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="vblex"/><lit-tag v="der_esar"/><lit-tag v="vblex"/><lit-tag v="fti"/></lu></out>
+        </when>
+        <otherwise>
+          <out><lu><clip pos="2" side="tl" part="lem"/><lit-tag v="vblex"/><lit-tag v="der_esar"/><lit-tag v="vblex"/><lit-tag v="pri"/></lu></out>
+        </otherwise>
+      </choose>
     </def-macro>
   </section-def-macros>
 
@@ -658,6 +694,29 @@
       </pattern>
       <action>
         <out><lu><get-case-from pos="1"><lit v="hik"/></get-case-from><lit-tag v="adv"/></lu></out>
+      </action>
+    </rule>
+
+    <!-- Passive: esti + -ata -> synthetic Ido passive (all tenses). -->
+    <rule comment="esti + -ata -> -esas">
+      <pattern>
+        <pattern-item n="es_vb"/>
+        <pattern-item n="ptcp_pprs"/>
+      </pattern>
+      <action>
+        <call-macro n="passive_ido"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      </action>
+    </rule>
+    <!-- esti + -ita: only the past/future is the passive (estis skribita ->
+         skribesis); "estas skribita" is a resulting state and stays "esas
+         skribita" through the generic rules. -->
+    <rule comment="estis/estos + -ita -> -esis/-esos">
+      <pattern>
+        <pattern-item n="es_pastfut"/>
+        <pattern-item n="ptcp_ppas"/>
+      </pattern>
+      <action>
+        <call-macro n="passive_ido"><with-param pos="1"/><with-param pos="2"/></call-macro>
       </action>
     </rule>
   </section-rules>
