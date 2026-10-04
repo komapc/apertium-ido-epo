@@ -59,6 +59,20 @@
     <def-cat n="da">
       <cat-item lemma="da" tags="pr"/>
     </def-cat>
+    <!-- Ido equality comparison "tam ADJ kam" / place "hike" (Esperanto
+         "tiel ADJ kiel" / "ĉi tie"): lemma-restricted, matched on the SL side. -->
+    <def-cat n="tiel_adv">
+      <cat-item lemma="tiel" tags="adv"/>
+    </def-cat>
+    <def-cat n="kiel_adv">
+      <cat-item lemma="kiel" tags="adv"/>
+    </def-cat>
+    <def-cat n="ci_det">
+      <cat-item lemma="ĉi" tags="det.*"/>
+    </def-cat>
+    <def-cat n="tie_adv">
+      <cat-item lemma="tie" tags="adv"/>
+    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
@@ -145,6 +159,47 @@
     <def-var n="dummy"/>
   </section-def-vars>
 
+  <section-def-macros>
+    <!-- Adjective: plain adjectives keep lemma + <adj>; Ido participle/derived
+         adjectives keep their derivation chain (see a_der_adj). Shared by the
+         single-adjective rule and the "tiel ADJ kiel" rule. -->
+    <def-macro n="adj_to_ido" npar="1">
+      <choose>
+            <when>
+              <test><equal><clip pos="1" side="tl" part="a_der_adj"/><lit v=""/></equal></test>
+              <out>
+                <lu>
+                  <clip pos="1" side="tl" part="lem"/>
+                  <clip pos="1" side="tl" part="a_adj"/>
+                </lu>
+              </out>
+            </when>
+            <when>
+              <test><equal><clip pos="1" side="tl" part="a_der_nocase"/><lit v=""/></equal></test>
+              <out>
+                <lu>
+                  <clip pos="1" side="tl" part="lem"/>
+                  <clip pos="1" side="tl" part="a_der_adj"/>
+                  <clip pos="1" side="tl" part="a_adj"/>
+                  <lit-tag v="sg"/>
+                  <lit-tag v="nom"/>
+                </lu>
+              </out>
+            </when>
+            <otherwise>
+              <out>
+                <lu>
+                  <clip pos="1" side="tl" part="lem"/>
+                  <clip pos="1" side="tl" part="a_der_adj"/>
+                  <clip pos="1" side="tl" part="a_adj"/>
+                  <lit-tag v="sg"/>
+                </lu>
+              </out>
+            </otherwise>
+          </choose>
+    </def-macro>
+  </section-def-macros>
+
   <section-rules>
     <!-- ============================================================================
          BASIC WORD CLASS TRANSFORMATIONS
@@ -191,39 +246,7 @@
         <pattern-item n="adj"/>
       </pattern>
       <action>
-        <choose>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="a_der_adj"/><lit v=""/></equal></test>
-            <out>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <clip pos="1" side="tl" part="a_adj"/>
-              </lu>
-            </out>
-          </when>
-          <when>
-            <test><equal><clip pos="1" side="tl" part="a_der_nocase"/><lit v=""/></equal></test>
-            <out>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <clip pos="1" side="tl" part="a_der_adj"/>
-                <clip pos="1" side="tl" part="a_adj"/>
-                <lit-tag v="sg"/>
-                <lit-tag v="nom"/>
-              </lu>
-            </out>
-          </when>
-          <otherwise>
-            <out>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <clip pos="1" side="tl" part="a_der_adj"/>
-                <clip pos="1" side="tl" part="a_adj"/>
-                <lit-tag v="sg"/>
-              </lu>
-            </out>
-          </otherwise>
-        </choose>
+        <call-macro n="adj_to_ido"><with-param pos="1"/></call-macro>
       </action>
     </rule>
 
@@ -593,6 +616,48 @@
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+
+    <!-- Equality comparison: Esperanto "tiel ADJ/ADV kiel" is Ido "tam ... kam"
+         (the bidix word-for-word tal/qual would give "tale forta quale"). -->
+    <rule comment="tiel ADJ kiel -> tam ADJ kam">
+      <pattern>
+        <pattern-item n="tiel_adv"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="kiel_adv"/>
+      </pattern>
+      <action>
+        <out><lu><get-case-from pos="1"><lit v="tam"/></get-case-from><lit-tag v="adv"/></lu><b pos="1"/></out>
+        <call-macro n="adj_to_ido"><with-param pos="2"/></call-macro>
+        <out><b pos="2"/><lu><get-case-from pos="3"><lit v="kam"/></get-case-from><lit-tag v="adv"/></lu></out>
+      </action>
+    </rule>
+    <rule comment="tiel ADV kiel -> tam ADV kam">
+      <pattern>
+        <pattern-item n="tiel_adv"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="kiel_adv"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><get-case-from pos="1"><lit v="tam"/></get-case-from><lit-tag v="adv"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><get-case-from pos="3"><lit v="kam"/></get-case-from><lit-tag v="adv"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- "ĉi tie" is the single Ido adverb "hike" (not "ca ibe"). -->
+    <rule comment="ĉi tie -> hike">
+      <pattern>
+        <pattern-item n="ci_det"/>
+        <pattern-item n="tie_adv"/>
+      </pattern>
+      <action>
+        <out><lu><get-case-from pos="1"><lit v="hik"/></get-case-from><lit-tag v="adv"/></lu></out>
       </action>
     </rule>
   </section-rules>
