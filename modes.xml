@@ -3,16 +3,10 @@
 
   <mode name="ido-epo" install="yes">
     <pipeline>
-      <!-- Split the elided definite article l' (= la before a vowel): lttoolbox
-           cannot tokenize the glued clitic (l'unika), so normalise l' -> "la "
-           before analysis. The apostrophe is written \x27 to keep the mode
-           shell-quoting clean; covers lowercase and sentence-initial L'. -->
-      <!-- -u (line-buffered) is REQUIRED: apertium-apy keeps the pipeline as
-           persistent streaming processes, and block-buffered sed never flushes
-           → 503 hangs in production. \x20 (not a literal space) stops APy's
-           whitespace tokenizer from splitting the quoted expression. Both also
-           work for the one-shot `apertium` CLI. -->
-      <program name="sed -u -e 's/l\x27/la\x20/g' -e 's/L\x27/La\x20/g'"/>
+      <!-- The elided definite article l' (= la before a vowel) is a clitic unit
+           of the Ido analyser (type="postblank" section "apostrophes", as in
+           apertium-fra/cat/ita): l'unika is analysed as la + unika with no
+           pre-processing. -->
       <program name="lt-proc">
         <file name="ido-epo.automorf.bin"/>
       </program>

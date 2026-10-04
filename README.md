@@ -68,11 +68,16 @@ Work toward making this an official Apertium pair (tracked informally; target 20
   listed in the `.dix` header. Open question for Apertium maintainers: whether the participle
   tags should be aligned with standard `pp`/`pprs`/`ger` (which cover only 3 of the 12
   participle/gerund forms) — see #190.
-- `sed`-based pre/post-processing hacks in `modes.xml` (apostrophe contraction spacing,
-  period spacing) — functional but non-standard; an upstream-quality pair would handle
-  these in the FST rather than shell pipeline hacks.
-- epo→ido transfer-rule coverage lags ido→epo (`epo-ido.t1x` has 14 rules vs.
-  `ido-epo.t1x`'s 70) and has no dedicated evaluation corpus — see #188, #189.
+- One `sed` pre/post-processing pair remains in `modes.xml`: the epo→ido mode detaches a
+  period from the preceding word and re-joins it afterwards, because apertium-epo keeps `.`
+  in its alphabet (for decimals like `3.14`) so `domo.` is read as one token. Fixing it means
+  changing apertium-epo's alphabet. The ido→epo `l'` sed is gone: the elided article is a
+  clitic unit of the Ido analyser (`type="postblank"` section, as in apertium-fra/cat/ita).
+  See #190.
+- epo→ido has its own evaluation: a curated gold set and a Tatoeba-sampled benchmark in the
+  extractor (`data/gold/epo_ido*.tsv`, trend reports in `reports/`), see #188 and the closing
+  note on #189. Remaining epo→ido gaps are mostly apertium-epo lexical coverage (participle
+  forms, `-en` adverbs, `kian`).
 
 ## License
 
