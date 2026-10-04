@@ -4,6 +4,23 @@
     <def-cat n="nom">
       <cat-item tags="n.*"/>
     </def-cat>
+    <!-- Time units (Ido stems, as the analyser emits them). Esperanto marks a
+         duration/time expression with the accusative even after an
+         intransitive verb ("dormis tutan nokton"), which the post-verbal-
+         subject rules would otherwise strip (apertium-ido-epo#239). A closed
+         transfer-grammar set, like vbintr/vbcop above, not dictionary data. -->
+    <def-cat n="time_noun">
+      <cat-item lemma="di" tags="n.*"/>
+      <cat-item lemma="nokt" tags="n.*"/>
+      <cat-item lemma="hor" tags="n.*"/>
+      <cat-item lemma="minut" tags="n.*"/>
+      <cat-item lemma="sekund" tags="n.*"/>
+      <cat-item lemma="seman" tags="n.*"/>
+      <cat-item lemma="monat" tags="n.*"/>
+      <cat-item lemma="yar" tags="n.*"/>
+      <cat-item lemma="vesper" tags="n.*"/>
+      <cat-item lemma="matin" tags="n.*"/>
+    </def-cat>
     <def-cat n="adj">
       <cat-item tags="adj"/>
       <cat-item tags="adj.*"/>
@@ -1456,6 +1473,26 @@
          emit the correlative with the prn<tn> shape. Placed before the generic
          adj rules so they win by document order.
          ============================================================================ -->
+    <!-- Intransitive verb + correlative + time noun: duration accusative
+         ("Me iris omna monato" → "Mi iris ĉiun monaton", #239). Must precede the
+         generic verb+correlative+noun rules below (equal length). -->
+    <rule comment="intransitive verb + correlative + time noun: duration accusative (#239)">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="corr_u"/>
+        <pattern-item n="time_noun"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="prn"/><lit-tag v="tn"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_nom"/><clip pos="3" side="tl" part="nbr"/><lit-tag v="acc"/></lu>
+        </out>
+      </action>
+    </rule>
     <!-- Correlative + Adjective + Noun (standalone): agree all three, nominative -->
     <rule comment="correlative + adjective + noun agreement">
       <pattern>
@@ -2066,6 +2103,39 @@
             </out>
           </otherwise>
         </choose>
+      </action>
+    </rule>
+
+    <!-- Intransitive verb + adjective + time noun: duration accusative.
+         Must precede the generic vbintr+adj+nom rule (equal length, document
+         order decides). -->
+    <rule comment="intransitive verb + adj + time noun: duration accusative (#239)">
+      <pattern>
+        <pattern-item n="vbintr"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="time_noun"/>
+      </pattern>
+      <action>
+        <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="a_adj"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="acc"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="a_nom"/>
+            <clip pos="3" side="tl" part="nbr"/>
+            <lit-tag v="acc"/>
+          </lu>
+        </out>
       </action>
     </rule>
 
