@@ -3,19 +3,27 @@
 Bidirectional machine translation between **Ido** and **Esperanto** on the
 [Apertium](https://www.apertium.org) platform.
 
-Translation quality (163-sentence gold set, `ido-epo`): **chrF 96.5, coverage 98.4%**.
+Translation quality (curated gold sets, October 2026):
+
+| Direction | Curated gold | Tatoeba sample (300) |
+|-----------|--------------|----------------------|
+| Ido → Esperanto | chrF 97.9, coverage 98.6% | chrF 81.1, coverage 93.5% |
+| Esperanto → Ido | chrF 95.4, coverage 99.0% | chrF 73.6, coverage 92.1% |
+
+The Tatoeba samples are random real sentences with a single free-translation reference, so
+chrF there is much lower than on the curated sets; read the trend, not the level.
 
 ## How it works
 
 A shallow-transfer pipeline: morphological analysis → bilingual lexicon lookup →
 constraint-grammar disambiguation → structural transfer → generation.
 
-- `apertium-ido-epo.ido-epo.dix` — bilingual dictionary (~103,600 entries)
+- `apertium-ido-epo.ido-epo.dix` — bilingual dictionary (~92,000 entries)
 - `apertium-ido-epo.ido-epo.t1x` / `apertium-ido-epo.epo-ido.t1x` — transfer rules
 - `apertium-ido-epo.ido.ido.rlx` / `apertium-ido-epo.epo.epo.rlx` — constraint-grammar
   disambiguation, both generated from the pair (`make regen-disambig`,
   `make regen-disambig-epo`; rerun after a bidix, transfer or Ido monodix change)
-- `apertium-ido.ido.dix` — Ido monodix (from [apertium-ido](https://github.com/komapc/apertium-ido))
+- Ido monodix: provided by the separate [apertium-ido](https://github.com/komapc/apertium-ido) package
 
 The dictionaries are **auto-generated** by the
 [ido-esperanto-extractor](https://github.com/komapc/ido-esperanto-extractor) pipeline
@@ -50,7 +58,7 @@ Regressions are caught by the extractor's evaluation harness
 
 ## Officialization status
 
-Work toward making this an official Apertium pair (tracked informally; target 2026-06-15).
+Work toward making this an official Apertium pair (started 2026-06-15; status as of 2026-10-06).
 
 **Retired blockers:**
 - Readable `.dix` files — `apertium-ido-epo.ido-epo.dix` is plain multi-line lttoolbox XML
@@ -59,7 +67,10 @@ Work toward making this an official Apertium pair (tracked informally; target 20
   and attribution.
 
 **Open blockers:**
-- Repository ownership/hosting — still under a personal account, not the `apertium` org.
+- Repository ownership/hosting — still under a personal account, not the `apertium` org
+  (neither `apertium-ido` nor `apertium-ido-epo` exists there yet).
+- No page on wiki.apertium.org yet (a search for Ido pages returns nothing); `configure.ac`
+  already points at `Apertium-ido-epo`.
 - Language-specific `der_*` derivation sdefs (23 in the bidix: `der_act`, `der_aj`, `der_ala`,
   `der_aro`, `der_oz`, `der_ppra`, … ) drive Ido's productive derivational morphology
   (participles, `-ar-`/`-oz-`/`-al-` derivations, etc.). They are not a blocker as such: official
@@ -67,17 +78,17 @@ Work toward making this an official Apertium pair (tracked informally; target 20
   `der_*` sdefs in bilingual dictionaries. Every sdef carries a `c="…"` description and is
   listed in the `.dix` header. Open question for Apertium maintainers: whether the participle
   tags should be aligned with standard `pp`/`pprs`/`ger` (which cover only 3 of the 12
-  participle/gerund forms) — see #190.
+  participle/gerund forms).
 - One `sed` pre/post-processing pair remains in `modes.xml`: the epo→ido mode detaches a
   period from the preceding word and re-joins it afterwards, because apertium-epo keeps `.`
   in its alphabet (for decimals like `3.14`) so `domo.` is read as one token. Fixing it means
   changing apertium-epo's alphabet. The ido→epo `l'` sed is gone: the elided article is a
   clitic unit of the Ido analyser (`type="postblank"` section, as in apertium-fra/cat/ita).
-  See #190.
 - epo→ido has its own evaluation: a curated gold set and a Tatoeba-sampled benchmark in the
   extractor (`data/gold/epo_ido*.tsv`, trend reports in `reports/`), see #188 and the closing
   note on #189. Remaining epo→ido gaps are mostly apertium-epo lexical coverage (participle
-  forms, `-en` adverbs, `kian`).
+  forms, `-en` adverbs, `kian`); a first apertium-epo PR for the `-anta` participle is open
+  ([apertium-epo#5](https://github.com/apertium/apertium-epo/pull/5)).
 
 ## License
 

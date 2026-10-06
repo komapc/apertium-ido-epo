@@ -1,5 +1,16 @@
 # NEWS
 
+## Unreleased (2026-10)
+
+- Dictionaries are generated and one entry per line; every `der_*` symbol is documented in the
+  `.dix` header; per-source provenance and licensing are in `PROVENANCE.md`.
+- Regression suite (`make test`, apertium-regtest): 207 Ido→Esperanto and 205 Esperanto→Ido
+  sentences.
+- Generated constraint grammars for both directions, explicit epo→ido choice among Ido
+  synonyms, closed-class and possessive fixes (`mia`→`mea`, `ca`→`ĉi tiu`), duration
+  accusative after intransitive verbs, `tiel`→`tante`.
+- The `l'` and `#`-stripping `sed` steps were removed from the ido→epo mode.
+
 ## Version 0.1.0 (2025-01-26)
 
 ### New Features
