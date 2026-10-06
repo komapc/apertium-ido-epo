@@ -69,8 +69,8 @@ Work toward making this an official Apertium pair (started 2026-06-15; status as
 **Open blockers:**
 - Repository ownership/hosting — still under a personal account, not the `apertium` org
   (neither `apertium-ido` nor `apertium-ido-epo` exists there yet).
-- No page on wiki.apertium.org yet (a search for Ido pages returns nothing); `configure.ac`
-  already points at `Apertium-ido-epo`.
+- Open question for Apertium maintainers: whether a wiki.apertium.org page is still expected
+  (the wiki shows almost no activity since September 2026, and there is no Ido page there).
 - Language-specific `der_*` derivation sdefs (23 in the bidix: `der_act`, `der_aj`, `der_ala`,
   `der_aro`, `der_oz`, `der_ppra`, … ) drive Ido's productive derivational morphology
   (participles, `-ar-`/`-oz-`/`-al-` derivations, etc.). They are not a blocker as such: official
