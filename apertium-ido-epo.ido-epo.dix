@@ -83752,7 +83752,7 @@
     <e><p><l>trut<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>truta<s n="adj"/></r></p></e>
     <e><p><l>trut<s n="n"/><s n="der_aro"/><s n="n"/></l><r>trutaro<s n="n"/></r></p></e>
     <e><p><l>tu<s n="prn"/></l><r>ci<s n="prn"/></r></p></e>
-    <e r="LR"><p><l>tu<s n="adj"/></l><r>via<s n="adj"/></r></p></e>
+    <e><p><l>tu<s n="adj"/></l><r>via<s n="adj"/></r></p></e>
     <e><p><l>Tualetey<s n="n"/></l><r>Necesejo<s n="n"/></r></p></e>
     <e><p><l>Tualetey<s n="n"/><s n="der_ala"/><s n="adj"/></l><r>Neceseja<s n="adj"/></r></p></e>
     <e><p><l>Tualetey<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>Neceseja<s n="adj"/></r></p></e>
@@ -86293,7 +86293,7 @@
     <e><p><l>vezik<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>vezika<s n="adj"/></r></p></e>
     <e><p><l>vezik<s n="n"/><s n="der_aro"/><s n="n"/></l><r>vezikaro<s n="n"/></r></p></e>
     <e><p><l>vi<s n="prn"/></l><r>vi<s n="prn"/></r></p></e>
-    <e><p><l>vi<s n="adj"/></l><r>via<s n="adj"/></r></p></e>
+    <e r="LR"><p><l>vi<s n="adj"/></l><r>via<s n="adj"/></r></p></e>
     <e r="LR"><p><l>vi<s n="adj"/></l><r>via<s n="adj"/></r></p></e>
     <e><p><l>vi<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>vieco<s n="n"/></r></p></e>
     <e><p><l>Viadukt<s n="n"/></l><r>Viadukto<s n="n"/></r></p></e>
@@ -87503,7 +87503,7 @@
     <e r="LR"><p><l>Vozmedian<s n="n"/><s n="der_oz"/><s n="adj"/></l><r>Vozmediana<s n="adj"/></r></p></e>
     <e><p><l>Vozmedian<s n="n"/><s n="der_aro"/><s n="n"/></l><r>Vozmedianaro<s n="n"/></r></p></e>
     <e><p><l>vu<s n="prn"/></l><r>vi<s n="prn"/></r></p></e>
-    <e><p><l>vu<s n="adj"/></l><r>via<s n="adj"/></r></p></e>
+    <e r="LR"><p><l>vu<s n="adj"/></l><r>via<s n="adj"/></r></p></e>
     <e r="LR"><p><l>vua<s n="prn"/></l><r>via<s n="prn"/><s n="pos"/><s n="sg"/><s n="nom"/></r></p></e>
     <e><p><l>vulgar<s n="adj"/></l><r>vulgara<s n="adj"/></r></p></e>
     <e><p><l>vulgar<s n="adj"/><s n="der_qual"/><s n="n"/></l><r>vulgareco<s n="n"/></r></p></e>
