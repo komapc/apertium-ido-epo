@@ -56,6 +56,9 @@
     <def-cat n="plej">
       <cat-item lemma="plej" tags="adv"/>
     </def-cat>
+    <def-cat n="de_pr">
+      <cat-item lemma="de" tags="pr"/>
+    </def-cat>
     <def-cat n="da">
       <cat-item lemma="da" tags="pr"/>
     </def-cat>
@@ -654,6 +657,34 @@
             <clip pos="3" side="tl" part="a_fem"/>
             <clip pos="3" side="tl" part="nbr"/>
             <lit-tag v="nom"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    <!-- NOUN de -> NOUN di. Esperanto "de" covers both Ido "di" (of: the
+         possessive/relational preposition) and "de" (from, by). After a noun
+         it is "di": 199 of 233 Tatoeba pairs (85%); after a verb, adjective
+         or at sentence start it is "de" (0 of 35 "di"). So only the noun+de
+         sequence is rewritten, matched on the SL side. -->
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="de_pr"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_der"/>
+            <clip pos="1" side="tl" part="a_nom"/>
+            <clip pos="1" side="tl" part="a_fem"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="di"/>
+            <lit-tag v="pr"/>
           </lu>
         </out>
       </action>
