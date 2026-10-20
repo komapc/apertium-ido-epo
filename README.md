@@ -3,6 +3,9 @@
 Bidirectional machine translation between **Ido** and **Esperanto** on the
 [Apertium](https://www.apertium.org) platform.
 
+**Try it online:** [tradukilo.lipu.dev](https://tradukilo.lipu.dev/) (translator) ·
+[vortaro.lipu.dev](https://vortaro.lipu.dev/) (dictionary)
+
 Translation quality (curated gold sets, October 2026):
 
 | Direction | Curated gold | Tatoeba sample (300) |
