@@ -14,7 +14,20 @@
     </def-cat>
     <def-cat n="num">
       <cat-item tags="num"/>
-      <cat-item tags="num.*"/>
+      <cat-item tags="num.ciph"/>
+      <cat-item tags="num.ciph.*"/>
+      <cat-item tags="num.percent"/>
+      <cat-item tags="num.percent.*"/>
+      <cat-item tags="num.sg"/>
+      <cat-item tags="num.sg.*"/>
+      <cat-item tags="num.pl"/>
+      <cat-item tags="num.pl.*"/>
+      <cat-item tags="num.sp"/>
+      <cat-item tags="num.sp.*"/>
+    </def-cat>
+    <def-cat n="ord">
+      <cat-item tags="num.ord"/>
+      <cat-item tags="num.ord.*"/>
     </def-cat>
     <def-cat n="num_ciph">
       <cat-item tags="num.ciph.sp.nom"/>
@@ -286,6 +299,23 @@
   </section-def-macros>
 
   <section-rules>
+    <!-- Digit ordinal: Ido does not inflect it (la 2-an libron -> la 2ma libro),
+         so the Esperanto number and case tags stop here. -->
+    <rule comment="digit ordinal">
+      <pattern>
+        <pattern-item n="ord"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="num"/>
+            <lit-tag v="ord"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- ============================================================================
          BASIC WORD CLASS TRANSFORMATIONS
          These rules strip Esperanto-specific features that don't exist in Ido

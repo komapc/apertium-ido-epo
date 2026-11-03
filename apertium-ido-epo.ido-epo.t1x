@@ -24,6 +24,10 @@
     <def-cat n="adj">
       <cat-item tags="adj"/>
       <cat-item tags="adj.*"/>
+      <!-- A digit ordinal (2ma -> 2a) behaves as an adjective in both languages:
+           it agrees with its noun (la 2an libron, la 2aj libroj). -->
+      <cat-item tags="num.ord"/>
+      <cat-item tags="num.ord.*"/>
     </def-cat>
     <def-cat n="adv">
       <cat-item tags="adv"/>
@@ -260,7 +264,7 @@
     </def-cat>
     <def-cat n="num">
       <cat-item tags="num"/>
-      <cat-item tags="num.*"/>
+      <cat-item tags="num.ciph.*"/>
     </def-cat>
     <!-- The "and" conjunction (Ido e/ed), used only to drop it between numerals:
          Ido writes compound numbers with it (dek e du), Esperanto juxtaposes
@@ -332,15 +336,15 @@
       <cat-item tags="num"/>
       <cat-item tags="num.ciph.*"/>
     </def-cat>
-    <def-cat n="ord">
-      <cat-item tags="num.ord"/>
-      <cat-item tags="num.ord.*"/>
-    </def-cat>
   </section-def-cats>
 
   <section-def-attrs>
     <def-attr n="a_nom">
       <attr-item tags="n"/>
+    </def-attr>
+    <!-- On a passive (der_esar), the bidix marks verbs apertium-epo inflects as vbtr. -->
+    <def-attr n="a_vbtr">
+      <attr-item tags="vbtr"/>
     </def-attr>
     <def-attr n="a_adj">
       <!-- An Ido adjective can come out as an EO determiner or correlative
@@ -348,6 +352,7 @@
            the rules rebuild it as lem + a_adj + nbr + cas, so a_adj must carry
            those POS tags too or the word reaches the generator bare (#tiu). -->
       <attr-item tags="adj"/>
+      <attr-item tags="num.ord"/>
       <attr-item tags="det.ind"/>
       <attr-item tags="det.dem"/>
       <attr-item tags="det.itg"/>
@@ -690,6 +695,148 @@
           <out><lu><clip pos="1" side="tl" part="whole"/></lu></out>
         </otherwise>
       </choose>
+    </def-macro>
+  <def-macro n="passive_verb" npar="1">
+        <choose>
+          <!-- Passive Present: estas + -ata (kreesas -> estas kreata). apertium-epo
+               has -ata only on its vbtr paradigm, always with number and case;
+               the bidix marks those verbs. Others fall back to -ita. -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pres"/>
+              </lu>
+              <b/>
+            </out>
+            <choose>
+              <when>
+                <test><equal><clip pos="1" side="tl" part="a_vbtr"/><lit-tag v="vbtr"/></equal></test>
+                <out>
+                  <lu>
+                    <clip pos="1" side="tl" part="lem"/>
+                    <lit-tag v="vbtr"/>
+                    <lit-tag v="ppres"/>
+                    <lit-tag v="sg"/>
+                    <lit-tag v="nom"/>
+                  </lu>
+                </out>
+              </when>
+              <otherwise>
+                <out>
+                  <lu>
+                    <clip pos="1" side="tl" part="lem"/>
+                    <lit-tag v="vblex"/>
+                    <lit-tag v="pp"/>
+                  </lu>
+                </out>
+              </otherwise>
+            </choose>
+          </when>
+          <!-- Passive Past: estis + -ita (past passive participle) -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="past"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Future: estos + -ita -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="fti"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Infinitive: esti + -ita -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="inf"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="inf"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Conditional: estus + -ita -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="cni"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="cni"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Passive Imperative: estu + -ita -->
+          <when>
+            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="imp"/></equal></test>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="imp"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </when>
+          <!-- Default: present passive -->
+          <otherwise>
+            <out>
+              <lu>
+                <lit v="esti"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pres"/>
+              </lu>
+              <b/>
+              <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="vblex"/>
+                <lit-tag v="pp"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
     </def-macro>
   </section-def-macros>
 
@@ -1198,128 +1345,45 @@
         <pattern-item n="vbpasv"/>
       </pattern>
       <action>
-        <choose>
-          <!-- Passive Present: estas + -ita (past passive participle)
-               Note: In Esperanto, "estas kreita" is more common than "estas kreata"
-               for expressing the passive. This is the statal passive. -->
-          <when>
-            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pri"/></equal></test>
-            <out>
-              <lu>
-                <lit v="esti"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pres"/>
-              </lu>
-              <b/>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pp"/>
-              </lu>
-            </out>
-          </when>
-          <!-- Passive Past: estis + -ita (past passive participle) -->
-          <when>
-            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="pii"/></equal></test>
-            <out>
-              <lu>
-                <lit v="esti"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="past"/>
-              </lu>
-              <b/>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pp"/>
-              </lu>
-            </out>
-          </when>
-          <!-- Passive Future: estos + -ita -->
-          <when>
-            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="fti"/></equal></test>
-            <out>
-              <lu>
-                <lit v="esti"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="fti"/>
-              </lu>
-              <b/>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pp"/>
-              </lu>
-            </out>
-          </when>
-          <!-- Passive Infinitive: esti + -ita -->
-          <when>
-            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="inf"/></equal></test>
-            <out>
-              <lu>
-                <lit v="esti"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="inf"/>
-              </lu>
-              <b/>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pp"/>
-              </lu>
-            </out>
-          </when>
-          <!-- Passive Conditional: estus + -ita -->
-          <when>
-            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="cni"/></equal></test>
-            <out>
-              <lu>
-                <lit v="esti"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="cni"/>
-              </lu>
-              <b/>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pp"/>
-              </lu>
-            </out>
-          </when>
-          <!-- Passive Imperative: estu + -ita -->
-          <when>
-            <test><equal><clip pos="1" side="sl" part="temps"/><lit-tag v="imp"/></equal></test>
-            <out>
-              <lu>
-                <lit v="esti"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="imp"/>
-              </lu>
-              <b/>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pp"/>
-              </lu>
-            </out>
-          </when>
-          <!-- Default: present passive -->
-          <otherwise>
-            <out>
-              <lu>
-                <lit v="esti"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pres"/>
-              </lu>
-              <b/>
-              <lu>
-                <clip pos="1" side="tl" part="lem"/>
-                <lit-tag v="vblex"/>
-                <lit-tag v="pp"/>
-              </lu>
-            </out>
-          </otherwise>
-        </choose>
+        <call-macro n="passive_verb"><with-param pos="1"/></call-macro>
+      </action>
+    </rule>
+
+    <!-- A noun after a passive is its complement, not an object (Il nomesas
+         Petro -> Li estas nomita Petro): these equal-length rules must precede
+         the generic vblex + noun rules, which would keep the der_esar tags. -->
+    <rule comment="passive + noun">
+      <pattern>
+        <pattern-item n="vbpasv"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="passive_verb"><with-param pos="1"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="passive + determiner + noun">
+      <pattern>
+        <pattern-item n="vbpasv"/>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="passive_verb"><with-param pos="1"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
       </action>
     </rule>
 
@@ -3509,38 +3573,6 @@
         </out>
       </action>
     </rule>
-    <rule>
-      <pattern>
-        <pattern-item n="quant"/>
-        <pattern-item n="adj"/>
-        <pattern-item n="nom"/>
-      </pattern>
-      <action>
-        <out>
-          <lu><clip pos="1" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
-          <b/>
-          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
-          <b/>
-          <lu><clip pos="3" side="tl" part="whole"/></lu>
-        </out>
-      </action>
-    </rule>
-    <rule>
-      <pattern>
-        <pattern-item n="quant"/>
-        <pattern-item n="quant"/>
-        <pattern-item n="nom"/>
-      </pattern>
-      <action>
-        <out>
-          <lu><clip pos="1" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
-          <b/>
-          <lu><clip pos="2" side="tl" part="lem"/><lit-tag v="adj"/><clip pos="3" side="tl" part="nbr"/><clip pos="3" side="tl" part="cas"/></lu>
-          <b/>
-          <lu><clip pos="3" side="tl" part="whole"/></lu>
-        </out>
-      </action>
-    </rule>
 
     <!-- Equative: tam ADJ kam → tiel ADJ kiel (Me esas tam forta kam tu →
          Mi estas tiel forta kiel vi). The adjective defaults to sg/nom — the
@@ -3638,26 +3670,6 @@
     <!-- Quantifier + Noun: agree number+case, re-emit as <adj> so EO generates
          the -j/-n forms (kelka triboj → kelkaj triboj; the lexicon's <num> tag
          blocks generation of kelkaj). -->
-    <rule>
-      <pattern>
-        <pattern-item n="quant"/>
-        <pattern-item n="nom"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <lit-tag v="adj"/>
-            <clip pos="2" side="tl" part="nbr"/>
-            <clip pos="2" side="tl" part="cas"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="2" side="tl" part="whole"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
 
     <!-- Noun rule: pass through (Esperanto nouns don't always have gender).
          A set greeting Ido inflects as a noun but apertium-epo lists as one
@@ -3902,18 +3914,6 @@
 
     <!-- Adjective rule (standalone): pass through -->
     <!-- Adjectives should translate directly via bilingual dictionary -->
-    <rule>
-      <pattern>
-        <pattern-item n="adj"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
 
     <!-- Preposition + reflexive: a reflexive after a preposition is NOT a direct
          object, so it stays nominative: "pri su" → "pri si" (not "pri sin").
@@ -4359,7 +4359,7 @@
          Esperanto juxtaposes them (dek du). Drop the conjunction. Restricted to
          e/ed so "du o tri" (two or three) keeps its aŭ. Longer match wins over the
          bare num+num rule below. -->
-    <rule comment="number + e + number → juxtaposed (dek e du → dek du)">
+    <rule comment="number + e + number: compound numerals drop e (dek e du -> dek du), anything else keeps it (du e tri, 1990 e 2000)">
       <pattern>
         <pattern-item n="num"/>
         <pattern-item n="cnjcoo_e"/>
@@ -4374,7 +4374,29 @@
             <lit-tag v="sp"/>
             <lit-tag v="nom"/>
           </lu>
-          <b pos="1"/>
+        </out>
+        <choose>
+          <when>
+            <!-- Ido builds a compound with e only after a round ten, hundred or
+                 thousand; digits never have these lemmas. -->
+            <test>
+              <or>
+                <ends-with caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="dek"/></ends-with>
+                <ends-with caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="cent"/></ends-with>
+                <ends-with caseless="yes"><clip pos="1" side="sl" part="lem"/><lit v="mil"/></ends-with>
+              </or>
+            </test>
+            <out><b pos="1"/></out>
+          </when>
+          <otherwise>
+            <out>
+              <b pos="1"/>
+              <lu><clip pos="2" side="tl" part="whole"/></lu>
+              <b pos="2"/>
+            </out>
+          </otherwise>
+        </choose>
+        <out>
           <lu>
             <clip pos="3" side="tl" part="whole"/>
             <lit-tag v="sp"/>
@@ -4425,76 +4447,7 @@
       </action>
     </rule>
 
-    <!-- Determiner + Ordinal + Noun: ensure agreement -->
-    <rule>
-      <pattern>
-        <pattern-item n="det"/>
-        <pattern-item n="ord"/>
-        <pattern-item n="nom"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="whole"/>
-            <lit-tag v="def"/>
-            <lit-tag v="sg"/>
-            <lit-tag v="nom"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="2" side="tl" part="lem"/>
-            <lit-tag v="num"/>
-            <lit-tag v="ord"/>
-            <lit-tag v="sp"/>
-            <lit-tag v="nom"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="3" side="tl" part="whole"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
 
-    <!-- Ordinal + Noun: propagate number and case to ordinal -->
-    <rule>
-      <pattern>
-        <pattern-item n="ord"/>
-        <pattern-item n="nom"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <lit-tag v="num"/>
-            <lit-tag v="ord"/>
-            <lit-tag v="sp"/>
-            <lit-tag v="nom"/>
-          </lu>
-          <b/>
-          <lu>
-            <clip pos="2" side="tl" part="whole"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
 
-    <!-- Ordinal: default to singular nominative if alone -->
-    <rule>
-      <pattern>
-        <pattern-item n="ord"/>
-      </pattern>
-      <action>
-        <out>
-          <lu>
-            <clip pos="1" side="tl" part="lem"/>
-            <lit-tag v="num"/>
-            <lit-tag v="ord"/>
-            <lit-tag v="sp"/>
-            <lit-tag v="nom"/>
-          </lu>
-        </out>
-      </action>
-    </rule>
   </section-rules>
 </transfer>
