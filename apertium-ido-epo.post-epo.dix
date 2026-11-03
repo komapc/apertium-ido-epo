@@ -60,6 +60,18 @@
       <e><i>V</i></e>
       <e><i>Z</i></e>
     </pardef>
+    <pardef n="word-end">
+      <e><p><l><b/></l><r><b/></r></p></e>
+      <e><i>.</i></e>
+      <e><i>,</i></e>
+      <e><i>;</i></e>
+      <e><i>:</i></e>
+      <e><i>!</i></e>
+      <e><i>?</i></e>
+      <e><i>)</i></e>
+      <e><i>"</i></e>
+      <e><i>&#10;</i></e>
+    </pardef>
   </pardefs>
 
   <section id="main" type="standard">
@@ -68,9 +80,13 @@
          only produced apostrophe-glued output (l'unika). The vowel/cons pardefs
          above are now unused but kept for reference. -->
 
-    <!-- Suffix transformations: -eso → -eco (abstract quality nouns) -->
-    <!-- Examples: richeso → riĉeco, Sekureso → Sekureco, grandeso → grandeco -->
-    <e><p><l>eso</l><r>eco</r></p></e>
+    <!-- Ido -eso → EO -eco for words the dictionaries do not know, which reach
+         this stage marked "*": *biodiverseso → *biodiverseco. Known -eso nouns
+         are translated through bidix (<der_qual>), so the rule must not touch
+         generated Esperanto: an unanchored match also turned kongreso into
+         kongreco and profesoro into profecoro. Hence "*" on the left and a word
+         end on the right. -->
+    <e><i>*</i><re>[a-zA-ZĉĝĥĵŝŭĈĜĤĴŜŬ]+</re><p><l>eso</l><r>eco</r></p><par n="word-end"/></e>
   </section>
 
 </dictionary>
