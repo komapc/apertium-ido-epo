@@ -123,6 +123,16 @@ regen-disambig-epo: $(PREFIX2).autobil.bin $(PREFIX2).t1x.bin $(PREFIX2).autogen
 		--gen $(PREFIX2).autogen.bin \
 		--out $(BASENAME).$(LANG2).$(LANG2).rlx
 
+# Rewrites the vbintr def-cat of the ido-epo transfer from the dictionaries and
+# the Wiktionary transitivity labels. Rerun after any bidix or apertium-epo change.
+.PHONY: regen-verb-classes
+regen-verb-classes:
+	python3 dev/gen_verb_classes.py \
+		--bidix $(BASENAME).$(PREFIX1).dix \
+		--monodix $(AP_SRC2)/apertium-$(LANG2).$(LANG2).dix \
+		--labels dev/verb_transitivity.tsv \
+		--t1x $(BASENAME).$(PREFIX1).t1x
+
 ###############################################################################
 ## Bilingual dictionaries
 ###############################################################################
