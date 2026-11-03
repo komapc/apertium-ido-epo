@@ -71,10 +71,6 @@
     <!-- Suffix transformations: -eso → -eco (abstract quality nouns) -->
     <!-- Examples: richeso → riĉeco, Sekureso → Sekureco, grandeso → grandeco -->
     <e><p><l>eso</l><r>eco</r></p></e>
-    
-    <!-- Suffix transformations: -ala → -a (relational adjectives) -->
-    <!-- Examples: mondala → monda, republikala → respublika -->
-    <e><p><l>ala</l><r>a</r></p></e>
   </section>
 
 </dictionary>
