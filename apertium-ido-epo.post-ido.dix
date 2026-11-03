@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dictionary>
   <alphabet/>
-  <pardefs>
-    <pardef n="voyelles">
-      <e><i>a</i></e>
-      <e><i>e</i></e>
-      <e><i>i</i></e>
-      <e><i>o</i></e>
-      <e><i>u</i></e>
-      <e><i>A</i></e>
-      <e><i>E</i></e>
-      <e><i>I</i></e>
-      <e><i>O</i></e>
-      <e><i>U</i></e>
-    </pardef>
-  </pardefs>
-
+  <!-- No Ido post-generation rules yet. The schema requires one entry, so this
+       identity keeps the epo-ido mode's post-generation stage valid: it applies
+       only to a word the generator marks with an alarm, and changes nothing. -->
   <section id="main" type="standard">
-    <!-- la + vowel → l' (poetic/informal) in Ido -->
-    <e><p><l><a/>la<b/></l><r>l'</r></p><par n="voyelles"/></e>
-    
-    <!-- di + la → d' + vowel -->
-    <e><p><l><a/>di<b/><a/>la<b/></l><r>di<b/>l'</r></p><par n="voyelles"/></e>
+    <e><p><l><a/>a</l><r>a</r></p></e>
   </section>
-
 </dictionary>
-
