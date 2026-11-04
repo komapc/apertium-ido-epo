@@ -686,6 +686,13 @@
   <section-def-attrs>
     <def-attr n="a_nom">
       <attr-item tags="n"/>
+      <!-- A common noun in Ido can be a name in apertium-epo (Nederlando<np><loc>). -->
+      <attr-item tags="np.loc"/>
+      <attr-item tags="np.al"/>
+      <attr-item tags="np.ant.m"/>
+      <attr-item tags="np.ant.f"/>
+      <attr-item tags="np.ant.mf"/>
+      <attr-item tags="np.cog.mf"/>
     </def-attr>
     <!-- On a passive (der_esar), the bidix marks verbs apertium-epo inflects as vbtr. -->
     <def-attr n="a_vbtr">
