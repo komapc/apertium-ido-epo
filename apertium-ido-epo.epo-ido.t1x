@@ -72,6 +72,12 @@
     <def-cat n="de_pr">
       <cat-item lemma="de" tags="pr"/>
     </def-cat>
+    <def-cat n="al_pr">
+      <cat-item lemma="al" tags="pr"/>
+    </def-cat>
+    <def-cat n="la_det">
+      <cat-item lemma="la" tags="det.*"/>
+    </def-cat>
     <def-cat n="da">
       <cat-item lemma="da" tags="pr"/>
     </def-cat>
@@ -295,6 +301,29 @@
           <out><b/></out>
         </otherwise>
       </choose>
+    </def-macro>
+    <!-- One noun / proper noun, as the single-item nom and np rules output
+         them; used by the "de ... al" rules, which must output every word they
+         consume. -->
+    <def-macro n="nom_to_ido" npar="1">
+      <out>
+        <lu>
+          <clip pos="1" side="tl" part="lem"/>
+          <clip pos="1" side="tl" part="a_der"/>
+          <clip pos="1" side="tl" part="a_nom"/>
+          <clip pos="1" side="tl" part="a_fem"/>
+          <clip pos="1" side="tl" part="nbr"/>
+          <lit-tag v="nom"/>
+        </lu>
+      </out>
+    </def-macro>
+    <def-macro n="np_to_ido" npar="1">
+      <out>
+        <lu>
+          <clip pos="1" side="tl" part="lem"/>
+          <lit-tag v="np"/>
+        </lu>
+      </out>
     </def-macro>
   </section-def-macros>
 
@@ -716,6 +745,151 @@
             <lit v="di"/>
             <lit-tag v="pr"/>
           </lu>
+        </out>
+      </action>
+    </rule>
+    <!-- NOUN de [la] X al -> NOUN de [la] X a: "de ... al" after a noun is
+         "from ... to" (tradukilo de la Hispana ad Ido, voyo de Paris a Roma),
+         so it stays "de" instead of the possessive "di" of the rule above.
+         Longer patterns win, so these take precedence over NOUN de. -->
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="de_pr"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="al_pr"/>
+      </pattern>
+      <action>
+        <call-macro n="nom_to_ido"><with-param pos="1"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu><lit v="de"/><lit-tag v="pr"/></lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="nom_to_ido"><with-param pos="3"/></call-macro>
+        <out>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="de_pr"/>
+        <pattern-item n="np"/>
+        <pattern-item n="al_pr"/>
+      </pattern>
+      <action>
+        <call-macro n="nom_to_ido"><with-param pos="1"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu><lit v="de"/><lit-tag v="pr"/></lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="np_to_ido"><with-param pos="3"/></call-macro>
+        <out>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="de_pr"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="al_pr"/>
+      </pattern>
+      <action>
+        <call-macro n="nom_to_ido"><with-param pos="1"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu><lit v="de"/><lit-tag v="pr"/></lu>
+          <b pos="2"/>
+        </out>
+        <call-macro n="adj_to_ido"><with-param pos="3"/></call-macro>
+        <out>
+          <b pos="3"/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="de_pr"/>
+        <pattern-item n="la_det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="al_pr"/>
+      </pattern>
+      <action>
+        <call-macro n="nom_to_ido"><with-param pos="1"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu><lit v="de"/><lit-tag v="pr"/></lu>
+          <b pos="2"/>
+        </out>
+        <out>
+          <lu><clip pos="3" side="tl" part="lem"/><lit-tag v="det"/></lu>
+          <b pos="3"/>
+        </out>
+        <call-macro n="nom_to_ido"><with-param pos="4"/></call-macro>
+        <out>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="de_pr"/>
+        <pattern-item n="la_det"/>
+        <pattern-item n="np"/>
+        <pattern-item n="al_pr"/>
+      </pattern>
+      <action>
+        <call-macro n="nom_to_ido"><with-param pos="1"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu><lit v="de"/><lit-tag v="pr"/></lu>
+          <b pos="2"/>
+        </out>
+        <out>
+          <lu><clip pos="3" side="tl" part="lem"/><lit-tag v="det"/></lu>
+          <b pos="3"/>
+        </out>
+        <call-macro n="np_to_ido"><with-param pos="4"/></call-macro>
+        <out>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="de_pr"/>
+        <pattern-item n="la_det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="al_pr"/>
+      </pattern>
+      <action>
+        <call-macro n="nom_to_ido"><with-param pos="1"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu><lit v="de"/><lit-tag v="pr"/></lu>
+          <b pos="2"/>
+        </out>
+        <out>
+          <lu><clip pos="3" side="tl" part="lem"/><lit-tag v="det"/></lu>
+          <b pos="3"/>
+        </out>
+        <call-macro n="adj_to_ido"><with-param pos="4"/></call-macro>
+        <out>
+          <b pos="4"/>
+          <lu><clip pos="5" side="tl" part="whole"/></lu>
         </out>
       </action>
     </rule>
