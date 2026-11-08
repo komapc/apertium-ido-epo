@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dictionary>
   <alphabet/>
-  <!-- No Ido post-generation rules yet. The schema requires one entry, so this
-       identity keeps the epo-ido mode's post-generation stage valid: it applies
-       only to a word the generator marks with an alarm, and changes nothing. -->
+  <!-- Ido euphonic forms: the preposition "a" and the conjunctions "e", "o"
+       take a "d" before a vowel (ad Ido, ed altri, od ulu). The apertium-ido
+       generator marks a<pr>, e<cnjcoo> and o<cnjcoo> with an alarm (<a/>, "~"
+       in the stream); this stage looks at the next word's first letter.
+       A marked word with no matching entry is output unchanged, without "~". -->
+  <pardefs>
+    <pardef n="vowel">
+      <e><i>a</i></e>
+      <e><i>e</i></e>
+      <e><i>i</i></e>
+      <e><i>o</i></e>
+      <e><i>u</i></e>
+      <e><i>A</i></e>
+      <e><i>E</i></e>
+      <e><i>I</i></e>
+      <e><i>O</i></e>
+      <e><i>U</i></e>
+    </pardef>
+  </pardefs>
   <section id="main" type="standard">
-    <e><p><l><a/>a</l><r>a</r></p></e>
+    <e><p><l><a/>a<b/></l><r>ad<b/></r></p><par n="vowel"/></e>
+    <e><p><l><a/>e<b/></l><r>ed<b/></r></p><par n="vowel"/></e>
+    <e><p><l><a/>o<b/></l><r>od<b/></r></p><par n="vowel"/></e>
+    <e><p><l><a/>A<b/></l><r>Ad<b/></r></p><par n="vowel"/></e>
+    <e><p><l><a/>E<b/></l><r>Ed<b/></r></p><par n="vowel"/></e>
+    <e><p><l><a/>O<b/></l><r>Od<b/></r></p><par n="vowel"/></e>
   </section>
 </dictionary>
