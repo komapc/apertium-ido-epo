@@ -1047,6 +1047,22 @@
         </otherwise>
       </choose>
     </def-macro>
+    <!-- Attributive / predicate participle agreement (#214). The bidix gives
+         Ido participles a fixed <sg><nom> (Ido doesn't inflect them); EO -ita
+         (vblex.pp) and -ata (vbtr.ppres) inflect like adjectives, and -inta/-onta
+         (pp3/pp2) take the plural but have no case slot, so the case `let` is a
+         no-op on them. ptcp_agree copies number and case from a noun;
+         ptcp_acc then makes the participle accusative. -->
+    <def-macro n="ptcp_agree" npar="2">
+      <let><clip pos="1" side="tl" part="nbr"/><clip pos="2" side="tl" part="nbr"/></let>
+      <let><clip pos="1" side="tl" part="cas"/><clip pos="2" side="tl" part="cas"/></let>
+    </def-macro>
+    <def-macro n="ptcp_acc" npar="1">
+      <let><clip pos="1" side="tl" part="cas"/><lit-tag v="acc"/></let>
+    </def-macro>
+    <def-macro n="ptcp_pl" npar="1">
+      <let><clip pos="1" side="tl" part="nbr"/><lit-tag v="pl"/></let>
+    </def-macro>
   <def-macro n="passive_verb" npar="1">
         <choose>
           <!-- Passive Present: estas + -ata (kreesas -> estas kreata). apertium-epo
@@ -1548,6 +1564,67 @@
           <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
           <b/>
           <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_adj"/><clip pos="1" side="tl" part="nbr"/><lit-tag v="nom"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- Subject + copula + predicate participle: number agreement as for a
+         predicate adjective (la hundi esas lavita → la hundoj estas lavitaj),
+         #214. -->
+    <rule comment="det + nom + vbser + ptcp_adj: predicate participle agrees">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="ptcp_adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="3"/></call-macro>
+        <call-macro n="ptcp_agree"><with-param pos="4"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/><lit-tag v="def"/><lit-tag v="sg"/><lit-tag v="nom"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="lem"/><clip pos="3" side="tl" part="a_vblex"/><clip pos="3" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="4" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="nom + vbser + ptcp_adj: predicate participle agrees">
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="ptcp_adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="2"/></call-macro>
+        <call-macro n="ptcp_agree"><with-param pos="3"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="prn_pl + vbser + ptcp_adj: plural predicate participle">
+      <pattern>
+        <pattern-item n="prn_pl"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="ptcp_adj"/>
+      </pattern>
+      <action>
+        <call-macro n="io_to_eo_tense"><with-param pos="2"/></call-macro>
+        <call-macro n="prn_to_subj"><with-param pos="1"/></call-macro>
+        <call-macro n="ptcp_pl"><with-param pos="3"/></call-macro>
+        <out>
+          <b pos="1"/>
+          <lu><clip pos="2" side="tl" part="lem"/><clip pos="2" side="tl" part="a_vblex"/><clip pos="2" side="tl" part="temps"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
         </out>
       </action>
     </rule>
@@ -2756,6 +2833,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="ptcp_agree"><with-param pos="2"/><with-param pos="3"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
@@ -2773,6 +2851,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="ptcp_agree"><with-param pos="2"/><with-param pos="3"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
@@ -2790,6 +2869,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="ptcp_agree"><with-param pos="2"/><with-param pos="3"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
@@ -2803,6 +2883,7 @@
             </out>
           </when>
           <otherwise>
+            <call-macro n="ptcp_acc"><with-param pos="2"/></call-macro>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -2830,6 +2911,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="ptcp_agree"><with-param pos="3"/><with-param pos="4"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
@@ -2855,6 +2937,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="ptcp_agree"><with-param pos="3"/><with-param pos="4"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
@@ -2880,6 +2963,7 @@
         <pattern-item n="nom"/>
       </pattern>
       <action>
+        <call-macro n="ptcp_agree"><with-param pos="3"/><with-param pos="4"/></call-macro>
         <call-macro n="pii_to_past"><with-param pos="1"/></call-macro>
         <choose>
           <when>
@@ -2900,6 +2984,7 @@
             </out>
           </when>
           <otherwise>
+            <call-macro n="ptcp_acc"><with-param pos="3"/></call-macro>
             <out>
               <lu><clip pos="1" side="tl" part="whole"/></lu>
               <b/>
@@ -4612,6 +4697,33 @@
       </action>
     </rule>
     
+    <!-- Determiner + attributive participle + Noun: the participle agrees
+         with the noun like an adjective (la lavita hundi → la lavitaj hundoj),
+         #214. Bare `ptcp_adj nom` is left alone: there the noun may be the
+         participle's object (#212). -->
+    <rule comment="det + ptcp_adj + nom: participle agrees with the noun">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="ptcp_adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="ptcp_agree"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="def"/>
+            <lit-tag v="sg"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu><clip pos="2" side="tl" part="whole"/></lu>
+          <b/>
+          <lu><clip pos="3" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
     <!-- Determiner + Adjective + Noun: ensure agreement -->
     <rule>
       <pattern>
