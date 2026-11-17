@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+### CI - November 17, 2026
+- Tatoeba held-out quality gate: `dev/eval_tatoeba.py` translates the vendored
+  `test/tatoeba/*_tatoeba.tsv` sets (Tatoeba, CC BY 2.0 FR; from
+  ido-esperanto-extractor@cd5a3ef) in both directions and fails CI when chrF
+  drops more than 0.5 below `test/tatoeba/baseline.json`. Two scores per
+  direction: the steering chrF of extractor's `eval_translation.py`
+  (ido->epo 83.58, epo->ido 77.36) and sacrebleu 2.6.0 corpus chrF
+  (79.99, 72.37). PRs that improve quality raise the baseline with
+  `python3 dev/eval_tatoeba.py --write-baseline`.
+- CI builds apertium-epo at prod's revision (upstream 817c60b) instead of
+  upstream HEAD, caches and pins the nightly toolchain .debs, records the
+  toolchain versions in the job summary, and runs `test/test_syntax_gaps.sh`.
+
 ### Added
 - Regenerate `apertium-ido-epo.ido-epo.dix` from unified JSON sources (BERT, Vortaro, extractor)
 - Add ~29,000 bidix entries covering ~12,000 Ido lemmas
