@@ -1,0 +1,17 @@
+{
+  "_comment": "Tatoeba held-out chrF of this pair, checked by dev/eval_tatoeba.py in CI. Raise it (python3 dev/eval_tatoeba.py --write-baseline) in the PR that improves quality; never lower it to make a regression pass.",
+  "tolerance": 0.5,
+  "sacrebleu_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0",
+  "directions": {
+    "ido-epo": {
+      "sentences": 210,
+      "chrf_steering": 83.58,
+      "chrf_sacrebleu": 79.99
+    },
+    "epo-ido": {
+      "sentences": 239,
+      "chrf_steering": 77.36,
+      "chrf_sacrebleu": 72.37
+    }
+  }
+}
